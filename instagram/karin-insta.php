@@ -72,8 +72,11 @@
     <li><a href="https://www.instagram.com/p/DY7GUnlD-U7/" target="_blank" rel="noopener noreferrer">2026/05/29 新曲衣装公開インライ！（00:23:51）</a></li>
     <li><a href="https://www.instagram.com/p/DZNCKiEj2MA/" target="_blank" rel="noopener noreferrer">2026/06/05 HANAKIN 配信4回目！（00:36:02）</a></li>
     <li><a href="https://www.instagram.com/p/DZfF05VD20k/" target="_blank" rel="noopener noreferrer">2026/06/12 HANAKIN配信✨️6/12（00:45:43）</a></li>
+    <li><a href="https://www.instagram.com/p/DZxEmi1DxDj/" target="_blank" rel="noopener noreferrer">2026/06/19 HANAKIN配信5回目（00:30:09）</a></li>
+    <li><a href="https://www.instagram.com/p/DaVE9gqj7Y8/" target="_blank" rel="noopener noreferrer">2026/07/03 HANAKIN配信6回目（00:41:42）</a></li>
+    <li><a href="https://www.instagram.com/p/DanU1JUD2tg/" target="_blank" rel="noopener noreferrer">2026/07/10 HANAKIN配信7回目（00:41:24）</a></li>
   </ul>
   </div>
 </main>
-<div class="last-update">最終更新日：2026/06/14</div>
+<div class="last-update">最終更新日：2026/07/11</div>
 <?php include $_SERVER['DOCUMENT_ROOT'] . '/common/footer.php'; ?>
