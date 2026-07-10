@@ -53,8 +53,27 @@ echo "rendered $count pages"
 
 # ---- 静的アセット ----
 cp -r css img Timeline "$OUT/"
-cp sitemap.xml "$OUT/sitemap.xml"
 cp robot.txt "$OUT/robots.txt"   # 正しいファイル名に直して配置
+
+# ---- sitemap.xml 生成(旧sitemap.ymlのロジックを移植: common/news/404を除外) ----
+{
+  echo '<?xml version="1.0" encoding="UTF-8"?>'
+  echo '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">'
+  today=$(date +%Y-%m-%d)
+  printf '  <url>\n    <loc>%s/</loc>\n    <lastmod>%s</lastmod>\n  </url>\n' "$BASE_URL" "$today"
+  while IFS= read -r p; do
+    case "$p" in
+      news|common/*) continue ;;
+    esac
+    printf '  <url>\n    <loc>%s/%s</loc>\n    <lastmod>%s</lastmod>\n  </url>\n' "$BASE_URL" "$p" "$today"
+  done <<< "$pages"
+  echo '</urlset>'
+} > "$OUT/sitemap.xml"
+
+# ---- IndexNow キーファイル(キーが設定されているときだけ) ----
+if [ -n "${INDEXNOW_KEY:-}" ]; then
+  printf '%s' "$INDEXNOW_KEY" > "$OUT/$INDEXNOW_KEY.txt"
+fi
 
 # ---- ベースURL差し替え ----
 grep -rl --include='*.html' --include='*.xml' --include='*.txt' -F "$OLD_URL" "$OUT" \

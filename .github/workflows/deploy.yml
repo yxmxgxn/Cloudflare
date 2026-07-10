@@ -17,6 +17,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 2   # IndexNow用に直前コミットとの差分を取る
 
       - name: Setup PHP
         uses: shivammathur/setup-php@v2
@@ -27,6 +29,7 @@ jobs:
         env:
           # Variables に BASE_URL を設定するまでは旧ドメインのまま出力される
           BASE_URL: ${{ vars.BASE_URL || 'https://karin.heavy.jp' }}
+          INDEXNOW_KEY: ${{ secrets.INDEXNOW_KEY }}
         run: bash build/build.sh
 
       - name: Deploy to Cloudflare Workers
@@ -35,3 +38,30 @@ jobs:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
           command: deploy
+
+      - name: IndexNow Notification
+        env:
+          INDEXNOW_KEY: ${{ secrets.INDEXNOW_KEY }}
+          BASE_URL: ${{ vars.BASE_URL || 'https://karin.heavy.jp' }}
+        run: |
+          [ -z "$INDEXNOW_KEY" ] && { echo "INDEXNOW_KEY未設定のためスキップ"; exit 0; }
+          HOST=$(echo "$BASE_URL" | sed 's|https\?://||; s|/.*||')
+          DIFF_URLS=$(git diff --name-only --diff-filter=ACM HEAD^ HEAD 2>/dev/null \
+            | grep -E '\.php$' \
+            | grep -v '^common/' \
+            | grep -v '^Spreadsheet/' \
+            | grep -v '^Generated/' \
+            | grep -v '^build/' \
+            | grep -v '404' \
+            | grep -v '^news\.php' \
+            | grep -v '^index\.' \
+            | sed -E 's/\.php$//' \
+            | sed "s|^|$BASE_URL/|" \
+            | tr '\n' ' ') || true
+          CLEAN_URLS=$(echo "$BASE_URL/ $DIFF_URLS" | tr -s ' ' | sed 's/^ //;s/ $//')
+          echo "Sending URLs: $CLEAN_URLS"
+          JSON_URLS=$(echo "$CLEAN_URLS" | tr ' ' '\n' | grep -v '^$' | sed 's/.*/"&"/' | paste -sd ',')
+          curl -s -o /dev/null -w "IndexNow HTTP status: %{http_code}\n" \
+            -X POST "https://www.bing.com/indexnow" \
+            -H "Content-Type: application/json; charset=utf-8" \
+            -d "{\"host\": \"$HOST\", \"key\": \"$INDEXNOW_KEY\", \"keyLocation\": \"$BASE_URL/$INDEXNOW_KEY.txt\", \"urlList\": [$JSON_URLS]}"
