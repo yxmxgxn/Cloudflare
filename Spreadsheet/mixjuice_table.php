@@ -1,4 +1,4 @@
-<!-- generated: 2026-07-09T22:27:30.436399+00:00 -->
+<!-- generated: 2026-07-10T19:02:24.793000+00:00 -->
 <tr data-selector="松永里愛"><td><a href="https://www.tbsradio.jp/articles/109924/" target="_blank" rel="noopener noreferrer">2026/07/05</a></td><td>Next is you！ / NEXT YOU</td><td>松永里愛</td><td>今の自分を表す曲</td></tr>
 <tr data-selector="江端妃咲"><td><a href="https://www.tbsradio.jp/articles/109924/" target="_blank" rel="noopener noreferrer">2026/07/05</a></td><td>進め、たまに逃げても / チャラン・ポ・ランタン</td><td>江端妃咲</td><td>今の自分を表す曲</td></tr>
 <tr data-selector="松永里愛&amp;江端妃咲"><td><a href="https://www.tbsradio.jp/articles/109924/" target="_blank" rel="noopener noreferrer">2026/07/05</a></td><td>クラクラ☆クライマックス / Juice＝Juice</td><td>松永里愛&amp;江端妃咲</td><td>今の自分を表す曲</td></tr>
