@@ -20,7 +20,7 @@ GID_CAST = "389226267"
 
 REPO_ROOT = Path(__file__).resolve().parent.parent  # Python/ の親
 
-OUTPUT_TABLE = REPO_ROOT / "Spreadsheet" / "movies_table.php"
+OUTPUT_CARDS = REPO_ROOT / "Spreadsheet" / "movies_cards.php"
 OUTPUT_GENRES = REPO_ROOT / "Spreadsheet" / "movies_genres.php"
 OUTPUT_GROUPS = REPO_ROOT / "Spreadsheet" / "movies_groups.php"
 OUTPUT_GENERATED = REPO_ROOT / "Generated" / "movies_generated.php"
@@ -47,7 +47,7 @@ def sort_date(s: str) -> str:
 
 
 def build_links(m: dict) -> str:
-    """外部サイトリンクのセル内容を組み立てる(IDがある列だけ)"""
+    """外部サイトリンク(IDがある列だけ)"""
     links = []
 
     def add(label, url):
@@ -55,9 +55,6 @@ def build_links(m: dict) -> str:
             f'<a href="{esc(url)}" target="_blank" rel="noopener noreferrer">{label}</a>'
         )
 
-    y = (m.get("Y_trailer") or "").strip()
-    if y:
-        add("予告編(YT)", f"https://www.youtube.com/watch?v={y}")
     e_tr = (m.get("E_Trailer") or "").strip()
     if e_tr:
         add("予告編(映画.com)", f"https://eiga.com/movie/{e_tr}/video/")
@@ -83,8 +80,11 @@ def build_links(m: dict) -> str:
     return " ".join(links)
 
 
-def build_cast_rows(cast: list[dict]) -> str:
-    """1映画分のキャスト一覧(展開行の中身)"""
+MEMBER_LIMIT = 5  # カードにデフォルト表示する出演者数
+
+
+def build_cast_detail(cast: list[dict]) -> str:
+    """詳細ボタンで展開されるキャスト表"""
     lines = []
     for c in cast:
         lines.append(
@@ -96,11 +96,45 @@ def build_cast_rows(cast: list[dict]) -> str:
             f"<td>{esc(c.get('Status'))}</td>"
             "</tr>"
         )
-    return "\n".join(lines)
+    return (
+        '<table class="mv-cast-table">'
+        "<thead><tr><th>メンバー</th><th>役名</th><th>クレジット</th><th>グループ</th><th>出演時</th></tr></thead>"
+        f"<tbody>{''.join(lines)}</tbody></table>"
+    )
 
 
-def build_table(movies: list[dict], cast_by_movie: dict) -> str:
-    rows = []
+def build_members_line(cast: list[dict], mid: str) -> str:
+    """カードに常時表示する出演者名(5人超は「…他n人」で展開)"""
+    names = [(c.get("Member") or "").strip() for c in cast if (c.get("Member") or "").strip()]
+    if not names:
+        return ""
+    if len(names) <= MEMBER_LIMIT:
+        return f'<p class="mv-members">出演: {esc("、".join(names))}</p>'
+    head = "、".join(names[:MEMBER_LIMIT])
+    rest = "、".join(names[MEMBER_LIMIT:])
+    return (
+        f'<p class="mv-members">出演: {esc(head)}'
+        f'<span id="mv-more-{esc(mid)}" style="display:none">、{esc(rest)}</span>'
+        f'<button type="button" class="mv-more-btn" id="mv-more-btn-{esc(mid)}"'
+        f' onclick="mvMore(\'{esc(mid)}\')">…他{len(names) - MEMBER_LIMIT}人</button></p>'
+    )
+
+
+def build_trailer(m: dict, mid: str) -> str:
+    """YouTube予告編のクリック再生プレースホルダー(押すまでiframeを読み込まない)"""
+    y = (m.get("Y_trailer") or "").strip()
+    if not y:
+        return ""
+    return (
+        f'<button type="button" class="mv-trailer" data-yt="{esc(y)}" id="mv-trailer-{esc(mid)}"'
+        f' onclick="mvPlay(\'{esc(mid)}\')" aria-label="予告編を再生">'
+        f'<img src="https://i.ytimg.com/vi/{esc(y)}/hqdefault.jpg" alt="予告編サムネイル" loading="lazy">'
+        '<span class="mv-play">▶ 予告編</span></button>'
+    )
+
+
+def build_cards(movies: list[dict], cast_by_movie: dict) -> str:
+    cards = []
     for m in movies:
         mid = (m.get("Movie_id") or "").strip()
         if not mid:
@@ -112,35 +146,36 @@ def build_table(movies: list[dict], cast_by_movie: dict) -> str:
         roles = " ".join((c.get("Role_name") or "").strip() for c in cast)
         groups = sorted({(c.get("Group") or "").strip() for c in cast if (c.get("Group") or "").strip()})
 
-        title = esc(m.get("Title"))
-        date = esc(m.get("Date"))
-        genre = esc(m.get("Genre"))
-        director = esc(m.get("Director"))
+        meta = " / ".join(x for x in [
+            esc(m.get("Date")),
+            esc(m.get("Genre")),
+            ("監督: " + esc(m.get("Director"))) if (m.get("Director") or "").strip() else "",
+        ] if x)
 
-        # 映画行(フィルタ用データ属性付き)
-        rows.append(
-            f'<tr class="mv-row" data-id="{esc(mid)}" data-date="{esc(sort_date(m.get("Date")))}"'
-            f' data-genre="{genre}" data-groups="{esc("|".join(groups))}"'
-            f' data-search="{esc(" ".join([m.get("Title") or "", m.get("Director") or "", members, roles]))}">'
-            f"<td>{date}</td>"
-            f'<td class="mv-title">{title}</td>'
-            f"<td>{genre}</td>"
-            f"<td>{director}</td>"
-            f'<td class="mv-cast-toggle"><button type="button" onclick="mvToggle(\'{esc(mid)}\')">'
-            f"出演 {len(cast)}人</button></td>"
-            f'<td class="mv-links">{build_links(m)}</td>'
-            "</tr>"
-        )
-        # キャスト展開行(初期非表示)
+        detail = ""
         if cast:
-            rows.append(
-                f'<tr class="mv-cast" id="mv-cast-{esc(mid)}" style="display:none">'
-                '<td colspan="6"><table class="mv-cast-table">'
-                "<thead><tr><th>メンバー</th><th>役名</th><th>クレジット</th><th>グループ</th><th>出演時</th></tr></thead>"
-                f"<tbody>{build_cast_rows(cast)}</tbody>"
-                "</table></td></tr>"
+            detail = (
+                f'<button type="button" class="mv-detail-btn" onclick="mvToggle(\'{esc(mid)}\')">詳細(役名など)</button>'
+                f'<div class="mv-cast" id="mv-cast-{esc(mid)}" style="display:none">{build_cast_detail(cast)}</div>'
             )
-    return "\n".join(rows)
+
+        links = build_links(m)
+        links_html = f'<p class="mv-links">{links}</p>' if links else ""
+
+        cards.append(
+            f'<div class="movie-card" data-date="{esc(sort_date(m.get("Date")))}"'
+            f' data-genre="{esc(m.get("Genre"))}" data-groups="{esc("|".join(groups))}"'
+            f' data-title="{esc(m.get("Title"))}"'
+            f' data-search="{esc(" ".join([m.get("Title") or "", m.get("Director") or "", members, roles]))}">'
+            f'<p class="mv-card-title">{esc(m.get("Title"))}</p>'
+            f'<p class="mv-meta">{meta}</p>'
+            f"{build_members_line(cast, mid)}"
+            f"{build_trailer(m, mid)}"
+            f"{links_html}"
+            f"{detail}"
+            "</div>"
+        )
+    return "\n".join(cards)
 
 
 def build_options(values: list[str]) -> str:
@@ -166,8 +201,8 @@ def main():
     stamp = f"<!-- generated: {datetime.now(timezone.utc).isoformat()} -->\n"
 
     OUTPUT_GENERATED.parent.mkdir(parents=True, exist_ok=True)
-    with open(OUTPUT_TABLE, "w", encoding="utf-8") as f:
-        f.write(stamp + build_table(movies, cast_by_movie) + "\n")
+    with open(OUTPUT_CARDS, "w", encoding="utf-8") as f:
+        f.write(stamp + build_cards(movies, cast_by_movie) + "\n")
     with open(OUTPUT_GENRES, "w", encoding="utf-8") as f:
         f.write(stamp + build_options(genres) + "\n")
     with open(OUTPUT_GROUPS, "w", encoding="utf-8") as f:
@@ -175,7 +210,7 @@ def main():
     with open(OUTPUT_GENERATED, "w", encoding="utf-8") as f:
         f.write(f'<p class="last-update">データ取得日：{generated}</p>\n')
 
-    print(f"生成完了: {OUTPUT_TABLE} ({len(movies)} 作品 / キャスト {len(cast_rows)} 行)")
+    print(f"生成完了: {OUTPUT_CARDS} ({len(movies)} 作品 / キャスト {len(cast_rows)} 行)")
 
 
 if __name__ == "__main__":
