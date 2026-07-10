@@ -588,3 +588,120 @@ footer a {
   margin-bottom: 20px;
 }
 
+
+/* ===== ハロプロ映画一覧 ===== */
+
+#movies-controls {
+  display: flex;
+  gap: 10px;
+  margin: 0.75rem 0;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+#movies-controls input[type="text"] {
+  flex: 1;
+  min-width: 100px;
+  padding: 6px 10px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+}
+
+#movies-controls select {
+  padding: 6px 10px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+}
+
+#movies-count {
+  font-size: 13px;
+  color: #888;
+  white-space: nowrap;
+}
+
+#hp-movies {
+  border-collapse: collapse;
+  width: 100%;
+  font-size: 13px;
+}
+
+#hp-movies th,
+#hp-movies td {
+  border: 1px solid #ccc;
+  padding: 6px 10px;
+  text-align: left;
+  white-space: nowrap;
+}
+
+#hp-movies th {
+  background: #f5f5f5;
+  user-select: none;
+}
+
+#mv-th-date,
+#mv-th-title {
+  cursor: pointer;
+}
+
+#mv-th-date:hover,
+#mv-th-title:hover {
+  background: #ebebeb;
+}
+
+#hp-movies th.sorted {
+  background: #e8e8e8;
+}
+
+#hp-movies tbody tr.mv-row:hover {
+  background: #f0f0f0;
+}
+
+#hp-movies td.mv-title {
+  white-space: normal;
+  min-width: 12em;
+}
+
+#hp-movies td.mv-links {
+  white-space: normal;
+  min-width: 14em;
+  font-size: 12px;
+}
+
+#hp-movies td.mv-links a {
+  margin-right: 6px;
+  white-space: nowrap;
+}
+
+#hp-movies .mv-cast-toggle button {
+  padding: 4px 10px;
+  border: 1px solid #ccc;
+  background: #fff;
+  cursor: pointer;
+  font-size: 12px;
+  border-radius: 4px;
+}
+
+#hp-movies .mv-cast-toggle button:hover {
+  background: #f0f0f0;
+}
+
+#hp-movies tr.mv-cast > td {
+  background: #fbfbf3;
+  padding: 8px 14px;
+}
+
+.mv-cast-table {
+  border-collapse: collapse;
+  font-size: 12px;
+}
+
+.mv-cast-table th,
+.mv-cast-table td {
+  border: 1px solid #ddd;
+  padding: 4px 10px;
+  text-align: left;
+}
+
+.mv-cast-table th {
+  background: #f0f0e8;
+}

@@ -26,7 +26,7 @@ jobs:
       - name: Generate spreadsheet tables
         run: |
           failed=0
-          for script in members vocalo karinhello mixjuice karinoshi; do
+          for script in members vocalo karinhello mixjuice karinoshi movies; do
             echo "=== generate_${script}.py ==="
             python "Python/generate_${script}.py" || { echo "::error::${script} failed"; failed=1; }
           done
