@@ -38,7 +38,7 @@ pages=$(find . -name '*.php' \
 # ---- レンダリング ----
 fetch() { # $1=リクエストパス $2=出力ファイル
   mkdir -p "$(dirname "$2")"
-  curl -sf --fail-with-body "http://127.0.0.1:$PORT$1" -o "$2" \
+  curl -s --fail-with-body "http://127.0.0.1:$PORT$1" -o "$2" \
     || { echo "NG: $1"; cat "$2" 2>/dev/null | head -5; exit 1; }
 }
 
