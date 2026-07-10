@@ -1,0 +1,590 @@
+@charset "UTF-8";
+
+body {
+  font-family: 'Noto Sans JP', sans-serif;
+}
+
+img {
+  max-width:100%;
+  height: auto;/*高さ自動*/
+}
+
+a {
+  color: #666 ;
+  text-decoration-line: none;
+  transition: 0.3s;
+  cursor: pointer;
+}
+a:hover {
+  color: #AE8DBC;
+
+}
+
+a img {
+  margin-bottom: 1rem;
+}
+a img:hover {
+  opacity: 0.8;
+}
+
+h1 {
+  font-size: 2rem;
+  margin-left: 0;
+}
+
+h2 {
+  font-size: 1.5rem;
+  margin-left: 0;
+}
+
+h3 {
+  font-size: 1rem;
+  margin-left: 1rem;
+}
+
+h2, h3 {
+  font-weight: normal;
+}
+
+.indextop {
+  margin-left: 2rem;
+}
+
+ul {
+  list-style-type: "・";
+  margin-left: 0rem;
+  gap: 4px;
+}
+
+ul li {
+  margin-bottom: 0.5rem;
+}
+ul li:last-child {
+  margin-bottom: 0;
+}
+
+.indent ul {
+  list-style: none;
+  margin-left: 1rem;
+  padding-left: 0;
+}
+
+table {
+  margin-top: 1rem;    /* 上側のスペース */
+  margin-bottom: 1rem; /* 下側のスペース */
+}
+
+/*ヘッダー
+-------------------------------------*/
+header {
+
+  margin: 0.5rem 1rem 0rem 1rem;
+}
+.site-title {
+  color: #666;
+  font-size: 1rem;
+}
+
+.last-update {
+    text-align: right;
+    padding: 0rem 1rem 0rem 0rem;
+}
+
+/*メインコンテンツ
+-------------------------------------*/
+main {
+  margin: 0rem 1rem 1rem 1rem;
+}
+
+/*メンバー一覧
+-------------------------------------*/
+#hp-members {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+#hp-members th,
+#hp-members td {
+  border: 1px solid #ccc;
+  padding: 6px 10px;
+  text-align: left;
+}
+
+#hp-members th {
+  background: #f5f5f5;
+}
+#hp-members th {
+  white-space: nowrap;
+}
+
+#hp-members tbody tr:nth-child(even) {
+  background: #f9f9f9;
+}
+
+#hp-members td:nth-child(2) {
+  white-space: normal;
+  min-width: 8em;
+}
+
+#hp-members td:nth-child(7) {
+  white-space: normal;
+  min-width: 8em;
+}
+
+#hp-members tr.active-member {
+  background: #fff9e6 !important;
+}
+
+#helloproject-table {
+  overflow-x: auto;
+}
+
+#hp-members td {
+  white-space: nowrap;
+}
+
+#hp-members tr.karin {
+  background: #AE8DBC !important;
+}
+
+#hp-filter {
+  margin: 0.75rem 0;
+}
+
+#hp-filter .filter-group {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 4px;
+  margin-bottom: 6px;
+}
+
+#hp-filter .filter-label {
+  display: inline-block;
+  min-width: 10em;
+  flex-shrink: 0;
+}
+
+.filter-btn {
+  padding: 6px 10px;
+  border: 1px solid #ccc;
+  cursor: pointer;
+  line-height: 1;
+  margin: 2px;
+}
+
+/*今日のボカロ
+-------------------------------------*/
+#vocalo-table {
+  border-collapse: collapse;
+  width: 100%;
+  font-size: 13px;
+}
+
+#vocalo-table th,
+#vocalo-table td {
+  border: 1px solid #ccc;
+  padding: 6px 10px;
+  text-align: left;
+}
+
+#vocalo-table th {
+  background: #f5f5f5;
+  white-space: nowrap;
+}
+
+#vocalo-table td {
+  white-space: nowrap;
+}
+
+#vocalo-table tbody tr:nth-child(even) {
+  background: #f9f9f9;
+}
+
+#vocalo-table {
+  margin-top: 1em;
+}
+
+/*宮本佳林ディスコグラフィ
+-------------------------------------*/
+#karin-disco {
+  border-collapse: collapse;
+  table-layout: fixed;
+  width: auto;
+  font-size: 13px;
+}
+#karin-disco th,
+#karin-disco td {
+  border: 1px solid #ccc;
+  padding: 6px 10px;
+  text-align: left;
+}
+#karin-disco th {
+  background: #f5f5f5;
+}
+#karin-disco tbody tr:nth-child(even) td:not(.karin-disco-title) {
+  background: #f9f9f9;
+}
+#karin-disco th.karin-disco-head {
+  min-width: 10rem;
+}
+
+/* 折り返しと背景：td側 */
+#karin-disco td.karin-disco-title {
+  background: white !important;
+}
+
+/* 佳林の1日1ハロ テーブル
+------------------------------------- */
+#karinhello-table {
+  overflow-x: auto;
+  margin-top: 1em;
+}
+ 
+#karinhello-controls {
+  display: flex;
+  gap: 10px;
+  margin: 0.75rem 0;
+  flex-wrap: wrap;
+  align-items: center;
+}
+ 
+#karinhello-controls input[type="text"] {
+  flex: 1;
+  min-width: 100px;
+  padding: 6px 10px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+}
+ 
+#karinhello-controls select {
+  padding: 6px 10px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+}
+ 
+#karinhello-count {
+  font-size: 13px;
+  color: #888;
+  white-space: nowrap;
+}
+  
+#karinhello {
+  border-collapse: collapse;
+  width: 100%;
+  font-size: 13px;
+}
+ 
+#karinhello th,
+#karinhello td {
+  border: 1px solid #ccc;
+  padding: 6px 10px;
+  text-align: left;
+}
+ 
+#karinhello th {
+  background: #f5f5f5;
+  white-space: nowrap;
+  cursor: pointer;
+  user-select: none;
+}
+ 
+#karinhello th:hover {
+  background: #ebebeb;
+}
+ 
+#karinhello th.sorted {
+  background: #e8e8e8;
+}
+ 
+#karinhello tbody tr:nth-child(even) {
+  background: #f9f9f9;
+}
+ 
+#karinhello tbody tr:hover {
+  background: #f0f0f0;
+}
+ 
+#karinhello td {
+  white-space: nowrap;
+}
+ 
+#karinhello td.kh-song {
+  white-space: normal;
+  min-width: 10em;
+}
+ 
+#karinhello td.kh-album {
+  white-space: normal;
+  min-width: 10em;
+}
+
+#karinhello td.kh-artist {
+  white-space: normal;
+  min-width: 10em;
+}
+
+#karinhello td.kh-lyricist,
+#karinhello td.kh-composer,
+#karinhello td.kh-arranger {
+  white-space: normal;
+  min-width: 5em;
+}
+
+#karinhello td.kh-yt {
+  text-align: center;
+  min-width: 2em;
+}
+ 
+#karinhello a {
+  color: #4a7cc7;
+  text-decoration: none;
+}
+ 
+#karinhello a:hover {
+  text-decoration: underline;
+}
+
+/*カリンオシ
+-------------------------------------*/
+#karin-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1rem;
+  margin-top: 1em;
+}
+
+.karin-card {
+  box-sizing: border-box;
+  max-width: 550px;
+}
+
+.karin-header {
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+
+.karin-tbs {
+  margin-top: 8px;
+  text-align: right;
+}
+
+#karin-filter {
+  margin: 0.75rem 0;
+}
+
+/*MIX=juice
+-------------------------------------*/
+#mixjuice-table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+#mixjuice-table th,
+#mixjuice-table td {
+  border: 1px solid #ccc;
+  padding: 6px 10px;
+  white-space: nowrap;
+}
+
+#mixjuice-table th {
+  background: #f5f5f5;
+}
+
+#mixjuice-tbody tr.row-even {
+  background: #f9f9f9;
+}
+
+#mixjuice-wrap {
+  overflow-x: auto;
+}
+
+#mixjuice-filter {
+  margin: 0.75rem 0;
+}
+
+#mixjuice-filter select {
+  padding: 6px 10px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+}
+
+/*バースデーイベント
+-------------------------------------*/
+.birthday-table {
+  border-collapse: collapse;
+}
+
+.birthday-table th,
+.birthday-table td {
+  border: 1px solid #ccc;
+  padding: 6px 10px;
+  white-space: nowrap;
+}
+
+.birthday-table th {
+  background: #f5f5f5;
+}
+
+.birthday-table tr.row-even {
+  background: #f9f9f9;
+}
+
+/*ハロプロメンバーメンバーカラー色空間配置
+-------------------------------------*/
+.filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  justify-content: center;
+  max-width: 360px;
+}
+
+.filter-btn:hover { border-color: #999; }
+.filter-btn.active { background: #111; color: #fff; border-color: #111; }
+
+.wheel-wrap { position: relative; width: 320px; height: 320px; }
+  canvas { display: block; cursor: crosshair; }
+
+.info-panel {
+  width: 100%;
+  max-width: 320px;
+  min-height: 72px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  padding: 12px 14px;
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.info-swatch { width: 44px; height: 44px; border-radius: 4px; border: 1px solid #ddd; flex-shrink: 0; }
+.info-text { flex: 1; }
+.info-name { font-size: 14px; font-weight: 700; margin-bottom: 2px; }
+.info-group { font-size: 11px; color: #aaa; margin-bottom: 4px; }
+.info-color-name { font-size: 11px; color: #888; margin-bottom: 4px; }
+.info-codes { display: flex; flex-direction: column; gap: 2px; }
+.info-code { font-size: 11px; color: #555; } .info-code span { font-weight: 700; color: #111; }
+.info-empty { color: #bbb; font-size: 13px; }
+
+/*タイムライン
+-------------------------------------*/
+.timeline-grid img {
+  width: 100%;
+  cursor: pointer;
+  transition: transform 0.3s;
+}
+
+.timeline-grid img.enlarged {
+  transform: scale(2);
+  transform-origin: top left;
+  z-index: 100;
+  position: relative;
+}
+
+.tab-buttons button {
+  padding: 6px 10px;
+  border: 1px solid #ccc;
+  cursor: pointer;
+  line-height: 1;
+  margin: 0.75rem 0;
+  height: rem;
+}
+
+.tab-buttons button.active {
+  background: #333;
+  color: white;
+  border-color: #333;
+}
+
+/*フッダー
+-------------------------------------*/
+footer {
+  text-align: right;
+  color: #666;
+}
+footer a {
+  color: #666;
+  text-decoration: none; /* リンクの下線を消す */
+  transition: color 0.3s;
+}
+
+.share-buttons {
+    text-align: center;
+    padding: 2rem 0;
+    border-top: 1px solid #AE8DBC; /* 上に細いラインを入れる */
+}
+
+.share-buttons p {
+    color: #666;
+    margin-bottom: 1rem;
+}
+
+.share-buttons a {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    margin: 0 0.5rem;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.footer-links {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-links li {
+  margin: 0 15px;
+}
+
+.footer-links a {
+  text-decoration: none;
+}
+
+/* Xのボタン（黒かラベンダーで） */
+.btn-x {
+    background: #000;
+    color: #fff;
+}
+
+/* LINEのボタン（公式色） */
+.btn-line {
+    background: #06C755;
+    color: #fff;
+}
+
+.btn-copy {
+    background: #777; /* または #a499cf (少し濃いラベンダー) */
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+.share-buttons a:hover {
+    opacity: 0.7;
+}
+
+.btn-x,
+.btn-line,
+.btn-copy {
+  display: inline-block;
+  padding: 6px 12px;
+  border-radius: 4px;
+  font-size: 14px;
+  line-height: 1;
+  margin-right: 6px;
+  text-decoration: none;
+  vertical-align: middle;
+}
+
+@media screen and (max-width: 768px){
+.head {
+  flex-direction: column;
+  text-align: left;
+  margin-bottom: 20px;
+}
+

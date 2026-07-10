@@ -1,0 +1,62 @@
+AddDefaultCharset UTF-8
+
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteBase /
+
+  # 旧URL → 新URL（ついでにクリーン化＆https固定で一発に）
+  RewriteRule ^karinhello\.php$       https://karin.heavy.jp/karin-hello     [R=301,L]
+  RewriteRule ^karinrec\.php$         https://karin.heavy.jp/karin-rec       [R=301,L]
+  RewriteRule ^karinvocalo\.php$      https://karin.heavy.jp/karin-vocalo    [R=301,L]
+  RewriteRule ^mlinemc\.php$          https://karin.heavy.jp/karin-mc        [R=301,L]
+  RewriteRule ^girlsnightoutch\.php$  https://karin.heavy.jp/karin-mc        [R=301,L]
+  RewriteRule ^karininsta\.php$       https://karin.heavy.jp/karin-insta     [R=301,L]
+  RewriteRule ^eyecatch\.php$         https://karin.heavy.jp/karin-eyecatch  [R=301,L]
+  RewriteRule ^karinsong\.php$        https://karin.heavy.jp/karin-song      [R=301,L]
+
+  # index は / に寄せる
+  RewriteRule ^index\.(php|html)$ / [R=301,L]
+
+  # 直アクセスされた .php を外して 301（クリーンURLへ）
+  RewriteCond %{THE_REQUEST} \s/+([^.\s?]+)\.php[\s?] [NC]
+  RewriteRule ^ /%1 [R=301,L]
+
+  # 旧 .html も同じくクリーンURLへ寄せる（不要なら削除可）
+  RewriteCond %{THE_REQUEST} \s/+([^.\s?]+)\.html[\s?] [NC]
+  RewriteRule ^ /%1 [R=301,L]
+
+  # クリーンURL → 実体 .php を内部配信（対応する .php がある時だけ）
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteCond %{REQUEST_FILENAME}.php -f
+  RewriteRule ^(.+?)/?$ $1.php [L]
+</IfModule>
+
+DirectoryIndex index.php index.html
+ErrorDocument 404 /404.html
+Options -Indexes
+
+<IfModule mod_expires.c>
+  ExpiresActive On
+  ExpiresByType text/css                "access plus 1 week"
+  ExpiresByType text/javascript         "access plus 1 week"
+  ExpiresByType application/javascript  "access plus 1 week"
+  ExpiresByType image/png               "access plus 1 week"
+  ExpiresByType image/jpeg              "access plus 1 week"
+  ExpiresByType image/gif               "access plus 1 week"
+  ExpiresByType image/webp              "access plus 1 week"
+  ExpiresByType image/svg+xml           "access plus 1 week"
+  ExpiresByType image/x-icon            "access plus 1 week"
+  ExpiresByType font/woff2              "access plus 1 week"
+</IfModule>
+
+# config.php 保護（2.4 / 2.2 両対応）
+<Files "config.php">
+  <IfModule mod_authz_core.c>
+    Require all denied
+  </IfModule>
+  <IfModule !mod_authz_core.c>
+    Order allow,deny
+    Deny from all
+  </IfModule>
+</Files>

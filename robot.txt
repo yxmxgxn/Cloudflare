@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Disallow: /common/
+Disallow: /Spreadsheet/
+Disallow: /Timeline/
+Sitemap: https://karin.heavy.jp/sitemap.xml
