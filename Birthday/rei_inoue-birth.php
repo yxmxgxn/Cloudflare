@@ -7,7 +7,7 @@
 ?>
 
 <main>
-<p class="site-title"><a href="/Birthday/hello-birthday">メンバー一覧に戻る</a></p>
+<p class="site-title"><a href="/hello-birthday">メンバー一覧に戻る</a></p>
 <h1>井上玲音バースデーイベント会場まとめ</h1>
 <p>井上玲音さん（2001年7月17日生まれ）のこれまでのバースデーイベントをまとめました。非公式サイトのハロプロセトリ検索システム「ToMoKo」にてセットリストが公開されていたものはリンクを貼っています。</p>
 2016年度(15歳)

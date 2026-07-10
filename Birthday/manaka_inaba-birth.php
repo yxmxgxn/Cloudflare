@@ -7,7 +7,7 @@
 ?>
 
 <main>
-<p class="site-title"><a href="/Birthday/hello-birthday">メンバー一覧に戻る</a></p>
+<p class="site-title"><a href="/hello-birthday">メンバー一覧に戻る</a></p>
 <h1>稲場愛香バースデーイベント会場まとめ</h1>
 <p>稲場愛香さん（1997年12月27日生まれ）のこれまでのバースデーイベントをまとめました。非公式サイトのハロプロセトリ検索システム「ToMoKo」にてセットリストが公開されていたものはリンクを貼っています。</p>
 2015年度(18歳)

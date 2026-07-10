@@ -7,7 +7,7 @@
 ?>
 
 <main>
-<p class="site-title"><a href="/Birthday/hello-birthday">メンバー一覧に戻る</a></p>
+<p class="site-title"><a href="/hello-birthday">メンバー一覧に戻る</a></p>
 <h1>山木梨沙バースデーイベント会場まとめ</h1>
 <p>山木梨沙さん（1997年10月14日生まれ）のこれまでのバースデーイベントをまとめました。非公式サイトのハロプロセトリ検索システム「ToMoKo」にてセットリストが公開されていたものはリンクを貼っています。</p>
 2015年度(18歳)

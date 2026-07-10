@@ -7,7 +7,7 @@
 ?>
 
 <main>
-<p class="site-title"><a href="/Birthday/hello-birthday">メンバー一覧に戻る</a></p>
+<p class="site-title"><a href="/hello-birthday">メンバー一覧に戻る</a></p>
 <h1>竹内朱莉バースデーイベント会場まとめ</h1>
 <p>竹内朱莉さん（1997年11月23日生まれ）のこれまでのバースデーイベントをまとめました。非公式サイトのハロプロセトリ検索システム「ToMoKo」にてセットリストが公開されていたものはリンクを貼っています。</p>
 2012年度(15歳)

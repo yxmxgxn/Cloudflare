@@ -7,7 +7,7 @@
 ?>
 
 <main>
-<p class="site-title"><a href="/Birthday/hello-birthday">メンバー一覧に戻る</a></p>
+<p class="site-title"><a href="/hello-birthday">メンバー一覧に戻る</a></p>
 <h1>西田汐里バースデーイベント会場まとめ</h1>
 <p>西田汐里さん（2003年6月7日生まれ）のこれまでのバースデーイベントをまとめました。非公式サイトのハロプロセトリ検索システム「ToMoKo」にてセットリストが公開されていたものはリンクを貼っています。</p>
 2019年度(16歳)

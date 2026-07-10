@@ -1,0 +1,104 @@
+#!/usr/bin/env bash
+# PHPサイトを静的HTMLに変換して public/ に出力する。
+# 使い方: BASE_URL=https://example.com bash build/build.sh
+set -euo pipefail
+
+cd "$(dirname "$0")/.."
+ROOT="$(pwd)"
+OUT="$ROOT/public"
+PORT=8123
+BASE_URL="${BASE_URL:?BASE_URL を指定してください (例: https://karin-archive.example.workers.dev)}"
+BASE_URL="${BASE_URL%/}"
+OLD_URL="https://karin.heavy.jp"
+
+rm -rf "$OUT"
+mkdir -p "$OUT"
+
+# ---- PHP ビルトインサーバー起動 ----
+php -S "127.0.0.1:$PORT" -t "$ROOT" "$ROOT/build/router.php" &>/tmp/php-server.log &
+PHP_PID=$!
+trap 'kill $PHP_PID 2>/dev/null || true' EXIT
+for i in $(seq 1 50); do
+  curl -sf -o /dev/null "http://127.0.0.1:$PORT/" && break
+  sleep 0.2
+done
+
+# ---- ページ一覧(パーシャルを除く全 .php) ----
+pages=$(find . -name '*.php' \
+  ! -path './build/*' \
+  ! -path './Spreadsheet/*' \
+  ! -path './Generated/*' \
+  ! -path './common/header.php' \
+  ! -path './common/footer.php' \
+  ! -path './common/birthday_footer.php' \
+  ! -path './Birthday/birthday_generated.php' \
+  ! -name '404.php' ! -name 'index.php' \
+  | sed 's|^\./||; s|\.php$||' | sort)
+
+# ---- レンダリング ----
+fetch() { # $1=リクエストパス $2=出力ファイル
+  mkdir -p "$(dirname "$2")"
+  curl -sf --fail-with-body "http://127.0.0.1:$PORT$1" -o "$2" \
+    || { echo "NG: $1"; cat "$2" 2>/dev/null | head -5; exit 1; }
+}
+
+fetch "/" "$OUT/index.html"
+curl -s "http://127.0.0.1:$PORT/404.php" -o "$OUT/404.html"
+count=2
+while IFS= read -r p; do
+  fetch "/$p" "$OUT/$p.html"
+  count=$((count+1))
+done <<< "$pages"
+echo "rendered $count pages"
+
+# ---- 静的アセット ----
+cp -r css img Timeline "$OUT/"
+cp sitemap.xml "$OUT/sitemap.xml"
+cp robot.txt "$OUT/robots.txt"   # 正しいファイル名に直して配置
+
+# ---- ベースURL差し替え ----
+grep -rl --include='*.html' --include='*.xml' --include='*.txt' -F "$OLD_URL" "$OUT" \
+  | xargs -r sed -i "s|$OLD_URL|$BASE_URL|g"
+
+# ---- _redirects 生成 ----
+{
+  # 旧 .htaccess 由来のレガシーURL(移動後のパスに向ける)
+  echo "/karinhello.php      /X/karin-hello        301"
+  echo "/karinrec.php        /YouTube/karin-rec    301"
+  echo "/karinvocalo.php     /X/karin-vocalo       301"
+  echo "/mlinemc.php         /YouTube/karin-mc     301"
+  echo "/girlsnightoutch.php /YouTube/karin-mc     301"
+  echo "/karininsta.php      /instagram/karin-insta 301"
+  echo "/eyecatch.php        /YouTube/karin-eyecatch 301"
+  echo "/karinsong.php       /YouTube/karin-song   301"
+  echo "/index.php / 301"
+  echo "/index.html / 301"
+  # 全ページ: .php付きURL → クリーンURL
+  while IFS= read -r p; do
+    echo "/$p.php /$p 301"
+  done <<< "$pages"
+  # ディレクトリ整理で移動したページ: 旧フラットURL → 新URL(.php付きも)
+  while IFS= read -r p; do
+    case "$p" in
+      YouTube/*|Radio/*|Juice=Juice/*|X/*|instagram/*)
+        base="${p##*/}"
+        echo "/$base /$p 301"
+        echo "/$base.php /$p 301"
+        ;;
+    esac
+  done <<< "$pages"
+} > "$OUT/_redirects"
+
+# ---- _headers 生成(旧 .htaccess の Expires 設定を再現) ----
+cat > "$OUT/_headers" <<'EOF'
+/css/*
+  Cache-Control: public, max-age=604800
+/img/*
+  Cache-Control: public, max-age=604800
+/Timeline/*
+  Cache-Control: public, max-age=604800
+EOF
+
+kill $PHP_PID 2>/dev/null || true
+trap - EXIT
+echo "build complete: $OUT"

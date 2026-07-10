@@ -15,7 +15,7 @@ from pathlib import Path
 
 REPO_ROOT = Path(__file__).resolve().parent.parent  # Python/ の親
 
-OUTPUT_PATH = REPO_ROOT / "SpreadSheet" / "vocalo_table.php"
+OUTPUT_PATH = REPO_ROOT / "Spreadsheet" / "vocalo_table.php"
 OUTPUT_GENERATED = REPO_ROOT / "Generated" / "vocalo_generated.php"
 
 def fetch_csv(spreadsheet_id: str, gid: str) -> list[list[str]]:
@@ -123,7 +123,7 @@ def main():
         f.write(content)
 
     meta = f'<p class="last-update">データ取得日：{generated}</p>\n'
-    with open("vocalo_generated.php", "w", encoding="utf-8") as f:
+    with open(OUTPUT_GENERATED, "w", encoding="utf-8") as f:
         f.write(meta)
 
     print(f"生成完了: {OUTPUT_PATH} ({len(data)-1} 行処理)")

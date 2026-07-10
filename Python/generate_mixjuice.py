@@ -16,8 +16,8 @@ from pathlib import Path
 
 REPO_ROOT = Path(__file__).resolve().parent.parent  # Python/ の親
 
-OUTPUT_PATH = REPO_ROOT / "SpreadSheet" / "mixjuice_table.php"
-OUTPUT_GENERATED = REPO_ROOT / "Generated" / "mixjuice_generated.php
+OUTPUT_PATH = REPO_ROOT / "Spreadsheet" / "mixjuice_table.php"
+OUTPUT_GENERATED = REPO_ROOT / "Generated" / "mixjuice_generated.php"
 
 def fetch_csv(spreadsheet_id: str, gid: str) -> list[list[str]]:
     url = (
@@ -106,7 +106,7 @@ def main():
     with open(OUTPUT_GENERATED, "w", encoding="utf-8") as f:
         f.write(f'<p class="last-update">データ取得日：{generated}</p>\n')
 
-    print(f"生成完了: {OUTPUT_TABLE} / {OUTPUT_GENERATED} ({len(data)-1} 行処理)")
+    print(f"生成完了: {OUTPUT_PATH} / {OUTPUT_GENERATED} ({len(data)-1} 行処理)")
 
 if __name__ == "__main__":
     main()

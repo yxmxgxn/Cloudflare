@@ -12,7 +12,7 @@
   <dt>2026-06-16</dt>
   <dd><a href="disclaimer">免責事項</a>のページを追加</dd>
   <dt>2026-06-10</dt>
-  <dd><a href="/Birthday/hello-birthday">バースデーイベント</a>のページを追加</dd>
+  <dd><a href="/hello-birthday">バースデーイベント</a>のページを追加</dd>
   <dt>2026-05-24</dt>
   <dd><a href="hello-timeline">ハロプロタイムライン</a>のページを追加</dd>
   <dt>2026-05-21</dt>

@@ -125,7 +125,7 @@ def build_php(member_name: str, events: list[dict], generated_date: str) -> str:
         f'  include $_SERVER[\'DOCUMENT_ROOT\'] . \'/common/header.php\';\n'
         f'?>\n\n'
         f'<main>\n'
-        f'<p class="site-title"><a href="/Birthday/hello-birthday">メンバー一覧に戻る</a></p>\n'
+        f'<p class="site-title"><a href="/hello-birthday">メンバー一覧に戻る</a></p>\n'
         f'<h1>{escape_html(member_name)}バースデーイベント会場まとめ</h1>\n'
         f'<p>{escape_html(member_name)}さん（{escape_html(birthday)}生まれ）のこれまでのバースデーイベントをまとめました。'
         f'非公式サイトのハロプロセトリ検索システム「ToMoKo」にてセットリストが公開されていたものはリンクを貼っています。</p>\n'

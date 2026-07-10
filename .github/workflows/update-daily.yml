@@ -1,0 +1,46 @@
+name: Daily data update (members & timeline)
+
+on:
+  schedule:
+    - cron: '0 18 * * *'   # 毎日 JST 3:00
+  workflow_dispatch:
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      actions: write
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install dependencies
+        run: |
+          sudo apt-get -qq update && sudo apt-get -qq install -y fonts-noto-cjk
+          pip install pandas matplotlib requests
+
+      - name: Generate members table
+        run: python Python/generate_members.py
+
+      - name: Generate timeline images
+        run: python Python/timeline.py
+
+      - name: Commit & push if changed
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add Spreadsheet Generated Timeline
+          if git diff --cached --quiet; then
+            echo "変更なし"
+          else
+            git commit -m "自動更新: メンバー表・タイムライン ($(date -u +%Y-%m-%d))"
+            git push
+            # GITHUB_TOKENによるpushはon:pushを発火させないため明示的にデプロイを起動
+            gh workflow run deploy.yml --ref main
+          fi
+        env:
+          GH_TOKEN: ${{ github.token }}

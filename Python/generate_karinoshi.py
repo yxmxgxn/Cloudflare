@@ -15,8 +15,8 @@ SPREADSHEET_ID   = "1OFJRhLK1cn20XTMHnHAm9bqmf7Ubr7getICZJOXfnDY"
 SHEET_GID        = "2021582423"
 REPO_ROOT = Path(__file__).resolve().parent.parent  # Python/ の親
 
-OUTPUT_CARDS = REPO_ROOT / "SpreadSheet" / "karinoshi_cards.php"
-OUTPUT_PREFS = REPO_ROOT / "SpreadSheet" / "karinoshi_prefs.php"
+OUTPUT_CARDS = REPO_ROOT / "Spreadsheet" / "karinoshi_cards.php"
+OUTPUT_PREFS = REPO_ROOT / "Spreadsheet" / "karinoshi_prefs.php"
 OUTPUT_GENERATED = REPO_ROOT / "Generated" / "karinoshi_generated.php"
 
 PREF_ORDER = [

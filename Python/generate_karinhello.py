@@ -16,8 +16,8 @@ from pathlib import Path
 
 REPO_ROOT = Path(__file__).resolve().parent.parent  # Python/ の親
 
-OUTPUT_TABLE = REPO_ROOT / "SpreadSheet" / "vkarin-hello_table.php"
-OUTPUT_ARTISTS = REPO_ROOT / "SpreadSheet" / "karin-hello_artists.php"
+OUTPUT_TABLE = REPO_ROOT / "Spreadsheet" / "karin-hello_table.php"
+OUTPUT_ARTISTS = REPO_ROOT / "Spreadsheet" / "karin-hello_artists.php"
 OUTPUT_GENERATED = REPO_ROOT / "Generated" / "karin-hello_generated.php"
 
 def fetch_csv(spreadsheet_id: str, gid: str) -> list[list[str]]:
