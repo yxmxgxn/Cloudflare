@@ -23,8 +23,14 @@ jobs:
           sudo apt-get -qq update && sudo apt-get -qq install -y fonts-noto-cjk
           pip install pandas matplotlib requests
 
-      - name: Generate members table
-        run: python Python/generate_members.py
+      - name: Generate spreadsheet tables
+        run: |
+          failed=0
+          for script in members vocalo karinhello mixjuice karinoshi; do
+            echo "=== generate_${script}.py ==="
+            python "Python/generate_${script}.py" || { echo "::error::${script} failed"; failed=1; }
+          done
+          exit $failed
 
       - name: Generate timeline images
         run: python Python/timeline.py
@@ -37,7 +43,7 @@ jobs:
           if git diff --cached --quiet; then
             echo "変更なし"
           else
-            git commit -m "自動更新: メンバー表・タイムライン ($(date -u +%Y-%m-%d))"
+            git commit -m "自動更新: テーブル・タイムライン ($(date -u +%Y-%m-%d))"
             git push
             # GITHUB_TOKENによるpushはon:pushを発火させないため明示的にデプロイを起動
             gh workflow run deploy.yml --ref main
