@@ -40,6 +40,10 @@ jobs:
           wranglerVersion: '4'
           command: deploy
 
+      - name: Dump wrangler logs on failure
+        if: failure()
+        run: cat /home/runner/.config/.wrangler/logs/*.log || true
+
       - name: IndexNow Notification
         env:
           INDEXNOW_KEY: ${{ secrets.INDEXNOW_KEY }}
