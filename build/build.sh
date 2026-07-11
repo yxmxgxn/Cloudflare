@@ -75,6 +75,11 @@ if [ -n "${INDEXNOW_KEY:-}" ]; then
   printf '%s' "$INDEXNOW_KEY" > "$OUT/$INDEXNOW_KEY.txt"
 fi
 
+# ---- CSSキャッシュバスティング(コミットIDをバージョンとして付与) ----
+VER=$(git rev-parse --short HEAD 2>/dev/null || date +%s)
+grep -rl --include='*.html' -F '/css/style.css' "$OUT" \
+  | xargs -r sed -i "s|/css/style.css|/css/style.css?v=$VER|g"
+
 # ---- ベースURL差し替え ----
 grep -rl --include='*.html' --include='*.xml' --include='*.txt' -F "$OLD_URL" "$OUT" \
   | xargs -r sed -i "s|$OLD_URL|$BASE_URL|g"
