@@ -1,5 +1,4 @@
-<!-- generated: 2026-07-11T17:32:54.534009+00:00 -->
-<option value="BEYOOOONDS">BEYOOOONDS</option>
+<!-- generated: 2026-07-11T18:03:03.229336+00:00 -->
 <option value="BEYOOOOONDS">BEYOOOOONDS</option>
 <option value="Berryz工房">Berryz工房</option>
 <option value="Buono!">Buono!</option>
@@ -22,4 +21,7 @@
 <option value="ミニモニ。">ミニモニ。</option>
 <option value="メロン記念日">メロン記念日</option>
 <option value="モーニング娘。">モーニング娘。</option>
+<option value="平家みちよ">平家みちよ</option>
+<option value="松浦亜弥">松浦亜弥</option>
+<option value="真野恵里菜">真野恵里菜</option>
 <option value="美勇伝">美勇伝</option>
