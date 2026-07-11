@@ -620,6 +620,21 @@ footer a {
   white-space: nowrap;
 }
 
+#mv-lead {
+  padding: 6px 12px;
+  border: 1px solid #ccc;
+  background: #fff;
+  cursor: pointer;
+  font-size: 14px;
+  border-radius: 4px;
+}
+
+#mv-lead.active {
+  background: #E8789A;
+  border-color: #E8789A;
+  color: #fff;
+}
+
 #movies-cards {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));

@@ -35,6 +35,7 @@
     <option value="">すべてのグループ</option>
     <?php include $_SERVER['DOCUMENT_ROOT'] . '/Spreadsheet/movies_groups.php'; ?>
   </select>
+  <button type="button" id="mv-lead" onclick="mvLead()">主演のみ</button>
   <select id="mv-sort" onchange="mvFilter()">
     <option value="date-desc">公開日が新しい順</option>
     <option value="date-asc">公開日が古い順</option>
@@ -59,8 +60,11 @@
       genre: el.getAttribute('data-genre') || '',
       groups: (el.getAttribute('data-groups') || '').split('|'),
       search: (el.getAttribute('data-search') || '').toLowerCase(),
+      leadSearch: (el.getAttribute('data-lead-search') || '').toLowerCase(),
+      hasLead: el.getAttribute('data-has-lead') === '1',
     };
   });
+  var leadOnly = false;
 
   function mvFilter() {
     var q = document.getElementById('mv-search').value.toLowerCase();
@@ -69,10 +73,12 @@
     var sort = document.getElementById('mv-sort').value;
 
     var filtered = allCards.filter(function(c) {
-      var matchQ = !q || c.search.indexOf(q) !== -1;
+      // 主演のみON時は主演者名(+タイトル・監督)だけを検索対象にする
+      var matchQ = !q || (leadOnly ? c.leadSearch : c.search).indexOf(q) !== -1;
       var matchG = !gFilter || c.genre === gFilter;
       var matchGr = !grFilter || c.groups.indexOf(grFilter) !== -1;
-      return matchQ && matchG && matchGr;
+      var matchLead = !leadOnly || c.hasLead;
+      return matchQ && matchG && matchGr && matchLead;
     });
 
     filtered.sort(function(a, b) {
@@ -94,6 +100,13 @@
   function mvToggle(id) {
     var el = document.getElementById('mv-cast-' + id);
     if (el) el.style.display = (el.style.display === 'none') ? '' : 'none';
+  }
+
+  // 主演のみトグル
+  function mvLead() {
+    leadOnly = !leadOnly;
+    document.getElementById('mv-lead').classList.toggle('active', leadOnly);
+    mvFilter();
   }
 
   // メンバー名クリックでそのメンバーで絞り込み
@@ -128,6 +141,7 @@
   mvFilter();
 
   window.mvFilter = mvFilter;
+  window.mvLead = mvLead;
   window.mvToggle = mvToggle;
   window.mvByName = mvByName;
   window.mvMore = mvMore;

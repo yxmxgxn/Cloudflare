@@ -179,6 +179,10 @@ def build_cards(movies: list[dict], cast_by_movie: dict, master_groups: dict) ->
 
         members = " ".join((c.get("Member") or "").strip() for c in cast)
         roles = " ".join((c.get("Role_name") or "").strip() for c in cast)
+        leads = " ".join(
+            (c.get("Member") or "").strip() for c in cast
+            if (c.get("Credit") or "").strip() == "主演"
+        )
         # 出演時のグループ + キャストマスターで割り振ったグループの両方で絞り込めるようにする
         group_set = {(c.get("Group") or "").strip() for c in cast if (c.get("Group") or "").strip()}
         for c in cast:
@@ -213,7 +217,9 @@ def build_cards(movies: list[dict], cast_by_movie: dict, master_groups: dict) ->
             f'<div class="movie-card" data-date="{esc(sort_date(m.get("Date")))}"'
             f' data-genre="{esc(m.get("Genre"))}" data-groups="{esc("|".join(groups))}"'
             f' data-title="{esc(m.get("Title"))}"'
-            f' data-search="{esc(" ".join([m.get("Title") or "", m.get("Director") or "", members, roles]))}">'
+            f' data-search="{esc(" ".join([m.get("Title") or "", m.get("Director") or "", members, roles]))}"'
+            f' data-lead-search="{esc(" ".join([m.get("Title") or "", m.get("Director") or "", leads]))}"'
+            f' data-has-lead="{"1" if leads else ""}">'
             f'<p class="mv-card-title">{esc(m.get("Title"))}</p>'
             f'<p class="mv-meta">{meta}</p>'
             f"{build_members_line(cast, mid)}"
