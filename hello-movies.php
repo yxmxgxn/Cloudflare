@@ -96,6 +96,13 @@
     if (el) el.style.display = (el.style.display === 'none') ? '' : 'none';
   }
 
+  // メンバー名クリックでそのメンバーで絞り込み
+  function mvByName(name) {
+    document.getElementById('mv-search').value = name;
+    mvFilter();
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+
   // 「…他n人」で出演者全員を表示
   function mvMore(id) {
     var span = document.getElementById('mv-more-' + id);
@@ -122,6 +129,7 @@
 
   window.mvFilter = mvFilter;
   window.mvToggle = mvToggle;
+  window.mvByName = mvByName;
   window.mvMore = mvMore;
   window.mvPlay = mvPlay;
 })();

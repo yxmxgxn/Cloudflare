@@ -664,6 +664,39 @@ footer a {
   padding: 0 2px;
 }
 
+.movie-card .mv-name {
+  border: none;
+  background: none;
+  color: inherit;
+  cursor: pointer;
+  font-size: 13px;
+  padding: 0;
+  text-decoration: underline dotted #aaa;
+  text-underline-offset: 2px;
+}
+
+.movie-card .mv-name:hover {
+  color: #06c;
+}
+
+.movie-card .mv-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  margin-top: auto;
+}
+
+.movie-card .mv-stream {
+  font-size: 12px;
+  margin-left: auto;
+}
+
+.movie-card .mv-stream a {
+  margin-left: 8px;
+  white-space: nowrap;
+}
+
 .movie-card .mv-trailer {
   position: relative;
   border: none;

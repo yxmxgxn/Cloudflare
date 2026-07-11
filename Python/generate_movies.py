@@ -46,37 +46,40 @@ def sort_date(s: str) -> str:
     return (s or "").strip()
 
 
-def build_links(m: dict) -> str:
-    """外部サイトリンク(IDがある列だけ)"""
+def _link(label: str, url: str) -> str:
+    return f'<a href="{esc(url)}" target="_blank" rel="noopener noreferrer">{label}</a>'
+
+
+def build_info_links(m: dict) -> str:
+    """1段目: 情報サイトリンク(IDがある列だけ)"""
     links = []
-
-    def add(label, url):
-        links.append(
-            f'<a href="{esc(url)}" target="_blank" rel="noopener noreferrer">{label}</a>'
-        )
-
     e_tr = (m.get("E_Trailer") or "").strip()
     if e_tr:
-        add("予告編(映画.com)", f"https://eiga.com/movie/{e_tr}/video/")
+        links.append(_link("予告編(映画.com)", f"https://eiga.com/movie/{e_tr}/video/"))
     wiki = (m.get("Wikipedia") or "").strip()
     if wiki:
-        add("Wikipedia", wiki)
+        links.append(_link("Wikipedia", wiki))
     fm = (m.get("filmarks") or "").strip()
     if fm:
-        add("Filmarks", f"https://filmarks.com/movies/{fm}")
+        links.append(_link("Filmarks", f"https://filmarks.com/movies/{fm}"))
     eg = (m.get("eiga_com") or "").strip()
     if eg:
-        add("映画.com", f"https://eiga.com/movie/{eg}/")
+        links.append(_link("映画.com", f"https://eiga.com/movie/{eg}/"))
     ac = (m.get("all_cinemas") or "").strip()
     if ac:
-        add("allcinema", f"https://www.allcinema.net/cinema/{ac}")
+        links.append(_link("allcinema", f"https://www.allcinema.net/cinema/{ac}"))
+    return " ".join(links)
+
+
+def build_stream_links(m: dict) -> str:
+    """2段目右寄せ: 配信サービスリンク"""
+    links = []
     pv = (m.get("Prime_Video") or "").strip()
     if pv:
-        add("Prime Video", f"https://www.amazon.co.jp/gp/video/detail/{pv}")
+        links.append(_link("Prime Video", f"https://www.amazon.co.jp/gp/video/detail/{pv}"))
     un = (m.get("U-next") or "").strip()
     if un:
-        add("U-NEXT", f"https://www.video.unext.jp/title/{un}/")
-
+        links.append(_link("U-NEXT", f"https://www.video.unext.jp/title/{un}/"))
     return " ".join(links)
 
 
@@ -104,17 +107,23 @@ def build_cast_detail(cast: list[dict]) -> str:
 
 
 def build_members_line(cast: list[dict], mid: str) -> str:
-    """カードに常時表示する出演者名(5人超は「…他n人」で展開)"""
+    """カードに常時表示する出演者名(クリックでそのメンバー絞り込み、5人超は「…他n人」で展開)"""
     names = [(c.get("Member") or "").strip() for c in cast if (c.get("Member") or "").strip()]
     if not names:
         return ""
+
+    def name_btn(n: str) -> str:
+        return (
+            f'<button type="button" class="mv-name" onclick="mvByName(\'{esc(n)}\')">{esc(n)}</button>'
+        )
+
     if len(names) <= MEMBER_LIMIT:
-        return f'<p class="mv-members">出演: {esc("、".join(names))}</p>'
-    head = "、".join(names[:MEMBER_LIMIT])
-    rest = "、".join(names[MEMBER_LIMIT:])
+        return f'<p class="mv-members">出演: {"、".join(name_btn(n) for n in names)}</p>'
+    head = "、".join(name_btn(n) for n in names[:MEMBER_LIMIT])
+    rest = "、".join(name_btn(n) for n in names[MEMBER_LIMIT:])
     return (
-        f'<p class="mv-members">出演: {esc(head)}'
-        f'<span id="mv-more-{esc(mid)}" style="display:none">、{esc(rest)}</span>'
+        f'<p class="mv-members">出演: {head}'
+        f'<span id="mv-more-{esc(mid)}" style="display:none">、{rest}</span>'
         f'<button type="button" class="mv-more-btn" id="mv-more-btn-{esc(mid)}"'
         f' onclick="mvMore(\'{esc(mid)}\')">…他{len(names) - MEMBER_LIMIT}人</button></p>'
     )
@@ -147,20 +156,28 @@ def build_cards(movies: list[dict], cast_by_movie: dict) -> str:
         groups = sorted({(c.get("Group") or "").strip() for c in cast if (c.get("Group") or "").strip()})
 
         meta = " / ".join(x for x in [
-            esc(m.get("Date")),
+            esc(sort_date(m.get("Date"))),
             esc(m.get("Genre")),
             ("監督: " + esc(m.get("Director"))) if (m.get("Director") or "").strip() else "",
         ] if x)
 
-        detail = ""
+        detail_btn = ""
+        detail_body = ""
         if cast:
-            detail = (
+            detail_btn = (
                 f'<button type="button" class="mv-detail-btn" onclick="mvToggle(\'{esc(mid)}\')">詳細(役名など)</button>'
+            )
+            detail_body = (
                 f'<div class="mv-cast" id="mv-cast-{esc(mid)}" style="display:none">{build_cast_detail(cast)}</div>'
             )
 
-        links = build_links(m)
-        links_html = f'<p class="mv-links">{links}</p>' if links else ""
+        info = build_info_links(m)
+        info_html = f'<p class="mv-links">{info}</p>' if info else ""
+        stream = build_stream_links(m)
+        stream_html = f'<span class="mv-stream">{stream}</span>' if stream else ""
+        bottom = ""
+        if detail_btn or stream_html:
+            bottom = f'<div class="mv-bottom">{detail_btn}{stream_html}</div>'
 
         cards.append(
             f'<div class="movie-card" data-date="{esc(sort_date(m.get("Date")))}"'
@@ -171,8 +188,9 @@ def build_cards(movies: list[dict], cast_by_movie: dict) -> str:
             f'<p class="mv-meta">{meta}</p>'
             f"{build_members_line(cast, mid)}"
             f"{build_trailer(m, mid)}"
-            f"{links_html}"
-            f"{detail}"
+            f"{info_html}"
+            f"{bottom}"
+            f"{detail_body}"
             "</div>"
         )
     return "\n".join(cards)
