@@ -5,6 +5,7 @@ PHPインクルード用のテーブル・フィルタ選択肢フラグメン�
 """
 
 import csv
+import re
 import html
 import io
 import urllib.request
@@ -17,6 +18,7 @@ PUB_BASE = (
 )
 GID_MOVIES = "777837729"
 GID_CAST = "389226267"
+GID_CAST_MASTER = "0"  # キャストマスター(Group列以降=そのキャストに割り振ったグループ)
 
 REPO_ROOT = Path(__file__).resolve().parent.parent  # Python/ の親
 
@@ -32,6 +34,30 @@ def fetch_csv(gid: str) -> list[dict]:
         content = res.read().decode("utf-8")
     reader = csv.DictReader(io.StringIO(content))
     return [row for row in reader]
+
+
+def fetch_cast_master_groups() -> dict[str, list[str]]:
+    """キャストマスターから Cast_id → 割り振られたグループ一覧(Group列以降)を作る"""
+    url = f"{PUB_BASE}?gid={GID_CAST_MASTER}&single=true&output=csv"
+    with urllib.request.urlopen(url) as res:
+        content = res.read().decode("utf-8")
+    rows = list(csv.reader(io.StringIO(content)))
+    if not rows:
+        return {}
+    header = rows[0]
+    id_idx = header.index("Cast_id")
+    group_idx = header.index("Group")
+    result: dict[str, list[str]] = {}
+    for row in rows[1:]:
+        if len(row) <= id_idx or not row[id_idx].strip():
+            continue
+        groups = [
+            v.strip() for v in row[group_idx:]
+            if v.strip() and not re.match(r"^\d+行$", v.strip())  # シート上のメモを除外
+        ]
+        if groups:
+            result[row[id_idx].strip()] = groups
+    return result
 
 
 def esc(s: str) -> str:
@@ -142,7 +168,7 @@ def build_trailer(m: dict, mid: str) -> str:
     )
 
 
-def build_cards(movies: list[dict], cast_by_movie: dict) -> str:
+def build_cards(movies: list[dict], cast_by_movie: dict, master_groups: dict) -> str:
     cards = []
     for m in movies:
         mid = (m.get("Movie_id") or "").strip()
@@ -153,7 +179,11 @@ def build_cards(movies: list[dict], cast_by_movie: dict) -> str:
 
         members = " ".join((c.get("Member") or "").strip() for c in cast)
         roles = " ".join((c.get("Role_name") or "").strip() for c in cast)
-        groups = sorted({(c.get("Group") or "").strip() for c in cast if (c.get("Group") or "").strip()})
+        # 出演時のグループ + キャストマスターで割り振ったグループの両方で絞り込めるようにする
+        group_set = {(c.get("Group") or "").strip() for c in cast if (c.get("Group") or "").strip()}
+        for c in cast:
+            group_set.update(master_groups.get((c.get("Cast_id") or "").strip(), []))
+        groups = sorted(group_set)
 
         meta = " / ".join(x for x in [
             esc(sort_date(m.get("Date"))),
@@ -206,6 +236,7 @@ def main():
 
     movies = fetch_csv(GID_MOVIES)
     cast_rows = fetch_csv(GID_CAST)
+    master_groups = fetch_cast_master_groups()
 
     cast_by_movie: dict[str, list[dict]] = {}
     for c in cast_rows:
@@ -214,13 +245,16 @@ def main():
             cast_by_movie.setdefault(mid, []).append(c)
 
     genres = sorted({(m.get("Genre") or "").strip() for m in movies if (m.get("Genre") or "").strip()})
-    groups = sorted({(c.get("Group") or "").strip() for c in cast_rows if (c.get("Group") or "").strip()})
+    group_set = {(c.get("Group") or "").strip() for c in cast_rows if (c.get("Group") or "").strip()}
+    for gs in master_groups.values():
+        group_set.update(gs)
+    groups = sorted(group_set)
 
     stamp = f"<!-- generated: {datetime.now(timezone.utc).isoformat()} -->\n"
 
     OUTPUT_GENERATED.parent.mkdir(parents=True, exist_ok=True)
     with open(OUTPUT_CARDS, "w", encoding="utf-8") as f:
-        f.write(stamp + build_cards(movies, cast_by_movie) + "\n")
+        f.write(stamp + build_cards(movies, cast_by_movie, master_groups) + "\n")
     with open(OUTPUT_GENRES, "w", encoding="utf-8") as f:
         f.write(stamp + build_options(genres) + "\n")
     with open(OUTPUT_GROUPS, "w", encoding="utf-8") as f:

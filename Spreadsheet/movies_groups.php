@@ -1,4 +1,5 @@
-<!-- generated: 2026-07-11T17:08:37.483828+00:00 -->
+<!-- generated: 2026-07-11T17:32:54.534009+00:00 -->
+<option value="BEYOOOONDS">BEYOOOONDS</option>
 <option value="BEYOOOOONDS">BEYOOOOONDS</option>
 <option value="Berryz工房">Berryz工房</option>
 <option value="Buono!">Buono!</option>
@@ -7,12 +8,17 @@
 <option value="THE ポッシボー">THE ポッシボー</option>
 <option value="℃-ute">℃-ute</option>
 <option value="こぶしファクトリー">こぶしファクトリー</option>
+<option value="つばきファクトリー">つばきファクトリー</option>
 <option value="アップアップガールズ（2）">アップアップガールズ（2）</option>
 <option value="アップアップガールズ（仮）">アップアップガールズ（仮）</option>
 <option value="アンジュルム">アンジュルム</option>
 <option value="カントリー娘。">カントリー娘。</option>
 <option value="ココナッツ娘。">ココナッツ娘。</option>
 <option value="スマイレージ">スマイレージ</option>
+<option value="ハロプロエッグ">ハロプロエッグ</option>
+<option value="ハロプロキッズ">ハロプロキッズ</option>
+<option value="ハロプロ研修生">ハロプロ研修生</option>
+<option value="ハロプロ関西">ハロプロ関西</option>
 <option value="ミニモニ。">ミニモニ。</option>
 <option value="メロン記念日">メロン記念日</option>
 <option value="モーニング娘。">モーニング娘。</option>
