@@ -1,4 +1,9 @@
-<!-- generated: 2026-07-11T18:51:38.914377+00:00 -->
+<!-- generated: 2026-07-12T18:56:04.889535+00:00 -->
+<div class="karin-card" data-pref="東京都">
+<p class="karin-header">東京都 東京ぼーの トーキョーリッチチーズケーキ</p>
+
+<p class="karin-tbs"><a href="https://www.tbsradio.jp/articles/110167/" target="_blank" rel="noopener noreferrer">放送日2026/07/12ページ</a></p>
+</div>
 <div class="karin-card" data-pref="日本航空">
 <p class="karin-header">日本航空 日本航空 ドライなっとう</p>
 <div class="karin-embed-placeholder" data-embed="<blockquote class=&quot;twitter-tweet&quot;><p lang=&quot;ja&quot; dir=&quot;ltr&quot;>今朝の <a href=&quot;https://x.com/hashtag/%E3%82%AB%E3%83%AA%E3%83%B3%E3%82%AA%E3%82%B7?src=hash&amp;ref_src=twsrc%5Etfw&quot;>#カリンオシ</a> は…ちょっと番外編をお届け😋<a href=&quot;https://x.com/hashtag/%E6%97%A5%E6%9C%AC%E8%88%AA%E7%A9%BA?src=hash&amp;ref_src=twsrc%5Etfw&quot;>#日本航空</a> の <a href=&quot;https://x.com/hashtag/%E3%83%89%E3%83%A9%E3%82%A4%E3%81%AA%E3%81%A3%E3%81%A8%E3%81%86?src=hash&amp;ref_src=twsrc%5Etfw&quot;>#ドライなっとう</a> をご紹介✈️<br><br>通称 <a href=&quot;https://x.com/hashtag/JAL?src=hash&amp;ref_src=twsrc%5Etfw&quot;>#JAL</a> の機内でも提供されていたり、空港でお土産としても購入できます✈️🌈<br>(利用する路線やクラスによって提供の有無が異なります)<br><br>みなさんもぜひ食べてみてくださいね〜😊✨<a href=&quot;https://x.com/hashtag/%E5%AE%AE%E6%9C%AC%E4%BD%B3%E6%9E%97?src=hash&amp;ref_src=twsrc%5Etfw&quot;>#宮本佳林</a> <a href=&quot;https://x.com/hashtag/TBS%E3%83%A9%E3%82%B8%E3%82%AA?src=hash&amp;ref_src=twsrc%5Etfw&quot;>#TBSラジオ</a> <a href=&quot;https://t.co/CfyAqptsZv&quot;>pic.twitter.com/CfyAqptsZv</a></p>&mdash; TBSラジオ_Music Palette♪ (@PaletteTbs) <a href=&quot;https://x.com/PaletteTbs/status/2073497076118475031?ref_src=twsrc%5Etfw&quot;>July 4, 2026</a></blockquote>"></div>
