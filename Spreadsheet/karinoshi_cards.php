@@ -1,4 +1,4 @@
-<!-- generated: 2026-07-12T18:56:04.889535+00:00 -->
+<!-- generated: 2026-07-13T19:16:48.365183+00:00 -->
 <div class="karin-card" data-pref="東京都">
 <p class="karin-header">東京都 東京ぼーの トーキョーリッチチーズケーキ</p>
 

@@ -1,4 +1,4 @@
-<!-- generated: 2026-07-12T18:56:03.838071+00:00 -->
+<!-- generated: 2026-07-13T19:16:47.516580+00:00 -->
 <tr data-selector="松永里愛"><td><a href="https://www.tbsradio.jp/articles/110167/" target="_blank" rel="noopener noreferrer">2026/07/12</a></td><td>預言者 / Tempalay</td><td>松永里愛</td><td>細部まで細かく聴きたい曲</td></tr>
 <tr data-selector="江端妃咲"><td><a href="https://www.tbsradio.jp/articles/110167/" target="_blank" rel="noopener noreferrer">2026/07/12</a></td><td>KOKORO&amp;KARADA / モーニング娘。’20</td><td>江端妃咲</td><td>細部まで細かく聴きたい曲</td></tr>
 <tr data-selector="松永里愛&amp;江端妃咲"><td><a href="https://www.tbsradio.jp/articles/110167/" target="_blank" rel="noopener noreferrer">2026/07/12</a></td><td>結論から言ってちょうだい / Juice＝Juice</td><td>松永里愛&amp;江端妃咲</td><td>細部まで細かく聴きたい曲</td></tr>
