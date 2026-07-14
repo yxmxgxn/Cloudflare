@@ -19,6 +19,8 @@
   宮本佳林さんがXでハロープロジェクトサブスク解禁にともない毎日ハロプロの曲を<a href="https://x.com/search?q=%23%E4%BD%B3%E6%9E%97%E3%81%AE1%E6%97%A51%E3%83%8F%E3%83%AD%20from%3A%40karin__miyamoto&src=typed_query&f=live" target="_blank" rel="noopener noreferrer">#佳林の１日１ハロ</a>で1曲紹介する企画をまとめました。<br>
   日付に元ポスト・アルバム名に公式のリンク・YouTube MusicのURLや作詞作曲編曲などをいれています。<br>
   アーティスト名・作詞作曲編曲でフィルタをかけられます。<br>
+  <a href="https://music.youtube.com/playlist?list=PLayn2_W-cVe4" target="_blank" rel="noopener noreferrer">YouTube Musicのプレイリスト</a>を作りました。<br>
+  日付に元ポスト・アルバム名に公式のリンク・YouTube MusicのURLや作詞作曲編曲などをいれています。<br>
   <a href="https://docs.google.com/spreadsheets/d/1kmPtWU7KqQIaNUfX_-kdW0mElJ5zVgFGZqY9h8IXQJU/edit?gid=0#gid=0" target="_blank" rel="noopener noreferrer">ファイルを操作した場合はこちら（スプレッドシート）</a><br>
 
 <div id="karinhello-controls">
