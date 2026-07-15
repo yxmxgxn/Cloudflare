@@ -10,6 +10,23 @@
 <p class="site-title"><a href="/hello-birthday">メンバー一覧に戻る</a></p>
 <h1>真野恵里菜バースデーイベント会場まとめ</h1>
 <p>真野恵里菜さん（1991年4月11日生まれ）のこれまでのバースデーイベントをまとめました。非公式サイトのハロプロセトリ検索システム「ToMoKo」にてセットリストが公開されていたものはリンクを貼っています。</p>
+2011年度(20歳)
+<table class="birthday-table">
+<thead>
+<tr>
+<th>日付</th>
+<th>開演</th>
+<th>イベント名</th>
+<th>会場</th>
+<th>都道府県</th>
+<th>セットリスト</th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td>2011年4月16日</td><td></td><td>真野 Friends Party vol.5～from19910411 未の女 20TH DREAM BIRTHDAY～</td><td>横浜BLITZ</td><td>神奈川県</td><td></td></tr>
+<tr><td>2011年4月16日</td><td></td><td>真野 Friends Party vol.5～from19910411 未の女 20TH DREAM BIRTHDAY～</td><td>横浜BLITZ</td><td>神奈川県</td><td></td></tr>
+</tbody>
+</table>
 2012年度(21歳)
 <table class="birthday-table">
 <thead>

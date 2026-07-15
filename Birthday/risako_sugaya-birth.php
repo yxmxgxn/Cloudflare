@@ -44,6 +44,22 @@
 <tr><td>2014年4月4日</td><td>20:10</td><td>Berryz工房 菅谷梨沙子バースデーイベント2014</td><td>TOKYO FM HALL</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/3853" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
 </tbody>
 </table>
+2025年度(31歳)
+<table class="birthday-table">
+<thead>
+<tr>
+<th>日付</th>
+<th>開演</th>
+<th>イベント名</th>
+<th>会場</th>
+<th>都道府県</th>
+<th>セットリスト</th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td>2025年4月29日</td><td></td><td>𝐏𝐨𝐧𝐭 𝐈𝐧𝐯𝐢𝐬𝐢𝐛𝐥𝐞 1st Fan Meeting / Risako's Birthday</td><td></td><td></td><td></td></tr>
+</tbody>
+</table>
 2026年度(32歳)
 <table class="birthday-table">
 <thead>
@@ -57,7 +73,7 @@
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td>2026年4月19日</td><td></td><td>菅谷梨沙子バースデーイベント2026</td><td></td><td></td><td></td></tr>
+<tr class="row-even"><td>2026年4月19日</td><td></td><td>𝐏𝐨𝐧𝐭 𝐈𝐧𝐯𝐢𝐬𝐢𝐛𝐥𝐞 1周年/birthdayイベント</td><td></td><td></td><td></td></tr>
 </tbody>
 </table>
 

@@ -161,8 +161,8 @@
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td>2022年6月3日</td><td></td><td>Nakanishi Kana Birthday Special Event 2022</td><td>表参道 WALL&amp;WALL</td><td>東京都</td><td></td></tr>
-<tr><td>2022年6月3日</td><td></td><td>Nakanishi Kana Birthday Special Event 2022</td><td>表参道 WALL&amp;WALL</td><td>東京都</td><td></td></tr>
+<tr class="row-even"><td>2022年6月3日</td><td>18:00</td><td>中西香菜 Birthday Special Event 2022</td><td>表参道 WALL&amp;WALL</td><td>東京都</td><td></td></tr>
+<tr><td>2022年6月3日</td><td>20:00</td><td>中西香菜 Birthday Special Event 2022</td><td>表参道 WALL&amp;WALL</td><td>東京都</td><td></td></tr>
 </tbody>
 </table>
 2023年度(26歳)
@@ -178,8 +178,8 @@
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td>2023年6月3日</td><td></td><td>Nakanishi Kana Tanjoubi Kai 2023</td><td>GaraGe</td><td>東京都</td><td></td></tr>
-<tr><td>2023年6月4日</td><td></td><td>Nakanishi Kana Tanjoubi Kai 2023</td><td>PLUSWINHALL 六本木</td><td>東京都</td><td></td></tr>
+<tr class="row-even"><td>2023年6月3日</td><td></td><td>かななん誕生日会2023 〜大阪編〜</td><td>GaraGe</td><td>大阪府</td><td></td></tr>
+<tr><td>2023年6月4日</td><td></td><td>かななん誕生日会2023 〜東京編〜</td><td>PLUSWINHALL 六本木</td><td>東京都</td><td></td></tr>
 </tbody>
 </table>
 2024年度(27歳)
@@ -199,6 +199,23 @@
 <tr><td>2024年6月4日</td><td>19:00</td><td>中西香菜バースデーイベント2024</td><td>渋谷REX</td><td>東京都</td><td></td></tr>
 <tr class="row-even"><td>2024年6月30日</td><td>16:00</td><td>中西香菜バースデーイベント2024</td><td>BAR PAIN 大阪</td><td>東京都</td><td></td></tr>
 <tr><td>2024年6月30日</td><td>19:00</td><td>中西香菜バースデーイベント2024</td><td>BAR PAIN 大阪</td><td>東京都</td><td></td></tr>
+</tbody>
+</table>
+2026年度(29歳)
+<table class="birthday-table">
+<thead>
+<tr>
+<th>日付</th>
+<th>開演</th>
+<th>イベント名</th>
+<th>会場</th>
+<th>都道府県</th>
+<th>セットリスト</th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td>2026年7月22日</td><td>22:00</td><td>中西香菜バースデーイベント2026</td><td>オンライン（ZOOM）</td><td></td><td></td></tr>
+<tr><td>2026年7月25日</td><td>22:00</td><td>中西香菜バースデーイベント2026</td><td>オンライン（ZOOM）</td><td></td><td></td></tr>
 </tbody>
 </table>
 
