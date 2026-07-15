@@ -16,9 +16,10 @@
 
 <main>
   <h1>宮本佳林 Music Palette♪カリンオシ まとめ</h1>
-  TBSラジオ Music Palette♪のカリンオシのコーナーで宮本佳林さんが紹介したお菓子等をXにてポストされたものをまとめています<br>
+  <p>TBSラジオ Music Palette♪のカリンオシのコーナーで宮本佳林さんが紹介したお菓子等をXにてポストされたものをまとめています<br>
   放送日（日時）ページをクリックすると<a href="https://www.tbsradio.jp/mp/" target="_blank" rel="noopener noreferrer">TBSラジオ Music Palette♪</a>のページに飛びます<br>
-  また都道府県タグでフィルタリングできます<br>
+  また都道府県タグでフィルタリングできます</p>
+  <p>日本地図を塗っていっているページは<a href="/Radio/karinoshi-map" target="_blank" rel="noopener noreferrer">こちら</a></p>
  
   <div id="karin-oshi-wrap">
     <div id="karin-filter">
