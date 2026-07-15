@@ -1,7 +1,7 @@
 <?php
-$title = "カリンオシ お菓子マップ";
-$description = "TBSラジオ Music Palette「カリンオシ」で紹介されたご当地お菓子を都道府県別にまとめた地図です";
-include($_SERVER['DOCUMENT_ROOT'] . '/header.php'); // ←実際のパスに合わせて
+  $title = "カリンオシ お菓子マップ"; 
+  $description = "TBSラジオ Music Palette♪のカリンオシのコーナーで紹介されたご当地お菓子を都道府県別にまとめた地図です。";
+  include $_SERVER['DOCUMENT_ROOT'] . '/common/header.php';
 ?>
 
 <h1>カリンオシ お菓子マップ</h1>
@@ -365,4 +365,4 @@ document.getElementById("recent").innerHTML = [...DATA]
 
 </script>
 
-<?php include($_SERVER['DOCUMENT_ROOT'] . '/footer.php'); // ←実際のパスに合わせて ?>
+<?php include($_SERVER['DOCUMENT_ROOT'] . '/common/footer.php'); // ←実際のパスに合わせて ?>
