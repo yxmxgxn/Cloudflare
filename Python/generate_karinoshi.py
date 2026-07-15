@@ -1,11 +1,12 @@
 #!/usr/bin/env python3
 """
 スプレッドシート(カリンオシ)を読み取り、
-PHPインクルード用のカードHTML・都道府県option・更新日を生成する
+PHPインクルード用のカードHTML・都道府県option・更新日・地図データを生成する
 """
 
 import csv
 import io
+import json
 import re
 import urllib.request
 import os
@@ -18,6 +19,7 @@ REPO_ROOT = Path(__file__).resolve().parent.parent  # Python/ の親
 
 OUTPUT_CARDS = REPO_ROOT / "Spreadsheet" / "karinoshi_cards.php"
 OUTPUT_PREFS = REPO_ROOT / "Spreadsheet" / "karinoshi_prefs.php"
+OUTPUT_MAP   = REPO_ROOT / "Spreadsheet" / "karinoshi_map_data.php"   # ★追加
 OUTPUT_GENERATED = REPO_ROOT / "Generated" / "karinoshi_generated.php"
 
 PREF_ORDER = [
@@ -63,16 +65,21 @@ def strip_script(html: str) -> str:
     """scriptタグを除去する"""
     return re.sub(r'<script[^>]*>.*?</script>', '', html, flags=re.DOTALL).strip()
 
-def build_cards(data: list[list[str]]) -> str:
+def parse_rows(data: list[list[str]]) -> list[dict]:
+    """ヘッダー行を使って各行をdict化する(共通処理)"""
     headers = [h.strip() for h in data[0]]
-    lines = []
-
+    rows = []
     for raw in data[1:]:
         if not any(c.strip() for c in raw):
             continue
-        raw += [""] * (len(headers) - len(raw))
-        row = {headers[i]: raw[i].strip() for i in range(len(headers))}
+        raw = raw + [""] * (len(headers) - len(raw))
+        rows.append({headers[i]: raw[i].strip() for i in range(len(headers))})
+    return rows
 
+def build_cards(data: list[list[str]]) -> str:
+    lines = []
+
+    for row in parse_rows(data):
         name      = escape_html(row.get("Name", ""))
         article_no = row.get("ArticleNo.", "")
         tbs_url = f"https://www.tbsradio.jp/articles/{article_no}/" if article_no else ""
@@ -127,6 +134,24 @@ def build_prefs(data: list[list[str]]) -> str:
         for p in prefs
     )
 
+def build_map_data(data: list[list[str]]) -> str:
+    """★追加: 地図ページ用のJSONデータ(scriptタグごと)を生成する"""
+    items = []
+    for row in parse_rows(data):
+        pref = row.get("都道府県", "")
+        if not pref:
+            continue  # 都道府県が無い行は地図に置けない
+        items.append({
+            "name":    row.get("Name", ""),
+            "article": row.get("ArticleNo.", ""),   # 文字列のまま
+            "date":    pad_date(row.get("放送日時", "")),
+            "pref":    pref,
+            "post":    row.get("ポスト", ""),        # 文字列のまま(JS安全整数超え対策)
+        })
+    js = json.dumps(items, ensure_ascii=False, separators=(",", ":"))
+    js = js.replace("</", "<\\/")  # </script>で構文が壊れないように
+    return f"<script>const KARINOSHI_MAP_DATA = {js};</script>"
+
 def main():
     jst = timezone(timedelta(hours=9))
     today_aware = datetime.now(jst)
@@ -141,14 +166,18 @@ def main():
         f.write(f"<!-- generated: {datetime.now(timezone.utc).isoformat()} -->\n")
         f.write(build_prefs(data) + "\n")
 
+    # ★追加: 地図データ
+    with open(OUTPUT_MAP, "w", encoding="utf-8") as f:
+        f.write(f"<!-- generated: {datetime.now(timezone.utc).isoformat()} -->\n")
+        f.write(build_map_data(data) + "\n")
+
     generated = today_aware.strftime("%Y/%m/%d")
 
-    meta = f'<p class="last-update">データ取得日：{generated}</p>\n'
     OUTPUT_GENERATED.parent.mkdir(parents=True, exist_ok=True)
     with open(OUTPUT_GENERATED, "w", encoding="utf-8") as f:
         f.write(f'<p class="last-update">データ取得日：{generated}</p>\n')
 
-    print(f"生成完了: {OUTPUT_CARDS} / {OUTPUT_PREFS} / {OUTPUT_GENERATED} ({len(data)-1} 行処理)")
+    print(f"生成完了: {OUTPUT_CARDS} / {OUTPUT_PREFS} / {OUTPUT_MAP} / {OUTPUT_GENERATED} ({len(data)-1} 行処理)")
 
 if __name__ == "__main__":
     main()
