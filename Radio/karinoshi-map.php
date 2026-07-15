@@ -8,7 +8,7 @@
 <p>TBSラジオ Music Palette♪のカリンオシのコーナーで宮本佳林さんが紹介したご当地お菓子の都道府県で日本地図を塗っています。<br>
   リンクで<a href="https://www.tbsradio.jp/mp/" target="_blank" rel="noopener noreferrer">TBSラジオ Music Palette♪</a>のページと紹介ポストに飛びます。<br>
   紹介回数で色を深くしています。</p>
-
+<p>Xのポストのまとめは<a href="/Radio/karinoshi" target="_blank" rel="noopener noreferrer">こちら</a></p>
 <div class="karinoshi-map">
 <style>
 .karinoshi-map{
