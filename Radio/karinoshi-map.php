@@ -5,7 +5,9 @@
 ?>
 
 <h1>カリンオシ お菓子マップ</h1>
-<p>毎週紹介されるご当地お菓子で日本地図を塗っていきます</p>
+<p>TBSラジオ Music Palette♪のカリンオシのコーナーで宮本佳林さんが紹介したご当地お菓子の都道府県で日本地図を塗っています。<br>
+  リンクで<a href="https://www.tbsradio.jp/mp/" target="_blank" rel="noopener noreferrer">TBSラジオ Music Palette♪</a>のページと紹介ポストに飛びます。<br>
+  紹介回数で色を深くしています。</p>
 
 <div class="karinoshi-map">
 <style>
