@@ -96,6 +96,10 @@
 
   <h3>Juice=Juiceの風に吹かれてMV公開後すぐにロケ地を特定して同じ角度で写真を撮ったものです</h3>
   <div class="indextop"><a href="/kazenifukarete">Juice=Juice 風に吹かれて MV ロケ地</a></div>
+
+  <h2>ツール</h2>
+  <h3>XのポストURLを貼るだけで、そのポストの前後に投稿者が何を言っていたかを検索できるコマンドを生成します</h3>
+  <div class="indextop"><a href="/X/post-context"><svg style="vertical-align: -4px;  margin-right: 4px"width="20" height="20" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><rect width="24" height="24" rx="4" fill="currentColor"/><path d="M17.5 3.5H20.5L14.5 10.5L21.5 20.5H16L11.5 14.5L6.5 20.5H3.5L9.8 13L3 3.5H8.7L12.8 9L17.5 3.5Z" fill="white"/><path d="M16.5 19L5.5 5H7.5L18.5 19H16.5Z" fill="white"/></svg>Xポスト前後検索</a></div>
 <br>
   <a href="/news">更新履歴</a>
 </main>

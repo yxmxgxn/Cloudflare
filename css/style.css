@@ -798,3 +798,88 @@ footer a {
 .mv-cast-table th {
   background: #f0f0e8;
 }
+
+/* Xポスト前後検索 */
+#ctx-controls {
+  display: flex;
+  gap: 10px;
+  margin: 0.75rem 0;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+#ctx-controls input[type="text"] {
+  flex: 1;
+  min-width: 100px;
+  padding: 6px 10px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+}
+
+#ctx-options {
+  display: flex;
+  gap: 14px;
+  margin: 0.75rem 0;
+  flex-wrap: wrap;
+  align-items: center;
+  font-size: 14px;
+}
+
+#ctx-options select {
+  padding: 6px 10px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+  margin-left: 6px;
+}
+
+#ctx-options label {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+#ctx-result {
+  margin: 1em 0;
+}
+
+#ctx-time-box {
+  font-size: 14px;
+}
+
+#ctx-cmd-row {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+#ctx-cmd {
+  flex: 1;
+  min-width: 200px;
+  padding: 8px 12px;
+  background: #f5f5f5;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 13px;
+  word-break: break-all;
+}
+
+#ctx-copy {
+  padding: 6px 12px;
+  border: 1px solid #ccc;
+  background: #fff;
+  cursor: pointer;
+  font-size: 14px;
+  border-radius: 4px;
+}
+
+#ctx-open {
+  display: inline-block;
+  margin-top: 0.75em;
+  padding: 8px 16px;
+  background: #AE8DBC;
+  border-radius: 4px;
+  color: #fff !important;
+  text-decoration: none;
+  font-size: 14px;
+}
