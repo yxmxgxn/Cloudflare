@@ -16,8 +16,7 @@ a {
   cursor: pointer;
 }
 a:hover {
-  color: #AE8DBC;
-
+  color: #C4A8ED;
 }
 
 a img {
@@ -144,7 +143,7 @@ main {
 }
 
 #hp-members tr.karin {
-  background: #AE8DBC !important;
+  background: #C4A8ED !important;
 }
 
 #hp-filter {

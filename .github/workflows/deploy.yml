@@ -28,7 +28,7 @@ jobs:
       - name: Build static site
         env:
           # Variables に BASE_URL を設定するまでは旧ドメインのまま出力される
-          BASE_URL: ${{ vars.BASE_URL || 'https://karin.heavy.jp' }}
+          BASE_URL: ${{ vars.BASE_URL }}
           INDEXNOW_KEY: ${{ secrets.INDEXNOW_KEY }}
         run: bash build/build.sh
 
@@ -47,7 +47,7 @@ jobs:
       - name: IndexNow Notification
         env:
           INDEXNOW_KEY: ${{ secrets.INDEXNOW_KEY }}
-          BASE_URL: ${{ vars.BASE_URL || 'https://karin.heavy.jp' }}
+          BASE_URL: ${{ vars.BASE_URL }}
         run: |
           [ -z "$INDEXNOW_KEY" ] && { echo "INDEXNOW_KEY未設定のためスキップ"; exit 0; }
           HOST=$(echo "$BASE_URL" | sed 's|https\?://||; s|/.*||')

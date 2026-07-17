@@ -132,6 +132,23 @@
 <tr><td>2024年9月1日</td><td>18:00</td><td>浅倉樹々バースデーイベント2024 ～Dahlia～</td><td>飛行船シアター</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/21614" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
 </tbody>
 </table>
+2026年度(26歳)
+<table class="birthday-table">
+<thead>
+<tr>
+<th>日付</th>
+<th>開演</th>
+<th>イベント名</th>
+<th>会場</th>
+<th>都道府県</th>
+<th>セットリスト</th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td>2026年9月3日</td><td>17:10</td><td>浅倉樹々バースデーイベント2026～White planet～</td><td>飛行船シアター</td><td>東京都</td><td></td></tr>
+<tr><td>2026年9月3日</td><td>19:30</td><td>浅倉樹々バースデーイベント2026～White planet～</td><td>飛行船シアター</td><td>東京都</td><td></td></tr>
+</tbody>
+</table>
 
 </main>
 <?php include $_SERVER['DOCUMENT_ROOT'] . '/Generated/birthday_generated.php'; ?>
