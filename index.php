@@ -94,7 +94,7 @@
   <div class="indextop"><a href="/hello-birthday"><svg style="vertical-align: -3px;  margin-right: 4px"width="20" height="20" viewBox="-32 -32 64 64" xmlns="http://www.w3.org/2000/svg"><g fill="#E8789A"><ellipse cx="0" cy="-22" rx="8" ry="12" transform="rotate(0)"/><ellipse cx="0" cy="-22" rx="8" ry="12" transform="rotate(72)"/><ellipse cx="0" cy="-22" rx="8" ry="12" transform="rotate(144)"/><ellipse cx="0" cy="-22" rx="8" ry="12" transform="rotate(216)"/><ellipse cx="0" cy="-22" rx="8" ry="12" transform="rotate(288)"/></g><circle cx="0" cy="0" r="7" fill="#F5A9C0"/><circle cx="0" cy="0" r="3" fill="#E8789A"/></svg>ハロプロバースデーイベントまとめ</a></div>
   
   <h3>ハロープロジェクトのメンバーのメンバーカラーを色空間に配置したものです</h3>
-  <div class="indextop">><a href="/helloHLS"><Hello! Project Member Colors</a></div>
+  <div class="indextop"><a href="/helloHLS">Hello! Project Member Colors</a></div>
 
   <h2>Juice=Juice</h2>
   <h3>TBSラジオ 宮本佳林 Music Pallet♪のJuice=Juice 松永里愛のMIX=Juiceのコーナーで選曲された曲をまとめです</h3>
