@@ -39,6 +39,22 @@
   </div>
   <p id="ctx-err" hidden></p>
 
+  <h2>ブックマークレット</h2>
+  Xでポストのページを開いた状態で実行すると、URLのコピペなしでそのまま前後検索を開けます。<br>
+  PCでは下のボタンをブックマークバーにドラッグして登録してください。スマホでは「コードをコピー」して、適当なページをブックマークしてから編集でURL欄に貼り付けてください。
+  <div class="ctx-bml">
+    <a class="ctx-bml-link" href="javascript:(function(){var m=location.href.match(/(?:x|twitter)\.com\/([A-Za-z0-9_]+)\/status(?:es)?\/(\d+)/);if(!m){alert('Xのポストのページで開いてください');return}if(m[1].toLowerCase()==='i'){alert('ユーザー名入りのポストURLで開いてください');return}var s=Math.floor(Number((BigInt(m[2])>>22n)+1288834974657n)/1000);var r=86400;window.open('https://x.com/search?q='+encodeURIComponent('from:'+m[1]+' since_time:'+(s-r)+' until_time:'+(s+r))+'\x26f=live')})();">ポスト前後1日を検索</a>
+    <button type="button" class="ctx-bml-copy">コードをコピー</button>
+  </div>
+  <div class="ctx-bml">
+    <a class="ctx-bml-link" href="javascript:(function(){var m=location.href.match(/(?:x|twitter)\.com\/([A-Za-z0-9_]+)\/status(?:es)?\/(\d+)/);if(!m){alert('Xのポストのページで開いてください');return}if(m[1].toLowerCase()==='i'){alert('ユーザー名入りのポストURLで開いてください');return}var s=Math.floor(Number((BigInt(m[2])>>22n)+1288834974657n)/1000);var r=259200;window.open('https://x.com/search?q='+encodeURIComponent('from:'+m[1]+' since_time:'+(s-r)+' until_time:'+(s+r))+'\x26f=live')})();">ポスト前後3日を検索</a>
+    <button type="button" class="ctx-bml-copy">コードをコピー</button>
+  </div>
+  <div class="ctx-bml">
+    <a class="ctx-bml-link" href="javascript:window.open('https://karin-archive.com/Tool/post-context?url='+encodeURIComponent(location.href));">このツールで開く(範囲・フィルターを選びたいとき)</a>
+    <button type="button" class="ctx-bml-copy">コードをコピー</button>
+  </div>
+
   <h2>仕組み</h2>
   XのポストIDには投稿時刻がミリ秒単位で埋め込まれています。このツールはIDから時刻を逆算し、隠し検索演算子 <code>since_time:</code> / <code>until_time:</code>(unix秒指定)で前後の期間を切り出します。<br>
   日付指定(<code>since:</code>/<code>until:</code>)と違いUTCとの時差の影響を受けず、ポストの瞬間を中心とした正確な範囲で検索できます。<br>
@@ -104,6 +120,16 @@
     setTimeout(function () { $("ctx-copy").textContent = "コピー"; }, 1500);
   });
 
+  document.querySelectorAll(".ctx-bml-copy").forEach(function (btn) {
+    btn.addEventListener("click", function () {
+      navigator.clipboard.writeText(btn.previousElementSibling.getAttribute("href"));
+      btn.textContent = "コピーしました";
+      setTimeout(function () { btn.textContent = "コードをコピー"; }, 1500);
+    });
+  });
+
+  var pre = new URLSearchParams(location.search).get("url");
+  if (pre) $("ctx-url").value = pre;
   update();
 })();
 </script>

@@ -882,3 +882,30 @@ footer a {
   text-decoration: none;
   font-size: 14px;
 }
+
+.ctx-bml {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  flex-wrap: wrap;
+  margin: 0.75em 0;
+}
+
+.ctx-bml-link {
+  display: inline-block;
+  padding: 8px 16px;
+  background: #AE8DBC;
+  border-radius: 4px;
+  color: #fff !important;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.ctx-bml-copy {
+  padding: 6px 12px;
+  border: 1px solid #ccc;
+  background: #fff;
+  cursor: pointer;
+  font-size: 14px;
+  border-radius: 4px;
+}
