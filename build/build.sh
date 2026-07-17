@@ -97,6 +97,9 @@ grep -rl --include='*.html' --include='*.xml' --include='*.txt' -F "$OLD_URL" "$
   echo "/karinsong.php       /YouTube/karin-song   301"
   echo "/index.php / 301"
   echo "/index.html / 301"
+  # X/ から Tool/ へ移動したページ
+  echo "/X/post-context      /Tool/post-context    301"
+  echo "/X/post-context.php  /Tool/post-context    301"
   # 全ページ: .php付きURL → クリーンURL
   while IFS= read -r p; do
     echo "/$p.php /$p 301"
@@ -104,7 +107,7 @@ grep -rl --include='*.html' --include='*.xml' --include='*.txt' -F "$OLD_URL" "$
   # ディレクトリ整理で移動したページ: 旧フラットURL → 新URL(.php付きも)
   while IFS= read -r p; do
     case "$p" in
-      YouTube/*|Radio/*|Juice=Juice/*|X/*|instagram/*)
+      YouTube/*|Radio/*|Juice=Juice/*|X/*|instagram/*|Tool/*)
         base="${p##*/}"
         echo "/$base /$p 301"
         echo "/$base.php /$p 301"
