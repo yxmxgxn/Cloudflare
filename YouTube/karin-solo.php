@@ -58,7 +58,7 @@
   <h3>規格外のロマンス</h3>
   <ul>
     <li><a href="https://www.youtube.com/watch?v=uUHfOe1RHuU&t=550s" target="_blank" rel="noopener noreferrer">M-line Special 2021～Make a Wish!～（2021/11/20 中野サンプラザ）</a></li>
-    <li><a href="https://www.youtube.com/watch?v=uUHfOe1RHuU&t=550s" target="_blank" rel="noopener noreferrer">宮本佳林 Sweet Box 2026 ～Happy Valentine's Day!～「Pink Puff」（2026/2/15 第一ホテル両国「清澄」）</a></li>
+    <li><a href="https://www.youtube.com/watch?v=uUHfOe1RHuU&t=550s" target="_blank" rel="noopener noreferrer">宮本佳林 Sweet Box 2026～Happy Valentine's Day!～「Pink Puff」（2026/2/15 第一ホテル両国「清澄」）</a></li>
   </ul>
   <h3>タメライ</h3>
   <ul>
@@ -73,7 +73,7 @@
   <ul>
     <li><a href="https://www.youtube.com/watch?v=UiyIyCzFlq8&t=507s" target="_blank" rel="noopener noreferrer">Hello! Project Year-End Party 2021～GOOD BYE & HELLO！～ Juice=Juiceプレミアム（2021/12/31 中野サンプラザ）</a></li>
     <li><a href="https://www.youtube.com/watch?v=VzVjzBjrpFI&t=1498s" target="_blank" rel="noopener noreferrer">宮本佳林 LIVE 2024～TWiNKLE～（2024/12/29 Zepp DiverCity）</a></li>
-    <li><a href="https://www.youtube.com/watch?v=kclqnIS-8ig&t=868s" target="_blank" rel="noopener noreferrer">宮本佳林 Sweet Box 2026 ～Happy Valentine's Day!～「Sugar Drop」（2.15 第一ホテル両国「清澄」）（2026/2/15 第一ホテル両国「清澄」）</a></li>
+    <li><a href="https://www.youtube.com/watch?v=kclqnIS-8ig&t=868s" target="_blank" rel="noopener noreferrer">宮本佳林 Sweet Box 2026～Happy Valentine's Day!～「Sugar Drop」（2.15 第一ホテル両国「清澄」）（2026/2/15 第一ホテル両国「清澄」）</a></li>
   </ul>
   <h3>落ちこぼれのガラクタだって</h3>
   <ul>
@@ -206,6 +206,7 @@
     <li><a href="https://www.youtube.com/watch?v=I43k9amkTpQ&t=453s" target="_blank" rel="noopener noreferrer">宮本佳林 Sweet Box 2025～Happy Valentine's Day!～Chocola」（202/2/16 第一ホテル両国「清澄」）</a></li>
   </ul>
 
+  <h2>その他</h2>
   <h3>チョコレート魂 / 松浦亜弥</h3>
   <ul>
     <li><a href="https://www.youtube.com/watch?v=EY9CEiUyI2g&t=1047s" target="_blank" rel="noopener noreferrer">宮本佳林 Sweet Box 2026～Happy Valentine's Day!～「Pink Puff」（2026/2/15 第一ホテル両国「清澄」）</a></li>
@@ -215,10 +216,15 @@
   <ul>
     <li><a href="https://www.youtube.com/watch?v=rrfuqAZPaVQ&t=318s" target="_blank" rel="noopener noreferrer">Hello! Project 2020 Summer COVERS～The Ballad～」（2020/8/3 中野サンプラザ）</a></li>
   </ul>
+
   <h3>森高千里 / やっちまいな<h3>
-  <h3>
   <ul>
     <li><a href="https://www.youtube.com/watch?v=AnYLrehZnGg" target="_blank" rel="noopener noreferrer">宮本佳林「やっちまいな」歌唱動画 -YouTube Edit-</a></li>
+  </ul>
+
+  <h3>天ノ弱 / 164 feat.GUMI（ボーカロイド）<h3>
+  <ul>
+    <li><a href="https://www.youtube.com/watch?v=cwDuYOGUvVU" target="_blank" rel="noopener noreferrer">宮本佳林 Sweet Box 2026～Happy Valentine's Day!～「Sugar Drop」（2026/2/15 第一ホテル両国「清澄」）</a></li>
   </ul>
 
   <h2>Hello! Project 202～The Ballad～ Digest</h2>
