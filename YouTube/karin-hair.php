@@ -1,6 +1,6 @@
 <?php
   $title = "宮本佳林ヘアアレンジまとめ"; 
-  $description = "宮本佳林さんがハロ！ステでヘアアレンジをしたものをまとめました。";
+  $description = "宮本佳林さんがハロ！ステでヘアアレンジをしたものをまとめました。植村あかりさんを宮本佳林さんがヘアアレンジするものもあります。";
   $jsonld_type = "Dataset";
   $about = "宮本佳林";
   // グループ単体
@@ -16,7 +16,7 @@
 
 <main>
   <h1>宮本佳林ヘアアレンジまとめ</h1>
-  宮本佳林さんがハロ！ステでヘアアレンジをしたものをまとめました
+  宮本佳林さんがハロ！ステでヘアアレンジをしたものをまとめました。植村あかりさんを宮本佳林さんがヘアアレンジするものもあります。
   <ul>
     <li><a href="https://www.youtube.com/watch?v=tosTxi3boPo&t=1638s"  target="_blank" rel="noopener noreferrer">ハロ！ステ#56 2014/2/26</a></li>
     <li><a href="https://www.youtube.com/watch?v=Sj11NLfRaJ4&t=2699s"  target="_blank" rel="noopener noreferrer">ハロ！ステ#113 2015/4/15</a></li>

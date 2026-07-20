@@ -1,6 +1,6 @@
 <?php
   $title = "宮本佳林インスタグラム ライブ アーカイブまとめ"; 
-  $description = "宮本佳林さんがInstagramでライブ配信をしてアーカイブが残されているもののまとめです。";
+  $description = "宮本佳林さんがInstagramでライブ配信をしてアーカイブが残されているもののまとめです。動画のリンクはInstagramのアーカイブに飛びます。動画の長さも書いています。";
   $jsonld_type = "Dataset";
   $about = "宮本佳林";
   // グループ単体
