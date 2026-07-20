@@ -1,4 +1,4 @@
-<!-- generated: 2026-07-18T18:53:45.828916+00:00 -->
+<!-- generated: 2026-07-19T18:55:56.124597+00:00 -->
 <option value="北海道">北海道</option>
 <option value="岩手県">岩手県</option>
 <option value="秋田県">秋田県</option>
