@@ -27,7 +27,7 @@
     <label><input type="checkbox" id="ctx-noreply"> リプライを除外</label>
     <label><input type="checkbox" id="ctx-noquote"> 引用を除外</label>
     <label><input type="checkbox" id="ctx-withrt"> RTも含める</label>
-    <label><input type="checkbox" id="ctx-datefmt"> 日時形式で出力(検索後に日付を手直ししやすい)</label>
+    <label><input type="checkbox" id="ctx-unixfmt"> unix秒形式で出力</label>
   </div>
 
   <div id="ctx-result" hidden>
@@ -57,9 +57,9 @@
   </div>
 
   <h2>仕組み</h2>
-  XのポストIDには投稿時刻がミリ秒単位で埋め込まれています。このツールはIDから時刻を逆算し、隠し検索演算子 <code>since_time:</code> / <code>until_time:</code>(unix秒指定)で前後の期間を切り出します。<br>
-  日付指定(<code>since:</code>/<code>until:</code>)と違いUTCとの時差の影響を受けず、ポストの瞬間を中心とした正確な範囲で検索できます。<br>
-  「日時形式で出力」をオンにすると <code>since:2026-07-15_15:32:28_JST</code> のような日本時間付きの形式になります。精度・時差の扱いは同じままで、検索したあとに検索窓で日付の数字を書き換えて範囲を広げたり狭めたりしやすい形式です。<br>
+  XのポストIDには投稿時刻がミリ秒単位で埋め込まれています。このツールはIDから時刻を逆算し、検索演算子 <code>since:</code> / <code>until:</code> に日本時間付きの日時(<code>2026-07-15_15:32:28_JST</code> のような形式)を渡して前後の期間を切り出します。<br>
+  <code>_JST</code> を明示するのでUTCとの時差の影響を受けず、ポストの瞬間を中心とした秒単位で正確な範囲になります。日時形式なので、検索したあとに検索窓で日付の数字を書き換えれば範囲を広げたり狭めたりも簡単です。<br>
+  「unix秒形式で出力」をオンにすると <code>since_time:</code> / <code>until_time:</code>(unix秒指定)の形式になります。精度・時差の扱いは同じです。<br>
   なお、検索はX上で行われるため、鍵アカウント・削除済みポストは表示されません。URLのユーザー名部分は現在のものと異なる場合があります(改名時など)。
 
 <script>
@@ -110,10 +110,10 @@
       " " + pad(jst.getUTCHours()) + ":" + pad(jst.getUTCMinutes()) + ":" + pad(jst.getUTCSeconds());
 
     var q;
-    if ($("ctx-datefmt").checked) {
-      q = "from:" + user + " since:" + jstStr(sec - r) + " until:" + jstStr(sec + r);
-    } else {
+    if ($("ctx-unixfmt").checked) {
       q = "from:" + user + " since_time:" + (sec - r) + " until_time:" + (sec + r);
+    } else {
+      q = "from:" + user + " since:" + jstStr(sec - r) + " until:" + jstStr(sec + r);
     }
     if ($("ctx-noreply").checked) q += " -filter:replies";
     if ($("ctx-noquote").checked) q += " -filter:quote";
@@ -123,7 +123,7 @@
     $("ctx-open").href = "https://x.com/search?q=" + encodeURIComponent(q) + "&f=live";
   }
 
-  ["ctx-url", "ctx-range", "ctx-noreply", "ctx-noquote", "ctx-withrt", "ctx-datefmt"].forEach(function (id) {
+  ["ctx-url", "ctx-range", "ctx-noreply", "ctx-noquote", "ctx-withrt", "ctx-unixfmt"].forEach(function (id) {
     $(id).addEventListener(id === "ctx-url" ? "input" : "change", update);
   });
 
