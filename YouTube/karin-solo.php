@@ -94,6 +94,7 @@
   <h3>ソリスト・ダンス</h3>
   <ul>
     <li><a href="https://www.youtube.com/watch?v=Hf1PuziTG3U">M-line Special 2024～Many well wishes～（2024/2/4 横浜Bay Hall）</a></li>
+    <li><a href="https://www.youtube.com/watch?v=RZkv4troQaI">M-line Special 2026 Spring ～LOVELY～（2026/3/15 新宿ReNY）</a></li>
   </ul>
   <h3>バンビーナ・バンビーノ</h3>
   <ul>
@@ -153,6 +154,7 @@
   <ul>
     <li><a href="https://www.youtube.com/watch?v=PDj4BOE5PA8&t=635s" target="_blank" rel="noopener noreferrer">宮本佳林 LIVE 2021～ダリア～</a></li>
   </ul>
+
   <h2>4th Single キケンな魔法 / ビースト!</h2>
   <h3>キケンな魔法</h3>
   <ul>
@@ -172,13 +174,7 @@
     <li><a href="https://www.youtube.com/watch?v=JpqJvTROc6E&t=991s" target="_blank" rel="noopener noreferrer">4thシングル発売記念 ミニライブ&一言お話し会イベント（2025/6/11 池袋・サンシャインシティ 噴水広場）</a></li>
   </ul>
 
-  <h2>STAGE VANGUARD「ザ☆アイドル！」オリジナルサウンドトラック</h2>
-  <h3>SUPER IDOL -Especial-</h3>
-  <ul>
-    <li><a href="https://www.youtube.com/watch?v=0QUyUk8CGcA&t=242s" target="_blank" rel="noopener noreferrer">宮本佳林 バースデーイベント2024～CONTINUE～（2024/12/1 新都市ホール）</a></li>
-  </ul>
-
-  <h2>未収録</h2>
+  <h2>5th HANAKIN/シャニカマー</h2>
   <h3>Spinel Hearts</h3>
   <ul>
     <li><a href="https://www.youtube.com/watch?v=dXhiDRnP1aQ" target="_blank" rel="noopener noreferrer">宮本佳林 LIVE 2025～魔法のたからばこ～（2025/11/24 SOUND SHOWER ark 清水）</a></li>
@@ -186,6 +182,12 @@
   <h3>アンタイトル</h3>
   <ul>
     <li><a href="https://www.youtube.com/watch?v=N3lSmAuD8-k" target="_blank" rel="noopener noreferrer">宮本佳林 Sweet Box 2026～Happy Valentine's Day!～「Sugar Drop」（2026/2/15 第一ホテル両国「清澄」）</a></li>
+  </ul>
+
+  <h2>STAGE VANGUARD「ザ☆アイドル！」オリジナルサウンドトラック</h2>
+  <h3>SUPER IDOL -Especial-</h3>
+  <ul>
+    <li><a href="https://www.youtube.com/watch?v=0QUyUk8CGcA&t=242s" target="_blank" rel="noopener noreferrer">宮本佳林 バースデーイベント2024～CONTINUE～（2024/12/1 新都市ホール）</a></li>
   </ul>
 
   <h2>コピンクス名義</h2>
@@ -263,5 +265,5 @@
   </ul>
 
 </main>
-<div class="last-update">最終更新日：2026/05/16</div>
+<div class="last-update">最終更新日：2026/07/22</div>
 <?php include $_SERVER['DOCUMENT_ROOT'] . '/common/footer.php'; ?>

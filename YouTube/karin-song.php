@@ -50,7 +50,7 @@
         2021/2/1
       </td>
       <td rowspan="3" class="karin-disco-title" class="karin-disco-title">
-        <a href="https://www.jp-r.co.jp/karin_miyamoto/discography/detail/HKCN-50667" target="_blank" rel="noopener noreferrer">どうして僕らにはやる気がないのか(2021)/氷点下/規格外のロマンス</a>
+        <a href="https://www.jp-r.co.jp/karin_miyamoto/release/6572/" target="_blank" rel="noopener noreferrer">どうして僕らにはやる気がないのか(2021)/氷点下/規格外のロマンス</a>
       </td>
       <td>
         <a href="https://www.youtube.com/watch?v=ZG0c-LvqexU" target="_blank" rel="noopener noreferrer">どうして僕らにはやる気がないのか(2021)▶️</a>・<a href="https://www.youtube.com/watch?v=KIVaJ-2PLWg" target="_blank" rel="noopener noreferrer">🎥</a>
@@ -101,7 +101,7 @@
         2022/6/22
       </td>
       <td rowspan="5" class="karin-disco-title" class="karin-disco-title">
-        <a href="https://www.jp-r.co.jp/karin_miyamoto/discography/detail/HKCN-50720" target="_blank" rel="noopener noreferrer">なんてったって I Love You/ハウリング</a>
+        <a href="https://www.jp-r.co.jp/karin_miyamoto/release/6746/" target="_blank" rel="noopener noreferrer">なんてったって I Love You/ハウリング</a>
       </td>
       <td>
         <a href="https://www.youtube.com/watch?v=xBf3VqVKS9U" target="_blank" rel="noopener noreferrer">なんてったって I Love You▶️</a>・<a href="https://www.youtube.com/watch?v=N4g2iWwMBY0&t=214”” target="_blank" rel="noopener noreferrer">🎥</a>
@@ -180,7 +180,7 @@
         2023/11/8
       </td>
       <td rowspan="5" class="karin-disco-title" class="karin-disco-title">
-        <a href="https://www.jp-r.co.jp/karin_miyamoto/discography/detail/HKCN-50777" target="_blank" rel="noopener noreferrer">バンビーナ・バンビーノ/Lonely Bus</a>
+        <a href="https://www.jp-r.co.jp/karin_miyamoto/release/7427/" target="_blank" rel="noopener noreferrer">バンビーナ・バンビーノ/Lonely Bus</a>
       </td>
       <td>
         <a href="https://www.youtube.com/watch?v=2p9U27l1yVY" target="_blank" rel="noopener noreferrer">バンビーナ・バンビーノ▶️</a>・<a href="https://www.youtube.com/watch?v=6njGwroq86Q&t=218s" target="_blank" rel="noopener noreferrer">🎥</a>・<a href="https://www.youtube.com/watch?v=V-WNO-1AuIc" target="_blank" rel="noopener noreferrer">💃</a>
@@ -260,7 +260,7 @@
         2025/06/11
       </td>
       <td rowspan="5" class="karin-disco-title" class="karin-disco-title">
-        <a href="https://www.jp-r.co.jp/karin_miyamoto/discography/detail/HKCN-50842" target="_blank" rel="noopener noreferrer">キケンな魔法/ビースト！</a>
+        <a href="hhttps://www.jp-r.co.jp/karin_miyamoto/release/7427/" target="_blank" rel="noopener noreferrer">キケンな魔法/ビースト！</a>
       </td>
       <td>
         <a href="https://www.youtube.com/watch?v=u303vjNuGRY" target="_blank" rel="noopener noreferrer">キケンな魔法▶️</a>・<a href="https://www.youtube.com/watch?v=MSBFAt5cnks&t=721s" target="_blank" rel="noopener noreferrer">🎥</a>・<a href="https://www.youtube.com/watch?v=gdfqKAjbuhM" target="_blank" rel="noopener noreferrer">💃</a>
@@ -318,17 +318,81 @@
       </td>
     </tr>
     <tr>
-      <td>
-        <a href="https://www.youtube.com/watch?v=JpqJvTROc6E&t=991s" target="_blank" rel="noopener noreferrer">トランジットタイム🎥</a>・<a href="https://www.youtube.com/watch?v=Tc__vbCwSWM" target="_blank" rel="noopener noreferrer">💃</a>
+      <td rowspan="4" class="karin-disco-title">
+        5th
+      </td>
+      <td rowspan="4" class="karin-disco-title">
+        2026/07/29
+      </td>
+      <td rowspan="4" class="karin-disco-title" class="karin-disco-title">
+        <a href="https://www.jp-r.co.jp/karin_miyamoto/release/7681/" target="_blank" rel="noopener noreferrer">HANAKIN/シャニカマー</a>
       </td>
       <td>
-        平井佑果
+        <a href="https://www.youtube.com/watch?v=yXAvtKqEWf0" target="_blank" rel="noopener noreferrer">HANAKIN▶️</a>
+      <td>
+        星部ショウ
       </td>
       <td>
-        藤田卓也
+        Erik Lidbom/星部ショウ
       </td>
       <td>
-        藤田卓也
+        Erik Lidbom
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <a href="https://www.youtube.com/watch?v=V0-gZM9fVbs" target="_blank" rel="noopener noreferrer">シャニカマー▶️</a>
+      </td>
+      <td>
+        西野蒟蒻
+      </td>
+      <td>
+        松田純一
+      </td>
+      <td>
+        炭竃智弘
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <a href="https://www.youtube.com/watch?v=KWg2XLlVudk" target="_blank" rel="noopener noreferrer">SUPER IDOL -Especial-(Single Ver.)▶️</a>・<a href="https://www.youtube.com/watch?v=jfApSDdHTqo&t=853s" target="_blank" rel="noopener noreferrer">🎥</a>
+      </td>
+      <td>
+        西野蒟蒻
+      </td>
+      <td>
+        石黑剛/常楽寺澪
+      </td>
+      <td>
+        大久保薫
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <a href="https://www.youtube.com/watch?v=dXhiDRnP1aQ" target="_blank" rel="noopener noreferrer">Spinel Hearts🎥</a></a>
+      </td>
+      <td>
+        大森祥子
+      </td>
+      <td>
+        松坂康司
+      </td>
+      <td>
+        松坂康司
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <a href="https://www.youtube.com/watch?v=N3lSmAuD8-k" target="_blank" rel="noopener noreferrer">アンタイトル🎥</a>
+      </td>
+      <td>
+        西野蒟蒻
+      </td>
+      <td>
+        賀佐泰洋
+      </td>
+      <td>
+        賀佐泰洋
       </td>
     </tr>
   </table>
@@ -368,7 +432,7 @@
         2022/10/12
       </td>
       <td rowspan="15" class="karin-disco-title">
-        <a href="https://www.jp-r.co.jp/karin_miyamoto/discography/detail/HKCN-50727" target="_blank" rel="noopener noreferrer">ヒトリトイロ</a>
+        <a href="https://www.jp-r.co.jp/karin_miyamoto/release/6797/" target="_blank" rel="noopener noreferrer">ヒトリトイロ</a>
       </td>
       <td>
         1
@@ -457,7 +521,7 @@
         6
       </td>
       <td>
-        <a href="https://www.jp-r.co.jp/karin_miyamoto/discography/detail/HKCN-50727" target="_blank" rel="noopener noreferrer">優柔不断だね、Guilty🎤</a>
+        <a href="https://www.youtube.com/watch?v=IUj6EhE-fP0" target="_blank" rel="noopener noreferrer">優柔不断だね、Guilty🎤</a>
       </td>
       <td>
         大橋莉子
@@ -629,7 +693,7 @@
         2024/5/22
       </td>
       <td rowspan="13" class="karin-disco-title">
-        <a href="https://www.jp-r.co.jp/karin_miyamoto/discography/detail/HKCN-50804" target="_blank" rel="noopener noreferrer">Spancall</a>
+        <a href="https://www.jp-r.co.jp/karin_miyamoto/release/7192/" target="_blank" rel="noopener noreferrer">Spancall</a>
       </td>
       <td>
         1
@@ -877,7 +941,7 @@
         2019/10/18
       </td>
       <td>
-        <a href="https://www.jp-r.co.jp/karin_miyamoto/discography/detail/UFDL-1443" target="_blank" rel="noopener noreferrer">どうして僕らにはやる気がないのか</a>
+        <a href="https://www.jp-r.co.jp/karin_miyamoto/release/6176/" target="_blank" rel="noopener noreferrer">どうして僕らにはやる気がないのか</a>
       </td>
       <td>
         永井葉子
@@ -894,7 +958,7 @@
         2020/12/10
       </td>
       <td>
-        <a href="https://www.jp-r.co.jp/karin_miyamoto/discography/detail/UFDL-1465" target="_blank" rel="noopener noreferrer">未来のフィラメント</a>
+        <a href="https://www.jp-r.co.jp/karin_miyamoto/release/6417/" target="_blank" rel="noopener noreferrer">未来のフィラメント</a>
       </td>
       <td>
         児玉雨子
@@ -955,7 +1019,7 @@
         2022/8/13
       </td>
       <td>
-        <a href="https://www.jp-r.co.jp/karin_miyamoto/discography/detail/UFDL-1507" target="_blank" rel="noopener noreferrer">ほたる祭りの日</a>・<a href="https://www.youtube.com/watch?v=Bn14XigbuyI" target="_blank" rel="noopener noreferrer">▶️</a>・<a href="https://www.youtube.com/watch?v=QNsbQulWZxU&t=208s" target="_blank" rel="noopener noreferrer">🎥</a>
+        <a href="https://www.jp-r.co.jp/karin_miyamoto/release/6807/" target="_blank" rel="noopener noreferrer">ほたる祭りの日</a>・<a href="https://www.youtube.com/watch?v=Bn14XigbuyI" target="_blank" rel="noopener noreferrer">▶️</a>・<a href="https://www.youtube.com/watch?v=QNsbQulWZxU&t=208s" target="_blank" rel="noopener noreferrer">🎥</a>
       </td>
       <td>
         佐藤優樹×宮本佳林
@@ -995,7 +1059,7 @@
         2024/3/1
       </td>
       <td>
-        <a href="https://www.jp-r.co.jp/karin_miyamoto/discography/detail/UFDL-1528" target="_blank" rel="noopener noreferrer">C\C（シンデレラ\コンプレックス）'24</a>・<a href="https://www.youtube.com/watch?v=HuEPbDAyoXw" target="_blank" rel="noopener noreferrer">🎥</a>
+        <a href="https://www.jp-r.co.jp/karin_miyamoto/release/7168/" target="_blank" rel="noopener noreferrer">C\C（シンデレラ\コンプレックス）'24</a>・<a href="https://www.youtube.com/watch?v=HuEPbDAyoXw" target="_blank" rel="noopener noreferrer">🎥</a>
       </td>
       <td>
         SIOOM (from M-line Music) （宮本佳林・小片リサ・佐藤優樹・稲場愛香・小関舞）
@@ -1040,7 +1104,7 @@
         2024/5/22
       </td>
       <td rowspan="9" class="karin-disco-title">
-        <a href="https://www.jp-r.co.jp/karin_miyamoto/discography/detail/HKCN-50804" target="_blank" rel="noopener noreferrer">STAGE VANGUARD「ザ☆アイドル!」オリジナルサウンドトラック</a>
+        <a href="https://www.jp-r.co.jp/karin_miyamoto/release/7371/" target="_blank" rel="noopener noreferrer">STAGE VANGUARD「ザ☆アイドル!」オリジナルサウンドトラック</a>
       </td>
       <td>
         1
@@ -1344,5 +1408,5 @@
       </td>
     </tr>
    </table>
-<div class="last-update">最終更新日：2026/05/11</div>
+<div class="last-update">最終更新日：2026/07/22</div>
 <?php include $_SERVER['DOCUMENT_ROOT'] . '/common/footer.php'; ?>

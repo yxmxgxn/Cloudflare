@@ -177,6 +177,7 @@
     <li><a href="https://www.youtube.com/watch?v=60ZPECtPC8Y&t=139s" target="_blank" rel="noopener noreferrer">初恋サンライズ（竹内朱莉・宮本佳林・稲場愛香・小関舞・小片リサ）</a></li>
     <li><a href="https://www.youtube.com/watch?v=qvT8HCgbNiE&t=175s" target="_blank" rel="noopener noreferrer">初恋サンライズ（夏焼雅・宮本佳林・小片リサ・Bitter ＆ Sweet）</a></li>
     <li><a href="https://www.youtube.com/watch?v=AsnJSwZj6cA" target="_blank" rel="noopener noreferrer">表面張力～Surface Tension～（夏焼雅・宮本佳林・小片リサ・Bitter ＆ Sweet）</a></li>
+    <li><a href="https://www.youtube.com/watch?v=7_fns65ABzs" target="_blank" rel="noopener noreferrer">表面張力～Surface Tension～（譜久村聖・佐藤優樹・宮本佳林・森戸知沙希・小関舞）</a></li>
     <li><a href="https://www.youtube.com/watch?v=iPOAItAdSNo&t=149s" target="_blank" rel="noopener noreferrer">恋のUFOキャッチャー（宮本佳林・浅倉樹々）</a></li>
   </ul>
   <h3>ハロー！プロジェクト モベキマス</h3>
@@ -217,17 +218,22 @@
     <li><a href="https://www.youtube.com/watch?v=DjuR2MGaL_k&t=683s" target="_blank" rel="noopener noreferrer">彼と一緒にお店がしたい！（夏焼雅・小片リサ・Bitter & Sweet・岡村ほまれ・山﨑愛生）</a></li>
     <li><a href="https://www.youtube.com/watch?v=HQaLQ2w356o&t=1418s" target="_blank" rel="noopener noreferrer">踊れ！モーニングカレー（田中れいな・夏焼雅・宮本佳林・小片リサ）</a></li>
   </ul>
-  <h3>黄色5</h3>
-  <ul>
-    <li><a href="https://www.youtube.com/watch?v=k0UKxgbaDo8&t=983s" target="_blank" rel="noopener noreferrer">黄色いお空で BOOM BOOM BOOM（夏焼雅・宮本佳林）</a></li>
-  </ul>
   <h3>音楽ガッタス</h3>
   <ul>
     <li><a href="https://www.youtube.com/watch?v=xg8locr8d-k&t=1940s" target="_blank" rel="noopener noreferrer">鳴り始めた恋のBELL（夏焼雅・宮本佳林・小片リサ・Bitter & Sweet・佐藤優樹）</a></li>
   </ul>
-  <h3>宮本佳林・小片リサ・佐藤優樹</h3>
+  <h3>後藤真希</h3>
   <ul>
-    <li><a href="https://www.youtube.com/watch?v=hssWGXiFBDY&t=1430s" target="_blank" rel="noopener noreferrer">すっぴん（宮本佳林・小片リサ・佐藤優樹）</a></li>
+    <li><a href="https://www.youtube.com/watch?v=dKEuC92OgtI" target="_blank" rel="noopener noreferrer">うわさのSEXY GUY（譜久村聖・宮本佳林）</a></li>
+  </ul>
+  <h3>黄色5</h3>
+  <ul>
+    <li><a href="https://www.youtube.com/watch?v=k0UKxgbaDo8&t=983s" target="_blank" rel="noopener noreferrer">黄色いお空で BOOM BOOM BOOM（夏焼雅・宮本佳林）</a></li>
+  </ul>
+  <h3>太陽とシスコムーン</h3>
+  <ul>
+    <li><a href="https://www.youtube.com/watch?v=avkKCtJYh3s&t=144s" target="_blank" rel="noopener noreferrer">Magic of Love（鈴木愛理・宮本佳林・小片リサ・Bitter ＆ Sweet・竹内朱莉）</a></li>
+    <li><a href="https://www.youtube.com/watch?v=-IGB_XYdbWQ&t=156s" target="_blank" rel="noopener noreferrer">ガタメキラ（夏焼雅・宮本佳林・長谷川萌美・佐藤優樹）</a></li>
   </ul>
   <h3>後浦なつみ</h3>
   <ul>
@@ -242,11 +248,10 @@
   <ul>
     <li><a href="https://www.youtube.com/watch?v=hssWGXiFBDY&t=184s" target="_blank" rel="noopener noreferrer">青春のセレナーデ（宮本佳林・小片リサ）</a></li>
   </ul>
-  <h3>太陽とシスコムーン</h3>
+  <h3>宮本佳林・小片リサ・佐藤優樹</h3>
   <ul>
-    <li><a href="https://www.youtube.com/watch?v=avkKCtJYh3s&t=144s" target="_blank" rel="noopener noreferrer">Magic of Love（鈴木愛理・宮本佳林・小片リサ・Bitter ＆ Sweet・竹内朱莉）</a></li>
-    <li><a href="https://www.youtube.com/watch?v=-IGB_XYdbWQ&t=156s" target="_blank" rel="noopener noreferrer">ガタメキラ（夏焼雅・宮本佳林・長谷川萌美・佐藤優樹）</a></li>
+    <li><a href="https://www.youtube.com/watch?v=hssWGXiFBDY&t=1430s" target="_blank" rel="noopener noreferrer">すっぴん（宮本佳林・小片リサ・佐藤優樹）</a></li>
   </ul>
 </main>
-<div class="last-update">最終更新日：2026/05/04</div>
+<div class="last-update">最終更新日：2026/07/22</div>
 <?php include $_SERVER['DOCUMENT_ROOT'] . '/common/footer.php'; ?>
