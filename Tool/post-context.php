@@ -44,11 +44,11 @@
   Xでポストのページを開いた状態で実行すると、URLのコピペなしでそのまま前後検索を開けます。<br>
   PCでは下のボタンをブックマークバーにドラッグして登録してください。スマホでは「コードをコピー」して、適当なページをブックマークしてから編集でURL欄に貼り付けてください。
   <div class="ctx-bml">
-    <a class="ctx-bml-link" href="javascript:(function(){var m=location.href.match(/(?:x|twitter)\.com\/([A-Za-z0-9_]+)\/status(?:es)?\/(\d+)/);if(!m){alert('Xのポストのページで開いてください');return}if(m[1].toLowerCase()==='i'){alert('ユーザー名入りのポストURLで開いてください');return}var s=Math.floor(Number((BigInt(m[2])>>22n)+1288834974657n)/1000);var r=86400;window.open('https://x.com/search?q='+encodeURIComponent('from:'+m[1]+' since_time:'+(s-r)+' until_time:'+(s+r))+'\x26f=live')})();">ポスト前後1日を検索</a>
+    <a class="ctx-bml-link" href="javascript:(function(){var m=location.href.match(/(?:x|twitter)\.com\/([A-Za-z0-9_]+)\/status(?:es)?\/(\d+)/);if(!m){alert('Xのポストのページで開いてください');return}if(m[1].toLowerCase()==='i'){alert('ユーザー名入りのポストURLで開いてください');return}var s=Math.floor(Number((BigInt(m[2])>>22n)+1288834974657n)/1000);var r=86400;var p=function(n){return('0'+n).slice(-2)};var j=function(x){var d=new Date((x+32400)*1000);return d.getUTCFullYear()+'-'+p(d.getUTCMonth()+1)+'-'+p(d.getUTCDate())+'_'+p(d.getUTCHours())+':'+p(d.getUTCMinutes())+':'+p(d.getUTCSeconds())+'_JST'};window.open('https://x.com/search?q='+encodeURIComponent('from:'+m[1]+' since:'+j(s-r)+' until:'+j(s+r))+'\x26f=live')})();">ポスト前後1日を検索</a>
     <button type="button" class="ctx-bml-copy">コードをコピー</button>
   </div>
   <div class="ctx-bml">
-    <a class="ctx-bml-link" href="javascript:(function(){var m=location.href.match(/(?:x|twitter)\.com\/([A-Za-z0-9_]+)\/status(?:es)?\/(\d+)/);if(!m){alert('Xのポストのページで開いてください');return}if(m[1].toLowerCase()==='i'){alert('ユーザー名入りのポストURLで開いてください');return}var s=Math.floor(Number((BigInt(m[2])>>22n)+1288834974657n)/1000);var r=259200;window.open('https://x.com/search?q='+encodeURIComponent('from:'+m[1]+' since_time:'+(s-r)+' until_time:'+(s+r))+'\x26f=live')})();">ポスト前後3日を検索</a>
+    <a class="ctx-bml-link" href="javascript:(function(){var m=location.href.match(/(?:x|twitter)\.com\/([A-Za-z0-9_]+)\/status(?:es)?\/(\d+)/);if(!m){alert('Xのポストのページで開いてください');return}if(m[1].toLowerCase()==='i'){alert('ユーザー名入りのポストURLで開いてください');return}var s=Math.floor(Number((BigInt(m[2])>>22n)+1288834974657n)/1000);var r=259200;var p=function(n){return('0'+n).slice(-2)};var j=function(x){var d=new Date((x+32400)*1000);return d.getUTCFullYear()+'-'+p(d.getUTCMonth()+1)+'-'+p(d.getUTCDate())+'_'+p(d.getUTCHours())+':'+p(d.getUTCMinutes())+':'+p(d.getUTCSeconds())+'_JST'};window.open('https://x.com/search?q='+encodeURIComponent('from:'+m[1]+' since:'+j(s-r)+' until:'+j(s+r))+'\x26f=live')})();">ポスト前後3日を検索</a>
     <button type="button" class="ctx-bml-copy">コードをコピー</button>
   </div>
   <div class="ctx-bml">
