@@ -909,3 +909,68 @@ footer a {
   font-size: 14px;
   border-radius: 4px;
 }
+
+/*エムハロイベント
+-------------------------------------*/
+#mhello-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 14px;
+  margin-top: 1em;
+}
+
+.mh-card {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 12px 14px;
+  background: #fff;
+  box-shadow: 0 1px 3px rgba(0,0,0,.06);
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.mh-card .mh-title {
+  font-size: 15px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.mh-card .mh-meta {
+  font-size: 13px;
+  color: #666;
+  margin: 0;
+}
+
+.mh-card .mh-stages,
+.mh-card .mh-videos {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  font-size: 13px;
+}
+
+.mh-card .mh-stages li {
+  padding: 1px 0;
+}
+
+.mh-card .mh-videos {
+  border-top: 1px solid #eee;
+  padding-top: 6px;
+}
+
+.mh-card .mh-videos li {
+  padding: 2px 0;
+}
+
+.mh-card .mh-yt {
+  vertical-align: -2px;
+  margin-right: 4px;
+}
+
+.mh-card .mh-nolink,
+.mh-card .mh-novideo {
+  color: #999;
+  font-size: 12px;
+  margin: 0;
+}

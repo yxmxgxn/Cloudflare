@@ -9,6 +9,7 @@ on:
         type: choice
         options:
           - birthday
+          - mhello
           - karinhello
           - karinoshi
           - mixjuice
@@ -33,6 +34,7 @@ jobs:
           t="${{ inputs.target }}"
           run_if() { if [ "$t" = "$1" ] || [ "$t" = "all" ]; then python "Python/$2"; fi; }
           run_if birthday   hello-birthday.py
+          run_if mhello     generate_mhello.py
           run_if karinhello generate_karinhello.py
           run_if karinoshi  generate_karinoshi.py
           run_if mixjuice   generate_mixjuice.py
