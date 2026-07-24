@@ -75,8 +75,9 @@
     <li><a href="https://www.instagram.com/p/DZxEmi1DxDj/" target="_blank" rel="noopener noreferrer">2026/06/19 HANAKIN配信5回目（00:30:09）</a></li>
     <li><a href="https://www.instagram.com/p/DaVE9gqj7Y8/" target="_blank" rel="noopener noreferrer">2026/07/03 HANAKIN配信6回目（00:41:42）</a></li>
     <li><a href="https://www.instagram.com/p/DanU1JUD2tg/" target="_blank" rel="noopener noreferrer">2026/07/10 HANAKIN配信7回目（00:41:24）</a></li>
+    <li><a href="https://www.instagram.com/p/DbK0nY8j4y9/" target="_blank" rel="noopener noreferrer">2026-07-24 トークイベントHANAKIN生配信✨️（00:11:46）</a></li>
   </ul>
   </div>
 </main>
-<div class="last-update">最終更新日：2026/07/11</div>
+<div class="last-update">最終更新日：2026/07/24</div>
 <?php include $_SERVER['DOCUMENT_ROOT'] . '/common/footer.php'; ?>

@@ -42,8 +42,8 @@
     <li><a href="https://www.youtube.com/watch?v=40HPuMPjB1I" target="_blank" rel="noopener noreferrer">M-line Music#57（宮本佳林・長谷川萌美）2022/09/09</a></li>
     <li><a href="https://www.youtube.com/watch?v=o5Vk47KUhlk" target="_blank" rel="noopener noreferrer">M-line Music#60（夏焼雅・宮本佳林）2022/09/30</a></li>
     <li><a href="https://www.youtube.com/watch?v=QNsbQulWZxU" target="_blank" rel="noopener noreferrer">M-line Music#61（夏焼雅・宮本佳林）2022/10/07</a></li>
-    <li><a href="https://www.youtube.com/watch?v=nBSygUgPCto" target="_blank" rel="noopener noreferrer">M-line Music#64（佐藤優樹）2022/10/28</a></li>
-    <li><a href="https://www.youtube.com/watch?v=BW_zp62yBA0" target="_blank" rel="noopener noreferrer">M-line Music#65（佐藤優樹）2022/11/04</a></li>
+    <li><a href="https://www.youtube.com/watch?v=nBSygUgPCto" target="_blank" rel="noopener noreferrer">M-line Music#64（佐藤優樹・宮本佳林）2022/10/28</a></li>
+    <li><a href="https://www.youtube.com/watch?v=BW_zp62yBA0" target="_blank" rel="noopener noreferrer">M-line Music#65（佐藤優樹・宮本佳林）2022/11/04</a></li>
     <li><a href="https://www.youtube.com/watch?v=YxOX5Q1NkWE" target="_blank" rel="noopener noreferrer">M-line Music#68（宮本佳林・小片リサ）2022/11/25</a></li>
     <li><a href="https://www.youtube.com/watch?v=32LEGgSAhHM" target="_blank" rel="noopener noreferrer">M-line Music#69（宮本佳林・小片リサ）2022/12/02</a></li>
     <li><a href="https://www.youtube.com/watch?v=aGPXcbgzBFQ" target="_blank" rel="noopener noreferrer">M-line Music#72（宮本佳林・小片リサ）2022/12/23</a></li>
@@ -59,7 +59,7 @@
     <li><a href="https://www.youtube.com/watch?v=PeJ8dQyLcDE" target="_blank" rel="noopener noreferrer">M-line Music#96（夏焼雅・宮本佳林）2023/06/16</a></li>
     <li><a href="https://www.youtube.com/watch?v=VdVyiDR3_QE" target="_blank" rel="noopener noreferrer">M-line Music#97（夏焼雅・宮本佳林）2023/06/23</a></li>
     <li><a href="https://www.youtube.com/watch?v=ItLBufXK_ls" target="_blank" rel="noopener noreferrer">M-line Music#100（宮本佳林・宮崎由加）2023/07/14</a></li>
-    <li><a href="https://www.youtube.com/watch?v=U9VEl1vAlgo" target="_blank" rel="noopener noreferrer">M-line Music#101（宮崎由加）2023/07/21</a></li>
+    <li><a href="https://www.youtube.com/watch?v=U9VEl1vAlgo" target="_blank" rel="noopener noreferrer">M-line Music#101（宮本佳林・宮崎由加）2023/07/21</a></li>
     <li><a href="https://www.youtube.com/watch?v=-IGB_XYdbWQ" target="_blank" rel="noopener noreferrer">M-line Music#106（宮本佳林・田﨑あさひ）2023/08/25</a></li>
     <li><a href="https://www.youtube.com/watch?v=EPI9YjiqgNA" target="_blank" rel="noopener noreferrer">M-line Music#107（宮本佳林・田﨑あさひ）2023/09/01</a></li>
     <li><a href="https://www.youtube.com/watch?v=6njGwroq86Q" target="_blank" rel="noopener noreferrer">M-line Music#116（宮本佳林・稲場愛香）2023/11/03</a></li>
@@ -77,7 +77,7 @@
     <li><a href="https://www.youtube.com/watch?v=2KMqXPf6sUw" target="_blank" rel="noopener noreferrer">M-line Music#178（宮本佳林・長谷川萌美）2025/01/24</a></li>
     <li><a href="https://www.youtube.com/watch?v=DQI1IJSfqMk" target="_blank" rel="noopener noreferrer">M-line Music#179（宮本佳林・長谷川萌美）2025/01/31</a></li>
     <li><a href="https://www.youtube.com/watch?v=0QUyUk8CGcA" target="_blank" rel="noopener noreferrer">M-line Music#184（宮本佳林・田﨑あさひ）2025/03/07</a></li>
-    <li><a href="https://www.youtube.com/watch?v=7iOKt_zxgnE" target="_blank" rel="noopener noreferrer">M-line Music#185（田﨑あさひ）2025/03/14</a></li>
+    <li><a href="https://www.youtube.com/watch?v=7iOKt_zxgnE" target="_blank" rel="noopener noreferrer">M-line Music#185（宮本佳林・田﨑あさひ）2025/03/14</a></li>
     <li><a href="https://www.youtube.com/watch?v=DkRKw7D49CM" target="_blank" rel="noopener noreferrer">M-line Music#190（宮本佳林・川嶋美楓）2025/04/18</a></li>
     <li><a href="https://www.youtube.com/watch?v=tzuEG_CMCc4" target="_blank" rel="noopener noreferrer">M-line Music#191（宮本佳林・川嶋美楓）2025/04/25</a></li>
     <li><a href="https://www.youtube.com/watch?v=mckwPzbvlbA" target="_blank" rel="noopener noreferrer">M-line Music#196（宮本佳林・斉藤円香）2025/05/30</a></li>
@@ -107,7 +107,7 @@
     <li><a href="https://www.youtube.com/watch?v=sRTNJQk1e0E" target="_blank" rel="noopener noreferrer">Girls Night Out#11（夏焼雅&宮本佳林 ゲスト 金澤朋子）2016/04/07</a></li>
     <li><a href="https://www.youtube.com/watch?v=19B2O7Cx7A0" target="_blank" rel="noopener noreferrer">Girls Night Out#37（夏焼雅&宮本佳林 ゲスト:金澤朋子） 2016/10/06</a></li>
     <li><a href="https://www.youtube.com/watch?v=RmugBmZS9m8" target="_blank" rel="noopener noreferrer">Girls Night Out#45（夏焼雅&宮本佳林 ゲスト 宮崎由加） 2016/12/01</a></li>
-    <li><a href="https://www.youtube.com/watch?v=yx1F_1HPCIQ" target="_blank" rel="noopener noreferrer">Girls Night Out#52（夏焼雅 ゲスト 植村あかり） 2017/01/26</a></li>
+    <li><a href="https://www.youtube.com/watch?v=yx1F_1HPCIQ" target="_blank" rel="noopener noreferrer">Girls Night Out#52（夏焼雅&宮本佳林 ゲスト 植村あかり） 2017/01/26</a></li>
   </ul>
   <h2>アプカミ</h2>
   <ul>
