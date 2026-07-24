@@ -1,4 +1,4 @@
-<!-- generated: 2026-07-23T19:04:11.675813+00:00 -->
+<!-- generated: 2026-07-24T19:16:03.483067+00:00 -->
 <tr data-selector="松永里愛"><td><a href="https://www.tbsradio.jp/articles/110366/" target="_blank" rel="noopener noreferrer">2026/07/19</a></td><td>マツケンサンバⅡ～50th anniversary Ver.～ / 松平健</td><td>松永里愛</td><td>運気が上がりそうな曲</td></tr>
 <tr data-selector="江端妃咲"><td><a href="https://www.tbsradio.jp/articles/110366/" target="_blank" rel="noopener noreferrer">2026/07/19</a></td><td>アイドルパワー / M！LK</td><td>江端妃咲</td><td>運気が上がりそうな曲</td></tr>
 <tr data-selector="松永里愛&amp;江端妃咲"><td><a href="https://www.tbsradio.jp/articles/110366/" target="_blank" rel="noopener noreferrer">2026/07/19</a></td><td>クラクラ☆クライマックス / Juice＝Juice</td><td>松永里愛&amp;江端妃咲</td><td>運気が上がりそうな曲</td></tr>
