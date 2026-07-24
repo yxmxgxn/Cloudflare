@@ -94,23 +94,23 @@ def build_title(vol: str, row: dict) -> str:
 
 
 def build_meta(row: dict) -> str:
-    """2026年8月20日（木）LANDMARK HALL（神奈川）"""
+    """2026年8月20日(木)LANDMARK HALL(神奈川)"""
     date = format_date(val(row, "Date"))
     day = val(row, "Day")
     place = val(row, "Place")
     pref = val(row, "Prefecture")
     text = esc(date)
     if day:
-        text += f"（{esc(day)}）"
+        text += f"({esc(day)})"
     if place:
         text += esc(place)
     if pref:
-        text += f"（{esc(pref)}）"
+        text += f"({esc(pref)})"
     return text
 
 
 def build_stages(rows: list[dict], card_date: str) -> str:
-    """公演ごとの 17:30 セットリスト（Tomoko）"""
+    """公演ごとの 17:30 ToMoKo（セットリスト）"""
     lines = []
     for r in rows:
         time = val(r, "Time")
@@ -122,7 +122,7 @@ def build_stages(rows: list[dict], card_date: str) -> str:
         if val(r, "Date") and val(r, "Date") != card_date:
             label = f"{esc(format_date(val(r, 'Date')))} {label}".strip()
         link = (
-            f'<a href="{esc(tomoko)}" target="_blank" rel="noopener noreferrer">セットリスト（Tomoko）</a>'
+            f'<a href="{esc(tomoko)}" target="_blank" rel="noopener noreferrer">ToMoKo（セットリスト）</a>'
             if tomoko else '<span class="mh-nolink">セットリスト未掲載</span>'
         )
         lines.append(f"<li>{label} {link}</li>")
