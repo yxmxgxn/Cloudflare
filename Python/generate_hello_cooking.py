@@ -32,9 +32,11 @@ GID_URL = "1286538905"
 REPO_ROOT = Path(__file__).resolve().parent.parent  # Python/ の親
 
 OUTPUT_CARDS = REPO_ROOT / "Spreadsheet" / "cooking_cards.php"
+OUTPUT_GROUPS = REPO_ROOT / "Spreadsheet" / "cooking_groups.php"
 OUTPUT_GENRES = REPO_ROOT / "Spreadsheet" / "cooking_genres.php"
 OUTPUT_CATEGORIES = REPO_ROOT / "Spreadsheet" / "cooking_categories.php"
 OUTPUT_TYPES = REPO_ROOT / "Spreadsheet" / "cooking_types.php"
+OUTPUT_COOKS = REPO_ROOT / "Spreadsheet" / "cooking_cooks.php"
 OUTPUT_GENERATED = REPO_ROOT / "Generated" / "cooking_generated.php"
 
 YT_ICON = (
@@ -44,6 +46,27 @@ YT_ICON = (
 )
 
 MAX_VIDEOS = 4  # 1IDあたり表示する動画の上限
+
+# フィルタの表示順(この順に並べ、リストにない値は末尾に回す)
+GENRE_ORDER = ["和食", "洋食", "インド", "タイ", "韓国", "中華", "その他"]
+CATEGORY_ORDER = ["主食", "主菜", "副菜", "汁物", "デザート", "その他"]
+TYPE_ORDER = ["肉", "魚", "野菜", "卵", "豆腐", "その他"]
+COOK_ORDER = ["宇部先生", "黒木先生", "長澤先生"]
+GROUP_ORDER = [
+    "OG", "モーニング娘。", "アンジュルム", "Juice=Juice", "つばきファクトリー",
+    "BEYOOOOONDS", "OCHA NORMA", "ロージークロニクル", "こぶしファクトリー",
+    "カントリー・ガールズ", "Berryz工房", "℃-ute", "アップアップガールズ（仮）",
+    "チャオ ベッラ チンクエッティ", "Bitter & Sweet", "PINK CRES.", "LoVendoЯ", "吉川友",
+]
+
+# Member列 → 対応するGroup列
+MEMBER_COLS = [("Member1", "Group1"), ("Member2", "Group2")]
+
+
+def order_by(values: set[str], order: list[str]) -> list[str]:
+    def key(v: str):
+        return (order.index(v), "") if v in order else (len(order), v)
+    return sorted(values, key=key)
 
 
 def fetch_csv(source: str) -> list[dict]:
@@ -75,13 +98,18 @@ def val(row: dict, key: str) -> str:
 
 
 def build_title(row: dict) -> str:
-    """1行目: 出演メンバー(・区切り) + 講師"""
-    members = [val(row, "Member1"), val(row, "Member2")]
-    members = [m for m in members if m]
-    name = "・".join(esc(m) for m in members)
+    """1行目: 出演メンバー(・区切り、所属を（ ）付きで) + 講師"""
+    parts = []
+    for mkey, gkey in MEMBER_COLS:
+        name = val(row, mkey)
+        if not name:
+            continue
+        grp = val(row, gkey)
+        parts.append(f"{esc(name)}（{esc(grp)}）" if grp else esc(name))
+    name_html = "・".join(parts)
     cook = val(row, "Cook")
     cook_html = f'<span class="ck-cook">講師：{esc(cook)}</span>' if cook else ""
-    return f'<p class="ck-title">{name}{cook_html}</p>'
+    return f'<p class="ck-title">{name_html}{cook_html}</p>'
 
 
 def build_meals(meals: list[dict]) -> str:
@@ -133,18 +161,23 @@ def build_cards(members: list[dict], meals_by_id: dict, videos_by_id: dict) -> s
         meals = meals_by_id.get(eid, [])
         videos = videos_by_id.get(eid, [])
 
-        genres = sorted({val(m, "Genre") for m in meals if val(m, "Genre")})
-        categories = sorted({val(m, "Category") for m in meals if val(m, "Category")})
-        types = sorted({val(m, "Type") for m in meals if val(m, "Type")})
+        genres = order_by({val(m, "Genre") for m in meals if val(m, "Genre")}, GENRE_ORDER)
+        categories = order_by({val(m, "Category") for m in meals if val(m, "Category")}, CATEGORY_ORDER)
+        types = order_by({val(m, "Type") for m in meals if val(m, "Type")}, TYPE_ORDER)
+        groups = order_by({val(row, gkey) for _, gkey in MEMBER_COLS if val(row, gkey)}, GROUP_ORDER)
+        cook = val(row, "Cook")
 
         search_parts = [
-            val(row, "Member1"), val(row, "Member2"), val(row, "Cook"),
+            val(row, "Member1"), val(row, "Member2"), cook,
+            *[val(row, gkey) for _, gkey in MEMBER_COLS],
             *[val(m, "Meal") for m in meals],
         ]
         search = " ".join(p for p in search_parts if p)
 
         cards.append(
             f'<div class="ck-card" id="ck-{esc(eid)}"'
+            f' data-groups="{esc("|".join(groups))}"'
+            f' data-cook="{esc(cook)}"'
             f' data-genres="{esc("|".join(genres))}"'
             f' data-categories="{esc("|".join(categories))}"'
             f' data-types="{esc("|".join(types))}"'
@@ -187,9 +220,12 @@ def main():
         if vid:
             videos_by_id.setdefault(vid, []).append(v)
 
-    genres = sorted({val(m, "Genre") for m in meals if val(m, "Genre")})
-    categories = sorted({val(m, "Category") for m in meals if val(m, "Category")})
-    types = sorted({val(m, "Type") for m in meals if val(m, "Type")})
+    genres = order_by({val(m, "Genre") for m in meals if val(m, "Genre")}, GENRE_ORDER)
+    categories = order_by({val(m, "Category") for m in meals if val(m, "Category")}, CATEGORY_ORDER)
+    types = order_by({val(m, "Type") for m in meals if val(m, "Type")}, TYPE_ORDER)
+    group_set = {val(r, gkey) for r in members for _, gkey in MEMBER_COLS if val(r, gkey)}
+    groups = order_by(group_set, GROUP_ORDER)
+    cooks = order_by({val(r, "Cook") for r in members if val(r, "Cook")}, COOK_ORDER)
 
     stamp = f"<!-- generated: {datetime.now(timezone.utc).isoformat()} -->\n"
 
@@ -197,6 +233,10 @@ def main():
     OUTPUT_GENERATED.parent.mkdir(parents=True, exist_ok=True)
     with open(OUTPUT_CARDS, "w", encoding="utf-8") as f:
         f.write(stamp + build_cards(members, meals_by_id, videos_by_id) + "\n")
+    with open(OUTPUT_GROUPS, "w", encoding="utf-8") as f:
+        f.write(stamp + build_options(groups) + "\n")
+    with open(OUTPUT_COOKS, "w", encoding="utf-8") as f:
+        f.write(stamp + build_options(cooks) + "\n")
     with open(OUTPUT_GENRES, "w", encoding="utf-8") as f:
         f.write(stamp + build_options(genres) + "\n")
     with open(OUTPUT_CATEGORIES, "w", encoding="utf-8") as f:

@@ -1075,3 +1075,28 @@ footer a {
   font-size: 12px;
   margin: 6px 0 0;
 }
+
+/*クッキング 講師紹介
+-------------------------------------*/
+.ck-cooks {
+  margin-top: 2em;
+  padding-top: 1em;
+  border-top: 1px solid #eee;
+}
+
+.ck-cooks h2 {
+  font-size: 16px;
+  margin: 0 0 8px;
+}
+
+.ck-cooks ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.ck-cooks li {
+  font-size: 13px;
+  line-height: 1.7;
+  margin-bottom: 8px;
+}

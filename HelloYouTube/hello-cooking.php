@@ -15,6 +15,10 @@
 
 <div id="cooking-controls">
   <input type="text" id="ck-search" placeholder="メンバー・料理名で絞り込み…" oninput="ckFilter()">
+  <select id="ck-group" onchange="ckFilter()">
+    <option value="">すべてのグループ</option>
+    <?php include $_SERVER['DOCUMENT_ROOT'] . '/Spreadsheet/cooking_groups.php'; ?>
+  </select>
   <select id="ck-genre" onchange="ckFilter()">
     <option value="">すべてのジャンル</option>
     <?php include $_SERVER['DOCUMENT_ROOT'] . '/Spreadsheet/cooking_genres.php'; ?>
@@ -27,11 +31,27 @@
     <option value="">すべての食材</option>
     <?php include $_SERVER['DOCUMENT_ROOT'] . '/Spreadsheet/cooking_types.php'; ?>
   </select>
+  <select id="ck-cook" onchange="ckFilter()">
+    <option value="">すべての講師</option>
+    <?php include $_SERVER['DOCUMENT_ROOT'] . '/Spreadsheet/cooking_cooks.php'; ?>
+  </select>
   <span id="cooking-count"></span>
 </div>
 <div id="cooking-cards">
   <?php include $_SERVER['DOCUMENT_ROOT'] . '/Spreadsheet/cooking_cards.php'; ?>
 </div>
+
+<section class="ck-cooks">
+  <h2>講師紹介</h2>
+  <ul>
+    <li>宇部先生（元パシフィックヘブンシェフ）</li>
+    <li>黒木二郎 料理長（麻布十番 京寿々）</li>
+    <li>長澤宜久<br>
+      2007年 千代田区・丸の内「resonance」のシェフに就任。<br>
+      フランスのエスプリに溢れた、オリジナル料理の数々に多くのファンが訪れている。<br>
+      2008年ソムリエ資格取得。（ハロ！ステ#246より）</li>
+  </ul>
+</section>
 <?php include $_SERVER['DOCUMENT_ROOT'] . '/Generated/cooking_generated.php'; ?>
 
 </main>
@@ -41,6 +61,8 @@
   var allCards = Array.from(container.querySelectorAll('.ck-card')).map(function(el) {
     return {
       el: el,
+      groups: (el.getAttribute('data-groups') || '').split('|').filter(Boolean),
+      cook: el.getAttribute('data-cook') || '',
       genres: (el.getAttribute('data-genres') || '').split('|').filter(Boolean),
       categories: (el.getAttribute('data-categories') || '').split('|').filter(Boolean),
       types: (el.getAttribute('data-types') || '').split('|').filter(Boolean),
@@ -50,17 +72,27 @@
 
   function ckFilter() {
     var q = document.getElementById('ck-search').value.toLowerCase();
+    var gr = document.getElementById('ck-group').value;
     var g = document.getElementById('ck-genre').value;
     var c = document.getElementById('ck-category').value;
-    var t = document.getElementById('ck-type').value;
+    var ck = document.getElementById('ck-cook').value;
+    var typeSel = document.getElementById('ck-type');
+
+    // デザートを選ぶと食材フィルタは無効化して解除する
+    var dessert = (c === 'デザート');
+    if (dessert && typeSel.value) typeSel.value = '';
+    typeSel.disabled = dessert;
+    var t = typeSel.value;
 
     var shown = 0;
     allCards.forEach(function(card) {
       var ok =
         (!q || card.search.indexOf(q) !== -1) &&
+        (!gr || card.groups.indexOf(gr) !== -1) &&
         (!g || card.genres.indexOf(g) !== -1) &&
         (!c || card.categories.indexOf(c) !== -1) &&
-        (!t || card.types.indexOf(t) !== -1);
+        (!t || card.types.indexOf(t) !== -1) &&
+        (!ck || card.cook === ck);
       card.el.style.display = ok ? '' : 'none';
       if (ok) shown++;
     });
