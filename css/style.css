@@ -974,3 +974,104 @@ footer a {
   font-size: 12px;
   margin: 0;
 }
+
+/*クッキングコーナー
+-------------------------------------*/
+#cooking-controls {
+  display: flex;
+  gap: 10px;
+  margin: 0.75rem 0;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+#cooking-controls input[type="text"] {
+  flex: 1;
+  min-width: 100px;
+  padding: 6px 10px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+}
+
+#cooking-controls select {
+  padding: 6px 10px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+}
+
+#cooking-count {
+  font-size: 13px;
+  color: #888;
+  white-space: nowrap;
+}
+
+#cooking-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 14px;
+  margin-top: 1em;
+}
+
+.ck-card {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 12px 14px;
+  background: #fff;
+  box-shadow: 0 1px 3px rgba(0,0,0,.06);
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.ck-card .ck-title {
+  font-size: 15px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.ck-card .ck-cook {
+  font-size: 12px;
+  font-weight: normal;
+  color: #888;
+  margin-left: 8px;
+}
+
+.ck-card .ck-meals {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  font-size: 13px;
+}
+
+.ck-card .ck-meals li {
+  padding: 1px 0;
+}
+
+.ck-card .ck-tags {
+  font-size: 11px;
+  color: #AE8DBC;
+  margin-left: 6px;
+}
+
+.ck-card .ck-videos {
+  list-style: none;
+  margin: 0;
+  padding: 6px 0 0;
+  border-top: 1px solid #eee;
+  font-size: 13px;
+}
+
+.ck-card .ck-videos li {
+  padding: 2px 0;
+}
+
+.ck-card .ck-yt {
+  vertical-align: -2px;
+  margin-right: 4px;
+}
+
+.ck-card .ck-novideo {
+  color: #999;
+  font-size: 12px;
+  margin: 6px 0 0;
+}
