@@ -101,7 +101,7 @@ def val(row: dict, key: str) -> str:
 
 
 def build_title(row: dict) -> str:
-    """1行目: 出演メンバー(・区切り、所属を（ ）付きで) + 講師"""
+    """1行目: 出演メンバー(・区切り、所属を（ ）付きで)"""
     parts = []
     for mkey, gkey in MEMBER_COLS:
         name = val(row, mkey)
@@ -109,10 +109,13 @@ def build_title(row: dict) -> str:
             continue
         grp = val(row, gkey)
         parts.append(f"{esc(name)}（{esc(grp)}）" if grp else esc(name))
-    name_html = "・".join(parts)
+    return f'<p class="ck-title">{"・".join(parts)}</p>'
+
+
+def build_cook(row: dict) -> str:
+    """上段の右下に寄せる講師表記"""
     cook = val(row, "Cook")
-    cook_html = f'<span class="ck-cook">講師：{esc(cook)}</span>' if cook else ""
-    return f'<p class="ck-title">{name_html}{cook_html}</p>'
+    return f'<p class="ck-cook">講師：{esc(cook)}</p>' if cook else ""
 
 
 def build_meals(meals: list[dict]) -> str:
@@ -124,7 +127,7 @@ def build_meals(meals: list[dict]) -> str:
         meal = val(m, "Meal")
         if not meal:
             continue
-        tags = [val(m, "Genre"), val(m, "Category"), val(m, "Type")]
+        tags = [val(m, "Genre"), val(m, "Category"), val(m, "Type"), val(m, "SubCat")]
         tags = [t for t in tags if t]
         tag_html = f'<span class="ck-tags">{esc("・".join(tags))}</span>' if tags else ""
         lines.append(f"<li>{esc(meal)}{tag_html}</li>")
@@ -187,8 +190,11 @@ def build_cards(members: list[dict], meals_by_id: dict, videos_by_id: dict) -> s
             f' data-types="{esc("|".join(types))}"'
             f' data-subcats="{esc("|".join(subcats))}"'
             f' data-search="{esc(search)}">'
+            f'<div class="ck-top">'
             f"{build_title(row)}"
             f"{build_meals(meals)}"
+            f"{build_cook(row)}"
+            f"</div>"
             f"{build_videos(videos)}"
             "</div>"
         )

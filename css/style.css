@@ -1023,6 +1023,13 @@ footer a {
   gap: 6px;
 }
 
+.ck-card .ck-top {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  flex: 1;
+}
+
 .ck-card .ck-title {
   font-size: 15px;
   font-weight: bold;
@@ -1030,10 +1037,11 @@ footer a {
 }
 
 .ck-card .ck-cook {
+  margin: 0;
+  margin-top: auto;
   font-size: 12px;
-  font-weight: normal;
   color: #888;
-  margin-left: 8px;
+  text-align: right;
 }
 
 .ck-card .ck-meals {
