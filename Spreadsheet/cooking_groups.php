@@ -1,4 +1,4 @@
-<!-- generated: 2026-07-25T18:01:58.688256+00:00 -->
+<!-- generated: 2026-07-25T18:32:03.835942+00:00 -->
 <option value="OG">OG</option>
 <option value="モーニング娘。">モーニング娘。</option>
 <option value="アンジュルム">アンジュルム</option>

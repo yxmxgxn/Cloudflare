@@ -31,6 +31,10 @@
     <option value="">すべての食材</option>
     <?php include $_SERVER['DOCUMENT_ROOT'] . '/Spreadsheet/cooking_types.php'; ?>
   </select>
+  <select id="ck-subcat" onchange="ckFilter()" style="display:none">
+    <option value="">すべての種別</option>
+    <?php include $_SERVER['DOCUMENT_ROOT'] . '/Spreadsheet/cooking_subcats.php'; ?>
+  </select>
   <select id="ck-cook" onchange="ckFilter()">
     <option value="">すべての講師</option>
     <?php include $_SERVER['DOCUMENT_ROOT'] . '/Spreadsheet/cooking_cooks.php'; ?>
@@ -66,6 +70,7 @@
       genres: (el.getAttribute('data-genres') || '').split('|').filter(Boolean),
       categories: (el.getAttribute('data-categories') || '').split('|').filter(Boolean),
       types: (el.getAttribute('data-types') || '').split('|').filter(Boolean),
+      subcats: (el.getAttribute('data-subcats') || '').split('|').filter(Boolean),
       search: (el.getAttribute('data-search') || '').toLowerCase(),
     };
   });
@@ -77,12 +82,15 @@
     var c = document.getElementById('ck-category').value;
     var ck = document.getElementById('ck-cook').value;
     var typeSel = document.getElementById('ck-type');
+    var subSel = document.getElementById('ck-subcat');
 
-    // デザートを選ぶと食材フィルタは無効化して解除する
+    // デザートを選ぶと右のフィルタを食材→種別(SubCat)に切り替える
     var dessert = (c === 'デザート');
-    if (dessert && typeSel.value) typeSel.value = '';
-    typeSel.disabled = dessert;
+    typeSel.style.display = dessert ? 'none' : '';
+    subSel.style.display = dessert ? '' : 'none';
+    if (dessert) { typeSel.value = ''; } else { subSel.value = ''; }
     var t = typeSel.value;
+    var sc = subSel.value;
 
     var shown = 0;
     allCards.forEach(function(card) {
@@ -92,6 +100,7 @@
         (!g || card.genres.indexOf(g) !== -1) &&
         (!c || card.categories.indexOf(c) !== -1) &&
         (!t || card.types.indexOf(t) !== -1) &&
+        (!sc || card.subcats.indexOf(sc) !== -1) &&
         (!ck || card.cook === ck);
       card.el.style.display = ok ? '' : 'none';
       if (ok) shown++;

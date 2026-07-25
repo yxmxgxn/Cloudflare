@@ -36,6 +36,7 @@ OUTPUT_GROUPS = REPO_ROOT / "Spreadsheet" / "cooking_groups.php"
 OUTPUT_GENRES = REPO_ROOT / "Spreadsheet" / "cooking_genres.php"
 OUTPUT_CATEGORIES = REPO_ROOT / "Spreadsheet" / "cooking_categories.php"
 OUTPUT_TYPES = REPO_ROOT / "Spreadsheet" / "cooking_types.php"
+OUTPUT_SUBCATS = REPO_ROOT / "Spreadsheet" / "cooking_subcats.php"
 OUTPUT_COOKS = REPO_ROOT / "Spreadsheet" / "cooking_cooks.php"
 OUTPUT_GENERATED = REPO_ROOT / "Generated" / "cooking_generated.php"
 
@@ -51,6 +52,8 @@ MAX_VIDEOS = 4  # 1IDあたり表示する動画の上限
 GENRE_ORDER = ["和食", "洋食", "インド", "タイ", "韓国", "中華", "その他"]
 CATEGORY_ORDER = ["主食", "主菜", "副菜", "汁物", "デザート", "その他"]
 TYPE_ORDER = ["肉", "魚", "野菜", "卵", "豆腐", "その他"]
+# SubCatはデザートのときだけ食材フィルタの代わりに使う
+SUBCAT_ORDER = ["焼き菓子", "高温調理", "蒸し菓子", "煮物", "冷菓", "和菓子", "下準備"]
 COOK_ORDER = ["宇部先生", "黒木先生", "長澤先生"]
 GROUP_ORDER = [
     "OG", "モーニング娘。", "アンジュルム", "Juice=Juice", "つばきファクトリー",
@@ -164,6 +167,7 @@ def build_cards(members: list[dict], meals_by_id: dict, videos_by_id: dict) -> s
         genres = order_by({val(m, "Genre") for m in meals if val(m, "Genre")}, GENRE_ORDER)
         categories = order_by({val(m, "Category") for m in meals if val(m, "Category")}, CATEGORY_ORDER)
         types = order_by({val(m, "Type") for m in meals if val(m, "Type")}, TYPE_ORDER)
+        subcats = order_by({val(m, "SubCat") for m in meals if val(m, "SubCat")}, SUBCAT_ORDER)
         groups = order_by({val(row, gkey) for _, gkey in MEMBER_COLS if val(row, gkey)}, GROUP_ORDER)
         cook = val(row, "Cook")
 
@@ -181,6 +185,7 @@ def build_cards(members: list[dict], meals_by_id: dict, videos_by_id: dict) -> s
             f' data-genres="{esc("|".join(genres))}"'
             f' data-categories="{esc("|".join(categories))}"'
             f' data-types="{esc("|".join(types))}"'
+            f' data-subcats="{esc("|".join(subcats))}"'
             f' data-search="{esc(search)}">'
             f"{build_title(row)}"
             f"{build_meals(meals)}"
@@ -223,6 +228,7 @@ def main():
     genres = order_by({val(m, "Genre") for m in meals if val(m, "Genre")}, GENRE_ORDER)
     categories = order_by({val(m, "Category") for m in meals if val(m, "Category")}, CATEGORY_ORDER)
     types = order_by({val(m, "Type") for m in meals if val(m, "Type")}, TYPE_ORDER)
+    subcats = order_by({val(m, "SubCat") for m in meals if val(m, "SubCat")}, SUBCAT_ORDER)
     group_set = {val(r, gkey) for r in members for _, gkey in MEMBER_COLS if val(r, gkey)}
     groups = order_by(group_set, GROUP_ORDER)
     cooks = order_by({val(r, "Cook") for r in members if val(r, "Cook")}, COOK_ORDER)
@@ -243,6 +249,8 @@ def main():
         f.write(stamp + build_options(categories) + "\n")
     with open(OUTPUT_TYPES, "w", encoding="utf-8") as f:
         f.write(stamp + build_options(types) + "\n")
+    with open(OUTPUT_SUBCATS, "w", encoding="utf-8") as f:
+        f.write(stamp + build_options(subcats) + "\n")
     with open(OUTPUT_GENERATED, "w", encoding="utf-8") as f:
         f.write(f'<div class="last-update">最終更新日：{generated}</div>\n')
 
