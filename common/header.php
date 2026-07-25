@@ -9,6 +9,8 @@
 <?php
   $p_title = isset($title) ? $title : "宮本佳林・M-line・ハロプロ Archive";
   $p_desc  = isset($description) ? $description : "宮本佳林さん・M-line・ハロープロジェクトのデータを公開しています";
+  // OGP画像・ホーム画面アイコンのブランド別セット(img/{karin,hello,juice}/)。各ページで 'hello'/'juice' を指定、無ければ karin
+  $brand = isset($brand) ? $brand : 'karin';
 ?>
 <meta name="description" content="<?php echo $p_desc; ?>">
 
@@ -25,13 +27,13 @@
   $canonical_url = 'https://karin.heavy.jp' . $canonical_path;
 ?>
 <meta property="og:url" content="<?php echo $canonical_url; ?>">
-<meta property="og:image" content="https://karin.heavy.jp/img/ogp-1200x630.png">
+<meta property="og:image" content="https://karin.heavy.jp/img/<?php echo $brand; ?>/ogp-1200x630.png">
 <meta property="og:site_name" content="宮本佳林・M-line・ハロプロ Archive">
 
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="宮本佳林・M-line・ハロプロ Archive">
 <meta name="twitter:description" content="宮本佳林さん・M-line・ハロープロジェクトのデータを公開しています">
-<meta name="twitter:image" content="https://karin.heavy.jp/img/ogp-1200x630.png">
+<meta name="twitter:image" content="https://karin.heavy.jp/img/<?php echo $brand; ?>/ogp-1200x630.png">
 
 <title><?php if (isset($title)) {echo $title . " | 宮本佳林・M-line・ハロプロ Archive"; } else {echo "宮本佳林・M-line・ハロプロ Archive"; } ?></title>
 
@@ -42,9 +44,9 @@
 <!-- Favicon -->
 
 <link rel="icon" href="/img/favicon.ico" type="image/x-icon" sizes="any">
-<link rel="icon" type="image/png" href="/img/android-chrome-192x192.png" sizes="192x192">
-<link rel="icon" type="image/png" href="/img/android-chrome-512x512.png" sizes="512x512">
-<link rel="apple-touch-icon" href="/img/apple-touch-icon.png">
+<link rel="icon" type="image/png" href="/img/<?php echo $brand; ?>/android-chrome-192x192.png" sizes="192x192">
+<link rel="icon" type="image/png" href="/img/<?php echo $brand; ?>/android-chrome-512x512.png" sizes="512x512">
+<link rel="apple-touch-icon" href="/img/<?php echo $brand; ?>/apple-touch-icon.png">
 <link rel="canonical" href="<?php echo $canonical_url; ?>">
 
 <?php

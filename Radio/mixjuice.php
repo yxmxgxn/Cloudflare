@@ -6,6 +6,7 @@
     "工藤由愛", "松永里愛", "有澤一華", "江端妃咲", "石山咲良", "遠藤彩加里", "川嶋美楓",
     ["name" => "Juice=Juice", "type" => "MusicGroup"],  // グループだけ明示
   ];
+  $brand = 'juice';
   include $_SERVER['DOCUMENT_ROOT'] . '/common/header.php';
 
   $CSV_URL = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vQGBS0Tm7Z9I32xmJ0PzdFma5Q5tJpvg71v8JRw7-QSlQsr57nqkYeVy0kSEOYttMg6FZfucZiHFYYt/pub?gid=1463327244&single=true&output=csv';

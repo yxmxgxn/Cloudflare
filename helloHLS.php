@@ -1,6 +1,7 @@
 <?php
   $title = "ハロプロメンバーカラー色空間配置"; 
   $description = "ハロプロメンバーのメンバーカラーのHEXが公開されたので、HS色空間に配置してみました。Lは無視しているので、同じ色のメンバーは同じ位置にプロットされます。";  
+  $brand = 'hello';
   include $_SERVER['DOCUMENT_ROOT'] . '/common/header.php';
 ?>
 

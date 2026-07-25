@@ -6,6 +6,7 @@
     ["name" => "M-line Club", "type" => "Organization"],
     ["name" => "ハロー！プロジェクト", "type" => "Organization"],
   ];
+  $brand = 'hello';
   include $_SERVER['DOCUMENT_ROOT'] . '/common/header.php';
 ?>
 

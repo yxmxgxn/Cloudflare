@@ -11,6 +11,7 @@
   //   ["name" => "Juice=Juice", "type" => "MusicGroup"],
   //   ["name" => "譜久村聖"],                          // typeなし → Person
   // ];
+  $brand = 'juice';
   include $_SERVER['DOCUMENT_ROOT'] . '/common/header.php';
 ?>
 

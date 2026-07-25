@@ -1,6 +1,7 @@
 <?php
   $title = "Juice＝Juice 風に吹かれて MV ロケ地"; 
   $description = "風に吹かれてのMVが渋谷／代々木公園周辺で撮影されていたので、主な場所を探しました。時間と登場人物、撮影出来た場合は同じアングルの写真、キャプチャ画像、地図のリンクを載せてます。";
+  $brand = 'juice';
   include $_SERVER['DOCUMENT_ROOT'] . '/common/header.php';
 ?>
 
