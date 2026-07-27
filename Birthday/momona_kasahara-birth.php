@@ -11,7 +11,7 @@
 <p class="site-title"><a href="/hello-birthday">メンバー一覧に戻る</a></p>
 <h1>笠原桃奈バースデーイベント会場まとめ</h1>
 <p>笠原桃奈さん（2003年10月22日生まれ）のこれまでのバースデーイベントをまとめました。非公式サイトのハロプロセトリ検索システム「ToMoKo」にてセットリストが公開されていたものはリンクを貼っています。</p>
-2016年度(13歳)
+13歳（2016年）
 <table class="birthday-table">
 <thead>
 <tr>
@@ -29,7 +29,7 @@
 <tr class="row-even"><td>2016年11月29日</td><td>19:30</td><td>アンジュルム 竹内朱莉・上國料萌衣・笠原桃奈バースデーイベント2016 in 名古屋</td><td>ミッドランドスクエア シネマ2</td><td>愛知県</td><td><a href="https://hp-setlist.com/stage/10023" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
 </tbody>
 </table>
-2017年度(14歳)
+14歳（2017年）
 <table class="birthday-table">
 <thead>
 <tr>
@@ -47,7 +47,7 @@
 <tr class="row-even"><td>2017年11月7日</td><td>19:30</td><td>アンジュルム上國料萌衣・笠原桃奈バースデーイベント2017 in 名古屋</td><td>ミッドランドスクエア シネマ2</td><td>愛知県</td><td><a href="https://hp-setlist.com/stage/10068" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
 </tbody>
 </table>
-2018年度(15歳)
+15歳（2018年）
 <table class="birthday-table">
 <thead>
 <tr>
@@ -63,7 +63,7 @@
 <tr class="row-even"><td>2018年11月6日</td><td>19:00</td><td>アンジュルム 上國料萌衣・笠原桃奈バースデーイベント2018</td><td>品川ステラボール</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/6338" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
 </tbody>
 </table>
-2019年度(16歳)
+16歳（2019年）
 <table class="birthday-table">
 <thead>
 <tr>
@@ -80,7 +80,7 @@
 <tr><td>2019年11月8日</td><td>19:30</td><td>アンジュルム 上國料萌衣・笠原桃奈バースデーイベント2019</td><td>CLUB CITTA'</td><td>神奈川県</td><td><a href="https://hp-setlist.com/stage/6888" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
 </tbody>
 </table>
-2020年度(17歳)
+17歳（2020年）
 <table class="birthday-table">
 <thead>
 <tr>
@@ -99,7 +99,7 @@
 <tr><td>2020年10月27日</td><td>20:00</td><td>アンジュルム 上國料萌衣・笠原桃奈・橋迫鈴バースデーイベント2020 in 名古屋</td><td>ミッドランドスクエア シネマ2</td><td>愛知県</td><td><a href="https://hp-setlist.com/stage/10179" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
 </tbody>
 </table>
-2021年度(18歳)
+18歳（2021年）
 <table class="birthday-table">
 <thead>
 <tr>

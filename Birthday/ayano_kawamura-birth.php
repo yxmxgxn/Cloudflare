@@ -11,7 +11,7 @@
 <p class="site-title"><a href="/hello-birthday">メンバー一覧に戻る</a></p>
 <h1>川村文乃バースデーイベント会場まとめ</h1>
 <p>川村文乃さん（1999年7月7日生まれ）のこれまでのバースデーイベントをまとめました。非公式サイトのハロプロセトリ検索システム「ToMoKo」にてセットリストが公開されていたものはリンクを貼っています。</p>
-2018年度(19歳)
+19歳（2018年）
 <table class="birthday-table">
 <thead>
 <tr>
@@ -29,7 +29,7 @@
 <tr class="row-even"><td>2018年8月21日</td><td>19:30</td><td>アンジュルム 川村文乃バースデーイベント2018 in 名古屋</td><td>ミッドランドスクエア シネマ2</td><td>愛知県</td><td><a href="https://hp-setlist.com/stage/10105" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
 </tbody>
 </table>
-2019年度(20歳)
+20歳（2019年）
 <table class="birthday-table">
 <thead>
 <tr>
@@ -46,7 +46,7 @@
 <tr><td>2019年7月9日</td><td>19:45</td><td>アンジュルム 川村文乃バースデーイベント2019</td><td>新宿ReNY</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/6647" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
 </tbody>
 </table>
-2020年度(21歳)
+21歳（2020年）
 <table class="birthday-table">
 <thead>
 <tr>
@@ -65,7 +65,7 @@
 <tr><td>2020年11月12日</td><td>19:15</td><td>アンジュルム 川村文乃バースデーイベント2020 アンコール公演</td><td>COTTON CLUB</td><td>東京都</td><td></td></tr>
 </tbody>
 </table>
-2021年度(22歳)
+22歳（2021年）
 <table class="birthday-table">
 <thead>
 <tr>
@@ -84,7 +84,7 @@
 <tr><td>2021年7月20日</td><td>19:00</td><td>アンジュルム 川村文乃バースデーイベント2021 in 名古屋</td><td>ミッドランドスクエア シネマ2</td><td>愛知県</td><td><a href="https://hp-setlist.com/stage/10213" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
 </tbody>
 </table>
-2022年度(23歳)
+23歳（2022年）
 <table class="birthday-table">
 <thead>
 <tr>
@@ -101,7 +101,7 @@
 <tr><td>2022年7月20日</td><td>18:00</td><td>アンジュルム 川村文乃バースデーイベント2022</td><td>タワーホール船堀 大ホール</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/7806" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
 </tbody>
 </table>
-2023年度(24歳)
+24歳（2023年）
 <table class="birthday-table">
 <thead>
 <tr>
@@ -118,7 +118,7 @@
 <tr><td>2023年7月19日</td><td>19:10</td><td>アンジュルム 川村文乃バースデーイベント2023</td><td>タワーホール船堀 大ホール</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/20338" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
 </tbody>
 </table>
-2024年度(25歳)
+25歳（2024年）
 <table class="birthday-table">
 <thead>
 <tr>

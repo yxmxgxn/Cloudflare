@@ -11,7 +11,7 @@
 <p class="site-title"><a href="/hello-birthday">メンバー一覧に戻る</a></p>
 <h1>清野桃々姫バースデーイベント会場まとめ</h1>
 <p>清野桃々姫さん（2004年12月22日生まれ）のこれまでのバースデーイベントをまとめました。非公式サイトのハロプロセトリ検索システム「ToMoKo」にてセットリストが公開されていたものはリンクを貼っています。</p>
-2018年度(14歳)
+14歳（2018年）
 <table class="birthday-table">
 <thead>
 <tr>
@@ -29,7 +29,7 @@
 <tr class="row-even"><td>2019年1月29日</td><td>19:30</td><td>BEYOOOOONDS/雨ノ森 川海 清野桃々姫バースデーイベント2018 in 名古屋</td><td>ミッドランドスクエア シネマ2</td><td>愛知県</td><td><a href="https://hp-setlist.com/stage/10125" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
 </tbody>
 </table>
-2019年度(15歳)
+15歳（2019年）
 <table class="birthday-table">
 <thead>
 <tr>
@@ -48,7 +48,7 @@
 <tr><td>2020年1月28日</td><td>19:50</td><td>BEYOOOOONDS 山﨑夢羽・岡村美波・清野桃々姫・平井美葉バースデーイベント in 名古屋</td><td>ミッドランドスクエア シネマ2</td><td>愛知県</td><td><a href="https://hp-setlist.com/stage/10173" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
 </tbody>
 </table>
-2020年度(16歳)
+16歳（2020年）
 <table class="birthday-table">
 <thead>
 <tr>
@@ -65,7 +65,7 @@
 <tr><td>2020年12月22日</td><td>19:30</td><td>BEYOOOOONDS/雨ノ森 川海 清野桃々姫バースデーイベント2020</td><td>スクエア荏原ひらつかホール</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/7164" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
 </tbody>
 </table>
-2021年度(17歳)
+17歳（2021年）
 <table class="birthday-table">
 <thead>
 <tr>
@@ -82,7 +82,7 @@
 <tr><td>2021年12月20日</td><td>18:50</td><td>BEYOOOOONDS/雨ノ森 川海 清野桃々姫バースデーイベント2021</td><td>LANDMARK HALL</td><td>神奈川県</td><td><a href="https://hp-setlist.com/stage/7570" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
 </tbody>
 </table>
-2022年度(18歳)
+18歳（2022年）
 <table class="birthday-table">
 <thead>
 <tr>
@@ -99,7 +99,7 @@
 <tr><td>2022年12月16日</td><td>19:00</td><td>BEYOOOOONDS/雨ノ森 川海 清野桃々姫バースデーイベント2022</td><td>LANDMARK HALL</td><td>神奈川県</td><td><a href="https://hp-setlist.com/stage/10349" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
 </tbody>
 </table>
-2023年度(19歳)
+19歳（2023年）
 <table class="birthday-table">
 <thead>
 <tr>
@@ -116,7 +116,7 @@
 <tr><td>2023年12月12日</td><td>19:30</td><td>BEYOOOOONDS/雨ノ森 川海 清野桃々姫バースデーイベント2023</td><td>TOKYO FM HALL</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/20819" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
 </tbody>
 </table>
-2024年度(20歳)
+20歳（2024年）
 <table class="birthday-table">
 <thead>
 <tr>

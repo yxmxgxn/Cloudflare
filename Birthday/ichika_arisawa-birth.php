@@ -11,7 +11,7 @@
 <p class="site-title"><a href="/hello-birthday">メンバー一覧に戻る</a></p>
 <h1>有澤一華バースデーイベント会場まとめ</h1>
 <p>有澤一華さん（2003年12月23日生まれ）のこれまでのバースデーイベントをまとめました。非公式サイトのハロプロセトリ検索システム「ToMoKo」にてセットリストが公開されていたものはリンクを貼っています。</p>
-2022年度(19歳)
+19歳（2022年）
 <table class="birthday-table">
 <thead>
 <tr>
@@ -30,7 +30,7 @@
 <tr><td>2023年1月15日</td><td>19:40</td><td>Juice=Juice 有澤一華バースデーイベント2023</td><td>飛行船シアター</td><td>東京都</td><td></td></tr>
 </tbody>
 </table>
-2023年度(21歳)
+20歳（2023年）
 <table class="birthday-table">
 <thead>
 <tr>
@@ -47,7 +47,7 @@
 <tr><td>2024年1月15日</td><td>19:40</td><td>Juice=Juice 有澤一華バースデーイベント2024</td><td>飛行船シアター</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/20894" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
 </tbody>
 </table>
-2024年度(22歳)
+21歳（2024年）
 <table class="birthday-table">
 <thead>
 <tr>
@@ -66,7 +66,7 @@
 <tr><td>2025年1月20日</td><td>19:45</td><td>Juice=Juice 有澤一華・川嶋美楓バースデーイベント in 名古屋</td><td>ミッドランドスクエア シネマ2</td><td>愛知県</td><td><a href="https://hp-setlist.com/stage/22038" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
 </tbody>
 </table>
-2025年度(23歳)
+22歳（2025年）
 <table class="birthday-table">
 <thead>
 <tr>

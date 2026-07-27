@@ -11,7 +11,7 @@
 <p class="site-title"><a href="/hello-birthday">メンバー一覧に戻る</a></p>
 <h1>山木梨沙バースデーイベント会場まとめ</h1>
 <p>山木梨沙さん（1997年10月14日生まれ）のこれまでのバースデーイベントをまとめました。非公式サイトのハロプロセトリ検索システム「ToMoKo」にてセットリストが公開されていたものはリンクを貼っています。</p>
-2015年度(18歳)
+18歳（2015年）
 <table class="birthday-table">
 <thead>
 <tr>
@@ -28,7 +28,7 @@
 <tr><td>2015年10月15日</td><td>20:00</td><td>カントリー・ガールズ 山木梨沙バースデーイベント2015</td><td>TOKYO FM HALL</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/4607" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
 </tbody>
 </table>
-2016年度(19歳)
+19歳（2016年）
 <table class="birthday-table">
 <thead>
 <tr>
@@ -46,7 +46,7 @@
 <tr class="row-even"><td>2016年10月18日</td><td>19:30</td><td>カントリー・ガールズ 山木梨沙バースデーイベント2016 in 名古屋</td><td>ミッドランドスクエア シネマ2</td><td>愛知県</td><td><a href="https://hp-setlist.com/stage/10017" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
 </tbody>
 </table>
-2017年度(20歳)
+20歳（2017年）
 <table class="birthday-table">
 <thead>
 <tr>
@@ -64,7 +64,7 @@
 <tr class="row-even"><td>2017年10月17日</td><td>19:30</td><td>カントリー・ガールズ 山木梨沙バースデーイベント2017 in 名古屋</td><td>ミッドランドスクエア シネマ2</td><td>愛知県</td><td><a href="https://hp-setlist.com/stage/10065" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
 </tbody>
 </table>
-2018年度(21歳)
+21歳（2018年）
 <table class="birthday-table">
 <thead>
 <tr>
@@ -82,7 +82,7 @@
 <tr class="row-even"><td>2018年10月23日</td><td>19:30</td><td>カントリー・ガールズ 山木梨沙バースデーイベント2018 in 名古屋</td><td>ミッドランドスクエア シネマ2</td><td>愛知県</td><td><a href="https://hp-setlist.com/stage/10113" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
 </tbody>
 </table>
-2019年度(22歳)
+22歳（2019年）
 <table class="birthday-table">
 <thead>
 <tr>

@@ -11,7 +11,7 @@
 <p class="site-title"><a href="/hello-birthday">メンバー一覧に戻る</a></p>
 <h1>岡村美波バースデーイベント会場まとめ</h1>
 <p>岡村美波さん（2004年10月20日生まれ）のこれまでのバースデーイベントをまとめました。非公式サイトのハロプロセトリ検索システム「ToMoKo」にてセットリストが公開されていたものはリンクを貼っています。</p>
-2019年度(15歳)
+15歳（2019年）
 <table class="birthday-table">
 <thead>
 <tr>
@@ -30,7 +30,7 @@
 <tr><td>2020年1月28日</td><td>19:50</td><td>BEYOOOOONDS 山﨑夢羽・岡村美波・清野桃々姫・平井美葉バースデーイベント in 名古屋</td><td>ミッドランドスクエア シネマ2</td><td>愛知県</td><td><a href="https://hp-setlist.com/stage/10173" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
 </tbody>
 </table>
-2020年度(16歳)
+16歳（2020年）
 <table class="birthday-table">
 <thead>
 <tr>
@@ -47,7 +47,7 @@
 <tr><td>2020年10月21日</td><td>19:45</td><td>BEYOOOOONDS/雨ノ森 川海 岡村美波バースデーイベント2020</td><td>LANDMARK HALL</td><td>神奈川県</td><td><a href="https://hp-setlist.com/stage/7111" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
 </tbody>
 </table>
-2021年度(17歳)
+17歳（2021年）
 <table class="birthday-table">
 <thead>
 <tr>
@@ -66,7 +66,7 @@
 <tr><td>2021年11月9日</td><td>19:00</td><td>BEYOOOOONDS/雨ノ森 川海 山﨑夢羽・岡村美波バースデーイベント2021 in 名古屋</td><td>ミッドランドスクエア シネマ2</td><td>愛知県</td><td><a href="https://hp-setlist.com/stage/10231" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
 </tbody>
 </table>
-2022年度(18歳)
+18歳（2022年）
 <table class="birthday-table">
 <thead>
 <tr>
@@ -83,7 +83,7 @@
 <tr><td>2022年10月24日</td><td>19:00</td><td>BEYOOOOONDS/雨ノ森 川海 岡村美波バースデーイベント2022</td><td>LANDMARK HALL</td><td>神奈川県</td><td><a href="https://hp-setlist.com/stage/9853" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
 </tbody>
 </table>
-2023年度(19歳)
+19歳（2023年）
 <table class="birthday-table">
 <thead>
 <tr>
@@ -100,7 +100,7 @@
 <tr><td>2023年10月23日</td><td>19:40</td><td>BEYOOOOONDS/雨ノ森 川海 岡村美波バースデーイベント2023</td><td>I'M A SHOW</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/20626" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
 </tbody>
 </table>
-2024年度(20歳)
+20歳（2024年）
 <table class="birthday-table">
 <thead>
 <tr>
@@ -117,7 +117,7 @@
 <tr><td>2024年10月22日</td><td>19:40</td><td>BEYOOOOONDS/雨ノ森 川海 岡村美波バースデーイベント2024</td><td>飛行船シアター</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/21795" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
 </tbody>
 </table>
-2025年度(21歳)
+21歳（2025年）
 <table class="birthday-table">
 <thead>
 <tr>

@@ -11,7 +11,7 @@
 <p class="site-title"><a href="/hello-birthday">メンバー一覧に戻る</a></p>
 <h1>小片リサバースデーイベント会場まとめ</h1>
 <p>小片リサさん（1998年11月5日生まれ）のこれまでのバースデーイベントをまとめました。非公式サイトのハロプロセトリ検索システム「ToMoKo」にてセットリストが公開されていたものはリンクを貼っています。</p>
-2017年度(19歳)
+19歳（2017年）
 <table class="birthday-table">
 <thead>
 <tr>
@@ -29,7 +29,7 @@
 <tr class="row-even"><td>2017年11月21日</td><td>19:30</td><td>つばきファクトリー 小片リサ・谷本安美バースデーイベント2017 in 名古屋</td><td>ミッドランドスクエア シネマ2</td><td>愛知県</td><td><a href="https://hp-setlist.com/stage/10070" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
 </tbody>
 </table>
-2018年度(20歳)
+20歳（2018年）
 <table class="birthday-table">
 <thead>
 <tr>
@@ -47,7 +47,7 @@
 <tr class="row-even"><td>2018年11月20日</td><td>19:30</td><td>つばきファクトリー 小片リサバースデーイベント2018 in 名古屋</td><td>ミッドランドスクエア シネマ2</td><td>愛知県</td><td><a href="https://hp-setlist.com/stage/10117" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
 </tbody>
 </table>
-2019年度(21歳)
+21歳（2019年）
 <table class="birthday-table">
 <thead>
 <tr>
@@ -65,7 +65,7 @@
 <tr class="row-even"><td>2019年11月19日</td><td>19:30</td><td>つばきファクトリー 小片リサ・谷本安美バースデーイベント2019 in 名古屋</td><td>ミッドランドスクエア シネマ2</td><td>愛知県</td><td><a href="https://hp-setlist.com/stage/10166" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
 </tbody>
 </table>
-2021年度(23歳)
+23歳（2021年）
 <table class="birthday-table">
 <thead>
 <tr>
@@ -83,7 +83,7 @@
 <tr class="row-even"><td>2021年11月6日</td><td>18:50</td><td>小片リサバースデーイベント2021</td><td>LANDMARK HALL</td><td>神奈川県</td><td><a href="https://hp-setlist.com/stage/9930" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
 </tbody>
 </table>
-2022年度(24歳)
+24歳（2022年）
 <table class="birthday-table">
 <thead>
 <tr>
@@ -101,7 +101,7 @@
 <tr class="row-even"><td>2022年11月3日</td><td>19:00</td><td>小片リサバースデーイベント2022</td><td>LANDMARK HALL</td><td>神奈川県</td><td><a href="https://hp-setlist.com/stage/9933" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
 </tbody>
 </table>
-2023年度(25歳)
+25歳（2023年）
 <table class="birthday-table">
 <thead>
 <tr>

@@ -11,7 +11,7 @@
 <p class="site-title"><a href="/hello-birthday">メンバー一覧に戻る</a></p>
 <h1>川嶋美楓バースデーイベント会場まとめ</h1>
 <p>川嶋美楓さん（2007年12月13日生まれ）のこれまでのバースデーイベントをまとめました。非公式サイトのハロプロセトリ検索システム「ToMoKo」にてセットリストが公開されていたものはリンクを貼っています。</p>
-2024年度(17歳)
+17歳（2024年）
 <table class="birthday-table">
 <thead>
 <tr>
@@ -30,7 +30,7 @@
 <tr><td>2025年1月20日</td><td>19:45</td><td>Juice=Juice 有澤一華・川嶋美楓バースデーイベント in 名古屋</td><td>ミッドランドスクエア シネマ2</td><td>愛知県</td><td><a href="https://hp-setlist.com/stage/22038" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
 </tbody>
 </table>
-2025年度(18歳)
+18歳（2025年）
 <table class="birthday-table">
 <thead>
 <tr>

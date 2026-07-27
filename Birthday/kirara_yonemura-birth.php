@@ -11,7 +11,7 @@
 <p class="site-title"><a href="/hello-birthday">メンバー一覧に戻る</a></p>
 <h1>米村姫良々バースデーイベント会場まとめ</h1>
 <p>米村姫良々さん（2004年4月30日生まれ）のこれまでのバースデーイベントをまとめました。非公式サイトのハロプロセトリ検索システム「ToMoKo」にてセットリストが公開されていたものはリンクを貼っています。</p>
-2023年度(19歳)
+19歳（2023年）
 <table class="birthday-table">
 <thead>
 <tr>
@@ -28,7 +28,7 @@
 <tr><td>2023年5月10日</td><td>19:15</td><td>OCHA NORMA 米村姫良々バースデーイベント2023</td><td>LANDMARK HALL</td><td>神奈川県</td><td><a href="https://hp-setlist.com/stage/10750" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
 </tbody>
 </table>
-2024年度(20歳)
+20歳（2024年）
 <table class="birthday-table">
 <thead>
 <tr>
@@ -47,7 +47,7 @@
 <tr><td>2024年5月13日</td><td>19:45</td><td>OCHA NORMA 米村姫良々バースデーイベント2024 in 名古屋</td><td>ミッドランドスクエア シネマ2</td><td>愛知県</td><td><a href="https://hp-setlist.com/stage/21286" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
 </tbody>
 </table>
-2025年度(21歳)
+21歳（2025年）
 <table class="birthday-table">
 <thead>
 <tr>
@@ -66,7 +66,7 @@
 <tr><td>2025年5月19日</td><td>19:45</td><td>OCHA NORMA 米村姫良々バースデーイベント2025 in 名古屋</td><td>ミッドランドスクエア シネマ2</td><td>愛知県</td><td><a href="https://hp-setlist.com/stage/22427" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
 </tbody>
 </table>
-2026年度(22歳)
+22歳（2026年）
 <table class="birthday-table">
 <thead>
 <tr>

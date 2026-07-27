@@ -11,7 +11,7 @@
 <p class="site-title"><a href="/hello-birthday">メンバー一覧に戻る</a></p>
 <h1>中島早貴バースデーイベント会場まとめ</h1>
 <p>中島早貴さん（1994年2月5日生まれ）のこれまでのバースデーイベントをまとめました。非公式サイトのハロプロセトリ検索システム「ToMoKo」にてセットリストが公開されていたものはリンクを貼っています。</p>
-2009年度(16歳)
+16歳（2010年）
 <table class="birthday-table">
 <thead>
 <tr>
@@ -29,7 +29,7 @@
 <tr class="row-even"><td>2010年2月11日</td><td>19:15</td><td>℃-ute緊急企画「3人でバースデーイベントやっちゃいます！だって私たち2月生まれなんですもん！」</td><td>TOKYO FM HALL</td><td>東京都</td><td></td></tr>
 </tbody>
 </table>
-2010年度(17歳)
+17歳（2011年）
 <table class="birthday-table">
 <thead>
 <tr>
@@ -47,7 +47,7 @@
 <tr class="row-even"><td>2011年2月5日</td><td>19:00</td><td>℃-uteバースデー企画「3人でバースデーイベントやっちゃいます！だって私たち2月生まれなんですもん！Part2」</td><td>横浜BLITZ</td><td>神奈川県</td><td><a href="https://hp-setlist.com/stage/2804" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
 </tbody>
 </table>
-2011年度(18歳)
+18歳（2012年）
 <table class="birthday-table">
 <thead>
 <tr>
@@ -67,7 +67,7 @@
 <tr class="row-even"><td>2012年2月5日</td><td>17:30</td><td>℃-uteバースデイ企画「3人でバースデーイベントやっちゃいます！だって私たち2月生まれなんですもん！Part3」</td><td>御堂会館</td><td>大阪府</td><td></td></tr>
 </tbody>
 </table>
-2012年度(19歳)
+19歳（2013年）
 <table class="birthday-table">
 <thead>
 <tr>
@@ -83,7 +83,7 @@
 <tr class="row-even"><td>2013年2月5日</td><td>19:00</td><td>℃-uteバースデー企画～今年は5人でバースデーイベントやっちゃいます!だってみんなで楽しみたいもん!～</td><td>横浜BLITZ</td><td>神奈川県</td><td><a href="https://hp-setlist.com/stage/3396" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
 </tbody>
 </table>
-2013年度(20歳)
+20歳（2014年）
 <table class="birthday-table">
 <thead>
 <tr>
@@ -104,7 +104,7 @@
 <tr><td>2014年2月7日</td><td>20:10</td><td>℃-ute 矢島舞美・中島早貴・萩原舞バースデーイベント2014</td><td>TOKYO FM HALL</td><td>東京都</td><td></td></tr>
 </tbody>
 </table>
-2014年度(21歳)
+21歳（2015年）
 <table class="birthday-table">
 <thead>
 <tr>
@@ -121,7 +121,7 @@
 <tr><td>2015年2月8日</td><td>19:00</td><td>℃-ute 矢島舞美・中島早貴・萩原舞バースデーイベント2015 ＜矢島舞美・中島早貴・萩原舞＞</td><td>山野ホール</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/4253" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
 </tbody>
 </table>
-2015年度(22歳)
+22歳（2016年）
 <table class="birthday-table">
 <thead>
 <tr>
@@ -138,7 +138,7 @@
 <tr><td>2016年2月5日</td><td>20:15</td><td>℃-ute 中島早貴バースデーイベント2016</td><td>山野ホール</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/4778" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
 </tbody>
 </table>
-2016年度(23歳)
+23歳（2017年）
 <table class="birthday-table">
 <thead>
 <tr>
@@ -156,7 +156,7 @@
 <tr class="row-even"><td>2017年2月21日</td><td>20:30</td><td>℃-ute 矢島舞美・中島早貴・萩原舞バースデーイベント2017 in 名古屋</td><td>ミッドランドスクエア シネマ2</td><td>愛知県</td><td><a href="https://hp-setlist.com/stage/10034" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
 </tbody>
 </table>
-2017年度(24歳)
+24歳（2018年）
 <table class="birthday-table">
 <thead>
 <tr>
@@ -173,7 +173,7 @@
 <tr><td>2018年2月5日</td><td>20:40</td><td>中島早貴バースデーイベント</td><td>山野ホール</td><td>東京都</td><td></td></tr>
 </tbody>
 </table>
-2018年度(25歳)
+25歳（2019年）
 <table class="birthday-table">
 <thead>
 <tr>
@@ -190,7 +190,7 @@
 <tr><td>2019年2月5日</td><td>20:00</td><td>中島早貴バースデーイベント2019</td><td>山野ホール</td><td>東京都</td><td></td></tr>
 </tbody>
 </table>
-2019年度(26歳)
+26歳（2020年）
 <table class="birthday-table">
 <thead>
 <tr>
@@ -207,7 +207,7 @@
 <tr><td>2020年2月5日</td><td>19:30</td><td>中島早貴バースデーイベント2020～GOLD★GOLD～</td><td>山野ホール</td><td>東京都</td><td></td></tr>
 </tbody>
 </table>
-2020年度(27歳)
+27歳（2021年）
 <table class="birthday-table">
 <thead>
 <tr>
@@ -224,7 +224,7 @@
 <tr><td>2021年2月5日</td><td>18:40</td><td>中島早貴バースデーイベント2021 ～ナカジマ派集合！～</td><td>山野ホール</td><td>東京都</td><td></td></tr>
 </tbody>
 </table>
-2025年度(32歳)
+32歳（2026年）
 <table class="birthday-table">
 <thead>
 <tr>

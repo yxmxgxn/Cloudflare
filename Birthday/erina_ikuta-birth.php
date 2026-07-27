@@ -11,7 +11,7 @@
 <p class="site-title"><a href="/hello-birthday">メンバー一覧に戻る</a></p>
 <h1>生田衣梨奈バースデーイベント会場まとめ</h1>
 <p>生田衣梨奈さん（1997年7月7日生まれ）のこれまでのバースデーイベントをまとめました。非公式サイトのハロプロセトリ検索システム「ToMoKo」にてセットリストが公開されていたものはリンクを貼っています。</p>
-2013年度(16歳)
+16歳（2013年）
 <table class="birthday-table">
 <thead>
 <tr>
@@ -29,7 +29,7 @@
 <tr class="row-even"><td>2013年7月7日</td><td>18:15</td><td>新垣さんを応援する会 第二回会合～生田の誕生日だけど、やっぱり今日も新垣さんを応援する会～</td><td>ラフォーレミュージアム六本木</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/3525" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
 </tbody>
 </table>
-2014年度(17歳)
+17歳（2014年）
 <table class="birthday-table">
 <thead>
 <tr>
@@ -45,7 +45,7 @@
 <tr class="row-even"><td>2014年7月7日</td><td>19:00</td><td>モーニング娘。'14 生田衣梨奈バースデーイベント2014</td><td>山野ホール</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/3987" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
 </tbody>
 </table>
-2015年度(18歳)
+18歳（2015年）
 <table class="birthday-table">
 <thead>
 <tr>
@@ -61,7 +61,7 @@
 <tr class="row-even"><td>2015年7月7日</td><td>19:00</td><td>モーニング娘。'15 生田衣梨奈バースデーイベント</td><td>山野ホール</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/4465" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
 </tbody>
 </table>
-2016年度(19歳)
+19歳（2016年）
 <table class="birthday-table">
 <thead>
 <tr>
@@ -77,7 +77,7 @@
 <tr class="row-even"><td>2016年7月7日</td><td>19:00</td><td>モーニング娘。'16 生田衣梨奈バースデーイベント</td><td>山野ホール</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/5076" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
 </tbody>
 </table>
-2017年度(20歳)
+20歳（2017年）
 <table class="birthday-table">
 <thead>
 <tr>
@@ -95,7 +95,7 @@
 <tr class="row-even"><td>2017年8月29日</td><td>19:30</td><td>モーニング娘。'17 生田衣梨奈バースデーイベント in 名古屋</td><td>ミッドランドスクエア シネマ2</td><td>愛知県</td><td><a href="https://hp-setlist.com/stage/10058" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
 </tbody>
 </table>
-2018年度(21歳)
+21歳（2018年）
 <table class="birthday-table">
 <thead>
 <tr>
@@ -113,7 +113,7 @@
 <tr class="row-even"><td>2018年8月28日</td><td>19:30</td><td>モーニング娘。'18 生田衣梨奈バースデーイベント in 名古屋</td><td>ミッドランドスクエア シネマ2</td><td>愛知県</td><td><a href="https://hp-setlist.com/stage/10106" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
 </tbody>
 </table>
-2019年度(22歳)
+22歳（2019年）
 <table class="birthday-table">
 <thead>
 <tr>
@@ -131,7 +131,7 @@
 <tr class="row-even"><td>2019年7月30日</td><td>19:30</td><td>モーニング娘。'19 生田衣梨奈バースデーイベント in 名古屋</td><td>ミッドランドスクエア シネマ2</td><td>愛知県</td><td><a href="https://hp-setlist.com/stage/10152" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
 </tbody>
 </table>
-2020年度(23歳)
+23歳（2020年）
 <table class="birthday-table">
 <thead>
 <tr>
@@ -148,7 +148,7 @@
 <tr><td>2020年8月27日</td><td>19:45</td><td>モーニング娘。'20 生田衣梨奈バースデーイベント</td><td>LANDMARK HALL</td><td>神奈川県</td><td><a href="https://hp-setlist.com/stage/7062" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
 </tbody>
 </table>
-2021年度(24歳)
+24歳（2021年）
 <table class="birthday-table">
 <thead>
 <tr>
@@ -165,7 +165,7 @@
 <tr><td>2021年7月23日</td><td>17:45</td><td>モーニング娘。'21 生田衣梨奈バースデーイベント</td><td>KT Zepp Yokohama</td><td>神奈川県</td><td><a href="https://hp-setlist.com/stage/7393" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
 </tbody>
 </table>
-2022年度(25歳)
+25歳（2022年）
 <table class="birthday-table">
 <thead>
 <tr>
@@ -182,7 +182,7 @@
 <tr><td>2022年7月11日</td><td>18:00</td><td>モーニング娘。'22 生田衣梨奈バースデーイベント</td><td>KT Zepp Yokohama</td><td>神奈川県</td><td><a href="https://hp-setlist.com/stage/7800" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
 </tbody>
 </table>
-2023年度(26歳)
+26歳（2023年）
 <table class="birthday-table">
 <thead>
 <tr>
@@ -199,7 +199,7 @@
 <tr><td>2023年7月12日</td><td>19:10</td><td>モーニング娘。'23 生田衣梨奈バースデーイベント</td><td>一ツ橋ホール</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/20318" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
 </tbody>
 </table>
-2024年度(27歳)
+27歳（2024年）
 <table class="birthday-table">
 <thead>
 <tr>
@@ -216,7 +216,7 @@
 <tr><td>2024年7月5日</td><td>19:00</td><td>モーニング娘。'24 生田衣梨奈バースデーイベント</td><td>タワーホール船堀 大ホール</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/21455" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
 </tbody>
 </table>
-2025年度(28歳)
+28歳（2025年）
 <table class="birthday-table">
 <thead>
 <tr>
@@ -233,7 +233,7 @@
 <tr><td>2025年7月7日</td><td>18:40</td><td>モーニング娘。'25 生田衣梨奈バースデーイベント～えりぽんかわいいスペシャル～</td><td>さいたま市民会館おおみや RaiBoC Hall 大ホール</td><td>埼玉県</td><td><a href="https://hp-setlist.com/stage/22574" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
 </tbody>
 </table>
-2026年度(29歳)
+29歳（2026年）
 <table class="birthday-table">
 <thead>
 <tr>

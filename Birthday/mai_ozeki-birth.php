@@ -11,7 +11,7 @@
 <p class="site-title"><a href="/hello-birthday">メンバー一覧に戻る</a></p>
 <h1>小関舞バースデーイベント会場まとめ</h1>
 <p>小関舞さん（2002年2月10日生まれ）のこれまでのバースデーイベントをまとめました。非公式サイトのハロプロセトリ検索システム「ToMoKo」にてセットリストが公開されていたものはリンクを貼っています。</p>
-2015年度(14歳)
+14歳（2016年）
 <table class="birthday-table">
 <thead>
 <tr>
@@ -28,7 +28,7 @@
 <tr><td>2016年2月10日</td><td>19:45</td><td>カントリー・ガールズ 小関舞バースデーイベント2016</td><td>Mt.RAINIER HALL</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/4809" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
 </tbody>
 </table>
-2016年度(15歳)
+15歳（2017年）
 <table class="birthday-table">
 <thead>
 <tr>
@@ -46,7 +46,7 @@
 <tr class="row-even"><td>2017年2月28日</td><td>19:30</td><td>カントリー・ガールズ 森戸知沙希＆小関舞バースデーイベント2017 in 名古屋</td><td>ミッドランドスクエア シネマ2</td><td>愛知県</td><td><a href="https://hp-setlist.com/stage/10035" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
 </tbody>
 </table>
-2017年度(16歳)
+16歳（2018年）
 <table class="birthday-table">
 <thead>
 <tr>
@@ -64,7 +64,7 @@
 <tr class="row-even"><td>2018年2月20日</td><td>19:30</td><td>カントリー・ガールズ 小関舞バースデーイベント2018 in 名古屋</td><td>ミッドランドスクエア シネマ2</td><td>愛知県</td><td><a href="https://hp-setlist.com/stage/10080" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
 </tbody>
 </table>
-2018年度(17歳)
+17歳（2019年）
 <table class="birthday-table">
 <thead>
 <tr>
@@ -82,7 +82,7 @@
 <tr class="row-even"><td>2019年3月26日</td><td>19:30</td><td>カントリー・ガールズ 小関舞バースデーイベント in 名古屋</td><td>ミッドランドスクエア シネマ2</td><td>愛知県</td><td><a href="https://hp-setlist.com/stage/10134" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
 </tbody>
 </table>
-2021年度(20歳)
+20歳（2022年）
 <table class="birthday-table">
 <thead>
 <tr>
@@ -99,7 +99,7 @@
 <tr><td>2022年2月10日</td><td>18:50</td><td>小関舞バースデーイベント2022</td><td>LANDMARK HALL</td><td>神奈川県</td><td></td></tr>
 </tbody>
 </table>
-2022年度(21歳)
+21歳（2023年）
 <table class="birthday-table">
 <thead>
 <tr>
@@ -116,7 +116,7 @@
 <tr><td>2023年2月8日</td><td>19:00</td><td>小関舞バースデーイベント2023</td><td>LANDMARK HALL</td><td>神奈川県</td><td><a href="https://hp-setlist.com/stage/10561" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
 </tbody>
 </table>
-2023年度(22歳)
+22歳（2024年）
 <table class="birthday-table">
 <thead>
 <tr>
@@ -133,7 +133,7 @@
 <tr><td>2024年2月3日</td><td>18:30</td><td>小関舞バースデーイベント2024～BlueMoon～</td><td>渋谷シダックスカルチャーホール</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/20926" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
 </tbody>
 </table>
-2024年度(23歳)
+23歳（2025年）
 <table class="birthday-table">
 <thead>
 <tr>
@@ -150,7 +150,7 @@
 <tr><td>2025年2月9日</td><td>16:30</td><td>小関舞バースデーイベント2025～Snowflake～</td><td>渋谷シダックスカルチャーホール</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/22088" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
 </tbody>
 </table>
-2025年度(24歳)
+24歳（2026年）
 <table class="birthday-table">
 <thead>
 <tr>

@@ -11,7 +11,7 @@
 <p class="site-title"><a href="/hello-birthday">メンバー一覧に戻る</a></p>
 <h1>尾形春水バースデーイベント会場まとめ</h1>
 <p>尾形春水さん（1999年2月15日生まれ）のこれまでのバースデーイベントをまとめました。非公式サイトのハロプロセトリ検索システム「ToMoKo」にてセットリストが公開されていたものはリンクを貼っています。</p>
-2015年度(17歳)
+17歳（2016年）
 <table class="birthday-table">
 <thead>
 <tr>
@@ -28,7 +28,7 @@
 <tr><td>2016年2月15日</td><td>20:00</td><td>モーニング娘。'16 尾形春水バースデーイベント</td><td>マイナビBLITZ赤坂</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/4817" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
 </tbody>
 </table>
-2016年度(18歳)
+18歳（2017年）
 <table class="birthday-table">
 <thead>
 <tr>
@@ -46,7 +46,7 @@
 <tr class="row-even"><td>2017年2月15日</td><td>20:00</td><td>モーニング娘。'17 尾形春水バースデーイベント</td><td>山野ホール</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/5447" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
 </tbody>
 </table>
-2017年度(19歳)
+19歳（2018年）
 <table class="birthday-table">
 <thead>
 <tr>

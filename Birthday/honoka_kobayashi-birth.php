@@ -11,7 +11,7 @@
 <p class="site-title"><a href="/hello-birthday">メンバー一覧に戻る</a></p>
 <h1>小林萌花バースデーイベント会場まとめ</h1>
 <p>小林萌花さん（2000年8月16日生まれ）のこれまでのバースデーイベントをまとめました。非公式サイトのハロプロセトリ検索システム「ToMoKo」にてセットリストが公開されていたものはリンクを貼っています。</p>
-2019年度(19歳)
+19歳（2019年）
 <table class="birthday-table">
 <thead>
 <tr>
@@ -28,7 +28,7 @@
 <tr><td>2019年9月3日</td><td>19:30</td><td>BEYOOOOONDS 江口紗耶・小林萌花バースデーイベント2019 in 名古屋</td><td>ミッドランドスクエア シネマ2</td><td>愛知県</td><td><a href="https://hp-setlist.com/stage/10155" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
 </tbody>
 </table>
-2020年度(20歳)
+20歳（2020年）
 <table class="birthday-table">
 <thead>
 <tr>
@@ -45,7 +45,7 @@
 <tr><td>2020年9月2日</td><td>19:15</td><td>BEYOOOOONDS 小林萌花バースデーイベント2020</td><td>スクエア荏原ひらつかホール</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/7066" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
 </tbody>
 </table>
-2021年度(21歳)
+21歳（2021年）
 <table class="birthday-table">
 <thead>
 <tr>
@@ -64,7 +64,7 @@
 <tr><td>2021年9月28日</td><td>19:00</td><td>BEYOOOOONDS 島倉りか・江口紗耶・小林萌花バースデーイベント2021 in 名古屋</td><td>ミッドランドスクエア シネマ2</td><td>愛知県</td><td><a href="https://hp-setlist.com/stage/10225" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
 </tbody>
 </table>
-2022年度(22歳)
+22歳（2022年）
 <table class="birthday-table">
 <thead>
 <tr>
@@ -81,7 +81,7 @@
 <tr><td>2022年8月15日</td><td>18:50</td><td>BEYOOOOONDS/SeasoningS 小林萌花バースデーイベント2022</td><td>荒川区民会館 大ホール</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/8747" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
 </tbody>
 </table>
-2023年度(23歳)
+23歳（2023年）
 <table class="birthday-table">
 <thead>
 <tr>
@@ -98,7 +98,7 @@
 <tr><td>2023年8月17日</td><td>19:10</td><td>BEYOOOOONDS/SeasoningS 小林萌花バースデーイベント2023</td><td>板橋区立文化会館 大ホール</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/20424" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
 </tbody>
 </table>
-2024年度(24歳)
+24歳（2024年）
 <table class="birthday-table">
 <thead>
 <tr>
@@ -115,7 +115,7 @@
 <tr><td>2024年8月14日</td><td>19:10</td><td>BEYOOOOONDS/SeasoningS 小林萌花バースデーイベント2024</td><td>日経ホール</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/21559" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
 </tbody>
 </table>
-2025年度(25歳)
+25歳（2025年）
 <table class="birthday-table">
 <thead>
 <tr>

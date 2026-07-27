@@ -11,7 +11,7 @@
 <p class="site-title"><a href="/hello-birthday">メンバー一覧に戻る</a></p>
 <h1>田村芽実バースデーイベント会場まとめ</h1>
 <p>田村芽実さん（1998年10月30日生まれ）のこれまでのバースデーイベントをまとめました。非公式サイトのハロプロセトリ検索システム「ToMoKo」にてセットリストが公開されていたものはリンクを貼っています。</p>
-2012年度(14歳)
+14歳（2012年）
 <table class="birthday-table">
 <thead>
 <tr>
@@ -28,7 +28,7 @@
 <tr><td>2012年10月30日</td><td>20:00</td><td>スマイレージ 田村芽実バースデーイベント2012</td><td>パシフィックヘブン</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/3336" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
 </tbody>
 </table>
-2013年度(15歳)
+15歳（2013年）
 <table class="birthday-table">
 <thead>
 <tr>
@@ -45,7 +45,7 @@
 <tr><td>2013年10月29日</td><td>20:10</td><td>スマイレージ 田村芽実バースデーイベント2013</td><td>TOKYO FM HALL</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/3652" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
 </tbody>
 </table>
-2014年度(16歳)
+16歳（2014年）
 <table class="birthday-table">
 <thead>
 <tr>
@@ -62,7 +62,7 @@
 <tr><td>2014年10月31日</td><td>20:00</td><td>スマイレージ 田村芽実バースデーイベント2014</td><td>TOKYO FM HALL</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/4188" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
 </tbody>
 </table>
-2015年度(17歳)
+17歳（2015年）
 <table class="birthday-table">
 <thead>
 <tr>

@@ -11,7 +11,7 @@
 <p class="site-title"><a href="/hello-birthday">メンバー一覧に戻る</a></p>
 <h1>上國料萌衣バースデーイベント会場まとめ</h1>
 <p>上國料萌衣さん（1999年10月24日生まれ）のこれまでのバースデーイベントをまとめました。非公式サイトのハロプロセトリ検索システム「ToMoKo」にてセットリストが公開されていたものはリンクを貼っています。</p>
-2016年度(17歳)
+17歳（2016年）
 <table class="birthday-table">
 <thead>
 <tr>
@@ -29,7 +29,7 @@
 <tr class="row-even"><td>2016年11月29日</td><td>19:30</td><td>アンジュルム 竹内朱莉・上國料萌衣・笠原桃奈バースデーイベント2016 in 名古屋</td><td>ミッドランドスクエア シネマ2</td><td>愛知県</td><td><a href="https://hp-setlist.com/stage/10023" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
 </tbody>
 </table>
-2017年度(18歳)
+18歳（2017年）
 <table class="birthday-table">
 <thead>
 <tr>
@@ -47,7 +47,7 @@
 <tr class="row-even"><td>2017年11月7日</td><td>19:30</td><td>アンジュルム上國料萌衣・笠原桃奈バースデーイベント2017 in 名古屋</td><td>ミッドランドスクエア シネマ2</td><td>愛知県</td><td><a href="https://hp-setlist.com/stage/10068" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
 </tbody>
 </table>
-2018年度(19歳)
+19歳（2018年）
 <table class="birthday-table">
 <thead>
 <tr>
@@ -64,7 +64,7 @@
 <tr><td>2019年1月8日</td><td>19:30</td><td>アンジュルム 上國料萌衣・笠原桃奈バースデーイベント in 名古屋</td><td>ミッドランドスクエア シネマ2</td><td>愛知県</td><td><a href="https://hp-setlist.com/stage/10122" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
 </tbody>
 </table>
-2019年度(20歳)
+20歳（2019年）
 <table class="birthday-table">
 <thead>
 <tr>
@@ -81,7 +81,7 @@
 <tr><td>2019年11月8日</td><td>19:30</td><td>アンジュルム 上國料萌衣・笠原桃奈バースデーイベント2019</td><td>CLUB CITTA'</td><td>神奈川県</td><td><a href="https://hp-setlist.com/stage/6888" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
 </tbody>
 </table>
-2020年度(21歳)
+21歳（2020年）
 <table class="birthday-table">
 <thead>
 <tr>
@@ -100,7 +100,7 @@
 <tr><td>2020年10月27日</td><td>20:00</td><td>アンジュルム 上國料萌衣・笠原桃奈・橋迫鈴バースデーイベント2020 in 名古屋</td><td>ミッドランドスクエア シネマ2</td><td>愛知県</td><td><a href="https://hp-setlist.com/stage/10179" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
 </tbody>
 </table>
-2021年度(22歳)
+22歳（2021年）
 <table class="birthday-table">
 <thead>
 <tr>
@@ -119,7 +119,7 @@
 <tr><td>2021年11月30日</td><td>19:00</td><td>アンジュルム 上國料萌衣・橋迫鈴バースデーイベント2021 in 名古屋</td><td>ミッドランドスクエア シネマ2</td><td>愛知県</td><td><a href="https://hp-setlist.com/stage/10235" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
 </tbody>
 </table>
-2022年度(23歳)
+23歳（2022年）
 <table class="birthday-table">
 <thead>
 <tr>
@@ -136,7 +136,7 @@
 <tr><td>2022年10月21日</td><td>19:00</td><td>アンジュルム 上國料萌衣バースデーイベント2022</td><td>かつしかシンフォニーヒルズ モーツァルトホール</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/9851" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
 </tbody>
 </table>
-2023年度(24歳)
+24歳（2023年）
 <table class="birthday-table">
 <thead>
 <tr>
@@ -153,7 +153,7 @@
 <tr><td>2023年10月24日</td><td>19:40</td><td>アンジュルム 上國料萌衣バースデーイベント2023</td><td>さいたま市民会館おおみや RaiBoC Hall 大ホール</td><td>埼玉県</td><td><a href="https://hp-setlist.com/stage/20628" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
 </tbody>
 </table>
-2024年度(25歳)
+25歳（2024年）
 <table class="birthday-table">
 <thead>
 <tr>

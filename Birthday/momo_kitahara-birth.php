@@ -11,7 +11,7 @@
 <p class="site-title"><a href="/hello-birthday">メンバー一覧に戻る</a></p>
 <h1>北原ももバースデーイベント会場まとめ</h1>
 <p>北原ももさん（2006年8月30日生まれ）のこれまでのバースデーイベントをまとめました。非公式サイトのハロプロセトリ検索システム「ToMoKo」にてセットリストが公開されていたものはリンクを貼っています。</p>
-2023年度(17歳)
+17歳（2023年）
 <table class="birthday-table">
 <thead>
 <tr>
@@ -28,7 +28,7 @@
 <tr><td>2023年8月31日</td><td>19:45</td><td>OCHA NORMA 北原ももバースデーイベント2023</td><td>LANDMARK HALL</td><td>神奈川県</td><td><a href="https://hp-setlist.com/stage/20465" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
 </tbody>
 </table>
-2024年度(18歳)
+18歳（2024年）
 <table class="birthday-table">
 <thead>
 <tr>
@@ -45,7 +45,7 @@
 <tr><td>2024年8月30日</td><td>19:40</td><td>OCHA NORMA 北原ももバースデーイベント2024</td><td>飛行船シアター</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/21608" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
 </tbody>
 </table>
-2025年度(19歳)
+19歳（2025年）
 <table class="birthday-table">
 <thead>
 <tr>

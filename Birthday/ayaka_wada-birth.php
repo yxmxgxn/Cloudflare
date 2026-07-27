@@ -11,7 +11,7 @@
 <p class="site-title"><a href="/hello-birthday">メンバー一覧に戻る</a></p>
 <h1>和田彩花バースデーイベント会場まとめ</h1>
 <p>和田彩花さん（1994年8月1日生まれ）のこれまでのバースデーイベントをまとめました。非公式サイトのハロプロセトリ検索システム「ToMoKo」にてセットリストが公開されていたものはリンクを貼っています。</p>
-2012年度(18歳)
+18歳（2012年）
 <table class="birthday-table">
 <thead>
 <tr>
@@ -28,7 +28,7 @@
 <tr><td>2012年8月1日</td><td>19:50</td><td>スマイレージ 和田彩花バースデーイベント2012</td><td>TOKYO FM HALL</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/3252" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
 </tbody>
 </table>
-2013年度(19歳)
+19歳（2013年）
 <table class="birthday-table">
 <thead>
 <tr>
@@ -45,7 +45,7 @@
 <tr><td>2013年8月1日</td><td>20:10</td><td>スマイレージ 和田彩花バースデーイベント2013</td><td>TOKYO FM HALL</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/3552" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
 </tbody>
 </table>
-2014年度(20歳)
+20歳（2014年）
 <table class="birthday-table">
 <thead>
 <tr>
@@ -62,7 +62,7 @@
 <tr><td>2014年9月1日</td><td>20:10</td><td>スマイレージ 和田彩花バースデーイベント2014</td><td>TOKYO FM HALL</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/4067" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
 </tbody>
 </table>
-2015年度(21歳)
+21歳（2015年）
 <table class="birthday-table">
 <thead>
 <tr>
@@ -79,7 +79,7 @@
 <tr><td>2015年8月3日</td><td>20:15</td><td>アンジュルム 和田彩花バースデーイベント2015</td><td>山野ホール</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/4493" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
 </tbody>
 </table>
-2016年度(22歳)
+22歳（2016年）
 <table class="birthday-table">
 <thead>
 <tr>
@@ -97,7 +97,7 @@
 <tr class="row-even"><td>2016年9月6日</td><td>19:30</td><td>アンジュルム 和田彩花バースデーイベント2016 in 名古屋</td><td>ミッドランドスクエア シネマ2</td><td>愛知県</td><td><a href="https://hp-setlist.com/stage/10011" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
 </tbody>
 </table>
-2017年度(23歳)
+23歳（2017年）
 <table class="birthday-table">
 <thead>
 <tr>
@@ -115,7 +115,7 @@
 <tr class="row-even"><td>2017年8月22日</td><td>19:30</td><td>アンジュルム 和田彩花バースデーイベント2017 in 名古屋</td><td>ミッドランドスクエア シネマ2</td><td>愛知県</td><td><a href="https://hp-setlist.com/stage/10057" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
 </tbody>
 </table>
-2018年度(24歳)
+24歳（2018年）
 <table class="birthday-table">
 <thead>
 <tr>

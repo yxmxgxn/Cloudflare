@@ -11,7 +11,7 @@
 <p class="site-title"><a href="/hello-birthday">メンバー一覧に戻る</a></p>
 <h1>石栗奏美バースデーイベント会場まとめ</h1>
 <p>石栗奏美さん（2004年4月20日生まれ）のこれまでのバースデーイベントをまとめました。非公式サイトのハロプロセトリ検索システム「ToMoKo」にてセットリストが公開されていたものはリンクを貼っています。</p>
-2023年度(19歳)
+19歳（2023年）
 <table class="birthday-table">
 <thead>
 <tr>
@@ -28,7 +28,7 @@
 <tr><td>2023年4月20日</td><td>19:15</td><td>OCHA NORMA 石栗奏美バースデーイベント2023</td><td>LANDMARK HALL</td><td>神奈川県</td><td><a href="https://hp-setlist.com/stage/10742" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
 </tbody>
 </table>
-2024年度(20歳)
+20歳（2024年）
 <table class="birthday-table">
 <thead>
 <tr>

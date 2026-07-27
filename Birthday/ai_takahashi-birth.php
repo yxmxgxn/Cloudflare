@@ -11,7 +11,7 @@
 <p class="site-title"><a href="/hello-birthday">メンバー一覧に戻る</a></p>
 <h1>高橋愛バースデーイベント会場まとめ</h1>
 <p>高橋愛さん（1986年9月14日生まれ）のこれまでのバースデーイベントをまとめました。非公式サイトのハロプロセトリ検索システム「ToMoKo」にてセットリストが公開されていたものはリンクを貼っています。</p>
-2014年度(28歳)
+28歳（2014年）
 <table class="birthday-table">
 <thead>
 <tr>
@@ -28,7 +28,7 @@
 <tr><td>2014年9月14日</td><td>16:30</td><td>高橋愛バースデーFCイベント</td><td>シャワーラウンジプラス</td><td>東京都</td><td></td></tr>
 </tbody>
 </table>
-2015年度(29歳)
+29歳（2015年）
 <table class="birthday-table">
 <thead>
 <tr>
@@ -46,7 +46,7 @@
 <tr class="row-even"><td>2015年9月26日</td><td>18:30</td><td>高橋愛バースデーイベント『HAPPY B'DAY TO Meee』</td><td>渋谷シダックスカルチャーホール</td><td>東京都</td><td></td></tr>
 </tbody>
 </table>
-2016年度(30歳)
+30歳（2016年）
 <table class="birthday-table">
 <thead>
 <tr>
@@ -64,7 +64,7 @@
 <tr class="row-even"><td>2016年9月17日</td><td>18:30</td><td>高橋愛バースデーイベント「HAPPY B'DAY TO Meee 30.」【追加公演】</td><td>渋谷シダックスカルチャーホール</td><td>東京都</td><td></td></tr>
 </tbody>
 </table>
-2017年度(31歳)
+31歳（2017年）
 <table class="birthday-table">
 <thead>
 <tr>
@@ -82,7 +82,7 @@
 <tr class="row-even"><td>2017年9月10日</td><td>18:30</td><td>高橋愛バースデーイベント HAPPY B'DAY TO Meee. 31</td><td>渋谷シダックスカルチャーホール</td><td>東京都</td><td></td></tr>
 </tbody>
 </table>
-2018年度(32歳)
+32歳（2018年）
 <table class="birthday-table">
 <thead>
 <tr>
@@ -100,7 +100,7 @@
 <tr class="row-even"><td>2018年9月8日</td><td>18:30</td><td>高橋愛バースデーイベント HAPPY B'DAY TO Meee.32</td><td>渋谷シダックスカルチャーホール</td><td>東京都</td><td></td></tr>
 </tbody>
 </table>
-2019年度(33歳)
+33歳（2019年）
 <table class="birthday-table">
 <thead>
 <tr>
@@ -118,7 +118,7 @@
 <tr class="row-even"><td>2019年9月16日</td><td>18:20</td><td>高橋愛バースデーイベント～HAPPY B'DAY TO Meee.33～</td><td>赤羽ReNY alpha</td><td>東京都</td><td></td></tr>
 </tbody>
 </table>
-2020年度(34歳)
+34歳（2020年）
 <table class="birthday-table">
 <thead>
 <tr>
@@ -136,7 +136,7 @@
 <tr class="row-even"><td>2020年9月13日</td><td>19:00</td><td>高橋愛バースデーイベント～HAPPY B'DAY TO Meeee.34～</td><td>LANDMARK HALL</td><td>神奈川県</td><td></td></tr>
 </tbody>
 </table>
-2021年度(35歳)
+35歳（2021年）
 <table class="birthday-table">
 <thead>
 <tr>
@@ -153,7 +153,7 @@
 <tr><td>2021年9月11日</td><td>18:00</td><td>高橋愛バースデーイベント ～Happy B'day To Mee!!! 35th～</td><td>LANDMARK HALL</td><td>神奈川県</td><td></td></tr>
 </tbody>
 </table>
-2022年度(36歳)
+36歳（2022年）
 <table class="birthday-table">
 <thead>
 <tr>
@@ -170,7 +170,7 @@
 <tr><td>2022年9月11日</td><td>18:00</td><td>高橋愛バースデーイベント～お母さん産んでくれてありがとう！36になったよ！～</td><td>TOKYO FM HALL</td><td>東京都</td><td></td></tr>
 </tbody>
 </table>
-2023年度(37歳)
+37歳（2023年）
 <table class="birthday-table">
 <thead>
 <tr>
@@ -187,7 +187,7 @@
 <tr><td>2023年9月18日</td><td>18:00</td><td>高橋愛バースデーイベント～もう、37だってばよ。14→37～</td><td>TOKYO FM HALL</td><td>東京都</td><td></td></tr>
 </tbody>
 </table>
-2024年度(38歳)
+38歳（2024年）
 <table class="birthday-table">
 <thead>
 <tr>
@@ -204,7 +204,7 @@
 <tr><td>2024年9月23日</td><td>18:00</td><td>高橋愛バースデーイベント～ヒーロー38♡になるまでの道～</td><td>TOKYO FM HALL</td><td>東京都</td><td></td></tr>
 </tbody>
 </table>
-2025年度(39歳)
+39歳（2025年）
 <table class="birthday-table">
 <thead>
 <tr>

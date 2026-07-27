@@ -11,7 +11,7 @@
 <p class="site-title"><a href="/hello-birthday">メンバー一覧に戻る</a></p>
 <h1>石田亜佑美バースデーイベント会場まとめ</h1>
 <p>石田亜佑美さん（1997年1月7日生まれ）のこれまでのバースデーイベントをまとめました。非公式サイトのハロプロセトリ検索システム「ToMoKo」にてセットリストが公開されていたものはリンクを貼っています。</p>
-2012年度(16歳)
+16歳（2013年）
 <table class="birthday-table">
 <thead>
 <tr>
@@ -28,7 +28,7 @@
 <tr><td>2013年1月7日</td><td>19:50</td><td>石田亜佑美バースデーイベントＤＸ～９期メンの２人を迎えて～</td><td>TOKYO FM HALL</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/3393" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
 </tbody>
 </table>
-2013年度(17歳)
+17歳（2014年）
 <table class="birthday-table">
 <thead>
 <tr>
@@ -45,7 +45,7 @@
 <tr><td>2014年1月7日</td><td>20:00</td><td>モーニング娘。'14 石田亜佑美バースデーイベント2014</td><td>TOKYO FM HALL</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/3720" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
 </tbody>
 </table>
-2014年度(18歳)
+18歳（2015年）
 <table class="birthday-table">
 <thead>
 <tr>
@@ -62,7 +62,7 @@
 <tr><td>2015年1月7日</td><td>20:00</td><td>モーニング娘。'15 石田亜佑美バースデーイベント</td><td>TOKYO FM HALL</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/4241" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
 </tbody>
 </table>
-2015年度(19歳)
+19歳（2016年）
 <table class="birthday-table">
 <thead>
 <tr>
@@ -78,7 +78,7 @@
 <tr class="row-even"><td>2016年1月7日</td><td>19:00</td><td>モーニング娘。'16 石田亜佑美バースデーイベント</td><td>ディファ有明</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/4772" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
 </tbody>
 </table>
-2016年度(20歳)
+20歳（2017年）
 <table class="birthday-table">
 <thead>
 <tr>
@@ -96,7 +96,7 @@
 <tr class="row-even"><td>2017年2月7日</td><td>19:30</td><td>モーニング娘。'17 石田亜佑美・尾形春水・牧野真莉愛バースデーイベント in 名古屋</td><td>ミッドランドスクエア シネマ2</td><td>愛知県</td><td><a href="https://hp-setlist.com/stage/10031" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
 </tbody>
 </table>
-2017年度(21歳)
+21歳（2018年）
 <table class="birthday-table">
 <thead>
 <tr>
@@ -113,7 +113,7 @@
 <tr><td>2018年1月16日</td><td>19:30</td><td>モーニング娘。'18 石田亜佑美バースデーイベント in 名古屋</td><td>ミッドランドスクエア シネマ2</td><td>愛知県</td><td><a href="https://hp-setlist.com/stage/10075" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
 </tbody>
 </table>
-2018年度(22歳)
+22歳（2019年）
 <table class="birthday-table">
 <thead>
 <tr>
@@ -132,7 +132,7 @@
 <tr><td>2019年2月26日</td><td>19:50</td><td>モーニング娘。'19 石田亜佑美・牧野真莉愛・横山玲奈・森戸知沙希バースデーイベント in 名古屋</td><td>ミッドランドスクエア シネマ2</td><td>愛知県</td><td><a href="https://hp-setlist.com/stage/10130" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
 </tbody>
 </table>
-2019年度(23歳)
+23歳（2020年）
 <table class="birthday-table">
 <thead>
 <tr>
@@ -148,7 +148,7 @@
 <tr class="row-even"><td>2020年1月7日</td><td>19:15</td><td>モーニング娘。'20 石田亜佑美バースデーイベント</td><td>Zepp DiverCity</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/6974" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
 </tbody>
 </table>
-2020年度(24歳)
+24歳（2021年）
 <table class="birthday-table">
 <thead>
 <tr>
@@ -165,7 +165,7 @@
 <tr><td>2021年1月8日</td><td>18:45</td><td>モーニング娘。'21 石田亜佑美バースデーイベント</td><td>豊洲PIT</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/7221" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
 </tbody>
 </table>
-2021年度(25歳)
+25歳（2022年）
 <table class="birthday-table">
 <thead>
 <tr>
@@ -182,7 +182,7 @@
 <tr><td>2022年1月7日</td><td>18:50</td><td>モーニング娘。'22 石田亜佑美バースデーイベント</td><td>江戸川区総合文化センター 大ホール</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/7602" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
 </tbody>
 </table>
-2022年度(26歳)
+26歳（2023年）
 <table class="birthday-table">
 <thead>
 <tr>
@@ -199,7 +199,7 @@
 <tr><td>2023年1月11日</td><td>19:00</td><td>モーニング娘。'23 石田亜佑美バースデーイベント</td><td>さいたま市民会館おおみや RaiBoC Hall 大ホール</td><td>埼玉県</td><td><a href="https://hp-setlist.com/stage/10539" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
 </tbody>
 </table>
-2023年度(27歳)
+27歳（2024年）
 <table class="birthday-table">
 <thead>
 <tr>
@@ -216,7 +216,7 @@
 <tr><td>2024年1月9日</td><td>19:10</td><td>モーニング娘。'24 石田亜佑美バースデーイベント</td><td>タワーホール船堀 大ホール</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/20881" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
 </tbody>
 </table>
-2025年度(29歳)
+29歳（2026年）
 <table class="birthday-table">
 <thead>
 <tr>

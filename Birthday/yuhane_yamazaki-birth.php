@@ -11,7 +11,7 @@
 <p class="site-title"><a href="/hello-birthday">メンバー一覧に戻る</a></p>
 <h1>山﨑夢羽バースデーイベント会場まとめ</h1>
 <p>山﨑夢羽さん（2002年11月5日生まれ）のこれまでのバースデーイベントをまとめました。非公式サイトのハロプロセトリ検索システム「ToMoKo」にてセットリストが公開されていたものはリンクを貼っています。</p>
-2019年度(17歳)
+17歳（2019年）
 <table class="birthday-table">
 <thead>
 <tr>
@@ -30,7 +30,7 @@
 <tr><td>2020年1月28日</td><td>19:50</td><td>BEYOOOOONDS 山﨑夢羽・岡村美波・清野桃々姫・平井美葉バースデーイベント in 名古屋</td><td>ミッドランドスクエア シネマ2</td><td>愛知県</td><td><a href="https://hp-setlist.com/stage/10173" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
 </tbody>
 </table>
-2020年度(18歳)
+18歳（2020年）
 <table class="birthday-table">
 <thead>
 <tr>
@@ -49,7 +49,7 @@
 <tr><td>2020年12月15日</td><td>20:00</td><td>BEYOOOOONDS 山﨑夢羽・平井美葉バースデーイベント2020 in 名古屋</td><td>ミッドランドスクエア シネマ2</td><td>愛知県</td><td><a href="https://hp-setlist.com/stage/10187" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
 </tbody>
 </table>
-2021年度(19歳)
+19歳（2021年）
 <table class="birthday-table">
 <thead>
 <tr>
@@ -68,7 +68,7 @@
 <tr><td>2021年11月9日</td><td>19:00</td><td>BEYOOOOONDS/雨ノ森 川海 山﨑夢羽・岡村美波バースデーイベント2021 in 名古屋</td><td>ミッドランドスクエア シネマ2</td><td>愛知県</td><td><a href="https://hp-setlist.com/stage/10231" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
 </tbody>
 </table>
-2022年度(20歳)
+20歳（2022年）
 <table class="birthday-table">
 <thead>
 <tr>
@@ -85,7 +85,7 @@
 <tr><td>2022年11月25日</td><td>18:50</td><td>BEYOOOOONDS/雨ノ森 川海 山﨑夢羽バースデーイベント2022</td><td>タワーホール船堀 大ホール</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/9984" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
 </tbody>
 </table>
-2023年度(21歳)
+21歳（2023年）
 <table class="birthday-table">
 <thead>
 <tr>

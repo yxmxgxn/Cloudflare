@@ -11,7 +11,7 @@
 <p class="site-title"><a href="/hello-birthday">メンバー一覧に戻る</a></p>
 <h1>加賀楓バースデーイベント会場まとめ</h1>
 <p>加賀楓さん（1999年11月30日生まれ）のこれまでのバースデーイベントをまとめました。非公式サイトのハロプロセトリ検索システム「ToMoKo」にてセットリストが公開されていたものはリンクを貼っています。</p>
-2017年度(18歳)
+18歳（2017年）
 <table class="birthday-table">
 <thead>
 <tr>
@@ -28,7 +28,7 @@
 <tr><td>2017年11月30日</td><td>19:45</td><td>モーニング娘。'17 加賀楓バースデーイベント</td><td>TOKYO FM HALL</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/5874" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
 </tbody>
 </table>
-2018年度(19歳)
+19歳（2018年）
 <table class="birthday-table">
 <thead>
 <tr>
@@ -46,7 +46,7 @@
 <tr class="row-even"><td>2018年12月18日</td><td>19:30</td><td>モーニング娘。'18 譜久村聖・野中美希・加賀楓バースデーイベント in 名古屋</td><td>ミッドランドスクエア シネマ2</td><td>愛知県</td><td><a href="https://hp-setlist.com/stage/10121" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
 </tbody>
 </table>
-2019年度(20歳)
+20歳（2019年）
 <table class="birthday-table">
 <thead>
 <tr>
@@ -64,7 +64,7 @@
 <tr class="row-even"><td>2019年12月17日</td><td>19:30</td><td>モーニング娘。'19 加賀楓バースデーイベント in 名古屋</td><td>ミッドランドスクエア シネマ2</td><td>愛知県</td><td><a href="https://hp-setlist.com/stage/10170" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
 </tbody>
 </table>
-2020年度(21歳)
+21歳（2020年）
 <table class="birthday-table">
 <thead>
 <tr>
@@ -81,7 +81,7 @@
 <tr><td>2020年11月30日</td><td>20:00</td><td>モーニング娘。'20 加賀楓バースデーイベント</td><td>LANDMARK HALL</td><td>神奈川県</td><td><a href="https://hp-setlist.com/stage/7135" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
 </tbody>
 </table>
-2021年度(22歳)
+22歳（2021年）
 <table class="birthday-table">
 <thead>
 <tr>
@@ -98,7 +98,7 @@
 <tr><td>2021年11月30日</td><td>18:50</td><td>モーニング娘。'21 加賀楓バースデーイベント</td><td>ティアラこうとう 大ホール</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/7541" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
 </tbody>
 </table>
-2022年度(23歳)
+23歳（2022年）
 <table class="birthday-table">
 <thead>
 <tr>

@@ -11,7 +11,7 @@
 <p class="site-title"><a href="/hello-birthday">メンバー一覧に戻る</a></p>
 <h1>櫻井梨央バースデーイベント会場まとめ</h1>
 <p>櫻井梨央さん（2005年11月11日生まれ）のこれまでのバースデーイベントをまとめました。非公式サイトのハロプロセトリ検索システム「ToMoKo」にてセットリストが公開されていたものはリンクを貼っています。</p>
-2022年度(17歳)
+17歳（2022年）
 <table class="birthday-table">
 <thead>
 <tr>
@@ -28,7 +28,7 @@
 <tr><td>2022年11月17日</td><td>19:00</td><td>モーニング娘。'22 櫻井梨央バースデーイベント</td><td>LANDMARK HALL</td><td>神奈川県</td><td><a href="https://hp-setlist.com/stage/9978" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
 </tbody>
 </table>
-2023年度(18歳)
+18歳（2023年）
 <table class="birthday-table">
 <thead>
 <tr>
@@ -45,7 +45,7 @@
 <tr><td>2023年11月13日</td><td>19:45</td><td>モーニング娘。'23 櫻井梨央バースデーイベント</td><td>LANDMARK HALL</td><td>神奈川県</td><td><a href="https://hp-setlist.com/stage/20723" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
 </tbody>
 </table>
-2024年度(19歳)
+19歳（2024年）
 <table class="birthday-table">
 <thead>
 <tr>
@@ -62,7 +62,7 @@
 <tr><td>2024年11月7日</td><td>19:30</td><td>モーニング娘。'24 櫻井梨央バースデーイベント</td><td>山野ホール</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/21861" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
 </tbody>
 </table>
-2025年度(20歳)
+20歳（2025年）
 <table class="birthday-table">
 <thead>
 <tr>

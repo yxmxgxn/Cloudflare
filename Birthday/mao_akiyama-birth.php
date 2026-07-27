@@ -11,7 +11,7 @@
 <p class="site-title"><a href="/hello-birthday">メンバー一覧に戻る</a></p>
 <h1>秋山眞緒バースデーイベント会場まとめ</h1>
 <p>秋山眞緒さん（2002年7月29日生まれ）のこれまでのバースデーイベントをまとめました。非公式サイトのハロプロセトリ検索システム「ToMoKo」にてセットリストが公開されていたものはリンクを貼っています。</p>
-2017年度(15歳)
+15歳（2017年）
 <table class="birthday-table">
 <thead>
 <tr>
@@ -29,7 +29,7 @@
 <tr class="row-even"><td>2017年8月8日</td><td>19:30</td><td>つばきファクトリー 秋山眞緒バースデーイベント2017 in 名古屋</td><td>ミッドランドスクエア シネマ2</td><td>愛知県</td><td><a href="https://hp-setlist.com/stage/10056" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
 </tbody>
 </table>
-2018年度(16歳)
+16歳（2018年）
 <table class="birthday-table">
 <thead>
 <tr>
@@ -47,7 +47,7 @@
 <tr class="row-even"><td>2018年9月11日</td><td>19:30</td><td>つばきファクトリー 浅倉樹々 秋山眞緒バースデーイベント2018 in 名古屋</td><td>ミッドランドスクエア シネマ2</td><td>愛知県</td><td><a href="https://hp-setlist.com/stage/10107" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
 </tbody>
 </table>
-2019年度(17歳)
+17歳（2019年）
 <table class="birthday-table">
 <thead>
 <tr>
@@ -65,7 +65,7 @@
 <tr class="row-even"><td>2019年8月27日</td><td>19:30</td><td>つばきファクトリー 秋山眞緒バースデーイベント2019 in 名古屋</td><td>ミッドランドスクエア シネマ2</td><td>愛知県</td><td><a href="https://hp-setlist.com/stage/10154" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
 </tbody>
 </table>
-2020年度(18歳)
+18歳（2020年）
 <table class="birthday-table">
 <thead>
 <tr>
@@ -82,7 +82,7 @@
 <tr><td>2020年7月29日</td><td>19:45</td><td>つばきファクトリー 秋山眞緒バースデーイベント2020</td><td>新宿ReNY</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/7034" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
 </tbody>
 </table>
-2021年度(19歳)
+19歳（2021年）
 <table class="birthday-table">
 <thead>
 <tr>
@@ -99,7 +99,7 @@
 <tr><td>2021年7月29日</td><td>18:50</td><td>つばきファクトリー 秋山眞緒バースデーイベント2021</td><td>LANDMARK HALL</td><td>神奈川県</td><td><a href="https://hp-setlist.com/stage/7399" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
 </tbody>
 </table>
-2022年度(20歳)
+20歳（2022年）
 <table class="birthday-table">
 <thead>
 <tr>
@@ -116,7 +116,7 @@
 <tr><td>2022年7月29日</td><td>19:00</td><td>つばきファクトリー 秋山眞緒バースデーイベント2022</td><td>Club ex</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/8741" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
 </tbody>
 </table>
-2023年度(21歳)
+21歳（2023年）
 <table class="birthday-table">
 <thead>
 <tr>
@@ -133,7 +133,7 @@
 <tr><td>2023年7月28日</td><td>19:20</td><td>つばきファクトリー 秋山眞緒バースデーイベント2023</td><td>TOKYO FM HALL</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/20365" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
 </tbody>
 </table>
-2024年度(22歳)
+22歳（2024年）
 <table class="birthday-table">
 <thead>
 <tr>
@@ -150,7 +150,7 @@
 <tr><td>2024年7月29日</td><td>19:20</td><td>つばきファクトリー 秋山眞緒バースデーイベント2024</td><td>TOKYO FM HALL</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/21509" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
 </tbody>
 </table>
-2025年度(23歳)
+23歳（2025年）
 <table class="birthday-table">
 <thead>
 <tr>

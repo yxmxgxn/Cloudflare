@@ -11,7 +11,7 @@
 <p class="site-title"><a href="/hello-birthday">メンバー一覧に戻る</a></p>
 <h1>宮本佳林バースデーイベント会場まとめ</h1>
 <p>宮本佳林さん（1998年12月1日生まれ）のこれまでのバースデーイベントをまとめました。非公式サイトのハロプロセトリ検索システム「ToMoKo」にてセットリストが公開されていたものはリンクを貼っています。</p>
-2013年度(15歳)
+15歳（2013年）
 <table class="birthday-table">
 <thead>
 <tr>
@@ -28,7 +28,7 @@
 <tr><td>2013年12月17日</td><td>20:00</td><td>Juice=Juice 宮本佳林・植村あかりバースデーイベント2013</td><td>TOKYO FM HALL</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/3687" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
 </tbody>
 </table>
-2014年度(16歳)
+16歳（2014年）
 <table class="birthday-table">
 <thead>
 <tr>
@@ -44,7 +44,7 @@
 <tr class="row-even"><td>2014年12月11日</td><td>19:00</td><td>Juice=Juice 宮本佳林・植村あかりバースデーイベント2014</td><td>ディファ有明</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/4205" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
 </tbody>
 </table>
-2015年度(17歳)
+17歳（2015年）
 <table class="birthday-table">
 <thead>
 <tr>
@@ -61,7 +61,7 @@
 <tr><td>2015年12月1日</td><td>19:30</td><td>Juice=Juice 宮本佳林バースデーイベント2015</td><td>CLUB CITTA'</td><td>神奈川県</td><td><a href="https://hp-setlist.com/stage/4728" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
 </tbody>
 </table>
-2016年度(18歳)
+18歳（2016年）
 <table class="birthday-table">
 <thead>
 <tr>
@@ -79,7 +79,7 @@
 <tr class="row-even"><td>2016年12月6日</td><td>19:30</td><td>Juice=Juice 宮本佳林バースデーイベント2016 in 名古屋</td><td>ミッドランドスクエア シネマ2</td><td>愛知県</td><td><a href="https://hp-setlist.com/stage/10024" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
 </tbody>
 </table>
-2017年度(19歳)
+19歳（2017年）
 <table class="birthday-table">
 <thead>
 <tr>
@@ -96,7 +96,7 @@
 <tr><td>2017年12月5日</td><td>19:30</td><td>Juice=Juice 宮本佳林バースデーイベント2017 in 名古屋</td><td>ミッドランドスクエア シネマ2</td><td>愛知県</td><td><a href="https://hp-setlist.com/stage/10072" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
 </tbody>
 </table>
-2018年度(20歳)
+20歳（2018年）
 <table class="birthday-table">
 <thead>
 <tr>
@@ -114,7 +114,7 @@
 <tr class="row-even"><td>2018年12月4日</td><td>19:30</td><td>Juice=Juice 宮本佳林バースデーイベント2018 in 名古屋</td><td>ミッドランドスクエア シネマ2</td><td>愛知県</td><td><a href="https://hp-setlist.com/stage/10119" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
 </tbody>
 </table>
-2019年度(21歳)
+21歳（2019年）
 <table class="birthday-table">
 <thead>
 <tr>
@@ -132,7 +132,7 @@
 <tr class="row-even"><td>2019年12月10日</td><td>19:30</td><td>Juice=Juice 宮本佳林バースデーイベント2019 in 名古屋</td><td>ミッドランドスクエア シネマ2</td><td>愛知県</td><td><a href="https://hp-setlist.com/stage/10169" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
 </tbody>
 </table>
-2020年度(22歳)
+22歳（2020年）
 <table class="birthday-table">
 <thead>
 <tr>
@@ -149,7 +149,7 @@
 <tr><td>2020年12月1日</td><td>19:45</td><td>Juice=Juice 宮本佳林バースデーイベント2020</td><td>大田区民ホール・アプリコ 大ホール</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/7137" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
 </tbody>
 </table>
-2021年度(23歳)
+23歳（2021年）
 <table class="birthday-table">
 <thead>
 <tr>
@@ -166,7 +166,7 @@
 <tr><td>2021年12月1日</td><td>18:50</td><td>宮本佳林バースデーイベント2021～初めての記念日～</td><td>ティアラこうとう 大ホール</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/8020" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
 </tbody>
 </table>
-2022年度(24歳)
+24歳（2022年）
 <table class="birthday-table">
 <thead>
 <tr>
@@ -183,7 +183,7 @@
 <tr><td>2022年12月1日</td><td>18:50</td><td>宮本佳林バースデーイベント2022「自分、やっぱり佳林党員なので。」</td><td>一ツ橋ホール</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/10353" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
 </tbody>
 </table>
-2023年度(25歳)
+25歳（2023年）
 <table class="birthday-table">
 <thead>
 <tr>
@@ -200,7 +200,7 @@
 <tr><td>2023年12月1日</td><td>19:30</td><td>宮本佳林バースデーイベント2023～25歳の私～</td><td>山野ホール</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/20775" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
 </tbody>
 </table>
-2024年度(26歳)
+26歳（2024年）
 <table class="birthday-table">
 <thead>
 <tr>
@@ -217,7 +217,7 @@
 <tr><td>2024年12月1日</td><td>18:10</td><td>宮本佳林バースデーイベント2024 ～CONTINUE～</td><td>新都市ホール</td><td>神奈川県</td><td><a href="https://hp-setlist.com/stage/21930" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
 </tbody>
 </table>
-2025年度(27歳)
+27歳（2025年）
 <table class="birthday-table">
 <thead>
 <tr>

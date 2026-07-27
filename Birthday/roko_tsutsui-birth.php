@@ -11,7 +11,7 @@
 <p class="site-title"><a href="/hello-birthday">メンバー一覧に戻る</a></p>
 <h1>筒井澪心バースデーイベント会場まとめ</h1>
 <p>筒井澪心さん（2007年8月10日生まれ）のこれまでのバースデーイベントをまとめました。非公式サイトのハロプロセトリ検索システム「ToMoKo」にてセットリストが公開されていたものはリンクを貼っています。</p>
-2023年度(16歳)
+16歳（2023年）
 <table class="birthday-table">
 <thead>
 <tr>
@@ -28,7 +28,7 @@
 <tr><td>2023年8月10日</td><td>19:30</td><td>OCHA NORMA 筒井澪心バースデーイベント2023</td><td>飛行船シアター</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/20409" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
 </tbody>
 </table>
-2024年度(17歳)
+17歳（2024年）
 <table class="birthday-table">
 <thead>
 <tr>
@@ -47,7 +47,7 @@
 <tr><td>2024年8月19日</td><td>19:45</td><td>OCHA NORMA 筒井澪心バースデーイベント2024 in 名古屋</td><td>ミッドランドスクエア シネマ2</td><td>愛知県</td><td><a href="https://hp-setlist.com/stage/21579" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
 </tbody>
 </table>
-2025年度(18歳)
+18歳（2025年）
 <table class="birthday-table">
 <thead>
 <tr>
@@ -66,7 +66,7 @@
 <tr><td>2025年9月22日</td><td>19:45</td><td>OCHA NORMA 北原もも・筒井澪心バースデーイベント2025 in 名古屋</td><td>ミッドランドスクエア シネマ2</td><td>愛知県</td><td><a href="https://hp-setlist.com/stage/22786" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
 </tbody>
 </table>
-2026年度(19歳)
+19歳（2026年）
 <table class="birthday-table">
 <thead>
 <tr>

@@ -11,7 +11,7 @@
 <p class="site-title"><a href="/hello-birthday">メンバー一覧に戻る</a></p>
 <h1>島倉りかバースデーイベント会場まとめ</h1>
 <p>島倉りかさん（2000年8月20日生まれ）のこれまでのバースデーイベントをまとめました。非公式サイトのハロプロセトリ検索システム「ToMoKo」にてセットリストが公開されていたものはリンクを貼っています。</p>
-2019年度(19歳)
+19歳（2019年）
 <table class="birthday-table">
 <thead>
 <tr>
@@ -29,7 +29,7 @@
 <tr class="row-even"><td>2019年10月1日</td><td>19:30</td><td>BEYOOOOONDS 島倉りか・里吉うたのバースデーイベント2019 in 名古屋</td><td>ミッドランドスクエア シネマ2</td><td>愛知県</td><td><a href="https://hp-setlist.com/stage/10159" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
 </tbody>
 </table>
-2020年度(20歳)
+20歳（2020年）
 <table class="birthday-table">
 <thead>
 <tr>
@@ -46,7 +46,7 @@
 <tr><td>2020年8月20日</td><td>19:45</td><td>BEYOOOOONDS/CHICA#TETSU 島倉りかバースデーイベント2020</td><td>新宿ReNY</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/7056" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
 </tbody>
 </table>
-2021年度(21歳)
+21歳（2021年）
 <table class="birthday-table">
 <thead>
 <tr>
@@ -65,7 +65,7 @@
 <tr><td>2021年9月28日</td><td>19:00</td><td>BEYOOOOONDS 島倉りか・江口紗耶・小林萌花バースデーイベント2021 in 名古屋</td><td>ミッドランドスクエア シネマ2</td><td>愛知県</td><td><a href="https://hp-setlist.com/stage/10225" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
 </tbody>
 </table>
-2022年度(22歳)
+22歳（2022年）
 <table class="birthday-table">
 <thead>
 <tr>
@@ -82,7 +82,7 @@
 <tr><td>2022年8月19日</td><td>19:00</td><td>BEYOOOOONDS/CHICA#TETSU 島倉りかバースデーイベント2022</td><td>練馬文化センター 大ホール</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/8749" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
 </tbody>
 </table>
-2023年度(23歳)
+23歳（2023年）
 <table class="birthday-table">
 <thead>
 <tr>
@@ -99,7 +99,7 @@
 <tr><td>2023年8月22日</td><td>19:40</td><td>BEYOOOOONDS/CHICA#TETSU 島倉りかバースデーイベント2023</td><td>KT Zepp Yokohama</td><td>神奈川県</td><td><a href="https://hp-setlist.com/stage/20443" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
 </tbody>
 </table>
-2024年度(24歳)
+24歳（2024年）
 <table class="birthday-table">
 <thead>
 <tr>

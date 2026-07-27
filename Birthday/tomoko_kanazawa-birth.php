@@ -11,7 +11,7 @@
 <p class="site-title"><a href="/hello-birthday">メンバー一覧に戻る</a></p>
 <h1>金澤朋子バースデーイベント会場まとめ</h1>
 <p>金澤朋子さん（1995年7月2日生まれ）のこれまでのバースデーイベントをまとめました。非公式サイトのハロプロセトリ検索システム「ToMoKo」にてセットリストが公開されていたものはリンクを貼っています。</p>
-2014年度(19歳)
+19歳（2014年）
 <table class="birthday-table">
 <thead>
 <tr>
@@ -28,7 +28,7 @@
 <tr><td>2014年7月2日</td><td>20:10</td><td>Juice=Juice 金澤朋子バースデーイベント2014</td><td>TOKYO FM HALL</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/3984" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
 </tbody>
 </table>
-2015年度(20歳)
+20歳（2015年）
 <table class="birthday-table">
 <thead>
 <tr>
@@ -45,7 +45,7 @@
 <tr><td>2015年7月2日</td><td>20:00</td><td>Juice=Juice 金澤朋子バースデーイベント2015</td><td>TOKYO FM HALL</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/4464" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
 </tbody>
 </table>
-2016年度(21歳)
+21歳（2016年）
 <table class="birthday-table">
 <thead>
 <tr>
@@ -62,7 +62,7 @@
 <tr><td>2016年7月4日</td><td>20:15</td><td>Juice=Juice 金澤朋子バースデーイベント2016</td><td>CLUB CITTA'</td><td>神奈川県</td><td><a href="https://hp-setlist.com/stage/5075" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
 </tbody>
 </table>
-2017年度(22歳)
+22歳（2017年）
 <table class="birthday-table">
 <thead>
 <tr>
@@ -81,7 +81,7 @@
 <tr><td>2017年7月18日</td><td>19:30</td><td>Juice=Juice 金澤朋子バースデーイベント2017 in 名古屋</td><td>ミッドランドスクエア シネマ2</td><td>愛知県</td><td><a href="https://hp-setlist.com/stage/10054" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
 </tbody>
 </table>
-2018年度(23歳)
+23歳（2018年）
 <table class="birthday-table">
 <thead>
 <tr>
@@ -98,7 +98,7 @@
 <tr><td>2018年7月17日</td><td>19:30</td><td>Juice=Juice 金澤朋子バースデーイベント2018 in 名古屋</td><td>ミッドランドスクエア シネマ2</td><td>愛知県</td><td><a href="https://hp-setlist.com/stage/10102" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
 </tbody>
 </table>
-2019年度(24歳)
+24歳（2019年）
 <table class="birthday-table">
 <thead>
 <tr>
@@ -117,7 +117,7 @@
 <tr><td>2019年7月16日</td><td>19:50</td><td>Juice=Juice 金澤朋子・段原瑠々バースデーイベント2019 in 名古屋</td><td>ミッドランドスクエア シネマ2</td><td>愛知県</td><td><a href="https://hp-setlist.com/stage/10150" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
 </tbody>
 </table>
-2020年度(25歳)
+25歳（2020年）
 <table class="birthday-table">
 <thead>
 <tr>
@@ -136,7 +136,7 @@
 <tr><td>2020年9月23日</td><td>19:15</td><td>Juice=Juice 金澤朋子バースデーイベント2020 アンコール公演</td><td>COTTON CLUB</td><td>東京都</td><td></td></tr>
 </tbody>
 </table>
-2021年度(26歳)
+26歳（2021年）
 <table class="birthday-table">
 <thead>
 <tr>

@@ -11,7 +11,7 @@
 <p class="site-title"><a href="/hello-birthday">メンバー一覧に戻る</a></p>
 <h1>平井美葉バースデーイベント会場まとめ</h1>
 <p>平井美葉さん（1999年12月11日生まれ）のこれまでのバースデーイベントをまとめました。非公式サイトのハロプロセトリ検索システム「ToMoKo」にてセットリストが公開されていたものはリンクを貼っています。</p>
-2019年度(20歳)
+20歳（2019年）
 <table class="birthday-table">
 <thead>
 <tr>
@@ -30,7 +30,7 @@
 <tr><td>2020年1月28日</td><td>19:50</td><td>BEYOOOOONDS 山﨑夢羽・岡村美波・清野桃々姫・平井美葉バースデーイベント in 名古屋</td><td>ミッドランドスクエア シネマ2</td><td>愛知県</td><td><a href="https://hp-setlist.com/stage/10173" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
 </tbody>
 </table>
-2020年度(21歳)
+21歳（2020年）
 <table class="birthday-table">
 <thead>
 <tr>
@@ -49,7 +49,7 @@
 <tr><td>2020年12月15日</td><td>20:00</td><td>BEYOOOOONDS 山﨑夢羽・平井美葉バースデーイベント2020 in 名古屋</td><td>ミッドランドスクエア シネマ2</td><td>愛知県</td><td><a href="https://hp-setlist.com/stage/10187" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
 </tbody>
 </table>
-2021年度(22歳)
+22歳（2021年）
 <table class="birthday-table">
 <thead>
 <tr>
@@ -68,7 +68,7 @@
 <tr><td>2021年12月21日</td><td>19:00</td><td>BEYOOOOONDS/SeasoningS 平井美葉バースデーイベント2021 in 名古屋</td><td>ミッドランドスクエア シネマ2</td><td>愛知県</td><td><a href="https://hp-setlist.com/stage/10241" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
 </tbody>
 </table>
-2022年度(23歳)
+23歳（2022年）
 <table class="birthday-table">
 <thead>
 <tr>
@@ -85,7 +85,7 @@
 <tr><td>2022年12月14日</td><td>18:50</td><td>BEYOOOOONDS/SeasoningS 平井美葉バースデーイベント2022</td><td>一ツ橋ホール</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/10347" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
 </tbody>
 </table>
-2023年度(24歳)
+24歳（2023年）
 <table class="birthday-table">
 <thead>
 <tr>
@@ -102,7 +102,7 @@
 <tr><td>2023年12月11日</td><td>19:40</td><td>BEYOOOOONDS/SeasoningS 平井美葉バースデーイベント2023</td><td>荒川区民会館 大ホール</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/20815" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
 </tbody>
 </table>
-2024年度(25歳)
+25歳（2024年）
 <table class="birthday-table">
 <thead>
 <tr>
@@ -119,7 +119,7 @@
 <tr><td>2024年12月12日</td><td>19:30</td><td>BEYOOOOONDS/SeasoningS 平井美葉バースデーイベント2024</td><td>墨田区曳舟文化センター 劇場ホール</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/21962" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
 </tbody>
 </table>
-2025年度(26歳)
+26歳（2025年）
 <table class="birthday-table">
 <thead>
 <tr>

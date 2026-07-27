@@ -11,7 +11,7 @@
 <p class="site-title"><a href="/hello-birthday">メンバー一覧に戻る</a></p>
 <h1>浅倉樹々バースデーイベント会場まとめ</h1>
 <p>浅倉樹々さん（2000年9月3日生まれ）のこれまでのバースデーイベントをまとめました。非公式サイトのハロプロセトリ検索システム「ToMoKo」にてセットリストが公開されていたものはリンクを貼っています。</p>
-2017年度(17歳)
+17歳（2017年）
 <table class="birthday-table">
 <thead>
 <tr>
@@ -29,7 +29,7 @@
 <tr class="row-even"><td>2017年9月19日</td><td>19:30</td><td>つばきファクトリー 浅倉樹々バースデーイベント2017 in 名古屋</td><td>ミッドランドスクエア シネマ2</td><td>愛知県</td><td><a href="https://hp-setlist.com/stage/10061" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
 </tbody>
 </table>
-2018年度(18歳)
+18歳（2018年）
 <table class="birthday-table">
 <thead>
 <tr>
@@ -47,7 +47,7 @@
 <tr class="row-even"><td>2018年9月11日</td><td>19:30</td><td>つばきファクトリー 浅倉樹々 秋山眞緒バースデーイベント2018 in 名古屋</td><td>ミッドランドスクエア シネマ2</td><td>愛知県</td><td><a href="https://hp-setlist.com/stage/10107" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
 </tbody>
 </table>
-2020年度(20歳)
+20歳（2020年）
 <table class="birthday-table">
 <thead>
 <tr>
@@ -65,7 +65,7 @@
 <tr class="row-even"><td>2020年9月3日</td><td>19:45</td><td>つばきファクトリー 浅倉樹々バースデーイベント2020</td><td>TOKYO FM HALL</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/7069" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
 </tbody>
 </table>
-2021年度(21歳)
+21歳（2021年）
 <table class="birthday-table">
 <thead>
 <tr>
@@ -82,7 +82,7 @@
 <tr><td>2021年9月3日</td><td>18:50</td><td>つばきファクトリー 浅倉樹々バースデーイベント2021</td><td>KT Zepp Yokohama</td><td>神奈川県</td><td><a href="https://hp-setlist.com/stage/7415" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
 </tbody>
 </table>
-2022年度(22歳)
+22歳（2022年）
 <table class="birthday-table">
 <thead>
 <tr>
@@ -99,7 +99,7 @@
 <tr><td>2022年9月7日</td><td>18:50</td><td>つばきファクトリー 浅倉樹々バースデーイベント2022</td><td>タワーホール船堀 大ホール</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/9536" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
 </tbody>
 </table>
-2023年度(23歳)
+23歳（2023年）
 <table class="birthday-table">
 <thead>
 <tr>
@@ -116,7 +116,7 @@
 <tr><td>2023年9月3日</td><td>18:15</td><td>浅倉樹々バースデーイベント2023 ～charming～</td><td>飛行船シアター</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/20477" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
 </tbody>
 </table>
-2024年度(24歳)
+24歳（2024年）
 <table class="birthday-table">
 <thead>
 <tr>
@@ -133,7 +133,7 @@
 <tr><td>2024年9月1日</td><td>18:00</td><td>浅倉樹々バースデーイベント2024 ～Dahlia～</td><td>飛行船シアター</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/21614" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
 </tbody>
 </table>
-2026年度(26歳)
+26歳（2026年）
 <table class="birthday-table">
 <thead>
 <tr>

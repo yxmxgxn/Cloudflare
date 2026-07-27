@@ -11,7 +11,7 @@
 <p class="site-title"><a href="/hello-birthday">メンバー一覧に戻る</a></p>
 <h1>山岸理子バースデーイベント会場まとめ</h1>
 <p>山岸理子さん（1998年11月24日生まれ）のこれまでのバースデーイベントをまとめました。非公式サイトのハロプロセトリ検索システム「ToMoKo」にてセットリストが公開されていたものはリンクを貼っています。</p>
-2017年度(19歳)
+19歳（2017年）
 <table class="birthday-table">
 <thead>
 <tr>
@@ -29,7 +29,7 @@
 <tr class="row-even"><td>2017年12月12日</td><td>19:30</td><td>つばきファクトリー 山岸理子バースデーイベント2017 in 名古屋</td><td>ミッドランドスクエア シネマ2</td><td>愛知県</td><td><a href="https://hp-setlist.com/stage/10073" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
 </tbody>
 </table>
-2018年度(20歳)
+20歳（2018年）
 <table class="birthday-table">
 <thead>
 <tr>
@@ -47,7 +47,7 @@
 <tr class="row-even"><td>2018年11月27日</td><td>19:30</td><td>つばきファクトリー 山岸理子・谷本安美バースデーイベント2018 in 名古屋</td><td>ミッドランドスクエア シネマ2</td><td>愛知県</td><td><a href="https://hp-setlist.com/stage/10118" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
 </tbody>
 </table>
-2019年度(21歳)
+21歳（2019年）
 <table class="birthday-table">
 <thead>
 <tr>
@@ -65,7 +65,7 @@
 <tr class="row-even"><td>2019年12月3日</td><td>19:30</td><td>つばきファクトリー 山岸理子バースデーイベント2019 in 名古屋</td><td>ミッドランドスクエア シネマ2</td><td>愛知県</td><td><a href="https://hp-setlist.com/stage/10168" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
 </tbody>
 </table>
-2020年度(22歳)
+22歳（2020年）
 <table class="birthday-table">
 <thead>
 <tr>
@@ -84,7 +84,7 @@
 <tr><td>2020年12月8日</td><td>19:00</td><td>つばきファクトリー 山岸理子・谷本安美バースデーイベント2020 in 名古屋</td><td>ミッドランドスクエア シネマ2</td><td>愛知県</td><td><a href="https://hp-setlist.com/stage/10185" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
 </tbody>
 </table>
-2021年度(23歳)
+23歳（2021年）
 <table class="birthday-table">
 <thead>
 <tr>
@@ -101,7 +101,7 @@
 <tr><td>2021年11月26日</td><td>18:50</td><td>つばきファクトリー 山岸理子バースデーイベント2021</td><td>荒川区民会館 大ホール</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/7539" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
 </tbody>
 </table>
-2022年度(24歳)
+24歳（2022年）
 <table class="birthday-table">
 <thead>
 <tr>
@@ -118,7 +118,7 @@
 <tr><td>2022年11月24日</td><td>18:50</td><td>つばきファクトリー 山岸理子バースデーイベント2022</td><td>一ツ橋ホール</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/9982" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
 </tbody>
 </table>
-2024年度(26歳)
+26歳（2024年）
 <table class="birthday-table">
 <thead>
 <tr>
@@ -135,7 +135,7 @@
 <tr><td>2024年11月25日</td><td>19:30</td><td>山岸理子バースデーイベント2024～Funya～</td><td>TOKYO FM HALL</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/21917" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
 </tbody>
 </table>
-2025年度(27歳)
+27歳（2025年）
 <table class="birthday-table">
 <thead>
 <tr>

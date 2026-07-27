@@ -11,7 +11,7 @@
 <p class="site-title"><a href="/hello-birthday">メンバー一覧に戻る</a></p>
 <h1>吉澤ひとみバースデーイベント会場まとめ</h1>
 <p>吉澤ひとみさん（1985年4月12日生まれ）のこれまでのバースデーイベントをまとめました。非公式サイトのハロプロセトリ検索システム「ToMoKo」にてセットリストが公開されていたものはリンクを貼っています。</p>
-2010年度(25歳)
+25歳（2010年）
 <table class="birthday-table">
 <thead>
 <tr>
@@ -27,7 +27,7 @@
 <tr class="row-even"><td>2010年4月12日</td><td></td><td>吉澤ひとみスペシャルライブ～25回目の『ありがとう』～</td><td>Shibuya O-WEST</td><td>東京都</td><td></td></tr>
 </tbody>
 </table>
-2012年度(27歳)
+27歳（2012年）
 <table class="birthday-table">
 <thead>
 <tr>

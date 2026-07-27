@@ -11,7 +11,7 @@
 <p class="site-title"><a href="/hello-birthday">メンバー一覧に戻る</a></p>
 <h1>田代すみれバースデーイベント会場まとめ</h1>
 <p>田代すみれさん（2005年6月16日生まれ）のこれまでのバースデーイベントをまとめました。非公式サイトのハロプロセトリ検索システム「ToMoKo」にてセットリストが公開されていたものはリンクを貼っています。</p>
-2023年度(18歳)
+18歳（2023年）
 <table class="birthday-table">
 <thead>
 <tr>
@@ -28,7 +28,7 @@
 <tr><td>2023年6月19日</td><td>19:20</td><td>OCHA NORMA 田代すみれバースデーイベント2023</td><td>LANDMARK HALL</td><td>神奈川県</td><td><a href="https://hp-setlist.com/stage/10758" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
 </tbody>
 </table>
-2024年度(19歳)
+19歳（2024年）
 <table class="birthday-table">
 <thead>
 <tr>

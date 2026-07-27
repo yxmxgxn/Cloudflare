@@ -11,7 +11,7 @@
 <p class="site-title"><a href="/hello-birthday">メンバー一覧に戻る</a></p>
 <h1>浜浦彩乃バースデーイベント会場まとめ</h1>
 <p>浜浦彩乃さん（2000年4月26日生まれ）のこれまでのバースデーイベントをまとめました。非公式サイトのハロプロセトリ検索システム「ToMoKo」にてセットリストが公開されていたものはリンクを貼っています。</p>
-2016年度(16歳)
+16歳（2016年）
 <table class="birthday-table">
 <thead>
 <tr>
@@ -29,7 +29,7 @@
 <tr class="row-even"><td>2016年4月24日</td><td>19:00</td><td>こぶしファクトリー 浜浦彩乃バースデーイベント2016</td><td>牛込箪笥区民ホール</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/5008" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
 </tbody>
 </table>
-2017年度(17歳)
+17歳（2017年）
 <table class="birthday-table">
 <thead>
 <tr>
@@ -47,7 +47,7 @@
 <tr class="row-even"><td>2017年5月30日</td><td>19:30</td><td>こぶしファクトリー 浜浦彩乃バースデーイベント2017 in 名古屋</td><td>ミッドランドスクエア シネマ2</td><td>愛知県</td><td><a href="https://hp-setlist.com/stage/10048" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
 </tbody>
 </table>
-2018年度(18歳)
+18歳（2018年）
 <table class="birthday-table">
 <thead>
 <tr>
@@ -64,7 +64,7 @@
 <tr><td>2018年5月8日</td><td>19:30</td><td>こぶしファクトリー 浜浦彩乃バースデーイベント2018 in 名古屋</td><td>ミッドランドスクエア シネマ2</td><td>愛知県</td><td><a href="https://hp-setlist.com/stage/10092" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
 </tbody>
 </table>
-2019年度(19歳)
+19歳（2019年）
 <table class="birthday-table">
 <thead>
 <tr>

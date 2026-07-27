@@ -11,7 +11,7 @@
 <p class="site-title"><a href="/hello-birthday">メンバー一覧に戻る</a></p>
 <h1>井上春華バースデーイベント会場まとめ</h1>
 <p>井上春華さん（2006年5月6日生まれ）のこれまでのバースデーイベントをまとめました。非公式サイトのハロプロセトリ検索システム「ToMoKo」にてセットリストが公開されていたものはリンクを貼っています。</p>
-2024年度(18歳)
+18歳（2024年）
 <table class="birthday-table">
 <thead>
 <tr>
@@ -28,7 +28,7 @@
 <tr><td>2024年5月10日</td><td>19:20</td><td>モーニング娘。'24 井上春華バースデーイベント</td><td>スクエア荏原ひらつかホール</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/21246" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
 </tbody>
 </table>
-2025年度(19歳)
+19歳（2025年）
 <table class="birthday-table">
 <thead>
 <tr>
@@ -45,7 +45,7 @@
 <tr><td>2025年5月13日</td><td>19:30</td><td>モーニング娘。'25 井上春華バースデーイベント</td><td>墨田区曳舟文化センター 劇場ホール</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/22393" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
 </tbody>
 </table>
-2026年度(20歳)
+20歳（2026年）
 <table class="birthday-table">
 <thead>
 <tr>

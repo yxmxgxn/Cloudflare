@@ -11,7 +11,7 @@
 <p class="site-title"><a href="/hello-birthday">メンバー一覧に戻る</a></p>
 <h1>清水佐紀バースデーイベント会場まとめ</h1>
 <p>清水佐紀さん（1991年11月22日生まれ）のこれまでのバースデーイベントをまとめました。非公式サイトのハロプロセトリ検索システム「ToMoKo」にてセットリストが公開されていたものはリンクを貼っています。</p>
-2013年度(22歳)
+22歳（2013年）
 <table class="birthday-table">
 <thead>
 <tr>
@@ -28,7 +28,7 @@
 <tr><td>2013年11月21日</td><td>20:10</td><td>清水佐紀バースデーイベント〜22nd Anniversary〜</td><td>TOKYO FM HALL</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/3666" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
 </tbody>
 </table>
-2014年度(23歳)
+23歳（2014年）
 <table class="birthday-table">
 <thead>
 <tr>
@@ -45,7 +45,7 @@
 <tr><td>2014年11月21日</td><td>20:10</td><td>Berryz工房 清水佐紀バースデーイベント2014</td><td>TOKYO FM HALL</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/4194" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
 </tbody>
 </table>
-2020年度(29歳)
+29歳（2020年）
 <table class="birthday-table">
 <thead>
 <tr>
@@ -63,7 +63,7 @@
 <tr class="row-even"><td>2020年11月3日</td><td>19:00</td><td>清水佐紀・須藤茉麻・熊井友理奈 ファンクラブイベント～しみしみにバースデーサプライズ～</td><td>LANDMARK HALL</td><td>神奈川県</td><td></td></tr>
 </tbody>
 </table>
-2021年度(30歳)
+30歳（2021年）
 <table class="birthday-table">
 <thead>
 <tr>

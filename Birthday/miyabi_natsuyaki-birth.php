@@ -11,7 +11,7 @@
 <p class="site-title"><a href="/hello-birthday">メンバー一覧に戻る</a></p>
 <h1>夏焼雅バースデーイベント会場まとめ</h1>
 <p>夏焼雅さん（1992年8月25日生まれ）のこれまでのバースデーイベントをまとめました。非公式サイトのハロプロセトリ検索システム「ToMoKo」にてセットリストが公開されていたものはリンクを貼っています。</p>
-2013年度(21歳)
+21歳（2013年）
 <table class="birthday-table">
 <thead>
 <tr>
@@ -28,7 +28,7 @@
 <tr><td>2013年8月26日</td><td>20:10</td><td>Miyabi Natsuyaki Birthday Event …Sweetest♡time…</td><td>TOKYO FM HALL</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/3562" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
 </tbody>
 </table>
-2014年度(22歳)
+22歳（2014年）
 <table class="birthday-table">
 <thead>
 <tr>
@@ -45,7 +45,7 @@
 <tr><td>2014年8月25日</td><td>20:10</td><td>Berryz工房 夏焼雅バースデーイベント2014</td><td>TOKYO FM HALL</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/4065" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
 </tbody>
 </table>
-2017年度(25歳)
+25歳（2017年）
 <table class="birthday-table">
 <thead>
 <tr>
@@ -62,7 +62,7 @@
 <tr><td>2017年8月24日</td><td>20:30</td><td>Pink Cres. Party!～ピンク1周年＆夏焼雅バースデースペシャル～</td><td>TOKYO FM HALL</td><td>東京都</td><td></td></tr>
 </tbody>
 </table>
-2018年度(26歳)
+26歳（2018年）
 <table class="birthday-table">
 <thead>
 <tr>
@@ -80,7 +80,7 @@
 <tr class="row-even"><td>2018年8月25日</td><td>20:30</td><td>Pink Cres. HBD Party! ～PINK&amp; Miyabi SP～</td><td>渋谷シダックスカルチャーホール</td><td>東京都</td><td></td></tr>
 </tbody>
 </table>
-2019年度(27歳)
+27歳（2019年）
 <table class="birthday-table">
 <thead>
 <tr>
@@ -98,7 +98,7 @@
 <tr class="row-even"><td>2019年8月18日</td><td>18:30</td><td>PINK CRES. HBDParty!～M.Y.B. LV.27～</td><td>渋谷シダックスカルチャーホール</td><td>東京都</td><td></td></tr>
 </tbody>
 </table>
-2020年度(28歳)
+28歳（2020年）
 <table class="birthday-table">
 <thead>
 <tr>
@@ -116,7 +116,7 @@
 <tr class="row-even"><td>2020年8月25日</td><td>20:30</td><td>PINK CRES. HBD Party! ～PINKみやちゃん 私も忘れないでbyひかる～</td><td>渋谷シダックスカルチャーホール</td><td>東京都</td><td></td></tr>
 </tbody>
 </table>
-2021年度(29歳)
+29歳（2021年）
 <table class="birthday-table">
 <thead>
 <tr>
@@ -134,7 +134,7 @@
 <tr class="row-even"><td>2021年8月28日</td><td>18:00</td><td>夏焼雅バースデーイベント2021～みやちゃん20代ラストだよ！！全員集合♡～</td><td>渋谷シダックスカルチャーホール</td><td>東京都</td><td></td></tr>
 </tbody>
 </table>
-2022年度(30歳)
+30歳（2022年）
 <table class="birthday-table">
 <thead>
 <tr>
@@ -152,7 +152,7 @@
 <tr class="row-even"><td>2022年8月27日</td><td>18:00</td><td>夏焼雅バースデーイベント2022 ～えっ！気づいたら３０歳だって！～</td><td>渋谷シダックスカルチャーホール</td><td>東京都</td><td></td></tr>
 </tbody>
 </table>
-2023年度(31歳)
+31歳（2023年）
 <table class="birthday-table">
 <thead>
 <tr>
@@ -170,7 +170,7 @@
 <tr class="row-even"><td>2023年8月26日</td><td>18:15</td><td>夏焼雅 BIRTHDAY PARTY!</td><td>渋谷シダックスカルチャーホール</td><td>東京都</td><td></td></tr>
 </tbody>
 </table>
-2024年度(32歳)
+32歳（2024年）
 <table class="birthday-table">
 <thead>
 <tr>
@@ -188,7 +188,7 @@
 <tr class="row-even"><td>2024年8月25日</td><td>18:00</td><td>夏焼雅 BIRTHDAY PARTY!～VIPルームにようこそ～</td><td>渋谷シダックスカルチャーホール</td><td>東京都</td><td></td></tr>
 </tbody>
 </table>
-2025年度(33歳)
+33歳（2025年）
 <table class="birthday-table">
 <thead>
 <tr>
@@ -206,7 +206,7 @@
 <tr class="row-even"><td>2025年8月24日</td><td>18:00</td><td>夏焼雅 BIRTHDAY PARTY!</td><td>渋谷シダックスカルチャーホール</td><td>東京都</td><td></td></tr>
 </tbody>
 </table>
-2026年度(34歳)
+34歳（2026年）
 <table class="birthday-table">
 <thead>
 <tr>

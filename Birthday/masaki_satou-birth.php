@@ -11,7 +11,7 @@
 <p class="site-title"><a href="/hello-birthday">メンバー一覧に戻る</a></p>
 <h1>佐藤優樹バースデーイベント会場まとめ</h1>
 <p>佐藤優樹さん（1999年5月7日生まれ）のこれまでのバースデーイベントをまとめました。非公式サイトのハロプロセトリ検索システム「ToMoKo」にてセットリストが公開されていたものはリンクを貼っています。</p>
-2012年度(13歳)
+13歳（2012年）
 <table class="birthday-table">
 <thead>
 <tr>
@@ -27,7 +27,7 @@
 <tr class="row-even"><td>2012年5月7日</td><td>18:15</td><td>モーニング娘。10期メンバーイベント〜祝・誕生日＼(^O^)／今夜の主役は…まーちゃん！〜</td><td>TOKYO FM HALL</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/3196" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
 </tbody>
 </table>
-2013年度(14歳)
+14歳（2013年）
 <table class="birthday-table">
 <thead>
 <tr>
@@ -44,7 +44,7 @@
 <tr><td>2013年5月7日</td><td>20:00</td><td>佐藤優樹バースデーイベント ～１４才なうなぅーーー！！～</td><td>TOKYO FM HALL</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/3500" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
 </tbody>
 </table>
-2014年度(15歳)
+15歳（2014年）
 <table class="birthday-table">
 <thead>
 <tr>
@@ -61,7 +61,7 @@
 <tr><td>2014年5月7日</td><td>20:00</td><td>モーニング娘。'14 佐藤優樹バースデーイベント2014</td><td>TOKYO FM HALL</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/3895" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
 </tbody>
 </table>
-2015年度(16歳)
+16歳（2015年）
 <table class="birthday-table">
 <thead>
 <tr>
@@ -78,7 +78,7 @@
 <tr><td>2015年5月7日</td><td>20:00</td><td>モーニング娘。'15 佐藤優樹バースデーイベント</td><td>TOKYO FM HALL</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/4387" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
 </tbody>
 </table>
-2016年度(17歳)
+17歳（2016年）
 <table class="birthday-table">
 <thead>
 <tr>
@@ -94,7 +94,7 @@
 <tr class="row-even"><td>2016年5月20日</td><td>19:00</td><td>モーニング娘。'16 佐藤優樹バースデーイベント</td><td>山野ホール</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/5050" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
 </tbody>
 </table>
-2017年度(18歳)
+18歳（2017年）
 <table class="birthday-table">
 <thead>
 <tr>
@@ -111,7 +111,7 @@
 <tr><td>2017年6月20日</td><td>19:30</td><td>モーニング娘。'17 佐藤優樹バースデーイベント in 名古屋</td><td>ミッドランドスクエア シネマ2</td><td>愛知県</td><td><a href="https://hp-setlist.com/stage/10051" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
 </tbody>
 </table>
-2018年度(19歳)
+19歳（2018年）
 <table class="birthday-table">
 <thead>
 <tr>
@@ -128,7 +128,7 @@
 <tr><td>2018年6月12日</td><td>19:30</td><td>モーニング娘。'18 佐藤優樹バースデーイベント in 名古屋</td><td>ミッドランドスクエア シネマ2</td><td>愛知県</td><td><a href="https://hp-setlist.com/stage/10098" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
 </tbody>
 </table>
-2019年度(20歳)
+20歳（2019年）
 <table class="birthday-table">
 <thead>
 <tr>
@@ -146,7 +146,7 @@
 <tr class="row-even"><td>2019年5月21日</td><td>19:30</td><td>モーニング娘。'19 佐藤優樹バースデーイベント in 名古屋</td><td>ミッドランドスクエア シネマ2</td><td>愛知県</td><td><a href="https://hp-setlist.com/stage/10143" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
 </tbody>
 </table>
-2020年度(21歳)
+21歳（2020年）
 <table class="birthday-table">
 <thead>
 <tr>
@@ -163,7 +163,7 @@
 <tr><td>2020年8月26日</td><td>20:00</td><td>モーニング娘。'20 佐藤優樹バースデーイベント【2020年5月7日振替公演】</td><td>Zepp DiverCity</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/7060" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
 </tbody>
 </table>
-2021年度(22歳)
+22歳（2021年）
 <table class="birthday-table">
 <thead>
 <tr>
@@ -180,7 +180,7 @@
 <tr><td>2021年10月1日</td><td>18:50</td><td>モーニング娘。'21 10期メンバー 石田亜佑美&amp;佐藤優樹FCイベント～ひよこが10年経ったら、さぁ何になる？～『まーバースデーやってないよ。せめて衣装だけ着させて！』『いや、タイトル長いよ！』</td><td>江戸川区総合文化センター 大ホール</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/7498" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
 </tbody>
 </table>
-2023年度(24歳)
+24歳（2023年）
 <table class="birthday-table">
 <thead>
 <tr>
@@ -197,7 +197,7 @@
 <tr><td>2023年5月8日</td><td>19:45</td><td>佐藤優樹バースデーイベント2023～Emerald planet～</td><td>KT Zepp Yokohama</td><td>神奈川県</td><td><a href="https://hp-setlist.com/stage/10764" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
 </tbody>
 </table>
-2024年度(25歳)
+25歳（2024年）
 <table class="birthday-table">
 <thead>
 <tr>
@@ -216,7 +216,7 @@
 <tr><td>2024年5月12日</td><td>18:00</td><td>佐藤優樹バースデーイベント2024～Emerald Eyes～</td><td>YES THEATER</td><td>大阪府</td><td><a href="https://hp-setlist.com/stage/21279" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
 </tbody>
 </table>
-2025年度(26歳)
+26歳（2025年）
 <table class="birthday-table">
 <thead>
 <tr>

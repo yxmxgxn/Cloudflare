@@ -11,7 +11,7 @@
 <p class="site-title"><a href="/hello-birthday">メンバー一覧に戻る</a></p>
 <h1>工藤由愛バースデーイベント会場まとめ</h1>
 <p>工藤由愛さん（2004年9月28日生まれ）のこれまでのバースデーイベントをまとめました。非公式サイトのハロプロセトリ検索システム「ToMoKo」にてセットリストが公開されていたものはリンクを貼っています。</p>
-2020年度(16歳)
+16歳（2020年）
 <table class="birthday-table">
 <thead>
 <tr>
@@ -30,7 +30,7 @@
 <tr><td>2020年11月17日</td><td>19:00</td><td>Juice=Juice 工藤由愛バースデーイベント2020 in 名古屋</td><td>ミッドランドスクエア シネマ2</td><td>愛知県</td><td><a href="https://hp-setlist.com/stage/10181" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
 </tbody>
 </table>
-2021年度(17歳)
+17歳（2021年）
 <table class="birthday-table">
 <thead>
 <tr>
@@ -47,7 +47,7 @@
 <tr><td>2021年9月28日</td><td>18:50</td><td>Juice=Juice 工藤由愛バースデーイベント2021</td><td>LANDMARK HALL</td><td>神奈川県</td><td><a href="https://hp-setlist.com/stage/7494" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
 </tbody>
 </table>
-2022年度(18歳)
+18歳（2022年）
 <table class="birthday-table">
 <thead>
 <tr>
@@ -64,7 +64,7 @@
 <tr><td>2022年9月26日</td><td>18:50</td><td>Juice=Juice 工藤由愛バースデーイベント2022</td><td>荒川区民会館 大ホール</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/9542" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
 </tbody>
 </table>
-2023年度(19歳)
+19歳（2023年）
 <table class="birthday-table">
 <thead>
 <tr>
@@ -83,7 +83,7 @@
 <tr><td>2023年10月23日</td><td>18:50</td><td>Juice=Juice 工藤由愛バースデーイベント2023 in 大阪</td><td>YES THEATER</td><td>大阪府</td><td><a href="https://hp-setlist.com/stage/20625" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
 </tbody>
 </table>
-2024年度(20歳)
+20歳（2024年）
 <table class="birthday-table">
 <thead>
 <tr>
@@ -102,7 +102,7 @@
 <tr><td>2024年10月30日</td><td>19:30</td><td>Juice=Juice 工藤由愛バースデーイベント2024【2024年10月3日振替】</td><td>山野ホール</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/21708" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
 </tbody>
 </table>
-2025年度(21歳)
+21歳（2025年）
 <table class="birthday-table">
 <thead>
 <tr>

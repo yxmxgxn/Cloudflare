@@ -11,7 +11,7 @@
 <p class="site-title"><a href="/hello-birthday">メンバー一覧に戻る</a></p>
 <h1>工藤遥バースデーイベント会場まとめ</h1>
 <p>工藤遥さん（1999年10月27日生まれ）のこれまでのバースデーイベントをまとめました。非公式サイトのハロプロセトリ検索システム「ToMoKo」にてセットリストが公開されていたものはリンクを貼っています。</p>
-2012年度(13歳)
+13歳（2012年）
 <table class="birthday-table">
 <thead>
 <tr>
@@ -27,7 +27,7 @@
 <tr class="row-even"><td>2012年10月29日</td><td>19:00</td><td>工藤遥バースデーイベント～中学生NIGHT!!～</td><td>なかのZERO 大ホール</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/3334" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
 </tbody>
 </table>
-2013年度(14歳)
+14歳（2013年）
 <table class="birthday-table">
 <thead>
 <tr>
@@ -43,7 +43,7 @@
 <tr class="row-even"><td>2013年10月30日</td><td>19:00</td><td>モーニング娘。 譜久村聖&amp;工藤遥バースデーイベント2013</td><td>かつしかシンフォニーヒルズ モーツァルトホール</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/3653" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
 </tbody>
 </table>
-2014年度(15歳)
+15歳（2014年）
 <table class="birthday-table">
 <thead>
 <tr>
@@ -60,7 +60,7 @@
 <tr><td>2014年10月27日</td><td>20:00</td><td>モーニング娘。'14 工藤遥バースデーイベント2014</td><td>TOKYO FM HALL</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/4185" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
 </tbody>
 </table>
-2015年度(16歳)
+16歳（2015年）
 <table class="birthday-table">
 <thead>
 <tr>
@@ -77,7 +77,7 @@
 <tr><td>2015年10月30日</td><td>19:00</td><td>モーニング娘。'15 譜久村聖&amp;工藤遥バースデーイベント～ふくどぅーBirthday Party!～</td><td>ディファ有明</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/4685" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
 </tbody>
 </table>
-2016年度(17歳)
+17歳（2016年）
 <table class="birthday-table">
 <thead>
 <tr>
@@ -94,7 +94,7 @@
 <tr><td>2016年11月22日</td><td>19:30</td><td>モーニング娘。'16 譜久村聖・飯窪春菜・工藤遥バースデーイベント2016 in 名古屋</td><td>ミッドランドスクエア シネマ2</td><td>愛知県</td><td><a href="https://hp-setlist.com/stage/10022" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
 </tbody>
 </table>
-2017年度(18歳)
+18歳（2017年）
 <table class="birthday-table">
 <thead>
 <tr>
@@ -110,7 +110,7 @@
 <tr class="row-even"><td>2017年10月27日</td><td>19:00</td><td>モーニング娘。'17 工藤遥バースデーイベント</td><td>ディファ有明</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/5854" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
 </tbody>
 </table>
-2019年度(20歳)
+20歳（2019年）
 <table class="birthday-table">
 <thead>
 <tr>
@@ -126,7 +126,7 @@
 <tr class="row-even"><td>2019年10月29日</td><td></td><td>工藤遥ファンクラブツアー in 長野 HARUCOUNT DOEN 19→20</td><td>上山田文化会館</td><td>長野県</td><td></td></tr>
 </tbody>
 </table>
-2020年度(21歳)
+21歳（2020年）
 <table class="birthday-table">
 <thead>
 <tr>
@@ -143,7 +143,7 @@
 <tr><td>2020年10月27日</td><td>19:00</td><td>工藤遥バースデーイベント2020</td><td>山野ホール</td><td>東京都</td><td></td></tr>
 </tbody>
 </table>
-2021年度(22歳)
+22歳（2021年）
 <table class="birthday-table">
 <thead>
 <tr>
@@ -160,7 +160,7 @@
 <tr><td>2021年10月17日</td><td>18:10</td><td>工藤遥バースデーイベント2021 ～22nd Best day ever～</td><td>江戸川区総合文化センター 大ホール</td><td>東京都</td><td></td></tr>
 </tbody>
 </table>
-2022年度(23歳)
+23歳（2022年）
 <table class="birthday-table">
 <thead>
 <tr>

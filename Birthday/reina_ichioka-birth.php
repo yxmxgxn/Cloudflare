@@ -11,7 +11,7 @@
 <p class="site-title"><a href="/hello-birthday">メンバー一覧に戻る</a></p>
 <h1>一岡伶奈バースデーイベント会場まとめ</h1>
 <p>一岡伶奈さん（1999年2月25日生まれ）のこれまでのバースデーイベントをまとめました。非公式サイトのハロプロセトリ検索システム「ToMoKo」にてセットリストが公開されていたものはリンクを貼っています。</p>
-2018年度(20歳)
+20歳（2019年）
 <table class="birthday-table">
 <thead>
 <tr>
@@ -29,7 +29,7 @@
 <tr class="row-even"><td>2019年3月12日</td><td>19:30</td><td>BEYOOOOONDS/CHICA#TETSU 一岡伶奈バースデーイベント2019 in 名古屋</td><td>ミッドランドスクエア シネマ2</td><td>愛知県</td><td><a href="https://hp-setlist.com/stage/10132" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
 </tbody>
 </table>
-2019年度(21歳)
+21歳（2020年）
 <table class="birthday-table">
 <thead>
 <tr>
@@ -46,7 +46,7 @@
 <tr><td>2020年2月26日</td><td>20:00</td><td>BEYOOOOONDS/CHICA#TETSU 一岡伶奈バースデーイベント2020</td><td>LANDMARK HALL</td><td>神奈川県</td><td><a href="https://hp-setlist.com/stage/7012" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
 </tbody>
 </table>
-2020年度(22歳)
+22歳（2021年）
 <table class="birthday-table">
 <thead>
 <tr>
@@ -63,7 +63,7 @@
 <tr><td>2021年2月25日</td><td>18:50</td><td>BEYOOOOONDS CHICA#TETSU 一岡伶奈バースデーイベント2021</td><td>LANDMARK HALL</td><td>神奈川県</td><td><a href="https://hp-setlist.com/stage/7238" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
 </tbody>
 </table>
-2021年度(23歳)
+23歳（2022年）
 <table class="birthday-table">
 <thead>
 <tr>
@@ -80,7 +80,7 @@
 <tr><td>2022年2月25日</td><td>18:50</td><td>BEYOOOOONDS/CHICA#TETSU 一岡伶奈バースデーイベント2022</td><td>LANDMARK HALL</td><td>神奈川県</td><td><a href="https://hp-setlist.com/stage/7638" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
 </tbody>
 </table>
-2022年度(24歳)
+24歳（2023年）
 <table class="birthday-table">
 <thead>
 <tr>

@@ -11,7 +11,7 @@
 <p class="site-title"><a href="/hello-birthday">メンバー一覧に戻る</a></p>
 <h1>井上玲音バースデーイベント会場まとめ</h1>
 <p>井上玲音さん（2001年7月17日生まれ）のこれまでのバースデーイベントをまとめました。非公式サイトのハロプロセトリ検索システム「ToMoKo」にてセットリストが公開されていたものはリンクを貼っています。</p>
-2016年度(15歳)
+15歳（2016年）
 <table class="birthday-table">
 <thead>
 <tr>
@@ -28,7 +28,7 @@
 <tr><td>2016年7月22日</td><td>20:00</td><td>こぶしファクトリー 井上玲音バースデーイベント2016</td><td>TOKYO FM HALL</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/5141" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
 </tbody>
 </table>
-2017年度(16歳)
+16歳（2017年）
 <table class="birthday-table">
 <thead>
 <tr>
@@ -46,7 +46,7 @@
 <tr class="row-even"><td>2017年9月5日</td><td>19:30</td><td>こぶしファクトリー 広瀬彩海・田口夏実・井上玲音バースデーイベント2017 in 名古屋</td><td>ミッドランドスクエア シネマ2</td><td>愛知県</td><td><a href="https://hp-setlist.com/stage/10059" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
 </tbody>
 </table>
-2018年度(17歳)
+17歳（2018年）
 <table class="birthday-table">
 <thead>
 <tr>
@@ -64,7 +64,7 @@
 <tr class="row-even"><td>2018年11月13日</td><td>19:30</td><td>こぶしファクトリー 広瀬彩海 井上玲音バースデーイベント2018 in 名古屋【2018年9月4日振替公演】</td><td>ミッドランドスクエア シネマ2</td><td>愛知県</td><td><a href="https://hp-setlist.com/stage/10116" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
 </tbody>
 </table>
-2019年度(18歳)
+18歳（2019年）
 <table class="birthday-table">
 <thead>
 <tr>
@@ -82,7 +82,7 @@
 <tr class="row-even"><td>2019年8月20日</td><td>19:30</td><td>こぶしファクトリー 井上玲音バースデーイベント2019 in 名古屋</td><td>ミッドランドスクエア シネマ2</td><td>愛知県</td><td><a href="https://hp-setlist.com/stage/10153" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
 </tbody>
 </table>
-2020年度(19歳)
+19歳（2020年）
 <table class="birthday-table">
 <thead>
 <tr>
@@ -101,7 +101,7 @@
 <tr><td>2020年9月24日</td><td>19:15</td><td>Juice=Juice 井上玲音バースデーイベント2020 アンコール公演</td><td>COTTON CLUB</td><td>東京都</td><td></td></tr>
 </tbody>
 </table>
-2021年度(20歳)
+20歳（2021年）
 <table class="birthday-table">
 <thead>
 <tr>
@@ -118,7 +118,7 @@
 <tr><td>2021年7月26日</td><td>18:50</td><td>Juice=Juice 井上玲音バースデーイベント2021</td><td>豊洲PIT</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/7395" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
 </tbody>
 </table>
-2022年度(21歳)
+21歳（2022年）
 <table class="birthday-table">
 <thead>
 <tr>
@@ -135,7 +135,7 @@
 <tr><td>2022年7月19日</td><td>18:00</td><td>Juice=Juice 井上玲音バースデーイベント2022</td><td>KT Zepp Yokohama</td><td>神奈川県</td><td><a href="https://hp-setlist.com/stage/7804" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
 </tbody>
 </table>
-2023年度(22歳)
+22歳（2023年）
 <table class="birthday-table">
 <thead>
 <tr>
@@ -152,7 +152,7 @@
 <tr><td>2023年7月24日</td><td>19:10</td><td>Juice=Juice 井上玲音バースデーイベント2023</td><td>一ツ橋ホール</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/20353" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
 </tbody>
 </table>
-2024年度(23歳)
+23歳（2024年）
 <table class="birthday-table">
 <thead>
 <tr>
@@ -171,7 +171,7 @@
 <tr><td>2024年8月23日</td><td>19:45</td><td>Juice=Juice 井上玲音バースデーイベント2024 in 名古屋【2024年7月22日振替】</td><td>ミッドランドスクエア シネマ2</td><td>愛知県</td><td><a href="https://hp-setlist.com/stage/21588" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
 </tbody>
 </table>
-2025年度(24歳)
+24歳（2025年）
 <table class="birthday-table">
 <thead>
 <tr>
@@ -190,7 +190,7 @@
 <tr><td>2025年8月22日</td><td>19:45</td><td>Juice=Juice 井上玲音バースデーイベント2025 in 名古屋</td><td>ミッドランドスクエア シネマ2</td><td>愛知県</td><td><a href="https://hp-setlist.com/stage/22682" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
 </tbody>
 </table>
-2026年度(25歳)
+25歳（2026年）
 <table class="birthday-table">
 <thead>
 <tr>

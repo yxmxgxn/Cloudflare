@@ -11,7 +11,7 @@
 <p class="site-title"><a href="/hello-birthday">メンバー一覧に戻る</a></p>
 <h1>佐々木莉佳子バースデーイベント会場まとめ</h1>
 <p>佐々木莉佳子さん（2001年5月28日生まれ）のこれまでのバースデーイベントをまとめました。非公式サイトのハロプロセトリ検索システム「ToMoKo」にてセットリストが公開されていたものはリンクを貼っています。</p>
-2015年度(14歳)
+14歳（2015年）
 <table class="birthday-table">
 <thead>
 <tr>
@@ -28,7 +28,7 @@
 <tr><td>2015年6月1日</td><td>20:00</td><td>アンジュルム 佐々木莉佳子バースデーイベント2015</td><td>TOKYO FM HALL</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/4394" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
 </tbody>
 </table>
-2016年度(15歳)
+15歳（2016年）
 <table class="birthday-table">
 <thead>
 <tr>
@@ -45,7 +45,7 @@
 <tr><td>2016年6月3日</td><td>20:00</td><td>アンジュルム 佐々木莉佳子バースデーイベント2016</td><td>TOKYO FM HALL</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/5057" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
 </tbody>
 </table>
-2017年度(16歳)
+16歳（2017年）
 <table class="birthday-table">
 <thead>
 <tr>
@@ -63,7 +63,7 @@
 <tr class="row-even"><td>2017年6月6日</td><td>19:30</td><td>アンジュルム 中西香菜・室田瑞希・佐々木莉佳子バースデーイベント2017 in 名古屋</td><td>ミッドランドスクエア シネマ2</td><td>愛知県</td><td><a href="https://hp-setlist.com/stage/10049" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
 </tbody>
 </table>
-2018年度(17歳)
+17歳（2018年）
 <table class="birthday-table">
 <thead>
 <tr>
@@ -81,7 +81,7 @@
 <tr class="row-even"><td>2018年7月10日</td><td>19:30</td><td>アンジュルム 佐々木莉佳子バースデーイベント2018 in 名古屋</td><td>ミッドランドスクエア シネマ2</td><td>愛知県</td><td><a href="https://hp-setlist.com/stage/10101" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
 </tbody>
 </table>
-2019年度(18歳)
+18歳（2019年）
 <table class="birthday-table">
 <thead>
 <tr>
@@ -98,7 +98,7 @@
 <tr><td>2019年5月30日</td><td>19:30</td><td>アンジュルム 佐々木莉佳子バースデーイベント2019</td><td>スクエア荏原ひらつかホール</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/6622" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
 </tbody>
 </table>
-2020年度(19歳)
+19歳（2020年）
 <table class="birthday-table">
 <thead>
 <tr>
@@ -115,7 +115,7 @@
 <tr><td>2020年8月19日</td><td>19:45</td><td>アンジュルム 佐々木莉佳子バースデーイベント2020</td><td>LANDMARK HALL</td><td>神奈川県</td><td><a href="https://hp-setlist.com/stage/7054" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
 </tbody>
 </table>
-2021年度(20歳)
+20歳（2021年）
 <table class="birthday-table">
 <thead>
 <tr>
@@ -132,7 +132,7 @@
 <tr><td>2021年5月28日</td><td>18:50</td><td>アンジュルム 佐々木莉佳子バースデーイベント2021</td><td>LANDMARK HALL</td><td>神奈川県</td><td><a href="https://hp-setlist.com/stage/7338" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
 </tbody>
 </table>
-2022年度(21歳)
+21歳（2022年）
 <table class="birthday-table">
 <thead>
 <tr>
@@ -149,7 +149,7 @@
 <tr><td>2022年5月27日</td><td>18:50</td><td>アンジュルム 佐々木莉佳子バースデーイベント2022</td><td>一ツ橋ホール</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/7777" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
 </tbody>
 </table>
-2023年度(22歳)
+22歳（2023年）
 <table class="birthday-table">
 <thead>
 <tr>
@@ -166,7 +166,7 @@
 <tr><td>2023年5月31日</td><td>19:40</td><td>アンジュルム 佐々木莉佳子バースデーイベント2023</td><td>荒川区民会館 大ホール</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/10752" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
 </tbody>
 </table>
-2024年度(23歳)
+23歳（2024年）
 <table class="birthday-table">
 <thead>
 <tr>
@@ -183,7 +183,7 @@
 <tr><td>2024年5月28日</td><td>19:40</td><td>アンジュルム 佐々木莉佳子バースデーイベント2024 ～ みんな強制ささき推し★ ～</td><td>ティアラこうとう 大ホール</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/21351" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
 </tbody>
 </table>
-2025年度(24歳)
+24歳（2025年）
 <table class="birthday-table">
 <thead>
 <tr>
@@ -202,7 +202,7 @@
 <tr><td>2025年6月7日</td><td>17:50</td><td>佐々木莉佳子バースデーイベント2025</td><td>YES THEATER</td><td>大阪府</td><td></td></tr>
 </tbody>
 </table>
-2026年度(25歳)
+25歳（2026年）
 <table class="birthday-table">
 <thead>
 <tr>

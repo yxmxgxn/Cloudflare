@@ -11,7 +11,7 @@
 <p class="site-title"><a href="/hello-birthday">メンバー一覧に戻る</a></p>
 <h1>福田花音バースデーイベント会場まとめ</h1>
 <p>福田花音さん（1995年3月12日生まれ）のこれまでのバースデーイベントをまとめました。非公式サイトのハロプロセトリ検索システム「ToMoKo」にてセットリストが公開されていたものはリンクを貼っています。</p>
-2012年度(18歳)
+18歳（2013年）
 <table class="birthday-table">
 <thead>
 <tr>
@@ -28,7 +28,7 @@
 <tr><td>2013年3月12日</td><td>20:00</td><td>スマイレージ 福田花音バースデーイベント2013</td><td>TOKYO FM HALL</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/3428" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
 </tbody>
 </table>
-2013年度(19歳)
+19歳（2014年）
 <table class="birthday-table">
 <thead>
 <tr>
@@ -45,7 +45,7 @@
 <tr><td>2014年3月12日</td><td>20:10</td><td>スマイレージ 福田花音バースデーイベント2014</td><td>TOKYO FM HALL</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/3810" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
 </tbody>
 </table>
-2014年度(20歳)
+20歳（2015年）
 <table class="birthday-table">
 <thead>
 <tr>
@@ -62,7 +62,7 @@
 <tr><td>2015年3月12日</td><td>20:10</td><td>アンジュルム 福田花音バースデーイベント2015</td><td>TOKYO FM HALL</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/4294" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
 </tbody>
 </table>
-2022年度(28歳)
+28歳（2023年）
 <table class="birthday-table">
 <thead>
 <tr>
@@ -79,7 +79,7 @@
 <tr><td>2023年3月4日</td><td>18:00</td><td>巫まろ生誕祭♡煩悩だらけも逆に楽しいぞ28〜煩悩にお答えして追加編〜</td><td>新宿MARZ</td><td>東京都</td><td></td></tr>
 </tbody>
 </table>
-2023年度(29歳)
+29歳（2024年）
 <table class="birthday-table">
 <thead>
 <tr>

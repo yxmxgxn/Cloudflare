@@ -11,7 +11,7 @@
 <p class="site-title"><a href="/hello-birthday">メンバー一覧に戻る</a></p>
 <h1>小野田紗栞バースデーイベント会場まとめ</h1>
 <p>小野田紗栞さん（2001年12月17日生まれ）のこれまでのバースデーイベントをまとめました。非公式サイトのハロプロセトリ検索システム「ToMoKo」にてセットリストが公開されていたものはリンクを貼っています。</p>
-2017年度(17歳)
+16歳（2017年）
 <table class="birthday-table">
 <thead>
 <tr>
@@ -29,7 +29,7 @@
 <tr class="row-even"><td>2018年1月30日</td><td>19:30</td><td>つばきファクトリー 小野田紗栞バースデーイベント in 名古屋</td><td>ミッドランドスクエア シネマ2</td><td>愛知県</td><td><a href="https://hp-setlist.com/stage/10077" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
 </tbody>
 </table>
-2018年度(17歳)
+17歳（2018年）
 <table class="birthday-table">
 <thead>
 <tr>
@@ -47,7 +47,7 @@
 <tr class="row-even"><td>2019年1月22日</td><td>19:30</td><td>つばきファクトリー 小野田紗栞バースデーイベント2018 in 名古屋</td><td>ミッドランドスクエア シネマ2</td><td>愛知県</td><td><a href="https://hp-setlist.com/stage/10124" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
 </tbody>
 </table>
-2019年度(18歳)
+18歳（2019年）
 <table class="birthday-table">
 <thead>
 <tr>
@@ -65,7 +65,7 @@
 <tr class="row-even"><td>2020年1月21日</td><td>19:30</td><td>つばきファクトリー 小野田紗栞バースデーイベント in 名古屋</td><td>ミッドランドスクエア シネマ2</td><td>愛知県</td><td><a href="https://hp-setlist.com/stage/10171" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
 </tbody>
 </table>
-2020年度(19歳)
+19歳（2020年）
 <table class="birthday-table">
 <thead>
 <tr>
@@ -82,7 +82,7 @@
 <tr><td>2020年12月17日</td><td>19:45</td><td>つばきファクトリー 小野田紗栞バースデーイベント2020</td><td>LANDMARK HALL</td><td>神奈川県</td><td><a href="https://hp-setlist.com/stage/7152" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
 </tbody>
 </table>
-2021年度(20歳)
+20歳（2021年）
 <table class="birthday-table">
 <thead>
 <tr>
@@ -99,7 +99,7 @@
 <tr><td>2021年12月17日</td><td>18:50</td><td>つばきファクトリー 小野田紗栞バースデーイベント2021</td><td>LANDMARK HALL</td><td>神奈川県</td><td><a href="https://hp-setlist.com/stage/7568" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
 </tbody>
 </table>
-2022年度(21歳)
+21歳（2022年）
 <table class="birthday-table">
 <thead>
 <tr>
@@ -116,7 +116,7 @@
 <tr><td>2022年12月12日</td><td>19:00</td><td>つばきファクトリー 小野田紗栞バースデーイベント2022</td><td>LANDMARK HALL</td><td>神奈川県</td><td><a href="https://hp-setlist.com/stage/10343" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
 </tbody>
 </table>
-2023年度(22歳)
+22歳（2023年）
 <table class="birthday-table">
 <thead>
 <tr>
@@ -133,7 +133,7 @@
 <tr><td>2023年12月3日</td><td>18:15</td><td>つばきファクトリー 小野田紗栞バースデーイベント2023</td><td>スクエア荏原ひらつかホール</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/20787" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
 </tbody>
 </table>
-2024年度(23歳)
+23歳（2024年）
 <table class="birthday-table">
 <thead>
 <tr>
@@ -150,7 +150,7 @@
 <tr><td>2024年12月16日</td><td>19:45</td><td>つばきファクトリー 小野田紗栞バースデーイベント2024</td><td>LANDMARK HALL</td><td>神奈川県</td><td><a href="https://hp-setlist.com/stage/21974" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
 </tbody>
 </table>
-2025年度(24歳)
+24歳（2025年）
 <table class="birthday-table">
 <thead>
 <tr>

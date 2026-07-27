@@ -11,7 +11,7 @@
 <p class="site-title"><a href="/hello-birthday">メンバー一覧に戻る</a></p>
 <h1>稲場愛香バースデーイベント会場まとめ</h1>
 <p>稲場愛香さん（1997年12月27日生まれ）のこれまでのバースデーイベントをまとめました。非公式サイトのハロプロセトリ検索システム「ToMoKo」にてセットリストが公開されていたものはリンクを貼っています。</p>
-2015年度(18歳)
+18歳（2015年）
 <table class="birthday-table">
 <thead>
 <tr>
@@ -29,7 +29,7 @@
 <tr class="row-even"><td>2015年12月29日</td><td>20:00</td><td>カントリー・ガールズ 稲場愛香バースデーイベント2015</td><td>TOKYO FM HALL</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/4748" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
 </tbody>
 </table>
-2017年度(20歳)
+20歳（2017年）
 <table class="birthday-table">
 <thead>
 <tr>
@@ -46,7 +46,7 @@
 <tr><td>2017年12月29日</td><td>17:15</td><td>稲場愛香バースデーイベント2017</td><td>ペニーレイン24</td><td>北海道</td><td><a href="https://hp-setlist.com/stage/5899" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
 </tbody>
 </table>
-2018年度(21歳)
+21歳（2018年）
 <table class="birthday-table">
 <thead>
 <tr>
@@ -65,7 +65,7 @@
 <tr><td>2019年1月9日</td><td>18:00</td><td>Juice=Juice 稲場愛香バースデーイベント2018 in 札幌</td><td>ペニーレイン24</td><td>北海道</td><td></td></tr>
 </tbody>
 </table>
-2019年度(22歳)
+22歳（2019年）
 <table class="birthday-table">
 <thead>
 <tr>
@@ -84,7 +84,7 @@
 <tr><td>2020年1月8日</td><td>17:15</td><td>Juice=Juice 稲場愛香バースデーイベント in 札幌</td><td>ペニーレイン24</td><td>北海道</td><td></td></tr>
 </tbody>
 </table>
-2020年度(23歳)
+23歳（2020年）
 <table class="birthday-table">
 <thead>
 <tr>
@@ -103,7 +103,7 @@
 <tr><td>2021年1月19日</td><td>19:00</td><td>Juice=Juice 植村あかり・稲場愛香バースデーイベント in 名古屋</td><td>ミッドランドスクエア シネマ2</td><td>愛知県</td><td><a href="https://hp-setlist.com/stage/10189" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
 </tbody>
 </table>
-2021年度(24歳)
+24歳（2021年）
 <table class="birthday-table">
 <thead>
 <tr>
@@ -122,7 +122,7 @@
 <tr><td>2022年2月17日</td><td>18:50</td><td>Juice=Juice 稲場愛香バースデーイベント in 札幌</td><td>ペニーレイン24</td><td>北海道</td><td></td></tr>
 </tbody>
 </table>
-2022年度(25歳)
+25歳（2022年）
 <table class="birthday-table">
 <thead>
 <tr>
@@ -139,7 +139,7 @@
 <tr><td>2022年12月27日</td><td>18:50</td><td>稲場愛香バースデーイベント2022</td><td>一ツ橋ホール</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/10355" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
 </tbody>
 </table>
-2023年度(26歳)
+26歳（2023年）
 <table class="birthday-table">
 <thead>
 <tr>
@@ -158,7 +158,7 @@
 <tr><td>2023年12月22日</td><td>19:10</td><td>稲場愛香バースデーイベント2023</td><td>一ツ橋ホール</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/20851" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
 </tbody>
 </table>
-2024年度(27歳)
+27歳（2024年）
 <table class="birthday-table">
 <thead>
 <tr>
@@ -177,7 +177,7 @@
 <tr><td>2025年1月18日</td><td>17:50</td><td>稲場愛香バースデーイベントLv27～まなかん♡ばらかん♡すごいよかん～</td><td>YES THEATER</td><td>大阪府</td><td><a href="https://hp-setlist.com/stage/22032" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
 </tbody>
 </table>
-2025年度(28歳)
+28歳（2025年）
 <table class="birthday-table">
 <thead>
 <tr>

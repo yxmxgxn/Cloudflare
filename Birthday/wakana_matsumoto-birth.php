@@ -11,7 +11,7 @@
 <p class="site-title"><a href="/hello-birthday">メンバー一覧に戻る</a></p>
 <h1>松本わかなバースデーイベント会場まとめ</h1>
 <p>松本わかなさん（2007年9月1日生まれ）のこれまでのバースデーイベントをまとめました。非公式サイトのハロプロセトリ検索システム「ToMoKo」にてセットリストが公開されていたものはリンクを貼っています。</p>
-2022年度(15歳)
+15歳（2022年）
 <table class="birthday-table">
 <thead>
 <tr>
@@ -28,7 +28,7 @@
 <tr><td>2022年9月1日</td><td>19:00</td><td>アンジュルム 松本わかなバースデーイベント2022</td><td>LANDMARK HALL</td><td>神奈川県</td><td><a href="https://hp-setlist.com/stage/9534" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
 </tbody>
 </table>
-2023年度(16歳)
+16歳（2023年）
 <table class="birthday-table">
 <thead>
 <tr>
@@ -45,7 +45,7 @@
 <tr><td>2023年9月1日</td><td>19:45</td><td>アンジュルム 松本わかなバースデーイベント2023</td><td>LANDMARK HALL</td><td>神奈川県</td><td><a href="https://hp-setlist.com/stage/20468" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
 </tbody>
 </table>
-2024年度(17歳)
+17歳（2024年）
 <table class="birthday-table">
 <thead>
 <tr>
@@ -62,7 +62,7 @@
 <tr><td>2024年8月29日</td><td>19:40</td><td>アンジュルム 松本わかなバースデーイベント2024</td><td>墨田区曳舟文化センター 劇場ホール</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/21605" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
 </tbody>
 </table>
-2025年度(18歳)
+18歳（2025年）
 <table class="birthday-table">
 <thead>
 <tr>

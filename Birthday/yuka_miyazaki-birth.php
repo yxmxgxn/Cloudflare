@@ -11,7 +11,7 @@
 <p class="site-title"><a href="/hello-birthday">メンバー一覧に戻る</a></p>
 <h1>宮崎由加バースデーイベント会場まとめ</h1>
 <p>宮崎由加さん（1994年4月2日生まれ）のこれまでのバースデーイベントをまとめました。非公式サイトのハロプロセトリ検索システム「ToMoKo」にてセットリストが公開されていたものはリンクを貼っています。</p>
-2014年度(20歳)
+20歳（2014年）
 <table class="birthday-table">
 <thead>
 <tr>
@@ -28,7 +28,7 @@
 <tr><td>2014年4月15日</td><td>20:00</td><td>Juice=Juice 宮崎由加・高木紗友希バースデーイベント2014</td><td>TOKYO FM HALL</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/3891" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
 </tbody>
 </table>
-2015年度(21歳)
+21歳（2015年）
 <table class="birthday-table">
 <thead>
 <tr>
@@ -45,7 +45,7 @@
 <tr><td>2015年4月2日</td><td>20:10</td><td>Juice=Juice 宮崎由加バースデーイベント2015</td><td>TOKYO FM HALL</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/4373" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
 </tbody>
 </table>
-2016年度(22歳)
+22歳（2016年）
 <table class="birthday-table">
 <thead>
 <tr>
@@ -63,7 +63,7 @@
 <tr class="row-even"><td>2016年4月4日</td><td>20:30</td><td>Juice=Juice 宮崎由加バースデーイベント2016</td><td>TOKYO FM HALL</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/4956" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
 </tbody>
 </table>
-2017年度(23歳)
+23歳（2017年）
 <table class="birthday-table">
 <thead>
 <tr>
@@ -82,7 +82,7 @@
 <tr><td>2017年5月9日</td><td>20:20</td><td>Juice=Juice 宮崎由加＆高木紗友希バースデーイベント2017 in 名古屋</td><td>ミッドランドスクエア シネマ2</td><td>愛知県</td><td><a href="https://hp-setlist.com/stage/10045" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
 </tbody>
 </table>
-2018年度(24歳)
+24歳（2018年）
 <table class="birthday-table">
 <thead>
 <tr>
@@ -100,7 +100,7 @@
 <tr class="row-even"><td>2018年5月15日</td><td>19:45</td><td>Juice=Juice 宮崎由加・高木紗友希バースデーイベント2018 in 名古屋</td><td>ミッドランドスクエア シネマ2</td><td>愛知県</td><td><a href="https://hp-setlist.com/stage/10094" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
 </tbody>
 </table>
-2019年度(25歳)
+25歳（2019年）
 <table class="birthday-table">
 <thead>
 <tr>
@@ -119,7 +119,7 @@
 <tr><td>2019年5月14日</td><td>19:50</td><td>Juice=Juice 宮崎由加・高木紗友希バースデーイベント2019 in 名古屋</td><td>ミッドランドスクエア シネマ2</td><td>愛知県</td><td><a href="https://hp-setlist.com/stage/10142" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
 </tbody>
 </table>
-2021年度(27歳)
+27歳（2021年）
 <table class="birthday-table">
 <thead>
 <tr>
@@ -136,7 +136,7 @@
 <tr><td>2021年4月2日</td><td>18:50</td><td>宮崎由加バースデーイベント2021～私が27歳になっても～</td><td>LANDMARK HALL</td><td>神奈川県</td><td><a href="https://hp-setlist.com/stage/8035" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
 </tbody>
 </table>
-2022年度(28歳)
+28歳（2022年）
 <table class="birthday-table">
 <thead>
 <tr>
@@ -154,7 +154,7 @@
 <tr class="row-even"><td>2022年5月14日</td><td>18:50</td><td>宮崎由加バースデーイベント2022～東京に来て丸10年! おめでとう～</td><td>LANDMARK HALL</td><td>神奈川県</td><td><a href="https://hp-setlist.com/stage/8038" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
 </tbody>
 </table>
-2023年度(29歳)
+29歳（2023年）
 <table class="birthday-table">
 <thead>
 <tr>
@@ -171,7 +171,7 @@
 <tr><td>2023年4月8日</td><td>19:00</td><td>宮崎由加バースデーイベント2023～桜の中の口笛～</td><td>LANDMARK HALL</td><td>神奈川県</td><td><a href="https://hp-setlist.com/stage/10766" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
 </tbody>
 </table>
-2024年度(30歳)
+30歳（2024年）
 <table class="birthday-table">
 <thead>
 <tr>

@@ -11,7 +11,7 @@
 <p class="site-title"><a href="/hello-birthday">メンバー一覧に戻る</a></p>
 <h1>江端妃咲バースデーイベント会場まとめ</h1>
 <p>江端妃咲さん（2007年1月30日生まれ）のこれまでのバースデーイベントをまとめました。非公式サイトのハロプロセトリ検索システム「ToMoKo」にてセットリストが公開されていたものはリンクを貼っています。</p>
-2022年度(16歳)
+16歳（2023年）
 <table class="birthday-table">
 <thead>
 <tr>
@@ -28,7 +28,7 @@
 <tr><td>2023年2月14日</td><td>19:00</td><td>Juice=Juice 江端妃咲バースデーイベント2023</td><td>LANDMARK HALL</td><td>神奈川県</td><td><a href="https://hp-setlist.com/stage/10551" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
 </tbody>
 </table>
-2023年度(17歳)
+17歳（2024年）
 <table class="birthday-table">
 <thead>
 <tr>
@@ -45,7 +45,7 @@
 <tr><td>2024年1月30日</td><td>19:40</td><td>Juice=Juice 江端妃咲バースデーイベント2024</td><td>飛行船シアター</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/20918" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
 </tbody>
 </table>
-2024年度(18歳)
+18歳（2025年）
 <table class="birthday-table">
 <thead>
 <tr>
@@ -64,7 +64,7 @@
 <tr><td>2025年2月19日</td><td>18:30</td><td>Juice=Juice 江端妃咲バースデーイベント2025 in 大阪</td><td>YES THEATER</td><td>大阪府</td><td><a href="https://hp-setlist.com/stage/22123" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
 </tbody>
 </table>
-2025年度(19歳)
+19歳（2026年）
 <table class="birthday-table">
 <thead>
 <tr>

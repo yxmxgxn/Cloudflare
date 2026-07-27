@@ -11,7 +11,7 @@
 <p class="site-title"><a href="/hello-birthday">メンバー一覧に戻る</a></p>
 <h1>矢口真里バースデーイベント会場まとめ</h1>
 <p>矢口真里さん（1983年1月20日生まれ）のこれまでのバースデーイベントをまとめました。非公式サイトのハロプロセトリ検索システム「ToMoKo」にてセットリストが公開されていたものはリンクを貼っています。</p>
-2022年度(40歳)
+40歳（2023年）
 <table class="birthday-table">
 <thead>
 <tr>
@@ -28,7 +28,7 @@
 <tr><td>2023年1月13日</td><td>20:30</td><td>矢口真里 40thバースデーイベント2023～数億年ぶりのBDイベントやっちゃうよ!!～</td><td>GRIT at shibuya</td><td>東京都</td><td></td></tr>
 </tbody>
 </table>
-2024年度(42歳)
+42歳（2025年）
 <table class="birthday-table">
 <thead>
 <tr>

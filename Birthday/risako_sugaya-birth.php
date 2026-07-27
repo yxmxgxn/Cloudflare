@@ -11,7 +11,7 @@
 <p class="site-title"><a href="/hello-birthday">メンバー一覧に戻る</a></p>
 <h1>菅谷梨沙子バースデーイベント会場まとめ</h1>
 <p>菅谷梨沙子さん（1994年4月4日生まれ）のこれまでのバースデーイベントをまとめました。非公式サイトのハロプロセトリ検索システム「ToMoKo」にてセットリストが公開されていたものはリンクを貼っています。</p>
-2013年度(19歳)
+19歳（2013年）
 <table class="birthday-table">
 <thead>
 <tr>
@@ -28,7 +28,7 @@
 <tr><td>2013年4月4日</td><td>20:10</td><td>Berryz工房 菅谷梨沙子バースデーイベント～ with thanks！～</td><td>TOKYO FM HALL</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/3469" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
 </tbody>
 </table>
-2014年度(20歳)
+20歳（2014年）
 <table class="birthday-table">
 <thead>
 <tr>
@@ -45,7 +45,7 @@
 <tr><td>2014年4月4日</td><td>20:10</td><td>Berryz工房 菅谷梨沙子バースデーイベント2014</td><td>TOKYO FM HALL</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/3853" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
 </tbody>
 </table>
-2025年度(31歳)
+31歳（2025年）
 <table class="birthday-table">
 <thead>
 <tr>
@@ -61,7 +61,7 @@
 <tr class="row-even"><td>2025年4月29日</td><td></td><td>𝐏𝐨𝐧𝐭 𝐈𝐧𝐯𝐢𝐬𝐢𝐛𝐥𝐞 1st Fan Meeting / Risako's Birthday</td><td></td><td></td><td></td></tr>
 </tbody>
 </table>
-2026年度(32歳)
+32歳（2026年）
 <table class="birthday-table">
 <thead>
 <tr>

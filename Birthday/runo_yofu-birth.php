@@ -11,7 +11,7 @@
 <p class="site-title"><a href="/hello-birthday">メンバー一覧に戻る</a></p>
 <h1>豫風瑠乃バースデーイベント会場まとめ</h1>
 <p>豫風瑠乃さん（2007年12月20日生まれ）のこれまでのバースデーイベントをまとめました。非公式サイトのハロプロセトリ検索システム「ToMoKo」にてセットリストが公開されていたものはリンクを貼っています。</p>
-2022年度(15歳)
+15歳（2022年）
 <table class="birthday-table">
 <thead>
 <tr>
@@ -28,7 +28,7 @@
 <tr><td>2022年12月19日</td><td>19:00</td><td>つばきファクトリー 豫風瑠乃バースデーイベント2022</td><td>LANDMARK HALL</td><td>神奈川県</td><td><a href="https://hp-setlist.com/stage/10351" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
 </tbody>
 </table>
-2023年度(16歳)
+16歳（2023年）
 <table class="birthday-table">
 <thead>
 <tr>
@@ -47,7 +47,7 @@
 <tr><td>2024年1月29日</td><td>19:45</td><td>つばきファクトリー 豫風瑠乃バースデーイベント in 名古屋</td><td>ミッドランドスクエア シネマ2</td><td>愛知県</td><td><a href="https://hp-setlist.com/stage/20915" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
 </tbody>
 </table>
-2024年度(17歳)
+17歳（2024年）
 <table class="birthday-table">
 <thead>
 <tr>
@@ -64,7 +64,7 @@
 <tr><td>2024年12月3日</td><td>19:30</td><td>つばきファクトリー 豫風瑠乃バースデーイベント2024</td><td>山野ホール</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/21938" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
 </tbody>
 </table>
-2025年度(18歳)
+18歳（2025年）
 <table class="birthday-table">
 <thead>
 <tr>

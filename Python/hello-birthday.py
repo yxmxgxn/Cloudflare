@@ -40,14 +40,28 @@ def escape_php(s: str) -> str:
     """PHPの二重引用符文字列リテラル用エスケープ（HTML実体参照にはしない）"""
     return s.replace("\\", "\\\\").replace('"', '\\"')
 
-def format_date(date_str: str) -> str:
-    for fmt in ("%Y/%m/%d", "%Y-%m-%d"):
+def parse_date(date_str: str) -> datetime | None:
+    for fmt in ("%Y/%m/%d", "%Y-%m-%d", "%Y年%m月%d日"):
         try:
-            dt = datetime.strptime(date_str.strip(), fmt)
-            return f"{dt.year}年{dt.month}月{dt.day}日"
+            return datetime.strptime(date_str.strip(), fmt)
         except ValueError:
             continue
-    return escape_html(date_str)
+    return None
+
+def format_date(date_str: str) -> str:
+    dt = parse_date(date_str)
+    if dt is None:
+        return escape_html(date_str)
+    return f"{dt.year}年{dt.month}月{dt.day}日"
+
+def calc_age(birthday_str: str, date_str: str) -> int | None:
+    """誕生日とイベント日から「何歳の誕生日を祝っているか」を四捨五入で算出。
+    誕生日の少し前でも少し後でも、同じ歳に寄せる。"""
+    bd = parse_date(birthday_str)
+    ev = parse_date(date_str)
+    if bd is None or ev is None:
+        return None
+    return round((ev - bd).days / 365.25)
 
 def build_rows(events: list[dict]) -> str:
     """イベント一覧のtr/tdを生成"""
@@ -91,15 +105,27 @@ def build_rows(events: list[dict]) -> str:
     return "\n".join(lines)
 
 def build_sections(events: list[dict]) -> str:
-    valid = [ev for ev in events if ev.get("date", "").strip()]
+    # date が有効で、birthday/date から年齢を計算できる行だけ残す
+    valid = []
+    for ev in events:
+        if not ev.get("date", "").strip():
+            continue
+        age = calc_age(ev.get("birthday", ""), ev.get("date", ""))
+        if age is None:
+            continue
+        valid.append({**ev, "_age": age})
+
     sections = []
-    valid.sort(key=lambda x: x.get("nendo", ""))
-    for nendo, group in groupby(valid, key=lambda x: x.get("nendo", "")):
+    # 歳で区切り、グループ内はイベント日順
+    valid.sort(key=lambda x: (x["_age"], parse_date(x.get("date", "")) or datetime.min))
+    for age, group in groupby(valid, key=lambda x: x["_age"]):
         group_list = list(group)
-        age = group_list[0].get("age", "")
+        # その歳の誕生日の暦年（例: 2000年生まれの25歳 → 2025年）
+        bd = parse_date(group_list[0].get("birthday", ""))
+        year_label = f"（{bd.year + age}年）" if bd is not None else ""
         rows = build_rows(group_list)
         sections.append(
-            f"{escape_html(nendo)}({escape_html(age)}歳)\n"
+            f"{age}歳{year_label}\n"
             f"<table class=\"birthday-table\">\n"
             f"<thead>\n<tr>\n"
             f"<th>日付</th>\n<th>開演</th>\n<th>イベント名</th>\n"

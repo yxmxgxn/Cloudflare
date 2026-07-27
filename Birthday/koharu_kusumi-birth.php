@@ -11,7 +11,7 @@
 <p class="site-title"><a href="/hello-birthday">メンバー一覧に戻る</a></p>
 <h1>久住小春バースデーイベント会場まとめ</h1>
 <p>久住小春さん（1992年7月15日生まれ）のこれまでのバースデーイベントをまとめました。非公式サイトのハロプロセトリ検索システム「ToMoKo」にてセットリストが公開されていたものはリンクを貼っています。</p>
-2011年度(19歳)
+19歳（2011年）
 <table class="birthday-table">
 <thead>
 <tr>
@@ -29,7 +29,7 @@
 <tr class="row-even"><td>2011年7月17日</td><td>17:30</td><td>久住小春バースデーイベント～お誕生日会～</td><td>パシフィックヘブン</td><td>東京都</td><td></td></tr>
 </tbody>
 </table>
-2013年度(21歳)
+21歳（2013年）
 <table class="birthday-table">
 <thead>
 <tr>
@@ -47,7 +47,7 @@
 <tr class="row-even"><td>2013年7月15日</td><td>19:00</td><td>久住小春バースデーイベント2013</td><td>パシフィックヘブン</td><td>東京都</td><td></td></tr>
 </tbody>
 </table>
-2014年度(22歳)
+22歳（2014年）
 <table class="birthday-table">
 <thead>
 <tr>
@@ -65,7 +65,7 @@
 <tr class="row-even"><td>2014年7月12日</td><td>19:00</td><td>久住小春バースデーイベント</td><td>パシフィックヘブン</td><td>東京都</td><td></td></tr>
 </tbody>
 </table>
-2015年度(23歳)
+23歳（2015年）
 <table class="birthday-table">
 <thead>
 <tr>
@@ -83,7 +83,7 @@
 <tr class="row-even"><td>2015年7月19日</td><td>18:40</td><td>久住小春生誕祭 ～私、23歳になりました～</td><td>パシフィックヘブン</td><td>東京都</td><td></td></tr>
 </tbody>
 </table>
-2016年度(24歳)
+24歳（2016年）
 <table class="birthday-table">
 <thead>
 <tr>

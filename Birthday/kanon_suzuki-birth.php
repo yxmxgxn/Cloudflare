@@ -11,7 +11,7 @@
 <p class="site-title"><a href="/hello-birthday">メンバー一覧に戻る</a></p>
 <h1>鈴木香音バースデーイベント会場まとめ</h1>
 <p>鈴木香音さん（1998年8月5日生まれ）のこれまでのバースデーイベントをまとめました。非公式サイトのハロプロセトリ検索システム「ToMoKo」にてセットリストが公開されていたものはリンクを貼っています。</p>
-2013年度(15歳)
+15歳（2013年）
 <table class="birthday-table">
 <thead>
 <tr>
@@ -29,7 +29,7 @@
 <tr class="row-even"><td>2013年8月5日</td><td>20:00</td><td>モーニング娘。鈴木香音バースデーイベント～音の香りゆく15祭～</td><td>TOKYO FM HALL</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/3557" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
 </tbody>
 </table>
-2014年度(16歳)
+16歳（2014年）
 <table class="birthday-table">
 <thead>
 <tr>
@@ -45,7 +45,7 @@
 <tr class="row-even"><td>2014年8月5日</td><td>19:00</td><td>モーニング娘。'14 鈴木香音バースデーイベント2014</td><td>山野ホール</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/4016" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
 </tbody>
 </table>
-2015年度(17歳)
+17歳（2015年）
 <table class="birthday-table">
 <thead>
 <tr>

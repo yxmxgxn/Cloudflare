@@ -11,7 +11,7 @@
 <p class="site-title"><a href="/hello-birthday">メンバー一覧に戻る</a></p>
 <h1>萩原舞バースデーイベント会場まとめ</h1>
 <p>萩原舞さん（1996年2月7日生まれ）のこれまでのバースデーイベントをまとめました。非公式サイトのハロプロセトリ検索システム「ToMoKo」にてセットリストが公開されていたものはリンクを貼っています。</p>
-2009年度(14歳)
+14歳（2010年）
 <table class="birthday-table">
 <thead>
 <tr>
@@ -29,7 +29,7 @@
 <tr class="row-even"><td>2010年2月11日</td><td>19:15</td><td>℃-ute緊急企画「3人でバースデーイベントやっちゃいます！だって私たち2月生まれなんですもん！」</td><td>TOKYO FM HALL</td><td>東京都</td><td></td></tr>
 </tbody>
 </table>
-2010年度(15歳)
+15歳（2011年）
 <table class="birthday-table">
 <thead>
 <tr>
@@ -47,7 +47,7 @@
 <tr class="row-even"><td>2011年2月5日</td><td>19:00</td><td>℃-uteバースデー企画「3人でバースデーイベントやっちゃいます！だって私たち2月生まれなんですもん！Part2」</td><td>横浜BLITZ</td><td>神奈川県</td><td><a href="https://hp-setlist.com/stage/2804" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
 </tbody>
 </table>
-2011年度(16歳)
+16歳（2012年）
 <table class="birthday-table">
 <thead>
 <tr>
@@ -67,7 +67,7 @@
 <tr class="row-even"><td>2012年2月5日</td><td>17:30</td><td>℃-uteバースデイ企画「3人でバースデーイベントやっちゃいます！だって私たち2月生まれなんですもん！Part3」</td><td>御堂会館</td><td>大阪府</td><td></td></tr>
 </tbody>
 </table>
-2012年度(17歳)
+17歳（2013年）
 <table class="birthday-table">
 <thead>
 <tr>
@@ -83,7 +83,7 @@
 <tr class="row-even"><td>2013年2月5日</td><td>19:00</td><td>℃-uteバースデー企画～今年は5人でバースデーイベントやっちゃいます!だってみんなで楽しみたいもん!～</td><td>横浜BLITZ</td><td>神奈川県</td><td><a href="https://hp-setlist.com/stage/3396" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
 </tbody>
 </table>
-2013年度(18歳)
+18歳（2014年）
 <table class="birthday-table">
 <thead>
 <tr>
@@ -104,7 +104,7 @@
 <tr><td>2014年2月7日</td><td>20:10</td><td>℃-ute 矢島舞美・中島早貴・萩原舞バースデーイベント2014</td><td>TOKYO FM HALL</td><td>東京都</td><td></td></tr>
 </tbody>
 </table>
-2014年度(19歳)
+19歳（2015年）
 <table class="birthday-table">
 <thead>
 <tr>
@@ -121,7 +121,7 @@
 <tr><td>2015年2月8日</td><td>19:00</td><td>℃-ute 矢島舞美・中島早貴・萩原舞バースデーイベント2015 ＜矢島舞美・中島早貴・萩原舞＞</td><td>山野ホール</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/4253" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
 </tbody>
 </table>
-2015年度(20歳)
+20歳（2016年）
 <table class="birthday-table">
 <thead>
 <tr>
@@ -138,7 +138,7 @@
 <tr><td>2016年2月7日</td><td>19:30</td><td>℃-ute 矢島舞美&amp;萩原舞バースデーイベント2016</td><td>品川ステラボール</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/4781" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
 </tbody>
 </table>
-2016年度(21歳)
+21歳（2017年）
 <table class="birthday-table">
 <thead>
 <tr>

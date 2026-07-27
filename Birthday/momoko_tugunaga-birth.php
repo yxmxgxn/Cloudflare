@@ -11,7 +11,7 @@
 <p class="site-title"><a href="/hello-birthday">メンバー一覧に戻る</a></p>
 <h1>嗣永桃子バースデーイベント会場まとめ</h1>
 <p>嗣永桃子さん（1992年3月6日生まれ）のこれまでのバースデーイベントをまとめました。非公式サイトのハロプロセトリ検索システム「ToMoKo」にてセットリストが公開されていたものはリンクを貼っています。</p>
-2013年度(22歳)
+22歳（2014年）
 <table class="birthday-table">
 <thead>
 <tr>
@@ -28,7 +28,7 @@
 <tr><td>2014年3月6日</td><td>20:10</td><td>♡ももちのお誕生日♡～2ゃん2ゃん22才 おとももち全員集合～</td><td>TOKYO FM HALL</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/3808" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
 </tbody>
 </table>
-2014年度(23歳)
+23歳（2015年）
 <table class="birthday-table">
 <thead>
 <tr>
@@ -44,7 +44,7 @@
 <tr class="row-even"><td>2015年3月6日</td><td>17:45</td><td>♡ももちのお誕生日会♡ ～おとももち全員集合2015</td><td>山野ホール</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/4285" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
 </tbody>
 </table>
-2016年度(25歳)
+25歳（2017年）
 <table class="birthday-table">
 <thead>
 <tr>

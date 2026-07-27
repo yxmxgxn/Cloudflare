@@ -11,7 +11,7 @@
 <p class="site-title"><a href="/hello-birthday">メンバー一覧に戻る</a></p>
 <h1>段原瑠々バースデーイベント会場まとめ</h1>
 <p>段原瑠々さん（2001年5月7日生まれ）のこれまでのバースデーイベントをまとめました。非公式サイトのハロプロセトリ検索システム「ToMoKo」にてセットリストが公開されていたものはリンクを貼っています。</p>
-2018年度(17歳)
+17歳（2018年）
 <table class="birthday-table">
 <thead>
 <tr>
@@ -30,7 +30,7 @@
 <tr><td>2018年5月22日</td><td>19:30</td><td>Juice=Juice 段原瑠々バースデーイベント2018 in 名古屋</td><td>ミッドランドスクエア シネマ2</td><td>愛知県</td><td><a href="https://hp-setlist.com/stage/10095" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
 </tbody>
 </table>
-2019年度(18歳)
+18歳（2019年）
 <table class="birthday-table">
 <thead>
 <tr>
@@ -49,7 +49,7 @@
 <tr><td>2019年7月16日</td><td>19:50</td><td>Juice=Juice 金澤朋子・段原瑠々バースデーイベント2019 in 名古屋</td><td>ミッドランドスクエア シネマ2</td><td>愛知県</td><td><a href="https://hp-setlist.com/stage/10150" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
 </tbody>
 </table>
-2020年度(19歳)
+19歳（2020年）
 <table class="birthday-table">
 <thead>
 <tr>
@@ -64,12 +64,9 @@
 <tbody>
 <tr class="row-even"><td>2020年9月8日</td><td>17:15</td><td>Juice=Juice 段原瑠々バースデーイベント2020</td><td>LANDMARK HALL</td><td>神奈川県</td><td><a href="https://hp-setlist.com/stage/7072" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
 <tr><td>2020年9月8日</td><td>19:45</td><td>Juice=Juice 段原瑠々バースデーイベント2020</td><td>LANDMARK HALL</td><td>神奈川県</td><td><a href="https://hp-setlist.com/stage/7073" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
-<tr class="row-even"><td>2020年11月8日</td><td>15:15</td><td>Juice=Juice 段原瑠々バースデーイベント2020 アンコール公演</td><td>COTTON CLUB</td><td>東京都</td><td></td></tr>
-<tr><td>2020年11月8日</td><td>17:15</td><td>Juice=Juice 段原瑠々バースデーイベント2020 アンコール公演</td><td>COTTON CLUB</td><td>東京都</td><td></td></tr>
-<tr class="row-even"><td>2020年11月8日</td><td>19:15</td><td>Juice=Juice 段原瑠々バースデーイベント2020 アンコール公演</td><td>COTTON CLUB</td><td>東京都</td><td></td></tr>
 </tbody>
 </table>
-2021年度(20歳)
+20歳（2021年）
 <table class="birthday-table">
 <thead>
 <tr>
@@ -82,11 +79,14 @@
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td>2021年7月15日</td><td>16:30</td><td>Juice=Juice 段原瑠々バースデーイベント2021【2021年5月7日振替】</td><td>大田区民ホール・アプリコ 大ホール</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/7362" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
-<tr><td>2021年7月15日</td><td>18:50</td><td>Juice=Juice 段原瑠々バースデーイベント2021【2021年5月7日振替】</td><td>大田区民ホール・アプリコ 大ホール</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/7363" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
+<tr class="row-even"><td>2020年11月8日</td><td>15:15</td><td>Juice=Juice 段原瑠々バースデーイベント2020 アンコール公演</td><td>COTTON CLUB</td><td>東京都</td><td></td></tr>
+<tr><td>2020年11月8日</td><td>17:15</td><td>Juice=Juice 段原瑠々バースデーイベント2020 アンコール公演</td><td>COTTON CLUB</td><td>東京都</td><td></td></tr>
+<tr class="row-even"><td>2020年11月8日</td><td>19:15</td><td>Juice=Juice 段原瑠々バースデーイベント2020 アンコール公演</td><td>COTTON CLUB</td><td>東京都</td><td></td></tr>
+<tr><td>2021年7月15日</td><td>16:30</td><td>Juice=Juice 段原瑠々バースデーイベント2021【2021年5月7日振替】</td><td>大田区民ホール・アプリコ 大ホール</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/7362" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
+<tr class="row-even"><td>2021年7月15日</td><td>18:50</td><td>Juice=Juice 段原瑠々バースデーイベント2021【2021年5月7日振替】</td><td>大田区民ホール・アプリコ 大ホール</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/7363" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
 </tbody>
 </table>
-2022年度(21歳)
+21歳（2022年）
 <table class="birthday-table">
 <thead>
 <tr>
@@ -103,7 +103,7 @@
 <tr><td>2022年5月11日</td><td>18:50</td><td>Juice=Juice 段原瑠々バースデーイベント2022</td><td>江戸川区総合文化センター 大ホール</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/7772" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
 </tbody>
 </table>
-2023年度(22歳)
+22歳（2023年）
 <table class="birthday-table">
 <thead>
 <tr>
@@ -120,7 +120,7 @@
 <tr><td>2023年6月18日</td><td>19:10</td><td>Juice=Juice 段原瑠々バースデーイベント2023</td><td>戸田市文化会館</td><td>埼玉県</td><td><a href="https://hp-setlist.com/stage/10756" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
 </tbody>
 </table>
-2024年度(23歳)
+23歳（2024年）
 <table class="birthday-table">
 <thead>
 <tr>
@@ -139,7 +139,7 @@
 <tr><td>2024年5月20日</td><td>19:45</td><td>Juice=Juice 段原瑠々・遠藤彩加里バースデーイベント2024 in 名古屋</td><td>ミッドランドスクエア シネマ2</td><td>愛知県</td><td><a href="https://hp-setlist.com/stage/21318" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
 </tbody>
 </table>
-2025年度(24歳)
+24歳（2025年）
 <table class="birthday-table">
 <thead>
 <tr>
@@ -156,7 +156,7 @@
 <tr><td>2025年5月8日</td><td>19:15</td><td>Juice=Juice 段原瑠々バースデーイベント2025</td><td>かつしかシンフォニーヒルズ モーツァルトホール</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/22365" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
 </tbody>
 </table>
-2026年度(25歳)
+25歳（2026年）
 <table class="birthday-table">
 <thead>
 <tr>

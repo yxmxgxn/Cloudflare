@@ -11,7 +11,7 @@
 <p class="site-title"><a href="/hello-birthday">メンバー一覧に戻る</a></p>
 <h1>前田こころバースデーイベント会場まとめ</h1>
 <p>前田こころさん（2002年6月23日生まれ）のこれまでのバースデーイベントをまとめました。非公式サイトのハロプロセトリ検索システム「ToMoKo」にてセットリストが公開されていたものはリンクを貼っています。</p>
-2019年度(17歳)
+17歳（2019年）
 <table class="birthday-table">
 <thead>
 <tr>
@@ -29,7 +29,7 @@
 <tr class="row-even"><td>2019年6月24日</td><td>19:45</td><td>BEYOOOOONDS/雨ノ森 川海 前田こころバースデーイベント2019</td><td>TOKYO FM HALL</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/6639" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
 </tbody>
 </table>
-2020年度(18歳)
+18歳（2020年）
 <table class="birthday-table">
 <thead>
 <tr>
@@ -46,7 +46,7 @@
 <tr><td>2020年9月7日</td><td>19:45</td><td>BEYOOOOONDS/雨ノ森 川海 前田こころバースデーイベント2020</td><td>新宿ReNY</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/7071" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
 </tbody>
 </table>
-2021年度(19歳)
+19歳（2021年）
 <table class="birthday-table">
 <thead>
 <tr>
@@ -63,7 +63,7 @@
 <tr><td>2021年6月23日</td><td>18:50</td><td>BEYOOOOONDS 雨ノ森 川海 前田こころバースデーイベント2021</td><td>LANDMARK HALL</td><td>神奈川県</td><td><a href="https://hp-setlist.com/stage/7351" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
 </tbody>
 </table>
-2022年度(20歳)
+20歳（2022年）
 <table class="birthday-table">
 <thead>
 <tr>
@@ -80,7 +80,7 @@
 <tr><td>2022年6月24日</td><td>18:50</td><td>BEYOOOOONDS/雨ノ森 川海 前田こころバースデーイベント2022</td><td>タワーホール船堀 大ホール</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/7794" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
 </tbody>
 </table>
-2023年度(21歳)
+21歳（2023年）
 <table class="birthday-table">
 <thead>
 <tr>
@@ -97,7 +97,7 @@
 <tr><td>2023年6月23日</td><td>19:10</td><td>BEYOOOOONDS/雨ノ森 川海 前田こころバースデーイベント2023</td><td>一ツ橋ホール</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/10762" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
 </tbody>
 </table>
-2024年度(22歳)
+22歳（2024年）
 <table class="birthday-table">
 <thead>
 <tr>
@@ -114,7 +114,7 @@
 <tr><td>2024年6月20日</td><td>19:40</td><td>BEYOOOOONDS/雨ノ森 川海 前田こころバースデーイベント2024</td><td>ヒューリックホール東京</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/21426" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
 </tbody>
 </table>
-2025年度(23歳)
+23歳（2025年）
 <table class="birthday-table">
 <thead>
 <tr>
@@ -133,7 +133,7 @@
 <tr><td>2025年6月30日</td><td>19:45</td><td>BEYOOOOONDS 西田汐里・前田こころバースデーイベント2025 in 名古屋</td><td>ミッドランドスクエア シネマ2</td><td>愛知県</td><td><a href="https://hp-setlist.com/stage/22570" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
 </tbody>
 </table>
-2026年度(24歳)
+24歳（2026年）
 <table class="birthday-table">
 <thead>
 <tr>

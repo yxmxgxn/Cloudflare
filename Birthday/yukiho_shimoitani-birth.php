@@ -11,7 +11,7 @@
 <p class="site-title"><a href="/hello-birthday">メンバー一覧に戻る</a></p>
 <h1>下井谷幸穂バースデーイベント会場まとめ</h1>
 <p>下井谷幸穂さん（2006年8月4日生まれ）のこれまでのバースデーイベントをまとめました。非公式サイトのハロプロセトリ検索システム「ToMoKo」にてセットリストが公開されていたものはリンクを貼っています。</p>
-2024年度(18歳)
+18歳（2024年）
 <table class="birthday-table">
 <thead>
 <tr>
@@ -28,7 +28,7 @@
 <tr><td>2024年8月7日</td><td>19:20</td><td>アンジュルム 下井谷幸穂バースデーイベント2024</td><td>TOKYO FM HALL</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/21535" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
 </tbody>
 </table>
-2025年度(19歳)
+19歳（2025年）
 <table class="birthday-table">
 <thead>
 <tr>
@@ -45,7 +45,7 @@
 <tr><td>2025年8月21日</td><td>19:40</td><td>アンジュルム 下井谷幸穂バースデーイベント2025</td><td>飛行船シアター</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/22678" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
 </tbody>
 </table>
-2026年度(20歳)
+20歳（2026年）
 <table class="birthday-table">
 <thead>
 <tr>

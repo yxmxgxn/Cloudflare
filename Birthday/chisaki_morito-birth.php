@@ -11,7 +11,7 @@
 <p class="site-title"><a href="/hello-birthday">メンバー一覧に戻る</a></p>
 <h1>森戸知沙希バースデーイベント会場まとめ</h1>
 <p>森戸知沙希さん（2000年2月19日生まれ）のこれまでのバースデーイベントをまとめました。非公式サイトのハロプロセトリ検索システム「ToMoKo」にてセットリストが公開されていたものはリンクを貼っています。</p>
-2015年度(16歳)
+16歳（2016年）
 <table class="birthday-table">
 <thead>
 <tr>
@@ -29,7 +29,7 @@
 <tr class="row-even"><td>2016年2月19日</td><td>20:00</td><td>カントリー・ガールズ 森戸知沙希バースデーイベント2016</td><td>TOKYO FM HALL</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/4820" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
 </tbody>
 </table>
-2016年度(17歳)
+17歳（2017年）
 <table class="birthday-table">
 <thead>
 <tr>
@@ -48,7 +48,7 @@
 <tr><td>2017年2月28日</td><td>19:30</td><td>カントリー・ガールズ 森戸知沙希＆小関舞バースデーイベント2017 in 名古屋</td><td>ミッドランドスクエア シネマ2</td><td>愛知県</td><td><a href="https://hp-setlist.com/stage/10035" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
 </tbody>
 </table>
-2017年度(18歳)
+18歳（2018年）
 <table class="birthday-table">
 <thead>
 <tr>
@@ -67,7 +67,7 @@
 <tr><td>2018年2月27日</td><td>19:45</td><td>モーニング娘。'18 尾形春水・牧野真莉愛・横山玲奈・森戸知沙希バースデーイベント in 名古屋</td><td>ミッドランドスクエア シネマ2</td><td>愛知県</td><td><a href="https://hp-setlist.com/stage/10082" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
 </tbody>
 </table>
-2018年度(19歳)
+19歳（2019年）
 <table class="birthday-table">
 <thead>
 <tr>
@@ -86,7 +86,7 @@
 <tr><td>2019年2月26日</td><td>19:50</td><td>モーニング娘。'19 石田亜佑美・牧野真莉愛・横山玲奈・森戸知沙希バースデーイベント in 名古屋</td><td>ミッドランドスクエア シネマ2</td><td>愛知県</td><td><a href="https://hp-setlist.com/stage/10130" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
 </tbody>
 </table>
-2019年度(20歳)
+20歳（2020年）
 <table class="birthday-table">
 <thead>
 <tr>
@@ -103,7 +103,7 @@
 <tr><td>2020年2月20日</td><td>19:45</td><td>モーニング娘。'20 森戸知沙希バースデーイベント</td><td>山野ホール</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/7005" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
 </tbody>
 </table>
-2020年度(21歳)
+21歳（2021年）
 <table class="birthday-table">
 <thead>
 <tr>
@@ -120,7 +120,7 @@
 <tr><td>2021年2月19日</td><td>18:50</td><td>モーニング娘。'21 森戸知沙希バースデーイベント</td><td>豊洲PIT</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/7232" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
 </tbody>
 </table>
-2021年度(22歳)
+22歳（2022年）
 <table class="birthday-table">
 <thead>
 <tr>
@@ -137,7 +137,7 @@
 <tr><td>2022年2月21日</td><td>18:50</td><td>モーニング娘。'22 森戸知沙希バースデーイベント</td><td>KT Zepp Yokohama</td><td>神奈川県</td><td><a href="https://hp-setlist.com/stage/7634" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
 </tbody>
 </table>
-2023年度(24歳)
+24歳（2024年）
 <table class="birthday-table">
 <thead>
 <tr>
@@ -154,7 +154,7 @@
 <tr><td>2024年2月19日</td><td>19:40</td><td>森戸知沙希バースデーイベント2024 ～24歳ってまじ！？～</td><td>山野ホール</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/20958" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
 </tbody>
 </table>
-2024年度(25歳)
+25歳（2025年）
 <table class="birthday-table">
 <thead>
 <tr>
@@ -171,7 +171,7 @@
 <tr><td>2025年2月17日</td><td>19:50</td><td>森戸知沙希バースデーイベント2025～ほぼ25歳！(笑)～</td><td>飛行船シアター</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/22119" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
 </tbody>
 </table>
-2025年度(26歳)
+26歳（2026年）
 <table class="birthday-table">
 <thead>
 <tr>

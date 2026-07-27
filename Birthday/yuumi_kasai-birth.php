@@ -11,7 +11,7 @@
 <p class="site-title"><a href="/hello-birthday">メンバー一覧に戻る</a></p>
 <h1>河西結心バースデーイベント会場まとめ</h1>
 <p>河西結心さん（2003年7月30日生まれ）のこれまでのバースデーイベントをまとめました。非公式サイトのハロプロセトリ検索システム「ToMoKo」にてセットリストが公開されていたものはリンクを貼っています。</p>
-2022年度(19歳)
+19歳（2022年）
 <table class="birthday-table">
 <thead>
 <tr>
@@ -28,7 +28,7 @@
 <tr><td>2022年8月2日</td><td>19:00</td><td>つばきファクトリー 河西結心バースデーイベント2022</td><td>LANDMARK HALL</td><td>神奈川県</td><td><a href="https://hp-setlist.com/stage/8745" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
 </tbody>
 </table>
-2023年度(20歳)
+20歳（2023年）
 <table class="birthday-table">
 <thead>
 <tr>
@@ -45,7 +45,7 @@
 <tr><td>2023年8月1日</td><td>19:30</td><td>つばきファクトリー 河西結心バースデーイベント2023</td><td>山野ホール</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/20374" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
 </tbody>
 </table>
-2024年度(21歳)
+21歳（2024年）
 <table class="birthday-table">
 <thead>
 <tr>
@@ -62,7 +62,7 @@
 <tr><td>2024年8月1日</td><td>19:00</td><td>つばきファクトリー 河西結心バースデーイベント2024</td><td>タワーホール船堀 大ホール</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/21516" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
 </tbody>
 </table>
-2025年度(22歳)
+22歳（2025年）
 <table class="birthday-table">
 <thead>
 <tr>
