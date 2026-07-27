@@ -1,4 +1,4 @@
-<!-- generated: 2026-07-26T19:01:22.285041+00:00 -->
+<!-- generated: 2026-07-27T19:17:08.997675+00:00 -->
 <div class="karin-card" data-pref="岐阜県">
 <p class="karin-header">岐阜県 森白製菓 スッキリ梅あられ</p>
 
