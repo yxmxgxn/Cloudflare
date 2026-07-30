@@ -1,4 +1,4 @@
-<!-- generated: 2026-07-26T19:01:22.285041+00:00 -->
+<!-- generated: 2026-07-29T19:03:11.282427+00:00 -->
 <div class="karin-card" data-pref="岐阜県">
 <p class="karin-header">岐阜県 森白製菓 スッキリ梅あられ</p>
 
@@ -64,8 +64,8 @@
 <div class="karin-embed-placeholder" data-embed="<blockquote class=&quot;twitter-tweet&quot;><p lang=&quot;ja&quot; dir=&quot;ltr&quot;>今朝の <a href=&quot;https://x.com/hashtag/%E3%82%AB%E3%83%AA%E3%83%B3%E3%82%AA%E3%82%B7?src=hash&amp;ref_src=twsrc%5Etfw&quot;>#カリンオシ</a> は…😋<a href=&quot;https://x.com/hashtag/%E6%A0%83%E6%9C%A8%E7%9C%8C?src=hash&amp;ref_src=twsrc%5Etfw&quot;>#栃木県</a> の <a href=&quot;https://x.com/hashtag/%E3%81%84%E3%81%A1%E3%81%94%E3%82%B5%E3%83%96%E3%83%AC?src=hash&amp;ref_src=twsrc%5Etfw&quot;>#いちごサブレ</a> をご紹介🍓🍓🍓<br><br>那須町のお菓子の城・ハートランドの可愛いお土産🎁<br>いちごの形とちょっとピンクなのも可愛らしいお菓子です💓<br><br>みなさんもぜひ食べてみてくださいね〜😊<a href=&quot;https://x.com/hashtag/m%E3%83%91%E3%83%AC%E3%83%83%E3%83%88?src=hash&amp;ref_src=twsrc%5Etfw&quot;>#mパレット</a> <a href=&quot;https://x.com/hashtag/%E5%AE%AE%E6%9C%AC%E4%BD%B3%E6%9E%97?src=hash&amp;ref_src=twsrc%5Etfw&quot;>#宮本佳林</a> <a href=&quot;https://t.co/M1RWnz1rIo&quot;>pic.twitter.com/M1RWnz1rIo</a></p>&mdash; TBSラジオ_Music Palette♪ (@PaletteTbs) <a href=&quot;https://x.com/PaletteTbs/status/2050666636676620527?ref_src=twsrc%5Etfw&quot;>May 2, 2026</a></blockquote>"></div>
 <p class="karin-tbs"><a href="https://www.tbsradio.jp/articles/107908/" target="_blank" rel="noopener noreferrer">放送日2026/05/03ページ</a></p>
 </div>
-<div class="karin-card" data-pref="千葉県">
-<p class="karin-header">千葉県 武田味噌 銘醸せんべい・ゆず味噌せんべい</p>
+<div class="karin-card" data-pref="長野県">
+<p class="karin-header">長野県 武田味噌 銘醸せんべい・ゆず味噌せんべい</p>
 <div class="karin-embed-placeholder" data-embed="<blockquote class=&quot;twitter-tweet&quot;><p lang=&quot;ja&quot; dir=&quot;ltr&quot;>今朝の <a href=&quot;https://x.com/hashtag/%E3%82%AB%E3%83%AA%E3%83%B3%E3%82%AA%E3%82%B7?src=hash&amp;ref_src=twsrc%5Etfw&quot;>#カリンオシ</a> は…😋<a href=&quot;https://x.com/hashtag/%E9%95%B7%E9%87%8E%E7%9C%8C?src=hash&amp;ref_src=twsrc%5Etfw&quot;>#長野県</a> の <a href=&quot;https://x.com/hashtag/%E9%8A%98%E9%86%B8%E3%81%9B%E3%82%93%E3%81%B9%E3%81%84?src=hash&amp;ref_src=twsrc%5Etfw&quot;>#銘醸せんべい</a>＆ <a href=&quot;https://x.com/hashtag/%E3%82%86%E3%81%9A%E5%91%B3%E5%99%8C%E3%81%9B%E3%82%93%E3%81%B9%E3%81%84?src=hash&amp;ref_src=twsrc%5Etfw&quot;>#ゆず味噌せんべい</a>🍘<br><br>長野県上田市の味噌蔵≪武田味噌≫さんの人気商品のおせんべい2種類をご紹介しました✨<br><br>見つけたらぜひ食べてみてくださいね〜🍘<a href=&quot;https://x.com/hashtag/m%E3%83%91%E3%83%AC%E3%83%83%E3%83%88?src=hash&amp;ref_src=twsrc%5Etfw&quot;>#mパレット</a> <a href=&quot;https://x.com/hashtag/%E5%AE%AE%E6%9C%AC%E4%BD%B3%E6%9E%97?src=hash&amp;ref_src=twsrc%5Etfw&quot;>#宮本佳林</a> <a href=&quot;https://t.co/bjMUrKP19E&quot;>pic.twitter.com/bjMUrKP19E</a></p>&mdash; TBSラジオ_Music Palette♪ (@PaletteTbs) <a href=&quot;https://x.com/PaletteTbs/status/2048129921164124216?ref_src=twsrc%5Etfw&quot;>April 25, 2026</a></blockquote>"></div>
 <p class="karin-tbs"><a href="https://www.tbsradio.jp/articles/107662/" target="_blank" rel="noopener noreferrer">放送日2026/04/26ページ</a></p>
 </div>
