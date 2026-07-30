@@ -1,0 +1,143 @@
+#!/usr/bin/env python3
+"""
+HANAKINチャレンジのスプレッドシート(イベント+コラボ相手IG)を読み取り、
+PHPインクルード用のテーブル(tbody)フラグメントを生成する
+
+  イベントシート : ID,Date,Instagram,TikTok,Member1,Member2,Place
+                   Instagram/TikTokは投稿URL。Member1/2はコラボ相手(0人もあり)。Placeは特別な会場
+  相手IGシート   : ID,Member,Instagram
+                   ID+Memberでコラボ相手を公式Instagramプロフィールに紐づける(1IDに複数行)
+
+更新頻度が高くないので手動実行(generate-manual.ymlのhanakin)で回す。
+ローカル確認用にCSVパスも渡せる:
+  python Python/generate_hanakin.py --events e.csv --members m.csv
+"""
+
+import argparse
+import csv
+import html
+import io
+import urllib.request
+from datetime import datetime, timezone, timedelta
+from pathlib import Path
+
+PUB_BASE = (
+    "https://docs.google.com/spreadsheets/d/e/"
+    "2PACX-1vRQYvAQc0UULvEAkF7k27YBQkPp5LCTGl-NglxoekowjtdWnAYeVvVGkC0XTjT-j4x2WNYEeLqUtnUq/pub"
+)
+GID_EVENTS = "0"
+GID_MEMBERS = "126937742"
+
+REPO_ROOT = Path(__file__).resolve().parent.parent  # Python/ の親
+
+OUTPUT_TABLE = REPO_ROOT / "Spreadsheet" / "hanakin_table.php"
+OUTPUT_GENERATED = REPO_ROOT / "Generated" / "hanakin_generated.php"
+
+
+def fetch_csv(source: str) -> list[dict]:
+    path = Path(source)
+    if path.exists():
+        content = path.read_text(encoding="utf-8-sig")
+    else:
+        with urllib.request.urlopen(source) as res:
+            content = res.read().decode("utf-8")
+    return [row for row in csv.DictReader(io.StringIO(content))]
+
+
+def esc(s: str) -> str:
+    return html.escape((s or "").strip())
+
+
+def val(row: dict, key: str) -> str:
+    return (row.get(key) or "").strip()
+
+
+def format_date(s: str) -> str:
+    for fmt in ("%Y/%m/%d", "%Y-%m-%d", "%Y年%m月%d日"):
+        try:
+            dt = datetime.strptime((s or "").strip(), fmt)
+            return f"{dt.year}年{dt.month}月{dt.day}日"
+        except ValueError:
+            continue
+    return esc(s)
+
+
+def sort_key(s: str) -> str:
+    for fmt in ("%Y/%m/%d", "%Y-%m-%d", "%Y年%m月%d日"):
+        try:
+            return datetime.strptime((s or "").strip(), fmt).strftime("%Y-%m-%d")
+        except ValueError:
+            continue
+    return (s or "").strip()
+
+
+def link(url: str, label: str) -> str:
+    if not url:
+        return ""
+    return f'<a href="{esc(url)}" target="_blank" rel="noopener noreferrer">{label}</a>'
+
+
+def build_members(ev: dict, profiles: dict[tuple, str]) -> str:
+    eid = val(ev, "ID")
+    names = [val(ev, "Member1"), val(ev, "Member2")]
+    parts = []
+    for name in names:
+        if not name:
+            continue
+        url = profiles.get((eid, name))
+        parts.append(link(url, esc(name)) if url else esc(name))
+    return "・".join(parts)
+
+
+def build_rows(events: list[dict], profiles: dict[tuple, str]) -> str:
+    valid = [e for e in events if val(e, "ID")]
+    valid.sort(key=lambda e: sort_key(val(e, "Date")))
+    lines = []
+    for i, ev in enumerate(valid):
+        row_class = ' class="row-even"' if i % 2 else ""
+        place = val(ev, "Place")
+        place_cell = f"@{esc(place)}" if place else ""
+        lines.append(
+            f"<tr{row_class}>"
+            f"<td>{format_date(val(ev, 'Date'))}</td>"
+            f'<td>{link(val(ev, "Instagram"), "Instagram")}</td>'
+            f'<td>{link(val(ev, "TikTok"), "TikTok")}</td>'
+            f"<td>{build_members(ev, profiles)}</td>"
+            f"<td>{place_cell}</td>"
+            "</tr>"
+        )
+    return "\n".join(lines)
+
+
+def main():
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--events", default=f"{PUB_BASE}?gid={GID_EVENTS}&single=true&output=csv")
+    parser.add_argument("--members", default=f"{PUB_BASE}?gid={GID_MEMBERS}&single=true&output=csv")
+    args = parser.parse_args()
+
+    jst = timezone(timedelta(hours=9))
+    generated = datetime.now(jst).strftime("%Y/%m/%d")
+
+    events = fetch_csv(args.events)
+    members = fetch_csv(args.members)
+
+    profiles = {
+        (val(m, "ID"), val(m, "Member")): val(m, "Instagram")
+        for m in members
+        if val(m, "ID") and val(m, "Member") and val(m, "Instagram")
+    }
+
+    stamp = f"<!-- generated: {datetime.now(timezone.utc).isoformat()} -->\n"
+
+    OUTPUT_TABLE.parent.mkdir(parents=True, exist_ok=True)
+    OUTPUT_GENERATED.parent.mkdir(parents=True, exist_ok=True)
+    with open(OUTPUT_TABLE, "w", encoding="utf-8") as f:
+        f.write(stamp + build_rows(events, profiles) + "\n")
+    with open(OUTPUT_GENERATED, "w", encoding="utf-8") as f:
+        f.write(f'<div class="last-update">最終更新日：{generated}</div>\n')
+
+    print(f"生成完了: {OUTPUT_TABLE} ({len([e for e in events if val(e,'ID')])} 回 / 相手IG {len(profiles)} 件)")
+
+
+if __name__ == "__main__":
+    main()

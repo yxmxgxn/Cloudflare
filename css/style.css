@@ -1108,3 +1108,29 @@ footer a {
   line-height: 1.7;
   margin-bottom: 8px;
 }
+
+/*HANAKINチャレンジ
+-------------------------------------*/
+#hanakin-wrap {
+  overflow-x: auto;
+  margin-top: 1em;
+}
+
+#hanakin-table {
+  border-collapse: collapse;
+}
+
+#hanakin-table th,
+#hanakin-table td {
+  border: 1px solid #ccc;
+  padding: 6px 10px;
+  white-space: nowrap;
+}
+
+#hanakin-table th {
+  background: #f5f5f5;
+}
+
+#hanakin-table tr.row-even {
+  background: #f9f9f9;
+}

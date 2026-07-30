@@ -7,6 +7,8 @@
 <main>
   このHPの更新履歴です
   <dl>
+  <dt>2026-07-30</dt>
+  <dd><a href="/instagram/HANAKIN-insta">宮本佳林 HANAKINチャレンジ</a>のページを追加</dd>
   <dt>2026-07-26</dt>
   <dd><a href="/HelloYouTube/hello-cooking">ハロプロ クッキングコーナー</a>のページを追加</dd>
   <dt>2026-07-25</dt>

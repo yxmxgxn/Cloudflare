@@ -64,7 +64,11 @@
   <h2>宮本佳林 Instagram</h2>
   <h3>宮本佳林さんがInstagramでライブ配信をしてアーカイブが残されているもののまとめです</h3>
   <div class="indextop"><a href="/instagram/karin-insta"><svg style="vertical-align: -4px;  margin-right: 4px"width="20" height="20" viewBox="-90 -90 180 180" xmlns="http://www.w3.org/2000/svg"><rect x="-80" y="-80" width="160" height="160" rx="36" fill="none" stroke="currentColor" stroke-width="7"/><circle cx="0" cy="0" r="42" fill="none" stroke="currentColor" stroke-width="7"/><circle cx="0" cy="0" r="22" fill="none" stroke="currentColor" stroke-width="5"/><circle cx="50" cy="-50" r="10" fill="currentColor"/>
-</svg>宮本佳林 インスタライブ アーカイブまとめ</a></div> 
+</svg>宮本佳林 インスタライブ アーカイブまとめ</a></div>
+
+  <h3>宮本佳林さんがInstagram・TikTokで投稿しているHANAKINチャレンジ（コラボ相手・場所）のまとめです</h3>
+  <div class="indextop"><a href="/instagram/HANAKIN-insta"><svg style="vertical-align: -4px;  margin-right: 4px"width="20" height="20" viewBox="-90 -90 180 180" xmlns="http://www.w3.org/2000/svg"><rect x="-80" y="-80" width="160" height="160" rx="36" fill="none" stroke="currentColor" stroke-width="7"/><circle cx="0" cy="0" r="42" fill="none" stroke="currentColor" stroke-width="7"/><circle cx="0" cy="0" r="22" fill="none" stroke="currentColor" stroke-width="5"/><circle cx="50" cy="-50" r="10" fill="currentColor"/>
+</svg>宮本佳林 HANAKINチャレンジまとめ</a></div>
 
   <h2>宮本佳林 ラジオ</h2>
   <h3>宮本佳林さんがHELLO! DRIVE! -ハロドラ-でMCをやってる回のまとめです</h3>
