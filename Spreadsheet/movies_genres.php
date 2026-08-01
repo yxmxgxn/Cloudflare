@@ -1,4 +1,4 @@
-<!-- generated: 2026-07-31T19:14:04.561263+00:00 -->
+<!-- generated: 2026-08-01T18:59:08.228405+00:00 -->
 <option value="SF">SF</option>
 <option value="アクション">アクション</option>
 <option value="アニメ">アニメ</option>
