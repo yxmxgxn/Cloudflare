@@ -1,4 +1,9 @@
-<!-- generated: 2026-07-29T19:03:11.282427+00:00 -->
+<!-- generated: 2026-08-06T23:53:40.278961+00:00 -->
+<div class="karin-card" data-pref="茨城県">
+<p class="karin-header">茨城県 ほしいもピールフレーク</p>
+<div class="karin-embed-placeholder" data-embed="<blockquote class=&quot;twitter-tweet&quot;><p lang=&quot;ja&quot; dir=&quot;ltr&quot;>今朝の <a href=&quot;https://x.com/hashtag/%E3%82%AB%E3%83%AA%E3%83%B3%E3%82%AA%E3%82%B7?src=hash&amp;ref_src=twsrc%5Etfw&quot;>#カリンオシ</a> は…😋<a href=&quot;https://x.com/hashtag/%E8%8C%A8%E5%9F%8E%E7%9C%8C?src=hash&amp;ref_src=twsrc%5Etfw&quot;>#茨城県</a> の <a href=&quot;https://x.com/hashtag/%E3%81%BB%E3%81%97%E3%81%84%E3%82%82%E3%83%94%E3%83%BC%E3%83%AB%E3%83%95%E3%83%AC%E3%83%BC%E3%82%AF?src=hash&amp;ref_src=twsrc%5Etfw&quot;>#ほしいもピールフレーク</a>🍠<br><br>茨城県の名物、干し芋🍠<br>その干し芋を作るときに出た「皮」の部分を美味しく食べられるように加工し、さつまいもの皮には栄養が<br>豊富に含まれて身体にも良いフレークです💫<a href=&quot;https://x.com/hashtag/%E5%AE%AE%E6%9C%AC%E4%BD%B3%E6%9E%97?src=hash&amp;ref_src=twsrc%5Etfw&quot;>#宮本佳林</a> <a href=&quot;https://x.com/hashtag/TBS%E3%83%A9%E3%82%B8%E3%82%AA?src=hash&amp;ref_src=twsrc%5Etfw&quot;>#TBSラジオ</a> <a href=&quot;https://t.co/Ia9eDOxGSC&quot;>pic.twitter.com/Ia9eDOxGSC</a></p>&mdash; TBSラジオ_Music Palette♪ (@PaletteTbs) <a href=&quot;https://x.com/PaletteTbs/status/2083643931741626689?ref_src=twsrc%5Etfw&quot;>August 1, 2026</a></blockquote>"></div>
+<p class="karin-tbs"><a href="https://www.tbsradio.jp/articles/110826/" target="_blank" rel="noopener noreferrer">放送日2026/08/02ページ</a></p>
+</div>
 <div class="karin-card" data-pref="岐阜県">
 <p class="karin-header">岐阜県 森白製菓 スッキリ梅あられ</p>
 
@@ -83,6 +88,11 @@
 <p class="karin-header">静岡県 敷島屋 静岡三ヶ日みかんグミ</p>
 <div class="karin-embed-placeholder" data-embed="<blockquote class=&quot;twitter-tweet&quot;><p lang=&quot;ja&quot; dir=&quot;ltr&quot;>今朝の <a href=&quot;https://x.com/hashtag/%E3%82%AB%E3%83%AA%E3%83%B3%E3%82%AA%E3%82%B7?src=hash&amp;ref_src=twsrc%5Etfw&quot;>#カリンオシ</a> は<a href=&quot;https://x.com/hashtag/%E9%9D%99%E5%B2%A1%E7%9C%8C?src=hash&amp;ref_src=twsrc%5Etfw&quot;>#静岡県</a> の <a href=&quot;https://x.com/hashtag/%E4%B8%89%E3%82%B1%E6%97%A5%E3%81%BF%E3%81%8B%E3%82%93%E3%82%B0%E3%83%9F?src=hash&amp;ref_src=twsrc%5Etfw&quot;>#三ケ日みかんグミ</a><br><br>静岡県産の三ケ日みかんの果汁を使用している、果実感溢れるグミです🍊<br>見つけたらぜひ食べてみてくださいね〜🎨<a href=&quot;https://x.com/hashtag/m%E3%83%91%E3%83%AC%E3%83%83%E3%83%88?src=hash&amp;ref_src=twsrc%5Etfw&quot;>#mパレット</a> <a href=&quot;https://x.com/hashtag/%E5%AE%AE%E6%9C%AC%E4%BD%B3%E6%9E%97?src=hash&amp;ref_src=twsrc%5Etfw&quot;>#宮本佳林</a> <a href=&quot;https://t.co/jxu6E4d8jP&quot;>pic.twitter.com/jxu6E4d8jP</a></p>&mdash; TBSラジオ_Music Palette♪ (@PaletteTbs) <a href=&quot;https://x.com/PaletteTbs/status/2040519776359878715?ref_src=twsrc%5Etfw&quot;>April 4, 2026</a></blockquote>"></div>
 <p class="karin-tbs"><a href="https://www.tbsradio.jp/articles/106908/" target="_blank" rel="noopener noreferrer">放送日2026/04/05ページ</a></p>
+</div>
+<div class="karin-card" data-pref="東京都">
+<p class="karin-header">東京都 花園万頭 ぬれ甘なつと</p>
+
+<p class="karin-tbs"><a href="https://www.tbsradio.jp/articles/106686/" target="_blank" rel="noopener noreferrer">放送日2026/03/29ページ</a></p>
 </div>
 <div class="karin-card" data-pref="北海道">
 <p class="karin-header">北海道 三海幸 パリポリ焼き昆布</p>
@@ -234,8 +244,8 @@
 <div class="karin-embed-placeholder" data-embed="<blockquote class=&quot;twitter-tweet&quot;><p lang=&quot;ja&quot; dir=&quot;ltr&quot;>今回の <a href=&quot;https://x.com/hashtag/%E3%82%AB%E3%83%AA%E3%83%B3%E3%82%AA%E3%82%B7?src=hash&amp;ref_src=twsrc%5Etfw&quot;>#カリンオシ</a> は<a href=&quot;https://x.com/hashtag/%E9%9D%99%E5%B2%A1%E7%9C%8C?src=hash&amp;ref_src=twsrc%5Etfw&quot;>#静岡県</a> の <a href=&quot;https://x.com/hashtag/%E3%81%A0%E3%81%97%E3%83%83%E3%83%97%E3%82%B9?src=hash&amp;ref_src=twsrc%5Etfw&quot;>#だしップス</a> をご紹介🍲<br><br>おからとおだしの体に優しいお菓子です！<br>今回スタジオにはわさび風味を用意しました🙌<br>マイルドなわさび風味を楽しめるチップスをぜひ食べてみてくださいね🔥<br> <br>📸:いつもと違う角度で✌️<a href=&quot;https://x.com/hashtag/m%E3%83%91%E3%83%AC%E3%83%83%E3%83%88?src=hash&amp;ref_src=twsrc%5Etfw&quot;>#mパレット</a> <a href=&quot;https://x.com/hashtag/%E5%AE%AE%E6%9C%AC%E4%BD%B3%E6%9E%97?src=hash&amp;ref_src=twsrc%5Etfw&quot;>#宮本佳林</a> <a href=&quot;https://x.com/hashtag/TBS%E3%83%A9%E3%82%B8%E3%82%AA?src=hash&amp;ref_src=twsrc%5Etfw&quot;>#TBSラジオ</a> <a href=&quot;https://t.co/slH4MEpLBJ&quot;>pic.twitter.com/slH4MEpLBJ</a></p>&mdash; TBSラジオ_Music Palette♪ (@PaletteTbs) <a href=&quot;https://x.com/PaletteTbs/status/1961881613719240764?ref_src=twsrc%5Etfw&quot;>August 30, 2025</a></blockquote>"></div>
 <p class="karin-tbs"><a href="https://www.tbsradio.jp/articles/100009/" target="_blank" rel="noopener noreferrer">放送日2025/08/31ページ</a></p>
 </div>
-<div class="karin-card" data-pref="岩手県">
-<p class="karin-header">岩手県 ツバメヤ ツバメサブレ</p>
+<div class="karin-card" data-pref="岐阜県">
+<p class="karin-header">岐阜県 ツバメヤ ツバメサブレ</p>
 <div class="karin-embed-placeholder" data-embed="<blockquote class=&quot;twitter-tweet&quot;><p lang=&quot;ja&quot; dir=&quot;ltr&quot;>今回の <a href=&quot;https://x.com/hashtag/%E3%82%AB%E3%83%AA%E3%83%B3%E3%82%AA%E3%82%B7?src=hash&amp;ref_src=twsrc%5Etfw&quot;>#カリンオシ</a> は<a href=&quot;https://x.com/hashtag/%E5%B2%90%E9%98%9C%E7%9C%8C?src=hash&amp;ref_src=twsrc%5Etfw&quot;>#岐阜県</a> の <a href=&quot;https://x.com/hashtag/%E3%83%84%E3%83%90%E3%83%A1%E3%82%B5%E3%83%96%E3%83%AC?src=hash&amp;ref_src=twsrc%5Etfw&quot;>#ツバメサブレ</a>🪽<br><br>柳ケ瀬商店街にある和菓子屋ツバメから誕生した和サブレです！<br>さくっとした食感の中にシンプルで素朴な味わいです！ <br><br>📸:ツバメポーズ🐦<a href=&quot;https://x.com/hashtag/m%E3%83%91%E3%83%AC%E3%83%83%E3%83%88?src=hash&amp;ref_src=twsrc%5Etfw&quot;>#mパレット</a> <a href=&quot;https://x.com/hashtag/%E5%AE%AE%E6%9C%AC%E4%BD%B3%E6%9E%97?src=hash&amp;ref_src=twsrc%5Etfw&quot;>#宮本佳林</a> <a href=&quot;https://x.com/hashtag/TBS%E3%83%A9%E3%82%B8%E3%82%AA?src=hash&amp;ref_src=twsrc%5Etfw&quot;>#TBSラジオ</a> <a href=&quot;https://t.co/Ea1Isk4EHw&quot;>pic.twitter.com/Ea1Isk4EHw</a></p>&mdash; TBSラジオ_Music Palette♪ (@PaletteTbs) <a href=&quot;https://x.com/PaletteTbs/status/1959344896332210390?ref_src=twsrc%5Etfw&quot;>August 23, 2025</a></blockquote>"></div>
 <p class="karin-tbs"><a href="https://www.tbsradio.jp/articles/99780/" target="_blank" rel="noopener noreferrer">放送日2025/08/24ページ</a></p>
 </div>
