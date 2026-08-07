@@ -1,4 +1,4 @@
-<!-- generated: 2026-08-07T13:57:48.879555+00:00 -->
+<!-- generated: 2026-08-07T14:26:14.029484+00:00 -->
 <option value="Juice=Juice">Juice=Juice</option>
 <option value="アンジュルム">アンジュルム</option>
 <option value="ハロプロ研修生">ハロプロ研修生</option>
