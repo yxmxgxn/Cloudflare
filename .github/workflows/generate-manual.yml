@@ -16,6 +16,7 @@ on:
           - karinoshi
           - mixjuice
           - vocalo
+          - interview
           - all
 
 jobs:
@@ -43,6 +44,7 @@ jobs:
           run_if karinoshi  generate_karinoshi.py
           run_if mixjuice   generate_mixjuice.py
           run_if vocalo     generate_vocalo.py
+          run_if interview  generate_interview.py
 
       - name: Commit & push if changed
         run: |
