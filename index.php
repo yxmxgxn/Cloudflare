@@ -94,6 +94,9 @@
   <h3>ハロープロジェクトのメンバーが出演している映画作品のまとめです</h3>
   <div class="indextop"><a href="/hello-movies"><svg style="vertical-align: -4px;  margin-right: 4px"width="20" height="20" viewBox="0 0 64 44" xmlns="http://www.w3.org/2000/svg"><rect width="64" height="44" rx="10" fill="#1F2430"/><g fill="white"><rect x="7" y="8" width="7" height="6" rx="1.5"/><rect x="7" y="19" width="7" height="6" rx="1.5"/><rect x="7" y="30" width="7" height="6" rx="1.5"/><rect x="50" y="8" width="7" height="6" rx="1.5"/><rect x="50" y="19" width="7" height="6" rx="1.5"/><rect x="50" y="30" width="7" height="6" rx="1.5"/><rect x="19" y="8" width="26" height="28" rx="2"/></g></svg>ハロプロメンバー出演映画まとめ</a></div>
 
+  <h3>ハロープロジェクトのメンバーが登場するWebインタビュー記事のまとめです（現在は宮本佳林さん中心）</h3>
+  <div class="indextop"><a href="/hello-interview"><svg style="vertical-align: -4px;  margin-right: 4px"width="20" height="20" viewBox="0 0 64 44" xmlns="http://www.w3.org/2000/svg"><rect width="64" height="44" rx="6" fill="#AE8DBC"/><g fill="white"><rect x="12" y="12" width="40" height="4" rx="2"/><rect x="12" y="21" width="40" height="4" rx="2"/><rect x="12" y="30" width="26" height="4" rx="2"/></g></svg>ハロプロメンバー インタビュー記事まとめ</a></div>
+
   <h3>ハロープロジェクトのメンバーのバースデーイベントの会場を個人でまとめたページへのリンク集です</h3>
   <div class="indextop"><a href="/hello-birthday"><svg style="vertical-align: -3px;  margin-right: 4px"width="20" height="20" viewBox="-32 -32 64 64" xmlns="http://www.w3.org/2000/svg"><g fill="#E8789A"><ellipse cx="0" cy="-22" rx="8" ry="12" transform="rotate(0)"/><ellipse cx="0" cy="-22" rx="8" ry="12" transform="rotate(72)"/><ellipse cx="0" cy="-22" rx="8" ry="12" transform="rotate(144)"/><ellipse cx="0" cy="-22" rx="8" ry="12" transform="rotate(216)"/><ellipse cx="0" cy="-22" rx="8" ry="12" transform="rotate(288)"/></g><circle cx="0" cy="0" r="7" fill="#F5A9C0"/><circle cx="0" cy="0" r="3" fill="#E8789A"/></svg>ハロプロバースデーイベントまとめ</a></div>
   

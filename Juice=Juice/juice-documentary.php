@@ -1,6 +1,6 @@
 <?php
-  $title = "Juice=Juice 密着映像まとめ";
-  $description = "Juice=Juiceの公式チャンネルの密着映像をまとめました。";
+  $title = "Juice=Juice結成時に公開された公式チャンネルの密着映像 密着映像まとめ";
+  $description = "Juice=Juice結成時に公開されたJuice=Juiceの公式チャンネルのメジャーデビュー前後の密着映像をまとめました。";
   $jsonld_type = "Dataset";
   $about = ["name" => "Juice=Juice", "type" => "MusicGroup"];
   // グループ単体
@@ -11,13 +11,12 @@
   //   ["name" => "Juice=Juice", "type" => "MusicGroup"],
   //   ["name" => "譜久村聖"],                          // typeなし → Person
   // ];
-  $brand = 'juice';
   include $_SERVER['DOCUMENT_ROOT'] . '/common/header.php';
 ?>
 
 <main>
-  <h1>Juice=Juice 密着映像まとめ</h1>
-  <a href="https://www.youtube.com/@juicejuice"  target="_blank" rel="noopener noreferrer">Juice=Juiceの公式チャンネル</a>のメジャーデビュー前後の密着映像をまとめました。
+  <h1>Juice=Juice結成時に公開された公式チャンネルの密着映像 まとめ</h1>
+  <a href="https://www.youtube.com/@juicejuice" target="_blank" rel="noopener noreferrer">Juice=Juiceの公式チャンネル</a>のメジャーデビュー前後の密着映像をまとめました。
   <ul>
     <li><a href="https://www.youtube.com/watch?v=umZqsCLug3M"  target="_blank" rel="noopener noreferrer">Juice=Juice 密着映像 #1</a></li>
     <li><a href="https://www.youtube.com/watch?v=bq3A40hcsH4"  target="_blank" rel="noopener noreferrer">Juice=Juice 密着映像 #2</a></li>

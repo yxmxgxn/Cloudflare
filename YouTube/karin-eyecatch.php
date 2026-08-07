@@ -1,6 +1,6 @@
 <?php
   $title = "宮本佳林 ハロ！ステ アプカミ GREEN ROOM アイキャッチまとめ"; 
-  $description = "宮本佳林さんがハロ！ス、アプカミ GREEN ROOMで一言セリフのアイキャッチをまとめました。";
+  $description = "宮本佳林さんがハロ！ス、アプカミ GREEN ROOMで一言セリフのアイキャッチの言ったセリフとリンク先の動画の時間をまとめました。最後にYouTubeにまとめたものもアップしました。";
   $jsonld_type = "Dataset";
   $about = "宮本佳林";
   // グループ単体
@@ -16,7 +16,7 @@
 
 <main>
   <h1>宮本佳林 ハロ！ステ アプカミ アイキャッチまとめ</h1>
-  宮本佳林さんが<a href="https://www.youtube.com/helloprojectstation" target="_blank" rel="noopener noreferrer">ハロ！ステ</a>・<a href="https://www.youtube.com/upcomi" target="_blank" rel="noopener noreferrer">アプカミ</a>・<a href="https://www.youtube.com/girlsnightoutch" target="_blank" rel="noopener noreferrer">GREEN ROOM</a>で一言セリフ</a>で一言セリフを言うアイキャッチ映像をまとめました。
+  宮本佳林さんが<a href="https://www.youtube.com/helloprojectstation" target="_blank" rel="noopener noreferrer">ハロ！ステ</a>・<a href="https://www.youtube.com/upcomi" target="_blank" rel="noopener noreferrer">アプカミ</a>・<a href="https://www.youtube.com/girlsnightoutch" target="_blank" rel="noopener noreferrer">GREEN ROOM</a>で一言セリフ</a>で一言セリフを言うアイキャッチ映像をまとめました。言ったセリフとリンク先の動画の時間をまとめています。<br>
   <ul>
     <li><a href="https://www.youtube.com/watch?v=-lcFepEEpxQ&t=1394s" target="_blank" rel="noopener noreferrer">2015/06/03 ハロ！ステ#120 23:14～「おかえり」</a></li>
     <li><a href="https://www.youtube.com/watch?v=BvauQt6xxMc&t=2377s" target="_blank" rel="noopener noreferrer">2015/07/22 ハロ！ステ#127 39:37～「すごく好き」</a></li>
