@@ -150,6 +150,8 @@
 <tbody>
 <tr class="row-even"><td>2026年6月22日</td><td>16:45</td><td>BEYOOOOONDS/CHICA#TETSU 西田汐里バースデーイベント2026</td><td>有楽町朝日ホール</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/23782" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
 <tr><td>2026年6月22日</td><td>19:00</td><td>BEYOOOOONDS/CHICA#TETSU 西田汐里バースデーイベント2026</td><td>有楽町朝日ホール</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/23783" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
+<tr class="row-even"><td>2026年7月13日</td><td>18:00</td><td>BEYOOOOONDS 西田汐里・前田こころバースデーイベント2026 in 名古屋</td><td>ミッドランドスクエア シネマ2</td><td>愛知県</td><td><a href="https://hp-setlist.com/stage/24363" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
+<tr><td>2026年7月13日</td><td>19:45</td><td>BEYOOOOONDS 西田汐里・前田こころバースデーイベント2026 in 名古屋</td><td>ミッドランドスクエア シネマ2</td><td>愛知県</td><td><a href="https://hp-setlist.com/stage/24363" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
 </tbody>
 </table>
 

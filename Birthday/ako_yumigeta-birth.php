@@ -60,8 +60,8 @@
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td>2026年7月15日</td><td>17:00</td><td>モーニング娘。'26 弓桁朱琴バースデーイベント</td><td>一ツ橋ホール</td><td>東京都</td><td></td></tr>
-<tr><td>2026年7月15日</td><td>19:20</td><td>モーニング娘。'26 弓桁朱琴バースデーイベント</td><td>一ツ橋ホール</td><td>東京都</td><td></td></tr>
+<tr class="row-even"><td>2026年7月15日</td><td>17:00</td><td>モーニング娘。'26 弓桁朱琴バースデーイベント</td><td>一ツ橋ホール</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/24368" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
+<tr><td>2026年7月15日</td><td>19:20</td><td>モーニング娘。'26 弓桁朱琴バースデーイベント</td><td>一ツ橋ホール</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/24369" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
 </tbody>
 </table>
 

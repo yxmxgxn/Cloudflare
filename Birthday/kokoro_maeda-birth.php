@@ -148,6 +148,8 @@
 <tbody>
 <tr class="row-even"><td>2026年6月26日</td><td>17:10</td><td>BEYOOOOONDS/雨ノ森 川海 前田こころバースデーイベント2026</td><td>I'M A SHOW</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/23780" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
 <tr><td>2026年6月26日</td><td>19:30</td><td>BEYOOOOONDS/雨ノ森 川海 前田こころバースデーイベント2026</td><td>I'M A SHOW</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/23781" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
+<tr class="row-even"><td>2026年7月13日</td><td>18:00</td><td>BEYOOOOONDS 西田汐里・前田こころバースデーイベント2026 in 名古屋</td><td>ミッドランドスクエア シネマ2</td><td>愛知県</td><td><a href="https://hp-setlist.com/stage/24363" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
+<tr><td>2026年7月13日</td><td>19:45</td><td>BEYOOOOONDS 西田汐里・前田こころバースデーイベント2026 in 名古屋</td><td>ミッドランドスクエア シネマ2</td><td>愛知県</td><td><a href="https://hp-setlist.com/stage/24363" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
 </tbody>
 </table>
 
