@@ -17,6 +17,8 @@ on:
           - mixjuice
           - vocalo
           - interview
+          - gamelive
+          - timeline
           - all
 
 jobs:
@@ -32,6 +34,12 @@ jobs:
         with:
           python-version: '3.12'
 
+      - name: Install dependencies (timeline only)
+        if: ${{ inputs.target == 'timeline' || inputs.target == 'all' }}
+        run: |
+          sudo apt-get -qq update && sudo apt-get -qq install -y fonts-noto-cjk
+          pip install pandas matplotlib requests
+
       - name: Run generators
         run: |
           t="${{ inputs.target }}"
@@ -45,12 +53,14 @@ jobs:
           run_if mixjuice   generate_mixjuice.py
           run_if vocalo     generate_vocalo.py
           run_if interview  generate_interview.py
+          run_if gamelive   generate_gamelive.py
+          run_if timeline   timeline.py
 
       - name: Commit & push if changed
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add Birthday Spreadsheet Generated
+          git add Birthday Spreadsheet Generated Timeline
           if git diff --cached --quiet; then
             echo "変更なし"
           else

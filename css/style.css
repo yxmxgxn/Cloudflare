@@ -903,6 +903,119 @@ footer a {
   white-space: nowrap;
 }
 
+/* ===== ファミ通ゲーム実況ch 配信アーカイブまとめ ===== */
+
+#gamelive-controls {
+  display: flex;
+  gap: 10px;
+  margin: 0.75rem 0;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+#gamelive-controls input[type="text"] {
+  flex: 1;
+  min-width: 100px;
+  padding: 6px 10px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+}
+
+#gamelive-controls select {
+  padding: 6px 10px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+}
+
+#gamelive-count {
+  font-size: 13px;
+  color: #888;
+  white-space: nowrap;
+}
+
+#gamelive-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 14px;
+  margin-top: 1em;
+}
+
+.gl-card {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 12px 14px;
+  background: #fff;
+  box-shadow: 0 1px 3px rgba(0,0,0,.06);
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.gl-card .gl-head {
+  margin: 0;
+  font-size: 15px;
+  line-height: 1.45;
+}
+
+.gl-card .gl-date {
+  display: block;
+  font-size: 12px;
+  color: #888;
+  margin-bottom: 2px;
+}
+
+.gl-card .gl-title {
+  font-weight: bold;
+}
+
+.gl-card .gl-title a {
+  color: inherit;
+  text-decoration: none;
+  border-bottom: 1px solid #AE8DBC;
+}
+
+.gl-card .gl-title a:hover {
+  color: #AE8DBC;
+}
+
+.gl-card .gl-members {
+  font-size: 13px;
+  margin: 2px 0 0;
+}
+
+.gl-card .gl-member {
+  margin: 0;
+}
+
+.gl-card .gl-name {
+  cursor: pointer;
+  border-bottom: 1px dotted #AE8DBC;
+}
+
+.gl-card .gl-name:hover {
+  color: #AE8DBC;
+}
+
+.gl-card .gl-group {
+  color: #888;
+  font-size: 12px;
+}
+
+.gl-card .gl-games {
+  font-size: 13px;
+  margin: 4px 0 0;
+  color: #444;
+}
+
+.gl-card .gl-game {
+  margin: 0;
+}
+
+.gl-card .gl-genre {
+  color: #888;
+  font-size: 12px;
+}
+
 /* Xポスト前後検索 */
 #ctx-controls {
   display: flex;
