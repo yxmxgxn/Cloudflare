@@ -1,6 +1,6 @@
 <?php
   $title = "ハロプロ ファミ通ゲーム実況ch 配信アーカイブまとめ";
-  $description = "ハロプロメンバー・OGがYouTube「ファミ通ゲーム実況ch」で配信したアーカイブ（番組名はハロ通LIVE→ハロ通GAMESと変遷）を一覧でまとめました。配信日・出演メンバー・プレイしたゲームごとに整理し、各動画へのリンクを掲載しています。ダイジェスト版・ショート版は含みません。";
+  $description = "ハロプロメンバー・OGがYouTube「ファミ通ゲーム実況ch」・「ファミ通TUBE」で配信したアーカイブ（番組名はハロ通LIVE→ハロ通GAMESと変遷）を一覧でまとめました。配信日・出演メンバー・プレイしたゲームごとに整理し、各動画へのリンクを掲載しています。ダイジェスト版・ショート版は含みません。";
   $jsonld_type = "Dataset";
   $brand = 'hello';
   include $_SERVER['DOCUMENT_ROOT'] . '/common/header.php';
@@ -8,7 +8,7 @@
 
 <main>
   <h1>ハロプロ ファミ通ゲーム実況ch 配信アーカイブまとめ</h1>
-  ハロプロメンバー・OGがYouTubeの<a href="https://www.youtube.com/@famitsugamelive" target="_blank" rel="noopener noreferrer">ファミ通ゲーム実況ch</a>で配信したアーカイブを一覧でまとめました。番組名は「ハロ通LIVE」から「ハロ通GAMES」に変わっていますが、同じチャンネルで続いている配信です。ダイジェスト版・ショート版は含みません。<br>
+  ハロプロメンバー・OGがYouTubeの<a href="https://www.youtube.com/@famitsugamelive" target="_blank" rel="noopener noreferrer">ファミ通ゲーム実況ch</a>・<a href="https://www.youtube.com/@famitsutube" target="_blank" rel="noopener noreferrer">ファミ通TUBE</a>で配信されたアーカイブを一覧でまとめました。番組名は「ハロ通LIVE」から「ハロ通GAMES」に変わっていますが、同じ配信です。ダイジェスト版・ショート版は含みません。<br>
   各カードは、配信日とタイトル（押すと動画へ）、出演メンバー（グループ）、プレイしたゲーム（ジャンル）で構成されています。<br>
   グループ・メンバー名での絞り込み、配信日・タイトルでの並び替え、フリーワード検索（メンバー・グループ・ゲーム・ジャンル）ができます。<strong>メンバー名をクリックすると、そのメンバーで絞り込めます。</strong><br>
 
