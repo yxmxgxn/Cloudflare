@@ -110,7 +110,7 @@
   <div class="indextop"><a href="/HelloYouTube/hello-cooking"><svg style="vertical-align: -4px;  margin-right: 4px"width="20" height="20" viewBox="0 0 64 44" xmlns="http://www.w3.org/2000/svg"><rect width="64" height="44" rx="10" fill="#FF0000"/><polygon points="22,8 54,22 22,36" fill="white"/></svg>ハロプロ クッキングコーナーまとめ</a></div>
 
   <h3>ハロプロメンバー・OGがYouTube「ファミ通ゲーム実況ch」（ハロ通LIVE→ハロ通GAMES）でゲーム配信したアーカイブのまとめです</h3>
-  <div class="indextop"><a href="/YouTube/hello-gamelive"><svg style="vertical-align: -4px;  margin-right: 4px"width="20" height="20" viewBox="0 0 64 44" xmlns="http://www.w3.org/2000/svg"><rect width="64" height="44" rx="10" fill="#FF0000"/><polygon points="22,8 54,22 22,36" fill="white"/></svg>ハロプロ ファミ通ゲーム実況ch 配信アーカイブまとめ</a></div>
+  <div class="indextop"><a href="/HelloYouTube/hello-gamelive"><svg style="vertical-align: -4px;  margin-right: 4px"width="20" height="20" viewBox="0 0 64 44" xmlns="http://www.w3.org/2000/svg"><rect width="64" height="44" rx="10" fill="#FF0000"/><polygon points="22,8 54,22 22,36" fill="white"/></svg>ハロプロ ファミ通ゲーム実況ch 配信アーカイブまとめ</a></div>
 
   <h2>Juice=Juice</h2>
   <h3>TBSラジオ 宮本佳林 Music Pallet♪のJuice=Juice 松永里愛のMIX=Juiceのコーナーで選曲された曲をまとめです</h3>
