@@ -1,0 +1,24 @@
+<!-- generated: 2026-08-08T14:46:16.551217+00:00 -->
+<option value="FPS">FPS</option>
+<option value="RPG">RPG</option>
+<option value="アクション">アクション</option>
+<option value="アクションアドベンチャー（協力）">アクションアドベンチャー（協力）</option>
+<option value="アクションパズル">アクションパズル</option>
+<option value="アクション（バトロワ）">アクション（バトロワ）</option>
+<option value="アクション（協力）">アクション（協力）</option>
+<option value="サバイバル（協力）">サバイバル（協力）</option>
+<option value="シミュレーション">シミュレーション</option>
+<option value="シューティング">シューティング</option>
+<option value="スポーツ">スポーツ</option>
+<option value="スポーツRPG">スポーツRPG</option>
+<option value="テーブルゲーム">テーブルゲーム</option>
+<option value="パズル">パズル</option>
+<option value="パズル（協力）">パズル（協力）</option>
+<option value="パーティ">パーティ</option>
+<option value="パーティ（推理）">パーティ（推理）</option>
+<option value="ホラー">ホラー</option>
+<option value="ボードゲーム">ボードゲーム</option>
+<option value="レース">レース</option>
+<option value="レース（協力）">レース（協力）</option>
+<option value="対戦アクション">対戦アクション</option>
+<option value="音ゲー">音ゲー</option>

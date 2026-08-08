@@ -11,7 +11,7 @@
   ハロプロメンバー・OGがYouTubeの<a href="https://www.youtube.com/@famitsugamelive" target="_blank" rel="noopener noreferrer">ファミ通ゲーム実況ch</a>・<a href="https://www.youtube.com/@famitsutube" target="_blank" rel="noopener noreferrer">ファミ通TUBE</a>で配信されたアーカイブを一覧でまとめました。番組名は「ハロ通LIVE」から「ハロ通GAMES」に変わっていますが、同じ配信です。ダイジェスト版・ショート版は含みません。<br>
   また月刊あみ通で平山遊季さんがゲスト出演したものも含みました。<br>
   各カードは、配信日とタイトル（押すと動画へ）、出演メンバー（グループ）、プレイしたゲーム（ジャンル）で構成されています。<br>
-  グループ・メンバー名での絞り込み、配信日・タイトルでの並び替え、フリーワード検索（メンバー・グループ・ゲーム・ジャンル）ができます。<strong>メンバー名をクリックすると、そのメンバーで絞り込めます。</strong><br>
+  グループ・メンバー名・ゲームジャンルでの絞り込み、配信日・タイトルでの並び替え、フリーワード検索（メンバー・グループ・ゲーム・ジャンル）ができます。<strong>メンバー名をクリックすると、そのメンバーで絞り込めます。</strong><br>
 
 <div id="gamelive-controls">
   <input type="text" id="gl-search" placeholder="メンバー・グループ・ゲーム・ジャンルで絞り込み…" oninput="glFilter()">
@@ -22,6 +22,10 @@
   <select id="gl-name" onchange="glFilter()">
     <option value="">すべてのメンバー</option>
     <?php include $_SERVER['DOCUMENT_ROOT'] . '/Spreadsheet/gamelive_names.php'; ?>
+  </select>
+  <select id="gl-genre" onchange="glFilter()">
+    <option value="">すべてのジャンル</option>
+    <?php include $_SERVER['DOCUMENT_ROOT'] . '/Spreadsheet/gamelive_genres.php'; ?>
   </select>
   <select id="gl-sort" onchange="glFilter()">
     <option value="date-desc">配信日が新しい順</option>
@@ -46,6 +50,7 @@
       title: el.getAttribute('data-title') || '',
       groups: (el.getAttribute('data-groups') || '').split('|'),
       names: (el.getAttribute('data-names') || '').split('|'),
+      genres: (el.getAttribute('data-genres') || '').split('|'),
       search: (el.getAttribute('data-search') || '').toLowerCase(),
     };
   });
@@ -54,13 +59,15 @@
     var q = document.getElementById('gl-search').value.toLowerCase();
     var grFilter = document.getElementById('gl-group').value;
     var nmFilter = document.getElementById('gl-name').value;
+    var gnFilter = document.getElementById('gl-genre').value;
     var sort = document.getElementById('gl-sort').value;
 
     var filtered = allCards.filter(function(c) {
       var matchQ = !q || c.search.indexOf(q) !== -1;
       var matchGr = !grFilter || c.groups.indexOf(grFilter) !== -1;
       var matchNm = !nmFilter || c.names.indexOf(nmFilter) !== -1;
-      return matchQ && matchGr && matchNm;
+      var matchGn = !gnFilter || c.genres.indexOf(gnFilter) !== -1;
+      return matchQ && matchGr && matchNm && matchGn;
     });
 
     filtered.sort(function(a, b) {

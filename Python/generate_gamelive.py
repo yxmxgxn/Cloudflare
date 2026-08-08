@@ -34,6 +34,7 @@ REPO_ROOT = Path(__file__).resolve().parent.parent  # Python/ の親
 OUTPUT_CARDS = REPO_ROOT / "Spreadsheet" / "gamelive_cards.php"
 OUTPUT_GROUPS = REPO_ROOT / "Spreadsheet" / "gamelive_groups.php"
 OUTPUT_NAMES = REPO_ROOT / "Spreadsheet" / "gamelive_names.php"
+OUTPUT_GENRES = REPO_ROOT / "Spreadsheet" / "gamelive_genres.php"
 OUTPUT_GENERATED = REPO_ROOT / "Generated" / "gamelive_generated.php"
 
 
@@ -108,13 +109,14 @@ def build_members_block(members: list[dict]) -> tuple[str, list[str], list[str]]
     return html_block, all_groups, all_names
 
 
-def build_games_block(games: list[dict]) -> tuple[str, list[str]]:
-    """動画に紐づくゲーム行から、表示用HTML・検索用文字列リストを作る。
+def build_games_block(games: list[dict]) -> tuple[str, list[str], list[str]]:
+    """動画に紐づくゲーム行から、表示用HTML・検索用文字列リスト・ジャンル一覧を作る。
 
     ゲームは1行ずつ「ゲーム名 (ジャンル)」で下に続けて表示する。
     """
     lines = []
     search_terms: list[str] = []
+    genres: list[str] = []
     for g in games:
         game = (g.get("Game") or "").strip()
         if not game:
@@ -123,6 +125,7 @@ def build_games_block(games: list[dict]) -> tuple[str, list[str]]:
         search_terms.append(game)
         if genre:
             search_terms.append(genre)
+            genres.append(genre)
             lines.append(
                 f'<p class="gl-game">{esc(game)}'
                 f' <span class="gl-genre">({esc(genre)})</span></p>'
@@ -131,7 +134,7 @@ def build_games_block(games: list[dict]) -> tuple[str, list[str]]:
             lines.append(f'<p class="gl-game">{esc(game)}</p>')
 
     html_block = f'<div class="gl-games">{"".join(lines)}</div>' if lines else ""
-    return html_block, search_terms
+    return html_block, search_terms, genres
 
 
 def build_cards(
@@ -168,7 +171,7 @@ def build_cards(
 
         # その下: ゲーム
         games = games_by_id.get(aid, [])
-        games_html, game_terms = build_games_block(games)
+        games_html, game_terms, genres = build_games_block(games)
 
         search = " ".join(
             [a.get("Title") or "", " ".join(names), " ".join(groups), " ".join(game_terms)]
@@ -178,6 +181,7 @@ def build_cards(
             f'<div class="gl-card" data-date="{date_sort}" data-title="{title}"'
             f' data-groups="{esc("|".join(dict.fromkeys(groups)))}"'
             f' data-names="{esc("|".join(dict.fromkeys(names)))}"'
+            f' data-genres="{esc("|".join(dict.fromkeys(genres)))}"'
             f' data-search="{esc(search)}">'
             f"{head}{members_html}{games_html}"
             "</div>"
@@ -211,6 +215,7 @@ def main():
 
     groups = sorted({(m.get("Group") or "").strip() for m in member_rows if (m.get("Group") or "").strip()})
     names = sorted({(m.get("Member") or "").strip() for m in member_rows if (m.get("Member") or "").strip()})
+    genres = sorted({(g.get("Genre") or "").strip() for g in game_rows if (g.get("Genre") or "").strip()})
 
     stamp = f"<!-- generated: {datetime.now(timezone.utc).isoformat()} -->\n"
 
@@ -222,6 +227,8 @@ def main():
         f.write(stamp + build_options(groups) + "\n")
     with open(OUTPUT_NAMES, "w", encoding="utf-8") as f:
         f.write(stamp + build_options(names) + "\n")
+    with open(OUTPUT_GENRES, "w", encoding="utf-8") as f:
+        f.write(stamp + build_options(genres) + "\n")
     with open(OUTPUT_GENERATED, "w", encoding="utf-8") as f:
         f.write(f'<p class="last-update">データ取得日：{generated}</p>\n')
 
