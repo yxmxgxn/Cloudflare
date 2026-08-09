@@ -1,4 +1,4 @@
-<!-- generated: 2026-08-08T18:26:30.851529+00:00 -->
+<!-- generated: 2026-08-09T18:30:09.562080+00:00 -->
 <tr data-selector="松永里愛"><td><a href="https://www.tbsradio.jp/articles/110826/" target="_blank" rel="noopener noreferrer">2026/08/02</a></td><td>POP IN 2 / B小町</td><td>松永里愛</td><td>甘～い曲</td></tr>
 <tr data-selector="遠藤彩加里"><td><a href="https://www.tbsradio.jp/articles/110826/" target="_blank" rel="noopener noreferrer">2026/08/02</a></td><td>キス・ミー・パティシエ / CANDY TUNE</td><td>遠藤彩加里</td><td>甘～い曲</td></tr>
 <tr data-selector="松永里愛&amp;遠藤彩加里"><td><a href="https://www.tbsradio.jp/articles/110826/" target="_blank" rel="noopener noreferrer">2026/08/02</a></td><td>禁断少女 / Juice＝Juice</td><td>松永里愛&amp;遠藤彩加里</td><td>甘～い曲</td></tr>
