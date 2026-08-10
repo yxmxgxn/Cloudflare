@@ -1,6 +1,7 @@
-<!-- generated: 2026-08-09T18:30:10.787216+00:00 -->
+<!-- generated: 2026-08-10T18:46:04.092886+00:00 -->
 <option value="北海道">北海道</option>
 <option value="岩手県">岩手県</option>
+<option value="宮城県">宮城県</option>
 <option value="秋田県">秋田県</option>
 <option value="福島県">福島県</option>
 <option value="茨城県">茨城県</option>
