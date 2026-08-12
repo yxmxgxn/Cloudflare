@@ -1,4 +1,4 @@
-<!-- generated: 2026-08-08T02:53:12.247834+00:00 -->
+<!-- generated: 2026-08-12T15:53:14.392578+00:00 -->
 <option value="上國料萌衣">上國料萌衣</option>
 <option value="上村麗菜">上村麗菜</option>
 <option value="中山夏月姫">中山夏月姫</option>
@@ -35,7 +35,6 @@
 <option value="島川波菜">島川波菜</option>
 <option value="川村文乃">川村文乃</option>
 <option value="広本瑠璃">広本瑠璃</option>
-<option value="広本瑠璃、">広本瑠璃、</option>
 <option value="広瀬彩海">広瀬彩海</option>
 <option value="後藤真希">後藤真希</option>
 <option value="斉藤円香">斉藤円香</option>
