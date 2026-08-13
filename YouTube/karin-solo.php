@@ -159,8 +159,12 @@
   <h3>キケンな魔法</h3>
   <ul>
     <li><a href="https://www.youtube.com/watch?v=MG8n0fmkOfA&t=923s" target="_blank" rel="noopener noreferrer">M-line Special 2025 Spring～move it on～（2025/5/25 横浜Bay Hall）</a></li>
-    <li><a href="https://www.youtube.com/watch?v=3B132NwtK0k" target="_blank" rel="noopener noreferrer">宮本佳林 宮本佳林 LIVE 2025～魔法のたからばこ～（2025/11/24 SOUND SHOWER ark 清水）</ul>
+    <li><a href="https://www.youtube.com/watch?v=3B132NwtK0k" target="_blank" rel="noopener noreferrer">宮本佳林 LIVE 2025～魔法のたからばこ～（2025/11/24 SOUND SHOWER ark 清水）</li>
+  </ul>
   <h3>ビースト!</h3>
+  <ul>
+    <li><a href="https://www.youtube.com/watch?v=CalM6dEhg5c&t=1124s" target="_blank" rel="noopener noreferrer">4thシングル発売記念 ミニライブ&一言お話し会イベント（2025/6/11 池袋・サンシャインシティ 噴水広場）</a></li>
+  </ul>
   <h3>SUPER IDOL -Especial-(Single Ver.)</h3>
   <ul>
     <li><a href="https://www.youtube.com/watch?v=jfApSDdHTqo&t=853s" target="_blank" rel="noopener noreferrer">4thシングル発売記念 ミニライブ&一言お話し会イベント（2025/6/11 池袋・サンシャインシティ 噴水広場）</a></li>
@@ -233,35 +237,35 @@
   往年の名曲をソロ歌唱で披露するカバーコンサート～The Ballast～のダイジェスト映像です。宮本佳林さんが歌ってる部分にリンクしました
   <h3>M / PRINCESS PRINCESS</h3>
   <ul>
-    <li><a href="https://www.youtube.com/watch?v=weVef0_y-4g0G1MFbU1Fk8t=18s" target="_blank" rel="noopener noreferrer">さいたま市民会館おおみや（2020/10/11）</a></li>
-    <li><a href="https://www.youtube.com/watch?v=6wFxeVZSNgg0G1MFbU1Fk8&t=174s" target="_blank" rel="noopener noreferrer">Zepp Tokyo（2020/12/6）</a></li>
+    <li><a href="https://www.youtube.com/watch?v=weVef0_y-4g0&t=18s" target="_blank" rel="noopener noreferrer">さいたま市民会館おおみや（2020/10/11）</a></li>
+    <li><a href="https://www.youtube.com/watch?v=6wFxeVZSNgg0&t=174s" target="_blank" rel="noopener noreferrer">Zepp Tokyo（2020/12/6）</a></li>
   </ul>
   <h3>オリビアを聴きながら / 杏里</h3>
   <ul>
-    <li><a href="https://www.youtube.com/watch?v=t8dlLao0K9Y0G1MFbU1Fk8&t=680s" target="_blank" rel="noopener noreferrer">Zepp Namba（2020/9/22）</a></li>
-    <li><a href="https://www.youtube.com/watch?v=WsD3uzW20qg0G1MFbU1Fk8&t=260s" target="_blank" rel="noopener noreferrer">愛知県芸術劇場（2020/10/25）</a></li>
-    <li><a href="https://www.youtube.com/watch?v=XV-o0jJGmvI0G1MFbU1Fk8&113s" target="_blank" rel="noopener noreferrer">NTNシティホール（2020/11/21）</a></li>
+    <li><a href="https://www.youtube.com/watch?v=t8dlLao0K9Y0&t=680s" target="_blank" rel="noopener noreferrer">Zepp Namba（2020/9/22）</a></li>
+    <li><a href="https://www.youtube.com/watch?v=WsD3uzW20qg0&t=260s" target="_blank" rel="noopener noreferrer">愛知県芸術劇場（2020/10/25）</a></li>
+    <li><a href="https://www.youtube.com/watch?v=XV-o0jJGmvI0&t=113s" target="_blank" rel="noopener noreferrer">NTNシティホール（2020/11/21）</a></li>
   </ul>
   <h3>スローモーション / 中森明菜</h3>
   <ul>
-    <li><a href="https://www.youtube.com/watch?v=S3pjBix-1mI0G1MFbU1Fk8&t=18s" target="_blank" rel="noopener noreferrer">福井県県民ホール（2020/11/8）</a></li>
+    <li><a href="https://www.youtube.com/watch?v=S3pjBix-1mI0&t=18s" target="_blank" rel="noopener noreferrer">福井県県民ホール（2020/11/8）</a></li>
    </ul>
   <h3>ひこうき雲 / 松任谷由実</h3>
   <ul>
-    <li><a href="https://www.youtube.com/watch?v=Nehnkomh0xM0G1MFbU1Fk8&t=18s" target="_blank" rel="noopener noreferrer">ハーモニーホール座間（2020/10/18）</a></li>
+    <li><a href="https://www.youtube.com/watch?v=Nehnkomh0xM0&t=18s" target="_blank" rel="noopener noreferrer">ハーモニーホール座間（2020/10/18）</a></li>
   </ul>
   <h3>やさしさで溢れるように / JUJU</h3>
   <ul>
-    <li><a href="https://www.youtube.com/watch?v=KhlcOR-oLgU0G1MFbU1Fk8&t=175s" target="_blank" rel="noopener noreferrer">オリックス劇場（2020/11/7）</a></li>
-    <li><a href="https://www.youtube.com/watch?v=rwrXvR0CfBE0G1MFbU1Fk8&t=140s" target="_blank" rel="noopener noreferrer">名古屋市公会堂（2020/11/22）</a></li>
-    <li><a href="https://www.youtube.com/watch?v=lnd_o6ALeGg0G1MFbU1Fk8&t=793s" target="_blank" rel="noopener noreferrer">セルリアンタワー（2020/11/23）</a></li>
-    <li><a href="https://www.youtube.com/watch?v=kRqYs1ZZ85A0G1MFbU1Fk8&t=566s" target="_blank" rel="noopener noreferrer">中野サンプラザ（2020/11/29）</a></li>
+    <li><a href="https://www.youtube.com/watch?v=KhlcOR-oLgU0&t=175s" target="_blank" rel="noopener noreferrer">オリックス劇場（2020/11/7）</a></li>
+    <li><a href="https://www.youtube.com/watch?v=rwrXvR0CfBE0&t=140s" target="_blank" rel="noopener noreferrer">名古屋市公会堂（2020/11/22）</a></li>
+    <li><a href="https://www.youtube.com/watch?v=lnd_o6ALeGg0&t=793s" target="_blank" rel="noopener noreferrer">セルリアンタワー（2020/11/23）</a></li>
+    <li><a href="https://www.youtube.com/watch?v=kRqYs1ZZ85A0&t=566s" target="_blank" rel="noopener noreferrer">中野サンプラザ（2020/11/29）</a></li>
    </ul>
   <h3>明日への手紙 / 手嶌葵</h3>
   <ul>
-    <li><a href="https://www.youtube.com/watch?v=hspf7W89p5A0G1MFbU1Fk8&t=545s" target="_blank" rel="noopener noreferrer">KOTORIホール（2020/9/26）</a></li>
-    <li><a href="https://www.youtube.com/watch?v=Q8CrgHvWVb80G1MFbU1Fk8&t=21s" target="_blank" rel="noopener noreferrer">Extra Number 日本武道館（2020/10/12）</a></li>
-    <li><a href="https://www.youtube.com/watch?v=eBwtcaieCMM0G1MFbU1Fk8&t=227s" target="_blank" rel="noopener noreferrer">松戸森のホール21（2020/12/5）</a></li>
+    <li><a href="https://www.youtube.com/watch?v=hspf7W89p5A0&t=545s" target="_blank" rel="noopener noreferrer">KOTORIホール（2020/9/26）</a></li>
+    <li><a href="https://www.youtube.com/watch?v=Q8CrgHvWVb80&t=21s" target="_blank" rel="noopener noreferrer">Extra Number 日本武道館（2020/10/12）</a></li>
+    <li><a href="https://www.youtube.com/watch?v=eBwtcaieCMM0&t=227s" target="_blank" rel="noopener noreferrer">松戸森のホール21（2020/12/5）</a></li>
   </ul>
 
 </main>
