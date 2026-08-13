@@ -1,4 +1,4 @@
-<!-- generated: 2026-08-12T18:53:11.518490+00:00 -->
+<!-- generated: 2026-08-13T18:53:46.675623+00:00 -->
 <option value="BEYOOOOONDS">BEYOOOOONDS</option>
 <option value="Berryz工房">Berryz工房</option>
 <option value="Buono!">Buono!</option>
