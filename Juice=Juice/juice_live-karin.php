@@ -22,7 +22,7 @@
     <li><a href="https://www.youtube.com/watch?v=t6fWdElyxVs&t=325s" target="_blank" rel="noopener noreferrer">New Vocal Ver. 2020/12/31 中野サンプラザ</a></li>
   </ul>
   <h3>25歳永遠説</h3><ul>
-    <<li><a href="https://www.youtube.com/watch?v=J7i9s17-WHw&t=698s" target="_blank" rel="noopener noreferrer">2020/4/27 ハーモニーホール座間</a></li>
+    <li><a href="https://www.youtube.com/watch?v=J7i9s17-WHw&t=698s" target="_blank" rel="noopener noreferrer">2020/4/27 ハーモニーホール座間</a></li>
   </ul>
   <h3>Borderline</h3><ul>
     <li><a href="https://www.youtube.com/watch?v=dRLyIXD8zGA&t=1346s" target="_blank" rel="noopener noreferrer">2020/3/30 幕張メッセ</a></li>
@@ -229,5 +229,5 @@
     <li><a href="https://www.youtube.com/watch?v=3lrMCnvjbK4&t=2330s" target="_blank" rel="noopener noreferrer">香水（2015/08/19 柏PALOOZA）</a></li>
   </ul>
 </main>
-<div class="last-update">最終更新日：2026/05/17</div>
+<div class="last-update">最終更新日：2026/08/14</div>
 <?php include $_SERVER['DOCUMENT_ROOT'] . '/common/footer.php'; ?>
