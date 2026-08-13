@@ -1,7 +1,6 @@
-<!-- generated: 2026-08-13T19:39:11.185649+00:00 -->
+<!-- generated: 2026-08-13T19:40:20.003823+00:00 -->
 <option value="BEYOOOOONDS">BEYOOOOONDS</option>
 <option value="Juice=Juice">Juice=Juice</option>
-<option value="Juice＝Juice">Juice＝Juice</option>
 <option value="OCHA NORMA">OCHA NORMA</option>
 <option value="こぶしファクトリー">こぶしファクトリー</option>
 <option value="つばきファクトリー">つばきファクトリー</option>
