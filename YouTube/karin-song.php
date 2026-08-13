@@ -50,7 +50,7 @@
         2021/2/1
       </td>
       <td rowspan="3" class="karin-disco-title" class="karin-disco-title">
-        <a href="https://www.jp-r.co.jp/karin_miyamoto/release/6572/" target="_blank" rel="noopener noreferrer">どうして僕らにはやる気がないのか(2021)/氷点下/規格外のロマンス</a>
+        <a href="https://jp-r.co.jp/karin_miyamoto/release/6572/" target="_blank" rel="noopener noreferrer">どうして僕らにはやる気がないのか(2021)/氷点下/規格外のロマンス</a>
       </td>
       <td>
         <a href="https://www.youtube.com/watch?v=ZG0c-LvqexU" target="_blank" rel="noopener noreferrer">どうして僕らにはやる気がないのか(2021)▶️</a>・<a href="https://www.youtube.com/watch?v=KIVaJ-2PLWg" target="_blank" rel="noopener noreferrer">🎥</a>
@@ -318,6 +318,20 @@
       </td>
     </tr>
     <tr>
+      <td>
+        <a href="https://www.youtube.com/watch?v=JpqJvTROc6E&t=991s" target="_blank" rel="noopener noreferrer">トランジットタイム🎥</a>
+      </td>
+      <td>
+        平井佑果
+      </td>
+      <td>
+        藤田卓也
+      </td>
+      <td>
+        藤田卓也
+      </td>
+    </tr>
+    <tr>
       <td rowspan="4" class="karin-disco-title">
         5th
       </td>
@@ -370,7 +384,7 @@
     </tr>
     <tr>
       <td>
-        <a href="https://www.youtube.com/watch?v=dXhiDRnP1aQ" target="_blank" rel="noopener noreferrer">Spinel Hearts🎥</a></a>
+        <a href="https://www.youtube.com/watch?v=dXhiDRnP1aQ" target="_blank" rel="noopener noreferrer">Spinel Hearts🎥</a>
       </td>
       <td>
         大森祥子
@@ -433,7 +447,7 @@
         2022/10/12
       </td>
       <td rowspan="15" class="karin-disco-title">
-        <a href="https://www.jp-r.co.jp/karin_miyamoto/release/6797/" target="_blank" rel="noopener noreferrer">ヒトリトイロ</a>
+        <a href="https://jp-r.co.jp/karin_miyamoto/release/6797/" target="_blank" rel="noopener noreferrer">ヒトリトイロ</a>
       </td>
       <td>
         1
@@ -694,7 +708,7 @@
         2024/5/22
       </td>
       <td rowspan="13" class="karin-disco-title">
-        <a href="https://www.jp-r.co.jp/karin_miyamoto/release/7192/" target="_blank" rel="noopener noreferrer">Spancall</a>
+        <a href="https://jp-r.co.jp/karin_miyamoto/release/7192/" target="_blank" rel="noopener noreferrer">Spancall</a>
       </td>
       <td>
         1
@@ -942,7 +956,7 @@
         2019/10/18
       </td>
       <td>
-        <a href="https://www.jp-r.co.jp/karin_miyamoto/release/6176/" target="_blank" rel="noopener noreferrer">どうして僕らにはやる気がないのか</a>
+        <a href="https://jp-r.co.jp/karin_miyamoto/release/6176/" target="_blank" rel="noopener noreferrer">どうして僕らにはやる気がないのか</a>
       </td>
       <td>
         永井葉子
@@ -959,7 +973,7 @@
         2020/12/10
       </td>
       <td>
-        <a href="https://www.jp-r.co.jp/karin_miyamoto/release/6417/" target="_blank" rel="noopener noreferrer">未来のフィラメント</a>
+        <a href="https://jp-r.co.jp/karin_miyamoto/release/6417/" target="_blank" rel="noopener noreferrer">未来のフィラメント</a>
       </td>
       <td>
         児玉雨子
@@ -1020,7 +1034,7 @@
         2022/8/13
       </td>
       <td>
-        <a href="https://www.jp-r.co.jp/karin_miyamoto/release/6807/" target="_blank" rel="noopener noreferrer">ほたる祭りの日</a>・<a href="https://www.youtube.com/watch?v=Bn14XigbuyI" target="_blank" rel="noopener noreferrer">▶️</a>・<a href="https://www.youtube.com/watch?v=QNsbQulWZxU&t=208s" target="_blank" rel="noopener noreferrer">🎥</a>
+        <a href="https://jp-r.co.jp/karin_miyamoto/release/6807/" target="_blank" rel="noopener noreferrer">ほたる祭りの日</a>・<a href="https://www.youtube.com/watch?v=Bn14XigbuyI" target="_blank" rel="noopener noreferrer">▶️</a>・<a href="https://www.youtube.com/watch?v=QNsbQulWZxU&t=208s" target="_blank" rel="noopener noreferrer">🎥</a>
       </td>
       <td>
         佐藤優樹×宮本佳林
@@ -1060,7 +1074,7 @@
         2024/3/1
       </td>
       <td>
-        <a href="https://www.jp-r.co.jp/karin_miyamoto/release/7168/" target="_blank" rel="noopener noreferrer">C\C（シンデレラ\コンプレックス）'24</a>・<a href="https://www.youtube.com/watch?v=HuEPbDAyoXw" target="_blank" rel="noopener noreferrer">🎥</a>
+        <a href="https://jp-r.co.jp/karin_miyamoto/release/7168/" target="_blank" rel="noopener noreferrer">C\C（シンデレラ\コンプレックス）'24</a>・<a href="https://www.youtube.com/watch?v=HuEPbDAyoXw" target="_blank" rel="noopener noreferrer">🎥</a>
       </td>
       <td>
         SIOOM (from M-line Music) （宮本佳林・小片リサ・佐藤優樹・稲場愛香・小関舞）
@@ -1105,7 +1119,7 @@
         2024/5/22
       </td>
       <td rowspan="9" class="karin-disco-title">
-        <a href="https://www.jp-r.co.jp/karin_miyamoto/release/7371/" target="_blank" rel="noopener noreferrer">STAGE VANGUARD「ザ☆アイドル!」オリジナルサウンドトラック</a>
+        <a href="https://jp-r.co.jp/karin_miyamoto/release/7371/" target="_blank" rel="noopener noreferrer">STAGE VANGUARD「ザ☆アイドル!」オリジナルサウンドトラック</a>
       </td>
       <td>
         1
