@@ -233,7 +233,7 @@
     <li><a href="https://www.youtube.com/watch?v=cwDuYOGUvVU" target="_blank" rel="noopener noreferrer">宮本佳林 Sweet Box 2026～Happy Valentine's Day!～「Sugar Drop」（2026/2/15 第一ホテル両国「清澄」）</a></li>
   </ul>
 
-  <h2>Hello! Project 202～The Ballad～ Digest</h2>
+  <h2>Hello! Project 2020 ～The Ballad～ Digest</h2>
   往年の名曲をソロ歌唱で披露するカバーコンサート～The Ballast～のダイジェスト映像です。宮本佳林さんが歌ってる部分にリンクしました
   <h3>M / PRINCESS PRINCESS</h3>
   <ul>
