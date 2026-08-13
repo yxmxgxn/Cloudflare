@@ -38,7 +38,7 @@
     </tr>
     <tr>
       <td rowspan="3" class="karin-disco-title">
-        1st 2021/2/1<br>
+        <span style="display: block; text-align: center;">1st　2021/2/1</span>
         <a href="https://jp-r.co.jp/karin_miyamoto/release/6572/" target="_blank" rel="noopener noreferrer">どうして僕らにはやる気がないのか(2021)/氷点下/規格外のロマンス<br></a>
       </td>
       <td>
@@ -84,7 +84,7 @@
     </tr>
     <tr>
       <td rowspan="5" class="karin-disco-title">
-        2nd 2022/6/22<br>
+        <span style="display: block; text-align: center;">2nd　2022/6/22</span>
         <a href="https://jp-r.co.jp/karin_miyamoto/release/6746/" target="_blank" rel="noopener noreferrer">なんてったって I Love You/ハウリング</a>
       </td>
       <td>
@@ -158,7 +158,7 @@
     </tr>
     <tr>
       <td rowspan="5" class="karin-disco-title">
-        3rd 2023/11/8<br>
+        <span style="display: block; text-align: center;">3rd　2023/11/8</span>
         <a href="https://jp-r.co.jp/karin_miyamoto/release/7427/" target="_blank" rel="noopener noreferrer">バンビーナ・バンビーノ/Lonely Bus</a>
       </td>
       <td>
@@ -233,7 +233,7 @@
     </tr>
     <tr>
       <td rowspan="5" class="karin-disco-title">
-        4th 2025/06/11<br>
+        <span style="display: block; text-align: center;">4th　2025/06/11</span>
         <a href="https://jp-r.co.jp/karin_miyamoto/release/7427/" target="_blank" rel="noopener noreferrer">キケンな魔法/ビースト！</a>
       </td>
       <td>
@@ -307,7 +307,7 @@
     </tr>
     <tr>
       <td rowspan="4" class="karin-disco-title">
-        5th 2026/07/29<br>
+        <span style="display: block; text-align: center;">5th　2026/07/29</span>
         <a href="https://jp-r.co.jp/karin_miyamoto/release/7681/" target="_blank" rel="noopener noreferrer">HANAKIN/シャニカマー</a>
       </td>
       <td>
