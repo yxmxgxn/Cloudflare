@@ -20,14 +20,8 @@
   <h2>シングル</h2>
    <table id="karin-disco">
     <tr>
-      <th>
-        
-      </th>
-      <th>
-        発売日
-      </th>
       <th class="karin-disco-head">
-        タイトル
+        タイトル・発売日
       </th>
       <th class="karin-disco-head">
         曲名
@@ -44,13 +38,8 @@
     </tr>
     <tr>
       <td rowspan="3" class="karin-disco-title">
-        1st
-      </td>
-      <td rowspan="3" class="karin-disco-title">
-        2021/2/1
-      </td>
-      <td rowspan="3" class="karin-disco-title" class="karin-disco-title">
-        <a href="https://jp-r.co.jp/karin_miyamoto/release/6572/" target="_blank" rel="noopener noreferrer">どうして僕らにはやる気がないのか(2021)/氷点下/規格外のロマンス</a>
+        1st 2021/2/1<br>
+        <a href="https://jp-r.co.jp/karin_miyamoto/release/6572/" target="_blank" rel="noopener noreferrer">どうして僕らにはやる気がないのか(2021)/氷点下/規格外のロマンス<br></a>
       </td>
       <td>
         <a href="https://www.youtube.com/watch?v=ZG0c-LvqexU" target="_blank" rel="noopener noreferrer">どうして僕らにはやる気がないのか(2021)▶️</a>・<a href="https://www.youtube.com/watch?v=KIVaJ-2PLWg" target="_blank" rel="noopener noreferrer">🎥</a>
@@ -95,12 +84,7 @@
     </tr>
     <tr>
       <td rowspan="5" class="karin-disco-title">
-        2nd
-      </td>
-      <td rowspan="5" class="karin-disco-title">
-        2022/6/22
-      </td>
-      <td rowspan="5" class="karin-disco-title" class="karin-disco-title">
+        2nd 2022/6/22<br>
         <a href="https://jp-r.co.jp/karin_miyamoto/release/6746/" target="_blank" rel="noopener noreferrer">なんてったって I Love You/ハウリング</a>
       </td>
       <td>
@@ -174,12 +158,7 @@
     </tr>
     <tr>
       <td rowspan="5" class="karin-disco-title">
-        3rd
-      </td>
-      <td rowspan="5" class="karin-disco-title">
-        2023/11/8
-      </td>
-      <td rowspan="5" class="karin-disco-title" class="karin-disco-title">
+        3rd 2023/11/8<br>
         <a href="https://jp-r.co.jp/karin_miyamoto/release/7427/" target="_blank" rel="noopener noreferrer">バンビーナ・バンビーノ/Lonely Bus</a>
       </td>
       <td>
@@ -254,12 +233,7 @@
     </tr>
     <tr>
       <td rowspan="5" class="karin-disco-title">
-        4th
-      </td>
-      <td rowspan="5" class="karin-disco-title">
-        2025/06/11
-      </td>
-      <td rowspan="5" class="karin-disco-title" class="karin-disco-title">
+        4th 2025/06/11<br>
         <a href="https://jp-r.co.jp/karin_miyamoto/release/7427/" target="_blank" rel="noopener noreferrer">キケンな魔法/ビースト！</a>
       </td>
       <td>
@@ -333,12 +307,7 @@
     </tr>
     <tr>
       <td rowspan="4" class="karin-disco-title">
-        5th
-      </td>
-      <td rowspan="4" class="karin-disco-title">
-        2026/07/29
-      </td>
-      <td rowspan="4" class="karin-disco-title" class="karin-disco-title">
+        5th 2026/07/29<br>
         <a href="https://jp-r.co.jp/karin_miyamoto/release/7681/" target="_blank" rel="noopener noreferrer">HANAKIN/シャニカマー</a>
       </td>
       <td>
