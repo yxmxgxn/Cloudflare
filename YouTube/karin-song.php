@@ -370,20 +370,6 @@
     </tr>
     <tr>
       <td>
-        <a href="https://www.youtube.com/watch?v=KWg2XLlVudk" target="_blank" rel="noopener noreferrer">SUPER IDOL -Especial-(Single Ver.)▶️</a>・<a href="https://www.youtube.com/watch?v=jfApSDdHTqo&t=853s" target="_blank" rel="noopener noreferrer">🎥</a>
-      </td>
-      <td>
-        西野蒟蒻
-      </td>
-      <td>
-        石黑剛/常楽寺澪
-      </td>
-      <td>
-        大久保薫
-      </td>
-    </tr>
-    <tr>
-      <td>
         <a href="https://www.youtube.com/watch?v=dXhiDRnP1aQ" target="_blank" rel="noopener noreferrer">Spinel Hearts🎥</a>
       </td>
       <td>
