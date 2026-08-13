@@ -159,7 +159,7 @@
   <h3>キケンな魔法</h3>
   <ul>
     <li><a href="https://www.youtube.com/watch?v=MG8n0fmkOfA&t=923s" target="_blank" rel="noopener noreferrer">M-line Special 2025 Spring～move it on～（2025/5/25 横浜Bay Hall）</a></li>
-    <li><a href="https://www.youtube.com/watch?v=3B132NwtK0k" target="_blank" rel="noopener noreferrer">宮本佳林 LIVE 2025～魔法のたからばこ～（2025/11/24 SOUND SHOWER ark 清水）</li>
+    <li><a href="https://www.youtube.com/watch?v=3B132NwtK0k" target="_blank" rel="noopener noreferrer">宮本佳林 LIVE 2025～魔法のたからばこ～（2025/11/24 SOUND SHOWER ark 清水）</a></li>
   </ul>
   <h3>ビースト!</h3>
   <ul>
