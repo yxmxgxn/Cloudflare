@@ -32,7 +32,7 @@
   <ul>
     <li><a href="https://www.youtube.com/watch?v=v0ei3Dge4-8&t=1264s" target="_blank" rel="noopener noreferrer">宮本佳林 LIVE 2021春～アマリリス～</a></li>
     <li><a href="https://www.youtube.com/watch?v=Drpdvt3u5RQ" target="_blank" rel="noopener noreferrer">宮本佳林 LIVE 2022春～アメジスト～（2022/5/22 めぐろパーシモンホール）</a></li>
-    <li><a href="https://www.youtube.com/watch?v=SwHEPkBgrFY&t=848s" target="_blank" rel="noopener noreferrer">宮本佳林 LIVE 2024～TWiNKLE～<（2022/5/22 めぐろパーシモンホール）</a></li>
+    <li><a href="https://www.youtube.com/watch?v=SwHEPkBgrFY&t=848s" target="_blank" rel="noopener noreferrer">宮本佳林 LIVE 2024～TWiNKLE～（2022/5/22 めぐろパーシモンホール）</a></li>
   </ul>
   <h3>どうして僕らにはやる気がないのか(2021)</h3>
   <ul>
@@ -179,6 +179,10 @@
   </ul>
 
   <h2>5th HANAKIN/シャニカマー</h2>
+  <h3>HANAKIN</h3>
+  <ul>
+    <li><a href="https://www.youtube.com/watch?v=62G0epfiL-U" target="_blank" rel="noopener noreferrer">5th シングル発売記念イベント（2026/7/16 サンシャインシティ 噴水広場）</a></li>
+  </ul>
   <h3>Spinel Hearts</h3>
   <ul>
     <li><a href="https://www.youtube.com/watch?v=dXhiDRnP1aQ" target="_blank" rel="noopener noreferrer">宮本佳林 LIVE 2025～魔法のたからばこ～（2025/11/24 SOUND SHOWER ark 清水）</a></li>

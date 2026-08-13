@@ -55,7 +55,7 @@
   <div class="indextop"><a href="/Juice=Juice/juice-documentary"><svg style="vertical-align: -4px;  margin-right: 4px"width="20" height="20" viewBox="0 0 64 44" xmlns="http://www.w3.org/2000/svg"><rect width="64" height="44" rx="10" fill="#FF0000"/><polygon points="22,8 54,22 22,36" fill="white"/></svg>Juice=Juice 密着映像まとめ</a></div>
 
   <h2>宮本佳林 X</h2>
-  <h3>宮本佳林さんがハロープロジェクトサブスク解禁にともない毎日ハロプロの曲を1曲紹介する企画のまとめです</h3>
+  <h3>宮本佳林さんがハロプロサブスク解禁にともない毎日ハロプロの曲を1曲紹介する企画のまとめです</h3>
   <div class="indextop"><a href="/X/karin-hello"><svg style="vertical-align: -4px;  margin-right: 4px"width="20" height="20" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><rect width="24" height="24" rx="4" fill="currentColor"/><path d="M17.5 3.5H20.5L14.5 10.5L21.5 20.5H16L11.5 14.5L6.5 20.5H3.5L9.8 13L3 3.5H8.7L12.8 9L17.5 3.5Z" fill="white"/><path d="M16.5 19L5.5 5H7.5L18.5 19H16.5Z" fill="white"/></svg>宮本佳林 X #佳林の１日１ハロまとめ</a></div>  
   
   <h3>宮本佳林さんXでボカロ曲を紹介しているもののまとめです</h3>
@@ -84,8 +84,8 @@
   <h3>コピンク*名義でアルバムコピンクス！メロディーズ〜star chart〜に収録されたコピンクス！一言集の書き起こしです</h3>
   <div class="indextop"><a href="/kopinks"><svg style="vertical-align: -4px;  margin-right: 4px"width="20" height="20" viewBox="-90 -90 180 180" xmlns="http://www.w3.org/2000/svg"><circle cx="0" cy="0" r="80" fill="none" stroke="currentColor" stroke-width="6"/><circle cx="0" cy="0" r="55" fill="none" stroke="currentColor" stroke-width="1.5" opacity="0.4"/><circle cx="0" cy="0" r="16" fill="none" stroke="currentColor" stroke-width="6"/><circle cx="0" cy="0" r="6" fill="currentColor"/></svg>コピンク* コピンクス！一言集</a></div>
 
-  <h2>ハロープロジェクト</h2>
-  <h3>ハロープロジェクトのメンバーの・卒業公演の場所・デビュー・卒業日・在籍日数をまとめです</h3>
+  <h2>ハロー！プロジェクト</h2>
+  <h3>ハロープロジェクトのメンバーの卒業公演の場所・デビュー・卒業日・在籍日数をまとめです</h3>
   <div class="indextop"><a href="/members_table"><svg style="vertical-align: -3px;  margin-right: 4px"width="20" height="20" viewBox="-32 -32 64 64" xmlns="http://www.w3.org/2000/svg"><g fill="#E8789A"><ellipse cx="0" cy="-22" rx="8" ry="12" transform="rotate(0)"/><ellipse cx="0" cy="-22" rx="8" ry="12" transform="rotate(72)"/><ellipse cx="0" cy="-22" rx="8" ry="12" transform="rotate(144)"/><ellipse cx="0" cy="-22" rx="8" ry="12" transform="rotate(216)"/><ellipse cx="0" cy="-22" rx="8" ry="12" transform="rotate(288)"/></g><circle cx="0" cy="0" r="7" fill="#F5A9C0"/><circle cx="0" cy="0" r="3" fill="#E8789A"/></svg>ハロプロ卒業公演・デビュー・卒業日・在籍日数</a></div>
 
   <h3>上記データを使ったモーニング娘。・アンジュルム・Juice=Juice・つばきファクトリーのタイムライン画像のページです</h3>
@@ -94,7 +94,7 @@
   <h3>ハロープロジェクトのメンバーが出演している映画作品のまとめです</h3>
   <div class="indextop"><a href="/hello-movies"><svg style="vertical-align: -4px;  margin-right: 4px"width="20" height="20" viewBox="0 0 64 44" xmlns="http://www.w3.org/2000/svg"><rect width="64" height="44" rx="10" fill="#1F2430"/><g fill="white"><rect x="7" y="8" width="7" height="6" rx="1.5"/><rect x="7" y="19" width="7" height="6" rx="1.5"/><rect x="7" y="30" width="7" height="6" rx="1.5"/><rect x="50" y="8" width="7" height="6" rx="1.5"/><rect x="50" y="19" width="7" height="6" rx="1.5"/><rect x="50" y="30" width="7" height="6" rx="1.5"/><rect x="19" y="8" width="26" height="28" rx="2"/></g></svg>ハロプロメンバー出演映画まとめ</a></div>
 
-  <h3>ハロープロジェクトのメンバーが登場するWebインタビュー記事のまとめです（現在は宮本佳林さん中心）</h3>
+  <h3>ハロープロジェクトのメンバーが登場するWebインタビュー記事のまとめです</h3>
   <div class="indextop"><a href="/hello-interview"><svg style="vertical-align: -4px;  margin-right: 4px"width="20" height="20" viewBox="0 0 64 44" xmlns="http://www.w3.org/2000/svg"><rect width="64" height="44" rx="6" fill="#AE8DBC"/><g fill="white"><rect x="12" y="12" width="40" height="4" rx="2"/><rect x="12" y="21" width="40" height="4" rx="2"/><rect x="12" y="30" width="26" height="4" rx="2"/></g></svg>ハロプロメンバー インタビュー記事まとめ</a></div>
 
   <h3>ハロープロジェクトのメンバーのバースデーイベントの会場を個人でまとめたページへのリンク集です</h3>

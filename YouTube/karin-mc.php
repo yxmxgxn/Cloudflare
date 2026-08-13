@@ -86,6 +86,7 @@
     <li><a href="https://www.youtube.com/watch?v=JpO8c8YyMQk" target="_blank" rel="noopener noreferrer">M-line Music#223（宮本佳林・小野田華凜）2025/12/05</a></li>
     <li><a href="https://www.youtube.com/watch?v=yePXvMbtjO0" target="_blank" rel="noopener noreferrer">M-line Music#239（宮本佳林・豫風瑠乃）2026/04/02</a></li>
     <li><a href="https://www.youtube.com/watch?v=RZkv4troQaI" target="_blank" rel="noopener noreferrer">M-line Music#254（宮本佳林・島川波菜）2026/7/16</a></li>
+    <li><a href="https://www.youtube.com/watch?v=uEt_hyCxm0Q" target="_blank" rel="noopener noreferrer">M-line Music#255（宮本佳林・島川波菜）2026/7/16</a></li>
   </ul>
   <h2>ハロ！ステ</h2>
   <ul>
@@ -123,5 +124,5 @@
    </ul>      
   </div>
 </main>
-<div class="last-update">最終更新日：2026/07/22</div>
+<div class="last-update">最終更新日：2026/08/14</div>
 <?php include $_SERVER['DOCUMENT_ROOT'] . '/common/footer.php'; ?>

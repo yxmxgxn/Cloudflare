@@ -48,6 +48,7 @@
   <ul>
     <li><a href="https://www.youtube.com/watch?v=VdqWrgrrdYc&t=216s" target="_blank" rel="noopener noreferrer">MY BOY（夏焼雅・宮本佳林・小関舞）</a></li>
     <li><a href="https://www.youtube.com/watch?v=odJfWR8XVao&t=210s" target="_blank" rel="noopener noreferrer">マイラブ（夏焼雅・宮本佳林・小片リサ・田﨑あさひ・長谷川萌美）</a></li>
+    <li><a href="https://www.youtube.com/watch?v=Grnf0Kbh0qE" target="_blank" rel="noopener noreferrer">れでぃぱんさぁ（佐藤優樹・宮本佳林・森戸知沙希）</a></li>
     <li><a href="https://www.youtube.com/watch?v=hDkrX2T-dYI&t=177s" target="_blank" rel="noopener noreferrer">泣き虫少年（夏焼雅・宮本佳林・浅倉樹々）</a></li>
     <li><a href="https://www.youtube.com/watch?v=dCBeCwWNFeo&t=40s" target="_blank" rel="noopener noreferrer">泣き虫少年（夏焼雅・鈴木愛理・宮本佳林）</a></li>
     <li><a href="https://www.youtube.com/watch?v=BW_zp62yBA0&t=158s" target="_blank" rel="noopener noreferrer">初恋サイダー（宮本佳林・小片リサ・小関舞・佐藤優樹）</a></li>
@@ -253,5 +254,5 @@
     <li><a href="https://www.youtube.com/watch?v=hssWGXiFBDY&t=1430s" target="_blank" rel="noopener noreferrer">すっぴん（宮本佳林・小片リサ・佐藤優樹）</a></li>
   </ul>
 </main>
-<div class="last-update">最終更新日：2026/07/22</div>
+<div class="last-update">最終更新日：2026/08/14</div>
 <?php include $_SERVER['DOCUMENT_ROOT'] . '/common/footer.php'; ?>

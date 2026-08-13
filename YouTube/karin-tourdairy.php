@@ -27,12 +27,12 @@
     <li><a href="https://www.youtube.com/watch?v=doV8B5rZrLA&t=1108s" target="_blank" rel="noopener noreferrer">LIVE 2023秋～Hello! Brand new me～ 2023/10/7 Zepp DiverCity（宮本佳林）</a></li>
     <li><a href="https://www.youtube.com/watch?v=VHLUIsEOy_M&t=649s" target="_blank" rel="noopener noreferrer">LIVE 2024春～Hello! Brand new me～ RETURNS 2024/4/14 横浜Bay Hall（宮本佳林）</a></li>
     <li><a href="https://www.youtube.com/watch?v=KvNZcPRPdjs&t=777s" target="_blank" rel="noopener noreferrer">LIVE 2024～TWiNKLE～ 2024/12/29 Zepp DiverCity（宮本佳林）</a></li>
-    <li><a href="https://www.youtube.com/watch?v=JpO8c8YyMQk&t=950s" target="_blank" rel="noopener noreferrer">LIVE 2025～魔法のたからばこ～ 2024/12/29 Zepp DiverCity（宮本佳林）</a></li>
+    <li><a href="https://www.youtube.com/watch?v=JpO8c8YyMQk&t=950s" target="_blank" rel="noopener noreferrer">LIVE 2025～魔法のたからばこ～ 2025/11/24 SOUND SHOWER ark 清水（宮本佳林）</a></li>
  </ul>
   <h3>宮本佳林バレンタインライブ</h3>
   <ul>
     <li><a href="https://www.youtube.com/watch?v=dDXIX2en-ts&t=734s" target="_blank" rel="noopener noreferrer">Sweet Box 2025～Happy Valentine's Day!～ 2025/2/16 第一ホテル両国「清澄」（宮本佳林）</a></li>
-    <li><a href="https://www.youtube.com/watch?v=wnRSEIqhfQw&t=749s" target="_blank" rel="noopener noreferrer">Sweet Box 2026～Happy Valentine's Day!～ 2025/2/15 第一ホテル両国「清澄」（宮本佳林）</a></li>
+    <li><a href="https://www.youtube.com/watch?v=wnRSEIqhfQw&t=749s" target="_blank" rel="noopener noreferrer">Sweet Box 2026～Happy Valentine's Day!～ 2026/2/15 第一ホテル両国「清澄」（宮本佳林）</a></li>
   </ul>
   <h3>M-line Special 2022～My Wish～</h3>
   <ul>
@@ -73,5 +73,5 @@
     <li><a href="https://www.youtube.com/watch?v=2TcTv9ujf6o&t=946s" target="_blank" rel="noopener noreferrer">エムハロイベント vol.4 ～宮本佳林×BEYOOOOONDS/SeasoningS～ 2025/10/28 せたがやイーグレットホール（宮本佳林・平井美葉）</a></li>
   </ul>
 </main>
-<div class="last-update">最終更新日：2026/05/10</div>
+<div class="last-update">最終更新日：2026/08/14</div>
 <?php include $_SERVER['DOCUMENT_ROOT'] . '/common/footer.php'; ?>

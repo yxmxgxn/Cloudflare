@@ -27,6 +27,7 @@
     <li><a href="https://www.youtube.com/watch?v=WDmscFbmk48&t=701s"  target="_blank" rel="noopener noreferrer">ポップミュージック</a></li>
     <li><a href="https://www.youtube.com/watch?v=orG30w79LbY&t=1437s"  target="_blank" rel="noopener noreferrer">続いていくSTORY(Symphonic Version feat. Karin)</a></li>
     <li><a href="https://www.youtube.com/watch?v=-KeieTh1sRQ&t=1279s"  target="_blank" rel="noopener noreferrer">未来のフィラメント</a></li>
+  　<li><a href="https://www.youtube.com/watch?v=xgWhnyyrvPc&t=645s"  target="_blank" rel="noopener noreferrer">HANAKIN</a></li>
   </ul>
-<div class="last-update">最終更新日：2026/05/17</div>
+<div class="last-update">最終更新日：2026/08/14</div>
 <?php include $_SERVER['DOCUMENT_ROOT'] . '/common/footer.php'; ?>
