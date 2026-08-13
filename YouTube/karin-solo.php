@@ -269,5 +269,5 @@
   </ul>
 
 </main>
-<div class="last-update">最終更新日：2026/07/22</div>
+<div class="last-update">最終更新日：2026/08/14</div>
 <?php include $_SERVER['DOCUMENT_ROOT'] . '/common/footer.php'; ?>
