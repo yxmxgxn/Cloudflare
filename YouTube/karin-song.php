@@ -101,7 +101,7 @@
         2022/6/22
       </td>
       <td rowspan="5" class="karin-disco-title" class="karin-disco-title">
-        <a href="https://www.jp-r.co.jp/karin_miyamoto/release/6746/" target="_blank" rel="noopener noreferrer">なんてったって I Love You/ハウリング</a>
+        <a href="https://jp-r.co.jp/karin_miyamoto/release/6746/" target="_blank" rel="noopener noreferrer">なんてったって I Love You/ハウリング</a>
       </td>
       <td>
         <a href="https://www.youtube.com/watch?v=xBf3VqVKS9U" target="_blank" rel="noopener noreferrer">なんてったって I Love You▶️</a>・<a href="https://www.youtube.com/watch?v=N4g2iWwMBY0&t=214”” target="_blank" rel="noopener noreferrer">🎥</a>
@@ -180,7 +180,7 @@
         2023/11/8
       </td>
       <td rowspan="5" class="karin-disco-title" class="karin-disco-title">
-        <a href="https://www.jp-r.co.jp/karin_miyamoto/release/7427/" target="_blank" rel="noopener noreferrer">バンビーナ・バンビーノ/Lonely Bus</a>
+        <a href="https://jp-r.co.jp/karin_miyamoto/release/7427/" target="_blank" rel="noopener noreferrer">バンビーナ・バンビーノ/Lonely Bus</a>
       </td>
       <td>
         <a href="https://www.youtube.com/watch?v=2p9U27l1yVY" target="_blank" rel="noopener noreferrer">バンビーナ・バンビーノ▶️</a>・<a href="https://www.youtube.com/watch?v=6njGwroq86Q&t=218s" target="_blank" rel="noopener noreferrer">🎥</a>・<a href="https://www.youtube.com/watch?v=V-WNO-1AuIc" target="_blank" rel="noopener noreferrer">💃</a>
@@ -260,7 +260,7 @@
         2025/06/11
       </td>
       <td rowspan="5" class="karin-disco-title" class="karin-disco-title">
-        <a href="hhttps://www.jp-r.co.jp/karin_miyamoto/release/7427/" target="_blank" rel="noopener noreferrer">キケンな魔法/ビースト！</a>
+        <a href="https://jp-r.co.jp/karin_miyamoto/release/7427/" target="_blank" rel="noopener noreferrer">キケンな魔法/ビースト！</a>
       </td>
       <td>
         <a href="https://www.youtube.com/watch?v=u303vjNuGRY" target="_blank" rel="noopener noreferrer">キケンな魔法▶️</a>・<a href="https://www.youtube.com/watch?v=MSBFAt5cnks&t=721s" target="_blank" rel="noopener noreferrer">🎥</a>・<a href="https://www.youtube.com/watch?v=gdfqKAjbuhM" target="_blank" rel="noopener noreferrer">💃</a>
@@ -325,10 +325,11 @@
         2026/07/29
       </td>
       <td rowspan="4" class="karin-disco-title" class="karin-disco-title">
-        <a href="https://www.jp-r.co.jp/karin_miyamoto/release/7681/" target="_blank" rel="noopener noreferrer">HANAKIN/シャニカマー</a>
+        <a href="https://jp-r.co.jp/karin_miyamoto/release/7681/" target="_blank" rel="noopener noreferrer">HANAKIN/シャニカマー</a>
       </td>
       <td>
         <a href="https://www.youtube.com/watch?v=yXAvtKqEWf0" target="_blank" rel="noopener noreferrer">HANAKIN▶️</a>
+      </td>
       <td>
         星部ショウ
       </td>
