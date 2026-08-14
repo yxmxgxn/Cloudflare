@@ -65,14 +65,14 @@
       <th>発売日</th>
       <th class="karin-disco-head">タイトル</th>
       <th class="karin-disco-head">曲名</th>
-      <th>作詞</th>
-      <th>作曲</th>
-      <th>編曲</th>
+      <th class="karin-disco-head">作詞</th>
+      <th class="karin-disco-head">作曲</th>
+      <th class="karin-disco-head">編曲</th>
     </tr>
     <tr>
-      <td rowspan="3" class="karin-disco-title">1st</th>
-      <td rowspan="3" class="karin-disco-title">2013/9/11</td>
-      <td rowspan="3" class="karin-disco-title"><a href="https://helloproject.com/release/1656/" target="_blank" rel="noopener noreferrer">私が言う前に抱きしめなきゃね（MEMORIAL EDIT）/五月雨美女がさ乱れる（MEMORIAL EDIT）</a></td>
+      <td rowspan="3">1st</th>
+      <td rowspan="3">2013/9/11</td>
+      <td rowspan="3"><a href="https://helloproject.com/release/1656/" target="_blank" rel="noopener noreferrer">私が言う前に抱きしめなきゃね（MEMORIAL EDIT）/五月雨美女がさ乱れる（MEMORIAL EDIT）</a></td>
       <td><a href="https://www.youtube.com/watch?v=rh8eeteWbHc" target="_blank" rel="noopener noreferrer">ロマンスの途中▶️</a>・<a href="https://www.youtube.com/watch?v=1lgANEF7cbE" target="_blank" rel="noopener noreferrer">💃</a></td>
       <td>つんく</td>
       <td>つんく</td>
