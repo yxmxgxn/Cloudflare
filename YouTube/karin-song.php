@@ -20,24 +20,24 @@
   <h2>シングル</h2>
    <table id="karin-disco">
     <tr>
-      <th class="karin-disco-head">
+      <th class="dc-wide">
         タイトル・発売日
       </th>
-      <th class="karin-disco-title">
+      <th class="dc-wide">
         曲名
       </th>
-      <th class="karin-disco-title">
+      <th class="dc-credit">
         作詞
       </th>
-      <th class="karin-disco-title">
+      <th class="dc-credit">
         作曲
       </th>
-      <th class="karin-disco-title">
+      <th class="dc-credit">
         編曲
       </th>
     </tr>
     <tr>
-      <td rowspan="3" class="karin-disco-title">
+      <td rowspan="3">
         <span style="display: block; text-align: center;">1st　2021/2/1<br><br>
         <a href="https://jp-r.co.jp/karin_miyamoto/release/6572/" target="_blank" rel="noopener noreferrer">どうして僕らにはやる気がないのか(2021)/氷点下/規格外のロマンス</a></span>
       </td>
@@ -83,7 +83,7 @@
       </td>
     </tr>
     <tr>
-      <td rowspan="5" class="karin-disco-title">
+      <td rowspan="5">
         <span style="display: block; text-align: center;">2nd　2022/6/22<br><br>
         <a href="https://jp-r.co.jp/karin_miyamoto/release/6746/" target="_blank" rel="noopener noreferrer">なんてったって I Love You/ハウリング</a></span>
       </td>
@@ -157,7 +157,7 @@
       </td>
     </tr>
     <tr>
-      <td rowspan="5" class="karin-disco-title">
+      <td rowspan="5">
         <span style="display: block; text-align: center;">3rd　2023/11/8<br><br>
         <a href="https://jp-r.co.jp/karin_miyamoto/release/7427/" target="_blank" rel="noopener noreferrer">バンビーナ・バンビーノ/Lonely Bus</a></span>
       </td>
@@ -232,7 +232,7 @@
       </td>
     </tr>
     <tr>
-      <td rowspan="5" class="karin-disco-title">
+      <td rowspan="5">
         <span style="display: block; text-align: center;">4th　2025/06/11<br><br>
         <a href="https://jp-r.co.jp/karin_miyamoto/release/7427/" target="_blank" rel="noopener noreferrer">キケンな魔法/ビースト！</a></span>
       </td>
@@ -306,7 +306,7 @@
       </td>
     </tr>
     <tr>
-      <td rowspan="4" class="karin-disco-title">
+      <td rowspan="4">
         <span style="display: block; text-align: center;">5th　2026/07/29<br><br>
         <a href="https://jp-r.co.jp/karin_miyamoto/release/7681/" target="_blank" rel="noopener noreferrer">HANAKIN/シャニカマー</a></span>
       </td>
@@ -381,27 +381,27 @@
       <th>
         Track
       </th>
-      <th class="karin-disco-head">
+      <th class="dc-wide">
         曲名
       </th>
-      <th class="karin-disco-head">
+      <th class="dc-credit">
         作詞
       </th>
-      <th class="karin-disco-head">
+      <th class="dc-credit">
         作曲
       </th>
-      <th class="karin-disco-head">
+      <th class="dc-credit">
         編曲
       </th>
     </tr>
     <tr>
-      <td rowspan="15" class="karin-disco-title">
+      <td rowspan="15">
         1st
       </td>
-      <td rowspan="15" class="karin-disco-title">
+      <td rowspan="15">
         2022/10/12
       </td>
-      <td rowspan="15" class="karin-disco-title">
+      <td rowspan="15">
         <a href="https://jp-r.co.jp/karin_miyamoto/release/6797/" target="_blank" rel="noopener noreferrer">ヒトリトイロ</a>
       </td>
       <td>
@@ -656,13 +656,13 @@
       </td>
     </tr>
     <tr>
-      <td rowspan="13" class="karin-disco-title">
+      <td rowspan="13">
         2nd
       </td>
-      <td rowspan="13" class="karin-disco-title">
+      <td rowspan="13">
         2024/5/22
       </td>
-      <td rowspan="13" class="karin-disco-title">
+      <td rowspan="13">
         <a href="https://jp-r.co.jp/karin_miyamoto/release/7192/" target="_blank" rel="noopener noreferrer">Spancall</a>
       </td>
       <td>
@@ -893,16 +893,16 @@
       <th>
         発売日
       </th>
-      <th class="karin-disco-head">
+      <th class="dc-wide">
         曲名
-      </th class="karin-disco-head">
-      <th class="karin-disco-head">
+      </th class="dc-wide">
+      <th class="dc-credit">
         作詞
       </th>
-      <th>
+      <th class="dc-credit">
         作曲
       </th>
-      <th class="karin-disco-head">
+      <th class="dc-credit">
         編曲
       </th>
     </tr>
@@ -948,19 +948,19 @@
       <th>
         発売日
       </th>
-      <th class="karin-disco-head">
+      <th class="dc-wide">
         曲名
       </th>
       <th>
         歌
       </th>
-      <th class="karin-disco-head">
+      <th class="dc-credit">
         作詞
       </th>
-      <th>
+      <th class="dc-credit">
         作曲
-      </th class="karin-disco-head">
-      <th class="karin-disco-head">
+      </th>
+      <th class="dc-credit">
         編曲
       </th>
     </tr>
@@ -1051,29 +1051,29 @@
       <th>
         発売日
       </th>
-      <th class="karin-disco-head">
+      <th class="dc-wide">
         タイトル
       </th>
       <th>
         Track
       </th>
-      <th class="karin-disco-head">
+      <th class="dc-wide">
         曲名
       </th>
-      <th class="karin-disco-head">
+      <th class="dc-credit">
         作詞
       </th>
-      <th class="karin-disco-head">
+      <th class="dc-credit">
         作曲
       </th>
-      <th class="karin-disco-head">
+      <th class="dc-credit">
         編曲
       </th>
      <tr>
-      <td rowspan="9" class="karin-disco-title">
+      <td rowspan="9">
         2024/5/22
       </td>
-      <td rowspan="9" class="karin-disco-title">
+      <td rowspan="9">
         <a href="https://jp-r.co.jp/karin_miyamoto/release/7371/" target="_blank" rel="noopener noreferrer">STAGE VANGUARD「ザ☆アイドル!」オリジナルサウンドトラック</a>
       </td>
       <td>
@@ -1234,29 +1234,29 @@
       <th>
         発売日
       </th>
-      <th class="karin-disco-head">
+      <th class="dc-wide">
         タイトル
       </th>
       <th>
         Track
       </th>
-      <th class="karin-disco-head">
+      <th class="dc-wide">
         曲名
       </th>
-      <th class="karin-disco-head">
+      <th class="dc-credit">
         作詞
       </th>
-      <th class="karin-disco-head">
+      <th class="dc-credit">
         作曲
       </th>
-      <th class="karin-disco-head">
+      <th class="dc-credit">
         編曲
       </th>
     </tr>
-      <td rowspan="7" class="karin-disco-title">
+      <td rowspan="7">
         2013/3/12
       </td>
-      <td rowspan="7" class="karin-disco-title">
+      <td rowspan="7">
         <a href="https://helloproject.com/release/2208/" target="_blank" rel="noopener noreferrer">コピンクス！メロディーズ〜star chart〜</a>
       </td>
       <td>

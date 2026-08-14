@@ -23,10 +23,10 @@
     <tr>
       <th></th>
       <th>発売日</th>
-      <th class="karin-disco-head">タイトル</th>
-      <th>作詞</th>
-      <th>作曲</th>
-      <th>編曲</th>
+      <th class="dc-wide">タイトル</th>
+      <th class="dc-credit">作詞</th>
+      <th class="dc-credit">作曲</th>
+      <th class="dc-credit">編曲</th>
       <th>備考</th>
     </tr>
     <tr>
@@ -63,14 +63,14 @@
     <tr>
       <th></th>
       <th>発売日</th>
-      <th class="karin-disco-head">タイトル</th>
-      <th class="karin-disco-head">曲名</th>
-      <th class="karin-disco-head">作詞</th>
-      <th class="karin-disco-head">作曲</th>
-      <th class="karin-disco-head">編曲</th>
+      <th class="dc-wide">タイトル</th>
+      <th class="dc-wide">曲名</th>
+      <th class="dc-credit">作詞</th>
+      <th class="dc-credit">作曲</th>
+      <th class="dc-credit">編曲</th>
     </tr>
     <tr>
-      <td rowspan="3">1st</th>
+      <td rowspan="3">1st</td>
       <td rowspan="3">2013/9/11</td>
       <td rowspan="3"><a href="https://helloproject.com/release/1656/" target="_blank" rel="noopener noreferrer">私が言う前に抱きしめなきゃね（MEMORIAL EDIT）/五月雨美女がさ乱れる（MEMORIAL EDIT）</a></td>
       <td><a href="https://www.youtube.com/watch?v=rh8eeteWbHc" target="_blank" rel="noopener noreferrer">ロマンスの途中▶️</a>・<a href="https://www.youtube.com/watch?v=1lgANEF7cbE" target="_blank" rel="noopener noreferrer">💃</a></td>
@@ -91,9 +91,9 @@
       <td>板垣祐介</td>
     </tr>
     <tr>
-      <td rowspan="2" class="karin-disco-title">2nd</th>
-      <td rowspan="2" class="karin-disco-title">2013/12/4</td>
-      <td rowspan="2" class="karin-disco-title"><a href="https://helloproject.com/release/1667/" target="_blank" rel="noopener noreferrer">イジワルしないで 抱きしめてよ/初めてを経験中</a></td>
+      <td rowspan="2" class="dc-group">2nd</td>
+      <td rowspan="2" class="dc-group">2013/12/4</td>
+      <td rowspan="2" class="dc-group"><a href="https://helloproject.com/release/1667/" target="_blank" rel="noopener noreferrer">イジワルしないで 抱きしめてよ/初めてを経験中</a></td>
       <td><a href="https://www.youtube.com/watch?v=wCNV_wAx82Y" target="_blank" rel="noopener noreferrer">イジワルしないで 抱きしめてよ▶️</a>・<a href="https://www.youtube.com/watch?v=0ySylUquWs4" target="_blank" rel="noopener noreferrer">🎥</a>・<a href="https://www.youtube.com/watch?v=LNPHQ0yrkW8" target="_blank" rel="noopener noreferrer">💃</a></td>
       <td>つんく</td>
       <td>つんく</td>
@@ -106,9 +106,9 @@
       <td>AKIRA</td>
     </tr>
     <tr>
-      <td rowspan="2" class="karin-disco-title">3rd</th>
-      <td rowspan="2" class="karin-disco-title">2014/3/19</td>
-      <td rowspan="2" class="karin-disco-title">裸の裸の裸のKISS/アレコレしたい!</td>
+      <td rowspan="2" class="dc-group">3rd</td>
+      <td rowspan="2" class="dc-group">2014/3/19</td>
+      <td rowspan="2" class="dc-group">裸の裸の裸のKISS/アレコレしたい!</td>
       <td><a href="https://www.youtube.com/watch?v=XusWMlJH178" target="_blank" rel="noopener noreferrer">裸の裸の裸のKISS▶️</a>・<a href="https://www.youtube.com/watch?v=Egmjjt3j3us&t=189s" target="_blank" rel="noopener noreferrer">🎥</a>・<a href="https://www.youtube.com/watch?v=AopkbcS_hlc" target="_blank" rel="noopener noreferrer">💃</a></td>
       <td>つんく</td>
       <td>つんく</td>
@@ -121,9 +121,9 @@
       <td>近藤圭一</td>
     </tr>
     <tr>
-      <td rowspan="2" class="karin-disco-title">4th</th>
-      <td rowspan="2" class="karin-disco-title">2014/7/30</td>
-      <td rowspan="2" class="karin-disco-title"><a href="https://helloproject.com/release/2277/" target="_blank" rel="noopener noreferrer">ブラックバタフライ/風に吹かれて</a></td>
+      <td rowspan="2" class="dc-group">4th</td>
+      <td rowspan="2" class="dc-group">2014/7/30</td>
+      <td rowspan="2" class="dc-group"><a href="https://helloproject.com/release/2277/" target="_blank" rel="noopener noreferrer">ブラックバタフライ/風に吹かれて</a></td>
       <td><a href="https://www.youtube.com/watch?v=ROeoeYQ33hM" target="_blank" rel="noopener noreferrer">ブラックバタフライ▶️</a>・<a href="https://www.youtube.com/watch?v=8iLP7hz-UxY" target="_blank" rel="noopener noreferrer">💃</a></td>
       <td>つんく</td>
       <td>つんく</td>
@@ -136,9 +136,9 @@
       <td>平田祥一郎</td>
     </tr>
     <tr>
-      <td rowspan="2" class="karin-disco-title">5th</th>
-      <td rowspan="2" class="karin-disco-title">2014/10/1</td>
-      <td rowspan="2" class="karin-disco-title"><a href="https://helloproject.com/release/2371/" target="_blank" rel="noopener noreferrer">背伸び/伊達じゃないよ うちの人生は</a></td>  
+      <td rowspan="2" class="dc-group">5th</td>
+      <td rowspan="2" class="dc-group">2014/10/1</td>
+      <td rowspan="2" class="dc-group"><a href="https://helloproject.com/release/2371/" target="_blank" rel="noopener noreferrer">背伸び/伊達じゃないよ うちの人生は</a></td>  
       <td><a href="https://www.youtube.com/watch?v=_so9w95wzVI" target="_blank" rel="noopener noreferrer">背伸び▶️</a>・<a href="https://www.youtube.com/watch?v=QX1FgV2cJdU&t=1168s" target="_blank" rel="noopener noreferrer">🎥</a>・<a href="https://www.youtube.com/watch?v=6Pwx3tdZFN8" target="_blank" rel="noopener noreferrer">💃</a></td>
       <td>つんく</td>
       <td>つんく</td>
@@ -151,9 +151,9 @@
       <td>平田祥一郎</td>
     </tr>
     <tr>
-      <td rowspan="2" class="karin-disco-title">6th</th>
-      <td rowspan="2" class="karin-disco-title">2015/4/8</td>
-      <td rowspan="2" class="karin-disco-title"><a href="https://helloproject.com/release/4094/" target="_blank" rel="noopener noreferrer">Wonderful World/Ça va ? Ça va ?</a></td>
+      <td rowspan="2" class="dc-group">6th</td>
+      <td rowspan="2" class="dc-group">2015/4/8</td>
+      <td rowspan="2" class="dc-group"><a href="https://helloproject.com/release/4094/" target="_blank" rel="noopener noreferrer">Wonderful World/Ça va ? Ça va ?</a></td>
       <td><a href="https://www.youtube.com/watch?v=YlkOq6dXBEc" target="_blank" rel="noopener noreferrer">Wonderful World▶️</a>・<a href="https://www.youtube.com/watch?v=cyFB7sB6CYs" target="_blank" rel="noopener noreferrer">🎥</a>・<a href="https://www.youtube.com/watch?v=wTZ5cbaDGgI" target="_blank" rel="noopener noreferrer">💃</td>
       <td>イイジマケン</td>
       <td>イイジマケン</td>
@@ -166,9 +166,9 @@
       <td>CMJK</td>
     </tr>
     <tr>
-      <td rowspan="2" class="karin-disco-title">7th</th>
-      <td rowspan="2" class="karin-disco-title">2016/2/3</td>
-      <td rowspan="2" class="karin-disco-title"><a href="https://helloproject.com/release/4548/" target="_blank" rel="noopener noreferrer">Next is you!/カラダだけが大人になったんじゃない</a></td>
+      <td rowspan="2" class="dc-group">7th</td>
+      <td rowspan="2" class="dc-group">2016/2/3</td>
+      <td rowspan="2" class="dc-group"><a href="https://helloproject.com/release/4548/" target="_blank" rel="noopener noreferrer">Next is you!/カラダだけが大人になったんじゃない</a></td>
       <td><a href="https://www.youtube.com/watch?v=7sJTyrHGK1k" target="_blank" rel="noopener noreferrer">Next is you!▶️</a></td>
       <td>つんく</td>
       <td>つんく</td>
@@ -181,9 +181,9 @@
       <td>平田祥一郎</td>
     </tr>
     <tr>
-      <td rowspan="3" class="karin-disco-title">8th</th>
-      <td rowspan="3" class="karin-disco-title">2016/10/26</td>
-      <td rowspan="3" class="karin-disco-title"><a href="https://helloproject.com/release/4548/" target="_blank" rel="noopener noreferrer">Dream Road〜心が躍り出してる〜/KEEP ON 上昇志向!!/明日やろうはバカやろう</a></td>
+      <td rowspan="3" class="dc-group">8th</td>
+      <td rowspan="3" class="dc-group">2016/10/26</td>
+      <td rowspan="3" class="dc-group"><a href="https://helloproject.com/release/4548/" target="_blank" rel="noopener noreferrer">Dream Road〜心が躍り出してる〜/KEEP ON 上昇志向!!/明日やろうはバカやろう</a></td>
       <td><a href="https://www.youtube.com/watch?v=EC19AV19rEg" target="_blank" rel="noopener noreferrer">Dream Road～心が躍り出してる～▶️</a>・<a href="https://www.youtube.com/watch?v=FgecS6FityI&t=42s" target="_blank" rel="noopener noreferrer">🎥</a></td>
       <td>つんく</td>
       <td>つんく</td>
@@ -202,9 +202,9 @@
       <td>板垣祐介</td>
     </tr>
     <tr>
-      <td rowspan="2" class="karin-disco-title">9th</th>
-      <td rowspan="2" class="karin-disco-title">2017/4/26</td>
-      <td rowspan="2" class="karin-disco-title"><a href="https://helloproject.com/release/5152/" target="_blank" rel="noopener noreferrer">地団駄ダンス/Feel!感じるよ</a></td>
+      <td rowspan="2" class="dc-group">9th</td>
+      <td rowspan="2" class="dc-group">2017/4/26</td>
+      <td rowspan="2" class="dc-group"><a href="https://helloproject.com/release/5152/" target="_blank" rel="noopener noreferrer">地団駄ダンス/Feel!感じるよ</a></td>
       <td><a href="https://www.youtube.com/watch?v=HBFvJZR7yKQ" target="_blank" rel="noopener noreferrer">地団駄ダンス▶️</a>・<a href="https://www.youtube.com/watch?v=Jt50XbJbDq8&t=2079s" target="_blank" rel="noopener noreferrer">🎥</a></td>
       <td>児玉雨子</td>
       <td>BLACC HOLE &amp; NOBB-D</td>
@@ -217,9 +217,9 @@
       <td>中村瑛彦</td>
     </tr>
     <tr>
-      <td rowspan="3" class="karin-disco-title">10th</th>
-      <td rowspan="3" class="karin-disco-title">2018/4/18</td>
-      <td rowspan="3" class="karin-disco-title"><a href="https://helloproject.com/release/5586/" target="_blank" rel="noopener noreferrer">SEXY SEXY/泣いていいよ/Vivid Midnight</a></td>
+      <td rowspan="3" class="dc-group">10th</td>
+      <td rowspan="3" class="dc-group">2018/4/18</td>
+      <td rowspan="3" class="dc-group"><a href="https://helloproject.com/release/5586/" target="_blank" rel="noopener noreferrer">SEXY SEXY/泣いていいよ/Vivid Midnight</a></td>
       <td><a href="https://www.youtube.com/watch?v=AgxdaRvQL5Q" target="_blank" rel="noopener noreferrer">SEXY SEXY▶️</a></td>
       <td>つんく</td>
       <td>つんく</td>
@@ -238,9 +238,9 @@
       <td>Tasco, Tenzo</td>
     </tr>
     <tr>
-      <td rowspan="3" class="karin-disco-title">11th</th>
-      <td rowspan="3" class="karin-disco-title">2019/2/13</td>
-      <td rowspan="3" class="karin-disco-title"><a href="https://helloproject.com/release/5872/" target="_blank" rel="noopener noreferrer">微炭酸/ポツリと/Good bye & Good luck!</a></td>
+      <td rowspan="3" class="dc-group">11th</td>
+      <td rowspan="3" class="dc-group">2019/2/13</td>
+      <td rowspan="3" class="dc-group"><a href="https://helloproject.com/release/5872/" target="_blank" rel="noopener noreferrer">微炭酸/ポツリと/Good bye & Good luck!</a></td>
       <td><a href="https://www.youtube.com/watch?v=NtBZEHyB_jo" target="_blank" rel="noopener noreferrer">微炭酸▶️</a>・<a href="https://www.youtube.com/watch?v=v4JVTZ3kK-Y" target="_blank" rel="noopener noreferrer">🎥</a></td>
       <td>山崎あおい</td>
       <td>KOUGA</td>
@@ -259,9 +259,9 @@
       <td>炭竃智弘</td>
     </tr>
     <tr>
-      <td rowspan="3" class="karin-disco-title">12th</th>
-      <td rowspan="3" class="karin-disco-title">2019/6/5</td>
-      <td rowspan="3" class="karin-disco-title"><a href="https://helloproject.com/release/6156/" target="_blank" rel="noopener noreferrer">「ひとりで生きられそう」って それってねえ、褒めているの?/25歳永遠説</a></td>
+      <td rowspan="3" class="dc-group">12th</td>
+      <td rowspan="3" class="dc-group">2019/6/5</td>
+      <td rowspan="3" class="dc-group"><a href="https://helloproject.com/release/6156/" target="_blank" rel="noopener noreferrer">「ひとりで生きられそう」って それってねえ、褒めているの?/25歳永遠説</a></td>
       <td><a href="https://www.youtube.com/watch?v=yiYr2-6LtcU" target="_blank" rel="noopener noreferrer">「ひとりで生きられそう」って それってねえ、褒めているの？▶️</a>・<a href="https://www.youtube.com/watch?v=8vxfT-NNV1E" target="_blank" rel="noopener noreferrer">🎥</a>・<a href="https://www.youtube.com/watch?v=GOBwXucqSEo" target="_blank" rel="noopener noreferrer">▶️（リリック・ビデオ）</a></td>
       <td>山崎あおい</td>
       <td>山崎あおい</td>
@@ -280,9 +280,9 @@
       <td>鈴木俊介</td>
     </tr>
     <tr>
-      <td rowspan="4" class="karin-disco-title">13th</th>
-      <td rowspan="4" class="karin-disco-title">2020/4/1</td>
-      <td rowspan="4" class="karin-disco-title"><a href="https://helloproject.com/release/6261/" target="_blank" rel="noopener noreferrer">ポップミュージック/好きって言ってよ</a></td>
+      <td rowspan="4" class="dc-group">13th</td>
+      <td rowspan="4" class="dc-group">2020/4/1</td>
+      <td rowspan="4" class="dc-group"><a href="https://helloproject.com/release/6261/" target="_blank" rel="noopener noreferrer">ポップミュージック/好きって言ってよ</a></td>
       <td><a href="https://www.youtube.com/watch?v=IrggLg_hGE0" target="_blank" rel="noopener noreferrer">ポップミュージック▶️</a>・<a href="https://www.youtube.com/watch?v=7Z3LUlOQ9uc&t=129s" target="_blank" rel="noopener noreferrer">🎥</a></td>
       <td>KAN</td>
       <td>KAN</td>
@@ -307,9 +307,9 @@
       <td>Josef Melin</td>
     </tr>
     <tr>
-      <td rowspan="2" class="karin-disco-title">14th</th>
-      <td rowspan="2" class="karin-disco-title">2021/4/28</td>
-      <td rowspan="2" class="karin-disco-title"><a href="https://helloproject.com/release/6436/" target="_blank" rel="noopener noreferrer">DOWN TOWN/がんばれないよ</a></td>
+      <td rowspan="2" class="dc-group">14th</td>
+      <td rowspan="2" class="dc-group">2021/4/28</td>
+      <td rowspan="2" class="dc-group"><a href="https://helloproject.com/release/6436/" target="_blank" rel="noopener noreferrer">DOWN TOWN/がんばれないよ</a></td>
       <td><a href="https://www.youtube.com/watch?v=7xD8ORNRtDI" target="_blank" rel="noopener noreferrer">DOWN TOWN▶️</a>・<a href="https://www.youtube.com/watch?v=RTfq20Dl2Eg&t=378s" target="_blank" rel="noopener noreferrer">🎥</a></td>
       <td>伊藤銀次</td>
       <td>山下達郎</td>
@@ -322,9 +322,9 @@
       <td>KOUGA</td>
     </tr>
     <tr>
-      <td rowspan="3" class="karin-disco-title">15th</th>
-      <td rowspan="3" class="karin-disco-title">2021/12/22</td>
-      <td rowspan="3" class="karin-disco-title"><a href="https://helloproject.com/release/6613/" target="_blank" rel="noopener noreferrer">プラスティック・ラブ/Familia/Future Smile</a></td>
+      <td rowspan="3" class="dc-group">15th</td>
+      <td rowspan="3" class="dc-group">2021/12/22</td>
+      <td rowspan="3" class="dc-group"><a href="https://helloproject.com/release/6613/" target="_blank" rel="noopener noreferrer">プラスティック・ラブ/Familia/Future Smile</a></td>
       <td><a href="https://www.youtube.com/watch?v=f6Nuvg3RuEw" target="_blank" rel="noopener noreferrer">プラスティック・ラブ▶️</a></td>
       <td>竹内まりや</td>
       <td>竹内まりや</td>
@@ -343,9 +343,9 @@
       <td>Josef Melin</td>
     </tr>
     <tr>
-      <td rowspan="2" class="karin-disco-title">16th</th>
-      <td rowspan="2" class="karin-disco-title">2022/11/23</td>
-      <td rowspan="2" class="karin-disco-title"><a href="https://helloproject.com/release/6853/" target="_blank" rel="noopener noreferrer">全部賭けてGO!!/イニミニマニモ〜恋のライバル宣言〜</a></td>
+      <td rowspan="2" class="dc-group">16th</td>
+      <td rowspan="2" class="dc-group">2022/11/23</td>
+      <td rowspan="2" class="dc-group"><a href="https://helloproject.com/release/6853/" target="_blank" rel="noopener noreferrer">全部賭けてGO!!/イニミニマニモ〜恋のライバル宣言〜</a></td>
       <td><a href="https://www.youtube.com/watch?v=4sO4_dLLeGM" target="_blank" rel="noopener noreferrer">全部賭けてGO!!▶️</a>・<a href="https://www.youtube.com/watch?v=tBQlipoKzKU&t=179s" target="_blank" rel="noopener noreferrer">🎥</a></td>
       <td>大森祥子</td>
       <td>徳田光希</td>
@@ -358,9 +358,9 @@
       <td>Joacim Persson/Johan Alkenas</td>
     </tr>
     <tr>
-      <td rowspan="2" class="karin-disco-title">17th</th>
-      <td rowspan="2" class="karin-disco-title">2023/7/12</td>
-      <td rowspan="2" class="karin-disco-title"><a href="https://helloproject.com/release/6991/" target="_blank" rel="noopener noreferrer">プライド・ブライト/FUNKY FLUSHIN'</a></td>
+      <td rowspan="2" class="dc-group">17th</td>
+      <td rowspan="2" class="dc-group">2023/7/12</td>
+      <td rowspan="2" class="dc-group"><a href="https://helloproject.com/release/6991/" target="_blank" rel="noopener noreferrer">プライド・ブライト/FUNKY FLUSHIN'</a></td>
       <td><a href="https://www.youtube.com/watch?v=wrucm-6MqgE" target="_blank" rel="noopener noreferrer">プライド・ブライト▶️</a>・<a href="https://www.youtube.com/watch?v=vyiXRsx0gJI" target="_blank" rel="noopener noreferrer">🎥</a></td>
       <td>山崎あおい</td>
       <td>山崎あおい</td>
@@ -373,9 +373,9 @@
       <td>Aksel Odenbalk</td>
     </tr>
     <tr>
-      <td rowspan="4" class="karin-disco-title">18th</th>
-      <td rowspan="4" class="karin-disco-title">2024/5/15</td>
-      <td rowspan="4" class="karin-disco-title"><a href="https://helloproject.com/release/7195/" target="_blank" rel="noopener noreferrer">トウキョウ・ブラー/ナイモノラブ/おあいこ</a></td>
+      <td rowspan="4" class="dc-group">18th</td>
+      <td rowspan="4" class="dc-group">2024/5/15</td>
+      <td rowspan="4" class="dc-group"><a href="https://helloproject.com/release/7195/" target="_blank" rel="noopener noreferrer">トウキョウ・ブラー/ナイモノラブ/おあいこ</a></td>
       <td><a href="https://www.youtube.com/watch?v=DPImRhSUtR0" target="_blank" rel="noopener noreferrer">トウキョウ・ブラー▶️</a>・<a href="https://www.youtube.com/watch?v=1blvz_OhPSI&t=545s" target="_blank" rel="noopener noreferrer">🎥</a></td>
       <td>山崎あおい</td>
       <td>Erik Lidbom</td>
@@ -400,9 +400,9 @@
       <td>浜田ピエール裕介</td>
     </tr>
     <tr>
-      <td rowspan="2" class="karin-disco-title">19th</th>
-      <td rowspan="2" class="karin-disco-title">2025/2/26</td>
-      <td rowspan="2" class="karin-disco-title"><a href="https://helloproject.com/release/7376/" target="_blank" rel="noopener noreferrer">初恋の亡霊/今夜はHearty Party/a></td>
+      <td rowspan="2" class="dc-group">19th</td>
+      <td rowspan="2" class="dc-group">2025/2/26</td>
+      <td rowspan="2" class="dc-group"><a href="https://helloproject.com/release/7376/" target="_blank" rel="noopener noreferrer">初恋の亡霊/今夜はHearty Party/a></td>
       <td><a href="https://www.youtube.com/watch?v=DquBd86wOYw" target="_blank" rel="noopener noreferrer">初恋の亡霊▶️</a>・<a href="https://www.youtube.com/watch?v=GkUijMTyJE0" target="_blank" rel="noopener noreferrer">🎥</a>・<a href="https://www.youtube.com/watch?v=g9EXEuk5sxo" target="_blank" rel="noopener noreferrer">💃</a></td>
       <td>西野蒟蒻</td>
       <td>KOUGA</td>
@@ -415,9 +415,9 @@
       <td>Aksel Odenbalk/Albin Hillborg</td>
     </tr>
     <tr>
-      <td rowspan="2" class="karin-disco-title">20th</th>
-      <td rowspan="2" class="karin-disco-title">2025/10/8</td>
-      <td rowspan="2" class="karin-disco-title"><a href="https://helloproject.com/release/7506/" target="_blank" rel="noopener noreferrer">四の五の言わず颯と別れてあげた/盛れ！ミ・アモーレ/a></td>
+      <td rowspan="2" class="dc-group">20th</td>
+      <td rowspan="2" class="dc-group">2025/10/8</td>
+      <td rowspan="2" class="dc-group"><a href="https://helloproject.com/release/7506/" target="_blank" rel="noopener noreferrer">四の五の言わず颯と別れてあげた/盛れ！ミ・アモーレ/a></td>
       <td><a href="https://www.youtube.com/watch?v=cnlS-vuMg40" target="_blank" rel="noopener noreferrer">四の五の言わず颯と別れてあげた▶️</a>・<a href="https://www.youtube.com/watch?v=jWz3Sc4n-Zw" target="_blank" rel="noopener noreferrer">🎥</a></td>
       <td>大森祥子</td>
       <td>KOUGA</td>
@@ -435,10 +435,10 @@
   <table id="karin-disco">
     <tr>
       <th>発売日</th>
-      <th class="karin-disco-head">タイトル</th>
-      <th>作詞</th>
-      <th>作曲</th>
-      <th>編曲</th>
+      <th class="dc-wide">タイトル</th>
+      <th class="dc-credit">作詞</th>
+      <th class="dc-credit">作曲</th>
+      <th class="dc-credit">編曲</th>
       <th>備考</th>
     </tr>
     <tr>
@@ -463,10 +463,10 @@
     <tr>
       <th></th>
       <th>発売日</th>
-      <th class="karin-disco-head">タイトル</th>
-      <th>作詞</th>
-      <th>作曲</th>
-      <th>編曲</th>
+      <th class="dc-wide">タイトル</th>
+      <th class="dc-credit">作詞</th>
+      <th class="dc-credit">作曲</th>
+      <th class="dc-credit">編曲</th>
       <th>備考</th>
     </tr>
     <tr>
@@ -539,20 +539,20 @@
     <tr>
       <th></th>
       <th>発売日</th>
-      <th class="karin-disco-head">タイトル</th>
-      <th class=" karin-disco-head">Disk</th>
+      <th class="dc-wide">タイトル</th>
+      <th class="dc-wide">Disk</th>
       <th>Track</th>
-      <th class="karin-disco-head">曲名</th>
-      <th>作詞</th>
-      <th>作曲</th>
-      <th>編曲</th>
+      <th class="dc-wide">曲名</th>
+      <th class="dc-credit">作詞</th>
+      <th class="dc-credit">作曲</th>
+      <th class="dc-credit">編曲</th>
       <th>備考</th>
     </tr>
     <tr>
-      <td rowspan="29" class="karin-disco-title">1st</th>
-      <td rowspan="29" class="karin-disco-title">2015/7/15</td>
-      <td rowspan="29" class="karin-disco-title">First Squeeze!</td>
-      <td rowspan="12" class="karin-disco-title">Disc.1 The Best Juice</td>
+      <td rowspan="29" class="dc-group">1st</td>
+      <td rowspan="29" class="dc-group">2015/7/15</td>
+      <td rowspan="29" class="dc-group">First Squeeze!</td>
+      <td rowspan="12" class="dc-group">Disc.1 The Best Juice</td>
       <td>1</td>
       <td>天まで登れ!</td>
       <td>つんく</td>
@@ -649,7 +649,7 @@
       <td></td>
     </tr>
     <tr>
-      <td rowspan="11" class="karin-disco-title">Disc.2 The Brand-New Juice</td>
+      <td rowspan="11" class="dc-group">Disc.2 The Brand-New Juice</td>
       <td>1</td>
       <td>Wonderful World</td>
       <td>イイジマケン</td>
@@ -738,7 +738,7 @@
       <td></td>
     </tr>
     <tr>
-      <td rowspan="6" class="karin-disco-title">The Cover Juice</td>
+      <td rowspan="6" class="dc-group">The Cover Juice</td>
       <td>1</td>
       <td><a href="https://www.youtube.com/watch?v=5ktnsWyJOa4&t=1394s" target="_blank" rel="noopener noreferrer">Magic of Love（J=J 2015Ver.）🎥</a></td>
       <td>つんく</td>
@@ -787,10 +787,10 @@
       <td>タンポポのカバー 歌：高木紗友希＆宮本佳林</td>
     </tr>
     <tr>
-      <td rowspan="22" class="karin-disco-title">2nd</th>
-      <td rowspan="22" class="karin-disco-title">2018/8/1</td>
-      <td rowspan="22" class="karin-disco-title">Juice=Juice#2 -!Una mas!-</td>
-      <td rowspan="11" class="karin-disco-title">Disc.1</td>
+      <td rowspan="22" class="dc-group">2nd</td>
+      <td rowspan="22" class="dc-group">2018/8/1</td>
+      <td rowspan="22" class="dc-group">Juice=Juice#2 -!Una mas!-</td>
+      <td rowspan="11" class="dc-group">Disc.1</td>
       <td>1</td>
       <td>Fiesta! Fiesta!</td>
       <td>井筒日美</td>
@@ -879,7 +879,7 @@
       <td></td>
     </tr>
     <tr>
-      <td rowspan="11" class="karin-disco-title">Disc.2</td>
+      <td rowspan="11" class="dc-group">Disc.2</td>
       <td>1</td>
       <td><a href="https://www.youtube.com/watch?v=rgUER272LsA&t=1562s" target="_blank" rel="noopener noreferrer">Never Never Surrender🎥</a></td>
       <td>児玉雨子</td>
@@ -968,10 +968,10 @@
       <td></td>
     </tr>
     <tr>
-      <td rowspan="24" class="karin-disco-title">3rd</th>
-      <td rowspan="24" class="karin-disco-title">2022/4/20</td>
-      <td rowspan="24" class="karin-disco-title">terzo</td>
-      <td rowspan="16" class="karin-disco-title">Disc.1 The Best Juice 2019-2022</td>
+      <td rowspan="24" class="dc-group">3rd</td>
+      <td rowspan="24" class="dc-group">2022/4/20</td>
+      <td rowspan="24" class="dc-group">terzo</td>
+      <td rowspan="16" class="dc-group">Disc.1 The Best Juice 2019-2022</td>
       <td>1</td>
       <td>微炭酸</td>
       <td>山崎あおい</td>
@@ -1100,7 +1100,7 @@
       <td></td>
     </tr>
     <tr>
-      <td rowspan="8" class="karin-disco-title">Disc.2 The Brand-New Juice 2022</td>
+      <td rowspan="8" class="dc-group">Disc.2 The Brand-New Juice 2022</td>
       <td>1</td>
       <td><a href="https://www.youtube.com/watch?v=5Ztjq7P88Rs&t=186s" target="_blank" rel="noopener noreferrer">GIRLS BE AMBITIOUS! 2022🎥</a></td>
       <td>中島卓偉</td>
@@ -1171,18 +1171,18 @@
     <tr>
       <th></th>
       <th>発売日</th>
-      <th class="karin-disco-head">タイトル</th>
+      <th class="dc-wide">タイトル</th>
       <th>Track</th>
-      <th class="karin-disco-head">曲名</th>
-      <th>作詞</th>
-      <th>作曲</th>
-      <th>編曲</th>
+      <th class="dc-wide">曲名</th>
+      <th class="dc-credit">作詞</th>
+      <th class="dc-credit">作曲</th>
+      <th class="dc-credit">編曲</th>
       <th>備考</th>
     </tr>
     <tr>
-      <td rowspan="14" class="karin-disco-title">1st</td>
-      <td rowspan="14" class="karin-disco-title">2023/10/11</td>
-      <td rowspan="14" class="karin-disco-title">Juicetory</td>
+      <td rowspan="14" class="dc-group">1st</td>
+      <td rowspan="14" class="dc-group">2023/10/11</td>
+      <td rowspan="14" class="dc-group">Juicetory</td>
       <td>1</td>
       <td>ロマンスの途中（2023 10th Juice Ver.）</td>
       <td>つんく</td>
@@ -1301,17 +1301,17 @@
     <tr>
       <th></th>
       <th>発売日</th>
-      <th class="karin-disco-head">タイトル</th>
+      <th class="dc-wide">タイトル</th>
       <th>Track</th>
-      <th class="karin-disco-head">曲名</th>
-      <th>作詞</th>
-      <th>作曲</th>
-      <th>編曲</th>
+      <th class="dc-wide">曲名</th>
+      <th class="dc-credit">作詞</th>
+      <th class="dc-credit">作曲</th>
+      <th class="dc-credit">編曲</th>
     </tr>
     <tr>
-      <td rowspan="14" class="karin-disco-title">1st</td>
-      <td rowspan="14" class="karin-disco-title">2026/6/21</td>
-      <td rowspan="14" class="karin-disco-title">MORE! MORE! EP</td>
+      <td rowspan="14" class="dc-group">1st</td>
+      <td rowspan="14" class="dc-group">2026/6/21</td>
+      <td rowspan="14" class="dc-group">MORE! MORE! EP</td>
       <td>1</td>
       <td><a href="https://www.youtube.com/watch?v=66T4PgpJDn8" target="_blank" rel="noopener noreferrer">>クラクラ☆クライマックス🎥</a></td>
       <td>広瀬香美/Maria Okada</td>

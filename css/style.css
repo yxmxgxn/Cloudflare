@@ -221,16 +221,28 @@ main {
 #karin-disco th {
   background: #f5f5f5;
 }
-#karin-disco tbody tr:nth-child(even) td:not(.karin-disco-title) {
+/* ゼブラ縞（rowspanのグループ見出しセル .dc-group は除外して白のまま） */
+#karin-disco tbody tr:nth-child(even) td:not(.dc-group) {
   background: #f9f9f9;
 }
-#karin-disco th.karin-disco-head {
+
+/* .dc-wide : タイトル・曲名など横幅を広く取りたいヘッダー列（th） */
+#karin-disco th.dc-wide {
   min-width: 10rem;
 }
 
-/* 折り返しと背景：td側 */
-#karin-disco td.karin-disco-title {
+/* .dc-group : rowspanでまとめた左側のグループ見出しセル（td・白背景固定） */
+#karin-disco td.dc-group {
   background: white !important;
+}
+
+/* .dc-credit : 作詞・作曲・編曲を約5文字幅で折り返し（th） */
+#karin-disco th.dc-credit {
+  width: 5em;
+  min-width: 0;
+}
+#karin-disco td {
+  overflow-wrap: anywhere;
 }
 
 /* 佳林の1日1ハロ テーブル
