@@ -16,7 +16,7 @@
 <div id="interview-controls">
   <input type="text" id="iv-search" placeholder="タイトル・媒体・メンバーで絞り込み…" oninput="ivFilter()">
   <select id="iv-group" onchange="ivGroupChange()">
-    <option value="">すべてのグループ</option>
+    <option value="">グループ</option>
     <?php include $_SERVER['DOCUMENT_ROOT'] . '/Spreadsheet/interview_groups.php'; ?>
   </select>
   <select id="iv-name" onchange="ivFilter()">
@@ -77,6 +77,12 @@
 
     document.getElementById('interview-count').textContent =
       filtered.length + ' 件 / 全' + allCards.length + ' 件';
+
+    // 選択中(先頭の既定以外を選んだ)プルダウンだけ太字にする
+    Array.prototype.forEach.call(
+      document.querySelectorAll('#interview-controls select'),
+      function(s) { s.classList.toggle('is-active', s.selectedIndex > 0); }
+    );
   }
 
   // グループを選ぶと、メンバー選択肢をそのグループの人だけに絞る

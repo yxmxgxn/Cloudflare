@@ -17,7 +17,7 @@
 <div id="gamelive-controls">
   <input type="text" id="gl-search" placeholder="メンバー・グループ・ゲーム・ジャンルで絞り込み…" oninput="glFilter()">
   <select id="gl-group" onchange="glGroupChange()">
-    <option value="">すべてのグループ</option>
+    <option value="">グループ</option>
     <?php include $_SERVER['DOCUMENT_ROOT'] . '/Spreadsheet/gamelive_groups.php'; ?>
   </select>
   <select id="gl-name" onchange="glNameChange()">
@@ -25,7 +25,7 @@
     <?php include $_SERVER['DOCUMENT_ROOT'] . '/Spreadsheet/gamelive_names.php'; ?>
   </select>
   <select id="gl-genre" onchange="glFilter()">
-    <option value="">すべてのジャンル</option>
+    <option value="">ジャンル</option>
     <?php include $_SERVER['DOCUMENT_ROOT'] . '/Spreadsheet/gamelive_genres.php'; ?>
   </select>
   <select id="gl-sort" onchange="glFilter()">
@@ -83,6 +83,12 @@
 
     document.getElementById('gamelive-count').textContent =
       filtered.length + ' 件 / 全' + allCards.length + ' 件';
+
+    // 選択中(先頭の既定以外を選んだ)プルダウンだけ太字にする
+    Array.prototype.forEach.call(
+      document.querySelectorAll('#gamelive-controls select'),
+      function(s) { s.classList.toggle('is-active', s.selectedIndex > 0); }
+    );
   }
 
   // グループとメンバーは排他: 片方を選んだらもう片方の絞り込みは解除する。

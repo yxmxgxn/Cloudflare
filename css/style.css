@@ -1229,10 +1229,10 @@ footer a {
   font-size: 14px;
 }
 
-/* メンバー絞り込みは目立たせたいので太字にする(interview/gamelive/cooking共通) */
-#iv-name,
-#gl-name,
-#ck-name {
+/* 選択中(既定=先頭以外を選んだ)のプルダウンだけ太字にして、絞り込み中だと一目で分かるようにする */
+#interview-controls select.is-active,
+#gamelive-controls select.is-active,
+#cooking-controls select.is-active {
   font-weight: bold;
 }
 

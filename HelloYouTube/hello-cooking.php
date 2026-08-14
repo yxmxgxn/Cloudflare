@@ -18,7 +18,7 @@
 <div id="cooking-controls">
   <input type="text" id="ck-search" placeholder="メンバー・料理名で絞り込み…" oninput="ckFilter()">
   <select id="ck-group" onchange="ckGroupChange()">
-    <option value="">すべてのグループ</option>
+    <option value="">グループ</option>
     <?php include $_SERVER['DOCUMENT_ROOT'] . '/Spreadsheet/cooking_groups.php'; ?>
   </select>
   <select id="ck-name" onchange="ckFilter()">
@@ -26,23 +26,23 @@
     <?php include $_SERVER['DOCUMENT_ROOT'] . '/Spreadsheet/cooking_names.php'; ?>
   </select>
   <select id="ck-genre" onchange="ckFilter()">
-    <option value="">すべてのジャンル</option>
+    <option value="">ジャンル</option>
     <?php include $_SERVER['DOCUMENT_ROOT'] . '/Spreadsheet/cooking_genres.php'; ?>
   </select>
   <select id="ck-category" onchange="ckFilter()">
-    <option value="">すべてのカテゴリ</option>
+    <option value="">カテゴリ</option>
     <?php include $_SERVER['DOCUMENT_ROOT'] . '/Spreadsheet/cooking_categories.php'; ?>
   </select>
   <select id="ck-type" onchange="ckFilter()">
-    <option value="">すべての食材</option>
+    <option value="">食材</option>
     <?php include $_SERVER['DOCUMENT_ROOT'] . '/Spreadsheet/cooking_types.php'; ?>
   </select>
   <select id="ck-subcat" onchange="ckFilter()" style="display:none">
-    <option value="">すべての種別</option>
+    <option value="">種別</option>
     <?php include $_SERVER['DOCUMENT_ROOT'] . '/Spreadsheet/cooking_subcats.php'; ?>
   </select>
   <select id="ck-cook" onchange="ckFilter()">
-    <option value="">すべての講師</option>
+    <option value="">講師</option>
     <?php include $_SERVER['DOCUMENT_ROOT'] . '/Spreadsheet/cooking_cooks.php'; ?>
   </select>
   <span id="cooking-count"></span>
@@ -116,6 +116,12 @@
     });
 
     document.getElementById('cooking-count').textContent = shown + ' 回 / 全' + allCards.length + ' 回';
+
+    // 選択中(先頭の既定以外を選んだ)プルダウンだけ太字にする
+    Array.prototype.forEach.call(
+      document.querySelectorAll('#cooking-controls select'),
+      function(s) { s.classList.toggle('is-active', s.selectedIndex > 0); }
+    );
   }
 
   // グループを選ぶと、メンバー選択肢をそのグループの人だけに絞る。
