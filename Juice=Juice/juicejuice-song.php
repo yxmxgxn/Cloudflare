@@ -27,7 +27,6 @@
       <th class="dc-credit">作詞</th>
       <th class="dc-credit">作曲</th>
       <th class="dc-credit">編曲</th>
-      <th>備考</th>
     </tr>
     <tr>
       <td>1st</td>
@@ -36,7 +35,6 @@
       <td>つんく</td>
       <td>つんく</td>
       <td>平田祥一郎</td>
-      <td></td>
     </tr>
     <tr>
       <td>2nd</td>
@@ -44,8 +42,7 @@
       <td><a href="https://helloproject.com/release/2211/" target="_blank" rel="noopener noreferrer">五月雨美女がさ乱れる</a><a href="https://www.youtube.com/watch?v=YHrpszUthUM" target="_blank" rel="noopener noreferrer">▶️</a>・<a href="https://www.youtube.com/watch?v=F-i07le2wo0" target="_blank" rel="noopener noreferrer">🎥</a>・<a href="https://www.youtube.com/watch?v=TBxjslahT-0" target="_blank" rel="noopener noreferrer">▶️（Close up Ver.）</a>・<a href="https://www.youtube.com/watch?v=buyWu8aPgss" target="_blank" rel="noopener noreferrer">💃</td>
       <td>つんく</td>
       <td>つんく</td>
-      <td>板垣祐介</td>
-      <td>ブラスアレンジ：鈴木俊介</td>
+      <td>板垣祐介<br>ブラスアレンジ：鈴木俊介</td>
     </tr>
     <tr>
       <td>3rd</td>
@@ -53,8 +50,7 @@
       <td><a href="https://helloproject.com/release/2212/" target="_blank" rel="noopener noreferrer">天まで登れ！</a><a href="https://www.youtube.com/watch?v=behGDIRH_8A" target="_blank" rel="noopener noreferrer">▶️</a>・<a href="https://www.youtube.com/watch?v=F-i07le2wo0" target="_blank" rel="noopener noreferrer">🎥</a></td>
       <td>つんく</td>
       <td>つんく</td>
-      <td>平田祥一郎</td>
-      <td>ブラスアレンジ：鈴木俊介 大塚愛奈ラストシングル</td>
+      <td>平田祥一郎<br>ブラスアレンジ：鈴木俊介</td>
     </tr>
   </table>
 
@@ -439,7 +435,6 @@
       <th class="dc-credit">作詞</th>
       <th class="dc-credit">作曲</th>
       <th class="dc-credit">編曲</th>
-      <th>備考</th>
     </tr>
     <tr>
       <td rowspan="2">2017/8/23</td>
@@ -447,14 +442,12 @@
       <td>井筒日美</td>
       <td>エリック・フクサキ</td>
       <td>大久保薫</td>
-      <td></td>
     </tr>
     <tr>
       <td>Wonderful World（English Ver.）</td>
-      <td>イイジマケン</td>
+      <td>イイジマケン<br>英語詞：鈴木桃子</td>
       <td>イイジマケン</td>
       <td>gaokalab</td>
-      <td>英語詞：鈴木桃子</td>
     </tr>
   </table>
 
@@ -467,7 +460,6 @@
       <th class="dc-credit">作詞</th>
       <th class="dc-credit">作曲</th>
       <th class="dc-credit">編曲</th>
-      <th>備考</th>
     </tr>
     <tr>
       <td>1st</td>
@@ -476,7 +468,6 @@
       <td>つんく</td>
       <td>つんく</td>
       <td>平田祥一郎</td>
-      <td>NEXT YOU名義</td>
     </tr>
     <tr>
       <td>2nd</td>
@@ -485,7 +476,6 @@
       <td>近藤薫</td>
       <td>近藤薫</td>
       <td>近藤薫&沢頭たかし</td>
-      <td></td>
     </tr>
     <tr>
       <td>3rd</td>
@@ -494,7 +484,6 @@
       <td>児玉雨子</td>
       <td>YUKO</td>
       <td>大久保薫</td>
-      <td>梁川奈々美・段原瑠々加入</td>
     </tr>
     <tr>
       <td>-</td>
@@ -503,7 +492,6 @@
       <td>山崎あおい</td>
       <td>山崎あおい</td>
       <td>炭竃智弘</td>
-      <td></td>
     </tr>
     <tr>
       <td>-</td>
@@ -512,7 +500,6 @@
       <td>山崎あおい</td>
       <td>山崎あおい</td>
       <td>炭竃智弘</td>
-      <td></td>
     </tr>
     <tr>
       <td>-</td>
@@ -521,7 +508,6 @@
       <td>山崎あおい</td>
       <td>山崎あおい</td>
       <td>炭竃智弘</td>
-      <td></td>
     </tr>
     <tr>
       <td>-</td>
@@ -530,7 +516,6 @@
       <td>山崎あおい</td>
       <td>山崎あおい</td>
       <td>鈴木俊介</td>
-      <td></td>
     </tr>
   </table>
 
@@ -546,7 +531,6 @@
       <th class="dc-credit">作詞</th>
       <th class="dc-credit">作曲</th>
       <th class="dc-credit">編曲</th>
-      <th>備考</th>
     </tr>
     <tr>
       <td rowspan="29" class="dc-group">1st</td>
@@ -557,8 +541,7 @@
       <td>天まで登れ!</td>
       <td>つんく</td>
       <td>つんく</td>
-      <td>平田祥一郎</td>
-      <td>ブラスアレンジ：鈴木俊介</td>
+      <td>平田祥一郎<br>ブラスアレンジ：鈴木俊介</td>
     </tr>
     <tr>
       <td>2</td>
@@ -566,7 +549,6 @@
       <td>つんく</td>
       <td>つんく</td>
       <td>鈴木俊介</td>
-      <td></td>
     </tr>
     <tr>
       <td>3</td>
@@ -574,15 +556,13 @@
       <td>つんく</td>
       <td>つんく</td>
       <td>平田祥一郎</td>
-      <td></td>
     </tr>
     <tr>
       <td>4</td>
       <td>五月雨美女がさ乱れる（MEMORIAL EDIT）</td>
       <td>つんく</td>
       <td>つんく</td>
-      <td>板垣祐介</td>
-      <td>ブラスアレンジ：鈴木俊介</td>
+      <td>板垣祐介<br>ブラスアレンジ：鈴木俊介</td>
     </tr>
     <tr>
       <td>5</td>
@@ -590,15 +570,13 @@
       <td>つんく</td>
       <td>つんく</td>
       <td>大久保薫</td>
-      <td></td>
     </tr>
     <tr>
       <td>6</td>
       <td>初めてを経験中</td>
       <td>つんく</td>
       <td>つんく</td>
-      <td>編曲: AKIRA</td>
-      <td>ブラスアレンジ：鈴木俊介</td>
+      <td>AKIRA<br>ブラスアレンジ：鈴木俊介</td>
     </tr>
     <tr>
       <td>7</td>
@@ -606,7 +584,6 @@
       <td>つんく</td>
       <td>つんく</td>
       <td>平田祥一郎</td>
-      <td></td>
     </tr>
     <tr>
       <td>8</td>
@@ -614,7 +591,6 @@
       <td>つんく</td>
       <td>つんく</td>
       <td>編曲: 近藤圭一</td>
-      <td></td>
     </tr>
     <tr>
       <td>9</td>
@@ -622,7 +598,6 @@
       <td>つんく</td>
       <td>つんく</td>
       <td>平田祥一郎</td>
-      <td></td>
     </tr>
     <tr>
       <td>10</td>
@@ -630,7 +605,6 @@
       <td>つんく</td>
       <td>つんく</td>
       <td>平田祥一郎</td>
-      <td></td>
     </tr>
     <tr>
       <td>11</td>
@@ -638,7 +612,6 @@
       <td>つんく</td>
       <td>つんく</td>
       <td>平田祥一郎</td>
-      <td></td>
     </tr>
     <tr>
       <td>12</td>
@@ -646,7 +619,6 @@
       <td>つんく</td>
       <td>つんく</td>
       <td>平田祥一郎</td>
-      <td></td>
     </tr>
     <tr>
       <td rowspan="11" class="dc-group">Disc.2 The Brand-New Juice</td>
@@ -655,7 +627,6 @@
       <td>イイジマケン</td>
       <td>イイジマケン</td>
       <td>gaokalab</td>
-      <td></td>
     </tr>
     <tr>
       <td>2</td>
@@ -663,7 +634,6 @@
       <td>星部ショウ</td>
       <td>星部ショウ</td>
       <td>平田祥一郎</td>
-      <td></td>
     </tr>
     <tr>
       <td>3</td>
@@ -671,7 +641,6 @@
       <td>中島卓偉</td>
       <td>中島卓偉</td>
       <td>大久保薫</td>
-      <td></td>
     </tr>
     <tr>
       <td>4</td>
@@ -679,7 +648,6 @@
       <td>星部ショウ</td>
       <td>masaaki asada</td>
       <td>松井寛</td>
-      <td></td>
     </tr>
     <tr>
       <td>5</td>
@@ -687,7 +655,6 @@
       <td>つんく</td>
       <td>つんく</td>
       <td>山崎淳</td>
-      <td></td>
     </tr>
     <tr>
       <td>6</td>
@@ -695,7 +662,6 @@
       <td>三浦徳子</td>
       <td>川辺ヒロシ・上田禎</td>
       <td>CMJK</td>
-      <td></td>
     </tr>
     <tr>
       <td>7</td>
@@ -703,7 +669,6 @@
       <td>中島卓偉</td>
       <td>中島卓偉</td>
       <td>中島卓偉・宮永治郎</td>
-      <td></td>
     </tr>
     <tr>
       <td>8</td>
@@ -711,7 +676,6 @@
       <td>星部ショウ</td>
       <td>星部ショウ</td>
       <td>土肥真生</td>
-      <td></td>
     </tr>
     <tr>
       <td>9</td>
@@ -719,7 +683,6 @@
       <td>児玉雨子</td>
       <td>星部ショウ</td>
       <td>CMJK</td>
-      <td></td>
     </tr>
     <tr>
       <td>10</td>
@@ -727,7 +690,6 @@
       <td>角田崇徳</td>
       <td>KOJI oba</td>
       <td>KOJI oba</td>
-      <td></td>
     </tr>
     <tr>
       <td>11</td>
@@ -735,7 +697,6 @@
       <td>近藤薫</td>
       <td>近藤薫</td>
       <td>近藤薫・HASSE</td>
-      <td></td>
     </tr>
     <tr>
       <td rowspan="6" class="dc-group">The Cover Juice</td>
@@ -744,7 +705,6 @@
       <td>つんく</td>
       <td>つんく</td>
       <td>村山晋一郎</td>
-      <td>太陽とシスコムーンのカバー</td>
     </tr>
     <tr>
       <td>2</td>
@@ -752,7 +712,6 @@
       <td>つんく</td>
       <td>つんく</td>
       <td>平田祥一郎</td>
-      <td>メロン記念日のカバー</td>
     </tr>
     <tr>
       <td>3</td>
@@ -760,7 +719,6 @@
       <td>つんく</td>
       <td>つんく</td>
       <td>松井寛</td>
-      <td>音楽ガッタスのカバー</td>
     </tr>
     <tr>
       <td>4</td>
@@ -768,7 +726,6 @@
       <td>つんく</td>
       <td>つんく</td>
       <td>鈴木Daichi秀行</td>
-      <td>後藤真希のカバー</td>
     </tr>
     <tr>
       <td>5</td>
@@ -776,7 +733,6 @@
       <td>つんく</td>
       <td>つんく</td>
       <td>小西貴雄</td>
-      <td>プッチモニのカバー 歌：宮崎由加＆金澤朋子＆植村あかり</td>
     </tr>
     <tr>
       <td>6</td>
@@ -784,7 +740,6 @@
       <td>つんく</td>
       <td>つんく</td>
       <td>小西貴雄</td>
-      <td>タンポポのカバー 歌：高木紗友希＆宮本佳林</td>
     </tr>
     <tr>
       <td rowspan="22" class="dc-group">2nd</td>
@@ -796,7 +751,6 @@
       <td>井筒日美</td>
       <td>エリック・フクサキ</td>
       <td>大久保薫</td>
-      <td></td>
     </tr>
     <tr>
       <td>2</td>
@@ -804,7 +758,6 @@
       <td>つんく</td>
       <td>つんく</td>
       <td>平田祥一郎</td>
-      <td></td>
     </tr>
     <tr>
       <td>3</td>
@@ -812,7 +765,6 @@
       <td>大森祥子</td>
       <td>中村瑛彦</td>
       <td>中村瑛彦</td>
-      <td></td>
     </tr>
     <tr>
       <td>4</td>
@@ -820,7 +772,6 @@
       <td>児玉雨子</td>
       <td>SEION, Tasco, Tenzo</td>
       <td>Tasco, Tenzo</td>
-      <td></td>
     </tr>
     <tr>
       <td>5</td>
@@ -828,7 +779,6 @@
       <td>児玉雨子</td>
       <td>BLACC HOLE&NOBB-D</td>
       <td>BLACC HOLE&NOBB-D with T</td>
-      <td></td>
     </tr>
     <tr>
       <td>6</td>
@@ -836,7 +786,6 @@
       <td>三浦徳子</td>
       <td>中村瑛彦</td>
       <td>中村瑛彦</td>
-      <td></td>
     </tr>
     <tr>
       <td>7</td>
@@ -844,15 +793,13 @@
       <td>つんく</td>
       <td>つんく</td>
       <td>江上浩太郎</td>
-      <td></td>
     </tr>
     <tr>
       <td>8</td>
       <td>KEEP ON 上昇志向!! </td>
       <td>前山田健一</td>
       <td>ダンス☆マン</td>
-      <td>ダンス☆マン</td>
-      <td>ブラスアレンジ: 川松久芳</td>
+      <td>ダンス☆マン<br>ブラスアレンジ: 川松久芳</td>
     </tr>
     <tr>
       <td>9</td>
@@ -860,7 +807,6 @@
       <td>福田花音</td>
       <td>板垣祐介</td>
       <td>板垣祐介</td>
-      <td></td>
     </tr>
     <tr>
       <td>10</td>
@@ -868,7 +814,6 @@
       <td>つんく</td>
       <td>つんく</td>
       <td>大久保薫</td>
-      <td>NEXT YOU名義</td>
     </tr>
     <tr>
       <td>11</td>
@@ -876,7 +821,6 @@
       <td>つんく</td>
       <td>つんく</td>
       <td>平田祥一郎</td>
-      <td></td>
     </tr>
     <tr>
       <td rowspan="11" class="dc-group">Disc.2</td>
@@ -885,7 +829,6 @@
       <td>児玉雨子</td>
       <td>星部ショウ</td>
       <td>大久保薫</td>
-      <td></td>
     </tr>
     <tr>
       <td>2</td>
@@ -893,7 +836,6 @@
       <td>児玉雨子</td>
       <td>YUKO</td>
       <td>大久保薫</td>
-      <td></td>
     </tr>
     <tr>
       <td>3</td>
@@ -901,7 +843,6 @@
       <td>唐沢美帆</td>
       <td>星部ショウ</td>
       <td>松井寛</td>
-      <td></td>
     </tr>
     <tr>
       <td>4</td>
@@ -909,7 +850,6 @@
       <td>井筒日美</td>
       <td>星部ショウ</td>
       <td>浜田ピエール裕介</td>
-      <td></td>
     </tr>
     <tr>
       <td>5</td>
@@ -917,7 +857,6 @@
       <td>児玉雨子</td>
       <td>ダンス☆マン</td>
       <td>ダンス☆マン</td>
-      <td></td>
     </tr>
     <tr>
       <td>6</td>
@@ -925,7 +864,6 @@
       <td>NOBE</td>
       <td>星部ショウ</td>
       <td>星部ショウ</td>
-      <td></td>
     </tr>
     <tr>
       <td>7</td>
@@ -933,7 +871,6 @@
       <td>近藤薫</td>
       <td>近藤薫&amp;沢頭たかし</td>
       <td>鈴木俊介</td>
-      <td></td>
     </tr>
     <tr>
       <td>8</td>
@@ -941,7 +878,6 @@
       <td>児玉雨子</td>
       <td>星部ショウ</td>
       <td>高橋諭一</td>
-      <td></td>
     </tr>
     <tr>
       <td>9</td>
@@ -949,7 +885,6 @@
       <td>井筒日美</td>
       <td>中村瑛彦</td>
       <td>中村瑛彦</td>
-      <td></td>
     </tr>
     <tr>
       <td>10</td>
@@ -957,7 +892,6 @@
       <td>大橋莉子</td>
       <td>大橋莉子</td>
       <td>平田祥一郎</td>
-      <td></td>
     </tr>
     <tr>
       <td>11</td>
@@ -965,7 +899,6 @@
       <td>つんく</td>
       <td>つんく</td>
       <td>平田祥一郎</td>
-      <td></td>
     </tr>
     <tr>
       <td rowspan="24" class="dc-group">3rd</td>
@@ -977,14 +910,12 @@
       <td>山崎あおい</td>
       <td>KOUGA</td>
       <td>KOUGA</td>
-      <td></td>
     </tr>
     <tr>
       <td>2</td>
       <td>ポツリと</td>
       <td>中島卓偉</td>
       <td>浜田ピエール裕介</td>
-      <td></td>
       <td></td>
     </tr>
     <tr>
@@ -993,7 +924,6 @@
       <td>三浦徳子</td>
       <td>KOUGA</td>
       <td>炭竃智弘</td>
-      <td></td>
     </tr>
     <tr>
       <td>4</td>
@@ -1001,7 +931,6 @@
       <td>山崎あおい</td>
       <td>鈴木俊介</td>
       <td>鈴木俊介</td>
-      <td></td>
     </tr>
     <tr>
       <td>5</td>
@@ -1009,7 +938,6 @@
       <td>児玉雨子</td>
       <td>KOUGA</td>
       <td>KOUGA</td>
-      <td></td>
     </tr>
     <tr>
       <td>6</td>
@@ -1017,7 +945,6 @@
       <td>山崎あおい</td>
       <td>鈴木俊介</td>
       <td>鈴木俊介</td>
-      <td></td>
     </tr>
     <tr>
       <td>7</td>
@@ -1025,7 +952,6 @@
       <td>KAN</td>
       <td>KAN</td>
       <td>炭竃智弘</td>
-      <td></td>
     </tr>
     <tr>
       <td>8</td>
@@ -1033,7 +959,6 @@
       <td>山崎あおい</td>
       <td>山崎あおい</td>
       <td>鈴木俊介</td>
-      <td></td>
     </tr>
     <tr>
       <td>9</td>
@@ -1041,7 +966,6 @@
       <td>星部ショウ</td>
       <td>星部ショウ</td>
       <td>平田祥一郎</td>
-      <td></td>
     </tr>
     <tr>
       <td>10</td>
@@ -1049,7 +973,6 @@
       <td>児玉雨子</td>
       <td>Shusui/Josef Melin</td>
       <td>Josef Melin</td>
-      <td></td>
     </tr>
     <tr>
       <td>11</td>
@@ -1057,7 +980,6 @@
       <td>近藤薫</td>
       <td>近藤薫</td>
       <td>上杉洋史</td>
-      <td></td>
     </tr>
     <tr>
       <td>12</td>
@@ -1065,7 +987,6 @@
       <td>伊藤銀次</td>
       <td>山下達郎</td>
       <td>Anders Dannvik</td>
-      <td></td>
     </tr>
     <tr>
       <td>13</td>
@@ -1073,7 +994,6 @@
       <td>山崎あおい</td>
       <td>山崎あおい</td>
       <td>KOUGA</td>
-      <td></td>
     </tr>
     <tr>
       <td>14</td>
@@ -1081,7 +1001,6 @@
       <td>竹内まりや</td>
       <td>竹内まりや</td>
       <td>Anders Dannvik</td>
-      <td></td>
     </tr>
     <tr>
       <td>15</td>
@@ -1089,7 +1008,6 @@
       <td>イイジマケン</td>
       <td>Shusui / Shim Zeyun / tsubomi</td>
       <td>鈴木俊介</td>
-      <td></td>
     </tr>
     <tr>
       <td>16</td>
@@ -1097,7 +1015,6 @@
       <td>大森祥子</td>
       <td>Shusui / Josef Melin</td>
       <td>Josef Melin</td>
-      <td></td>
     </tr>
     <tr>
       <td rowspan="8" class="dc-group">Disc.2 The Brand-New Juice 2022</td>
@@ -1106,7 +1023,6 @@
       <td>中島卓偉</td>
       <td>中島卓偉</td>
       <td>中島卓偉 / 宮永治郎</td>
-      <td></td>
     </tr>
     <tr>
       <td>2</td>
@@ -1114,7 +1030,6 @@
       <td>山崎あおい</td>
       <td>Erik Lidbom / Julie Yu / Andreas Carlsson</td>
       <td>Erik Lidbom</td>
-      <td></td>
     </tr>
     <tr>
       <td>3</td>
@@ -1122,7 +1037,6 @@
       <td>徳田光希</td>
       <td>徳田光希</td>
       <td>平田祥一郎</td>
-      <td></td>
     </tr>
     <tr>
       <td>4</td>
@@ -1130,7 +1044,6 @@
       <td>オオヤギヒロオ / 井筒日美</td>
       <td>オオヤギヒロオ</td>
       <td>浜田ピエール裕介</td>
-      <td></td>
     </tr>
     <tr>
       <td>5</td>
@@ -1138,7 +1051,6 @@
       <td>唐沢美帆</td>
       <td>松井寛</td>
       <td>松井寛</td>
-      <td></td>
     </tr>
     <tr>
       <td>6</td>
@@ -1146,7 +1058,6 @@
       <td>井筒日美</td>
       <td>Shusui / Andreas Ohrm / Henrik Smith</td>
       <td>Henrik Smith</td>
-      <td></td>
     </tr>
     <tr>
       <td>7</td>
@@ -1154,7 +1065,6 @@
       <td>Shusui / Zeyun / tsubomi</td>
       <td>Shusui / Zeyun / tsubomi</td>
       <td>Zeyun</td>
-      <td></td>
     </tr>
     <tr>
       <td>8</td>
@@ -1162,7 +1072,6 @@
       <td>児玉雨子</td>
       <td>炭竃智弘</td>
       <td>炭竃智弘</td>
-      <td></td>
     </tr>
   </table>
 
@@ -1177,7 +1086,6 @@
       <th class="dc-credit">作詞</th>
       <th class="dc-credit">作曲</th>
       <th class="dc-credit">編曲</th>
-      <th>備考</th>
     </tr>
     <tr>
       <td rowspan="14" class="dc-group">1st</td>
@@ -1188,7 +1096,6 @@
       <td>つんく</td>
       <td>つんく</td>
       <td>鈴木俊介</td>
-      <td></td>
     </tr>
     <tr>
       <td>2</td>
@@ -1196,7 +1103,6 @@
       <td>つんく</td>
       <td>つんく</td>
       <td>平田祥一郎</td>
-      <td></td>
     </tr>
     <tr>
       <td>3</td>
@@ -1204,15 +1110,13 @@
       <td>つんく</td>
       <td>つんく</td>
       <td>大久保薫</td>
-      <td></td>
     </tr>
     <tr>
       <td>4</td>
       <td>初めてを経験中（2023）</td>
       <td>つんく</td>
       <td>つんく</td>
-      <td>AKIRA</td>
-      <td>ブラスアレンジ: 鈴木俊介</td>
+      <td>AKIRA<br>ブラスアレンジ: 鈴木俊介</td>
     </tr>
     <tr>
       <td>5</td>
@@ -1220,7 +1124,6 @@
       <td>つんく</td>
       <td>つんく</td>
       <td>平田祥一郎</td>
-      <td></td>
     </tr>
     <tr>
       <td>6</td>
@@ -1228,7 +1131,6 @@
       <td>イイジマケン</td>
       <td>イイジマケン</td>
       <td>炭竃智弘</td>
-      <td></td>
     </tr>
     <tr>
       <td>7</td>
@@ -1236,7 +1138,6 @@
       <td>星部ショウ</td>
       <td>星部ショウ</td>
       <td>平田祥一郎</td>
-      <td></td>
     </tr>
     <tr>
       <td>8</td>
@@ -1244,7 +1145,6 @@
       <td>つんく</td>
       <td>つんく</td>
       <td>村山晋一郎</td>
-      <td></td>
     </tr>
     <tr>
       <td>9</td>
@@ -1252,7 +1152,6 @@
       <td>つんく</td>
       <td>つんく</td>
       <td>平田祥一郎</td>
-      <td></td>
     </tr>
     <tr>
       <td>10</td>
@@ -1260,7 +1159,6 @@
       <td>児玉雨子</td>
       <td>星部ショウ</td>
       <td>大久保薫</td>
-      <td></td>
     </tr>
     <tr>
       <td>11</td>
@@ -1268,7 +1166,6 @@
       <td>山崎あおい</td>
       <td>山崎あおい</td>
       <td>KOUGA</td>
-      <td></td>
     </tr>
     <tr>
       <td>12</td>
@@ -1276,7 +1173,6 @@
       <td>山崎あおい</td>
       <td>山崎あおい</td>
       <td>鈴木俊介</td>
-      <td></td>
     </tr>
     <tr>
       <td>13</td>
@@ -1284,7 +1180,6 @@
       <td>KAN</td>
       <td>KAN</td>
       <td>炭竃智弘</td>
-      <td></td>
     </tr>
     <tr>
       <td>14</td>
@@ -1292,7 +1187,6 @@
       <td>井筒日美</td>
       <td>Shusui/Josef Melin</td>
       <td>Josef Melin</td>
-      <td></td>
     </tr>
   </table>
   
