@@ -1,12 +1,18 @@
 #!/usr/bin/env python3
 """
-HANAKINチャレンジのスプレッドシート(イベント+コラボ相手IG)を読み取り、
-PHPインクルード用のテーブル(tbody)フラグメントを生成する
+宮本佳林のInstagramチャレンジ(HANAKIN / シャニカマー45°)のスプレッドシート
+(イベント+コラボ相手IG)を読み取り、PHPインクルード用のテーブル(tbody)
+フラグメントを企画ごとに生成する
 
   イベントシート : ID,Date,Instagram,TikTok,Member1,Member2,Place
+                    IDの接頭辞で企画を振り分ける(HK=HANAKIN / SK=シャニカマー45°)。
                    Instagram/TikTokは投稿URL。Member1/2はコラボ相手(0人もあり)。Placeは特別な会場
   相手IGシート   : ID,Member,Instagram
                    ID+Memberでコラボ相手を公式Instagramプロフィールに紐づける(1IDに複数行)
+
+両企画は同じイベント/相手IGシートを共有し、接頭辞で別テーブルに出力する。
+出力: Spreadsheet/hanakin_table.php, Spreadsheet/shanikama_table.php
+      Generated/hanakin_generated.php(最終更新日。両表で共有)
 
 更新頻度が高くないので手動実行(generate-manual.ymlのhanakin)で回す。
 ローカル確認用にCSVパスも渡せる:
@@ -30,8 +36,13 @@ GID_MEMBERS = "126937742"
 
 REPO_ROOT = Path(__file__).resolve().parent.parent  # Python/ の親
 
-OUTPUT_TABLE = REPO_ROOT / "Spreadsheet" / "hanakin_table.php"
 OUTPUT_GENERATED = REPO_ROOT / "Generated" / "hanakin_generated.php"
+
+# IDの接頭辞ごとに別テーブルへ振り分ける(同じイベント/相手IGシートを共有)
+CHALLENGES = [
+    {"prefix": "HK", "table": REPO_ROOT / "Spreadsheet" / "hanakin_table.php"},
+    {"prefix": "SK", "table": REPO_ROOT / "Spreadsheet" / "shanikama_table.php"},
+]
 
 
 def fetch_csv(source: str) -> list[dict]:
@@ -129,14 +140,18 @@ def main():
 
     stamp = f"<!-- generated: {datetime.now(timezone.utc).isoformat()} -->\n"
 
-    OUTPUT_TABLE.parent.mkdir(parents=True, exist_ok=True)
     OUTPUT_GENERATED.parent.mkdir(parents=True, exist_ok=True)
-    with open(OUTPUT_TABLE, "w", encoding="utf-8") as f:
-        f.write(stamp + build_rows(events, profiles) + "\n")
+    summary = []
+    for ch in CHALLENGES:
+        subset = [e for e in events if val(e, "ID").startswith(ch["prefix"])]
+        ch["table"].parent.mkdir(parents=True, exist_ok=True)
+        with open(ch["table"], "w", encoding="utf-8") as f:
+            f.write(stamp + build_rows(subset, profiles) + "\n")
+        summary.append(f"{ch['prefix']} {len(subset)}回")
     with open(OUTPUT_GENERATED, "w", encoding="utf-8") as f:
         f.write(f'<div class="last-update">最終更新日：{generated}</div>\n')
 
-    print(f"生成完了: {OUTPUT_TABLE} ({len([e for e in events if val(e,'ID')])} 回 / 相手IG {len(profiles)} 件)")
+    print(f"生成完了: {' / '.join(summary)} / 相手IG {len(profiles)} 件")
 
 
 if __name__ == "__main__":

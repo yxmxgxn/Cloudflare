@@ -1355,28 +1355,28 @@ footer a {
   margin-bottom: 8px;
 }
 
-/*HANAKINチャレンジ
+/*Instagramチャレンジ（HANAKIN・シャニカマー45°）
 -------------------------------------*/
-#hanakin-wrap {
+.hanakin-wrap {
   overflow-x: auto;
   margin-top: 1em;
 }
 
-#hanakin-table {
+.hanakin-table {
   border-collapse: collapse;
 }
 
-#hanakin-table th,
-#hanakin-table td {
+.hanakin-table th,
+.hanakin-table td {
   border: 1px solid #ccc;
   padding: 6px 10px;
   white-space: nowrap;
 }
 
-#hanakin-table th {
+.hanakin-table th {
   background: #f5f5f5;
 }
 
-#hanakin-table tr.row-even {
+.hanakin-table tr.row-even {
   background: #f9f9f9;
 }
