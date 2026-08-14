@@ -1397,3 +1397,9 @@ footer a {
 .hanakin-table tr.row-even {
   background: #f9f9f9;
 }
+
+.hanakin-table .sns-icon {
+  width: 20px;
+  height: 20px;
+  vertical-align: -4px;
+}
