@@ -384,13 +384,13 @@
       <th class="karin-disco-head">
         曲名
       </th>
-      <th>
+      <th class="karin-disco-head">
         作詞
       </th>
-      <th>
+      <th class="karin-disco-head">
         作曲
       </th>
-      <th>
+      <th class="karin-disco-head">
         編曲
       </th>
     </tr>
@@ -895,14 +895,14 @@
       </th>
       <th class="karin-disco-head">
         曲名
-      </th>
-      <th>
+      </th class="karin-disco-head">
+      <th class="karin-disco-head">
         作詞
       </th>
       <th>
         作曲
       </th>
-      <th>
+      <th class="karin-disco-head">
         編曲
       </th>
     </tr>
@@ -954,13 +954,13 @@
       <th>
         歌
       </th>
-      <th>
+      <th class="karin-disco-head">
         作詞
       </th>
       <th>
         作曲
-      </th>
-      <th>
+      </th class="karin-disco-head">
+      <th class="karin-disco-head">
         編曲
       </th>
     </tr>
@@ -1060,13 +1060,13 @@
       <th class="karin-disco-head">
         曲名
       </th>
-      <th>
+      <th class="karin-disco-head">
         作詞
       </th>
-      <th>
+      <th class="karin-disco-head">
         作曲
       </th>
-      <th>
+      <th class="karin-disco-head">
         編曲
       </th>
      <tr>
@@ -1243,13 +1243,13 @@
       <th class="karin-disco-head">
         曲名
       </th>
-      <th>
+      <th class="karin-disco-head">
         作詞
       </th>
-      <th>
+      <th class="karin-disco-head">
         作曲
       </th>
-      <th>
+      <th class="karin-disco-head">
         編曲
       </th>
     </tr>

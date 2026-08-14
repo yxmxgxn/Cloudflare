@@ -1307,7 +1307,6 @@
       <th>作詞</th>
       <th>作曲</th>
       <th>編曲</th>
-      <th>備考</th>
     </tr>
     <tr>
       <td rowspan="14" class="karin-disco-title">1st</td>
