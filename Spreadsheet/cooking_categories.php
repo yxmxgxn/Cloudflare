@@ -1,4 +1,8 @@
+<<<<<<< Updated upstream
 <!-- generated: 2026-08-14T08:56:11.995783+00:00 -->
+=======
+<!-- generated: 2026-08-14T08:51:36.824247+00:00 -->
+>>>>>>> Stashed changes
 <option value="主食">主食</option>
 <option value="主菜">主菜</option>
 <option value="副菜">副菜</option>

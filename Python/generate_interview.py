@@ -14,6 +14,8 @@ import urllib.request
 from datetime import datetime, timezone, timedelta
 from pathlib import Path
 
+from gh_warn import warn_missing_members
+
 PUB_BASE = (
     "https://docs.google.com/spreadsheets/d/e/"
     "2PACX-1vQUuY0kp6M2i3IBrzIJ0rxkRI19oqwdGFUszeQvsTJyydQJZae5OXrVEgshlXsDR906hUOm6497dUsr/pub"
@@ -244,9 +246,10 @@ def main():
     with open(OUTPUT_GENERATED, "w", encoding="utf-8") as f:
         f.write(f'<p class="last-update">データ取得日：{generated}</p>\n')
 
-    missing = sorted(n for n in name_set if n not in master)
-    if missing:
-        print(f"⚠ マスター未登録(記事側Groupで代替): {', '.join(missing)}")
+    warn_missing_members(
+        sorted(n for n in name_set if n not in master),
+        note="(記事側Groupで代替)",
+    )
     print(f"生成完了: {OUTPUT_CARDS} ({len(articles)} 記事 / メンバー {len(name_set)} 名)")
 
 

@@ -1229,6 +1229,13 @@ footer a {
   font-size: 14px;
 }
 
+/* メンバー絞り込みは目立たせたいので太字にする(interview/gamelive/cooking共通) */
+#iv-name,
+#gl-name,
+#ck-name {
+  font-weight: bold;
+}
+
 #cooking-count {
   font-size: 13px;
   color: #888;
@@ -1264,6 +1271,15 @@ footer a {
   font-size: 15px;
   font-weight: bold;
   margin: 0;
+}
+
+.ck-card .ck-name {
+  cursor: pointer;
+  border-bottom: 1px dotted #AE8DBC;
+}
+
+.ck-card .ck-name:hover {
+  color: #AE8DBC;
 }
 
 .ck-card .ck-cook {

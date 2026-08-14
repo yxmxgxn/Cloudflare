@@ -8,10 +8,11 @@
 
 <main>
   <h1>ハロー！プロジェクト メンバーのインタビュー記事まとめ</h1>
-  ハロー！プロジェクト メンバーのWebインタビュー記事を一覧でまとめました。<br>
-  各カードは、掲載日とタイトル（押すと記事本文へ）、媒体・連載名、登場メンバーで構成されています。右下の「Web Archive」からアーカイブを開けます。<br>
-  グループ・メンバー名での絞り込み、掲載日・タイトルでの並び替え、フリーワード検索ができます。<br>
-  2026/08 現在、宮本佳林さん・OCHA NORMA・ロージークロニクルを中心に掲載しています。<br>
+  <p>ハロー！プロジェクト メンバーのWebインタビュー記事を一覧でまとめました。<br>
+  各カードは、掲載日とタイトル（記事リンク）、媒体・連載名、メンバーで構成されています。</p>
+  <p>グループ・メンバー名での絞り込み、掲載日・タイトルでの並び替え、タイトル・媒体・メンバーでの検索ができます</p>
+  <p>右下のWeb Archiveからアーカイブを開けます。</p>
+  <p>2026/08/14 宮本佳林さん・OCHA NORMA・ロージークロニクルを中心に掲載しています。</p>
 <div id="interview-controls">
   <input type="text" id="iv-search" placeholder="タイトル・媒体・メンバーで絞り込み…" oninput="ivFilter()">
   <select id="iv-group" onchange="ivGroupChange()">
@@ -19,7 +20,7 @@
     <?php include $_SERVER['DOCUMENT_ROOT'] . '/Spreadsheet/interview_groups.php'; ?>
   </select>
   <select id="iv-name" onchange="ivFilter()">
-    <option value="">すべてのメンバー</option>
+    <option value="">メンバー</option>
     <?php include $_SERVER['DOCUMENT_ROOT'] . '/Spreadsheet/interview_names.php'; ?>
   </select>
   <select id="iv-sort" onchange="ivFilter()">
@@ -84,7 +85,7 @@
     var nameSel = document.getElementById('iv-name');
     var stillValid = false;
     Array.prototype.forEach.call(nameSel.options, function(o) {
-      if (!o.value) return; // 「すべてのメンバー」
+      if (!o.value) return; // 「メンバー」(プレースホルダ)
       var show = !g || (o.getAttribute('data-group') || '') === g;
       o.hidden = !show;
       o.disabled = !show;

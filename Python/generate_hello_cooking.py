@@ -21,6 +21,8 @@ import urllib.request
 from datetime import datetime, timezone, timedelta
 from pathlib import Path
 
+from gh_warn import warn_missing_members
+
 PUB_BASE = (
     "https://docs.google.com/spreadsheets/d/e/"
     "2PACX-1vTJIq52Z-varZUNgAlES7Y9LWatAXsX2Q31pgkm1Vfw-U1X87Tbxu40PWyA40EAz_BWA3dm5R6ZvLzU/pub"
@@ -129,6 +131,14 @@ def resolve_group(name: str, master: dict, fallback: dict) -> str:
     return master.get(name, {}).get("group") or fallback.get(name, "")
 
 
+def name_span(name: str) -> str:
+    """メンバー名をクリックで絞り込める <span> に包む。
+    「（A＆B）」の合体表記(デュオ回)は個人の選択肢が無いのでクリック対象にしない。"""
+    if name.startswith(("（", "(")):
+        return esc(name)
+    return f'<span class="ck-name" data-name="{esc(name)}">{esc(name)}</span>'
+
+
 def build_title(row: dict) -> str:
     """1行目: 出演メンバー(・区切り、所属を（ ）付きで)"""
     parts = []
@@ -137,7 +147,7 @@ def build_title(row: dict) -> str:
         if not name:
             continue
         grp = val(row, gkey)
-        parts.append(f"{esc(name)}（{esc(grp)}）" if grp else esc(name))
+        parts.append(f"{name_span(name)}（{esc(grp)}）" if grp else name_span(name))
     return f'<p class="ck-title">{"・".join(parts)}</p>'
 
 
@@ -333,9 +343,10 @@ def main():
         f.write(f'<div class="last-update">最終更新日：{generated}</div>\n')
 
     ids = {val(r, "ID") for r in members if val(r, "ID")}
-    missing = sorted(n for n in dropdown_names if n not in master)
-    if missing:
-        print(f"⚠ マスター未登録(料理側Groupで代替・よみがな順が名前基準になる): {', '.join(missing)}")
+    warn_missing_members(
+        sorted(n for n in dropdown_names if n not in master),
+        note="(料理側Groupで代替・よみがな順が名前基準になる)",
+    )
     print(f"生成完了: {OUTPUT_CARDS} "
           f"({len(ids)} 回 / メンバー {len(cooking_names)} 名 / "
           f"料理 {len(meals)} 品 / 動画 {len(videos)} 本)")

@@ -11,9 +11,10 @@
 
 <main>
   <h1>ハロプロ クッキングコーナーまとめ</h1>
-  ハロー！プロジェクトのメンバーがYouTube番組で料理に挑戦したクッキングコーナーを、回ごとにまとめました。<br>
-  出演メンバー・講師・作った料理と、その回の動画へのリンクをまとめています。料理のジャンル・カテゴリ・食材（種類）で絞り込みできます。<br>
-
+  ハロー！プロジェクトのメンバーがYouTube番組で料理に挑戦したクッキングコーナーを回ごとにまとめました。<br>
+  出演メンバー・講師・作った料理と、その回の動画へのリンクをまとめています。<br>
+  料理のジャンル・カテゴリ・食材（種類）で絞り込みできます。<br>
+  メンバー名をクリックすると、そのメンバーで絞り込めます。
 <div id="cooking-controls">
   <input type="text" id="ck-search" placeholder="メンバー・料理名で絞り込み…" oninput="ckFilter()">
   <select id="ck-group" onchange="ckGroupChange()">
@@ -21,7 +22,7 @@
     <?php include $_SERVER['DOCUMENT_ROOT'] . '/Spreadsheet/cooking_groups.php'; ?>
   </select>
   <select id="ck-name" onchange="ckFilter()">
-    <option value="">すべてのメンバー</option>
+    <option value="">メンバー</option>
     <?php include $_SERVER['DOCUMENT_ROOT'] . '/Spreadsheet/cooking_names.php'; ?>
   </select>
   <select id="ck-genre" onchange="ckFilter()">
@@ -124,7 +125,7 @@
     var nameSel = document.getElementById('ck-name');
     var stillValid = false;
     Array.prototype.forEach.call(nameSel.options, function(o) {
-      if (!o.value) return; // 「すべてのメンバー」
+      if (!o.value) return; // 「メンバー」(プレースホルダ)
       var show = !gr || (o.getAttribute('data-group') || '') === gr;
       o.hidden = !show;
       o.disabled = !show;
@@ -137,6 +138,24 @@
     ckSyncNames();
     ckFilter();
   }
+
+  // メンバー名クリックでそのメンバーに絞り込む
+  container.addEventListener('click', function(e) {
+    var target = e.target.closest('.ck-name');
+    if (!target) return;
+    var name = target.getAttribute('data-name') || '';
+    var nameSel = document.getElementById('ck-name');
+    var exists = false;
+    for (var i = 0; i < nameSel.options.length; i++) {
+      if (nameSel.options[i].value === name) { exists = true; break; }
+    }
+    if (!exists) return;
+    document.getElementById('ck-group').value = ''; // グループ絞り込みは解除
+    ckSyncNames();                                  // 隠れていた候補を戻す
+    nameSel.value = name;
+    ckFilter();
+    nameSel.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+  });
 
   ckSyncNames();
   ckFilter();

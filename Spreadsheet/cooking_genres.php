@@ -1,4 +1,8 @@
+<<<<<<< Updated upstream
 <!-- generated: 2026-08-14T08:56:11.995783+00:00 -->
+=======
+<!-- generated: 2026-08-14T08:51:36.824247+00:00 -->
+>>>>>>> Stashed changes
 <option value="和食">和食</option>
 <option value="洋食">洋食</option>
 <option value="インド">インド</option>

@@ -21,6 +21,8 @@ import urllib.request
 from datetime import datetime, timezone, timedelta
 from pathlib import Path
 
+from gh_warn import warn_missing_members
+
 PUB_BASE = (
     "https://docs.google.com/spreadsheets/d/e/"
     "2PACX-1vS025h-f1IobGgDvz8xfARo-o_ph7Qgryizf-0w61ecgPuIteMdkajcbCxpaVZX39V2WfVB0kOO6LfH/pub"
@@ -246,9 +248,10 @@ def main():
     used_names = {(m.get("Member") or "").strip() for m in member_rows if (m.get("Member") or "").strip()}
 
     # マスターに無いメンバーがいれば警告(読み仮名順・グループ絞り込みから漏れる)
-    missing = sorted(n for n in used_names if n not in master)
-    if missing:
-        print("警告: メンバーマスターに存在しない名前:", "、".join(missing))
+    warn_missing_members(
+        sorted(n for n in used_names if n not in master),
+        note="(読み仮名順・グループ絞り込みから漏れる)",
+    )
 
     # メンバー選択肢: 読み仮名(五十音)順。読み仮名が無ければ名前でフォールバック。
     names = sorted(used_names, key=lambda n: (master.get(n, ("", ""))[0] or n, n))
