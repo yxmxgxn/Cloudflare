@@ -23,16 +23,16 @@
       <th class="karin-disco-head">
         タイトル・発売日
       </th>
-      <th class="karin-disco-head">
+      <th class="karin-disco-title">
         曲名
       </th>
-      <th>
+      <th class="karin-disco-title">
         作詞
       </th>
-      <th>
+      <th class="karin-disco-title">
         作曲
       </th>
-      <th>
+      <th class="karin-disco-title">
         編曲
       </th>
     </tr>
