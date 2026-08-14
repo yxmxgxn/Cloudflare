@@ -38,8 +38,8 @@
     </tr>
     <tr>
       <td rowspan="3" class="karin-disco-title">
-        <span style="display: block; text-align: center;">1st　2021/2/1</span>
-        <a href="https://jp-r.co.jp/karin_miyamoto/release/6572/" target="_blank" rel="noopener noreferrer">どうして僕らにはやる気がないのか(2021)/氷点下/規格外のロマンス<br></a>
+        <span style="display: block; text-align: center;">1st　2021/2/1<br><br>
+        <a href="https://jp-r.co.jp/karin_miyamoto/release/6572/" target="_blank" rel="noopener noreferrer">どうして僕らにはやる気がないのか(2021)/氷点下/規格外のロマンス</a></span>
       </td>
       <td>
         <a href="https://www.youtube.com/watch?v=ZG0c-LvqexU" target="_blank" rel="noopener noreferrer">どうして僕らにはやる気がないのか(2021)▶️</a>・<a href="https://www.youtube.com/watch?v=KIVaJ-2PLWg" target="_blank" rel="noopener noreferrer">🎥</a>
@@ -84,8 +84,8 @@
     </tr>
     <tr>
       <td rowspan="5" class="karin-disco-title">
-        <span style="display: block; text-align: center;">2nd　2022/6/22</span>
-        <a href="https://jp-r.co.jp/karin_miyamoto/release/6746/" target="_blank" rel="noopener noreferrer">なんてったって I Love You/ハウリング</a>
+        <span style="display: block; text-align: center;">2nd　2022/6/22<br><br>
+        <a href="https://jp-r.co.jp/karin_miyamoto/release/6746/" target="_blank" rel="noopener noreferrer">なんてったって I Love You/ハウリング</a></span>
       </td>
       <td>
         <a href="https://www.youtube.com/watch?v=xBf3VqVKS9U" target="_blank" rel="noopener noreferrer">なんてったって I Love You▶️</a>・<a href="https://www.youtube.com/watch?v=N4g2iWwMBY0&t=214”” target="_blank" rel="noopener noreferrer">🎥</a>
@@ -158,8 +158,8 @@
     </tr>
     <tr>
       <td rowspan="5" class="karin-disco-title">
-        <span style="display: block; text-align: center;">3rd　2023/11/8</span>
-        <a href="https://jp-r.co.jp/karin_miyamoto/release/7427/" target="_blank" rel="noopener noreferrer">バンビーナ・バンビーノ/Lonely Bus</a>
+        <span style="display: block; text-align: center;">3rd　2023/11/8<br><br>
+        <a href="https://jp-r.co.jp/karin_miyamoto/release/7427/" target="_blank" rel="noopener noreferrer">バンビーナ・バンビーノ/Lonely Bus</a></span>
       </td>
       <td>
         <a href="https://www.youtube.com/watch?v=2p9U27l1yVY" target="_blank" rel="noopener noreferrer">バンビーナ・バンビーノ▶️</a>・<a href="https://www.youtube.com/watch?v=6njGwroq86Q&t=218s" target="_blank" rel="noopener noreferrer">🎥</a>・<a href="https://www.youtube.com/watch?v=V-WNO-1AuIc" target="_blank" rel="noopener noreferrer">💃</a>
@@ -233,8 +233,8 @@
     </tr>
     <tr>
       <td rowspan="5" class="karin-disco-title">
-        <span style="display: block; text-align: center;">4th　2025/06/11</span>
-        <a href="https://jp-r.co.jp/karin_miyamoto/release/7427/" target="_blank" rel="noopener noreferrer">キケンな魔法/ビースト！</a>
+        <span style="display: block; text-align: center;">4th　2025/06/11<br><br>
+        <a href="https://jp-r.co.jp/karin_miyamoto/release/7427/" target="_blank" rel="noopener noreferrer">キケンな魔法/ビースト！</a></span>
       </td>
       <td>
         <a href="https://www.youtube.com/watch?v=u303vjNuGRY" target="_blank" rel="noopener noreferrer">キケンな魔法▶️</a>・<a href="https://www.youtube.com/watch?v=MSBFAt5cnks&t=721s" target="_blank" rel="noopener noreferrer">🎥</a>・<a href="https://www.youtube.com/watch?v=gdfqKAjbuhM" target="_blank" rel="noopener noreferrer">💃</a>
@@ -307,8 +307,8 @@
     </tr>
     <tr>
       <td rowspan="4" class="karin-disco-title">
-        <span style="display: block; text-align: center;">5th　2026/07/29</span>
-        <a href="https://jp-r.co.jp/karin_miyamoto/release/7681/" target="_blank" rel="noopener noreferrer">HANAKIN/シャニカマー</a>
+        <span style="display: block; text-align: center;">5th　2026/07/291<br><br>
+        <a href="https://jp-r.co.jp/karin_miyamoto/release/7681/" target="_blank" rel="noopener noreferrer">HANAKIN/シャニカマー</a></span>
       </td>
       <td>
         <a href="https://www.youtube.com/watch?v=yXAvtKqEWf0" target="_blank" rel="noopener noreferrer">HANAKIN▶️</a>
