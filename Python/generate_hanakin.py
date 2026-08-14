@@ -7,8 +7,9 @@
   イベントシート : ID,Date,Instagram,TikTok,Member1,Member2,Place
                     IDの接頭辞で企画を振り分ける(HK=HANAKIN / SK=シャニカマー45°)。
                    Instagram/TikTokは投稿URL。Member1/2はコラボ相手(0人もあり)。Placeは特別な会場
-  相手IGシート   : ID,Member,Instagram
-                   ID+Memberでコラボ相手を公式Instagramプロフィールに紐づける(1IDに複数行)
+  相手IGシート   : ID,Member,Instagram,Group
+                   ID+Memberでコラボ相手を公式Instagram・所属グループに紐づける(1IDに複数行)
+                   コラボ相手列は名前のみ(IGにリンク)、グループは一番右の列にまとめる
 
 両企画は同じイベント/相手IGシートを共有し、接頭辞で別テーブルに出力する。
 出力: Spreadsheet/hanakin_table.php, Spreadsheet/shanikama_table.php
@@ -116,24 +117,43 @@ def icon_link(url: str, icon: str, label: str) -> str:
     )
 
 
-def build_members(ev: dict, profiles: dict[tuple, str]) -> str:
+def build_member_cells(ev: dict, profiles: dict[tuple, dict]) -> tuple[str, str]:
+    """(コラボ相手セル=名前のみ, グループセル) を返す。
+    グループ列は 1人 or 全員同じグループ→グループ名だけ、
+    違うグループが混ざる→「名前（グループ）・…」で並べる。"""
     eid = val(ev, "ID")
-    names = [val(ev, "Member1"), val(ev, "Member2")]
-    parts = []
-    for name in names:
+    infos = []  # (name, ig, group)
+    for key in ("Member1", "Member2"):
+        name = val(ev, key)
         if not name:
             continue
-        url = profiles.get((eid, name))
-        parts.append(link(url, esc(name)) if url else esc(name))
-    return "・".join(parts)
+        p = profiles.get((eid, name)) or {}
+        infos.append((name, p.get("ig", ""), p.get("group", "")))
+
+    names_cell = "・".join(
+        link(ig, esc(name)) if ig else esc(name) for name, ig, _ in infos
+    )
+
+    groups = [g for _, _, g in infos]
+    distinct = {g for g in groups if g}
+    if len(infos) <= 1:
+        group_cell = esc(groups[0]) if groups and groups[0] else ""
+    elif len(distinct) == 1 and all(groups):
+        group_cell = esc(next(iter(distinct)))
+    else:
+        group_cell = "・".join(
+            f"{esc(name)}（{esc(g)}）" if g else esc(name) for name, _, g in infos
+        )
+    return names_cell, group_cell
 
 
-def build_rows(events: list[dict], profiles: dict[tuple, str], with_place: bool = True) -> str:
+def build_rows(events: list[dict], profiles: dict[tuple, dict], with_place: bool = True) -> str:
     valid = [e for e in events if val(e, "ID")]
     valid.sort(key=lambda e: sort_key(val(e, "Date")))
     lines = []
     for i, ev in enumerate(valid):
         row_class = ' class="row-even"' if i % 2 else ""
+        names_cell, group_cell = build_member_cells(ev, profiles)
         place_cell = ""
         if with_place:
             place = val(ev, "Place")
@@ -143,8 +163,9 @@ def build_rows(events: list[dict], profiles: dict[tuple, str], with_place: bool 
             f"<td>{format_date(val(ev, 'Date'))}</td>"
             f'<td>{icon_link(val(ev, "Instagram"), ICON_INSTAGRAM, "Instagram")}</td>'
             f'<td>{icon_link(val(ev, "TikTok"), ICON_TIKTOK, "TikTok")}</td>'
-            f"<td>{build_members(ev, profiles)}</td>"
             f"{place_cell}"
+            f"<td>{names_cell}</td>"
+            f"<td>{group_cell}</td>"
             "</tr>"
         )
     return "\n".join(lines)
@@ -162,11 +183,11 @@ def main():
     events = fetch_csv(args.events)
     members = fetch_csv(args.members)
 
-    profiles = {
-        (val(m, "ID"), val(m, "Member")): val(m, "Instagram")
-        for m in members
-        if val(m, "ID") and val(m, "Member") and val(m, "Instagram")
-    }
+    profiles = {}
+    for m in members:
+        mid, name = val(m, "ID"), val(m, "Member")
+        if mid and name:
+            profiles[(mid, name)] = {"ig": val(m, "Instagram"), "group": val(m, "Group")}
 
     stamp = f"<!-- generated: {datetime.now(timezone.utc).isoformat()} -->\n"
 
