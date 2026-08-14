@@ -17,7 +17,7 @@
 
 <main>
   <h1>Juice=Juice 楽曲まとめ</h1>
-  発売されているJuice=Juiceの曲をまとめました。公式のリンク、作詞作曲編曲、Music Videoに▶️、一番新しいライブ映像に🎥・Dance Practiceに💃を付けました
+  発売されているJuice=Juiceの曲をまとめました。公式のリンク、作詞作曲編曲、Music Videoに▶️、一番新しいライブ映像に🎥・Dance Shot/Practiceに💃を付けました
   <h2>インディーズシングル</h2>
   <table id="karin-disco">
     <tr>
@@ -32,7 +32,7 @@
     <tr>
       <td>1st</td>
       <td>2013/4/3</td>
-      <td><a href="https://helloproject.com/release/2210/" target="_blank" rel="noopener noreferrer">私が言う前に抱きしめなきゃね</a><a href="https://www.youtube.com/watch?v=cchjirF7zM4" target="_blank" rel="noopener noreferrer">▶️</a>・<a href="https://www.youtube.com/watch?v=RGDQLmLIsCY" target="_blank" rel="noopener noreferrer">🎥</a>・<a href="https://www.youtube.com/watch?v=Sb6keJJznGI" target="_blank" rel="noopener noreferrer">▶️（Dance Shot Ver.）</a></td>
+      <td><a href="https://helloproject.com/release/2210/" target="_blank" rel="noopener noreferrer">私が言う前に抱きしめなきゃね</a><a href="https://www.youtube.com/watch?v=cchjirF7zM4" target="_blank" rel="noopener noreferrer">▶️</a>・<a href="https://www.youtube.com/watch?v=RGDQLmLIsCY" target="_blank" rel="noopener noreferrer">🎥</a>・<a href="https://www.youtube.com/watch?v=Sb6keJJznGI" target="_blank" rel="noopener noreferrer">💃</a></td>
       <td>つんく</td>
       <td>つんく</td>
       <td>平田祥一郎</td>
@@ -41,7 +41,7 @@
     <tr>
       <td>2nd</td>
       <td>2013/5/8</td>
-      <td><a href="https://helloproject.com/release/2211/" target="_blank" rel="noopener noreferrer">五月雨美女がさ乱れる</a><a href="https://www.youtube.com/watch?v=YHrpszUthUM" target="_blank" rel="noopener noreferrer">▶️</a>・<a href="https://www.youtube.com/watch?v=F-i07le2wo0" target="_blank" rel="noopener noreferrer">🎥</a>・<a href="https://www.youtube.com/watch?v=TBxjslahT-0" target="_blank" rel="noopener noreferrer">▶️（Close up Ver.）</a>・<a href="https://www.youtube.com/watch?v=buyWu8aPgss" target="_blank" rel="noopener noreferrer">▶️（Dance Shot Ver.）</a></td>
+      <td><a href="https://helloproject.com/release/2211/" target="_blank" rel="noopener noreferrer">五月雨美女がさ乱れる</a><a href="https://www.youtube.com/watch?v=YHrpszUthUM" target="_blank" rel="noopener noreferrer">▶️</a>・<a href="https://www.youtube.com/watch?v=F-i07le2wo0" target="_blank" rel="noopener noreferrer">🎥</a>・<a href="https://www.youtube.com/watch?v=TBxjslahT-0" target="_blank" rel="noopener noreferrer">▶️（Close up Ver.）</a>・<a href="https://www.youtube.com/watch?v=buyWu8aPgss" target="_blank" rel="noopener noreferrer">💃</td>
       <td>つんく</td>
       <td>つんく</td>
       <td>板垣祐介</td>
@@ -73,7 +73,7 @@
       <td rowspan="3" class="karin-disco-title">1st</th>
       <td rowspan="3" class="karin-disco-title">2013/9/11</td>
       <td rowspan="3" class="karin-disco-title"><a href="https://helloproject.com/release/1656/" target="_blank" rel="noopener noreferrer">私が言う前に抱きしめなきゃね（MEMORIAL EDIT）/五月雨美女がさ乱れる（MEMORIAL EDIT）</a></td>
-      <td><a href="https://www.youtube.com/watch?v=rh8eeteWbHc" target="_blank" rel="noopener noreferrer">ロマンスの途中▶️</a>・<a href="https://www.youtube.com/watch?v=1lgANEF7cbE" target="_blank" rel="noopener noreferrer">▶️（Dance Shot Ver.）</a></td>
+      <td><a href="https://www.youtube.com/watch?v=rh8eeteWbHc" target="_blank" rel="noopener noreferrer">ロマンスの途中▶️</a>・<a href="https://www.youtube.com/watch?v=1lgANEF7cbE" target="_blank" rel="noopener noreferrer">💃</a></td>
       <td>つんく</td>
       <td>つんく</td>
       <td>鈴木俊介</td>
@@ -94,13 +94,13 @@
       <td rowspan="2" class="karin-disco-title">2nd</th>
       <td rowspan="2" class="karin-disco-title">2013/12/4</td>
       <td rowspan="2" class="karin-disco-title"><a href="https://helloproject.com/release/1667/" target="_blank" rel="noopener noreferrer">イジワルしないで 抱きしめてよ/初めてを経験中</a></td>
-      <td><a href="https://www.youtube.com/watch?v=wCNV_wAx82Y" target="_blank" rel="noopener noreferrer">イジワルしないで 抱きしめてよ▶️</a>・<a href="https://www.youtube.com/watch?v=0ySylUquWs4" target="_blank" rel="noopener noreferrer">🎥</a>・<a href="https://www.youtube.com/watch?v=LNPHQ0yrkW8" target="_blank" rel="noopener noreferrer">▶️（KYAST Dance Shot Ver.）</a></td>
+      <td><a href="https://www.youtube.com/watch?v=wCNV_wAx82Y" target="_blank" rel="noopener noreferrer">イジワルしないで 抱きしめてよ▶️</a>・<a href="https://www.youtube.com/watch?v=0ySylUquWs4" target="_blank" rel="noopener noreferrer">🎥</a>・<a href="https://www.youtube.com/watch?v=LNPHQ0yrkW8" target="_blank" rel="noopener noreferrer">💃</a></td>
       <td>つんく</td>
       <td>つんく</td>
       <td>大久保薫</td>
     </tr>
     <tr>
-      <td><a href="https://www.youtube.com/watch?v=NzxMVYTRg2Q" target="_blank" rel="noopener noreferrer">初めてを経験中▶️</a>・<a href="https://www.youtube.com/watch?v=pXft-OIBw9I" target="_blank" rel="noopener noreferrer">🎥</a>・<a href="https://www.youtube.com/watch?v=GDE1sB-Uz4s" target="_blank" rel="noopener noreferrer">▶️（Dance Shot Ver.）</a></td>
+      <td><a href="https://www.youtube.com/watch?v=NzxMVYTRg2Q" target="_blank" rel="noopener noreferrer">初めてを経験中▶️</a>・<a href="https://www.youtube.com/watch?v=pXft-OIBw9I" target="_blank" rel="noopener noreferrer">🎥</a>・<a href="https://www.youtube.com/watch?v=GDE1sB-Uz4s" target="_blank" rel="noopener noreferrer">💃</a></td>
       <td>つんく</td>
       <td>つんく</td>
       <td>AKIRA</td>
@@ -109,13 +109,13 @@
       <td rowspan="2" class="karin-disco-title">3rd</th>
       <td rowspan="2" class="karin-disco-title">2014/3/19</td>
       <td rowspan="2" class="karin-disco-title">裸の裸の裸のKISS/アレコレしたい!</td>
-      <td><a href="https://www.youtube.com/watch?v=XusWMlJH178" target="_blank" rel="noopener noreferrer">裸の裸の裸のKISS▶️</a>・<a href="https://www.youtube.com/watch?v=Egmjjt3j3us&t=189s" target="_blank" rel="noopener noreferrer">🎥</a>・<a href="https://www.youtube.com/watch?v=AopkbcS_hlc" target="_blank" rel="noopener noreferrer">▶️（Dance Shot Ver.）</a></td>
+      <td><a href="https://www.youtube.com/watch?v=XusWMlJH178" target="_blank" rel="noopener noreferrer">裸の裸の裸のKISS▶️</a>・<a href="https://www.youtube.com/watch?v=Egmjjt3j3us&t=189s" target="_blank" rel="noopener noreferrer">🎥</a>・<a href="https://www.youtube.com/watch?v=AopkbcS_hlc" target="_blank" rel="noopener noreferrer">💃</a></td>
       <td>つんく</td>
       <td>つんく</td>
       <td>平田祥一郎</td>
     </tr>
     <tr>
-      <td><a href="https://www.youtube.com/watch?v=Fqm6smULwxs" target="_blank" rel="noopener noreferrer">アレコレしたい！▶️</a>・<a href="https://www.youtube.com/watch?v=x1qMU843aZk" target="_blank" rel="noopener noreferrer">▶️（Dance Shot Ver.）</a></td>
+      <td><a href="https://www.youtube.com/watch?v=Fqm6smULwxs" target="_blank" rel="noopener noreferrer">アレコレしたい！▶️</a>・<a href="https://www.youtube.com/watch?v=x1qMU843aZk" target="_blank" rel="noopener noreferrer">💃</a></td>
       <td>つんく</td>
       <td>つんく</td>
       <td>近藤圭一</td>
@@ -124,13 +124,13 @@
       <td rowspan="2" class="karin-disco-title">4th</th>
       <td rowspan="2" class="karin-disco-title">2014/7/30</td>
       <td rowspan="2" class="karin-disco-title"><a href="https://helloproject.com/release/2277/" target="_blank" rel="noopener noreferrer">ブラックバタフライ/風に吹かれて</a></td>
-      <td><a href="https://www.youtube.com/watch?v=ROeoeYQ33hM" target="_blank" rel="noopener noreferrer">ブラックバタフライ▶️</a>・<a href="https://www.youtube.com/watch?v=8iLP7hz-UxY" target="_blank" rel="noopener noreferrer">▶️（Dance Shot Ver.）</a></td>
+      <td><a href="https://www.youtube.com/watch?v=ROeoeYQ33hM" target="_blank" rel="noopener noreferrer">ブラックバタフライ▶️</a>・<a href="https://www.youtube.com/watch?v=8iLP7hz-UxY" target="_blank" rel="noopener noreferrer">💃</a></td>
       <td>つんく</td>
       <td>つんく</td>
       <td>平田祥一郎</td>
     </tr>
     <tr>
-      <td><a href="https://www.youtube.com/watch?v=pem60iEtcGQ" target="_blank" rel="noopener noreferrer">風に吹かれて▶️</a>・<a href="https://www.youtube.com/watch?v=iDNexQ6aWCk" target="_blank" rel="noopener noreferrer">▶️（Dance Shot Ver.）</a></td>
+      <td><a href="https://www.youtube.com/watch?v=pem60iEtcGQ" target="_blank" rel="noopener noreferrer">風に吹かれて▶️</a>・<a href="https://www.youtube.com/watch?v=Vln2vJ57LVk&t=278s" target="_blank" rel="noopener noreferrer">🎥</a>・<a href="https://www.youtube.com/watch?v=iDNexQ6aWCk" target="_blank" rel="noopener noreferrer">💃</a></td>
       <td>つんく</td>
       <td>つんく</td>
       <td>平田祥一郎</td>
@@ -138,14 +138,14 @@
     <tr>
       <td rowspan="2" class="karin-disco-title">5th</th>
       <td rowspan="2" class="karin-disco-title">2014/10/1</td>
-      <td rowspan="2" class="karin-disco-title"><a href="https://helloproject.com/release/2371/" target="_blank" rel="noopener noreferrer">背伸び/伊達じゃないよ うちの人生は</a></td>
-      <td><a href="https://www.youtube.com/watch?v=_so9w95wzVI" target="_blank" rel="noopener noreferrer">背伸び▶️</a>・<a href="https://www.youtube.com/watch?v=6Pwx3tdZFN8" target="_blank" rel="noopener noreferrer">▶️（Dance Shot Ver.）</a></a></td>
+      <td rowspan="2" class="karin-disco-title"><a href="https://helloproject.com/release/2371/" target="_blank" rel="noopener noreferrer">背伸び/伊達じゃないよ うちの人生は</a></td>  
+      <td><a href="https://www.youtube.com/watch?v=_so9w95wzVI" target="_blank" rel="noopener noreferrer">背伸び▶️</a>・<a href="https://www.youtube.com/watch?v=QX1FgV2cJdU&t=1168s" target="_blank" rel="noopener noreferrer">🎥</a>・<a href="https://www.youtube.com/watch?v=6Pwx3tdZFN8" target="_blank" rel="noopener noreferrer">💃</a></td>
       <td>つんく</td>
       <td>つんく</td>
       <td>平田祥一郎</td>
     </tr>
     <tr>
-      <td><a href="https://www.youtube.com/watch?v=38c5UbdpfLw" target="_blank" rel="noopener noreferrer">伊達じゃないよ うちの人生は▶️</a>・<a href="https://www.youtube.com/watch?v=IWph3hNX_m0&t=842s" target="_blank" rel="noopener noreferrer">🎥</a>・<a href="https://www.youtube.com/watch?v=fS11KZTCmgg" target="_blank" rel="noopener noreferrer">▶️（Dance Shot Ver.）</a></td>
+      <td><a href="https://www.youtube.com/watch?v=38c5UbdpfLw" target="_blank" rel="noopener noreferrer">伊達じゃないよ うちの人生は▶️</a>・<a href="https://www.youtube.com/watch?v=IWph3hNX_m0&t=842s" target="_blank" rel="noopener noreferrer">🎥</a>・<a href="https://www.youtube.com/watch?v=fS11KZTCmgg" target="_blank" rel="noopener noreferrer">💃</td>
       <td>つんく</td>
       <td>つんく</td>
       <td>平田祥一郎</td>
@@ -154,13 +154,13 @@
       <td rowspan="2" class="karin-disco-title">6th</th>
       <td rowspan="2" class="karin-disco-title">2015/4/8</td>
       <td rowspan="2" class="karin-disco-title"><a href="https://helloproject.com/release/4094/" target="_blank" rel="noopener noreferrer">Wonderful World/Ça va ? Ça va ?</a></td>
-      <td><a href="https://www.youtube.com/watch?v=YlkOq6dXBEc" target="_blank" rel="noopener noreferrer">Wonderful World▶️</a>・<a href="https://www.youtube.com/watch?v=cyFB7sB6CYs" target="_blank" rel="noopener noreferrer">🎥</a>・<a href="https://www.youtube.com/watch?v=wTZ5cbaDGgI" target="_blank" rel="noopener noreferrer">▶️（Dance Shot Ver.）</a></td>
+      <td><a href="https://www.youtube.com/watch?v=YlkOq6dXBEc" target="_blank" rel="noopener noreferrer">Wonderful World▶️</a>・<a href="https://www.youtube.com/watch?v=cyFB7sB6CYs" target="_blank" rel="noopener noreferrer">🎥</a>・<a href="https://www.youtube.com/watch?v=wTZ5cbaDGgI" target="_blank" rel="noopener noreferrer">💃</td>
       <td>イイジマケン</td>
       <td>イイジマケン</td>
       <td>gaokalab</td>
     </tr>
     <tr>
-      <td><a href="https://www.youtube.com/watch?v=XsnxU8QwJwI" target="_blank" rel="noopener noreferrer">Ça va？ Ça va？▶️</a>・<a href="https://www.youtube.com/watch?v=9APF0fLxCSQ&t=247s" target="_blank" rel="noopener noreferrer">🎥</a>・<a href="https://www.youtube.com/watch?v=Aqdmz2qDSk8" target="_blank" rel="noopener noreferrer">▶️（Juice=Juice in PARIS Ver.）</a>・<a href="https://www.youtube.com/watch?v=xwSTKrvxfLU" target="_blank" rel="noopener noreferrer">▶️（Dance Shot Ver.）</a></td>
+      <td><a href="https://www.youtube.com/watch?v=XsnxU8QwJwI" target="_blank" rel="noopener noreferrer">Ça va？ Ça va？▶️</a>・<a href="https://www.youtube.com/watch?v=9APF0fLxCSQ&t=247s" target="_blank" rel="noopener noreferrer">🎥</a>・<a href="https://www.youtube.com/watch?v=Aqdmz2qDSk8" target="_blank" rel="noopener noreferrer">▶️（Juice=Juice in PARIS Ver.）</a>・<a href="https://www.youtube.com/watch?v=xwSTKrvxfLU" target="_blank" rel="noopener noreferrer">💃</td>
       <td>三浦徳子</td>
       <td>川辺ヒロシ・上田禎</td>
       <td>CMJK</td>
@@ -403,7 +403,7 @@
       <td rowspan="2" class="karin-disco-title">19th</th>
       <td rowspan="2" class="karin-disco-title">2025/2/26</td>
       <td rowspan="2" class="karin-disco-title"><a href="https://helloproject.com/release/7376/" target="_blank" rel="noopener noreferrer">初恋の亡霊/今夜はHearty Party/a></td>
-      <td><a href="https://www.youtube.com/watch?v=DquBd86wOYw" target="_blank" rel="noopener noreferrer">初恋の亡霊▶️</a>・<a href="https://www.youtube.com/watch?v=GkUijMTyJE0" target="_blank" rel="noopener noreferrer">🎥</a>・<a href="https://www.youtube.com/watch?v=g9EXEuk5sxo" target="_blank" rel="noopener noreferrer">💃</a>・<a href="https://www.youtube.com/watch?v=g9EXEuk5sxo" target="_blank" rel="noopener noreferrer">▶️（Dance Shot Ver.）</a></td>
+      <td><a href="https://www.youtube.com/watch?v=DquBd86wOYw" target="_blank" rel="noopener noreferrer">初恋の亡霊▶️</a>・<a href="https://www.youtube.com/watch?v=GkUijMTyJE0" target="_blank" rel="noopener noreferrer">🎥</a>・<a href="https://www.youtube.com/watch?v=g9EXEuk5sxo" target="_blank" rel="noopener noreferrer">💃</a></td>
       <td>西野蒟蒻</td>
       <td>KOUGA</td>
       <td>平田祥一郎</td>
@@ -424,7 +424,7 @@
       <td>荒幡亮平</td>
     </tr>
     <tr>
-      <td><a href="https://www.youtube.com/watch?v=3RtbnP1onaM" target="_blank" rel="noopener noreferrer">盛れ！ミ・アモーレ▶️</a>・<a href="https://www.youtube.com/watch?v=mj2pkIIQboo" target="_blank" rel="noopener noreferrer">🎥</a>・<a href="https://www.youtube.com/watch?v=MlG9hptTvgQ" target="_blank" rel="noopener noreferrer">💃</a>・<a href="https://www.youtube.com/watch?v=MlG9hptTvgQ" target="_blank" rel="noopener noreferrer">▶️（Dance Shot Ver.）</a></td>
+      <td><a href="https://www.youtube.com/watch?v=3RtbnP1onaM" target="_blank" rel="noopener noreferrer">盛れ！ミ・アモーレ▶️</a>・<a href="https://www.youtube.com/watch?v=mj2pkIIQboo" target="_blank" rel="noopener noreferrer">🎥</a>・<a href="https://www.youtube.com/watch?v=MlG9hptTvgQ" target="_blank" rel="noopener noreferrer">💃</a></td>
       <td>山崎あおい</td>
       <td>山崎あおい</td>
       <td>炭竃智弘</td>
