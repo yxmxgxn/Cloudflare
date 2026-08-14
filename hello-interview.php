@@ -10,11 +10,11 @@
   <h1>ハロー！プロジェクト メンバーのインタビュー記事まとめ</h1>
   <p>ハロー！プロジェクト メンバーのWebインタビュー記事を一覧でまとめました。<br>
   各カードは、掲載日とタイトル（記事リンク）、媒体・連載名、メンバーで構成されています。</p>
-  <p>グループ・メンバー名での絞り込み、掲載日・タイトルでの並び替え、タイトル・媒体・メンバーでの検索ができます</p>
+  <p>グループ・メンバー名での絞り込み、掲載日・タイトルでの並び替え、記事本文を対象にしたキーワード検索ができます</p>
   <p>右下のWeb Archiveからアーカイブを開けます。</p>
   <p>2026/08/14 宮本佳林さん・OCHA NORMA・ロージークロニクルを中心に掲載しています。</p>
 <div id="interview-controls">
-  <input type="text" id="iv-search" placeholder="タイトル・媒体・メンバーで絞り込み…" oninput="ivFilter()">
+  <input type="text" id="iv-search" placeholder="記事本文をキーワード検索…" oninput="ivSearchInput()">
   <select id="iv-group" onchange="ivGroupChange()">
     <option value="">グループ</option>
     <?php include $_SERVER['DOCUMENT_ROOT'] . '/Spreadsheet/interview_groups.php'; ?>
@@ -42,6 +42,7 @@
   var allCards = Array.from(container.querySelectorAll('.iv-card')).map(function(el) {
     return {
       el: el,
+      id: el.getAttribute('data-id') || '',
       date: el.getAttribute('data-date') || '',
       title: el.getAttribute('data-title') || '',
       groups: (el.getAttribute('data-groups') || '').split('|'),
@@ -50,14 +51,50 @@
     };
   });
 
+  // 全文検索の結果(記事IDの集合)。null = 検索未適用(サーバ絞り込み無効)
+  var serverIds = null;
+  var searchSeq = 0;   // 古いレスポンスを無視するためのトークン
+  var searchTimer = null;
+
+  // 入力のたびにデバウンスしてから全文検索を叩く
+  function ivSearchInput() {
+    clearTimeout(searchTimer);
+    searchTimer = setTimeout(ivSearch, 250);
+  }
+
+  function ivSearch() {
+    var q = document.getElementById('iv-search').value.trim();
+    if (q.length < 2) { serverIds = null; ivFilter(); return; }
+    var mySeq = ++searchSeq;
+    fetch('/api/interview-search?q=' + encodeURIComponent(q))
+      .then(function(r) { return r.json(); })
+      .then(function(data) {
+        if (mySeq !== searchSeq) return;          // 新しい入力が来ていたら破棄
+        serverIds = new Set(data.ids || []);
+        ivFilter();
+      })
+      .catch(function() {                          // API不通時はクライアント絞り込みに退避
+        if (mySeq !== searchSeq) return;
+        serverIds = clientFallback(q);
+        ivFilter();
+      });
+  }
+
+  // フォールバック: タイトル・媒体・メンバー(data-search)への部分一致
+  function clientFallback(q) {
+    q = q.toLowerCase();
+    var s = new Set();
+    allCards.forEach(function(c) { if (c.search.indexOf(q) !== -1) s.add(c.id); });
+    return s;
+  }
+
   function ivFilter() {
-    var q = document.getElementById('iv-search').value.toLowerCase();
     var grFilter = document.getElementById('iv-group').value;
     var nmFilter = document.getElementById('iv-name').value;
     var sort = document.getElementById('iv-sort').value;
 
     var filtered = allCards.filter(function(c) {
-      var matchQ = !q || c.search.indexOf(q) !== -1;
+      var matchQ = serverIds === null || serverIds.has(c.id);
       var matchGr = !grFilter || c.groups.indexOf(grFilter) !== -1;
       var matchNm = !nmFilter || c.names.indexOf(nmFilter) !== -1;
       return matchQ && matchGr && matchNm;
@@ -108,6 +145,7 @@
   ivFilter();
   window.ivFilter = ivFilter;
   window.ivGroupChange = ivGroupChange;
+  window.ivSearchInput = ivSearchInput;
 })();
 </script>
 <?php include $_SERVER['DOCUMENT_ROOT'] . '/common/footer.php'; ?>

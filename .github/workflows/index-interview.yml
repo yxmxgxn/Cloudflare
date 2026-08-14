@@ -1,0 +1,46 @@
+name: Interview search index
+run-name: "インタビュー索引更新"
+
+# 手動起動のみ。D1(karin-interview)作成後に使う。
+on:
+  workflow_dispatch:
+
+jobs:
+  index:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install dependencies
+        run: pip install trafilatura
+
+      - name: Ensure D1 schema（べき等・初回はここでテーブル作成）
+        run: npx wrangler@4 d1 execute karin-interview --remote --file worker/schema.sql
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+
+      - name: Dump current src_hash from D1（増分判定用）
+        run: |
+          npx wrangler@4 d1 execute karin-interview --remote \
+            --command "SELECT id, src_hash FROM article_src" --json > d1dump.json \
+            || echo '[]' > d1dump.json
+          jq '((.[0].results) // []) | map({(.id): .src_hash}) | add // {}' d1dump.json > current.json
+          echo "既存: $(jq 'length' current.json) 件"
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+
+      - name: Build index SQL（新規・変更のみ本文取得）
+        run: python Python/generate_interview_index.py --current current.json
+
+      - name: Apply to D1
+        run: |
+          npx wrangler@4 d1 execute karin-interview --remote --file build/interview_index.sql
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}

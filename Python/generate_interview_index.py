@@ -1,0 +1,229 @@
+#!/usr/bin/env python3
+"""インタビュー全文検索インデックスを作る（D1投入用SQLを生成）。
+
+流れ:
+  スプシ(メインシート)から ID・URL・ExtraURL を読む
+   → 各記事のページ群を集める(ExtraURL優先 / 無ければ自動追尾)
+   → 各ページを取得し trafilatura で純本文抽出 → 連結
+   → normalize + bigram 化(Worker側 worker/index.js と完全一致)
+   → build/interview_index.sql を出力(article_fts / article_src を upsert)
+
+増分:
+  --current current_hashes.json (D1から出した {id: src_hash}) を渡すと、
+  src_hash が変わった記事だけ再取得。シートから消えたIDはDELETE。
+
+本文は build/interview_index.sql の中(＝D1へ)にしか入らない。リポジトリには残さない
+（このSQLはActionsが生成→D1適用したら破棄する運用）。
+"""
+
+import argparse
+import csv
+import hashlib
+import io
+import json
+import re
+import sys
+import time
+import unicodedata
+import urllib.parse
+import urllib.request
+import urllib.error
+from datetime import datetime, timezone
+from pathlib import Path
+
+try:
+    import trafilatura  # 本文抽出(広告・ナビ除去)
+except ImportError:
+    trafilatura = None
+
+PUB_BASE = (
+    "https://docs.google.com/spreadsheets/d/e/"
+    "2PACX-1vQUuY0kp6M2i3IBrzIJ0rxkRI19oqwdGFUszeQvsTJyydQJZae5OXrVEgshlXsDR906hUOm6497dUsr/pub"
+)
+GID_MAIN = "0"
+
+REPO_ROOT = Path(__file__).resolve().parent.parent
+OUT_SQL = REPO_ROOT / "build" / "interview_index.sql"
+
+MAX_PAGES = 10  # 自動追尾の上限
+UA = ("Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 "
+      "(KHTML, like Gecko) Chrome/125.0 Safari/537.36")
+
+# ---- Worker(worker/index.js)と一致させる正規化・bigram ----
+_KEEP = re.compile(r"[^0-9a-z々぀-ヿ㐀-䶿一-鿿]")
+
+
+def normalize(s: str) -> str:
+    return _KEEP.sub("", unicodedata.normalize("NFKC", s or "").lower())
+
+
+def bigrams(s: str) -> str:
+    return " ".join(s[i:i + 2] for i in range(len(s) - 1))
+
+
+# ---- 取得 ----
+def fetch_html(url: str) -> str | None:
+    try:
+        req = urllib.request.Request(url, headers={"User-Agent": UA, "Accept-Language": "ja"})
+        with urllib.request.urlopen(req, timeout=20) as r:
+            raw = r.read()
+    except Exception:
+        return None
+    enc = "utf-8"
+    m = re.search(rb'charset=["\']?([\w\-]+)', raw[:4000], re.I)
+    if m:
+        enc = m.group(1).decode("ascii", "ignore")
+    try:
+        return raw.decode(enc, "replace")
+    except LookupError:
+        return raw.decode("utf-8", "replace")
+
+
+def extract_body(html: str) -> str:
+    if not html:
+        return ""
+    if trafilatura:
+        txt = trafilatura.extract(html, include_comments=False, include_tables=False,
+                                  no_fallback=False) or ""
+        return txt
+    # trafilatura が無い環境向けの粗いフォールバック(タグ除去)
+    txt = re.sub(r"(?is)<(script|style|nav|header|footer|aside)[^>]*>.*?</\1>", " ", html)
+    txt = re.sub(r"(?s)<[^>]+>", " ", txt)
+    return re.sub(r"\s+", " ", txt)
+
+
+# ---- ページ自動追尾 ----
+def next_page_url(html: str, cur: str) -> str | None:
+    """rel=next もしくは同一パスの連番から次ページURLを推測。"""
+    # 1) <link rel="next"> / <a rel="next">
+    m = re.search(r'<(?:link|a)[^>]+rel=["\']next["\'][^>]+href=["\']([^"\']+)["\']', html or "", re.I)
+    if not m:
+        m = re.search(r'<(?:link|a)[^>]+href=["\']([^"\']+)["\'][^>]+rel=["\']next["\']', html or "", re.I)
+    if m:
+        return urllib.parse.urljoin(cur, m.group(1))
+    # 2) URL規則: ?page=N / 末尾 /N or /N/ を +1。番号が無ければ /2 を試す
+    pr = urllib.parse.urlparse(cur)
+    qs = urllib.parse.parse_qs(pr.query)
+    if "page" in qs:
+        try:
+            qs["page"] = [str(int(qs["page"][0]) + 1)]
+            return pr._replace(query=urllib.parse.urlencode(qs, doseq=True)).geturl()
+        except ValueError:
+            return None
+    mnum = re.search(r"/(\d+)/?$", pr.path)
+    if mnum:
+        n = int(mnum.group(1)) + 1
+        newpath = pr.path[:mnum.start()] + f"/{n}" + ("/" if pr.path.endswith("/") else "")
+        return pr._replace(path=newpath).geturl()
+    return None
+
+
+def collect_pages(main_url: str, extra: list[str]) -> tuple[list[str], list[str]]:
+    """(本文リスト, 実際に辿ったURLリスト) を返す。"""
+    bodies, urls = [], []
+    seen_bodies = set()
+
+    # ExtraURL があれば自動追尾せず明示URL群を使う
+    if extra:
+        for u in [main_url] + extra:
+            html = fetch_html(u)
+            body = extract_body(html or "")
+            if body and body[:200] not in seen_bodies:
+                seen_bodies.add(body[:200])
+                bodies.append(body)
+                urls.append(u)
+        return bodies, urls
+
+    # 自動追尾
+    cur = main_url
+    for _ in range(MAX_PAGES):
+        html = fetch_html(cur)
+        body = extract_body(html or "")
+        if not body or body[:200] in seen_bodies:
+            break
+        seen_bodies.add(body[:200])
+        bodies.append(body)
+        urls.append(cur)
+        nxt = next_page_url(html or "", cur)
+        if not nxt or nxt == cur:
+            break
+        cur = nxt
+    return bodies, urls
+
+
+# ---- スプシ ----
+def fetch_articles() -> list[dict]:
+    url = f"{PUB_BASE}?gid={GID_MAIN}&single=true&output=csv"
+    with urllib.request.urlopen(url) as res:
+        content = res.read().decode("utf-8")
+    return list(csv.DictReader(io.StringIO(content)))
+
+
+def sql_str(s: str) -> str:
+    return "'" + (s or "").replace("'", "''") + "'"
+
+
+def main():
+    ap = argparse.ArgumentParser()
+    ap.add_argument("--current", help="D1から出した {id: src_hash} のJSON。増分判定に使う")
+    ap.add_argument("--out", default=str(OUT_SQL))
+    args = ap.parse_args()
+
+    if trafilatura is None:
+        print("警告: trafilatura未導入。粗い抽出にフォールバックします (pip install trafilatura)", file=sys.stderr)
+
+    current: dict[str, str] = {}
+    if args.current and Path(args.current).exists():
+        current = json.loads(Path(args.current).read_text(encoding="utf-8"))
+
+    articles = fetch_articles()
+    now = datetime.now(timezone.utc).isoformat()
+    stmts: list[str] = []
+    sheet_ids = set()
+    n_new = n_skip = 0
+
+    for a in articles:
+        aid = (a.get("ID") or "").strip()
+        url = (a.get("URL") or "").strip()
+        if not aid or not url:
+            continue
+        sheet_ids.add(aid)
+        extra = [u.strip() for u in re.split(r"[,\s]+", a.get("ExtraURL") or "") if u.strip()]
+
+        src_hash = hashlib.sha1(("\n".join([url] + extra)).encode("utf-8")).hexdigest()
+        if current.get(aid) == src_hash:
+            n_skip += 1
+            continue  # 変更なし→再取得しない
+
+        bodies, used = collect_pages(url, extra)
+        body = "\n".join(bodies)
+        big = bigrams(normalize(body))
+        print(f"{aid}: {len(used)}ページ連結 ({', '.join(used)})", flush=True)
+
+        stmts.append(f"DELETE FROM article_fts WHERE id={sql_str(aid)};")
+        stmts.append(f"INSERT INTO article_fts(id,bigram) VALUES({sql_str(aid)},{sql_str(big)});")
+        stmts.append(
+            "INSERT OR REPLACE INTO article_src(id,src_hash,pages,body,indexed_at) "
+            f"VALUES({sql_str(aid)},{sql_str(src_hash)},{len(used)},{sql_str(body)},{sql_str(now)});"
+        )
+        n_new += 1
+        time.sleep(0.3)
+
+    # シートから消えたIDは削除
+    removed = [i for i in current if i not in sheet_ids]
+    for aid in removed:
+        stmts.append(f"DELETE FROM article_fts WHERE id={sql_str(aid)};")
+        stmts.append(f"DELETE FROM article_src WHERE id={sql_str(aid)};")
+
+    out = Path(args.out)
+    out.parent.mkdir(parents=True, exist_ok=True)
+    if stmts:
+        out.write_text("\n".join(stmts) + "\n", encoding="utf-8")
+    else:
+        out.write_text("-- 変更なし\n", encoding="utf-8")
+
+    print(f"\n生成: {out}  更新{n_new} / スキップ{n_skip} / 削除{len(removed)}")
+
+
+if __name__ == "__main__":
+    main()

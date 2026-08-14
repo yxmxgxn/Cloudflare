@@ -178,7 +178,7 @@ def build_cards(articles: list[dict], members_by_id: dict,
                            a.get("Feature") or "", " ".join(names)])
 
         cards.append(
-            f'<div class="iv-card" data-date="{date_sort}" data-title="{title}"'
+            f'<div class="iv-card" data-id="{esc(aid)}" data-date="{date_sort}" data-title="{title}"'
             f' data-groups="{esc("|".join(dict.fromkeys(card_groups)))}"'
             f' data-names="{esc("|".join(dict.fromkeys(names)))}"'
             f' data-search="{esc(search)}">'
