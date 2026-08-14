@@ -15,11 +15,11 @@
 
 <div id="gamelive-controls">
   <input type="text" id="gl-search" placeholder="メンバー・グループ・ゲーム・ジャンルで絞り込み…" oninput="glFilter()">
-  <select id="gl-group" onchange="glFilter()">
+  <select id="gl-group" onchange="glGroupChange()">
     <option value="">すべてのグループ</option>
     <?php include $_SERVER['DOCUMENT_ROOT'] . '/Spreadsheet/gamelive_groups.php'; ?>
   </select>
-  <select id="gl-name" onchange="glFilter()">
+  <select id="gl-name" onchange="glNameChange()">
     <option value="">すべてのメンバー</option>
     <?php include $_SERVER['DOCUMENT_ROOT'] . '/Spreadsheet/gamelive_names.php'; ?>
   </select>
@@ -86,7 +86,19 @@
       filtered.length + ' 件 / 全' + allCards.length + ' 件';
   }
 
-  // メンバー名クリックでそのメンバーに絞り込む
+  // グループとメンバーは排他: 片方を選んだらもう片方の絞り込みは解除する。
+  // (メンバー選択が残ったままグループを選ぶと AND で0件になり「グループで
+  //  絞り込めない」ように見えるため)
+  function glGroupChange() {
+    document.getElementById('gl-name').value = '';   // メンバー選択を解除
+    glFilter();
+  }
+  function glNameChange() {
+    document.getElementById('gl-group').value = '';  // グループ選択を解除
+    glFilter();
+  }
+
+  // メンバー名クリックでそのメンバーに絞り込む(グループ選択は解除)
   container.addEventListener('click', function(e) {
     var target = e.target.closest('.gl-name');
     if (!target) return;
@@ -96,6 +108,7 @@
     for (var i = 0; i < sel.options.length; i++) {
       if (sel.options[i].value === name) {
         sel.value = name;
+        document.getElementById('gl-group').value = '';  // グループ選択を解除
         glFilter();
         sel.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
         break;
@@ -105,6 +118,8 @@
 
   glFilter();
   window.glFilter = glFilter;
+  window.glGroupChange = glGroupChange;
+  window.glNameChange = glNameChange;
 })();
 </script>
 <?php include $_SERVER['DOCUMENT_ROOT'] . '/common/footer.php'; ?>
