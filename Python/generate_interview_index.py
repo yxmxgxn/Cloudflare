@@ -47,7 +47,11 @@ OUT_SQL = REPO_ROOT / "build" / "interview_index.sql"
 
 MAX_PAGES = 10       # 自動追尾の上限
 PAGE_NUM_MAX = 100   # 末尾数字をページ番号とみなす上限(これ以上は記事IDとみなし追尾しない)
-INDEX_VERSION = "2"  # 索引ロジックを変えたらここを上げる → src_hashが変わり全記事を再索引
+INDEX_VERSION = "3"  # 索引ロジックを変えたらここを上げる → src_hashが変わり全記事を再索引
+MAX_INDEX_CHARS = 300000  # 索引対象本文の上限(正規化後の文字数)
+BIGRAM_CHUNK = 6000       # 1 INSERT あたりのbigram数(≈31KB。D1のstatement上限に余裕を持たせる)
+BIGRAM_OVERLAP = 64       # チャンク境界を跨ぐ検索を落とさないための重なり
+BODY_PREVIEW = 2000       # article_src.body に残すプレビュー長(全文はbigram側が保持)
 UA = ("Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 "
       "(KHTML, like Gecko) Chrome/125.0 Safari/537.36")
 
@@ -61,6 +65,23 @@ def normalize(s: str) -> str:
 
 def bigrams(s: str) -> str:
     return " ".join(s[i:i + 2] for i in range(len(s) - 1))
+
+
+def bigram_list(s: str) -> list[str]:
+    return [s[i:i + 2] for i in range(len(s) - 1)]
+
+
+def chunk_bigrams(tokens: list[str]) -> list[str]:
+    """bigram列を、1 INSERTが大きくなりすぎない塊に分割(境界は少し重ねる)。"""
+    if len(tokens) <= BIGRAM_CHUNK:
+        return [" ".join(tokens)] if tokens else [""]
+    chunks, i, step = [], 0, BIGRAM_CHUNK - BIGRAM_OVERLAP
+    while i < len(tokens):
+        chunks.append(" ".join(tokens[i:i + BIGRAM_CHUNK]))
+        if i + BIGRAM_CHUNK >= len(tokens):
+            break
+        i += step
+    return chunks
 
 
 # ---- 取得 ----
@@ -233,17 +254,21 @@ def main():
         extra = [] if no_follow else [u for u in re.split(r"[,\s]+", extra_raw) if u]
         bodies, used, truncated = collect_pages(url, extra, no_follow=no_follow)
         body = "\n".join(bodies)
-        big = bigrams(normalize(body))
+        tokens = bigram_list(normalize(body)[:MAX_INDEX_CHARS])
+        chunks = chunk_bigrams(tokens)
         print(f"{aid}: {len(used)}ページ連結 ({', '.join(used)})", flush=True)
         if truncated:
             print(f"  ⚠ {aid}: 本文が途中で切れているかも → 続きのURLを ExtraURL に、"
                   f"連番の別記事なら '-' を入れて再実行を検討", flush=True)
 
+        # bigramは複数行に分割して投入(1 statementが上限超えしないように)
+        preview = re.sub(r"\s+", " ", body[:BODY_PREVIEW]).replace(";", "；")
         stmts.append(f"DELETE FROM article_fts WHERE id={sql_str(aid)};")
-        stmts.append(f"INSERT INTO article_fts(id,bigram) VALUES({sql_str(aid)},{sql_str(big)});")
+        for ch in chunks:
+            stmts.append(f"INSERT INTO article_fts(id,bigram) VALUES({sql_str(aid)},{sql_str(ch)});")
         stmts.append(
             "INSERT OR REPLACE INTO article_src(id,src_hash,pages,body,indexed_at) "
-            f"VALUES({sql_str(aid)},{sql_str(src_hash)},{len(used)},{sql_str(body)},{sql_str(now)});"
+            f"VALUES({sql_str(aid)},{sql_str(src_hash)},{len(used)},{sql_str(preview)},{sql_str(now)});"
         )
         n_new += 1
         time.sleep(0.3)

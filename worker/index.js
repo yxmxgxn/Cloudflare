@@ -49,8 +49,9 @@ async function handleSearch(url, env) {
   const match = buildMatch(q);
   if (!match) return json({ ids: [] }); // 2文字未満などは空(サーバ絞り込み無効)
 
+  // 1記事のbigramは複数行に分割されているため DISTINCT で重複IDをまとめる
   const { results } = await env.DB
-    .prepare("SELECT id FROM article_fts WHERE article_fts MATCH ? LIMIT ?")
+    .prepare("SELECT DISTINCT id FROM article_fts WHERE article_fts MATCH ? LIMIT ?")
     .bind(match, LIMIT)
     .all();
 
