@@ -1,4 +1,4 @@
-<!-- generated: 2026-08-14T07:21:02.645415+00:00 -->
+<!-- generated: 2026-08-14T07:33:30.217966+00:00 -->
 <option value="和食">和食</option>
 <option value="洋食">洋食</option>
 <option value="インド">インド</option>
