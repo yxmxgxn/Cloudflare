@@ -122,37 +122,66 @@ def next_page_url(html: str, cur: str) -> str | None:
     return None
 
 
-def collect_pages(main_url: str, extra: list[str]) -> tuple[list[str], list[str]]:
-    """(本文リスト, 実際に辿ったURLリスト) を返す。"""
-    bodies, urls = [], []
-    seen_bodies = set()
+# 本文が文末で終わっているか(=途中で切れていないか)の判定用
+_END_OK = re.compile(r"[。．！？!?」』）)\]】〉》…]\s*$")
+_PAGER_HINT = re.compile(r"次のページ|続きを読む|次へ|pageNav|pager|pagination|paginat", re.I)
 
-    # ExtraURL があれば自動追尾せず明示URL群を使う
+
+def looks_truncated(body: str, last_html: str) -> bool:
+    """単ページ結果が「続きがありそう」に見えるか(⚠ヒント用)。"""
+    if not body:
+        return False
+    if not _END_OK.search(body.rstrip()):
+        return True   # 文末で終わっていない=途中で切れている可能性
+    if last_html and _PAGER_HINT.search(last_html):
+        return True   # ページャらしき要素があるのに辿れていない
+    return False
+
+
+def collect_pages(main_url: str, extra: list[str], no_follow: bool = False):
+    """(本文リスト, 辿ったURLリスト, 切れてるかも) を返す。"""
+    bodies, urls = [], []
+    seen = set()
+
+    def take(u: str) -> str | None:
+        html = fetch_html(u)
+        body = extract_body(html or "")
+        if body and body[:200] not in seen:
+            seen.add(body[:200])
+            bodies.append(body)
+            urls.append(u)
+        return html
+
+    # ExtraURL="-" : このページは追尾しない(メインのみ確定)
+    if no_follow:
+        take(main_url)
+        return bodies, urls, False
+
+    # ExtraURL にURL列挙 : 自動追尾せず明示URL群を使う
     if extra:
-        for u in [main_url] + extra:
-            html = fetch_html(u)
-            body = extract_body(html or "")
-            if body and body[:200] not in seen_bodies:
-                seen_bodies.add(body[:200])
-                bodies.append(body)
-                urls.append(u)
-        return bodies, urls
+        take(main_url)
+        for u in extra:
+            take(u)
+        return bodies, urls, False
 
     # 自動追尾
-    cur = main_url
+    cur, last_html = main_url, ""
     for _ in range(MAX_PAGES):
         html = fetch_html(cur)
         body = extract_body(html or "")
-        if not body or body[:200] in seen_bodies:
+        if not body or body[:200] in seen:
             break
-        seen_bodies.add(body[:200])
+        seen.add(body[:200])
         bodies.append(body)
         urls.append(cur)
+        last_html = html or ""
         nxt = next_page_url(html or "", cur)
         if not nxt or nxt == cur:
             break
         cur = nxt
-    return bodies, urls
+
+    truncated = len(urls) == 1 and looks_truncated("\n".join(bodies), last_html)
+    return bodies, urls, truncated
 
 
 # ---- スプシ ----
@@ -192,17 +221,23 @@ def main():
         if not aid or not url:
             continue
         sheet_ids.add(aid)
-        extra = [u.strip() for u in re.split(r"[,\s]+", a.get("ExtraURL") or "") if u.strip()]
+        extra_raw = (a.get("ExtraURL") or "").strip()
 
-        src_hash = hashlib.sha1(("\n".join([INDEX_VERSION, url] + extra)).encode("utf-8")).hexdigest()
+        # ExtraURL の解釈を含めてハッシュ化(空/"-"/URL群を切り替えたら再索引される)
+        src_hash = hashlib.sha1(("\n".join([INDEX_VERSION, url, extra_raw])).encode("utf-8")).hexdigest()
         if current.get(aid) == src_hash:
             n_skip += 1
             continue  # 変更なし→再取得しない
 
-        bodies, used = collect_pages(url, extra)
+        no_follow = extra_raw == "-"
+        extra = [] if no_follow else [u for u in re.split(r"[,\s]+", extra_raw) if u]
+        bodies, used, truncated = collect_pages(url, extra, no_follow=no_follow)
         body = "\n".join(bodies)
         big = bigrams(normalize(body))
         print(f"{aid}: {len(used)}ページ連結 ({', '.join(used)})", flush=True)
+        if truncated:
+            print(f"  ⚠ {aid}: 本文が途中で切れているかも → 続きのURLを ExtraURL に、"
+                  f"連番の別記事なら '-' を入れて再実行を検討", flush=True)
 
         stmts.append(f"DELETE FROM article_fts WHERE id={sql_str(aid)};")
         stmts.append(f"INSERT INTO article_fts(id,bigram) VALUES({sql_str(aid)},{sql_str(big)});")
