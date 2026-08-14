@@ -45,7 +45,9 @@ GID_MAIN = "0"
 REPO_ROOT = Path(__file__).resolve().parent.parent
 OUT_SQL = REPO_ROOT / "build" / "interview_index.sql"
 
-MAX_PAGES = 10  # 自動追尾の上限
+MAX_PAGES = 10       # 自動追尾の上限
+PAGE_NUM_MAX = 100   # 末尾数字をページ番号とみなす上限(これ以上は記事IDとみなし追尾しない)
+INDEX_VERSION = "2"  # 索引ロジックを変えたらここを上げる → src_hashが変わり全記事を再索引
 UA = ("Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 "
       "(KHTML, like Gecko) Chrome/125.0 Safari/537.36")
 
@@ -101,7 +103,9 @@ def next_page_url(html: str, cur: str) -> str | None:
         m = re.search(r'<(?:link|a)[^>]+href=["\']([^"\']+)["\'][^>]+rel=["\']next["\']', html or "", re.I)
     if m:
         return urllib.parse.urljoin(cur, m.group(1))
-    # 2) URL規則: ?page=N / 末尾 /N or /N/ を +1。番号が無ければ /2 を試す
+    # 2) URL規則の連番: ?page=N を +1。
+    #    末尾 /N or /N/ は「小さい数字＝ページ番号」の時だけ +1 する。
+    #    /pickup/704725 のような“末尾が記事ID”を次記事と誤連結しないための安全弁。
     pr = urllib.parse.urlparse(cur)
     qs = urllib.parse.parse_qs(pr.query)
     if "page" in qs:
@@ -111,7 +115,7 @@ def next_page_url(html: str, cur: str) -> str | None:
         except ValueError:
             return None
     mnum = re.search(r"/(\d+)/?$", pr.path)
-    if mnum:
+    if mnum and int(mnum.group(1)) < PAGE_NUM_MAX:
         n = int(mnum.group(1)) + 1
         newpath = pr.path[:mnum.start()] + f"/{n}" + ("/" if pr.path.endswith("/") else "")
         return pr._replace(path=newpath).geturl()
@@ -190,7 +194,7 @@ def main():
         sheet_ids.add(aid)
         extra = [u.strip() for u in re.split(r"[,\s]+", a.get("ExtraURL") or "") if u.strip()]
 
-        src_hash = hashlib.sha1(("\n".join([url] + extra)).encode("utf-8")).hexdigest()
+        src_hash = hashlib.sha1(("\n".join([INDEX_VERSION, url] + extra)).encode("utf-8")).hexdigest()
         if current.get(aid) == src_hash:
             n_skip += 1
             continue  # 変更なし→再取得しない
