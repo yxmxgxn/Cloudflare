@@ -29,6 +29,15 @@ GID_MAIN = "0"              # 動画一覧: ID,Date,URL,Title
 GID_MEMBERS = "1193318164"  # メンバー一覧: ID,Group,Member
 GID_GAMES = "807534636"     # ゲーム一覧: ID,Game,Genre
 
+# メンバーマスター(他プログラム共用): Member,Yomigana,Group。
+# 兼任は1グループに単純化し Group は一意、モーニング娘。の各期もモーニング娘。に統合。
+# これを使って メンバー選択を五十音(読み仮名)順に、グループ絞り込みを正規化グループで行う。
+MASTER_PUB = (
+    "https://docs.google.com/spreadsheets/d/e/"
+    "2PACX-1vS7zVX-GcZhARaYFCFwkoKvtapNqcG3aZ8EwEE87VxPSpMGBRk-Wca3EVkcX9hEh4MX0CVY4G6m68SE/pub"
+)
+MASTER_GID = "0"           # メンバーマスター: Member,Yomigana,Group
+
 REPO_ROOT = Path(__file__).resolve().parent.parent  # Python/ の親
 
 OUTPUT_CARDS = REPO_ROOT / "Spreadsheet" / "gamelive_cards.php"
@@ -38,8 +47,8 @@ OUTPUT_GENRES = REPO_ROOT / "Spreadsheet" / "gamelive_genres.php"
 OUTPUT_GENERATED = REPO_ROOT / "Generated" / "gamelive_generated.php"
 
 
-def fetch_csv(gid: str) -> list[dict]:
-    url = f"{PUB_BASE}?gid={gid}&single=true&output=csv"
+def fetch_csv(gid: str, base: str = PUB_BASE) -> list[dict]:
+    url = f"{base}?gid={gid}&single=true&output=csv"
     with urllib.request.urlopen(url) as res:
         content = res.read().decode("utf-8")
     reader = csv.DictReader(io.StringIO(content))
@@ -141,6 +150,7 @@ def build_cards(
     articles: list[dict],
     members_by_id: dict,
     games_by_id: dict,
+    master: dict[str, tuple[str, str]],
 ) -> str:
     cards = []
     for a in articles:
@@ -165,21 +175,26 @@ def build_cards(
             f'<span class="gl-title">{title_html}</span></p>'
         )
 
-        # 2段目以降: メンバー
+        # 2段目以降: メンバー(カード内の表示は動画当時のグループ表記のまま)
         members = members_by_id.get(aid, [])
-        members_html, groups, names = build_members_block(members)
+        members_html, _disp_groups, names = build_members_block(members)
 
         # その下: ゲーム
         games = games_by_id.get(aid, [])
         games_html, game_terms, genres = build_games_block(games)
 
+        # 絞り込み用グループは、メンバーマスターの正規化グループ(名寄せ)を使う。
+        # これにより OG(動画側で無所属表記)や モーニング娘。各期も、そのメンバーの
+        # 現在/代表グループで一括して絞り込める。
+        canon_groups = [master[n][1] for n in names if n in master and master[n][1]]
+
         search = " ".join(
-            [a.get("Title") or "", " ".join(names), " ".join(groups), " ".join(game_terms)]
+            [a.get("Title") or "", " ".join(names), " ".join(canon_groups), " ".join(game_terms)]
         )
 
         cards.append(
             f'<div class="gl-card" data-date="{date_sort}" data-title="{title}"'
-            f' data-groups="{esc("|".join(dict.fromkeys(groups)))}"'
+            f' data-groups="{esc("|".join(dict.fromkeys(canon_groups)))}"'
             f' data-names="{esc("|".join(dict.fromkeys(names)))}"'
             f' data-genres="{esc("|".join(dict.fromkeys(genres)))}"'
             f' data-search="{esc(search)}">'
@@ -200,6 +215,20 @@ def main():
     articles = fetch_csv(GID_MAIN)
     member_rows = fetch_csv(GID_MEMBERS)
     game_rows = fetch_csv(GID_GAMES)
+    master_rows = fetch_csv(MASTER_GID, base=MASTER_PUB)
+
+    # メンバーマスター: 名前 → (読み仮名, 正規化グループ)。グループの登場順も記録。
+    master: dict[str, tuple[str, str]] = {}
+    group_order: list[str] = []
+    for r in master_rows:
+        name = (r.get("Member") or "").strip()
+        if not name:
+            continue
+        yomi = (r.get("Yomigana") or "").strip()
+        group = (r.get("Group") or "").strip()
+        master[name] = (yomi, group)
+        if group and group not in group_order:
+            group_order.append(group)
 
     members_by_id: dict[str, list[dict]] = {}
     for m in member_rows:
@@ -213,8 +242,21 @@ def main():
         if gid:
             games_by_id.setdefault(gid, []).append(g)
 
-    groups = sorted({(m.get("Group") or "").strip() for m in member_rows if (m.get("Group") or "").strip()})
-    names = sorted({(m.get("Member") or "").strip() for m in member_rows if (m.get("Member") or "").strip()})
+    # gameliveに実際に登場するメンバー
+    used_names = {(m.get("Member") or "").strip() for m in member_rows if (m.get("Member") or "").strip()}
+
+    # マスターに無いメンバーがいれば警告(読み仮名順・グループ絞り込みから漏れる)
+    missing = sorted(n for n in used_names if n not in master)
+    if missing:
+        print("警告: メンバーマスターに存在しない名前:", "、".join(missing))
+
+    # メンバー選択肢: 読み仮名(五十音)順。読み仮名が無ければ名前でフォールバック。
+    names = sorted(used_names, key=lambda n: (master.get(n, ("", ""))[0] or n, n))
+
+    # グループ選択肢: gameliveメンバーの正規化グループを、マスター登場順で。
+    used_groups = {master[n][1] for n in used_names if n in master and master[n][1]}
+    groups = [g for g in group_order if g in used_groups]
+
     genres = sorted({(g.get("Genre") or "").strip() for g in game_rows if (g.get("Genre") or "").strip()})
 
     stamp = f"<!-- generated: {datetime.now(timezone.utc).isoformat()} -->\n"
@@ -222,7 +264,7 @@ def main():
     OUTPUT_GENERATED.parent.mkdir(parents=True, exist_ok=True)
     OUTPUT_CARDS.parent.mkdir(parents=True, exist_ok=True)
     with open(OUTPUT_CARDS, "w", encoding="utf-8") as f:
-        f.write(stamp + build_cards(articles, members_by_id, games_by_id) + "\n")
+        f.write(stamp + build_cards(articles, members_by_id, games_by_id, master) + "\n")
     with open(OUTPUT_GROUPS, "w", encoding="utf-8") as f:
         f.write(stamp + build_options(groups) + "\n")
     with open(OUTPUT_NAMES, "w", encoding="utf-8") as f:

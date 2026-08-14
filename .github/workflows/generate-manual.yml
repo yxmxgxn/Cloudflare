@@ -1,4 +1,5 @@
 name: Manual data generation
+run-name: "手動生成: ${{ inputs.target }}"
 
 on:
   workflow_dispatch:

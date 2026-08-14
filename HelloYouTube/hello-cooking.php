@@ -16,9 +16,13 @@
 
 <div id="cooking-controls">
   <input type="text" id="ck-search" placeholder="メンバー・料理名で絞り込み…" oninput="ckFilter()">
-  <select id="ck-group" onchange="ckFilter()">
+  <select id="ck-group" onchange="ckGroupChange()">
     <option value="">すべてのグループ</option>
     <?php include $_SERVER['DOCUMENT_ROOT'] . '/Spreadsheet/cooking_groups.php'; ?>
+  </select>
+  <select id="ck-name" onchange="ckFilter()">
+    <option value="">すべてのメンバー</option>
+    <?php include $_SERVER['DOCUMENT_ROOT'] . '/Spreadsheet/cooking_names.php'; ?>
   </select>
   <select id="ck-genre" onchange="ckFilter()">
     <option value="">すべてのジャンル</option>
@@ -67,6 +71,7 @@
     return {
       el: el,
       groups: (el.getAttribute('data-groups') || '').split('|').filter(Boolean),
+      names: (el.getAttribute('data-names') || '').split('|').filter(Boolean),
       cook: el.getAttribute('data-cook') || '',
       genres: (el.getAttribute('data-genres') || '').split('|').filter(Boolean),
       categories: (el.getAttribute('data-categories') || '').split('|').filter(Boolean),
@@ -79,6 +84,7 @@
   function ckFilter() {
     var q = document.getElementById('ck-search').value.toLowerCase();
     var gr = document.getElementById('ck-group').value;
+    var nm = document.getElementById('ck-name').value;
     var g = document.getElementById('ck-genre').value;
     var c = document.getElementById('ck-category').value;
     var ck = document.getElementById('ck-cook').value;
@@ -98,6 +104,7 @@
       var ok =
         (!q || card.search.indexOf(q) !== -1) &&
         (!gr || card.groups.indexOf(gr) !== -1) &&
+        (!nm || card.names.indexOf(nm) !== -1) &&
         (!g || card.genres.indexOf(g) !== -1) &&
         (!c || card.categories.indexOf(c) !== -1) &&
         (!t || card.types.indexOf(t) !== -1) &&
@@ -110,8 +117,31 @@
     document.getElementById('cooking-count').textContent = shown + ' 回 / 全' + allCards.length + ' 回';
   }
 
+  // グループを選ぶと、メンバー選択肢をそのグループの人だけに絞る。
+  // 選んでいたメンバーがそのグループに居なければ解除する。
+  function ckSyncNames() {
+    var gr = document.getElementById('ck-group').value;
+    var nameSel = document.getElementById('ck-name');
+    var stillValid = false;
+    Array.prototype.forEach.call(nameSel.options, function(o) {
+      if (!o.value) return; // 「すべてのメンバー」
+      var show = !gr || (o.getAttribute('data-group') || '') === gr;
+      o.hidden = !show;
+      o.disabled = !show;
+      if (o.value === nameSel.value && show) stillValid = true;
+    });
+    if (!stillValid) nameSel.value = ''; // 隠れた選択は解除
+  }
+
+  function ckGroupChange() {
+    ckSyncNames();
+    ckFilter();
+  }
+
+  ckSyncNames();
   ckFilter();
   window.ckFilter = ckFilter;
+  window.ckGroupChange = ckGroupChange;
 })();
 </script>
 <?php include $_SERVER['DOCUMENT_ROOT'] . '/common/footer.php'; ?>

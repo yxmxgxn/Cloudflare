@@ -1,4 +1,5 @@
 name: Daily data update (members & timeline)
+run-name: "日次更新 #${{ github.run_number }}"
 
 on:
   schedule:

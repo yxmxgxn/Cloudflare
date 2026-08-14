@@ -29,10 +29,20 @@ GID_MEMBER = "1716951336"
 GID_MEAL = "1055941910"
 GID_URL = "1286538905"
 
+# メンバーマスター(別スプレッドシート): Member,Yomigana,Group
+# 全ハロメンのロスター。よみがな順ソートと、グループ→メンバー絞り込みに使う。
+# 他プログラムでも使う共通マスターなので、余分なメンバーを含む。
+MASTER_URL = (
+    "https://docs.google.com/spreadsheets/d/e/"
+    "2PACX-1vS7zVX-GcZhARaYFCFwkoKvtapNqcG3aZ8EwEE87VxPSpMGBRk-Wca3EVkcX9hEh4MX0CVY4G6m68SE/pub"
+    "?gid=0&single=true&output=csv"
+)
+
 REPO_ROOT = Path(__file__).resolve().parent.parent  # Python/ の親
 
 OUTPUT_CARDS = REPO_ROOT / "Spreadsheet" / "cooking_cards.php"
 OUTPUT_GROUPS = REPO_ROOT / "Spreadsheet" / "cooking_groups.php"
+OUTPUT_NAMES = REPO_ROOT / "Spreadsheet" / "cooking_names.php"
 OUTPUT_GENRES = REPO_ROOT / "Spreadsheet" / "cooking_genres.php"
 OUTPUT_CATEGORIES = REPO_ROOT / "Spreadsheet" / "cooking_categories.php"
 OUTPUT_TYPES = REPO_ROOT / "Spreadsheet" / "cooking_types.php"
@@ -92,12 +102,31 @@ def fetch_csv(source: str) -> list[dict]:
     return result
 
 
+def fetch_master(source: str) -> dict[str, dict]:
+    """メンバーマスター: Member名 → {"yomigana": ..., "group": ...}"""
+    result: dict[str, dict] = {}
+    for row in fetch_csv(source):
+        name = val(row, "Member")
+        if not name:
+            continue
+        result[name] = {
+            "yomigana": val(row, "Yomigana"),
+            "group": val(row, "Group"),
+        }
+    return result
+
+
 def esc(s: str) -> str:
     return html.escape((s or "").strip())
 
 
 def val(row: dict, key: str) -> str:
     return (row.get(key) or "").strip()
+
+
+def resolve_group(name: str, master: dict, fallback: dict) -> str:
+    """絞り込み用グループ: マスター(名簿)を優先、無ければ料理当時のGroupで代替。"""
+    return master.get(name, {}).get("group") or fallback.get(name, "")
 
 
 def build_title(row: dict) -> str:
@@ -151,7 +180,8 @@ def build_videos(videos: list[dict]) -> str:
     return f'<ul class="ck-videos">{"".join(lines)}</ul>'
 
 
-def build_cards(members: list[dict], meals_by_id: dict, videos_by_id: dict) -> str:
+def build_cards(members: list[dict], meals_by_id: dict, videos_by_id: dict,
+                master: dict, fallback: dict) -> str:
     def order(row):
         eid = val(row, "ID")
         try:
@@ -171,11 +201,17 @@ def build_cards(members: list[dict], meals_by_id: dict, videos_by_id: dict) -> s
         categories = order_by({val(m, "Category") for m in meals if val(m, "Category")}, CATEGORY_ORDER)
         types = order_by({val(m, "Type") for m in meals if val(m, "Type")}, TYPE_ORDER)
         subcats = order_by({val(m, "SubCat") for m in meals if val(m, "SubCat")}, SUBCAT_ORDER)
-        groups = order_by({val(row, gkey) for _, gkey in MEMBER_COLS if val(row, gkey)}, GROUP_ORDER)
+        # 出演メンバー(絞り込み用)。グループは名簿(マスター)基準で解決する
+        member_names = [val(row, mkey) for mkey, _ in MEMBER_COLS if val(row, mkey)]
+        groups = order_by(
+            {resolve_group(n, master, fallback) for n in member_names
+             if resolve_group(n, master, fallback)},
+            GROUP_ORDER,
+        )
         cook = val(row, "Cook")
 
         search_parts = [
-            val(row, "Member1"), val(row, "Member2"), cook,
+            *member_names, cook,
             *[val(row, gkey) for _, gkey in MEMBER_COLS],
             *[val(m, "Meal") for m in meals],
         ]
@@ -184,6 +220,7 @@ def build_cards(members: list[dict], meals_by_id: dict, videos_by_id: dict) -> s
         cards.append(
             f'<div class="ck-card" id="ck-{esc(eid)}"'
             f' data-groups="{esc("|".join(groups))}"'
+            f' data-names="{esc("|".join(dict.fromkeys(member_names)))}"'
             f' data-cook="{esc(cook)}"'
             f' data-genres="{esc("|".join(genres))}"'
             f' data-categories="{esc("|".join(categories))}"'
@@ -205,11 +242,20 @@ def build_options(values: list[str]) -> str:
     return "\n".join(f'<option value="{esc(v)}">{esc(v)}</option>' for v in values)
 
 
+def build_name_options(names: list[str], master: dict, fallback: dict) -> str:
+    """メンバー選択肢。よみがな順で並び、グループ絞り込み用に data-group を持たせる。"""
+    return "\n".join(
+        f'<option value="{esc(n)}" data-group="{esc(resolve_group(n, master, fallback))}">{esc(n)}</option>'
+        for n in names
+    )
+
+
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("--member", default=f"{PUB_BASE}?gid={GID_MEMBER}&single=true&output=csv")
     parser.add_argument("--meal", default=f"{PUB_BASE}?gid={GID_MEAL}&single=true&output=csv")
     parser.add_argument("--url", default=f"{PUB_BASE}?gid={GID_URL}&single=true&output=csv")
+    parser.add_argument("--master", default=MASTER_URL)
     args = parser.parse_args()
 
     jst = timezone(timedelta(hours=9))
@@ -218,6 +264,15 @@ def main():
     members = fetch_csv(args.member)
     meals = fetch_csv(args.meal)
     videos = fetch_csv(args.url)
+    master = fetch_master(args.master)
+
+    # マスター(名簿)に無いメンバーのフォールバック: 料理当時のGroup1/Group2(最初の非空)
+    fallback_group: dict[str, str] = {}
+    for r in members:
+        for mkey, gkey in MEMBER_COLS:
+            nm, g = val(r, mkey), val(r, gkey)
+            if nm and g and nm not in fallback_group:
+                fallback_group[nm] = g
 
     meals_by_id: dict[str, list[dict]] = {}
     for m in meals:
@@ -235,8 +290,22 @@ def main():
     categories = order_by({val(m, "Category") for m in meals if val(m, "Category")}, CATEGORY_ORDER)
     types = order_by({val(m, "Type") for m in meals if val(m, "Type")}, TYPE_ORDER)
     subcats = order_by({val(m, "SubCat") for m in meals if val(m, "SubCat")}, SUBCAT_ORDER)
-    group_set = {val(r, gkey) for r in members for _, gkey in MEMBER_COLS if val(r, gkey)}
-    groups = order_by(group_set, GROUP_ORDER)
+
+    # 料理に登場するメンバー。マスターの余分な人は出さない
+    cooking_names = {val(r, mkey) for r in members
+                     for mkey, _ in MEMBER_COLS if val(r, mkey)}
+    # メンバー選択肢に出す対象。「（A＆B）」のような合体表記(デュオ回)は個人名でないので除外
+    dropdown_names = {n for n in cooking_names if not n.startswith(("（", "("))}
+
+    def yomi_key(n: str):
+        return (master.get(n, {}).get("yomigana") or n, n)
+
+    names_sorted = sorted(dropdown_names, key=yomi_key)  # あいうえお順
+    groups = order_by(
+        {resolve_group(n, master, fallback_group) for n in cooking_names
+         if resolve_group(n, master, fallback_group)},
+        GROUP_ORDER,
+    )
     cooks = order_by({val(r, "Cook") for r in members if val(r, "Cook")}, COOK_ORDER)
 
     stamp = f"<!-- generated: {datetime.now(timezone.utc).isoformat()} -->\n"
@@ -244,9 +313,12 @@ def main():
     OUTPUT_CARDS.parent.mkdir(parents=True, exist_ok=True)
     OUTPUT_GENERATED.parent.mkdir(parents=True, exist_ok=True)
     with open(OUTPUT_CARDS, "w", encoding="utf-8") as f:
-        f.write(stamp + build_cards(members, meals_by_id, videos_by_id) + "\n")
+        f.write(stamp + build_cards(members, meals_by_id, videos_by_id,
+                                    master, fallback_group) + "\n")
     with open(OUTPUT_GROUPS, "w", encoding="utf-8") as f:
         f.write(stamp + build_options(groups) + "\n")
+    with open(OUTPUT_NAMES, "w", encoding="utf-8") as f:
+        f.write(stamp + build_name_options(names_sorted, master, fallback_group) + "\n")
     with open(OUTPUT_COOKS, "w", encoding="utf-8") as f:
         f.write(stamp + build_options(cooks) + "\n")
     with open(OUTPUT_GENRES, "w", encoding="utf-8") as f:
@@ -261,7 +333,12 @@ def main():
         f.write(f'<div class="last-update">最終更新日：{generated}</div>\n')
 
     ids = {val(r, "ID") for r in members if val(r, "ID")}
-    print(f"生成完了: {OUTPUT_CARDS} ({len(ids)} 回 / 料理 {len(meals)} 品 / 動画 {len(videos)} 本)")
+    missing = sorted(n for n in dropdown_names if n not in master)
+    if missing:
+        print(f"⚠ マスター未登録(料理側Groupで代替・よみがな順が名前基準になる): {', '.join(missing)}")
+    print(f"生成完了: {OUTPUT_CARDS} "
+          f"({len(ids)} 回 / メンバー {len(cooking_names)} 名 / "
+          f"料理 {len(meals)} 品 / 動画 {len(videos)} 本)")
 
 
 if __name__ == "__main__":

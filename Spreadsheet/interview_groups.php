@@ -1,18 +1,12 @@
-<!-- generated: 2026-08-13T19:47:31.809658+00:00 -->
+<!-- generated: 2026-08-14T07:12:32.323032+00:00 -->
 <option value="BEYOOOOONDS">BEYOOOOONDS</option>
 <option value="Juice=Juice">Juice=Juice</option>
 <option value="OCHA NORMA">OCHA NORMA</option>
+<option value="℃-ute">℃-ute</option>
 <option value="こぶしファクトリー">こぶしファクトリー</option>
 <option value="つばきファクトリー">つばきファクトリー</option>
-<option value="つばきファクトリー)">つばきファクトリー)</option>
 <option value="アンジュルム">アンジュルム</option>
 <option value="カントリー・ガールズ">カントリー・ガールズ</option>
 <option value="ハロプロ研修生">ハロプロ研修生</option>
 <option value="モーニング娘。">モーニング娘。</option>
-<option value="モーニング娘。&#x27;15">モーニング娘。&#x27;15</option>
-<option value="モーニング娘。&#x27;16">モーニング娘。&#x27;16</option>
-<option value="モーニング娘。&#x27;17">モーニング娘。&#x27;17</option>
-<option value="モーニング娘。’18">モーニング娘。’18</option>
-<option value="モーニング娘。’19">モーニング娘。’19</option>
-<option value="モーニング娘。’20">モーニング娘。’20</option>
 <option value="ロージークロニクル">ロージークロニクル</option>

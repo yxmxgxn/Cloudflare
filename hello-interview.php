@@ -14,7 +14,7 @@
   2026/08 現在、宮本佳林さん・OCHA NORMA・ロージークロニクルを中心に掲載しています。<br>
 <div id="interview-controls">
   <input type="text" id="iv-search" placeholder="タイトル・媒体・メンバーで絞り込み…" oninput="ivFilter()">
-  <select id="iv-group" onchange="ivFilter()">
+  <select id="iv-group" onchange="ivGroupChange()">
     <option value="">すべてのグループ</option>
     <?php include $_SERVER['DOCUMENT_ROOT'] . '/Spreadsheet/interview_groups.php'; ?>
   </select>
@@ -78,8 +78,29 @@
       filtered.length + ' 件 / 全' + allCards.length + ' 件';
   }
 
+  // グループを選ぶと、メンバー選択肢をそのグループの人だけに絞る
+  function ivSyncNames() {
+    var g = document.getElementById('iv-group').value;
+    var nameSel = document.getElementById('iv-name');
+    var stillValid = false;
+    Array.prototype.forEach.call(nameSel.options, function(o) {
+      if (!o.value) return; // 「すべてのメンバー」
+      var show = !g || (o.getAttribute('data-group') || '') === g;
+      o.hidden = !show;
+      o.disabled = !show;
+      if (o.value === nameSel.value && show) stillValid = true;
+    });
+    if (!stillValid) nameSel.value = ''; // 隠れた選択は解除
+  }
+
+  function ivGroupChange() {
+    ivSyncNames();
+    ivFilter();
+  }
+
   ivFilter();
   window.ivFilter = ivFilter;
+  window.ivGroupChange = ivGroupChange;
 })();
 </script>
 <?php include $_SERVER['DOCUMENT_ROOT'] . '/common/footer.php'; ?>

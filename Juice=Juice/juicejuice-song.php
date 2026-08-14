@@ -1211,7 +1211,6 @@
       <td>広瀬香美/Maria Okada</td>
       <td>広瀬香美</td>
       <td>h-wonder</td>
-      <td></td>
     </tr>
     <tr>
       <td>2</td>
@@ -1219,7 +1218,6 @@
       <td>山崎あおい</td>
       <td>山崎あおい</td>
       <td>炭竃智弘</td>
-      <td></td>
     </tr>
     <tr>
       <td>3</td>
@@ -1227,7 +1225,6 @@
       <td>中島卓偉</td>
       <td>中島卓偉</td>
       <td>鈴木俊介</td>
-      <td></td>
     </tr>
     <tr>
       <td>4</td>
@@ -1235,7 +1232,6 @@
       <td>大森祥子</td>
       <td>炭竃智弘</td>
       <td>炭竃智弘</td>
-      <td></td>
     </tr>
     <tr>
       <td>5</td>
@@ -1243,7 +1239,6 @@
       <td>西野蒟蒻</td>
       <td>星部ショウ</td>
       <td>平田祥一郎</td>
-      <td></td>
     </tr>
     <tr>
       <td>6</td>
@@ -1251,7 +1246,6 @@
       <td>西野蒟蒻</td>
       <td>Simon Janlov/miwaflower</td>
       <td>Simon Janlov</td>
-      <td></td>
     </tr>
     <tr>
       <td>7</td>
@@ -1259,7 +1253,6 @@
       <td>中島卓偉</td>
       <td>中島卓偉</td>
       <td>中島卓偉/宮永治郎</td>
-      <td></td>
     </tr>
   </table>
 
