@@ -17,7 +17,7 @@
 
 <main>
   <h1>Juice=Juice 楽曲まとめ</h1>
-  発売されているJuice=Juiceの曲をまとめました。公式のリンク、作詞作曲編曲、Music Videoは▶️のマーク、一番新しいライブ映像を🎥のマークを付けました
+  発売されているJuice=Juiceの曲をまとめました。公式のリンク、作詞作曲編曲、Music Videoに▶️、一番新しいライブ映像に🎥・Dance Practiceに💃を付けました
   <h2>インディーズシングル</h2>
   <table id="karin-disco">
     <tr>
@@ -403,7 +403,7 @@
       <td rowspan="2" class="karin-disco-title">19th</th>
       <td rowspan="2" class="karin-disco-title">2025/2/26</td>
       <td rowspan="2" class="karin-disco-title"><a href="https://helloproject.com/release/7376/" target="_blank" rel="noopener noreferrer">初恋の亡霊/今夜はHearty Party/a></td>
-      <td><a href="https://www.youtube.com/watch?v=DquBd86wOYw" target="_blank" rel="noopener noreferrer">初恋の亡霊▶️</a>・<a href="https://www.youtube.com/watch?v=GkUijMTyJE0" target="_blank" rel="noopener noreferrer">🎥</a>・<a href="https://www.youtube.com/watch?v=g9EXEuk5sxo" target="_blank" rel="noopener noreferrer">▶️（Dance Shot Ver.）</a></td>
+      <td><a href="https://www.youtube.com/watch?v=DquBd86wOYw" target="_blank" rel="noopener noreferrer">初恋の亡霊▶️</a>・<a href="https://www.youtube.com/watch?v=GkUijMTyJE0" target="_blank" rel="noopener noreferrer">🎥</a>・<a href="https://www.youtube.com/watch?v=g9EXEuk5sxo" target="_blank" rel="noopener noreferrer">💃</a>・<a href="https://www.youtube.com/watch?v=g9EXEuk5sxo" target="_blank" rel="noopener noreferrer">▶️（Dance Shot Ver.）</a></td>
       <td>西野蒟蒻</td>
       <td>KOUGA</td>
       <td>平田祥一郎</td>
@@ -424,7 +424,7 @@
       <td>荒幡亮平</td>
     </tr>
     <tr>
-      <td><a href="https://www.youtube.com/watch?v=3RtbnP1onaM" target="_blank" rel="noopener noreferrer">盛れ！ミ・アモーレ▶️</a>・<a href="https://www.youtube.com/watch?v=mj2pkIIQboo" target="_blank" rel="noopener noreferrer">🎥</a>・<a href="https://www.youtube.com/watch?v=MlG9hptTvgQ" target="_blank" rel="noopener noreferrer">▶️（Dance Shot Ver.）</a></td>
+      <td><a href="https://www.youtube.com/watch?v=3RtbnP1onaM" target="_blank" rel="noopener noreferrer">盛れ！ミ・アモーレ▶️</a>・<a href="https://www.youtube.com/watch?v=mj2pkIIQboo" target="_blank" rel="noopener noreferrer">🎥</a>・<a href="https://www.youtube.com/watch?v=MlG9hptTvgQ" target="_blank" rel="noopener noreferrer">💃</a>・<a href="https://www.youtube.com/watch?v=MlG9hptTvgQ" target="_blank" rel="noopener noreferrer">▶️（Dance Shot Ver.）</a></td>
       <td>山崎あおい</td>
       <td>山崎あおい</td>
       <td>炭竃智弘</td>
