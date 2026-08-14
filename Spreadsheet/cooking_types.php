@@ -1,8 +1,4 @@
-<<<<<<< Updated upstream
-<!-- generated: 2026-08-14T08:56:11.995783+00:00 -->
-=======
-<!-- generated: 2026-08-14T08:51:36.824247+00:00 -->
->>>>>>> Stashed changes
+<!-- generated: 2026-08-14T09:25:36.658904+00:00 -->
 <option value="肉">肉</option>
 <option value="魚">魚</option>
 <option value="野菜">野菜</option>

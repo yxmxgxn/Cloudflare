@@ -1,8 +1,4 @@
-<<<<<<< Updated upstream
-<!-- generated: 2026-08-14T08:56:11.995783+00:00 -->
-=======
-<!-- generated: 2026-08-14T08:51:36.824247+00:00 -->
->>>>>>> Stashed changes
+<!-- generated: 2026-08-14T09:25:36.658904+00:00 -->
 <option value="モーニング娘。">モーニング娘。</option>
 <option value="アンジュルム">アンジュルム</option>
 <option value="Juice=Juice">Juice=Juice</option>
