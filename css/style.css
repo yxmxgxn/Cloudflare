@@ -73,6 +73,17 @@ table {
   margin-bottom: 1rem; /* 下側のスペース */
 }
 
+/* 表の横スクロール（common/footer.php が全<table>を.table-scrollで自動ラップ）
+   スマホなど画面が狭いときは、PC相当の列幅を保ったまま横スクロールになる */
+.table-scroll {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  max-width: 100%;
+}
+.table-scroll > table {
+  min-width: max-content;
+}
+
 /*ヘッダー
 -------------------------------------*/
 header {

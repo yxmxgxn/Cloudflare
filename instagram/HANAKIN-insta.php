@@ -8,7 +8,8 @@
 
 <main>
   <h1>宮本佳林 Instagramチャレンジまとめ</h1>
-  宮本佳林さんが<a href="https://www.instagram.com/karin_miyamoto.official/" target="_blank" rel="noopener noreferrer">Instagram</a>・<a href="https://www.tiktok.com/@karin_miyamoto?lang=ja-JP" target="_blank" rel="noopener noreferrer">TikTok</a>で投稿しているチャレンジ企画をまとめました。<br>
+  宮本佳林さんが<a href="https://www.instagram.com/karin_miyamoto.official/" target="_blank" rel="noopener noreferrer">Instagram</a>・<a href="https://www.tiktok.com/@karin_miyamoto?lang=ja-JP" target="_blank" rel="noopener noreferrer">TikTok</a>で投稿している企画をまとめました。<br>
+  HANAKINコラボとシャニカマー45°チャレンジです。<br>
   日付・投稿へのリンク・コラボ相手の名前はその方の公式Instagramにリンクしています。<br>
   一人でも特別な会場の投稿は含めています。
 
@@ -39,7 +40,6 @@
 <th>Instagram</th>
 <th>TikTok</th>
 <th>コラボ相手</th>
-<th>場所</th>
 </tr>
 </thead>
 <tbody>

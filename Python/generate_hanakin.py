@@ -40,8 +40,8 @@ OUTPUT_GENERATED = REPO_ROOT / "Generated" / "hanakin_generated.php"
 
 # IDの接頭辞ごとに別テーブルへ振り分ける(同じイベント/相手IGシートを共有)
 CHALLENGES = [
-    {"prefix": "HK", "table": REPO_ROOT / "Spreadsheet" / "hanakin_table.php"},
-    {"prefix": "SK", "table": REPO_ROOT / "Spreadsheet" / "shanikama_table.php"},
+    {"prefix": "HK", "table": REPO_ROOT / "Spreadsheet" / "hanakin_table.php", "place": True},
+    {"prefix": "SK", "table": REPO_ROOT / "Spreadsheet" / "shanikama_table.php", "place": False},
 ]
 
 
@@ -100,21 +100,23 @@ def build_members(ev: dict, profiles: dict[tuple, str]) -> str:
     return "・".join(parts)
 
 
-def build_rows(events: list[dict], profiles: dict[tuple, str]) -> str:
+def build_rows(events: list[dict], profiles: dict[tuple, str], with_place: bool = True) -> str:
     valid = [e for e in events if val(e, "ID")]
     valid.sort(key=lambda e: sort_key(val(e, "Date")))
     lines = []
     for i, ev in enumerate(valid):
         row_class = ' class="row-even"' if i % 2 else ""
-        place = val(ev, "Place")
-        place_cell = f"@{esc(place)}" if place else ""
+        place_cell = ""
+        if with_place:
+            place = val(ev, "Place")
+            place_cell = f'<td>{"@" + esc(place) if place else ""}</td>'
         lines.append(
             f"<tr{row_class}>"
             f"<td>{format_date(val(ev, 'Date'))}</td>"
             f'<td>{link(val(ev, "Instagram"), "Instagram")}</td>'
             f'<td>{link(val(ev, "TikTok"), "TikTok")}</td>'
             f"<td>{build_members(ev, profiles)}</td>"
-            f"<td>{place_cell}</td>"
+            f"{place_cell}"
             "</tr>"
         )
     return "\n".join(lines)
@@ -146,7 +148,7 @@ def main():
         subset = [e for e in events if val(e, "ID").startswith(ch["prefix"])]
         ch["table"].parent.mkdir(parents=True, exist_ok=True)
         with open(ch["table"], "w", encoding="utf-8") as f:
-            f.write(stamp + build_rows(subset, profiles) + "\n")
+            f.write(stamp + build_rows(subset, profiles, ch["place"]) + "\n")
         summary.append(f"{ch['prefix']} {len(subset)}回")
     with open(OUTPUT_GENERATED, "w", encoding="utf-8") as f:
         f.write(f'<div class="last-update">最終更新日：{generated}</div>\n')

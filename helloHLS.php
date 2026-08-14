@@ -6,7 +6,7 @@
 ?>
 
 <main>
-<h2>Hello! Project Member Colors</h2>
+<h2>ハロプロメンバーカラー色空間配置</h2>
 
 <div class="filters" id="filters"></div>
 
@@ -18,7 +18,12 @@
   <span class="info-empty">メンバーのドットをクリック</span>
 </div>
 
-<div class="footer"><br>L無視・HSのみでプロット<br>各グループをクリックするとそのグループだけがフィルタされます。<br>#$記述は一般的なものではなく、私が別の文脈で提案したもので以下を読んでください。<br>https://note.com/yxgxmxn/n/n5b084dc0d700</div>
+<div class="footer">
+ハロプロメンバーのメンバーカラーをHLS色空間に配置したものです。<br>
+Lは無視して・HS円環上にプロットしました。<br>
+各グループをクリックするとそのグループだけがフィルタされます。<br>
+#$記述は一般的なものではなく、私が別の文脈で提案したもので以下を読んでください。<br>
+<a href="https://note.com/yxgxmxn/n/n5b084dc0d700" target="_blank" rel="noopener noreferrer">Note（ハロプロメンバーカラーの公式によるCSS指定への感謝の表明）</a></div>
 
 <script>
 const members = [
