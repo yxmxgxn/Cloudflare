@@ -1,4 +1,4 @@
-<!-- generated: 2026-08-14T09:22:01.357382+00:00 -->
+<!-- generated: 2026-08-14T17:06:07.193268+00:00 -->
 <option value="有澤一華">有澤一華</option>
 <option value="生田衣梨奈">生田衣梨奈</option>
 <option value="石井泉羽">石井泉羽</option>
@@ -26,6 +26,7 @@
 <option value="窪田七海">窪田七海</option>
 <option value="斉藤円香">斉藤円香</option>
 <option value="櫻井梨央">櫻井梨央</option>
+<option value="佐藤優樹">佐藤優樹</option>
 <option value="里吉うたの">里吉うたの</option>
 <option value="島川波菜">島川波菜</option>
 <option value="島倉りか">島倉りか</option>
