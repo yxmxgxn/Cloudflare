@@ -1,4 +1,4 @@
-<!-- generated: 2026-08-14T07:16:17.065205+00:00 -->
+<!-- generated: 2026-08-14T07:56:28.422133+00:00 -->
 <option value="アンジュルム">アンジュルム</option>
 <option value="つばきファクトリー">つばきファクトリー</option>
 <option value="Juice=Juice">Juice=Juice</option>
