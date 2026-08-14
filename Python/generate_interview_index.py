@@ -47,7 +47,7 @@ OUT_SQL = REPO_ROOT / "build" / "interview_index.sql"
 
 MAX_PAGES = 10       # 自動追尾の上限
 PAGE_NUM_MAX = 100   # 末尾数字をページ番号とみなす上限(これ以上は記事IDとみなし追尾しない)
-INDEX_VERSION = "4"  # 索引ロジックを変えたらここを上げる → src_hashが変わり全記事を再索引
+INDEX_VERSION = "5"  # 索引ロジックを変えたらここを上げる → src_hashが変わり全記事を再索引
 MAX_INDEX_CHARS = 300000  # 索引対象本文の上限(正規化後の文字数)
 BIGRAM_CHUNK = 6000       # 1 INSERT あたりのbigram数(≈31KB。D1のstatement上限に余裕を持たせる)
 BIGRAM_OVERLAP = 64       # チャンク境界を跨ぐ検索を落とさないための重なり
@@ -172,6 +172,21 @@ def looks_truncated(body: str, last_html: str) -> bool:
     return False
 
 
+def _stem(u: str):
+    """URLから「ページ番号を除いた記事の幹」を取り出す(同一記事判定用)。"""
+    pr = urllib.parse.urlparse(u)
+    path = re.sub(r"/\d+/?$", "", pr.path).rstrip("/")  # 末尾 /N /N/ を除去
+    qs = urllib.parse.parse_qs(pr.query)
+    qs.pop("page", None)
+    return (pr.netloc, path, urllib.parse.urlencode(qs, doseq=True))
+
+
+def same_article(cur: str, nxt: str) -> bool:
+    """next先が「同じ記事の別ページ」か。別スラッグ(=別記事)なら False。
+    suumo等の rel=next が“次の記事”を指すケースの暴走連結を防ぐ。"""
+    return _stem(cur) == _stem(nxt)
+
+
 def collect_pages(main_url: str, extra: list[str], no_follow: bool = False):
     """(本文リスト, 辿ったURLリスト, 切れてるかも) を返す。"""
     bodies, urls = [], []
@@ -210,8 +225,8 @@ def collect_pages(main_url: str, extra: list[str], no_follow: bool = False):
         urls.append(cur)
         last_html = html or ""
         nxt = next_page_url(html or "", cur)
-        if not nxt or nxt == cur:
-            break
+        if not nxt or nxt == cur or not same_article(cur, nxt):
+            break  # 別記事(別スラッグ)への rel=next 等は追わない
         cur = nxt
 
     truncated = len(urls) == 1 and looks_truncated("\n".join(bodies), last_html)
