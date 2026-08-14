@@ -27,9 +27,9 @@ jobs:
       - name: Dump current src_hash from D1（増分判定用）
         run: |
           npx wrangler@4 d1 execute karin-interview --remote \
-            --command "SELECT id, src_hash FROM article_src" --json > d1dump.json \
+            --command "SELECT id, src_hash, pages FROM article_src" --json > d1dump.json \
             || echo '[]' > d1dump.json
-          jq '((.[0].results) // []) | map({(.id): .src_hash}) | add // {}' d1dump.json > current.json
+          jq '((.[0].results) // []) | map({(.id): ((.src_hash) + "|" + ((.pages)|tostring))}) | add // {}' d1dump.json > current.json
           echo "既存: $(jq 'length' current.json) 件"
         env:
           CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}

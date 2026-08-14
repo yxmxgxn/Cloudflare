@@ -47,7 +47,7 @@ OUT_SQL = REPO_ROOT / "build" / "interview_index.sql"
 
 MAX_PAGES = 10       # 自動追尾の上限
 PAGE_NUM_MAX = 100   # 末尾数字をページ番号とみなす上限(これ以上は記事IDとみなし追尾しない)
-INDEX_VERSION = "3"  # 索引ロジックを変えたらここを上げる → src_hashが変わり全記事を再索引
+INDEX_VERSION = "4"  # 索引ロジックを変えたらここを上げる → src_hashが変わり全記事を再索引
 MAX_INDEX_CHARS = 300000  # 索引対象本文の上限(正規化後の文字数)
 BIGRAM_CHUNK = 6000       # 1 INSERT あたりのbigram数(≈31KB。D1のstatement上限に余裕を持たせる)
 BIGRAM_OVERLAP = 64       # チャンク境界を跨ぐ検索を落とさないための重なり
@@ -100,6 +100,19 @@ def fetch_html(url: str) -> str | None:
         return raw.decode(enc, "replace")
     except LookupError:
         return raw.decode("utf-8", "replace")
+
+
+def fetch_archive(arc_url: str, tries: int = 4) -> str:
+    """ライブ取得が失敗する媒体向け: WebArchive(魚拓)から本文を取る。
+    archive.orgはActionのIPをブロックしないため、ボット弾きサイトを救える。503はリトライ。"""
+    for _ in range(tries):
+        html = fetch_html(arc_url)  # 503等は fetch_html が None を返す
+        if html:
+            body = extract_body(html)
+            if body:
+                return body
+        time.sleep(6)
+    return ""
 
 
 def extract_body(html: str) -> str:
@@ -243,17 +256,26 @@ def main():
             continue
         sheet_ids.add(aid)
         extra_raw = (a.get("ExtraURL") or "").strip()
+        arc = (a.get("WebArcive") or "").strip()
 
         # ExtraURL の解釈を含めてハッシュ化(空/"-"/URL群を切り替えたら再索引される)
         src_hash = hashlib.sha1(("\n".join([INDEX_VERSION, url, extra_raw])).encode("utf-8")).hexdigest()
-        if current.get(aid) == src_hash:
+        # current は "hash|pages"。ハッシュ一致でも pages=0(取得失敗)なら再挑戦する
+        cur_hash, _, cur_pages = current.get(aid, "").partition("|")
+        if cur_hash == src_hash and cur_pages not in ("", "0"):
             n_skip += 1
-            continue  # 変更なし→再取得しない
+            continue  # 変更なし かつ 前回取得済み → 再取得しない
 
         no_follow = extra_raw == "-"
         extra = [] if no_follow else [u for u in re.split(r"[,\s]+", extra_raw) if u]
         bodies, used, truncated = collect_pages(url, extra, no_follow=no_follow)
         body = "\n".join(bodies)
+        # ライブが空/極端に短い(ボット弾き・同意壁等)なら魚拓へフォールバックし、長い方を採用
+        if len(normalize(body)) < 100 and "web.archive.org/web/" in arc:
+            ab = fetch_archive(arc)
+            if len(normalize(ab)) > len(normalize(body)):
+                bodies, used, truncated, body = [ab], [arc], False, ab
+                print(f"  ↳ {aid}: liveが空/短い → 魚拓から取得", flush=True)
         tokens = bigram_list(normalize(body)[:MAX_INDEX_CHARS])
         chunks = chunk_bigrams(tokens)
         print(f"{aid}: {len(used)}ページ連結 ({', '.join(used)})", flush=True)
