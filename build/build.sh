@@ -97,9 +97,6 @@ grep -rl --include='*.html' --include='*.xml' --include='*.txt' -F "$OLD_URL" "$
   echo "/karinsong.php       /YouTube/karin-song   301"
   echo "/index.php / 301"
   echo "/index.html / 301"
-  # X/ から Tool/ へ移動したページ
-  echo "/X/post-context      /Tool/post-context    301"
-  echo "/X/post-context.php  /Tool/post-context    301"
   # 全ページ: .php付きURL → クリーンURL
   while IFS= read -r p; do
     echo "/$p.php /$p 301"
