@@ -8,6 +8,8 @@
   このHPの更新履歴です
   <dl>
   <dt>2026-08-14</dt>
+  <dd><a href="/instagram/HANAKIN-insta">宮本佳林 HANAKINチャレンジ</a>にシャニカマー45°チャレンジを追加</dd>
+  <dt>2026-08-14</dt>
   <dd>メンバーによみがなとグループを持たせて、フィルタさせるときに利用するように修正</dd>
   <dt>2026-08-08</dt>
   <dd><a href="/HelloYouTube/hello-gamelive">ファミ通ゲーム実況ch</a>のページを追加</dd>

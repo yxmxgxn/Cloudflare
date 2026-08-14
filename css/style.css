@@ -609,6 +609,12 @@ footer a {
   text-align: left;
   margin-bottom: 20px;
 }
+
+/* スマホでは表の文字を大きめに（PCは据え置き／カード類は対象外）
+   全<table>は footer.php が .table-scroll で包むので、これ1つで全表に効く */
+.table-scroll table {
+  font-size: 16px !important;
+}
 }
 
 
