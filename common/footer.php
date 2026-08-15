@@ -134,8 +134,9 @@ function sharePage() {
 <ul class="footer-links">
   <li><a href="/common/privacy" target="_blank">プライバシーポリシー</a></li>
   <li><a href="/common/disclaimer" target="_blank">免責事項</a></li>
+  <li class="footer-break"></li>
   <li><a href="https://tools.ymgn0829.workers.dev/sns-links/" target="_blank">SNS Link</a></li>
-  <li><a href="https://x.com/yxmxgxn" target="_blank">X@yxmxgxn</a></li>
+  <li><a href="https://x.com/yxmxgxn" target="_blank">X @yxmxgxn</a></li>
   <li>&copy; 2026 @yxmxgxn</li>
 </ul>
 </footer>
