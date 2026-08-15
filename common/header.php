@@ -37,6 +37,12 @@
 
 <title><?php if (isset($title)) {echo $title . " | 宮本佳林・M-line・ハロプロ Archive"; } else {echo "宮本佳林・M-line・ハロプロ Archive"; } ?></title>
 
+<!-- Webフォント(style.css の body で 'Noto Sans JP' を指定しているため必要) -->
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap">
+
 <!-- CSS -->
 
 <link rel="stylesheet" media="all" href="/css/style.css">

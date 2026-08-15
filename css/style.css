@@ -4,6 +4,15 @@ body {
   font-family: 'Noto Sans JP', sans-serif;
 }
 
+/* フォーム部品は font-family を継承しないので、明示的に本文へ揃える
+   (未指定だと検索ボックスやボタンだけ別フォントになる) */
+input,
+textarea,
+button,
+select {
+  font-family: inherit;
+}
+
 img {
   max-width:100%;
   height: auto;/*高さ自動*/
