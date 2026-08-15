@@ -6,6 +6,7 @@ on:
     paths-ignore:
       - 'Python/**'
       - 'README*'
+      - 'docs/**'   # 保守メモ。公開物には含まれないので再デプロイ不要
   workflow_dispatch:
 
 concurrency:
