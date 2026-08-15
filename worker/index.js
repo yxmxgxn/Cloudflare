@@ -211,15 +211,6 @@ async function handleFeedbackAdmin(url, request, env) {
   const expected = (env.FEEDBACK_TOKEN || "").trim();
   const token = (url.searchParams.get("t") || "").trim();
 
-  // 切り分け用。値は出さず、設定の有無と桁数だけ返す。解決したら消す。
-  if (url.searchParams.get("debug") === "1") {
-    return json(
-      { configured: expected.length > 0, expected_len: expected.length, got_len: token.length },
-      200,
-      "no-store"
-    );
-  }
-
   // トークン不一致は 404(存在自体を隠す)
   if (!expected || token !== expected) {
     return new Response("Not Found", { status: 404 });
