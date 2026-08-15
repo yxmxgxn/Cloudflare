@@ -876,9 +876,10 @@ footer a {
   white-space: nowrap;
 }
 
-/* 期間フィルタ(折りたたみ) */
+/* 期間フィルタ(折りたたみ)・一括オープン */
 #iv-date-toggle,
-#iv-date-clear {
+#iv-date-clear,
+#iv-openall {
   padding: 6px 12px;
   border: 1px solid #ccc;
   background: #fff;

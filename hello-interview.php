@@ -29,6 +29,7 @@
     <option value="title">タイトル順</option>
   </select>
   <button type="button" id="iv-date-toggle" onclick="ivDateToggle()" aria-expanded="false">📅 期間</button>
+  <button type="button" id="iv-openall" onclick="ivOpenAll()">表示中を別タブで開く</button>
   <span id="interview-count"></span>
 </div>
 <div id="iv-date-panel" hidden>
@@ -151,6 +152,32 @@
     ivFilter();
   }
 
+  // 表示中(フィルタ後)の記事を、確認のうえ全部別タブで開く
+  function ivOpenAll() {
+    var urls = [];
+    allCards.forEach(function(c) {
+      if (c.el.style.display === 'none') return;      // 非表示は対象外
+      var a = c.el.querySelector('.iv-title a');
+      if (a && a.href) urls.push(a.href);             // リンクの無い記事はスキップ
+    });
+    if (!urls.length) { alert('開けるリンクがありません'); return; }
+
+    var msg = urls.length + ' 件を別タブで開きますか？';
+    if (urls.length > 30) {
+      msg = urls.length + ' 件を別タブで開きます。数が多いと一部がブラウザにブロックされたり動作が重くなります。よろしいですか？';
+    }
+    if (!confirm(msg)) return;
+
+    var blocked = 0;
+    urls.forEach(function(u) {
+      var w = window.open(u, '_blank');
+      if (w) { w.opener = null; } else { blocked++; }  // opener遮断＋ブロック検知
+    });
+    if (blocked) {
+      alert(blocked + ' 件がブラウザにブロックされました。ポップアップを許可すると全部開けます。');
+    }
+  }
+
   // グループを選ぶと、メンバー選択肢をそのグループの人だけに絞る
   function ivSyncNames() {
     var g = document.getElementById('iv-group').value;
@@ -189,6 +216,7 @@
   window.ivSearchInput = ivSearchInput;
   window.ivDateToggle = ivDateToggle;
   window.ivDateClear = ivDateClear;
+  window.ivOpenAll = ivOpenAll;
 })();
 </script>
 <?php include $_SERVER['DOCUMENT_ROOT'] . '/common/footer.php'; ?>
