@@ -1,4 +1,4 @@
-<!-- generated: 2026-08-14T19:13:02.928305+00:00 -->
+<!-- generated: 2026-08-15T01:43:58.990664+00:00 -->
 <tr data-selector="松永里愛"><td><a href="https://www.tbsradio.jp/articles/111057/" target="_blank" rel="noopener noreferrer">2026/08/09</a></td><td>シュガーソングとビターステップ / UNISON SQUARE GARDE</td><td>松永里愛</td><td>夏フェスで聴きたい曲</td></tr>
 <tr data-selector="遠藤彩加里"><td><a href="https://www.tbsradio.jp/articles/111057/" target="_blank" rel="noopener noreferrer">2026/08/09</a></td><td>夏将軍 / アンジュルム</td><td>遠藤彩加里</td><td>夏フェスで聴きたい曲</td></tr>
 <tr data-selector="松永里愛&amp;遠藤彩加里"><td><a href="https://www.tbsradio.jp/articles/111057/" target="_blank" rel="noopener noreferrer">2026/08/09</a></td><td>Fiesta！Fiesta！ / Juice＝Juice</td><td>松永里愛&amp;遠藤彩加里</td><td>夏フェスで聴きたい曲</td></tr>
