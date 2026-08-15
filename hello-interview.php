@@ -28,7 +28,14 @@
     <option value="date-asc">掲載日が古い順</option>
     <option value="title">タイトル順</option>
   </select>
+  <button type="button" id="iv-date-toggle" onclick="ivDateToggle()" aria-expanded="false">📅 期間</button>
   <span id="interview-count"></span>
+</div>
+<div id="iv-date-panel" hidden>
+  <label>開始 <input type="date" id="iv-from" onchange="ivFilter()"></label>
+  <span>〜</span>
+  <label>終了 <input type="date" id="iv-to" onchange="ivFilter()"></label>
+  <button type="button" id="iv-date-clear" onclick="ivDateClear()">クリア</button>
 </div>
 <div id="interview-cards">
   <?php include $_SERVER['DOCUMENT_ROOT'] . '/Spreadsheet/interview_cards.php'; ?>
@@ -92,12 +99,16 @@
     var grFilter = document.getElementById('iv-group').value;
     var nmFilter = document.getElementById('iv-name').value;
     var sort = document.getElementById('iv-sort').value;
+    var from = document.getElementById('iv-from').value;  // 'YYYY-MM-DD' or ''
+    var to = document.getElementById('iv-to').value;       // data-date と同形式なので文字列比較でOK
 
     var filtered = allCards.filter(function(c) {
       var matchQ = serverIds === null || serverIds.has(c.id);
       var matchGr = !grFilter || c.groups.indexOf(grFilter) !== -1;
       var matchNm = !nmFilter || c.names.indexOf(nmFilter) !== -1;
-      return matchQ && matchGr && matchNm;
+      var matchDate = (!from || (c.date && c.date >= from)) &&
+                      (!to || (c.date && c.date <= to));
+      return matchQ && matchGr && matchNm && matchDate;
     });
 
     filtered.sort(function(a, b) {
@@ -120,6 +131,24 @@
       document.querySelectorAll('#interview-controls select'),
       function(s) { s.classList.toggle('is-active', s.selectedIndex > 0); }
     );
+    // 期間が設定されていれば「📅 期間」ボタンを強調
+    document.getElementById('iv-date-toggle')
+      .classList.toggle('is-active', !!(from || to));
+  }
+
+  // 期間パネルの開閉(Google式: 押した時だけ出す)
+  function ivDateToggle() {
+    var p = document.getElementById('iv-date-panel');
+    p.hidden = !p.hidden;
+    document.getElementById('iv-date-toggle')
+      .setAttribute('aria-expanded', String(!p.hidden));
+  }
+
+  // 期間クリア(パネルは開いたまま)
+  function ivDateClear() {
+    document.getElementById('iv-from').value = '';
+    document.getElementById('iv-to').value = '';
+    ivFilter();
   }
 
   // グループを選ぶと、メンバー選択肢をそのグループの人だけに絞る
@@ -142,10 +171,24 @@
     ivFilter();
   }
 
+  // カレンダーの選択可能範囲をデータの最小/最大日に合わせる
+  (function initDateRange() {
+    var dates = allCards.map(function(c) { return c.date; })
+                        .filter(function(d) { return d; }).sort();
+    if (!dates.length) return;
+    var lo = dates[0], hi = dates[dates.length - 1];
+    ['iv-from', 'iv-to'].forEach(function(id) {
+      var el = document.getElementById(id);
+      el.min = lo; el.max = hi;
+    });
+  })();
+
   ivFilter();
   window.ivFilter = ivFilter;
   window.ivGroupChange = ivGroupChange;
   window.ivSearchInput = ivSearchInput;
+  window.ivDateToggle = ivDateToggle;
+  window.ivDateClear = ivDateClear;
 })();
 </script>
 <?php include $_SERVER['DOCUMENT_ROOT'] . '/common/footer.php'; ?>

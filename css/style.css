@@ -876,6 +876,42 @@ footer a {
   white-space: nowrap;
 }
 
+/* 期間フィルタ(折りたたみ) */
+#iv-date-toggle,
+#iv-date-clear {
+  padding: 6px 12px;
+  border: 1px solid #ccc;
+  background: #fff;
+  cursor: pointer;
+  font-size: 14px;
+  border-radius: 4px;
+}
+
+#iv-date-toggle.is-active {
+  background: #AE8DBC;
+  border-color: #AE8DBC;
+  color: #fff;
+}
+
+#iv-date-panel {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  flex-wrap: wrap;
+  margin: 0 0 0.5rem;
+  font-size: 14px;
+}
+
+#iv-date-panel[hidden] {
+  display: none;
+}
+
+#iv-date-panel input[type="date"] {
+  padding: 6px 10px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+}
+
 #interview-cards {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
