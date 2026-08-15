@@ -1442,3 +1442,103 @@ footer a {
 .eyecatch-table tbody tr:hover td {
   background: #f3eef6; /* アクセント #AE8DBC の薄い版 */
 }
+
+/* ===== 匿名フィードバック(フッター) ===== */
+.fb-area {
+  max-width: 640px;
+  margin: 1.5rem auto 1rem;
+  text-align: left; /* footer が right なので戻す */
+}
+
+.fb summary {
+  cursor: pointer;
+  color: #AE8DBC;
+  font-size: 14px;
+  text-align: center;
+  padding: 6px;
+}
+
+.fb-body {
+  border: 1px solid #e0d8e6;
+  border-radius: 6px;
+  padding: 14px;
+  margin-top: 8px;
+  background: #faf8fc;
+}
+
+.fb-note {
+  font-size: 12px;
+  color: #666;
+  margin: 0 0 10px;
+  line-height: 1.6;
+}
+
+.fb-kinds {
+  margin-bottom: 8px;
+}
+
+.fb-kind {
+  font-size: 12px;
+  padding: 4px 12px;
+  margin-right: 6px;
+  border: 1px solid #c9b8d4;
+  border-radius: 999px;
+  background: #fff;
+  color: #666;
+  cursor: pointer;
+}
+
+.fb-kind.is-on {
+  background: #AE8DBC;
+  border-color: #AE8DBC;
+  color: #fff;
+}
+
+.fb-text {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font: inherit;
+  font-size: 14px;
+  resize: vertical;
+}
+
+.fb-turnstile:not(:empty) {
+  margin-top: 8px;
+}
+
+.fb-actions {
+  margin: 10px 0 0;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.fb-send {
+  background: #AE8DBC;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  padding: 7px 20px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.fb-send:disabled {
+  opacity: 0.5;
+  cursor: default;
+}
+
+.fb-msg {
+  font-size: 12px;
+  color: #a0522d;
+}
+
+.fb-thanks {
+  margin: 0;
+  font-size: 14px;
+  color: #AE8DBC;
+  text-align: center;
+}
