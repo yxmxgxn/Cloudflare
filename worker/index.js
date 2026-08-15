@@ -284,7 +284,7 @@ export default {
       }
     }
 
-    if (url.pathname === "/_feedback") {
+    if (url.pathname === "/_feedback" || url.pathname === "/_feedback/") {
       try {
         return await handleFeedbackAdmin(url, request, env);
       } catch (e) {
