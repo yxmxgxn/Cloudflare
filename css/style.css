@@ -1600,3 +1600,219 @@ footer a {
   color: #AE8DBC;
   text-align: center;
 }
+
+/*宮本佳林のボカロ部 紹介曲データベース
+-------------------------------------*/
+#vc-controls {
+  display: flex;
+  gap: 10px;
+  margin: 0.75rem 0;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+#vc-controls input[type="text"] {
+  flex: 1;
+  min-width: 100px;
+  padding: 6px 10px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+}
+
+#vc-controls select {
+  padding: 6px 10px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+}
+
+/* 絞り込み中の項目は太字にして、何で絞っているか一目で分かるようにする */
+#vc-controls select.is-active,
+#vc-controls input.is-active {
+  font-weight: bold;
+}
+
+#vc-reset {
+  padding: 6px 12px;
+  border: 1px solid #ccc;
+  background: #fff;
+  font-size: 13px;
+  cursor: pointer;
+}
+
+#vc-reset:hover {
+  border-color: #AE8DBC;
+  color: #AE8DBC;
+}
+
+#vc-count {
+  font-size: 13px;
+  color: #888;
+  white-space: nowrap;
+}
+
+#vc-episode-table,
+#vc-track-table {
+  border-collapse: collapse;
+  width: 100%;
+  font-size: 13px;
+  margin-top: 1em;
+}
+
+#vc-episode-table th,
+#vc-episode-table td,
+#vc-track-table th,
+#vc-track-table td {
+  border: 1px solid #ccc;
+  padding: 6px 10px;
+  text-align: left;
+  vertical-align: top;
+}
+
+#vc-episode-table th,
+#vc-track-table th {
+  background: #f5f5f5;
+  white-space: nowrap;
+}
+
+/* 縞模様は JS が付ける(非表示行があると nth-child ではずれるため) */
+#vc-episode-table tbody tr.vc-odd,
+#vc-track-table tbody tr.vc-odd {
+  background: #f9f9f9;
+}
+
+.vc-ep,
+.vc-date,
+.vc-count {
+  white-space: nowrap;
+}
+
+.vc-who {
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+.vc-who:hover {
+  color: #AE8DBC;
+}
+
+.vc-song {
+  border-bottom: 1px solid #AE8DBC;
+  text-decoration: none;
+}
+
+.vc-song:hover {
+  color: #AE8DBC;
+}
+
+.vc-vocals {
+  color: #666;
+  font-size: 12px;
+  margin-left: 2px;
+}
+
+/* パフォーマンス行(宮本・ゲストが歌った/踊った)は薄い色を敷いて紹介と区別する */
+#vc-episode-table tbody tr.vc-row-perf td {
+  background: #f7f3f9;
+}
+
+.vc-kind,
+.vc-format {
+  display: inline-block;
+  background: #f3eef6;
+  color: #6b5478;
+  border-radius: 3px;
+  padding: 1px 6px;
+  font-size: 11px;
+  margin-right: 6px;
+  white-space: nowrap;
+}
+
+.vc-note {
+  color: #555;
+  font-size: 12px;
+}
+
+.vc-extra {
+  display: inline-block;
+  font-size: 12px;
+  margin-right: 8px;
+}
+
+.vc-unreleased {
+  color: #999;
+  font-size: 12px;
+}
+
+.vc-eps {
+  font-size: 12px;
+}
+
+.vc-empty {
+  margin: 1.5em 0;
+  color: #888;
+  text-align: center;
+}
+
+.vc-guest-lead {
+  font-size: 13px;
+  color: #666;
+  margin: 0.3em 0 0.8em;
+}
+
+#vc-guests {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 12px;
+  margin-bottom: 1.5em;
+}
+
+.vc-guest {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 10px 12px;
+  background: #fff;
+  box-shadow: 0 1px 3px rgba(0,0,0,.06);
+}
+
+.vc-guest p {
+  margin: 0;
+}
+
+.vc-guest-ep {
+  font-size: 11px;
+  color: #888;
+}
+
+.vc-guest-name {
+  font-size: 15px;
+  margin: 2px 0 6px !important;
+}
+
+.vc-guest-link {
+  border-bottom: 1px dotted #AE8DBC;
+  cursor: pointer;
+}
+
+.vc-guest-link:hover {
+  color: #AE8DBC;
+}
+
+.vc-guest-note {
+  display: block;
+  font-size: 11px;
+  color: #888;
+  margin-top: 2px;
+}
+
+.vc-guest-sns {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  min-height: 20px;
+}
+
+.vc-guest-sns .sns-icon {
+  width: 20px;
+  height: 20px;
+  vertical-align: -4px;
+}

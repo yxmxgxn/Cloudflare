@@ -48,6 +48,10 @@
   <h3>宮本佳林さんがハロ！ステダンス部に所属していた時の映像のまとめです</h3>
   <div class="indextop"><a href="/YouTube/karin-dance"><svg style="vertical-align: -4px;  margin-right: 4px"width="20" height="20" viewBox="0 0 64 44" xmlns="http://www.w3.org/2000/svg"><rect width="64" height="44" rx="10" fill="#FF0000"/><polygon points="22,8 54,22 22,36" fill="white"/></svg>宮本佳林 ハロ！ステダンス部まとめ</a></div>
 
+  <h2><a href="https://ch.nicovideo.jp/miyamoto-vocalo" target="_blank" rel="noopener noreferrer">宮本佳林 ニコニコ</a></h2>
+  <h3>宮本佳林のボカロ部で紹介されたボカロ曲のデータベースです</h3>
+  <div class="indextop"><a href="/vocalo-club"><svg style="vertical-align: -4px;  margin-right: 4px"width="20" height="20" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><rect x="2" y="6" width="20" height="14" rx="3" fill="none" stroke="currentColor" stroke-width="2"/><path d="M8 3l4 3 4-3" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>宮本佳林のボカロ部 紹介曲データベース</a></div>
+
   <h2><a href="https://x.com/karin__miyamoto" target="_blank" rel="noopener noreferrer">宮本佳林 X</a></h2>
   <h3>宮本佳林さんがハロプロサブスク解禁にともない毎日ハロプロの曲を1曲紹介する企画のまとめです</h3>
   <div class="indextop"><a href="/X/karin-hello"><svg style="vertical-align: -4px;  margin-right: 4px"width="20" height="20" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><rect width="24" height="24" rx="4" fill="currentColor"/><path d="M17.5 3.5H20.5L14.5 10.5L21.5 20.5H16L11.5 14.5L6.5 20.5H3.5L9.8 13L3 3.5H8.7L12.8 9L17.5 3.5Z" fill="white"/><path d="M16.5 19L5.5 5H7.5L18.5 19H16.5Z" fill="white"/></svg>宮本佳林 X #佳林の１日１ハロまとめ</a></div>  
@@ -55,7 +59,7 @@
   <h3>宮本佳林さんXでボカロ曲を紹介しているもののまとめです</h3>
   <div class="indextop"><a href="/X/karin-vocalo"><svg style="vertical-align: -4px;  margin-right: 4px"width="20" height="20" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><rect width="24" height="24" rx="4" fill="currentColor"/><path d="M17.5 3.5H20.5L14.5 10.5L21.5 20.5H16L11.5 14.5L6.5 20.5H3.5L9.8 13L3 3.5H8.7L12.8 9L17.5 3.5Z" fill="white"/><path d="M16.5 19L5.5 5H7.5L18.5 19H16.5Z" fill="white"/></svg>宮本佳林 X #今日のボカロまとめ</a></div>  
   
-  <h2><a href="https://www.instagram.com/karin_miyamoto.official/" target="_blank" rel="noopener noreferrer">宮本佳林 Instagram</a></h2>
+  <h2><a href="https://www.instagram.com/karin_miyamoto.official/" target="_blank" rel="noopener noreferrer">宮本佳林 Instagram</a> / <a href="https://www.tiktok.com/@karin_miyamoto" target="_blank" rel="noopener noreferrer">TikTok</a></h2>
   <h3>宮本佳林さんがInstagramでライブ配信をしてアーカイブが残されているもののまとめです</h3>
   <div class="indextop"><a href="/instagram/karin-insta"><svg style="vertical-align: -4px;  margin-right: 4px"width="20" height="20" viewBox="-90 -90 180 180" xmlns="http://www.w3.org/2000/svg"><rect x="-80" y="-80" width="160" height="160" rx="36" fill="none" stroke="currentColor" stroke-width="7"/><circle cx="0" cy="0" r="42" fill="none" stroke="currentColor" stroke-width="7"/><circle cx="0" cy="0" r="22" fill="none" stroke="currentColor" stroke-width="5"/><circle cx="50" cy="-50" r="10" fill="currentColor"/></svg>宮本佳林 インスタライブ アーカイブまとめ</a></div>
 
