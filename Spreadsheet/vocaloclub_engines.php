@@ -1,9 +1,65 @@
-<!-- generated: 2026-08-16T19:00:26.365310+00:00 -->
+<!-- generated: 2026-08-16T19:22:40.576313+00:00 -->
+<optgroup label="まとめて">
 <option value="__synth">合成音声のみ</option>
 <option value="__human">人間ボーカルを含む</option>
+</optgroup>
+<optgroup label="ソフト">
 <option value="CeVIO">CeVIO</option>
 <option value="CeVIO AI">CeVIO AI</option>
 <option value="Synthesizer V">Synthesizer V</option>
 <option value="UTAU">UTAU</option>
 <option value="VOCALOID">VOCALOID</option>
 <option value="人間">人間</option>
+</optgroup>
+<optgroup label="ボーカル">
+<option value="初音ミク">初音ミク（199曲）</option>
+<option value="GUMI">GUMI（67曲）</option>
+<option value="鏡音リン">鏡音リン（47曲）</option>
+<option value="IA">IA（27曲）</option>
+<option value="flower">flower（22曲）</option>
+<option value="鏡音レン">鏡音レン（22曲）</option>
+<option value="巡音ルカ">巡音ルカ（15曲）</option>
+<option value="重音テト">重音テト（9曲）</option>
+<option value="CHiCO">CHiCO（5曲）</option>
+<option value="mona（CV：夏川椎菜）">mona（CV：夏川椎菜）（5曲）</option>
+<option value="歌愛ユキ">歌愛ユキ（4曲）</option>
+<option value="KAITO">KAITO（4曲）</option>
+<option value="榎本虎太朗（CV：花江夏樹）">榎本虎太朗（CV：花江夏樹）（4曲）</option>
+<option value="音街ウナ">音街ウナ（4曲）</option>
+<option value="初音ミクSoft">初音ミクSoft（3曲）</option>
+<option value="Lily">Lily（3曲）</option>
+<option value="MEIKO">MEIKO（2曲）</option>
+<option value="瀬戸口雛（CV：麻倉もも）">瀬戸口雛（CV：麻倉もも）（2曲）</option>
+<option value="可不">可不（2曲）</option>
+<option value="れをる REOL">れをる REOL（2曲）</option>
+<option value="Fukase">Fukase（2曲）</option>
+<option value="SF-A2 開発コード miki">SF-A2 開発コード miki（2曲）</option>
+<option value="GUMI English">GUMI English（1曲）</option>
+<option value="ヨルシカ">ヨルシカ（1曲）</option>
+<option value="初音ミクDark">初音ミクDark（1曲）</option>
+<option value="LIP×LIP（CV：内山昂輝・島﨑信長）">LIP×LIP（CV：内山昂輝・島﨑信長）（1曲）</option>
+<option value="シャノ">シャノ（1曲）</option>
+<option value="Hanon">Hanon（1曲）</option>
+<option value="成海聖奈（CV：雨宮天）">成海聖奈（CV：雨宮天）（1曲）</option>
+<option value="濱中翠（CV：Gero）">濱中翠（CV：Gero）（1曲）</option>
+<option value="涼海ひより（CV：水瀬いのり）">涼海ひより（CV：水瀬いのり）（1曲）</option>
+<option value="MAYU">MAYU（1曲）</option>
+<option value="鏡音レンAppend">鏡音レンAppend（1曲）</option>
+<option value="紺野あさ美＆植田萌子">紺野あさ美＆植田萌子（1曲）</option>
+<option value="神威がくぽ">神威がくぽ（1曲）</option>
+<option value="ONE">ONE（1曲）</option>
+<option value="ろん">ろん（1曲）</option>
+<option value="ARuFa">ARuFa（1曲）</option>
+<option value="結月ゆかり">結月ゆかり（1曲）</option>
+<option value="バルーン（須田景凪）">バルーン（須田景凪）（1曲）</option>
+<option value="VY1">VY1（1曲）</option>
+<option value="VY2">VY2（1曲）</option>
+<option value="VY1V3">VY1V3（1曲）</option>
+<option value="まふまふ">まふまふ（1曲）</option>
+<option value="MORE MORE JUMP！">MORE MORE JUMP！（1曲）</option>
+<option value="鳴花ヒメ">鳴花ヒメ（1曲）</option>
+<option value="白鐘ヒヨリ">白鐘ヒヨリ（1曲）</option>
+<option value="カゼヒキβ">カゼヒキβ（1曲）</option>
+<option value="ゲキヤクβ">ゲキヤクβ（1曲）</option>
+<option value="土岐麻子">土岐麻子（1曲）</option>
+</optgroup>

@@ -12,7 +12,7 @@
   曲名から原曲（ニコニコ動画）、P名からボカロPのユーザーページにリンクしています。【】内はその曲のボーカル（原曲のもの）です。<br>
   番組で宮本佳林さんやゲストが歌った曲・TikTokで踊った曲も、各回の最後に入れています。<br>
   <strong>回ビュー</strong>は番組の進行順（ゲスト → 宮本佳林 → パフォーマンス）、<strong>曲ビュー</strong>は紹介された回数の多い順に並びます。<br>
-  <strong>定番フリップ</strong>は特定の回ではなく、宮本佳林さんが毎回のように出している常連のフリップをまとめたものです（登場するのは第2回からです）。<br>
+  <strong>宮本佳林フリップ</strong>は特定の回ではなく、宮本佳林さんが毎回のように出している常連のフリップをまとめたものです（登場するのは第2回からです）。<br>
   Xでの<a href="/X/karin-vocalo">#今日のボカロまとめ</a>は別ページです。<br>
 
 <h2>出演ゲスト</h2>
@@ -37,7 +37,7 @@
     <?php include $_SERVER['DOCUMENT_ROOT'] . '/Spreadsheet/vocaloclub_speakers.php'; ?>
   </select>
   <select id="vc-engine" onchange="vcFilter()">
-    <option value="">ボーカルの種類</option>
+    <option value="">ボーカル</option>
     <?php include $_SERVER['DOCUMENT_ROOT'] . '/Spreadsheet/vocaloclub_engines.php'; ?>
   </select>
   <button type="button" id="vc-reset" onclick="vcReset()">絞り込み解除</button>
@@ -46,6 +46,10 @@
 
 <div id="vc-view-episode" class="vc-view">
   <table id="vc-episode-table">
+    <colgroup>
+      <col class="vc-col-ep"><col class="vc-col-who"><col class="vc-col-name">
+      <col class="vc-col-composer"><col class="vc-col-date"><col class="vc-col-notes">
+    </colgroup>
     <thead>
       <tr><th>回</th><th>紹介者</th><th>曲名【ボーカル】</th><th>P名</th><th>投稿日</th><th>形式・備考</th></tr>
     </thead>
@@ -57,6 +61,10 @@
 
 <div id="vc-view-track" class="vc-view" hidden>
   <table id="vc-track-table">
+    <colgroup>
+      <col class="vc-tcol-name"><col class="vc-tcol-composer"><col class="vc-tcol-date">
+      <col class="vc-tcol-count"><col class="vc-tcol-eps">
+    </colgroup>
     <thead>
       <tr><th>曲名【ボーカル】</th><th>P名</th><th>投稿日</th><th>回数</th><th>登場した回</th></tr>
     </thead>
@@ -88,13 +96,13 @@
   var epRows = collect('#vc-episode-table .vc-row', [
     { key: 'episodes', attr: 'episode' },
     { key: 'speakers', attr: 'speakers', list: true },
-    { key: 'engines', attr: 'engines', list: true },
+    { key: 'vkeys', attr: 'vkeys', list: true },
     { key: 'kind', attr: 'kind' }
   ]);
   var trRows = collect('#vc-track-table .vc-trow', [
     { key: 'episodes', attr: 'episodes', list: true },
     { key: 'speakers', attr: 'speakers', list: true },
-    { key: 'engines', attr: 'engines', list: true }
+    { key: 'vkeys', attr: 'vkeys', list: true }
   ]);
 
   function has(v, want) {
@@ -122,7 +130,7 @@
       var ok = (!q || r.search.indexOf(q) !== -1)
             && has(r.episodes, ep)
             && has(r.speakers, sp)
-            && has(r.engines, en);
+            && has(r.vkeys, en);
       r.el.hidden = !ok;
       if (ok) {
         // nth-child は非表示行も数えてしまうので、縞模様はクラスで付け直す

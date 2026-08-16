@@ -54,7 +54,7 @@ KIND_ORDER = ["歌唱", "二人歌唱", "TikTok"]
 # 「第N回」ではない特別な Episode の表示名。
 # Episode 0 は放送回ではなく、宮本佳林が毎回のように出してくる定番フリップをまとめたもの
 # (実際に登場し始めるのは第2回)。そのまま「第0回」と出すと初回と誤解されるため差し替える。
-EPISODE_LABELS = {"0": "定番フリップ"}
+EPISODE_LABELS = {"0": "宮本佳林フリップ"}
 
 REPO_ROOT = Path(__file__).resolve().parent.parent
 
@@ -226,6 +226,22 @@ def validate(tracks, tvocals, mentions, perfs, videos) -> None:
     if miss:
         warn(f"PerfVideoID があるのに PerfPlatform が空: {'、'.join(miss)}", title="Platform記入漏れ")
 
+    # 1つの回に同じ Kind が2つある = どれかの Episode の入力ミスの可能性が高い
+    # (通常は 歌唱1 / 二人歌唱1 / TikTok1)
+    kinds_by_ep: dict[str, list[str]] = defaultdict(list)
+    for p in perfs:
+        kinds_by_ep[get(p, "Episode")].append(get(p, "Kind"))
+    for ep, ks in sorted(kinds_by_ep.items(), key=lambda x: x[0]):
+        dupes = [k for k, c in Counter(ks).items() if c > 1]
+        if dupes:
+            ids = [get(p, "PerfID") for p in perfs
+                   if get(p, "Episode") == ep and get(p, "Kind") in dupes]
+            warn(
+                f"第{ep}回に「{'、'.join(dupes)}」が複数あります({'、'.join(ids)})。"
+                "どれかの Episode が間違っていないか確認してください",
+                title="パフォーマンスの回が重複",
+            )
+
     # TikTokはアカウント名が無いとURLを作れない
     tk = [get(p, "PerfID") for p in perfs
           if get(p, "PerfVideoID") and get(p, "PerfPlatform").lower() == "tiktok"]
@@ -249,9 +265,10 @@ def vocal_html(vocals: list[dict]) -> tuple[str, list[str], list[str]]:
     return f'<span class="vc-vocals">【{spans}】</span>', names, engines
 
 
-def engine_keys(engines: list[str]) -> list[str]:
-    """絞り込み用のキー。個別エンジン名に加え、合成音声のみ/人間含む の擬似キーを持たせる。"""
-    keys = list(dict.fromkeys(engines))
+def vocal_keys(names: list[str], engines: list[str]) -> list[str]:
+    """ボーカル絞り込み用のキー。1つのプルダウンで
+    「合成音声のみ/人間含む」「ソフト名」「ボーカル名」のどれでも引けるよう全部持たせる。"""
+    keys = list(dict.fromkeys(names)) + list(dict.fromkeys(engines))
     if engines and all(e != "人間" for e in engines):
         keys.append("__synth")
     if any(e == "人間" for e in engines):
@@ -334,7 +351,9 @@ def build_episode_rows(mentions, perfs, tinfo, videos_by_song) -> str:
             row_kind = "mention"
         else:
             guest = get(r, "Guest")
-            who = esc(f"宮本佳林・{guest}" if guest else "宮本佳林")
+            # パフォーマンスは「紹介」ではないので紹介者セルは空欄。
+            # 誰が歌った/踊ったかは備考側の Kind バッジとゲスト名で表す。
+            who = ""
             # 絞り込み用: 宮本とゲストの両方。ゲストで絞ったときもその回の
             # 二人歌唱・TikTokが出るようにする
             filter_speakers = ["宮本佳林"] + ([guest] if guest else [])
@@ -347,7 +366,10 @@ def build_episode_rows(mentions, perfs, tinfo, videos_by_song) -> str:
                 body = '<span class="vc-unreleased">動画あり</span>'
             else:
                 body = '<span class="vc-unreleased">動画未公開</span>'
-            note_cell = kind_badge + body
+            performer = f"宮本佳林・{guest}" if guest else "宮本佳林"
+            note_cell = (kind_badge
+                         + f'<span class="vc-performer">{esc(performer)}</span>'
+                         + body)
             search_extra = " ".join([get(r, "Kind"), guest, "パフォーマンス"])
             row_kind = "perf"
 
@@ -359,7 +381,7 @@ def build_episode_rows(mentions, perfs, tinfo, videos_by_song) -> str:
             f' data-episode="{esc(it["ep"])}"'
             f' data-speakers="{esc("|".join(filter_speakers))}"'
             f' data-kind="{row_kind}"'
-            f' data-engines="{esc("|".join(t["engine_keys"]))}"'
+            f' data-vkeys="{esc("|".join(t["vocal_keys"]))}"'
             f' data-search="{esc(search.lower())}">'
             f'<td class="vc-ep">{esc(episode_label(it["ep"]))}</td>'
             f'<td class="vc-who">{who}</td>'
@@ -421,7 +443,7 @@ def build_track_rows(tracks, tinfo, mentions, perfs) -> str:
             f'<tr class="vc-trow"'
             f' data-episodes="{esc("|".join(uniq_eps))}"'
             f' data-speakers="{esc("|".join(speakers))}"'
-            f' data-engines="{esc("|".join(info["engine_keys"]))}"'
+            f' data-vkeys="{esc("|".join(info["vocal_keys"]))}"'
             f' data-search="{esc(search.lower())}">'
             f'<td class="vc-name">{link(info["url"], esc(info["name"]), "vc-song")}'
             f'{info["vocal_html"]}</td>'
@@ -447,11 +469,11 @@ def build_guests(guests, mentions, perfs) -> str:
     def ep_num(e: str) -> int:
         return int(e) if e.lstrip("-").isdigit() else -9999
 
-    # 表の並びに合わせて出演回の新しい順
+    # 初出演の回が早い順(第1回の松丸亮吾から)。紹介者プルダウンと同じ並び。
     ordered = sorted(
         guests,
-        key=lambda g: -max((ep_num(e) for e in eps_by_name.get(guest_name(g), set())),
-                           default=-9999),
+        key=lambda g: min((ep_num(e) for e in eps_by_name.get(guest_name(g), set())),
+                          default=9999),
     )
 
     cards = []
@@ -497,6 +519,18 @@ def build_options(values, labels=None) -> str:
     )
 
 
+def build_optgroups(groups) -> str:
+    """[(見出し, [(value, label), ...]), ...] → optgroup 付きの選択肢。"""
+    out = []
+    for heading, items in groups:
+        if not items:
+            continue
+        out.append(f'<optgroup label="{esc(heading)}">')
+        out += [f'<option value="{esc(v)}">{esc(lab)}</option>' for v, lab in items]
+        out.append("</optgroup>")
+    return "\n".join(out)
+
+
 def main():
     tracks = fetch_csv(GID_TRACKS)
     tvocals = fetch_csv(GID_TRACK_VOCALS)
@@ -539,7 +573,7 @@ def main():
             "composer_url": f"https://www.nicovideo.jp/user/{uid}" if uid else "",
             "vocal_html": vhtml,
             "vocal_names": vnames,
-            "engine_keys": engine_keys(vengines),
+            "vocal_keys": vocal_keys(vnames, vengines),
         }
 
     episode_rows = build_episode_rows(mentions, perfs, tinfo, videos_by_song)
@@ -552,15 +586,33 @@ def main():
     episodes = sorted({get(m, "Episode") for m in mentions}
                       | {get(p, "Episode") for p in perfs}, key=ep_num, reverse=True)
 
-    # 言及者は登場回数の多い順(宮本佳林は最後に回す。全回に出るため絞り込みの主役ではない)
-    counts = Counter(get(m, "Speaker") for m in mentions if get(m, "Speaker"))
-    speakers = [s for s, _ in counts.most_common() if s != "宮本佳林"]
-    if "宮本佳林" in counts:
+    # 言及者は初出演の回が早い順(第1回の松丸亮吾から)。宮本佳林は全回に出るので最後に回す。
+    first_ep: dict[str, int] = {}
+    for m in mentions:
+        sp = get(m, "Speaker")
+        if sp:
+            n = ep_num(get(m, "Episode"))
+            if sp not in first_ep or n < first_ep[sp]:
+                first_ep[sp] = n
+    speakers = sorted((s for s in first_ep if s != "宮本佳林"), key=lambda s: first_ep[s])
+    if "宮本佳林" in first_ep:
         speakers.append("宮本佳林")
 
+    # ボーカル絞り込みは1つのプルダウンに optgroup で3段
+    #   ①まとめて(合成音声のみ/人間含む) ②ソフト名 ③ボーカル名(曲数の多い順)
     engines_used = list(dict.fromkeys(get(v, "Engine") for v in tvocals if get(v, "Engine")))
-    engine_values = ["__synth", "__human"] + sorted(engines_used)
-    engine_labels = {"__synth": "合成音声のみ", "__human": "人間ボーカルを含む"}
+    vocal_counts = Counter()
+    for t in tracks:
+        for n in dict.fromkeys(get(v, "VocalName")
+                               for v in vocals_by_track.get(get(t, "TrackID"), [])):
+            if n:
+                vocal_counts[n] += 1
+
+    vocal_groups = [
+        ("まとめて", [("__synth", "合成音声のみ"), ("__human", "人間ボーカルを含む")]),
+        ("ソフト", [(e, e) for e in sorted(engines_used)]),
+        ("ボーカル", [(n, f"{n}（{c}曲）") for n, c in vocal_counts.most_common()]),
+    ]
 
     jst = timezone(timedelta(hours=9))
     generated = datetime.now(jst).strftime("%Y/%m/%d")
@@ -573,7 +625,7 @@ def main():
         (OUT_TRACK, track_rows),
         (OUT_SPEAKERS, build_options(speakers)),
         (OUT_EPISODES, build_options(episodes, {e: episode_label(e) for e in episodes})),
-        (OUT_ENGINES, build_options(engine_values, engine_labels)),
+        (OUT_ENGINES, build_optgroups(vocal_groups)),
         (OUT_GUESTS, build_guests(guests, mentions, perfs)),
     ):
         with open(path, "w", encoding="utf-8") as f:

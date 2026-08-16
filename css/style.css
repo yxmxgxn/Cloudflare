@@ -1650,13 +1650,30 @@ footer a {
   white-space: nowrap;
 }
 
+/* 列幅を固定して、曲名や備考が長くても折り返すようにする。
+   min-width を切っておくと、スマホでは .table-scroll 側で横スクロールになる。 */
 #vc-episode-table,
 #vc-track-table {
   border-collapse: collapse;
+  table-layout: fixed;
   width: 100%;
+  min-width: 760px;
   font-size: 13px;
   margin-top: 1em;
 }
+
+.vc-col-ep       { width: 8%; }
+.vc-col-who      { width: 10%; }
+.vc-col-name     { width: 30%; }
+.vc-col-composer { width: 14%; }
+.vc-col-date     { width: 10%; }
+.vc-col-notes    { width: 28%; }
+
+.vc-tcol-name     { width: 34%; }
+.vc-tcol-composer { width: 16%; }
+.vc-tcol-date     { width: 12%; }
+.vc-tcol-count    { width: 7%; }
+.vc-tcol-eps      { width: 31%; }
 
 #vc-episode-table th,
 #vc-episode-table td,
@@ -1666,6 +1683,7 @@ footer a {
   padding: 6px 10px;
   text-align: left;
   vertical-align: top;
+  overflow-wrap: anywhere;   /* 長いP名やラベルが列からはみ出さないように */
 }
 
 #vc-episode-table th,
@@ -1730,6 +1748,12 @@ footer a {
 .vc-note {
   color: #555;
   font-size: 12px;
+}
+
+/* パフォーマンスを実際に演じた人(紹介者ではないので備考側に出す) */
+.vc-performer {
+  font-size: 12px;
+  margin-right: 6px;
 }
 
 .vc-extra {
