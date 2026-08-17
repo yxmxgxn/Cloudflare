@@ -1,6 +1,6 @@
 <?php
   $title = "宮本佳林 ツアー日記 まとめ"; 
-  $description = "宮本佳林さんが出ているM line Musicで放送されているツアー日記をまとめました。";
+  $description = "宮本佳林さんが出ているM line Musicで放送されているツアー日記をまとめました。ツアータイトルと日記の日時・会場・一緒に動画に出演しているメンバーの名前を書いています。";
   $jsonld_type = "Dataset";
   $about = "宮本佳林";
   // グループ単体
@@ -16,7 +16,8 @@
 
 <main>
   <h1>宮本佳林 ツアー日記 まとめ</h1>
-  宮本佳林さんが出ている<a href="https://www.youtube.com/@mlinemusic"  target="_blank" rel="noopener noreferrer">M line Music</a>のツアー日記をまとめました
+  宮本佳林さんが出ている<a href="https://www.youtube.com/@mlinemusic"  target="_blank" rel="noopener noreferrer">M-line Music</a>のツアー日記をまとめました。<br>
+  ツアータイトルと日記の日時 会場 一緒に動画に出演しているメンバーの名前を書いています。<br>
 
   <h3>宮本佳林ソロライブツアー</h3>
   <ul>

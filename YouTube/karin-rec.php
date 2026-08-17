@@ -1,6 +1,6 @@
 <?php
   $title = "宮本佳林レコーディングまとめ"; 
-  $description = "ハロ！ステやM-line Muiscで配信された、宮本佳林さんがレコーディングしている映像をまとめました。Juice=Juice時代だけでなく、ソロ曲も含まれています";
+  $description = "ハロ！ステやM-line Muiscで配信された、宮本佳林さんがレコーディングしている映像をまとめました。Juice=Juice時代だけでなく、ソロ曲も含まれています。曲名をタイトルにしています。";
   $jsonld_type = "Dataset";
   $about = "宮本佳林";
   // グループ単体
@@ -16,7 +16,7 @@
 
 <main>
   <h1>宮本佳林レコーディングまとめ</h1>
-  ハロ！ステやM-line Muiscで配信された、宮本佳林さんがレコーディングしている映像をまとめました。Juice=Juice時代だけでなく、ソロ曲も含まれています。<br>
+  ハロ！ステやM-line Muiscで配信された、宮本佳林さんがレコーディングしている映像をまとめました。Juice=Juice時代だけでなく、ソロ曲も含まれています。曲名をタイトルにしています。<br>
   <ul>
     <li><a href="https://www.youtube.com/watch?v=nrhoRmo0ex0&t=1578s"  target="_blank" rel="noopener noreferrer">ロマンスの途中</a></li>
     <li><a href="https://www.youtube.com/watch?v=0kwKWqjVjl4&t=1694s"  target="_blank" rel="noopener noreferrer">GIRLS BE AMBITIOUS</a></li>

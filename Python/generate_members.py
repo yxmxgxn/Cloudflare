@@ -6,6 +6,7 @@ PHPインクルード用のtr/tdフラグメントを生成する
 
 import csv
 import io
+import urllib.parse
 import urllib.request
 from datetime import datetime, timezone, timedelta
 
@@ -71,6 +72,17 @@ def escape_html(s: str) -> str:
          .replace('"', "&quot;")
     )
 
+def wiki_link(name_html: str, wiki_id: str) -> str:
+    """Wikipedia_IDがあれば日本語版Wikipediaへのリンクにする。空欄ならそのまま。"""
+    wiki_id = wiki_id.strip()
+    if not wiki_id:
+        return name_html
+    path = urllib.parse.quote(wiki_id.replace(" ", "_"), safe="_-.~()!*'")
+    url = escape_html(f"https://ja.wikipedia.org/wiki/{path}")
+    return (
+        f'<a href="{url}" target="_blank" rel="noopener noreferrer">{name_html}</a>'
+    )
+
 def build_rows(data: list[list[str]], today: datetime) -> str:
     headers = [h.strip() for h in data[0]]
     rows = []  # (days_int, html) のタプルで持つ
@@ -87,6 +99,7 @@ def build_rows(data: list[list[str]], today: datetime) -> str:
         debut      = row.get("デビュー日", "")
         graduation = row.get("ハロプロ卒業日", "")
         venue      = escape_html(row.get("卒業公演", ""))
+        wiki       = row.get("Wikipedia_ID", "")
 
         if not name:
             continue
@@ -109,7 +122,7 @@ def build_rows(data: list[list[str]], today: datetime) -> str:
 
         html = (
             f"<tr{class_attr}>"
-            f"<td>{name}</td>"
+            f"<td>{wiki_link(name, wiki)}</td>"
             f"<td>{group}</td>"
             f"<td>{format_jp_date(birthday)}</td>"
             f"<td>{age}</td>"
