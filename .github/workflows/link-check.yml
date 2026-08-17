@@ -1,0 +1,104 @@
+name: Link check (monthly)
+run-name: "リンクチェック #${{ github.run_number }}"
+
+on:
+  schedule:
+    - cron: '0 3 1 * *'   # 毎月1日 JST 12:00
+  workflow_dispatch:
+    inputs:
+      delay_scale:
+        description: 'リクエスト間隔の倍率(急ぎたいとき 0.5、優しくしたいとき 2 など)'
+        required: false
+        default: '1.0'
+
+concurrency:
+  group: link-check
+  cancel-in-progress: false
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    permissions:
+      contents: read
+      issues: write
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.3'
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install dependencies
+        run: pip install requests
+
+      # 公開されるHTMLそのものを検査したいので、デプロイと同じ手順でビルドする
+      - name: Build static site
+        env:
+          BASE_URL: ${{ vars.BASE_URL }}
+        run: bash build/build.sh
+
+      - name: Check links
+        run: |
+          python Python/check_links.py \
+            --root public \
+            --base-url "${BASE_URL:-https://karin-archive.com}" \
+            --out report.md \
+            --stats stats.json \
+            --delay-scale "${{ github.event.inputs.delay_scale || '1.0' }}"
+        env:
+          BASE_URL: ${{ vars.BASE_URL }}
+
+      - name: Upload report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: link-check-report
+          path: |
+            report.md
+            stats.json
+          retention-days: 90
+
+      - name: Summary
+        if: always()
+        run: cat report.md >> "$GITHUB_STEP_SUMMARY" || true
+
+      # 壊れたリンクがあればIssueを1本だけ立てる(既にあれば本文を差し替える)。
+      # 全部直ってチェックが通ったら自動でクローズする。
+      - name: Create or update issue
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          BROKEN=$(python -c "import json;print(json.load(open('stats.json'))['broken_total'])")
+          gh label create link-check --color AE8DBC --description "リンクチェックの自動レポート" 2>/dev/null || true
+          ISSUE=$(gh issue list --label link-check --state open --limit 1 --json number --jq '.[0].number // empty')
+
+          {
+            echo "🔗 サイト内の全リンクを自動チェックした結果です（[実行ログ](${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }})）。"
+            echo
+            cat report.md
+          } > issue-body.md
+
+          if [ "$BROKEN" -gt 0 ]; then
+            if [ -n "$ISSUE" ]; then
+              gh issue edit "$ISSUE" --body-file issue-body.md
+              gh issue comment "$ISSUE" --body "🔁 最新のチェック結果に更新しました（リンク切れ ${BROKEN} 件）。"
+              echo "Issue #$ISSUE を更新しました"
+            else
+              gh issue create \
+                --title "🔗 リンク切れレポート" \
+                --label link-check \
+                --body-file issue-body.md
+            fi
+          else
+            echo "リンク切れなし"
+            if [ -n "$ISSUE" ]; then
+              gh issue comment "$ISSUE" --body "✅ 今回のチェックではリンク切れがゼロだったのでクローズします。"
+              gh issue close "$ISSUE"
+            fi
+          fi
