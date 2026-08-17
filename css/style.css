@@ -1795,18 +1795,18 @@ footer a {
   font-size: 13px;
 }
 
-.vc-legend dt {
-  font-weight: bold;
-  margin-top: 6px;
-}
-
-.vc-legend dt:first-child {
-  margin-top: 0;
-}
-
-.vc-legend dd {
-  margin: 2px 0 0;
+.vc-legend p {
+  margin: 0 0 4px;
   color: #555;
+  line-height: 1.6;
+}
+
+.vc-legend p:last-child {
+  margin-bottom: 0;
+}
+
+.vc-legend strong {
+  color: #333;
 }
 
 .vc-guest-lead {
