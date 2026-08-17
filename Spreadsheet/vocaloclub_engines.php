@@ -1,8 +1,4 @@
-<<<<<<< HEAD
-<!-- generated: 2026-08-17T07:05:59.681168+00:00 -->
-=======
-<!-- generated: 2026-08-16T19:28:24.664164+00:00 -->
->>>>>>> 2ed7cc477e577ab42461c25b4f8253ad1251cec6
+<!-- generated: 2026-08-17T10:36:54.994267+00:00 -->
 <optgroup label="まとめて">
 <option value="__synth">合成音声のみ</option>
 <option value="__human">人間ボーカルを含む</option>
