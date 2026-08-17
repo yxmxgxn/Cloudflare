@@ -16,7 +16,7 @@
 
 <main>
   <h1>宮本佳林 M-line Music / ハロ！ステ / Girls Night Out / tiny tiny MCまとめ</h1>
-  宮本佳林さんが<a href="https://www.youtube.com/mlinemusic" target="_blank" rel="noopener noreferrer">M-line Music</a>・<a href="https://www.youtube.com/helloprojectstation" target="_blank" rel="noopener noreferrer">ハロ！ステ</a>・<a href="girlsnightoutch" target="_blank" rel="noopener noreferrer">Girls Night Out</a>・<a href="https://www.youtube.com/tinytinytiny" target="_blank" rel="noopener noreferrer">tiny tiny</a>でMCをやってる回をまとめました。（）は一緒にしている人です。最後は公開日です
+  宮本佳林さんが<a href="https://www.youtube.com/mlinemusic" target="_blank" rel="noopener noreferrer">M-line Music</a>・<a href="https://www.youtube.com/helloprojectstation" target="_blank" rel="noopener noreferrer">ハロ！ステ</a>・<a href="https://www.youtube.com/girlsnightoutch" target="_blank" rel="noopener noreferrer">Girls Night Out</a>・<a href="https://www.youtube.com/tinytinytiny" target="_blank" rel="noopener noreferrer">tiny tiny</a>でMCをやってる回をまとめました。（）は一緒にしている人です。最後は公開日です
   <div class="indent">
   <h2>M-line Music MC</h2>
   <ul>

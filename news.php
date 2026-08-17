@@ -7,6 +7,8 @@
 <main>
   このHPの更新履歴です
   <dl>
+  <dt>2026-08-17</dt>
+  <dd><a href="/vocalo-club">宮本佳林のボカロ部</a>を追加</dd>
   <dt>2026-08-15</dt>
   <dd>自分のプロフィール集をサイトの下に設置</dd>
   <dt>2026-08-15</dt>
@@ -50,7 +52,7 @@
   <dt>2026-05-19</dt>
   <dd><a href="/X/karin-vocalo">今日のボカロ</a>をスプレッドシートから読み取って静的なテーブルを生成する方式に修正</dd>
   <dt>2026-05-17</dt>
-  <dd><a href="/YouTube/karin-documentary">Juice=Juice密着映像</a>を追加</dd>
+  <dd><a href="/Juice=Juice/karin-documentary">Juice=Juice密着映像</a>を追加</dd>
   <dt>2026-05-17</dt>
   <dd><a href="/YouTube/karin-dance">ハロ！ステダンス部</a>を追加</dd>
   <dt>2026-05-17</dt>
@@ -76,9 +78,9 @@
   <dt>2026-05-10</dt>
   <dd><a href="/YouTube/karin-hair">宮本佳林ヘアアレンジまとめ</a>を追加</dd>
   <dt>2026-05-10</dt>
-  <dd><a href="/YouTube/karin-vocalo">#今日のボカロまとめ</a>を追加</dd>
+  <dd><a href="/X/karin-vocalo">#今日のボカロまとめ</a>を追加</dd>
   <dt>2026-05-10</dt>
-  <dd><a href="/Radio/karishi">カリンオシまとめ</a>都道府県順に修正</a></dd>
+  <dd><a href="/Radio/karinoshi">カリンオシまとめ</a>都道府県順に修正</a></dd>
   <dt>2026-05-10<</dt>
   <dd>NEWSの設置とログの記録</dd>
   <dt>2026-04-20</dt>

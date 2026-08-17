@@ -384,7 +384,7 @@
       <td>渡辺泰司</td>
     </tr>
     <tr>
-      <td><a href="https://www.youtube.com/watch?v=B8Zsip26P3g" target="_blank" rel="noopener noreferrer">おあいこ▶️</a>・<a href="おあいこ" target="_blank" rel="noopener noreferrer">🎥</a></td>
+      <td><a href="https://www.youtube.com/watch?v=B8Zsip26P3g" target="_blank" rel="noopener noreferrer">おあいこ▶️</a>・<a href="https://www.youtube.com/watch?v=74N5axt32OI&t=235s" target="_blank" rel="noopener noreferrer">🎥</a></td>
       <td>つんく</td>
       <td>つんく</td>
       <td>平田祥一郎</td>
