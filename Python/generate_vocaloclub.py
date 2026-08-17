@@ -237,6 +237,16 @@ def validate(tracks, tvocals, mentions, perfs, videos) -> None:
     if miss:
         warn(f"PerfVideoID があるのに PerfPlatform が空: {'、'.join(miss)}", title="Platform記入漏れ")
 
+    # 同じ回・同じ紹介者・同じ曲が2行ある = 二重入力の可能性(本当に2回言及したなら正しい)
+    seen: dict[tuple, list[str]] = defaultdict(list)
+    for m in mentions:
+        seen[(get(m, "Episode"), get(m, "Speaker"), get(m, "TrackID"))].append(get(m, "SongID"))
+    for (ep, sp, tk), ids in sorted(seen.items()):
+        if len(ids) > 1:
+            name = next((get(t, "Name") for t in tracks if get(t, "TrackID") == tk), tk)
+            warn(f"第{ep}回の{sp}が「{name}」を{len(ids)}回紹介しています({'、'.join(ids)})。"
+                 "二重入力でないか確認してください", title="言及の重複")
+
     # 知らない Platform 表記(ニコニコ扱いにフォールバックしてしまうので気づけるように)
     for label, rows, idcol, col in (
         ("tracks", tracks, "TrackID", "Platform"),

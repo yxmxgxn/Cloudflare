@@ -5,3 +5,10 @@
 *.html text eol=lf
 *.css text eol=lf
 *.sh text eol=lf
+
+# Spreadsheet/ と Generated/ は Python の生成物。GitHub Actions 側でも生成・コミット
+# するため、ローカルで生成したものと衝突しやすい。行単位でマージされて
+# <<<<<<< のマーカーが混入するとそのまま公開されてしまうので、マージさせない。
+# 衝突したら「生成し直す」のが正しい解決方法。
+Spreadsheet/** -merge
+Generated/** -merge
