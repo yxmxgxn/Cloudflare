@@ -1651,16 +1651,20 @@ footer a {
 }
 
 /* 列幅を固定して、曲名や備考が長くても折り返すようにする。
-   min-width を切っておくと、スマホでは .table-scroll 側で横スクロールになる。 */
+   min-width は .table-scroll での横スクロールを前提にした値。スマホの画面幅に
+   詰め込もうとすると1セルが3行以上に折り返して逆に読みづらいので、
+   セルがほぼ2行以内に収まる幅(回ビュー1000px / 曲ビュー900px)を確保してある。 */
 #vc-episode-table,
 #vc-track-table {
   border-collapse: collapse;
   table-layout: fixed;
   width: 100%;
-  min-width: 760px;
   font-size: 13px;
   margin-top: 1em;
 }
+
+#vc-episode-table { min-width: 1000px; }
+#vc-track-table   { min-width: 900px; }
 
 .vc-col-ep       { width: 8%; }
 .vc-col-who      { width: 10%; }
