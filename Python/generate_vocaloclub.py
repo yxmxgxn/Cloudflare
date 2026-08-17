@@ -52,9 +52,11 @@ TIKTOK_USER = "miyavocal"
 KIND_ORDER = ["歌唱", "二人歌唱", "TikTok"]
 
 # 「第N回」ではない特別な Episode の表示名。
-# Episode 0 は放送回ではなく、宮本佳林が毎回のように出してくる定番フリップをまとめたもの
+# Episode 0 は放送回ではなく、宮本佳林が毎回のように出してくるスケッチブックをまとめたもの
 # (実際に登場し始めるのは第2回)。そのまま「第0回」と出すと初回と誤解されるため差し替える。
-EPISODE_LABELS = {"0": "宮本佳林フリップ"}
+# 「回」列は幅が狭いので "スケブ" だけにしてある(紹介者が宮本佳林なので誰のものか分かる)。
+# 意味はページ上部で説明している。
+EPISODE_LABELS = {"0": "スケブ"}
 
 REPO_ROOT = Path(__file__).resolve().parent.parent
 
@@ -132,11 +134,20 @@ def episode_label(ep: str) -> str:
     return EPISODE_LABELS.get(ep, f"第{ep}回")
 
 
+# Platform 列に入りうる表記 → 種別。空欄はニコニコ(既定)。
+PLATFORM_ALIASES = {
+    "": "niconico", "niconico": "niconico", "nikoniko": "niconico",
+    "nico": "niconico", "ニコニコ": "niconico",
+    "youtube": "youtube", "yt": "youtube",
+    "tiktok": "tiktok",
+}
+
+
 def video_url(vid: str, platform: str) -> str:
     """裸のID + Platform から視聴URLを組み立てる(空欄=ニコニコ)。"""
     if not vid:
         return ""
-    p = (platform or "").strip().lower()
+    p = PLATFORM_ALIASES.get((platform or "").strip().lower(), "niconico")
     if p == "youtube":
         return f"https://www.youtube.com/watch?v={vid}"
     if p == "tiktok":
@@ -225,6 +236,18 @@ def validate(tracks, tvocals, mentions, perfs, videos) -> None:
     miss = [get(p, "PerfID") for p in perfs if get(p, "PerfVideoID") and not get(p, "PerfPlatform")]
     if miss:
         warn(f"PerfVideoID があるのに PerfPlatform が空: {'、'.join(miss)}", title="Platform記入漏れ")
+
+    # 知らない Platform 表記(ニコニコ扱いにフォールバックしてしまうので気づけるように)
+    for label, rows, idcol, col in (
+        ("tracks", tracks, "TrackID", "Platform"),
+        ("song_videos", videos, "SongID", "Platform"),
+        ("performances", perfs, "PerfID", "PerfPlatform"),
+    ):
+        for r in rows:
+            v = get(r, col)
+            if v and v.lower() not in PLATFORM_ALIASES:
+                warn(f"{label} {get(r, idcol)}: 未知の {col} '{v}'(ニコニコとして扱いました)",
+                     title="Platform表記")
 
     # 1つの回に同じ Kind が2つある = どれかの Episode の入力ミスの可能性が高い
     # (通常は 歌唱1 / 二人歌唱1 / TikTok1)
@@ -586,6 +609,17 @@ def main():
     episodes = sorted({get(m, "Episode") for m in mentions}
                       | {get(p, "Episode") for p in perfs}, key=ep_num, reverse=True)
 
+    # 回のプルダウンは「第3回（山之内すず）」のようにゲスト名を添える(どの回か思い出しやすい)
+    guest_of_ep: dict[str, list[str]] = defaultdict(list)
+    for m in sorted(mentions, key=lambda r: get(r, "SongID")):
+        sp = get(m, "Speaker")
+        if sp and sp != "宮本佳林" and sp not in guest_of_ep[get(m, "Episode")]:
+            guest_of_ep[get(m, "Episode")].append(sp)
+    episode_labels = {}
+    for e in episodes:
+        gs = guest_of_ep.get(e, [])
+        episode_labels[e] = episode_label(e) + (f"（{'・'.join(gs)}）" if gs else "")
+
     # 言及者は初出演の回が早い順(第1回の松丸亮吾から)。宮本佳林は全回に出るので最後に回す。
     first_ep: dict[str, int] = {}
     for m in mentions:
@@ -624,7 +658,7 @@ def main():
         (OUT_EPISODE, episode_rows),
         (OUT_TRACK, track_rows),
         (OUT_SPEAKERS, build_options(speakers)),
-        (OUT_EPISODES, build_options(episodes, {e: episode_label(e) for e in episodes})),
+        (OUT_EPISODES, build_options(episodes, episode_labels)),
         (OUT_ENGINES, build_optgroups(vocal_groups)),
         (OUT_GUESTS, build_guests(guests, mentions, perfs)),
     ):

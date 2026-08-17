@@ -1777,6 +1777,38 @@ footer a {
   text-align: center;
 }
 
+.vc-lead p {
+  margin: 0 0 0.7em;
+  line-height: 1.7;
+}
+
+.vc-lead p:last-child {
+  margin-bottom: 0;
+}
+
+/* 表の見方(回の「スケブ」と形式の意味) */
+.vc-legend {
+  margin: 1em 0 0;
+  padding: 10px 14px;
+  background: #f7f3f9;
+  border-left: 3px solid #AE8DBC;
+  font-size: 13px;
+}
+
+.vc-legend dt {
+  font-weight: bold;
+  margin-top: 6px;
+}
+
+.vc-legend dt:first-child {
+  margin-top: 0;
+}
+
+.vc-legend dd {
+  margin: 2px 0 0;
+  color: #555;
+}
+
 .vc-guest-lead {
   font-size: 13px;
   color: #666;
