@@ -1,0 +1,19 @@
+<!-- generated: 2026-08-18T07:56:03.850997+00:00 -->
+<option value="X">X</option>
+<option value="Instagram">Instagram</option>
+<option value="YouTube">YouTube</option>
+<option value="TikTok">TikTok</option>
+<option value="Threads">Threads</option>
+<option value="アメブロ">アメブロ</option>
+<option value="note">note</option>
+<option value="WEAR">WEAR</option>
+<option value="M-line">M-line</option>
+<option value="UP-FRONT CREATE">UP-FRONT CREATE</option>
+<option value="J.P ROOM">J.P ROOM</option>
+<option value="fanicon">fanicon</option>
+<option value="Bitfan">Bitfan</option>
+<option value="H!P公式">H!P公式</option>
+<option value="公式サイト">公式サイト</option>
+<option value="FC">FC</option>
+<option value="SHOP">SHOP</option>
+<option value="Wikipedia">Wikipedia</option>
