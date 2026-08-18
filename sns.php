@@ -133,6 +133,15 @@
     border-color: #AE8DBC;
     color: #fff;
   }
+  .sns-icon-link {
+    padding: .28em;
+    line-height: 0;
+  }
+  .sns-ic {
+    width: 1.15em;
+    height: 1.15em;
+    display: block;
+  }
 </style>
 
 <script>

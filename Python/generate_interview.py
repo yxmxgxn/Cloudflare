@@ -10,6 +10,7 @@ PHPインクルード用のカード・フィルタ選択肢フラグメント�
 import csv
 import html
 import io
+import re
 import urllib.request
 from datetime import datetime, timezone, timedelta
 from pathlib import Path
@@ -169,9 +170,14 @@ def build_cards(articles: list[dict], members_by_id: dict,
         # 最後: WebArchive(右寄せ)
         arc = ""
         if archive:
+            # 魚拓URLのタイムスタンプ(/web/YYYYMMDD...)から日付を作り、リンクに添える
+            label = "Web Archive"
+            md = re.search(r"/web/(\d{4})(\d{2})(\d{2})", archive)
+            if md:
+                label += f"（{md.group(1)}/{md.group(2)}/{md.group(3)}）"
             arc = (
                 '<p class="iv-arc"><a href="' + esc(archive) + '"'
-                ' target="_blank" rel="noopener noreferrer">Web Archive</a></p>'
+                ' target="_blank" rel="noopener noreferrer">' + label + '</a></p>'
             )
 
         search = " ".join([a.get("Title") or "", a.get("Media") or "",
