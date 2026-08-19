@@ -7,7 +7,10 @@
 方針(コードから読み取れない判断):
 - 相手サーバーに優しくするため、同一ドメインへのリクエストは必ず1本ずつ・間隔をあけて送る。
   ドメインが違えば並列で走るので、全体の所要時間は「最多件数のドメイン × 間隔」でほぼ決まる。
-- 403/429 は bot 拒否とリンク切れを区別できないため、壊れ扱いにせず件数だけ報告する。
+- **「リンク切れ」と呼ぶのは 404 / 410 / DNS解決不能だけ**にする。403・405・429・5xx・
+  タイムアウトは「相手がbotを弾いた」のか「本当に消えた」のか区別がつかず、報告すると
+  誤検知だらけになって誰も読まなくなるため、別枠の「要確認」に落とす。
+- 接続エラーは並列実行中の一時的な詰まりでよく起きるので、最後に直列でもう一度確かめる。
 - YouTube は削除済み動画でも watch ページが 200 を返すので oEmbed で生死を判定する。
 - 除外したいドメイン・URLは link-check/ignore.txt に書く(理由もそこにコメントで残す)。
 """
@@ -46,13 +49,24 @@ DOMAIN_DELAY = {
     "i.ytimg.com": 0.2,
 }
 
-TIMEOUT = (10, 20)  # connect, read
+TIMEOUT = (10, 20)          # connect, read
+RECHECK_TIMEOUT = (20, 40)  # 再検査は気長に待つ
 RETRY_WAIT = 3.0
 
-# リンクとして追いかけないスキーム
 SKIP_SCHEMES = ("mailto:", "tel:", "javascript:", "data:", "sms:", "#")
 
-ATTR_RE = re.compile(r"""(?:href|src)\s*=\s*["']([^"']+)["']""", re.I)
+# 接続先を温めるだけの指定。リンクではないので追いかけない
+SKIP_REL = {"preconnect", "dns-prefetch", "prefetch", "prerender", "modulepreload"}
+
+# ドメインそのものが消えたと判断してよいエラー
+DNS_HINTS = (
+    "NameResolutionError", "Name or service not known", "nodename nor servname",
+    "getaddrinfo failed", "No address associated", "Temporary failure in name resolution",
+)
+
+TAG_RE = re.compile(r"<(\w+)\b([^>]*)>")
+HREF_RE = re.compile(r"""(?:href|src)\s*=\s*["']([^"']+)["']""", re.I)
+REL_RE = re.compile(r"""\brel\s*=\s*["']([^"']*)["']""", re.I)
 YT_ID_RE = re.compile(
     r"(?:youtube\.com/watch\?(?:[^\"']*&)?v=|youtu\.be/|youtube\.com/embed/|youtube\.com/shorts/)"
     r"([A-Za-z0-9_-]{11})"
@@ -77,7 +91,7 @@ def is_ignored(url: str, rules: list[str]) -> bool:
         if "/" in rule:  # パスを含む指定は前方一致
             if url.startswith(rule):
                 return True
-        else:  # ドメイン指定はサブドメインも含めて一致
+        else:            # ドメイン指定はサブドメインも含めて一致
             if host == rule or host.endswith("." + rule):
                 return True
     return False
@@ -91,6 +105,17 @@ def page_path(root: Path, file: Path) -> str:
     return "/" + re.sub(r"\.html$", "", rel)
 
 
+def iter_link_urls(text: str):
+    """HTMLから追いかけるべきURLを取り出す。preconnect等の非リンクは飛ばす"""
+    for tag, attrs in TAG_RE.findall(text):
+        if tag.lower() == "link":
+            rel = REL_RE.search(attrs)
+            if rel and set(rel.group(1).lower().split()) & SKIP_REL:
+                continue
+        for url in HREF_RE.findall(attrs):
+            yield url
+
+
 def collect_links(root: Path, base_url: str) -> tuple[dict, dict]:
     """(外部URL → 出現ページ集合, 内部パス → 出現ページ集合) を返す"""
     external: dict[str, set[str]] = defaultdict(set)
@@ -100,7 +125,7 @@ def collect_links(root: Path, base_url: str) -> tuple[dict, dict]:
     for file in sorted(root.rglob("*.html")):
         page = page_path(root, file)
         text = file.read_text(encoding="utf-8", errors="replace")
-        for raw in ATTR_RE.findall(text):
+        for raw in iter_link_urls(text):
             url = html.unescape(raw.strip())
             if not url or url.lower().startswith(SKIP_SCHEMES):
                 continue
@@ -165,55 +190,66 @@ def make_session() -> requests.Session:
     return s
 
 
-def check_youtube(session: requests.Session, video_id: str) -> tuple[str, str]:
+def classify_status(code: int) -> tuple[str, str, str]:
+    """HTTPステータスを (判定, 詳細, 種別) に振り分ける"""
+    if code < 400:
+        return "ok", str(code), "http"
+    if code in (404, 410):
+        return "broken", f"{code} (ページが存在しない)", "http"
+    if code in (401, 403, 405, 406, 429, 999):
+        return "warn", f"{code} (アクセス拒否の可能性)", "http"
+    if code >= 500:
+        return "warn", f"{code} (サーバー側の一時障害の可能性)", "http"
+    return "warn", str(code), "http"
+
+
+def classify_error(e: Exception) -> tuple[str, str, str]:
+    msg = str(e)
+    if any(h in msg for h in DNS_HINTS):
+        return "broken", "DNS解決できず (ドメイン消滅の可能性)", "network"
+    return "warn", type(e).__name__, "network"
+
+
+def check_youtube(session, video_id: str, timeout) -> tuple[str, str, str]:
     """oEmbed で動画の生死を判定する。watch ページは削除済みでも 200 を返すため"""
     target = quote(f"https://www.youtube.com/watch?v={video_id}", safe="")
     url = f"https://www.youtube.com/oembed?url={target}&format=json"
     try:
-        res = session.get(url, timeout=TIMEOUT)
+        res = session.get(url, timeout=timeout)
     except requests.RequestException as e:
-        return "error", type(e).__name__
-    if res.status_code == 200:
-        return "ok", "200"
+        return classify_error(e)
     if res.status_code == 401:
         # 埋め込み禁止設定なだけで動画自体は存在する
-        return "ok", "401 (埋め込み不可・動画は存在)"
+        return "ok", "401 (埋め込み不可・動画は存在)", "http"
     if res.status_code == 404:
-        return "broken", "404 (削除または非公開)"
-    if res.status_code in (403, 429):
-        return "blocked", str(res.status_code)
-    return "broken", str(res.status_code)
+        return "broken", "404 (削除または非公開)", "http"
+    return classify_status(res.status_code)
 
 
-def check_url(session: requests.Session, url: str) -> tuple[str, str]:
-    """(判定, 詳細) を返す。判定は ok / broken / blocked / error"""
+def check_url(session, url: str, timeout=TIMEOUT) -> tuple[str, str, str]:
+    """(判定, 詳細, 種別) を返す。判定は ok / broken / warn"""
     yt = YT_ID_RE.search(url)
     if yt and "youtube.com/oembed" not in url:
-        return check_youtube(session, yt.group(1))
+        return check_youtube(session, yt.group(1), timeout)
 
     for attempt in (1, 2):
         try:
-            res = session.head(url, timeout=TIMEOUT, allow_redirects=True)
-            # HEAD を受け付けないサーバーは GET で確かめ直す
-            if res.status_code in (403, 404, 405, 406, 409, 429, 501) or res.status_code >= 500:
-                res = session.get(url, timeout=TIMEOUT, allow_redirects=True, stream=True)
+            res = session.head(url, timeout=timeout, allow_redirects=True)
+            # HEAD を受け付けないサーバーが多いので、4xx/5xx なら GET で確かめ直す
+            if res.status_code >= 400:
+                res = session.get(url, timeout=timeout, allow_redirects=True, stream=True)
                 res.close()
         except requests.RequestException as e:
             if attempt == 1:
                 time.sleep(RETRY_WAIT)
                 continue
-            return "error", type(e).__name__
+            return classify_error(e)
 
-        code = res.status_code
-        if code < 400:
-            return "ok", str(code)
-        if code in (401, 403, 429, 999):
-            return "blocked", str(code)
-        if code >= 500 and attempt == 1:
+        if res.status_code >= 500 and attempt == 1:
             time.sleep(RETRY_WAIT)
             continue
-        return "broken", str(code)
-    return "broken", "unknown"
+        return classify_status(res.status_code)
+    return "warn", "unknown", "http"
 
 
 _progress_lock = threading.Lock()
@@ -229,8 +265,7 @@ def check_domain(host: str, urls: list[str], total: int, delay_scale: float) -> 
     for i, url in enumerate(urls):
         if i:
             time.sleep(delay)
-        verdict, detail = check_url(session, url)
-        results.append((url, verdict, detail))
+        results.append((url,) + check_url(session, url))
         with _progress_lock:
             _done += 1
             if _done % 100 == 0:
@@ -239,24 +274,42 @@ def check_domain(host: str, urls: list[str], total: int, delay_scale: float) -> 
     return results
 
 
+def recheck_network_failures(results: list[tuple], limit: int) -> list[tuple]:
+    """接続に失敗したものを直列で確かめ直す。
+
+    並列で回している最中の一時的な詰まりや相手側のレート制限で ConnectTimeout に
+    なることがあり、そのまま報告するとブラウザでは普通に開ける誤検知になるため。
+    """
+    targets = [r for r in results if r[3] == "network" and r[1] != "ok"]
+    if not targets:
+        return results
+    print(f"接続失敗 {len(targets)} 件を直列で再検査します", file=sys.stderr, flush=True)
+    session = make_session()
+    fixed = {}
+    for i, row in enumerate(targets[:limit]):
+        if i:
+            time.sleep(1.5)
+        fixed[row[0]] = check_url(session, row[0], timeout=RECHECK_TIMEOUT)
+    session.close()
+    return [((r[0],) + fixed[r[0]]) if r[0] in fixed else r for r in results]
+
+
 # ---------------------------------------------------------------- レポート
 def build_report(base_url, external, internal_broken, results, counts, elapsed, max_items):
     now = datetime.now(JST).strftime("%Y-%m-%d %H:%M JST")
-    broken = [r for r in results if r[1] in ("broken", "error")]
-    blocked = [r for r in results if r[1] == "blocked"]
-    broken.sort(key=lambda r: r[0])
+    broken = sorted([r for r in results if r[1] == "broken"])
+    warn = sorted([r for r in results if r[1] == "warn"])
 
     L = []
     L.append("## リンクチェック結果")
     L.append("")
     L.append(f"- チェック日時: **{now}**（所要 {elapsed//60:.0f}分{elapsed%60:.0f}秒）")
-    L.append(f"- 検査した外部リンク: **{counts['checked']:,}** 件"
-             f"（除外 {counts['ignored']:,} 件）")
+    L.append(f"- 検査した外部リンク: **{counts['checked']:,}** 件（除外 {counts['ignored']:,} 件）")
     L.append(f"- 検査した内部リンク: **{counts['internal']:,}** 件")
     L.append(f"- 🔴 **リンク切れ {len(broken) + len(internal_broken):,} 件**"
              f"（外部 {len(broken):,} / 内部 {len(internal_broken):,}）")
-    if blocked:
-        L.append(f"- ⚪ bot拒否と思われる応答: {len(blocked):,} 件（リンク切れとは限らない）")
+    if warn:
+        L.append(f"- ⚪ 要確認 {len(warn):,} 件（アクセス拒否・一時障害の可能性。切れているとは限らない）")
     L.append("")
 
     if internal_broken:
@@ -273,7 +326,9 @@ def build_report(base_url, external, internal_broken, results, counts, elapsed, 
     if broken:
         L.append(f"### 🔴 外部リンク切れ（{len(broken)}件）")
         L.append("")
-        for url, _verdict, detail in broken[:max_items]:
+        L.append("404 / 410 / ドメイン消滅だけを載せています。")
+        L.append("")
+        for url, _v, detail, _k in broken[:max_items]:
             pages = sorted(external.get(url, []))
             L.append(f"- [{detail}] {url}")
             L.append(f"  - 掲載元: {', '.join(f'[{p}]({base_url}{p})' for p in pages[:10])}"
@@ -283,13 +338,14 @@ def build_report(base_url, external, internal_broken, results, counts, elapsed, 
             L.append(f"…ほか {len(broken) - max_items} 件（全件は Actions の成果物 report.md を参照）")
         L.append("")
 
-    if blocked:
-        L.append("<details><summary>参考: bot拒否と思われる応答（リンク切れとは限らない）</summary>")
+    if warn:
+        L.append(f"<details><summary>⚪ 要確認 {len(warn)}件"
+                 "（botを弾かれた・一時的に繋がらなかった。ブラウザでは普通に開けることが多い）</summary>")
         L.append("")
-        for url, _v, detail in sorted(blocked)[:100]:
+        for url, _v, detail, _k in warn[:200]:
             L.append(f"- [{detail}] {url}")
-        if len(blocked) > 100:
-            L.append(f"- …ほか {len(blocked) - 100} 件")
+        if len(warn) > 200:
+            L.append(f"- …ほか {len(warn) - 200} 件")
         L.append("")
         L.append("</details>")
         L.append("")
@@ -315,6 +371,7 @@ def main() -> int:
     ap.add_argument("--workers", type=int, default=12, help="並列に処理するドメイン数")
     ap.add_argument("--delay-scale", type=float, default=1.0, help="リクエスト間隔の倍率")
     ap.add_argument("--max-items", type=int, default=150, help="レポートに載せる最大件数")
+    ap.add_argument("--recheck-limit", type=int, default=300, help="直列で再検査する最大件数")
     ap.add_argument("--limit", type=int, default=0, help="動作確認用: 検査するURL数の上限")
     args = ap.parse_args()
 
@@ -360,6 +417,7 @@ def main() -> int:
         ]
         for f in futures:
             results.extend(f.result())
+    results = recheck_network_failures(results, args.recheck_limit)
     elapsed = time.time() - started
 
     counts = {"checked": len(targets), "ignored": ignored, "internal": len(internal)}
@@ -367,12 +425,12 @@ def main() -> int:
                           counts, elapsed, args.max_items)
     Path(args.out).write_text(report, encoding="utf-8")
 
-    broken = [r for r in results if r[1] in ("broken", "error")]
+    broken = [r for r in results if r[1] == "broken"]
     stats = {
         "broken_external": len(broken),
         "broken_internal": len(internal_broken),
         "broken_total": len(broken) + len(internal_broken),
-        "blocked": len([r for r in results if r[1] == "blocked"]),
+        "warn": len([r for r in results if r[1] == "warn"]),
         "checked": len(targets),
         "ignored": ignored,
         "elapsed_sec": round(elapsed),
