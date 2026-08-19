@@ -1,6 +1,6 @@
 <?php
   $title = "ハロプロ SNS一覧";
-  $description = "ハロー！プロジェクトの現役メンバー・OGの公式SNS（X・Instagram・YouTube・TikTok・Threads・アメブロほか）を一覧でまとめました。グループ・在籍状況・SNSごとに絞り込めます。";
+  $description = "ハロー！プロジェクトの現役メンバー・OGの公式SNS（X・Instagram・YouTube・TikTok・Threads・アメブロほか）を一覧でまとめました。名前・読み仮名での検索、所属・SNSごとの絞り込みができます。";
   $jsonld_type = "Dataset";
   $brand = 'hello';
   include $_SERVER['DOCUMENT_ROOT'] . '/common/header.php';
@@ -10,17 +10,19 @@
   <h1>ハロプロ SNS一覧</h1>
   ハロー！プロジェクトの現役メンバー・OGの公式SNSアカウントを一覧でまとめました。<br>
   各メンバーのカードに、そのメンバーが持つSNSへのリンクを横並びで載せています。<br>
-  グループ・在籍状況（現役／OG）・SNSの種類での絞り込み、名前やIDでのフリーワード検索ができます。<br>
+  人数が多いので、スクロールで探すより<strong>上の検索欄に名前（読み仮名でも可）を入れる</strong>のが早いです。SNSのIDでも検索できます。<br>
+  所属（現役・アップフロント系）・SNSの種類での絞り込みもできます。<br>
+  「アーカイブ ▾」があるカードはクリックすると過去のアメブロが開きます。<br>
 
 <div id="sns-controls">
-  <input type="text" id="sns-search" placeholder="名前・SNSのIDで絞り込み…" oninput="snsFilter()">
+  <input type="text" id="sns-search" placeholder="名前・読み仮名・SNSのIDで検索…" oninput="snsFilter()">
   <fieldset id="sns-affil">
-    <label><input type="checkbox" class="sns-affil-box" value="hello" checked onchange="snsFilter()"> ハロプロ現役</label>
-    <label><input type="checkbox" class="sns-affil-box" value="m-line" checked onchange="snsFilter()"> M-line</label>
-    <label><input type="checkbox" class="sns-affil-box" value="jproom" checked onchange="snsFilter()"> J.P ROOM</label>
-    <label><input type="checkbox" class="sns-affil-box" value="upfrontcreate" checked onchange="snsFilter()"> UP-FRONT CREATE</label>
-    <label><input type="checkbox" class="sns-affil-box" value="official" checked onchange="snsFilter()"> 公式サイト</label>
-    <label id="sns-showall-label"><input type="checkbox" id="sns-showall" onchange="snsFilter()"> 完全OGも含めて全部表示</label>
+    <label><input type="checkbox" class="sns-aff-box" value="genin" checked onchange="snsFilter()"> 現役</label>
+    <label><input type="checkbox" class="sns-aff-box" value="jproom" checked onchange="snsFilter()"> J.P ROOM</label>
+    <label><input type="checkbox" class="sns-aff-box" value="upfrontcreate" checked onchange="snsFilter()"> UP-FRONT CREATE</label>
+    <label><input type="checkbox" class="sns-aff-box" value="justpro" checked onchange="snsFilter()"> ジャストプロ</label>
+    <label><input type="checkbox" class="sns-aff-box" value="upfrontpromotion" checked onchange="snsFilter()"> UP-FRONT PROMOTION</label>
+    <label id="sns-showall-label"><input type="checkbox" id="sns-retired" onchange="snsFilter()"> 引退したメンバーも表示</label>
   </fieldset>
   <select id="sns-group" onchange="snsFilter()">
     <option value="">グループ</option>
@@ -47,18 +49,15 @@
     align-items: center;
     margin: 1em 0;
   }
-  #sns-controls input,
+  #sns-controls input[type=text],
   #sns-controls select {
     padding: .4em .6em;
     font-size: 1em;
     border: 1px solid #ccc;
     border-radius: 6px;
   }
-  #sns-controls input { flex: 1 1 16em; }
-  #sns-controls select.is-active {
-    font-weight: bold;
-    border-color: #AE8DBC;
-  }
+  #sns-controls input[type=text] { flex: 1 1 16em; }
+  #sns-controls select.is-active { font-weight: bold; border-color: #AE8DBC; }
   #sns-count { color: #666; font-size: .9em; }
 
   #sns-affil {
@@ -71,18 +70,8 @@
     padding: .45em .7em;
     margin: 0;
   }
-  #sns-affil label {
-    font-size: .9em;
-    white-space: nowrap;
-    cursor: pointer;
-  }
-  #sns-affil input:disabled + * ,
-  #sns-affil label:has(input:disabled) { color: #aaa; }
-  #sns-showall-label {
-    border-left: 1px solid #e2dbe7;
-    padding-left: .9em;
-    font-weight: bold;
-  }
+  #sns-affil label { font-size: .9em; white-space: nowrap; cursor: pointer; }
+  #sns-showall-label { border-left: 1px solid #e2dbe7; padding-left: .9em; font-weight: bold; }
 
   #sns-cards {
     display: grid;
@@ -95,27 +84,29 @@
     padding: .7em .8em;
     background: #fff;
   }
+  .sns-card.has-archive { cursor: pointer; }
   .sns-name {
     margin: 0 0 .5em;
     font-weight: bold;
+    font-size: 1.05em;
   }
   .sns-badge {
     display: inline-block;
-    margin-left: .4em;
-    padding: .05em .5em;
-    font-size: .72em;
-    font-weight: normal;
+    margin-left: .5em;
+    padding: .1em .7em;
+    font-size: .8em;
+    font-weight: bold;
     color: #fff;
     background: #AE8DBC;
     border-radius: 999px;
     vertical-align: middle;
   }
-  .sns-badge-og { background: #b0a8a8; }
 
   .sns-links {
     display: flex;
     flex-wrap: wrap;
     gap: .35em;
+    align-items: center;
   }
   .sns-link {
     display: inline-block;
@@ -128,20 +119,31 @@
     border: 1px solid #e2dbe7;
     border-radius: 999px;
   }
-  .sns-link:hover {
-    background: #AE8DBC;
-    border-color: #AE8DBC;
-    color: #fff;
+  .sns-link:hover { background: #AE8DBC; border-color: #AE8DBC; color: #fff; }
+  .sns-icon-link { padding: .28em; line-height: 0; }
+  .sns-ic { width: 1.15em; height: 1.15em; display: block; }
+
+  .sns-arc-toggle {
+    font: inherit;
+    font-size: .78em;
+    color: #8a7d92;
+    background: transparent;
+    border: 1px dashed #cbbfd3;
+    border-radius: 999px;
+    padding: .15em .6em;
+    cursor: pointer;
   }
-  .sns-icon-link {
-    padding: .28em;
-    line-height: 0;
+  .sns-archive-layer {
+    display: none;
+    flex-wrap: wrap;
+    gap: .35em;
+    margin-top: .5em;
+    padding-top: .5em;
+    border-top: 1px dashed #e2dbe7;
   }
-  .sns-ic {
-    width: 1.15em;
-    height: 1.15em;
-    display: block;
-  }
+  .sns-card.expanded .sns-archive-layer { display: flex; }
+  .sns-card.expanded .sns-arc-toggle { color: #AE8DBC; border-style: solid; }
+  .sns-archive { opacity: .5; }
 </style>
 
 <script>
@@ -150,44 +152,51 @@
   var allCards = Array.from(container.querySelectorAll('.sns-card')).map(function(el) {
     return {
       el: el,
+      bucket: el.getAttribute('data-bucket') || '',
+      retired: el.getAttribute('data-retired') === '1',
       group: el.getAttribute('data-group') || '',
-      affil: (el.getAttribute('data-affil') || '').split('|').filter(Boolean),
       platforms: (el.getAttribute('data-platforms') || '').split('|'),
       search: (el.getAttribute('data-search') || '').toLowerCase(),
     };
   });
-  var affilBoxes = Array.from(document.querySelectorAll('.sns-affil-box'));
-  var showAll = document.getElementById('sns-showall');
+  var affBoxes = Array.from(document.querySelectorAll('.sns-aff-box'));
+  var retiredBox = document.getElementById('sns-retired');
 
   function snsFilter() {
     var q = document.getElementById('sns-search').value.toLowerCase();
     var grFilter = document.getElementById('sns-group').value;
     var plFilter = document.getElementById('sns-platform').value;
-    var checked = affilBoxes.filter(function(b) { return b.checked; })
-                            .map(function(b) { return b.value; });
-    // 「全部表示」中は所属チェックは無効(グレーアウト)
-    affilBoxes.forEach(function(b) { b.disabled = showAll.checked; });
+    var checked = affBoxes.filter(function(b) { return b.checked; })
+                          .map(function(b) { return b.value; });
+    var showRetired = retiredBox.checked;
 
     var shown = 0;
     allCards.forEach(function(c) {
-      var affilMatch = showAll.checked ||
-        c.affil.some(function(a) { return checked.indexOf(a) !== -1; });
-      var match = affilMatch &&
-        (!q || c.search.indexOf(q) !== -1) &&
+      var affOk;
+      if (c.retired) affOk = showRetired;
+      else if (c.bucket === 'other') affOk = true;       // free/other は非引退なら常時表示
+      else affOk = checked.indexOf(c.bucket) !== -1;      // 現役・事務所系はチェックで出し入れ
+      var match = affOk &&
         (!grFilter || c.group === grFilter) &&
-        (!plFilter || c.platforms.indexOf(plFilter) !== -1);
+        (!plFilter || c.platforms.indexOf(plFilter) !== -1) &&
+        (!q || c.search.indexOf(q) !== -1);
       c.el.style.display = match ? '' : 'none';
       if (match) shown++;
     });
 
-    document.getElementById('sns-count').textContent =
-      shown + ' 人 / 全' + allCards.length + ' 人';
-
+    document.getElementById('sns-count').textContent = shown + ' 人 / 全' + allCards.length + ' 人';
     Array.prototype.forEach.call(
       document.querySelectorAll('#sns-controls select'),
       function(s) { s.classList.toggle('is-active', s.selectedIndex > 0); }
     );
   }
+
+  // アーカイブのあるカードはクリックで展開/折りたたみ(リンククリックは除外)
+  container.addEventListener('click', function(e) {
+    if (e.target.closest('a')) return;
+    var card = e.target.closest('.sns-card.has-archive');
+    if (card) card.classList.toggle('expanded');
+  });
 
   snsFilter();
   window.snsFilter = snsFilter;

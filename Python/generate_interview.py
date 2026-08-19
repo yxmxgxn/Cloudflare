@@ -11,18 +11,20 @@ import csv
 import html
 import io
 import re
+import urllib.parse
 import urllib.request
 from datetime import datetime, timezone, timedelta
 from pathlib import Path
 
-from gh_warn import warn_missing_members
+from gh_warn import warn_missing_members, warn
 
 PUB_BASE = (
     "https://docs.google.com/spreadsheets/d/e/"
     "2PACX-1vQUuY0kp6M2i3IBrzIJ0rxkRI19oqwdGFUszeQvsTJyydQJZae5OXrVEgshlXsDR906hUOm6497dUsr/pub"
 )
-GID_MAIN = "0"            # 記事一覧: ID,URL,Date,Media,Feature,Title,TimeStamp,WebArcive
+GID_MAIN = "0"            # 記事一覧: ID,URL,Date,Feature,Title,WebArcive (Mediaは持たない)
 GID_MEMBERS = "600835955"  # メンバー一覧: ID,Group,Name (IDは記事一覧と対応)
+GID_DOMAIN = "1500125775"  # Domain辞書: Prefix,Media (URLのhost[+第1パス]→媒体名)
 
 # メンバーマスター(別スプレッドシート): Member,Yomigana,Group
 # 全ハロメンのロスター。よみがな順ソートと、グループ→メンバー絞り込みに使う。
@@ -64,6 +66,37 @@ def fetch_master() -> dict[str, dict]:
             "group": (row.get("Group") or "").strip(),
         }
     return result
+
+
+def fetch_domain() -> dict[str, str]:
+    """Domain辞書: プレフィックス(host または host/第1パス) → 媒体名。小文字化して保持。"""
+    result: dict[str, str] = {}
+    for row in fetch_csv(GID_DOMAIN):
+        pref = (row.get("Prefix") or "").strip().lower()
+        media = (row.get("Media") or "").strip()
+        if pref and media:
+            result[pref] = media
+    return result
+
+
+def media_for(url: str, domain: dict[str, str]) -> str:
+    """記事URLの媒体名をDomain辞書から最長前方一致で引く。
+    host+第1パス(例 realsound.jp/tech) を優先し、無ければ host(例 realsound.jp)。
+    www. の有無はどちらでも当たるようにする。未一致は空文字。"""
+    if not url:
+        return ""
+    pr = urllib.parse.urlparse(url if "//" in url else "https://" + url)
+    host = pr.netloc.lower()
+    segs = [s for s in pr.path.split("/") if s]
+    seg = segs[0].lower() if segs else ""
+    hosts = [host, host[4:] if host.startswith("www.") else "www." + host]
+    for h in hosts:                        # 具体的(host+seg)を先に
+        if seg and f"{h}/{seg}" in domain:
+            return domain[f"{h}/{seg}"]
+    for h in hosts:                        # 次に host のみ
+        if h in domain:
+            return domain[h]
+    return ""
 
 
 def esc(s: str) -> str:
@@ -127,8 +160,8 @@ def resolve_group(name: str, master: dict, article_group_by_name: dict) -> str:
     return master.get(name, {}).get("group") or article_group_by_name.get(name, "")
 
 
-def build_cards(articles: list[dict], members_by_id: dict,
-                master: dict, article_group_by_name: dict) -> str:
+def build_cards(articles: list[dict], members_by_id: dict, master: dict,
+                article_group_by_name: dict, domain: dict, unmatched: set) -> str:
     cards = []
     for a in articles:
         aid = (a.get("ID") or "").strip()
@@ -139,7 +172,10 @@ def build_cards(articles: list[dict], members_by_id: dict,
         date_sort = esc(sort_date(a.get("Date")))
         title = esc(a.get("Title"))
         url = (a.get("URL") or "").strip()
-        media = esc(a.get("Media"))
+        media_raw = media_for(url, domain)   # 媒体名はDomain辞書から引く
+        if url and not media_raw:
+            unmatched.add(url)
+        media = esc(media_raw)
         feature = esc(a.get("Feature"))
         archive = (a.get("WebArcive") or "").strip()
 
@@ -180,7 +216,7 @@ def build_cards(articles: list[dict], members_by_id: dict,
                 ' target="_blank" rel="noopener noreferrer">' + label + '</a></p>'
             )
 
-        search = " ".join([a.get("Title") or "", a.get("Media") or "",
+        search = " ".join([a.get("Title") or "", media_raw,
                            a.get("Feature") or "", " ".join(names)])
 
         cards.append(
@@ -214,6 +250,8 @@ def main():
     articles = fetch_csv(GID_MAIN)
     member_rows = fetch_csv(GID_MEMBERS)
     master = fetch_master()
+    domain = fetch_domain()
+    unmatched: set[str] = set()
 
     members_by_id: dict[str, list[dict]] = {}
     for m in member_rows:
@@ -244,7 +282,8 @@ def main():
     OUTPUT_GENERATED.parent.mkdir(parents=True, exist_ok=True)
     OUTPUT_CARDS.parent.mkdir(parents=True, exist_ok=True)
     with open(OUTPUT_CARDS, "w", encoding="utf-8") as f:
-        f.write(stamp + build_cards(articles, members_by_id, master, article_group_by_name) + "\n")
+        f.write(stamp + build_cards(articles, members_by_id, master,
+                                    article_group_by_name, domain, unmatched) + "\n")
     with open(OUTPUT_GROUPS, "w", encoding="utf-8") as f:
         f.write(stamp + build_group_options(groups) + "\n")
     with open(OUTPUT_NAMES, "w", encoding="utf-8") as f:
@@ -256,7 +295,11 @@ def main():
         sorted(n for n in name_set if n not in master),
         note="(記事側Groupで代替)",
     )
-    print(f"生成完了: {OUTPUT_CARDS} ({len(articles)} 記事 / メンバー {len(name_set)} 名)")
+    if unmatched:
+        warn("Domainシート未登録(媒体名が空になる): " + "、".join(sorted(unmatched)),
+             title="Domain未登録URL")
+    print(f"生成完了: {OUTPUT_CARDS} ({len(articles)} 記事 / メンバー {len(name_set)} 名 / "
+          f"Domain未登録 {len(unmatched)} 件)")
 
 
 if __name__ == "__main__":

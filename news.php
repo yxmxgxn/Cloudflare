@@ -7,6 +7,8 @@
 <main>
   このHPの更新履歴です
   <dl>
+  <dt>2026-08-19</dt>
+  <dd>定期クロールでリンク切れを実装</dd>
   <dt>2026-08-17</dt>
   <dd><a href="/vocalo-club">宮本佳林のボカロ部</a>を追加</dd>
   <dt>2026-08-15</dt>
@@ -52,7 +54,7 @@
   <dt>2026-05-19</dt>
   <dd><a href="/X/karin-vocalo">今日のボカロ</a>をスプレッドシートから読み取って静的なテーブルを生成する方式に修正</dd>
   <dt>2026-05-17</dt>
-  <dd><a href="/Juice=Juice/karin-documentary">Juice=Juice密着映像</a>を追加</dd>
+  <dd><a href="/Juice=Juice/juice-documentary">Juice=Juice密着映像</a>を追加</dd>
   <dt>2026-05-17</dt>
   <dd><a href="/YouTube/karin-dance">ハロ！ステダンス部</a>を追加</dd>
   <dt>2026-05-17</dt>
