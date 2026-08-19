@@ -1,4 +1,4 @@
-<!-- generated: 2026-08-17T18:28:19.048893+00:00 -->
+<!-- generated: 2026-08-19T18:32:27.297268+00:00 -->
 <tr data-selector="松永里愛"><td><a href="https://www.tbsradio.jp/articles/111271/" target="_blank" rel="noopener noreferrer">2026/08/16</a></td><td>怪獣 / サカナクション</td><td>松永里愛</td><td>ハマったアニメの主題歌</td></tr>
 <tr data-selector="遠藤彩加里"><td><a href="https://www.tbsradio.jp/articles/111271/" target="_blank" rel="noopener noreferrer">2026/08/16</a></td><td>ミックスナッツ / Official髭男dism</td><td>遠藤彩加里</td><td>ハマったアニメの主題歌</td></tr>
 <tr data-selector="松永里愛&amp;遠藤彩加里"><td><a href="https://www.tbsradio.jp/articles/111271/" target="_blank" rel="noopener noreferrer">2026/08/16</a></td><td>ギラめきな！ / Juice=Juice</td><td>松永里愛&amp;遠藤彩加里</td><td>ハマったアニメの主題歌</td></tr>
