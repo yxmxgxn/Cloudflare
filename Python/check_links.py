@@ -64,6 +64,11 @@ DNS_HINTS = (
     "getaddrinfo failed", "No address associated", "Temporary failure in name resolution",
 )
 
+# script/style の中身は「JSが実行時に組み立てる文字列」であって、そのままではURLにならない
+SCRIPT_RE = re.compile(r"<(script|style)\b[^>]*>.*?</\1\s*>", re.I | re.S)
+# ${d.article} のようなテンプレート変数が残っているものは検査できない
+PLACEHOLDER_RE = re.compile(r"\$\{|\{\{|<%|%s\b|\$\(")
+
 TAG_RE = re.compile(r"<(\w+)\b([^>]*)>")
 HREF_RE = re.compile(r"""(?:href|src)\s*=\s*["']([^"']+)["']""", re.I)
 REL_RE = re.compile(r"""\brel\s*=\s*["']([^"']*)["']""", re.I)
@@ -124,10 +129,12 @@ def collect_links(root: Path, base_url: str) -> tuple[dict, dict]:
 
     for file in sorted(root.rglob("*.html")):
         page = page_path(root, file)
-        text = file.read_text(encoding="utf-8", errors="replace")
+        text = SCRIPT_RE.sub(" ", file.read_text(encoding="utf-8", errors="replace"))
         for raw in iter_link_urls(text):
             url = html.unescape(raw.strip())
             if not url or url.lower().startswith(SKIP_SCHEMES):
+                continue
+            if PLACEHOLDER_RE.search(url):
                 continue
             if url.startswith("//"):
                 url = "https:" + url
