@@ -61,7 +61,6 @@ jobs:
             | grep -v '^Generated/' \
             | grep -v '^build/' \
             | grep -v '404' \
-            | grep -v '^news\.php' \
             | grep -v '^index\.' \
             | sed -E 's/\.php$//' \
             | sed "s|^|$BASE_URL/|" \

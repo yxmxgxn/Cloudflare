@@ -1,11 +1,12 @@
 <?php
-  $noindex = true;
-  $title = "更新履歴";
+  $title = "宮本佳林・M-line・ハロプロ Archive 更新履歴";
+  $description = "宮本佳林、M-line club、ハロー！プロジェクトのアーカイブ更新履歴です。更新日時と内部リンク、また修正内容を掲載しています。※軽微な修正やデータ追加は省略しています。";
+  $jsonld_type = "WebSite";
   include $_SERVER['DOCUMENT_ROOT'] . '/common/header.php';
 ?>
 
 <main>
-  このHPの更新履歴です
+  このHPの更新履歴です。更新日時と内部リンク、また修正内容を掲載しています。※軽微な修正やデータ追加は省略しています。
   <dl>
   <dt>2026-08-19</dt>
   <dd>定期クロールでリンク切れを実装</dd>
