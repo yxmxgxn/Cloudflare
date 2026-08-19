@@ -97,9 +97,10 @@ grep -rl --include='*.html' --include='*.xml' --include='*.txt' -F "$OLD_URL" "$
   echo "/karinsong.php       /YouTube/karin-song   301"
   echo "/index.php / 301"
   echo "/index.html / 301"
-  # SNS一覧は再設計中のため一時的に非公開(トップへ退避)。公開再開時にこの2行を削除する
+  # SNS一覧は再設計中のため一時的に非公開(トップへ退避)。公開再開時にこの行を削除する。
+  # /sns.php は下の汎用ルールで /sns へ301 → ここで / へ302、と二段で退避する
+  # (/sns.php を直接ここへ書くと汎用ルールと重複しCloudflareがデプロイを弾く[code:100324])
   echo "/sns / 302"
-  echo "/sns.php / 302"
   # 全ページ: .php付きURL → クリーンURL
   while IFS= read -r p; do
     echo "/$p.php /$p 301"
