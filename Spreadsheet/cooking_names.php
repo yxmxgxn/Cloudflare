@@ -1,4 +1,4 @@
-<!-- generated: 2026-08-14T09:25:36.658904+00:00 -->
+<!-- generated: 2026-08-20T17:00:33.447782+00:00 -->
 <option value="相川茉穂" data-group="アンジュルム">相川茉穂</option>
 <option value="秋山眞緒" data-group="つばきファクトリー">秋山眞緒</option>
 <option value="浅倉樹々" data-group="つばきファクトリー">浅倉樹々</option>
@@ -28,6 +28,7 @@
 <option value="小関舞" data-group="カントリー・ガールズ">小関舞</option>
 <option value="小田さくら" data-group="モーニング娘。">小田さくら</option>
 <option value="小野田紗栞" data-group="つばきファクトリー">小野田紗栞</option>
+<option value="小野瑞歩" data-group="つばきファクトリー">小野瑞歩</option>
 <option value="河西結心" data-group="つばきファクトリー">河西結心</option>
 <option value="金澤朋子" data-group="Juice=Juice">金澤朋子</option>
 <option value="上國料萌衣" data-group="アンジュルム">上國料萌衣</option>
