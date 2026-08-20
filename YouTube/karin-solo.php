@@ -183,6 +183,10 @@
   <ul>
     <li><a href="https://www.youtube.com/watch?v=62G0epfiL-U" target="_blank" rel="noopener noreferrer">5th シングル発売記念イベント（2026/7/16 サンシャインシティ 噴水広場）</a></li>
   </ul>
+  <h3>シャニカマー</h3>
+  <ul>
+    <li><a href="https://www.youtube.com/watch?v=-z8V9jBsHNc&t=796s" target="_blank" rel="noopener noreferrer">5th シングル発売記念イベント（2026/7/16 サンシャインシティ 噴水広場）</a></li>
+  </ul>
   <h3>Spinel Hearts</h3>
   <ul>
     <li><a href="https://www.youtube.com/watch?v=dXhiDRnP1aQ" target="_blank" rel="noopener noreferrer">宮本佳林 LIVE 2025～魔法のたからばこ～（2025/11/24 SOUND SHOWER ark 清水）</a></li>
@@ -273,5 +277,5 @@
   </ul>
 
 </main>
-<div class="last-update">最終更新日：2026/08/14</div>
+<div class="last-update">最終更新日：2026/08/21</div>
 <?php include $_SERVER['DOCUMENT_ROOT'] . '/common/footer.php'; ?>
