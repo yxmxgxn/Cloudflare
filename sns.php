@@ -11,18 +11,21 @@
   ハロー！プロジェクトの現役メンバー・OGの公式SNSアカウントを一覧でまとめました。<br>
   各メンバーのカードに、そのメンバーが持つSNSへのリンクを横並びで載せています。<br>
   人数が多いので、スクロールで探すより<strong>上の検索欄に名前（読み仮名でも可）を入れる</strong>のが早いです。SNSのIDでも検索できます。<br>
-  所属（現役・アップフロント系）・SNSの種類での絞り込みもできます。<br>
+  所属・グループ（現役／OG問わず）・SNSの種類で絞り込めます。所属のチェックを全部外すと0人になります。<br>
+  グループで「モーニング娘。」を選んで「ハロプロ」のチェックを外せば、OGのモーニング娘。だけを出せます。<br>
   「アーカイブ ▾」があるカードはクリックすると過去のアメブロが開きます。<br>
 
 <div id="sns-controls">
   <input type="text" id="sns-search" placeholder="名前・読み仮名・SNSのIDで検索…" oninput="snsFilter()">
   <fieldset id="sns-affil">
-    <label><input type="checkbox" class="sns-aff-box" value="genin" checked onchange="snsFilter()"> 現役</label>
+    <label><input type="checkbox" class="sns-aff-box" value="genin" checked onchange="snsFilter()"> ハロプロ</label>
     <label><input type="checkbox" class="sns-aff-box" value="jproom" checked onchange="snsFilter()"> J.P ROOM</label>
+    <label><input type="checkbox" class="sns-aff-box" value="mline" checked onchange="snsFilter()"> M-line</label>
     <label><input type="checkbox" class="sns-aff-box" value="upfrontcreate" checked onchange="snsFilter()"> UP-FRONT CREATE</label>
-    <label><input type="checkbox" class="sns-aff-box" value="justpro" checked onchange="snsFilter()"> ジャストプロ</label>
     <label><input type="checkbox" class="sns-aff-box" value="upfrontpromotion" checked onchange="snsFilter()"> UP-FRONT PROMOTION</label>
-    <label id="sns-showall-label"><input type="checkbox" id="sns-retired" onchange="snsFilter()"> 引退したメンバーも表示</label>
+    <label><input type="checkbox" class="sns-aff-box" value="justpro" checked onchange="snsFilter()"> ジャストプロ</label>
+    <label><input type="checkbox" class="sns-aff-box" value="other" checked onchange="snsFilter()"> フリー・その他</label>
+    <label><input type="checkbox" class="sns-aff-box" value="retirement" onchange="snsFilter()"> 引退済み</label>
   </fieldset>
   <select id="sns-group" onchange="snsFilter()">
     <option value="">グループ</option>
@@ -71,7 +74,7 @@
     margin: 0;
   }
   #sns-affil label { font-size: .9em; white-space: nowrap; cursor: pointer; }
-  #sns-showall-label { border-left: 1px solid #e2dbe7; padding-left: .9em; font-weight: bold; }
+  #sns-affil label:last-child { border-left: 1px solid #e2dbe7; padding-left: .9em; }
 
   #sns-cards {
     display: grid;
@@ -123,6 +126,22 @@
   .sns-icon-link { padding: .28em; line-height: 0; }
   .sns-ic { width: 1.15em; height: 1.15em; display: block; }
 
+  /* 事務所・公式・FC系リンクの下段（SNS行の下に改行して並べる） */
+  .sns-official {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .35em;
+    align-items: center;
+    margin-top: .45em;
+    padding-top: .45em;
+    border-top: 1px solid #f0ebf4;
+  }
+  .sns-official .sns-link {
+    font-size: .78em;
+    color: #6d5f76;
+    background: #faf7fc;
+  }
+
   .sns-arc-toggle {
     font: inherit;
     font-size: .78em;
@@ -153,14 +172,13 @@
     return {
       el: el,
       bucket: el.getAttribute('data-bucket') || '',
-      retired: el.getAttribute('data-retired') === '1',
-      group: el.getAttribute('data-group') || '',
+      mline: el.getAttribute('data-mline') === '1',
+      groups: (el.getAttribute('data-group') || '').split('|'),
       platforms: (el.getAttribute('data-platforms') || '').split('|'),
       search: (el.getAttribute('data-search') || '').toLowerCase(),
     };
   });
   var affBoxes = Array.from(document.querySelectorAll('.sns-aff-box'));
-  var retiredBox = document.getElementById('sns-retired');
 
   function snsFilter() {
     var q = document.getElementById('sns-search').value.toLowerCase();
@@ -168,16 +186,14 @@
     var plFilter = document.getElementById('sns-platform').value;
     var checked = affBoxes.filter(function(b) { return b.checked; })
                           .map(function(b) { return b.value; });
-    var showRetired = retiredBox.checked;
+    var mlineOn = checked.indexOf('mline') !== -1;
 
     var shown = 0;
     allCards.forEach(function(c) {
-      var affOk;
-      if (c.retired) affOk = showRetired;
-      else if (c.bucket === 'other') affOk = true;       // free/other は非引退なら常時表示
-      else affOk = checked.indexOf(c.bucket) !== -1;      // 現役・事務所系はチェックで出し入れ
+      // 所属チェックのユニオン。M-lineはリンク持ちを別枠で加算。全部外せば0人。
+      var affOk = checked.indexOf(c.bucket) !== -1 || (mlineOn && c.mline);
       var match = affOk &&
-        (!grFilter || c.group === grFilter) &&
+        (!grFilter || c.groups.indexOf(grFilter) !== -1) &&
         (!plFilter || c.platforms.indexOf(plFilter) !== -1) &&
         (!q || c.search.indexOf(q) !== -1);
       c.el.style.display = match ? '' : 'none';

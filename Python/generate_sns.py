@@ -75,8 +75,8 @@ PLATFORMS: dict[str, dict] = {
 }
 PLATFORM_ORDER = list(PLATFORMS.keys())
 
-# メタ行(リンクにしない)。affiliation は所属判定にのみ使う。
-META_PLATFORMS = {"affiliation"}
+# メタ行(リンクにしない)。affiliation=所属判定 / GroupNo・SubGroup=グループ番号。
+META_PLATFORMS = {"affiliation", "GroupNo", "SubGroup"}
 
 # アイコン化する platform(単色SVG・fill/stroke は currentColor でチップ色に追従)。
 _IC = 'class="sns-ic" viewBox="0 0 24 24" aria-hidden="true"'
@@ -158,14 +158,35 @@ AFFIL_BADGE: dict[str, str] = {
     "upfrontpromotion": "UP-FRONT PROMOTION",
 }
 
-# 絞り込みチェックボックス(バケツ)。(value, ラベル)。現役は7グループをまとめる。
-AFFIL_BUCKETS: list[tuple[str, str]] = [
-    ("genin", "現役"),
-    ("jproom", "J.P ROOM"),
-    ("upfrontcreate", "UP-FRONT CREATE"),
-    ("justpro", "ジャストプロ"),
-    ("upfrontpromotion", "UP-FRONT PROMOTION"),
+# グループ番号 → 表示名(縦持ち platform=GroupNo/SubGroup の値。現役もOGも持つ)。
+# グループ絞り込みプルダウンとカードの data-group に使う。増減時はここに1行足す。
+GROUPNO: dict[int, str] = {
+    1:  "平家みちよ",
+    2:  "モーニング娘。",
+    3:  "太陽とシスコムーン",
+    4:  "ココナッツ娘。",
+    5:  "カントリー娘。",
+    6:  "メロン記念日",
+    7:  "Berryz工房",
+    8:  "松浦亜弥",
+    9:  "℃-ute",
+    10: "真野恵里菜",
+    11: "アンジュルム",
+    12: "Juice=Juice",
+    13: "カントリー・ガールズ",
+    14: "こぶしファクトリー",
+    15: "つばきファクトリー",
+    16: "BEYOOOOONDS",
+    17: "OCHA NORMA",
+    18: "ロージークロニクル",
+}
+
+# 名前の下段(事務所・公式・FC系)へ回すリンクと、その並び順。残りはSNS行に出す。
+OFFICIAL_ORDER = [
+    "wikpedia", "hello", "jproom", "m-line", "upfrontcreate",
+    "upfrontpromotion", "justpro", "official", "fanclub", "fanicon", "bitfan",
 ]
+OFFICIAL_SET = set(OFFICIAL_ORDER)
 
 # 個人アメブロ(platform=ameblo)のうち、ハンドルがこれらのものは「アーカイブ」扱い。
 # (現役でないのにグループアメブロ ameblo_g がある場合も自動でアーカイブ)
@@ -199,6 +220,13 @@ def col(row: list[str], i: int) -> str:
     return row[i].strip() if i < len(row) and row[i] else ""
 
 
+def to_int(s: str) -> int | None:
+    try:
+        return int(s)
+    except (TypeError, ValueError):
+        return None
+
+
 def build_url(platform: str, id_: str, member: str) -> str:
     tmpl = PLATFORMS.get(platform, {}).get("url")
     if tmpl is None:  # official/fanclub/shop/justpro: col3 がフルURL
@@ -207,14 +235,16 @@ def build_url(platform: str, id_: str, member: str) -> str:
 
 
 class Member:
-    __slots__ = ("num", "name", "yomi", "affiliation", "accounts")
+    __slots__ = ("num", "name", "yomi", "affiliation", "groupno", "subgroup", "accounts")
 
     def __init__(self, num: int, name: str):
         self.num = num
         self.name = name
         self.yomi = ""
         self.affiliation = ""
-        self.accounts: list[tuple[str, str, str]] = []  # (platform, id, member) ※affiliation除く
+        self.groupno: int | None = None
+        self.subgroup: int | None = None
+        self.accounts: list[tuple[str, str, str]] = []  # (platform, id, member) ※メタ行除く
 
     @property
     def is_current(self) -> bool:
@@ -237,8 +267,18 @@ class Member:
         return "other"  # free / other / 未設定
 
     @property
-    def group_disp(self) -> str:
-        return GROUPS.get(self.affiliation, "")
+    def groups(self) -> list[str]:
+        """所属グループ表示名(GroupNo→SubGroup の順、重複除去)。現役もOGも持つ。"""
+        out: list[str] = []
+        for n in (self.groupno, self.subgroup):
+            name = GROUPNO.get(n) if n is not None else None
+            if name and name not in out:
+                out.append(name)
+        return out
+
+    @property
+    def has_mline(self) -> bool:
+        return any(p == "m-line" for p, _i, _m in self.accounts)
 
     def is_archive_ameblo(self, platform: str, handle: str) -> bool:
         if platform == "ameblo_g":
@@ -274,6 +314,13 @@ def load_members(rows: list[list[str]]) -> tuple[list[Member], set[str]]:
             m.name = name
         if platform == "affiliation":
             m.affiliation = id_
+            continue
+        if platform in ("GroupNo", "SubGroup"):
+            n = to_int(id_)
+            if platform == "GroupNo":
+                m.groupno = n
+            else:
+                m.subgroup = n
             continue
         if not id_:
             continue
@@ -311,34 +358,46 @@ def render_chip(platform: str, url: str, label: str, archive: bool = False) -> s
     )
 
 
-def build_links(m: Member) -> tuple[str, str, bool, list[str]]:
-    """(メイン行HTML, アーカイブ層HTML, アーカイブ有無, platformラベル一覧) を返す。"""
-    ordered = sorted(
-        m.accounts,
-        key=lambda a: PLATFORM_ORDER.index(a[0]) if a[0] in PLATFORM_ORDER else len(PLATFORM_ORDER),
-    )
-    main, archive = [], []
+def build_links(m: Member) -> tuple[str, str, str, bool, list[str]]:
+    """(SNS行HTML, 事務所・公式行HTML, アーカイブ層HTML, アーカイブ有無, ラベル一覧)。"""
+    def order_key(platform: str, seq: list[str]) -> int:
+        return seq.index(platform) if platform in seq else len(seq)
+
+    sns, official, archive = [], [], []
     labels: list[str] = []
-    for platform, id_, member_slug in ordered:
+    for platform, id_, member_slug in m.accounts:
         conf = PLATFORMS.get(platform)
         label = conf["label"] if conf else platform
         if platform == "official":
             label = m.official_label()
         labels.append(label)
         url = build_url(platform, id_, member_slug)
-        if m.is_archive_ameblo(platform, id_):
-            archive.append(render_chip(platform, url, label, archive=True))
+        is_arc = m.is_archive_ameblo(platform, id_)
+        chip = render_chip(platform, url, label, archive=is_arc)
+        if is_arc:
+            archive.append((platform, chip))
+        elif platform in OFFICIAL_SET:
+            official.append((platform, chip))
         else:
-            main.append(render_chip(platform, url, label))
-    return "".join(main), "".join(archive), bool(archive), list(dict.fromkeys(labels))
+            sns.append((platform, chip))
+    sns.sort(key=lambda e: order_key(e[0], PLATFORM_ORDER))
+    official.sort(key=lambda e: order_key(e[0], OFFICIAL_ORDER))
+    return (
+        "".join(c for _p, c in sns),
+        "".join(c for _p, c in official),
+        "".join(c for _p, c in archive),
+        bool(archive),
+        list(dict.fromkeys(labels)),
+    )
 
 
 def build_cards(members: list[Member]) -> str:
     cards = []
     for m in members:
-        main_html, archive_html, has_archive, labels = build_links(m)
+        sns_html, official_html, archive_html, has_archive, labels = build_links(m)
         badge = f' <span class="sns-badge">{esc(m.badge)}</span>' if m.badge else ""
-        search = " ".join([m.name, m.yomi, m.badge] + labels + [a[1] for a in m.accounts])
+        groups = m.groups
+        search = " ".join([m.name, m.yomi, m.badge] + groups + labels + [a[1] for a in m.accounts])
         archive_block = ""
         toggle = ""
         card_cls = "sns-card"
@@ -346,14 +405,17 @@ def build_cards(members: list[Member]) -> str:
             card_cls += " has-archive"
             toggle = '<button type="button" class="sns-arc-toggle">アーカイブ ▾</button>'
             archive_block = f'<div class="sns-archive-layer">{archive_html}</div>'
+        official_row = f'<div class="sns-official">{official_html}</div>' if official_html else ""
         cards.append(
             f'<div class="{card_cls}" data-bucket="{esc(m.bucket)}"'
             f' data-retired="{"1" if m.bucket == "retirement" else "0"}"'
-            f' data-group="{esc(m.group_disp)}"'
+            f' data-mline="{"1" if m.has_mline else "0"}"'
+            f' data-group="{esc("|".join(groups))}"'
             f' data-platforms="{esc("|".join(labels))}"'
             f' data-search="{esc(search)}">'
             f'<p class="sns-name">{esc(m.name)}{badge}</p>'
-            f'<div class="sns-links">{main_html}{toggle}</div>'
+            f'<div class="sns-links">{sns_html}{toggle}</div>'
+            f'{official_row}'
             f'{archive_block}'
             "</div>"
         )
@@ -396,9 +458,11 @@ def main():
     if missing_yomi:
         print(f"読み仮名なし: {missing_yomi} 人(読み仮名検索から漏れる)")
 
-    # グループプルダウン: 現役グループを定義順で(実在するもののみ)
-    used_groups = {m.group_disp for m in members if m.is_current}
-    group_labels = [GROUPS[k] for k in GROUP_ORDER if GROUPS[k] in used_groups]
+    # グループプルダウン: GroupNo順(1..18)で、実在するグループのみ(現役もOGも含む)
+    present_groups = set()
+    for m in members:
+        present_groups.update(m.groups)
+    group_labels = [GROUPNO[n] for n in sorted(GROUPNO) if GROUPNO[n] in present_groups]
 
     # SNSプルダウン: 実際に登場する platform ラベルを PLATFORMS 順で(重複排除)
     present = set()
