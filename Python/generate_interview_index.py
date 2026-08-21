@@ -18,6 +18,8 @@
 
 import argparse
 import csv
+import difflib
+import html as htmllib
 import hashlib
 import io
 import json
@@ -47,7 +49,7 @@ OUT_SQL = REPO_ROOT / "build" / "interview_index.sql"
 
 MAX_PAGES = 10       # 自動追尾の上限
 PAGE_NUM_MAX = 100   # 末尾数字をページ番号とみなす上限(これ以上は記事IDとみなし追尾しない)
-INDEX_VERSION = "5"  # 索引ロジックを変えたらここを上げる → src_hashが変わり全記事を再索引
+INDEX_VERSION = "7"  # 索引ロジックを変えたらここを上げる → src_hashが変わり全記事を再索引
 MAX_INDEX_CHARS = 300000  # 索引対象本文の上限(正規化後の文字数)
 BIGRAM_CHUNK = 6000       # 1 INSERT あたりのbigram数(≈31KB。D1のstatement上限に余裕を持たせる)
 BIGRAM_OVERLAP = 64       # チャンク境界を跨ぐ検索を落とさないための重なり
@@ -173,9 +175,16 @@ def looks_truncated(body: str, last_html: str) -> bool:
 
 
 def _stem(u: str):
-    """URLから「ページ番号を除いた記事の幹」を取り出す(同一記事判定用)。"""
+    """URLから「ページ番号を除いた記事の幹」を取り出す(同一記事判定用)。
+    末尾 /N は「小さい数字＝ページ番号」の時だけ除去する。
+    /news/248033 のような“末尾が記事ID(大きい数字)”を除去すると、別記事どうしが
+    同じ幹に潰れて誤連結するため、PAGE_NUM_MAX 未満のみ除去する。"""
     pr = urllib.parse.urlparse(u)
-    path = re.sub(r"/\d+/?$", "", pr.path).rstrip("/")  # 末尾 /N /N/ を除去
+    path = pr.path
+    m = re.search(r"/(\d+)/?$", path)
+    if m and int(m.group(1)) < PAGE_NUM_MAX:
+        path = path[:m.start()]
+    path = path.rstrip("/")
     qs = urllib.parse.parse_qs(pr.query)
     qs.pop("page", None)
     return (pr.netloc, path, urllib.parse.urlencode(qs, doseq=True))
@@ -185,6 +194,24 @@ def same_article(cur: str, nxt: str) -> bool:
     """next先が「同じ記事の別ページ」か。別スラッグ(=別記事)なら False。
     suumo等の rel=next が“次の記事”を指すケースの暴走連結を防ぐ。"""
     return _stem(cur) == _stem(nxt)
+
+
+TITLE_SIM_MIN = 0.6  # ページ間タイトル類似度の下限(実測: 同一記事の別ページ≈0.9+ / 別記事≈0.3)
+
+
+def _page_title(html: str) -> str:
+    m = re.search(r'og:title["\'][^>]+content=["\']([^"\']+)', html or "", re.I)
+    if not m:
+        m = re.search(r"<title[^>]*>(.*?)</title>", html or "", re.I | re.S)
+    return htmllib.unescape(m.group(1).strip()) if m else ""
+
+
+def title_ok(a: str, b: str) -> bool:
+    """次ページのタイトルが前ページと十分似ているか(=同じ記事の続きか)。
+    ページ番号マーカー程度の差は類似度で吸収。別記事は落とす。判定不能(空)は許容。"""
+    if not a or not b:
+        return True
+    return difflib.SequenceMatcher(None, a, b).ratio() >= TITLE_SIM_MIN
 
 
 def collect_pages(main_url: str, extra: list[str], no_follow: bool = False):
@@ -214,19 +241,25 @@ def collect_pages(main_url: str, extra: list[str], no_follow: bool = False):
         return bodies, urls, False
 
     # 自動追尾
-    cur, last_html = main_url, ""
+    cur, last_html, prev_title = main_url, "", None
     for _ in range(MAX_PAGES):
         html = fetch_html(cur)
         body = extract_body(html or "")
         if not body or body[:200] in seen:
             break
+        cur_title = _page_title(html or "")
+        # 2ページ目以降: タイトルが前ページと似ていなければ別記事とみなし追加せず終了
+        if prev_title is not None and not title_ok(prev_title, cur_title):
+            break
         seen.add(body[:200])
         bodies.append(body)
         urls.append(cur)
+        prev_title = cur_title
         last_html = html or ""
         nxt = next_page_url(html or "", cur)
+        # URLの幹(別スラッグ)とタイトル、両方で「同じ記事の続き」を担保
         if not nxt or nxt == cur or not same_article(cur, nxt):
-            break  # 別記事(別スラッグ)への rel=next 等は追わない
+            break
         cur = nxt
 
     truncated = len(urls) == 1 and looks_truncated("\n".join(bodies), last_html)

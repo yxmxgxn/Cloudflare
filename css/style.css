@@ -897,6 +897,15 @@ footer a {
   color: #fff;
 }
 
+#iv-active-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 14px;
+  white-space: nowrap;
+  cursor: pointer;
+}
+
 #iv-date-panel {
   display: flex;
   gap: 8px;
@@ -972,11 +981,12 @@ footer a {
   margin: 2px 0 0;
 }
 
-.iv-card .iv-member {
+.iv-card .iv-member-names {
   margin: 0;
 }
 
-.iv-card .iv-group {
+.iv-card .iv-member-groups {
+  margin: 0;
   color: #888;
   font-size: 12px;
 }

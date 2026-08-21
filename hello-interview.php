@@ -29,6 +29,7 @@
     <option value="title">タイトル順</option>
   </select>
   <button type="button" id="iv-date-toggle" onclick="ivDateToggle()" aria-expanded="false">📅 期間</button>
+  <label id="iv-active-label"><input type="checkbox" id="iv-active" onchange="ivFilter()">現役時のみ</label>
   <button type="button" id="iv-openall" onclick="ivOpenAll()">表示中を別タブで開く</button>
   <span id="interview-count"></span>
 </div>
@@ -54,7 +55,9 @@
       date: el.getAttribute('data-date') || '',
       title: el.getAttribute('data-title') || '',
       groups: (el.getAttribute('data-groups') || '').split('|'),
+      activeGroups: (el.getAttribute('data-active-groups') || '').split('|'),
       names: (el.getAttribute('data-names') || '').split('|'),
+      activeNames: (el.getAttribute('data-active-names') || '').split('|'),
       search: (el.getAttribute('data-search') || '').toLowerCase(),
     };
   });
@@ -102,11 +105,15 @@
     var sort = document.getElementById('iv-sort').value;
     var from = document.getElementById('iv-from').value;  // 'YYYY-MM-DD' or ''
     var to = document.getElementById('iv-to').value;       // data-date と同形式なので文字列比較でOK
+    var activeOnly = document.getElementById('iv-active').checked;
 
     var filtered = allCards.filter(function(c) {
       var matchQ = serverIds === null || serverIds.has(c.id);
-      var matchGr = !grFilter || c.groups.indexOf(grFilter) !== -1;
-      var matchNm = !nmFilter || c.names.indexOf(nmFilter) !== -1;
+      // 現役時のみ: 選択中のグループ/メンバーが、その記事の掲載時点で在籍していたか
+      var grList = activeOnly ? c.activeGroups : c.groups;
+      var nmList = activeOnly ? c.activeNames : c.names;
+      var matchGr = !grFilter || grList.indexOf(grFilter) !== -1;
+      var matchNm = !nmFilter || nmList.indexOf(nmFilter) !== -1;
       var matchDate = (!from || (c.date && c.date >= from)) &&
                       (!to || (c.date && c.date <= to));
       return matchQ && matchGr && matchNm && matchDate;
@@ -185,7 +192,8 @@
     var stillValid = false;
     Array.prototype.forEach.call(nameSel.options, function(o) {
       if (!o.value) return; // 「メンバー」(プレースホルダ)
-      var show = !g || (o.getAttribute('data-group') || '') === g;
+      var og = (o.getAttribute('data-group') || '').split('|');  // 在籍歴すべて
+      var show = !g || og.indexOf(g) !== -1;
       o.hidden = !show;
       o.disabled = !show;
       if (o.value === nameSel.value && show) stillValid = true;

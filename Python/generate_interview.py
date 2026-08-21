@@ -55,16 +55,23 @@ def fetch_url(url: str) -> list[dict]:
 
 
 def fetch_master() -> dict[str, dict]:
-    """メンバーマスター: Member名 → {"yomigana": ..., "group": ...}"""
+    """メンバーマスター: Member名 → {"yomigana": .., "stints": [{group, join, grad}]}。
+    同名の複数行 = 在籍履歴(移籍)。JoinDate/GradDate は空でも可(空=無期限/現役扱い)。"""
     result: dict[str, dict] = {}
     for row in fetch_url(MASTER_URL):
         name = (row.get("Member") or "").strip()
         if not name:
             continue
-        result[name] = {
-            "yomigana": (row.get("Yomigana") or "").strip(),
-            "group": (row.get("Group") or "").strip(),
-        }
+        e = result.setdefault(name, {"yomigana": "", "stints": []})
+        if not e["yomigana"]:
+            e["yomigana"] = (row.get("Yomigana") or "").strip()
+        g = (row.get("Group") or "").strip()
+        if g:
+            e["stints"].append({
+                "group": g,
+                "join": (row.get("JoinDate") or "").strip(),
+                "grad": (row.get("GradDate") or "").strip(),
+            })
     return result
 
 
@@ -114,62 +121,74 @@ def sort_date(s: str) -> str:
     return (s or "").strip()
 
 
-def build_members_block(members: list[dict]) -> tuple[str, list[str]]:
-    """記事に紐づくメンバー行から、表示用HTML・名前一覧を作る。
-
-    カード内の表示グループは「記事当時の所属」(メンバーシートのGroup列)。
-    同じ Group のメンバーは1行にまとめる:
-        宮崎由加・金澤朋子・… (Juice=Juice)
-    Group が空欄のメンバーは名前だけを1行ずつ表示する。
-    """
-    ordered: list[tuple[str | None, list[str]]] = []  # (group, names) 出現順
-    group_index: dict[str, list[str]] = {}
-    all_names: list[str] = []
-
-    for m in members:
-        name = (m.get("Name") or "").strip()
-        if not name:
-            continue
-        all_names.append(name)
-        group = (m.get("Group") or "").strip()
-        if group:
-            if group not in group_index:
-                group_index[group] = []
-                ordered.append((group, group_index[group]))
-            group_index[group].append(name)
-        else:
-            ordered.append((None, [name]))
-
-    lines = []
-    for group, names in ordered:
-        joined = "・".join(esc(n) for n in names)
-        if group:
-            lines.append(
-                f'<p class="iv-member">{joined}'
-                f' <span class="iv-group">({esc(group)})</span></p>'
-            )
-        else:
-            lines.append(f'<p class="iv-member">{joined}</p>')
-
-    html_block = f'<div class="iv-members">{"".join(lines)}</div>' if lines else ""
-    return html_block, all_names
+def _pad_date(s: str, is_end: bool) -> str:
+    """'2017' / '2017/6/11' / '2017年6月11日' を 'YYYY-MM-DD' に。欠けは開始なら01/01、終了なら12/31。"""
+    parts = [p for p in re.split(r"[-/年月日\.\s]", (s or "").strip()) if p]
+    if not parts:
+        return ""
+    y = parts[0].zfill(4)
+    m = parts[1].zfill(2) if len(parts) >= 2 else ("12" if is_end else "01")
+    d = parts[2].zfill(2) if len(parts) >= 3 else ("31" if is_end else "01")
+    return f"{y}-{m}-{d}"
 
 
-def resolve_group(name: str, master: dict, article_group_by_name: dict) -> str:
-    """絞り込み用グループ: マスター(名簿)を優先、無ければ記事当時のGroupで代替。"""
-    return master.get(name, {}).get("group") or article_group_by_name.get(name, "")
+def disp_date(s: str) -> str:
+    """表示用: どの形式('2019年5月23日'・'2019/5/23'・'2019')でも yyyy/mm/dd に整形(粒度は保つ)。"""
+    parts = [p for p in re.split(r"[-/年月日\.\s]", (s or "").strip()) if p]
+    if not parts:
+        return ""
+    out = parts[0].zfill(4)
+    if len(parts) >= 2:
+        out += "/" + parts[1].zfill(2)
+    if len(parts) >= 3:
+        out += "/" + parts[2].zfill(2)
+    return out
+
+
+def _stint_active(stint: dict, date_norm: str) -> bool:
+    """記事日(YYYY-MM-DD)が在籍期間内か。Join/Grad空は無期限(=現役扱い)。"""
+    lo = _pad_date(stint["join"], False) or "0000-00-00"
+    hi = _pad_date(stint["grad"], True) or "9999-99-99"
+    return lo <= date_norm <= hi
+
+
+def member_info(name: str, date_norm: str, master: dict):
+    """(表示グループ, 現役か, 現役グループ, 全在籍グループ) を返す。
+    表示グループ = 記事日時点の在籍グループ / 無ければ直近(最後)のグループ。
+    名簿に無い人は現役判定不能→現役扱い(除外しない)・グループ空。"""
+    info = master.get(name)
+    if not info or not info["stints"]:
+        return ("", True, "", [])
+    stints = info["stints"]
+    all_groups = list(dict.fromkeys(s["group"] for s in stints if s["group"]))
+    for s in stints:
+        if _stint_active(s, date_norm):
+            return (s["group"], True, s["group"], all_groups)
+    return (stints[-1]["group"], False, "", all_groups)  # 回顧記事: 直近グループを表示
+
+
+def build_members_block(names: list[str], groups_display: list[str]) -> str:
+    """メンバー名を1行、その下にグループを列挙(重複まとめ・元グループも名前のまま)。"""
+    if not names:
+        return ""
+    name_line = f'<p class="iv-member-names">{"・".join(esc(n) for n in names)}</p>'
+    group_line = ""
+    if groups_display:
+        group_line = f'<p class="iv-member-groups">{"・".join(esc(g) for g in groups_display)}</p>'
+    return f'<div class="iv-members">{name_line}{group_line}</div>'
 
 
 def build_cards(articles: list[dict], members_by_id: dict, master: dict,
-                article_group_by_name: dict, domain: dict, unmatched: set) -> str:
+                domain: dict, unmatched: set) -> str:
     cards = []
     for a in articles:
         aid = (a.get("ID") or "").strip()
         if not aid:
             continue
 
-        date_disp = esc(a.get("Date"))
-        date_sort = esc(sort_date(a.get("Date")))
+        date_norm = _pad_date(a.get("Date"), False)   # YYYY-MM-DD (ソート/範囲/現役判定)
+        date_disp = esc(disp_date(a.get("Date")))      # 表示は yyyy/mm/dd
+        date_sort = esc(date_norm)
         title = esc(a.get("Title"))
         url = (a.get("URL") or "").strip()
         media_raw = media_for(url, domain)   # 媒体名はDomain辞書から引く
@@ -195,22 +214,33 @@ def build_cards(articles: list[dict], members_by_id: dict, master: dict,
         sub_parts = [x for x in [feature, media] if x]
         sub = f'<p class="iv-sub">{" / ".join(sub_parts)}</p>' if sub_parts else ""
 
-        # 3段目以降: メンバー
-        members = members_by_id.get(aid, [])
-        members_html, names = build_members_block(members)
+        # 3段目以降: メンバー(名前の行) + グループの行
+        names = list(dict.fromkeys(
+            (m.get("Name") or "").strip() for m in members_by_id.get(aid, []) if (m.get("Name") or "").strip()))
+        disp_groups, all_groups, active_groups, active_names = [], [], [], []
+        for n in names:
+            dgroup, active, agroup, mgroups = member_info(n, date_norm, master)
+            if dgroup:
+                disp_groups.append(dgroup)
+            all_groups.extend(mgroups)
+            if active:
+                active_names.append(n)
+                if agroup:
+                    active_groups.append(agroup)
+        disp_groups = list(dict.fromkeys(disp_groups))
+        members_html = build_members_block(names, disp_groups)
 
-        # data-groups は名簿(マスター)のグループ基準。
-        # これで宮本佳林のソロ記事も「Juice=Juice」で拾える。
-        card_groups = [g for g in (resolve_group(n, master, article_group_by_name) for n in names) if g]
-
-        # 最後: WebArchive(右寄せ)
+        # 最後: 魚拓リンク(右寄せ)。URLの種類でラベルを出し分ける
         arc = ""
         if archive:
-            # 魚拓URLのタイムスタンプ(/web/YYYYMMDD...)から日付を作り、リンクに添える
-            label = "Web Archive"
-            md = re.search(r"/web/(\d{4})(\d{2})(\d{2})", archive)
-            if md:
-                label += f"（{md.group(1)}/{md.group(2)}/{md.group(3)}）"
+            if re.search(r"archive\.(today|ph|is|md|li|vn|fo)", archive):
+                label = "archive.today"
+            else:
+                # web.archive.org: タイムスタンプ(/web/YYYYMMDD...)から日付を添える
+                label = "Web Archive"
+                md = re.search(r"/web/(\d{4})(\d{2})(\d{2})", archive)
+                if md:
+                    label += f"（{md.group(1)}/{md.group(2)}/{md.group(3)}）"
             arc = (
                 '<p class="iv-arc"><a href="' + esc(archive) + '"'
                 ' target="_blank" rel="noopener noreferrer">' + label + '</a></p>'
@@ -221,8 +251,10 @@ def build_cards(articles: list[dict], members_by_id: dict, master: dict,
 
         cards.append(
             f'<div class="iv-card" data-id="{esc(aid)}" data-date="{date_sort}" data-title="{title}"'
-            f' data-groups="{esc("|".join(dict.fromkeys(card_groups)))}"'
-            f' data-names="{esc("|".join(dict.fromkeys(names)))}"'
+            f' data-groups="{esc("|".join(dict.fromkeys(all_groups)))}"'
+            f' data-active-groups="{esc("|".join(dict.fromkeys(active_groups)))}"'
+            f' data-names="{esc("|".join(names))}"'
+            f' data-active-names="{esc("|".join(dict.fromkeys(active_names)))}"'
             f' data-search="{esc(search)}">'
             f"{head}{sub}{members_html}{arc}"
             "</div>"
@@ -234,11 +266,18 @@ def build_group_options(groups: list[str]) -> str:
     return "\n".join(f'<option value="{esc(v)}">{esc(v)}</option>' for v in groups)
 
 
-def build_name_options(names: list[str], master: dict, article_group_by_name: dict) -> str:
-    """メンバー選択肢。よみがな順で並び、グループ絞り込み用に data-group を持たせる。"""
+def member_all_groups(name: str, master: dict) -> list[str]:
+    info = master.get(name)
+    if not info:
+        return []
+    return list(dict.fromkeys(s["group"] for s in info["stints"] if s["group"]))
+
+
+def build_name_options(names: list[str], master: dict) -> str:
+    """メンバー選択肢。よみがな順で並び、グループ絞り込み用に data-group(在籍歴すべて・|区切り)を持たせる。"""
     lines = []
     for n in names:
-        g = resolve_group(n, master, article_group_by_name)
+        g = "|".join(member_all_groups(n, master))
         lines.append(f'<option value="{esc(n)}" data-group="{esc(g)}">{esc(n)}</option>')
     return "\n".join(lines)
 
@@ -259,14 +298,6 @@ def main():
         if mid:
             members_by_id.setdefault(mid, []).append(m)
 
-    # 名前→記事当時Group(マスターに無いメンバーのフォールバック用。最初の非空を採用)
-    article_group_by_name: dict[str, str] = {}
-    for m in member_rows:
-        nm = (m.get("Name") or "").strip()
-        g = (m.get("Group") or "").strip()
-        if nm and g and nm not in article_group_by_name:
-            article_group_by_name[nm] = g
-
     # インタビューに登場するメンバー(=選択肢に出す対象)
     name_set = {(m.get("Name") or "").strip() for m in member_rows if (m.get("Name") or "").strip()}
 
@@ -274,20 +305,19 @@ def main():
         return (master.get(n, {}).get("yomigana") or n, n)
 
     names_sorted = sorted(name_set, key=yomi_key)  # あいうえお順
-    groups = sorted({resolve_group(n, master, article_group_by_name) for n in name_set
-                     if resolve_group(n, master, article_group_by_name)})
+    # グループ選択肢 = 登場メンバーの在籍歴グループ(卒業無関係)
+    groups = sorted({g for n in name_set for g in member_all_groups(n, master)})
 
     stamp = f"<!-- generated: {datetime.now(timezone.utc).isoformat()} -->\n"
 
     OUTPUT_GENERATED.parent.mkdir(parents=True, exist_ok=True)
     OUTPUT_CARDS.parent.mkdir(parents=True, exist_ok=True)
     with open(OUTPUT_CARDS, "w", encoding="utf-8") as f:
-        f.write(stamp + build_cards(articles, members_by_id, master,
-                                    article_group_by_name, domain, unmatched) + "\n")
+        f.write(stamp + build_cards(articles, members_by_id, master, domain, unmatched) + "\n")
     with open(OUTPUT_GROUPS, "w", encoding="utf-8") as f:
         f.write(stamp + build_group_options(groups) + "\n")
     with open(OUTPUT_NAMES, "w", encoding="utf-8") as f:
-        f.write(stamp + build_name_options(names_sorted, master, article_group_by_name) + "\n")
+        f.write(stamp + build_name_options(names_sorted, master) + "\n")
     with open(OUTPUT_GENERATED, "w", encoding="utf-8") as f:
         f.write(f'<p class="last-update">データ取得日：{generated}</p>\n')
 
