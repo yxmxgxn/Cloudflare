@@ -1943,14 +1943,15 @@ footer a {
   border-collapse: collapse;
   table-layout: fixed;
   width: 100%;
-  min-width: 940px;
+  min-width: 1000px;
   font-size: 13px;
   margin-top: 1em;
 }
 
-.hs-col-date  { width: 12%; }
-.hs-col-event { width: 14%; }
-.hs-col-shows { width: 46%; }
+.hs-col-date  { width: 15%; }
+.hs-col-event { width: 13%; }
+.hs-col-slot  { width:  8%; }
+.hs-col-title { width: 36%; }
 .hs-col-cast  { width: 18%; }
 .hs-col-place { width: 10%; }
 
@@ -1969,7 +1970,7 @@ footer a {
 }
 
 /* 縞模様は JS が付ける(非表示行があると nth-child ではずれるため) */
-#hs-table tbody tr.hs-odd {
+#hs-table tbody.hs-odd td {
   background: #f9f9f9;
 }
 
@@ -1984,8 +1985,9 @@ footer a {
 /* まだ開催されていない回。判定は表示時にJSがやる */
 .hs-upcoming .hs-date::after {
   content: "予定";
-  display: inline-block;
-  margin-left: 6px;
+  display: block;
+  width: fit-content;
+  margin-top: 4px;
   padding: 0 5px;
   border: 1px solid #AE8DBC;
   border-radius: 3px;
@@ -2004,54 +2006,21 @@ footer a {
   font-weight: bold;
 }
 
-/* 各部(#1・#2…)。1部を1ブロックにして縦に積む。
-   時刻の列幅をそろえたいので flex にして、タイトルが折り返しても頭が揃うようにする */
-.hs-show {
-  display: flex;
-  flex-wrap: wrap;
-  column-gap: 8px;
-}
-
-.hs-show + .hs-show {
-  margin-top: 6px;
-  padding-top: 6px;
-  border-top: 1px dotted #ddd;
-}
-
-.hs-show-head {
-  flex: 0 0 65px;
+/* 部と開演時刻。タイトルの脇役なので一段小さくする
+   (スマホで表の文字を16pxにする指定より、この td 自身の指定が優先される) */
+.hs-slot {
+  font-size: 12px;
   color: #888;
   white-space: nowrap;
 }
 
-.hs-show-title {
-  flex: 1;
-  min-width: 0;
-}
-
-/* 出演者が部ごとに違う回だけ、その部の出演者を出す */
-.hs-show-cast {
-  flex: 0 0 100%;
-  margin-left: 73px;   /* .hs-show-head の幅 + column-gap。em だと文字サイズ差でずれる */
-  font-size: 12px;
-  color: #666;
-}
-
-/* 進行役(MC)。出演者ではないので、内容セルの右下に小さく添える
+/* 進行役(MC)。出演者ではないので、タイトルセルの右下に小さく添える
    (クッキングイベントの講師表記と同じ見せ方) */
 .hs-mc {
-  margin: 6px 0 0;
+  margin: 4px 0 0;
   font-size: 12px;
   color: #888;
   text-align: right;
-}
-
-/* 部ごとにMCが違う回だけ、その部にも出す */
-.hs-show-mc {
-  flex: 0 0 100%;
-  margin-left: 73px;
-  font-size: 12px;
-  color: #888;
 }
 
 .hs-name {
@@ -2063,8 +2032,9 @@ footer a {
   text-decoration: underline;
 }
 
+/* 「加賀温泉郷（山代温泉）」のような長い会場名は折り返す(nowrap だとセルからはみ出す) */
 .hs-place {
-  white-space: nowrap;
+  line-height: 1.4;
 }
 
 .hs-empty {

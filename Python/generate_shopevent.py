@@ -259,7 +259,7 @@ def build_groups(rows: list[dict]) -> list[dict]:
             "date_str": datestr,
             "shows": shows,
             "names": names,
-            # 部ごとに出演者が違う回(アネックス第七夜など)は各部にも出演者を出す
+            # 部ごとに出演者が違う回(アネックス第七夜など)は出演セルを部ごとに分ける
             "per_show_cast": len({tuple(members_of(s)) for s in shows}) > 1,
             # MC(進行役)。全部同じなら回に1つだけ、部ごとに違うなら各部に出す
             "mc": mcs[0] if mcs and len(set(mcs)) == 1 else "",
@@ -276,36 +276,16 @@ def build_groups(rows: list[dict]) -> list[dict]:
     return groups
 
 
-def shows_html(g: dict) -> str:
-    """内容セル。1部ぶんを1行にして縦に並べる。"""
-    parts = []
-    for s in g["shows"]:
-        show = get(s, "Show")
-        time = get(s, "Time")
-        head = " ".join(x for x in (show, time) if x)
-        cast = ""
-        if g["per_show_cast"]:
-            names = members_of(s)
-            if names:
-                cast = ('<span class="hs-show-cast">'
-                        + "・".join(esc(n) for n in names) + "</span>")
-        mc = ""
-        if g["per_show_mc"] and get(s, "MC"):
-            mc = f'<span class="hs-show-mc">MC：{esc(get(s, "MC"))}</span>'
-        parts.append(
-            '<div class="hs-show">'
-            f'<span class="hs-show-head">{esc(head)}</span>'
-            f'<span class="hs-show-title">{esc(get(s, "Title"))}</span>'
-            f"{cast}{mc}"
-            "</div>"
-        )
-    # 全部の部で同じ MC なら、回に1つだけ右下に添える(クッキングの講師表記と同じ見せ方)
-    if g["mc"]:
-        parts.append(f'<p class="hs-mc">MC：{esc(g["mc"])}</p>')
-    return "".join(parts)
+def name_spans(names: list[str]) -> str:
+    return "・".join(f'<span class="hs-name">{esc(n)}</span>' for n in names)
 
 
 def build_rows_html(groups: list[dict], master: dict[str, dict]) -> str:
+    """1公演回 = 1つの <tbody>、その中の1行 = 1部。
+
+    日付・イベント・会場（と、全部の部で出演者が同じ回は出演も）は rowspan で
+    まとめる。部と時刻をタイトルとは別の列に出したいので、行内に div を積むのでは
+    なく本物の行に分けている（div だとタイトルの折り返しで列がずれる）。"""
     lines = []
     for g in groups:
         d = g["date"]
@@ -317,6 +297,8 @@ def build_rows_html(groups: list[dict], master: dict[str, dict]) -> str:
         conf = SERIES.get(g["series"], {})
         no_label = number_label(g["series"], g["number"])
         place = place_short(g["place"])
+        shows = g["shows"]
+        span = f' rowspan="{len(shows)}"' if len(shows) > 1 else ""
 
         groups_of_row: list[str] = []
         for n in g["names"]:
@@ -328,17 +310,15 @@ def build_rows_html(groups: list[dict], master: dict[str, dict]) -> str:
         search = " ".join([
             g["event_name"], conf.get("short", ""), no_label, g["number"],
             place, g["place"], g["type"], g["date_str"], date_key,
-            " ".join(get(s, "Title") for s in g["shows"]),
+            " ".join(get(s, "Title") for s in shows),
             " ".join(g["names"]),
             " ".join(master.get(n, {}).get("yomigana", "") for n in g["names"]),
             " ".join(groups_of_row),
             " ".join(g["mc_names"]),   # MCはハロメンとは限らないので出演とは別に持つ
         ]).lower()
 
-        cast = "・".join(f'<span class="hs-name">{esc(n)}</span>' for n in g["names"])
-
         lines.append(
-            '<tr class="hs-row"'
+            '<tbody class="hs-row"'
             f' data-date="{esc(date_key)}"'
             f' data-year="{esc(year)}"'
             f' data-series="{esc(g["series"])}"'
@@ -346,14 +326,37 @@ def build_rows_html(groups: list[dict], master: dict[str, dict]) -> str:
             f' data-names="{esc("|".join(g["names"]))}"'
             f' data-groups="{esc("|".join(groups_of_row))}"'
             f' data-search="{esc(search)}">'
-            f'<td class="hs-date">{date_disp}</td>'
-            f'<td class="hs-event"><span class="hs-series">{esc(conf.get("short") or g["event_name"])}</span>'
-            f'<span class="hs-no">{esc(no_label)}</span></td>'
-            f'<td class="hs-shows">{shows_html(g)}</td>'
-            f'<td class="hs-cast">{cast}</td>'
-            f'<td class="hs-place" title="{esc(g["place"])}">{esc(place)}</td>'
-            "</tr>"
         )
+
+        for i, s_row in enumerate(shows):
+            cells = []
+            if i == 0:
+                cells.append(f'<td class="hs-date"{span}>{date_disp}</td>')
+                cells.append(
+                    f'<td class="hs-event"{span}>'
+                    f'<span class="hs-series">{esc(conf.get("short") or g["event_name"])}</span>'
+                    f'<span class="hs-no">{esc(no_label)}</span></td>'
+                )
+            slot = " ".join(x for x in (get(s_row, "Show"), get(s_row, "Time")) if x)
+            cells.append(f'<td class="hs-slot">{esc(slot)}</td>')
+
+            # MC: 部ごとに違えばその部に、全部同じなら最後の部の右下に1つだけ添える
+            mc = get(s_row, "MC") if g["per_show_mc"] else (g["mc"] if i == len(shows) - 1 else "")
+            mc_html = f'<p class="hs-mc">MC：{esc(mc)}</p>' if mc else ""
+            cells.append(f'<td class="hs-title">{esc(get(s_row, "Title"))}{mc_html}</td>')
+
+            if g["per_show_cast"]:
+                cells.append(f'<td class="hs-cast">{name_spans(members_of(s_row))}</td>')
+            elif i == 0:
+                cells.append(f'<td class="hs-cast"{span}>{name_spans(g["names"])}</td>')
+
+            if i == 0:
+                cells.append(
+                    f'<td class="hs-place"{span} title="{esc(g["place"])}">{esc(place)}</td>'
+                )
+            lines.append("<tr>" + "".join(cells) + "</tr>")
+
+        lines.append("</tbody>")
     return "\n".join(lines)
 
 
