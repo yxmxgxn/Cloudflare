@@ -1,11 +1,13 @@
-<!-- generated: 2026-08-21T18:30:28.922581+00:00 -->
+<!-- generated: 2026-08-22T18:18:50.821565+00:00 -->
 <option value="SF">SF</option>
 <option value="アクション">アクション</option>
 <option value="アニメ">アニメ</option>
 <option value="コメディ">コメディ</option>
 <option value="サスペンス">サスペンス</option>
+<option value="スリラー">スリラー</option>
 <option value="ドキュメンタリー">ドキュメンタリー</option>
 <option value="ドラマ">ドラマ</option>
+<option value="ファミリー">ファミリー</option>
 <option value="ファンタジー">ファンタジー</option>
 <option value="ホラー">ホラー</option>
 <option value="ラブコメディ">ラブコメディ</option>
