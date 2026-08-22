@@ -1886,3 +1886,196 @@ footer a {
   height: 20px;
   vertical-align: -4px;
 }
+
+/*ハロショ イベントまとめ
+-------------------------------------*/
+#hs-controls {
+  display: flex;
+  gap: 10px;
+  margin: 0.75rem 0;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+#hs-controls input[type="text"] {
+  flex: 1;
+  min-width: 100px;
+  padding: 6px 10px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+}
+
+#hs-controls select {
+  padding: 6px 10px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+}
+
+/* 絞り込み中の項目は太字にして、何で絞っているか一目で分かるようにする */
+#hs-controls select.is-active,
+#hs-controls input.is-active {
+  font-weight: bold;
+}
+
+#hs-reset {
+  padding: 6px 12px;
+  border: 1px solid #ccc;
+  background: #fff;
+  font-size: 13px;
+  cursor: pointer;
+}
+
+#hs-reset:hover {
+  border-color: #AE8DBC;
+  color: #AE8DBC;
+}
+
+#hs-count {
+  font-size: 13px;
+  color: #888;
+  white-space: nowrap;
+}
+
+/* 列幅を固定して、タイトルが長くても折り返すようにする。
+   min-width は .table-scroll での横スクロールを前提にした値
+   (内容セルにタイトルを2〜3本入れるので、ここを狭くすると読みづらい) */
+#hs-table {
+  border-collapse: collapse;
+  table-layout: fixed;
+  width: 100%;
+  min-width: 940px;
+  font-size: 13px;
+  margin-top: 1em;
+}
+
+.hs-col-date  { width: 12%; }
+.hs-col-event { width: 14%; }
+.hs-col-shows { width: 46%; }
+.hs-col-cast  { width: 18%; }
+.hs-col-place { width: 10%; }
+
+#hs-table th,
+#hs-table td {
+  border: 1px solid #ccc;
+  padding: 6px 10px;
+  text-align: left;
+  vertical-align: top;
+  overflow-wrap: anywhere;
+}
+
+#hs-table th {
+  background: #f5f5f5;
+  white-space: nowrap;
+}
+
+/* 縞模様は JS が付ける(非表示行があると nth-child ではずれるため) */
+#hs-table tbody tr.hs-odd {
+  background: #f9f9f9;
+}
+
+.hs-date {
+  white-space: nowrap;
+}
+
+.hs-dow {
+  color: #888;
+}
+
+/* まだ開催されていない回。判定は表示時にJSがやる */
+.hs-upcoming .hs-date::after {
+  content: "予定";
+  display: inline-block;
+  margin-left: 6px;
+  padding: 0 5px;
+  border: 1px solid #AE8DBC;
+  border-radius: 3px;
+  font-size: 11px;
+  color: #AE8DBC;
+  vertical-align: 1px;
+}
+
+.hs-series {
+  display: block;
+}
+
+.hs-no {
+  display: block;
+  margin-top: 2px;
+  font-weight: bold;
+}
+
+/* 各部(#1・#2…)。1部を1ブロックにして縦に積む。
+   時刻の列幅をそろえたいので flex にして、タイトルが折り返しても頭が揃うようにする */
+.hs-show {
+  display: flex;
+  flex-wrap: wrap;
+  column-gap: 8px;
+}
+
+.hs-show + .hs-show {
+  margin-top: 6px;
+  padding-top: 6px;
+  border-top: 1px dotted #ddd;
+}
+
+.hs-show-head {
+  flex: 0 0 65px;
+  color: #888;
+  white-space: nowrap;
+}
+
+.hs-show-title {
+  flex: 1;
+  min-width: 0;
+}
+
+/* 出演者が部ごとに違う回だけ、その部の出演者を出す */
+.hs-show-cast {
+  flex: 0 0 100%;
+  margin-left: 73px;   /* .hs-show-head の幅 + column-gap。em だと文字サイズ差でずれる */
+  font-size: 12px;
+  color: #666;
+}
+
+/* 進行役(MC)。出演者ではないので、内容セルの右下に小さく添える
+   (クッキングイベントの講師表記と同じ見せ方) */
+.hs-mc {
+  margin: 6px 0 0;
+  font-size: 12px;
+  color: #888;
+  text-align: right;
+}
+
+/* 部ごとにMCが違う回だけ、その部にも出す */
+.hs-show-mc {
+  flex: 0 0 100%;
+  margin-left: 73px;
+  font-size: 12px;
+  color: #888;
+}
+
+.hs-name {
+  cursor: pointer;
+}
+
+.hs-name:hover {
+  color: #AE8DBC;
+  text-decoration: underline;
+}
+
+.hs-place {
+  white-space: nowrap;
+}
+
+.hs-empty {
+  margin: 1em 0;
+  color: #888;
+}
+
+.hs-lead p {
+  margin: 0 0 0.8em;
+}
+
+.hs-lead p:last-child {
+  margin-bottom: 0;
+}

@@ -93,6 +93,9 @@
   <h3>ハロープロジェクトのメンバーが登場するWebインタビュー記事のまとめです</h3>
   <div class="indextop"><a href="/hello-interview"><svg style="vertical-align: -4px;  margin-right: 4px"width="20" height="20" viewBox="0 0 64 44" xmlns="http://www.w3.org/2000/svg"><rect width="64" height="44" rx="6" fill="#AE8DBC"/><g fill="white"><rect x="12" y="12" width="40" height="4" rx="2"/><rect x="12" y="21" width="40" height="4" rx="2"/><rect x="12" y="30" width="26" height="4" rx="2"/></g></svg>ハロプロメンバー インタビュー記事まとめ</a></div>
 
+  <h3>ハロショ(ハロー！プロジェクトオフィシャルショップ)で行われたトークイベントのまとめです</h3>
+  <div class="indextop"><a href="/hello-shop-event"><svg style="vertical-align: -4px;  margin-right: 4px"width="20" height="20" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><rect x="9" y="2" width="6" height="12" rx="3" fill="#AE8DBC"/><path d="M5 11a7 7 0 0 0 14 0" fill="none" stroke="#AE8DBC" stroke-width="2" stroke-linecap="round"/><path d="M12 18v4M8 22h8" fill="none" stroke="#AE8DBC" stroke-width="2" stroke-linecap="round"/></svg>ハロショ イベントまとめ</a></div>
+
   <h3>ハロープロジェクトのメンバーのバースデーイベントの会場を個人でまとめたページへのリンク集です</h3>
   <div class="indextop"><a href="/hello-birthday"><svg style="vertical-align: -3px;  margin-right: 4px"width="20" height="20" viewBox="-32 -32 64 64" xmlns="http://www.w3.org/2000/svg"><g fill="#E8789A"><ellipse cx="0" cy="-22" rx="8" ry="12" transform="rotate(0)"/><ellipse cx="0" cy="-22" rx="8" ry="12" transform="rotate(72)"/><ellipse cx="0" cy="-22" rx="8" ry="12" transform="rotate(144)"/><ellipse cx="0" cy="-22" rx="8" ry="12" transform="rotate(216)"/><ellipse cx="0" cy="-22" rx="8" ry="12" transform="rotate(288)"/></g><circle cx="0" cy="0" r="7" fill="#F5A9C0"/><circle cx="0" cy="0" r="3" fill="#E8789A"/></svg>ハロプロバースデーイベントまとめ</a></div>
   

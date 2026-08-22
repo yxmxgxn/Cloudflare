@@ -21,6 +21,7 @@ on:
           - interview
           - gamelive
           - sns
+          - shopevent
           - timeline
           - all
 
@@ -59,6 +60,7 @@ jobs:
           run_if interview  generate_interview.py
           run_if gamelive   generate_gamelive.py
           run_if sns        generate_sns.py
+          run_if shopevent  generate_shopevent.py
           run_if timeline   timeline.py
 
       - name: Commit & push if changed
