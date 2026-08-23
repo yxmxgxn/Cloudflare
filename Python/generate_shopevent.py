@@ -312,13 +312,16 @@ def build_groups(rows: list[dict]) -> list[dict]:
     return groups
 
 
-def name_spans(names: list[str], date_key: str, blogs: dict) -> str:
+def cast_list(names: list[str], date_key: str, blogs: dict) -> str:
     """出演者名と、その人がその日に書いたブログ記事へのリンク。
 
     名前の span はクリックで絞り込むトリガーなので、リンクは span の外に並べる
     (中に入れるとクリックが取られる)。魚拓は既定で hidden にしておき、
     ページ側のトグルでまとめて出す。Blog 列が空 = ブログごと消えているので、
-    その場合は元記事を出さず魚拓だけを「アーカイブ」として出す。"""
+    その場合は元記事を出さず魚拓だけを「アーカイブ」として出す。
+
+    並びは CSS の grid に任せる。data-n(人数)を見て、2人までは縦一列、
+    3人以上は2列(二人・一人…)に折り返す。"""
     out = []
     for n in names:
         cell = f'<span class="hs-name">{esc(n)}</span>'
@@ -337,8 +340,8 @@ def name_spans(names: list[str], date_key: str, blogs: dict) -> str:
             cell += (f'<a class="hs-blog hs-blog-dead" href="{esc(arc)}" target="_blank"'
                      f' rel="noopener noreferrer" title="{title}（ウェブアーカイブ）">'
                      f'アーカイブ</a>')
-        out.append(cell)
-    return "・".join(out)
+        out.append(f'<span class="hs-cast-one">{cell}</span>')
+    return f'<span class="hs-cast-list" data-n="{len(out)}">{"".join(out)}</span>'
 
 
 def build_rows_html(groups: list[dict], master: dict[str, dict], blogs: dict) -> str:
@@ -407,9 +410,9 @@ def build_rows_html(groups: list[dict], master: dict[str, dict], blogs: dict) ->
             cells.append(f'<td class="hs-title">{esc(get(s_row, "Title"))}{mc_html}</td>')
 
             if g["per_show_cast"]:
-                cells.append(f'<td class="hs-cast">{name_spans(members_of(s_row), date_key, blogs)}</td>')
+                cells.append(f'<td class="hs-cast">{cast_list(members_of(s_row), date_key, blogs)}</td>')
             elif i == 0:
-                cells.append(f'<td class="hs-cast"{span}>{name_spans(g["names"], date_key, blogs)}</td>')
+                cells.append(f'<td class="hs-cast"{span}>{cast_list(g["names"], date_key, blogs)}</td>')
 
             if i == 0:
                 cells.append(

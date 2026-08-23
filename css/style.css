@@ -1970,8 +1970,9 @@ footer a {
 .hs-col-date  { width: 15%; }
 .hs-col-event { width: 13%; }
 .hs-col-slot  { width:  8%; }
-.hs-col-title { width: 36%; }
-.hs-col-cast  { width: 18%; }
+.hs-col-title { width: 34%; }
+/* ブログリンクが名前の下に折り返さない幅。18%だと3人以上の回で2行になる */
+.hs-col-cast  { width: 20%; }
 .hs-col-place { width: 10%; }
 
 #hs-table th,
@@ -2049,6 +2050,29 @@ footer a {
 .hs-name:hover {
   color: #AE8DBC;
   text-decoration: underline;
+}
+
+/* 出演者の並び。1〜2人は縦一列、3人以上は2列に折り返す(二人・一人…)。
+   td 自体を grid にすると rowspan が効かなくなるので、中に入れ物を1枚挟む */
+.hs-cast-list {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 3px 1em;
+  justify-items: start;
+}
+
+/* 3人以上は2列(二人・一人…)。ただし名前とリンクで1項目に約7.5em要るので、
+   幅が足りないときは auto-fit が勝手に1列へ落とす(表は min-width:1000px で横スクロール) */
+.hs-cast-list[data-n="3"],
+.hs-cast-list[data-n="4"],
+.hs-cast-list[data-n="5"] {
+  grid-template-columns: repeat(auto-fit, minmax(7.6em, 1fr));
+}
+
+/* 名前とリンクが泣き別れないようにする */
+.hs-cast-one {
+  display: block;
+  white-space: nowrap;
 }
 
 /* 出演者名の隣に置く、その日のブログ記事へのリンク。
