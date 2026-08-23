@@ -45,6 +45,7 @@
     <option value="date-asc">開催日が古い順</option>
   </select>
   <button type="button" id="hs-reset" onclick="hsReset()">絞り込み解除</button>
+  <button type="button" id="hs-arc" onclick="hsToggleArc()" aria-pressed="false">ウェブアーカイブを表示</button>
   <span id="hs-count"></span>
 </div>
 
@@ -216,7 +217,19 @@
     document.getElementById('hs-controls').scrollIntoView({ behavior: 'smooth', block: 'start' });
   });
 
+  // 魚拓リンクは既定で隠してある。押すとまとめて出す(元記事が消えたとき用の保険)
+  function hsToggleArc() {
+    var btn = document.getElementById('hs-arc');
+    var on = btn.getAttribute('aria-pressed') !== 'true';
+    btn.setAttribute('aria-pressed', on ? 'true' : 'false');
+    btn.textContent = on ? 'ウェブアーカイブを隠す' : 'ウェブアーカイブを表示';
+    Array.prototype.forEach.call(
+      table.querySelectorAll('.hs-arc'), function (a) { a.hidden = !on; }
+    );
+  }
+
   hsFilter();
+  window.hsToggleArc = hsToggleArc;
   window.hsFilter = hsFilter;
   window.hsGroupChange = hsGroupChange;
   window.hsReset = hsReset;

@@ -1,5 +1,5 @@
-<!-- generated: 2026-08-22T18:14:43.358466+00:00 -->
-<option value="SI">ハロショ千夜一夜（107回）</option>
+<!-- generated: 2026-08-23T14:46:04.101263+00:00 -->
+<option value="SI">ハロショ千夜一夜（108回）</option>
 <option value="SO">ハロショ千夜一夜 in 大阪（8回）</option>
 <option value="SA">ハロショ千夜一夜アネックス（15回）</option>
 <option value="OD">ハロショ大阪独演会（17回）</option>

@@ -1,4 +1,4 @@
-<!-- generated: 2026-08-22T18:14:43.359429+00:00 -->
+<!-- generated: 2026-08-23T14:46:04.103823+00:00 -->
 <option value="相川茉穂" data-group="アンジュルム">相川茉穂（1）</option>
 <option value="秋山眞緒" data-group="つばきファクトリー">秋山眞緒（4）</option>
 <option value="浅倉樹々" data-group="つばきファクトリー">浅倉樹々（3）</option>
@@ -44,7 +44,7 @@
 <option value="北原もも" data-group="OCHA NORMA">北原もも（3）</option>
 <option value="清野桃々姫" data-group="BEYOOOOONDS">清野桃々姫（2）</option>
 <option value="工藤遥" data-group="モーニング娘。">工藤遥（1）</option>
-<option value="工藤由愛" data-group="Juice=Juice">工藤由愛（2）</option>
+<option value="工藤由愛" data-group="Juice=Juice">工藤由愛（3）</option>
 <option value="窪田七海" data-group="OCHA NORMA">窪田七海（3）</option>
 <option value="熊井友理奈" data-group="Berryz工房">熊井友理奈（1）</option>
 <option value="小林萌花" data-group="BEYOOOOONDS">小林萌花（2）</option>

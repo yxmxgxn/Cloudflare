@@ -1930,6 +1930,25 @@ footer a {
   color: #AE8DBC;
 }
 
+#hs-arc {
+  padding: 6px 12px;
+  border: 1px solid #ccc;
+  background: #fff;
+  font-size: 13px;
+  cursor: pointer;
+}
+
+#hs-arc:hover {
+  border-color: #AE8DBC;
+  color: #AE8DBC;
+}
+
+#hs-arc[aria-pressed="true"] {
+  border-color: #AE8DBC;
+  background: #F4EEF7;
+  color: #7A5A88;
+}
+
 #hs-count {
   font-size: 13px;
   color: #888;
@@ -2030,6 +2049,37 @@ footer a {
 .hs-name:hover {
   color: #AE8DBC;
   text-decoration: underline;
+}
+
+/* 出演者名の隣に置く、その日のブログ記事へのリンク。
+   名前の絞り込みクリックと区別したいので、小さく別色にしておく */
+.hs-blog,
+.hs-arc {
+  margin-left: 0.35em;
+  padding: 0 0.35em;
+  border: 1px solid #ddd;
+  border-radius: 3px;
+  font-size: 11px;
+  line-height: 1.6;
+  color: #888;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.hs-blog:hover,
+.hs-arc:hover {
+  border-color: #AE8DBC;
+  color: #AE8DBC;
+}
+
+/* ブログごと消えている回。魚拓しか残っていないことが分かるようにしておく */
+.hs-blog-dead {
+  border-style: dashed;
+}
+
+.hs-arc {
+  color: #A08CAB;
+  border-color: #E2D8E8;
 }
 
 /* 「加賀温泉郷（山代温泉）」のような長い会場名は折り返す(nowrap だとセルからはみ出す) */

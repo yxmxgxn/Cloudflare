@@ -75,28 +75,32 @@
   #sns-affil label { font-size: .9em; white-space: nowrap; cursor: pointer; }
   #sns-affil label:last-child { border-left: 1px solid #e2dbe7; padding-left: .9em; }
 
+  /* モバイル2列 → 3列 → 最大4列(これ以上は増やさない)。 */
   #sns-cards {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(min(100%, 20em), 1fr));
-    gap: .8em;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: .55em;
   }
+  @media (min-width: 600px) { #sns-cards { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+  @media (min-width: 860px) { #sns-cards { grid-template-columns: repeat(4, minmax(0, 1fr)); } }
   .sns-card {
     border: 1px solid #e2dbe7;
     border-radius: 8px;
-    padding: .7em .8em;
+    padding: .5em .55em;
     background: #fff;
   }
   .sns-card.has-archive { cursor: pointer; }
   .sns-name {
-    margin: 0 0 .5em;
+    margin: 0 0 .4em;
     font-weight: bold;
-    font-size: 1.05em;
+    font-size: .92em;
+    line-height: 1.35;
   }
   .sns-badge {
     display: inline-block;
-    margin-left: .5em;
-    padding: .1em .7em;
-    font-size: .8em;
+    margin-left: .35em;
+    padding: .05em .5em;
+    font-size: .72em;
     font-weight: bold;
     color: #fff;
     background: #AE8DBC;
@@ -107,14 +111,14 @@
   .sns-links {
     display: flex;
     flex-wrap: wrap;
-    gap: .35em;
+    gap: .28em;
     align-items: center;
   }
   .sns-link {
     display: inline-block;
-    padding: .2em .6em;
-    font-size: .82em;
-    line-height: 1.5;
+    padding: .16em .5em;
+    font-size: .74em;
+    line-height: 1.45;
     text-decoration: none;
     color: #5a4a63;
     background: #f4f0f7;
@@ -122,28 +126,28 @@
     border-radius: 999px;
   }
   .sns-link:hover { background: #AE8DBC; border-color: #AE8DBC; color: #fff; }
-  .sns-icon-link { padding: .28em; line-height: 0; }
-  .sns-ic { width: 1.15em; height: 1.15em; display: block; }
+  .sns-icon-link { padding: .22em; line-height: 0; }
+  .sns-ic { width: 1.05em; height: 1.05em; display: block; }
 
   /* 事務所・公式・FC系リンクの下段（SNS行の下に改行して並べる） */
   .sns-official {
     display: flex;
     flex-wrap: wrap;
-    gap: .35em;
+    gap: .28em;
     align-items: center;
-    margin-top: .45em;
-    padding-top: .45em;
+    margin-top: .4em;
+    padding-top: .4em;
     border-top: 1px solid #f0ebf4;
   }
   .sns-official .sns-link {
-    font-size: .78em;
+    font-size: .7em;
     color: #6d5f76;
     background: #faf7fc;
   }
 
   .sns-arc-toggle {
     font: inherit;
-    font-size: .78em;
+    font-size: .72em;
     color: #8a7d92;
     background: transparent;
     border: 1px dashed #cbbfd3;

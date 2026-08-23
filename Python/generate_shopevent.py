@@ -44,6 +44,8 @@ PUB_BASE = (
     "2PACX-1vQfdS6nT53n0W6u9ZhYlKz7wUN8_sAl7NFPhTkzqhb2Of1Xowx-1hqiqkLFmbKCz8uVp6ZIO0P_DYE-/pub"
 )
 GID_EVENTS = "1885244952"
+# 出演者ごとの「その日のブログ記事」タブ。手で埋めていくので生成では触らない。
+GID_BLOGS = "349913342"
 
 # メンバーマスター(別スプレッドシート): Member,Yomigana,Group,JoinDate,GradDate
 MASTER_URL = (
@@ -160,6 +162,40 @@ def place_short(place: str) -> str:
 
 
 # ---------------------------------------------------------------- マスター
+def fetch_blogs() -> dict[tuple[str, str], dict[str, str]]:
+    """(開催日, メンバー) -> そのイベント当日のブログ記事。
+
+    ヘッダーに Member が2つあって DictReader だと潰れるので位置で読む。
+    列: ID,Date,Member,Blog,ThemeID,Status,EntryDate,EntryURL,EntryTitle,WebArcive
+    Blog が空の行は「ブログごと消えた」の意味で、元記事のリンクは出さず魚拓だけ出す。
+    """
+    url = f"{PUB_BASE}?gid={GID_BLOGS}&single=true&output=csv"
+    with urllib.request.urlopen(url) as res:
+        content = res.read().decode("utf-8")
+
+    out: dict[tuple[str, str], dict[str, str]] = {}
+    for row in list(csv.reader(io.StringIO(content)))[1:]:
+        row = (row + [""] * 10)[:10]
+        d = parse_date(row[1])
+        name = row[2].strip()
+        entry, arc = row[7].strip(), row[9].strip()
+        if not (d and name) or not (entry or arc):
+            continue
+        out[(d.isoformat(), name)] = {
+            "blog": row[3].strip(),
+            "entry": entry,
+            "title": row[8].strip(),
+            "arc": arc,
+        }
+    return out
+
+
+def arc_label(arc: str) -> str:
+    """魚拓URLのタイムスタンプから日付を作る(generate_interview.py と同じ流儀)。"""
+    m = re.search(r"/web/(\d{4})(\d{2})(\d{2})", arc)
+    return f"{m.group(1)}/{m.group(2)}/{m.group(3)}" if m else "Web Archive"
+
+
 def fetch_master() -> dict[str, dict]:
     """メンバーマスター: 名前 → {"yomigana": .., "groups": [グループ(在籍歴すべて)]}。"""
     result: dict[str, dict] = {}
@@ -276,11 +312,36 @@ def build_groups(rows: list[dict]) -> list[dict]:
     return groups
 
 
-def name_spans(names: list[str]) -> str:
-    return "・".join(f'<span class="hs-name">{esc(n)}</span>' for n in names)
+def name_spans(names: list[str], date_key: str, blogs: dict) -> str:
+    """出演者名と、その人がその日に書いたブログ記事へのリンク。
+
+    名前の span はクリックで絞り込むトリガーなので、リンクは span の外に並べる
+    (中に入れるとクリックが取られる)。魚拓は既定で hidden にしておき、
+    ページ側のトグルでまとめて出す。Blog 列が空 = ブログごと消えているので、
+    その場合は元記事を出さず魚拓だけを「アーカイブ」として出す。"""
+    out = []
+    for n in names:
+        cell = f'<span class="hs-name">{esc(n)}</span>'
+        b = blogs.get((date_key, n))
+        entry = b["entry"] if b and b["blog"] else ""
+        arc = b["arc"] if b else ""
+        title = esc(b["title"] or "ブログ") if b else ""
+        if entry:
+            cell += (f'<a class="hs-blog" href="{esc(entry)}" target="_blank"'
+                     f' rel="noopener noreferrer" title="{title}">ブログ</a>')
+            if arc:
+                cell += (f'<a class="hs-arc" href="{esc(arc)}" target="_blank"'
+                         f' rel="noopener noreferrer" title="{title}（ウェブアーカイブ）"'
+                         f' hidden>{esc(arc_label(arc))}</a>')
+        elif arc:
+            cell += (f'<a class="hs-blog hs-blog-dead" href="{esc(arc)}" target="_blank"'
+                     f' rel="noopener noreferrer" title="{title}（ウェブアーカイブ）">'
+                     f'アーカイブ</a>')
+        out.append(cell)
+    return "・".join(out)
 
 
-def build_rows_html(groups: list[dict], master: dict[str, dict]) -> str:
+def build_rows_html(groups: list[dict], master: dict[str, dict], blogs: dict) -> str:
     """1公演回 = 1つの <tbody>、その中の1行 = 1部。
 
     日付・イベント・会場（と、全部の部で出演者が同じ回は出演も）は rowspan で
@@ -346,9 +407,9 @@ def build_rows_html(groups: list[dict], master: dict[str, dict]) -> str:
             cells.append(f'<td class="hs-title">{esc(get(s_row, "Title"))}{mc_html}</td>')
 
             if g["per_show_cast"]:
-                cells.append(f'<td class="hs-cast">{name_spans(members_of(s_row))}</td>')
+                cells.append(f'<td class="hs-cast">{name_spans(members_of(s_row), date_key, blogs)}</td>')
             elif i == 0:
-                cells.append(f'<td class="hs-cast"{span}>{name_spans(g["names"])}</td>')
+                cells.append(f'<td class="hs-cast"{span}>{name_spans(g["names"], date_key, blogs)}</td>')
 
             if i == 0:
                 cells.append(
@@ -432,7 +493,7 @@ def main() -> None:
 
     groups = build_groups(rows)
 
-    write(OUTPUT_ROWS, build_rows_html(groups, master))
+    write(OUTPUT_ROWS, build_rows_html(groups, master, fetch_blogs()))
     write(OUTPUT_SERIES, build_series_options(groups))
     write(OUTPUT_NAMES, build_name_options(groups, master))
     write(OUTPUT_GROUPS, build_group_options(groups, master))
