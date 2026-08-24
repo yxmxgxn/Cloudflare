@@ -1,4 +1,4 @@
-<!-- generated: 2026-08-23T18:18:56.657572+00:00 -->
+<!-- generated: 2026-08-24T18:29:55.501120+00:00 -->
 <tr data-selector="松永里愛"><td><a href="https://www.tbsradio.jp/articles/111465/" target="_blank" rel="noopener noreferrer">2026/08/23</a></td><td>アロハ・エ・コモ・マイ / JUMP5</td><td>松永里愛</td><td>ウクレレを使っている曲</td></tr>
 <tr data-selector="遠藤彩加里"><td><a href="https://www.tbsradio.jp/articles/111465/" target="_blank" rel="noopener noreferrer">2026/08/23</a></td><td>風になる / つじあやの</td><td>遠藤彩加里</td><td>ウクレレを使っている曲</td></tr>
 <tr data-selector="松永里愛&amp;遠藤彩加里"><td><a href="https://www.tbsradio.jp/articles/111465/" target="_blank" rel="noopener noreferrer">2026/08/23</a></td><td>如雨露 / Juice=Juice</td><td>松永里愛&amp;遠藤彩加里</td><td>ウクレレを使っている曲</td></tr>
