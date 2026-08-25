@@ -1,4 +1,4 @@
-<!-- generated: 2026-08-20T17:00:33.447782+00:00 -->
+<!-- generated: 2026-08-25T15:54:02.158970+00:00 -->
 <option value="相川茉穂" data-group="アンジュルム">相川茉穂</option>
 <option value="秋山眞緒" data-group="つばきファクトリー">秋山眞緒</option>
 <option value="浅倉樹々" data-group="つばきファクトリー">浅倉樹々</option>
@@ -57,11 +57,11 @@
 <option value="竹内朱莉" data-group="アンジュルム">竹内朱莉</option>
 <option value="田﨑あさひ" data-group="Bitter &amp; Sweet">田﨑あさひ</option>
 <option value="田代すみれ" data-group="OCHA NORMA">田代すみれ</option>
-<option value="田中れいな" data-group="LoVendoЯ">田中れいな</option>
+<option value="田中れいな" data-group="モーニング娘。">田中れいな</option>
 <option value="谷本安美" data-group="つばきファクトリー">谷本安美</option>
 <option value="為永幸音" data-group="アンジュルム">為永幸音</option>
 <option value="段原瑠々" data-group="Juice=Juice">段原瑠々</option>
-<option value="嗣永桃子" data-group="カントリー・ガールズ">嗣永桃子</option>
+<option value="嗣永桃子" data-group="Berryz工房">嗣永桃子</option>
 <option value="筒井澪心" data-group="OCHA NORMA">筒井澪心</option>
 <option value="中西香菜" data-group="アンジュルム">中西香菜</option>
 <option value="中山夏月姫" data-group="OCHA NORMA">中山夏月姫</option>

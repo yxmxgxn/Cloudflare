@@ -54,6 +54,23 @@ h2, h3 {
   font-weight: normal;
 }
 
+/*アイコン(common/icons.json → icon() が出力する <svg class="ic">)
+-------------------------------------*/
+/* 幅はviewBoxの比率まかせ。高さだけ決めれば 64x44 のYouTubeも 24x24 の丸アイコンも高さが揃う */
+.ic {
+  height: 1.05em;
+  width: auto;
+  vertical-align: -0.15em;
+  flex: none;
+}
+
+/* 見出しリンクの頭に置く20pxサイズ(トップページ・#佳林の１日１ハロ) */
+.ic-20 {
+  height: 20px;
+  vertical-align: -4px;
+  margin-right: 4px;
+}
+
 .indextop {
   margin-left: 2rem;
 }
@@ -1279,9 +1296,12 @@ footer a {
   padding: 2px 0;
 }
 
-.mh-card .mh-yt {
-  vertical-align: -2px;
+.mh-card .ic {
   margin-right: 4px;
+}
+.mh-card .mh-src {
+  color: #888;
+  font-size: 12px;
 }
 
 .mh-card .mh-nolink,
@@ -1405,8 +1425,7 @@ footer a {
   padding: 2px 0;
 }
 
-.ck-card .ck-yt {
-  vertical-align: -2px;
+.ck-card .ic {
   margin-right: 4px;
 }
 
@@ -1467,8 +1486,7 @@ footer a {
   background: #f9f9f9;
 }
 
-.hanakin-table .sns-icon {
-  width: 20px;
+.hanakin-table .ic {
   height: 20px;
   vertical-align: -4px;
 }
@@ -1881,8 +1899,7 @@ footer a {
   min-height: 20px;
 }
 
-.vc-guest-sns .sns-icon {
-  width: 20px;
+.vc-guest-sns .ic {
   height: 20px;
   vertical-align: -4px;
 }

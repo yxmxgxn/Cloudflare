@@ -29,6 +29,8 @@ import urllib.request
 from datetime import datetime, timezone, timedelta
 from pathlib import Path
 
+from icons import icon
+
 PUB_BASE = (
     "https://docs.google.com/spreadsheets/d/e/"
     "2PACX-1vSLHCVWWxyVI5GS9SSohSNYL4U-uY4jekuMXbaKYXYjWrSZlgSxGV0BFvnCWRrd-A4Z5sqkoRwRyDqD/pub"
@@ -78,64 +80,20 @@ PLATFORM_ORDER = list(PLATFORMS.keys())
 # メタ行(リンクにしない)。affiliation=所属判定 / GroupNo・SubGroup=グループ番号。
 META_PLATFORMS = {"affiliation", "GroupNo", "SubGroup"}
 
-# アイコン化する platform(単色SVG・fill/stroke は currentColor でチップ色に追従)。
-_IC = 'class="sns-ic" viewBox="0 0 24 24" aria-hidden="true"'
-_AMEBLO_SVG = (
-    f'<svg {_IC} fill="currentColor">'
-    '<path d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04a.9959.9959 0 0 0 0-1.41'
-    'l-2.34-2.34a.9959.9959 0 0 0-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z"/></svg>'
-)
-ICONS: dict[str, str] = {
-    "x": (
-        f'<svg {_IC} fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17'
-        'l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833'
-        'L7.084 4.126H5.117z"/></svg>'
-    ),
-    "instagram": (
-        f'<svg {_IC} fill="none" stroke="currentColor" stroke-width="2">'
-        '<rect x="2" y="2" width="20" height="20" rx="5.5"/>'
-        '<circle cx="12" cy="12" r="4.5"/>'
-        '<circle cx="17.5" cy="6.5" r="1.3" fill="currentColor" stroke="none"/></svg>'
-    ),
-    "threads": (
-        f'<svg {_IC} fill="currentColor"><path d="M12.186 24h-.007c-3.581-.024-6.334-1.205-8.184-3.509'
-        'C2.35 18.44 1.5 15.586 1.472 12.01v-.017c.03-3.579.879-6.43 2.525-8.482C5.845 1.205 8.6.024 12.18 0'
-        'h.014c2.746.02 5.043.725 6.826 2.098 1.677 1.29 2.858 3.13 3.509 5.467l-2.04.569c-1.104-3.96'
-        '-3.898-5.984-8.304-6.015-2.91.022-5.11.936-6.54 2.717C4.307 6.504 3.616 8.914 3.589 12'
-        'c.027 3.086.718 5.496 2.065 7.164 1.43 1.783 3.631 2.698 6.54 2.717 2.623-.02 4.358-.631'
-        ' 5.8-2.045 1.647-1.613 1.618-3.593 1.09-4.798-.31-.71-.873-1.3-1.634-1.75-.192 1.352-.622'
-        ' 2.446-1.284 3.272-.886 1.102-2.14 1.704-3.73 1.79-1.202.065-2.361-.218-3.259-.801-1.063'
-        '-.689-1.685-1.74-1.752-2.964-.065-1.19.408-2.285 1.33-3.082.88-.76 2.119-1.207 3.583-1.291'
-        'a13.85 13.85 0 0 1 3.02.142c-.126-.742-.375-1.332-.75-1.757-.513-.586-1.308-.883-2.359-.89'
-        'h-.029c-.844 0-1.992.232-2.721 1.32L7.734 7.847c.98-1.454 2.568-2.256 4.478-2.256h.044'
-        'c3.194.02 5.097 1.975 5.287 5.388.108.046.216.094.324.145 1.524.717 2.64 1.803 3.23 3.142'
-        '.821 1.862.899 4.9-1.575 7.322-1.89 1.85-4.181 2.68-7.336 2.702zm1.868-11.6a10.65 10.65 0 0 0'
-        '-.79.017c-1.84.105-2.982.951-2.916 2.156.062 1.263 1.451 1.85 2.787 1.779 1.226-.067 2.833'
-        '-.545 3.098-3.72a8.98 8.98 0 0 0-2.179-.232z"/></svg>'
-    ),
-    "youtube": (
-        f'<svg {_IC} fill="currentColor"><path d="M23.5 6.2a3.02 3.02 0 0 0-2.12-2.14C19.5 3.55 12 3.55 12 3.55'
-        's-7.5 0-9.38.51A3.02 3.02 0 0 0 .5 6.2 31.5 31.5 0 0 0 0 12a31.5 31.5 0 0 0 .5 5.8 3.02 3.02 0 0 0 2.12 2.14'
-        'C4.5 20.45 12 20.45 12 20.45s7.5 0 9.38-.51a3.02 3.02 0 0 0 2.12-2.14A31.5 31.5 0 0 0 24 12'
-        'a31.5 31.5 0 0 0-.5-5.8zM9.6 15.6V8.4l6.2 3.6z"/></svg>'
-    ),
-    "tiktok": (
-        f'<svg {_IC} fill="currentColor"><path d="M16.5 3c.3 2.1 1.7 3.8 3.8 4.1v2.6c-1.2 0-2.4-.4-3.4-1v5.9'
-        'c0 3.3-2.7 6-6 6s-6-2.7-6-6 2.7-6 6-6c.3 0 .6 0 .9.1v2.7c-.3-.1-.6-.2-.9-.2-1.8 0-3.3 1.5-3.3 3.3'
-        's1.5 3.3 3.3 3.3 3.3-1.4 3.3-3.2V3h2.3z"/></svg>'
-    ),
-    "wikpedia": (
-        f'<svg {_IC} fill="currentColor"><text x="12" y="17.5" text-anchor="middle"'
-        ' font-family="Georgia,\'Times New Roman\',serif" font-size="17" font-weight="700">W</text></svg>'
-    ),
-    "note": (
-        f'<svg {_IC} fill="none" stroke="currentColor" stroke-width="2">'
-        '<rect x="3" y="3" width="18" height="18" rx="4"/>'
-        '<path d="M8 16.5v-7l7 7v-9" stroke-linecap="round" stroke-linejoin="round"/></svg>'
-    ),
-    "ameblo": _AMEBLO_SVG,
-    "ameblo_g": _AMEBLO_SVG,
+# アイコン化する platform → common/icons.json のアイコン名。
+# 単色SVGで fill/stroke は currentColor、チップの色に追従する。
+ICON_NAMES: dict[str, str] = {
+    "x": "x",
+    "instagram": "instagram",
+    "threads": "threads",
+    "youtube": "youtube",
+    "tiktok": "tiktok",
+    "wikpedia": "wikipedia",
+    "note": "note",
+    "ameblo": "ameblo",
+    "ameblo_g": "ameblo",
 }
+ICONS: dict[str, str] = {k: icon(v, "ic sns-ic") for k, v in ICON_NAMES.items()}
 
 # 現役グループ(affiliation slug → でかでかバッジの表示名。この順が現役の並び順)。
 # モーニング娘。の年表記は改名に追従して毎年更新する。

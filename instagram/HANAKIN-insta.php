@@ -6,8 +6,8 @@
   include $_SERVER['DOCUMENT_ROOT'] . '/common/header.php';
 
   // ヘッダー用の単色SVGアイコン(本文の行はPythonが同じアイコンを出力)
-  $icon_ig = '<svg class="sns-icon" role="img" aria-label="Instagram" viewBox="-90 -90 180 180" xmlns="http://www.w3.org/2000/svg"><rect x="-80" y="-80" width="160" height="160" rx="36" fill="none" stroke="currentColor" stroke-width="7"/><circle cx="0" cy="0" r="42" fill="none" stroke="currentColor" stroke-width="7"/><circle cx="0" cy="0" r="22" fill="none" stroke="currentColor" stroke-width="5"/><circle cx="50" cy="-50" r="10" fill="currentColor"/></svg>';
-  $icon_tt = '<svg class="sns-icon" role="img" aria-label="TikTok" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path fill="currentColor" d="M16.5 3c.3 2.1 1.7 3.8 3.8 4.1v2.6c-1.2 0-2.4-.4-3.4-1v5.9c0 3.3-2.7 6-6 6s-6-2.7-6-6 2.7-6 6-6c.3 0 .6 0 .9.1v2.7c-.3-.1-.6-.2-.9-.2-1.8 0-3.3 1.5-3.3 3.3s1.5 3.3 3.3 3.3 3.3-1.4 3.3-3.2V3h2.3z"/></svg>';
+  $icon_ig = icon('instagram', 'ic sns-icon', 'Instagram');
+  $icon_tt = icon('tiktok', 'ic sns-icon', 'TikTok');
 ?>
 
 <main>

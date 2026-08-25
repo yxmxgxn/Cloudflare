@@ -1,3 +1,4 @@
+<?php require_once __DIR__ . '/icons.php';  // 共通SVGアイコン icon() ?>
 <!Doctype html>
 <html lang="ja">
 <head>

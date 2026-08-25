@@ -127,7 +127,7 @@
   }
   .sns-link:hover { background: #AE8DBC; border-color: #AE8DBC; color: #fff; }
   .sns-icon-link { padding: .22em; line-height: 0; }
-  .sns-ic { width: 1.05em; height: 1.05em; display: block; }
+  .sns-ic { display: block; }
 
   /* 事務所・公式・FC系リンクの下段（SNS行の下に改行して並べる） */
   .sns-official {

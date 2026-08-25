@@ -28,6 +28,8 @@ import urllib.request
 from datetime import datetime, timezone, timedelta
 from pathlib import Path
 
+from icons import icon
+
 PUB_BASE = (
     "https://docs.google.com/spreadsheets/d/e/"
     "2PACX-1vRQYvAQc0UULvEAkF7k27YBQkPp5LCTGl-NglxoekowjtdWnAYeVvVGkC0XTjT-j4x2WNYEeLqUtnUq/pub"
@@ -90,22 +92,10 @@ def link(url: str, label: str) -> str:
     return f'<a href="{esc(url)}" target="_blank" rel="noopener noreferrer">{label}</a>'
 
 
-# 単色(currentColor)のSVGアイコン。テキストラベルの代わりに使う(サイズはCSSの.sns-icon)
-ICON_INSTAGRAM = (
-    '<svg class="sns-icon" viewBox="-90 -90 180 180" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">'
-    '<rect x="-80" y="-80" width="160" height="160" rx="36" fill="none" stroke="currentColor" stroke-width="7"/>'
-    '<circle cx="0" cy="0" r="42" fill="none" stroke="currentColor" stroke-width="7"/>'
-    '<circle cx="0" cy="0" r="22" fill="none" stroke="currentColor" stroke-width="5"/>'
-    '<circle cx="50" cy="-50" r="10" fill="currentColor"/>'
-    "</svg>"
-)
-ICON_TIKTOK = (
-    '<svg class="sns-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">'
-    '<path fill="currentColor" d="M16.5 3c.3 2.1 1.7 3.8 3.8 4.1v2.6c-1.2 0-2.4-.4-3.4-1v5.9'
-    "c0 3.3-2.7 6-6 6s-6-2.7-6-6 2.7-6 6-6c.3 0 .6 0 .9.1v2.7c-.3-.1-.6-.2-.9-.2-1.8 0-3.3 1.5-3.3 3.3"
-    's1.5 3.3 3.3 3.3 3.3-1.4 3.3-3.2V3h2.3z"/>'
-    "</svg>"
-)
+# アイコンは common/icons.json が定義元(Python/icons.py 経由)。
+# テキストラベルの代わりに使う(サイズはCSSの .ic / .sns-icon)
+ICON_INSTAGRAM = icon("instagram", "ic sns-icon")
+ICON_TIKTOK = icon("tiktok", "ic sns-icon")
 
 
 def icon_link(url: str, icon: str, label: str) -> str:

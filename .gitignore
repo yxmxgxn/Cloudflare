@@ -1,3 +1,6 @@
 # ビルド成果物(GitHub Actionsで生成してデプロイする)
 /public/
 __pycache__/
+
+# Claude Codeのローカル設定・作業用worktree(コミット対象外)
+/.claude/

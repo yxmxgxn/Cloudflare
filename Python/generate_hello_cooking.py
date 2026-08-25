@@ -21,6 +21,8 @@ import urllib.request
 from datetime import datetime, timezone, timedelta
 from pathlib import Path
 
+from icons import icon
+
 from gh_warn import warn_missing_members
 
 PUB_BASE = (
@@ -52,11 +54,6 @@ OUTPUT_SUBCATS = REPO_ROOT / "Spreadsheet" / "cooking_subcats.php"
 OUTPUT_COOKS = REPO_ROOT / "Spreadsheet" / "cooking_cooks.php"
 OUTPUT_GENERATED = REPO_ROOT / "Generated" / "cooking_generated.php"
 
-YT_ICON = (
-    '<svg class="ck-yt" width="18" height="13" viewBox="0 0 64 44" xmlns="http://www.w3.org/2000/svg">'
-    '<rect width="64" height="44" rx="10" fill="#FF0000"/>'
-    '<polygon points="22,8 54,22 22,36" fill="white"/></svg>'
-)
 
 MAX_VIDEOS = 4  # 1IDあたり表示する動画の上限
 
@@ -182,7 +179,7 @@ def build_videos(videos: list[dict]) -> str:
             continue
         label = " ".join(x for x in [val(v, "Channel"), val(v, "Episode"), val(v, "Status")] if x)
         lines.append(
-            f'<li>{YT_ICON}<a href="{esc(url)}" target="_blank" rel="noopener noreferrer">'
+            f'<li>{icon("youtube-brand", "ic")}<a href="{esc(url)}" target="_blank" rel="noopener noreferrer">'
             f'{esc(label) or esc(url)}</a></li>'
         )
     if not lines:

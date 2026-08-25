@@ -30,6 +30,8 @@ from collections import Counter, defaultdict
 from datetime import datetime, timezone, timedelta
 from pathlib import Path
 
+from icons import icon
+
 from gh_warn import warn
 
 PUB_BASE = (
@@ -68,29 +70,10 @@ OUT_ENGINES = REPO_ROOT / "Spreadsheet" / "vocaloclub_engines.php"
 OUT_GUESTS = REPO_ROOT / "Spreadsheet" / "vocaloclub_guests.php"
 OUT_GENERATED = REPO_ROOT / "Generated" / "vocaloclub_generated.php"
 
-# 単色(currentColor)のSVGアイコン。既存ページ(generate_hanakin.py / index.php)と同じ流儀。
-ICON_X = (
-    '<svg class="sns-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">'
-    '<rect width="24" height="24" rx="4" fill="currentColor"/>'
-    '<path d="M17.5 3.5H20.5L14.5 10.5L21.5 20.5H16L11.5 14.5L6.5 20.5H3.5L9.8 13L3 3.5H8.7L12.8 9L17.5 3.5Z" fill="#fff"/>'
-    '<path d="M16.5 19L5.5 5H7.5L18.5 19H16.5Z" fill="#fff"/>'
-    "</svg>"
-)
-ICON_INSTAGRAM = (
-    '<svg class="sns-icon" viewBox="-90 -90 180 180" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">'
-    '<rect x="-80" y="-80" width="160" height="160" rx="36" fill="none" stroke="currentColor" stroke-width="7"/>'
-    '<circle cx="0" cy="0" r="42" fill="none" stroke="currentColor" stroke-width="7"/>'
-    '<circle cx="0" cy="0" r="22" fill="none" stroke="currentColor" stroke-width="5"/>'
-    '<circle cx="50" cy="-50" r="10" fill="currentColor"/>'
-    "</svg>"
-)
-ICON_TIKTOK = (
-    '<svg class="sns-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">'
-    '<path fill="currentColor" d="M16.5 3c.3 2.1 1.7 3.8 3.8 4.1v2.6c-1.2 0-2.4-.4-3.4-1v5.9'
-    "c0 3.3-2.7 6-6 6s-6-2.7-6-6 2.7-6 6-6c.3 0 .6 0 .9.1v2.7c-.3-.1-.6-.2-.9-.2-1.8 0-3.3 1.5-3.3 3.3"
-    's1.5 3.3 3.3 3.3 3.3-1.4 3.3-3.2V3h2.3z"/>'
-    "</svg>"
-)
+# アイコンは common/icons.json が定義元(Python/icons.py 経由)。単色でチップの文字色に追従する。
+ICON_X = icon("x-box", "ic sns-icon")
+ICON_INSTAGRAM = icon("instagram", "ic sns-icon")
+ICON_TIKTOK = icon("tiktok", "ic sns-icon")
 
 # SNS列 → (URLテンプレート, アイコン, ラベル)。ハンドルだけを持ち、URLはここで組む。
 SNS = [

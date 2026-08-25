@@ -5,8 +5,10 @@ PHPインクルード用のカードフラグメントを生成する
 
   イベントシート : ID,Date,Day,Time,OG,Group,Member,Place,Prefecture,Tomoko
                    同じIDの行が複数 = 同じ日の複数公演(開演時間ごと)
-  YouTubeシート  : ID,Title,URL
-                   イベントIDに紐づく動画。1イベントに何本でも可
+  動画シート     : ID,Title,URL,Channel,Episode
+                   イベントIDに紐づく動画。1イベントに何本でも可。
+                   URLのホスト名でYouTube/Instagram/TikTokのアイコンを出し分ける(icons.py)。
+                   Channel/Episodeは（M-line Music #258）のように括弧で併記
 
 1〜2ヶ月に1回のイベントなので手動実行(generate-manual.ymlのmhello)で回す。
 ローカル確認用にCSVファイルのパスも渡せる:
@@ -21,6 +23,8 @@ import urllib.request
 from datetime import datetime, timezone, timedelta
 from pathlib import Path
 
+from icons import icon_for_url
+
 PUB_BASE = (
     "https://docs.google.com/spreadsheets/d/e/"
     "2PACX-1vRQeVLCcIzgV87uQEeJ5-kLWqSHV3vwSx6bYiiohNBX33WKjf0HSGozIR9EEtC83e7sXWdODpP9fdQw/pub"
@@ -32,13 +36,6 @@ REPO_ROOT = Path(__file__).resolve().parent.parent  # Python/ の親
 
 OUTPUT_CARDS = REPO_ROOT / "Spreadsheet" / "mhello_cards.php"
 OUTPUT_GENERATED = REPO_ROOT / "Generated" / "mhello_generated.php"
-
-YT_ICON = (
-    '<svg class="mh-yt" width="18" height="13" viewBox="0 0 64 44" xmlns="http://www.w3.org/2000/svg">'
-    '<rect width="64" height="44" rx="10" fill="#FF0000"/>'
-    '<polygon points="22,8 54,22 22,36" fill="white"/></svg>'
-)
-
 
 def fetch_csv(source: str) -> list[dict]:
     """URLでもローカルのCSVパスでも読める"""
@@ -129,6 +126,21 @@ def build_stages(rows: list[dict], card_date: str) -> str:
     return f'<ul class="mh-stages">{"".join(lines)}</ul>' if lines else ""
 
 
+def build_source(row: dict) -> str:
+    """（M-line Music #258）/（つばきファクトリーのhappyに過ごそうよ）。両方空なら括弧ごと出さない"""
+    channel = val(row, "Channel")
+    episode = val(row, "Episode").lstrip("#")
+    if channel and episode:
+        inner = f"{channel} #{episode}"
+    elif channel:
+        inner = channel
+    elif episode:
+        inner = f"#{episode}"
+    else:
+        return ""
+    return f'<span class="mh-src">（{esc(inner)}）</span>'
+
+
 def build_videos(videos: list[dict]) -> str:
     lines = []
     for v in videos:
@@ -137,8 +149,8 @@ def build_videos(videos: list[dict]) -> str:
         if not url:
             continue
         lines.append(
-            f'<li>{YT_ICON}<a href="{esc(url)}" target="_blank" rel="noopener noreferrer">'
-            f'{esc(title) or esc(url)}</a></li>'
+            f'<li>{icon_for_url(url, "ic")}<a href="{esc(url)}" target="_blank" rel="noopener noreferrer">'
+            f'{esc(title) or esc(url)}</a>{build_source(v)}</li>'
         )
     if not lines:
         return '<p class="mh-novideo">動画なし</p>'

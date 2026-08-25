@@ -14,6 +14,8 @@ SHEET_GID = "0"
 
 from pathlib import Path
 
+from icons import icon
+
 REPO_ROOT = Path(__file__).resolve().parent.parent  # Python/ の親
 
 OUTPUT_TABLE = REPO_ROOT / "Spreadsheet" / "karin-hello_table.php"
@@ -50,11 +52,6 @@ def escape_html(s: str) -> str:
          .replace('"', "&quot;")
     )
 
-YT_ICON = (
-    '<svg style="vertical-align: -4px;  margin-right: 4px"width="20" height="20" viewBox="0 0 64 44" xmlns="http://www.w3.org/2000/svg">'
-    '<rect width="64" height="44" rx="10" fill="#FF0000"/><polygon points="22,8 54,22 22,36" fill="white"/>'
-    '</svg>'
-)
 
 def build_table(data: list[list[str]]) -> str:
     headers = [h.strip() for h in data[0]]
@@ -95,7 +92,7 @@ def build_table(data: list[list[str]]) -> str:
             if official_url else album
         )
         yt_cell = (
-            f'<a href="{escape_html(yt_url)}" target="_blank" rel="noopener noreferrer" title="YouTube Music">{YT_ICON}</a>'
+            f'<a href="{escape_html(yt_url)}" target="_blank" rel="noopener noreferrer" title="YouTube Music">{icon("youtube-brand", "ic ic-20")}</a>'
             if yt_url else ""
         )
 

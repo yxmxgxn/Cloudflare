@@ -5,7 +5,9 @@ set -euo pipefail
 
 cd "$(dirname "$0")/.."
 ROOT="$(pwd)"
-OUT="$ROOT/public"
+# 出力先。デプロイ(wrangler.jsonc の assets.directory)が ./public を見るのでCIでは既定のまま。
+# ローカルで確認ビルドするときは OUT_DIR=/tmp/... を渡してリポジトリ内を汚さない。
+OUT="${OUT_DIR:-$ROOT/public}"
 PORT=8123
 BASE_URL="${BASE_URL:?BASE_URL を指定してください (例: https://karin-archive.example.workers.dev)}"
 BASE_URL="${BASE_URL%/}"
@@ -24,11 +26,14 @@ for i in $(seq 1 50); do
 done
 
 # ---- ページ一覧(パーシャルを除く全 .php) ----
+# .claude/ はClaude Codeの作業用worktree(リポジトリの複製)が入るので除外する
 pages=$(find . -name '*.php' \
+  ! -path './.claude/*' \
   ! -path './build/*' \
   ! -path './Spreadsheet/*' \
   ! -path './Generated/*' \
   ! -path './common/header.php' \
+  ! -path './common/icons.php' \
   ! -path './common/footer.php' \
   ! -path './common/birthday_footer.php' \
   ! -path './Birthday/birthday_generated.php' \
