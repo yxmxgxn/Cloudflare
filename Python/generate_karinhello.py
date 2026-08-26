@@ -6,13 +6,17 @@ PHPインクルード用のtr/tdフラグメント・アーティスト一覧・
 
 import csv
 import io
-import urllib.request
 from datetime import datetime, timezone, timedelta
 
-SPREADSHEET_ID = "1kmPtWU7KqQIaNUfX_-kdW0mElJ5zVgFGZqY9h8IXQJU"
+PUB_BASE = (
+    "https://docs.google.com/spreadsheets/d/e/"
+    "2PACX-1vQonFnpzakCXLq34UXXrsrKlp-54wcyVFfHcxh1F9U7lZvCSzbu4556GHDrawh3Q1zK9tcOQ68ZS3vm/pub"
+)
 SHEET_GID = "0"
 
 from pathlib import Path
+
+from sheets import fetch_text
 
 from icons import icon
 
@@ -22,13 +26,9 @@ OUTPUT_TABLE = REPO_ROOT / "Spreadsheet" / "karin-hello_table.php"
 OUTPUT_ARTISTS = REPO_ROOT / "Spreadsheet" / "karin-hello_artists.php"
 OUTPUT_GENERATED = REPO_ROOT / "Generated" / "karin-hello_generated.php"
 
-def fetch_csv(spreadsheet_id: str, gid: str) -> list[list[str]]:
-    url = (
-        f"https://docs.google.com/spreadsheets/d/{spreadsheet_id}"
-        f"/export?format=csv&gid={gid}"
-    )
-    with urllib.request.urlopen(url) as res:
-        content = res.read().decode("utf-8")
+def fetch_csv(gid: str) -> list[list[str]]:
+    url = f"{PUB_BASE}?gid={gid}&single=true&output=csv"
+    content = fetch_text(url)
     reader = csv.reader(io.StringIO(content))
     return list(reader)
 
@@ -133,7 +133,7 @@ def main():
     jst = timezone(timedelta(hours=9))
     today_aware = datetime.now(jst)
 
-    data = fetch_csv(SPREADSHEET_ID, SHEET_GID)
+    data = fetch_csv(SHEET_GID)
 
     # table
     with open(OUTPUT_TABLE, "w", encoding="utf-8") as f:

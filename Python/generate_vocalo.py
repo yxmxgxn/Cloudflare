@@ -6,25 +6,25 @@ PHPインクルード用のtr/tdフラグメントを生成する
 
 import csv
 import io
-import urllib.request
 from datetime import datetime, timezone, timedelta
 
-SPREADSHEET_ID = "1c2GupCt20VtVf2WT-QuVjZaqcXsyBzaaoAfnhDPA2yU"
+PUB_BASE = (
+    "https://docs.google.com/spreadsheets/d/e/"
+    "2PACX-1vSho7tsoiiQiCOmaYaSSSQiZZwpw0uLWAitI-uWhaZ4uuKaL9u9EVLD9AGcASdzlOX7sXlUOjD3aORX/pub"
+)
 SHEET_GID = "0"
 from pathlib import Path
+
+from sheets import fetch_text
 
 REPO_ROOT = Path(__file__).resolve().parent.parent  # Python/ の親
 
 OUTPUT_PATH = REPO_ROOT / "Spreadsheet" / "vocalo_table.php"
 OUTPUT_GENERATED = REPO_ROOT / "Generated" / "vocalo_generated.php"
 
-def fetch_csv(spreadsheet_id: str, gid: str) -> list[list[str]]:
-    url = (
-        f"https://docs.google.com/spreadsheets/d/{spreadsheet_id}"
-        f"/export?format=csv&gid={gid}"
-    )
-    with urllib.request.urlopen(url) as res:
-        content = res.read().decode("utf-8")
+def fetch_csv(gid: str) -> list[list[str]]:
+    url = f"{PUB_BASE}?gid={gid}&single=true&output=csv"
+    content = fetch_text(url)
     reader = csv.reader(io.StringIO(content))
     return list(reader)
 
@@ -108,7 +108,7 @@ def build_rows(data: list[list[str]]) -> str:
     return "\n".join(lines)
 
 def main():
-    data = fetch_csv(SPREADSHEET_ID, SHEET_GID)
+    data = fetch_csv(SHEET_GID)
     tbody = build_rows(data)
 
     jst = timezone(timedelta(hours=9))

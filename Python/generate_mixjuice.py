@@ -6,26 +6,26 @@ PHPインクルード用のtr/tdフラグメント・更新日を生成する
 
 import csv
 import io
-import urllib.request
 from datetime import datetime, timezone, timedelta
 
-SPREADSHEET_ID = "1efKvrTK4vcSUOVpVwWCjkOgyes-32RX0zEpz6iIMJDY"
+PUB_BASE = (
+    "https://docs.google.com/spreadsheets/d/e/"
+    "2PACX-1vQGBS0Tm7Z9I32xmJ0PzdFma5Q5tJpvg71v8JRw7-QSlQsr57nqkYeVy0kSEOYttMg6FZfucZiHFYYt/pub"
+)
 SHEET_GID      = "1463327244"
 
 from pathlib import Path
+
+from sheets import fetch_text
 
 REPO_ROOT = Path(__file__).resolve().parent.parent  # Python/ の親
 
 OUTPUT_PATH = REPO_ROOT / "Spreadsheet" / "mixjuice_table.php"
 OUTPUT_GENERATED = REPO_ROOT / "Generated" / "mixjuice_generated.php"
 
-def fetch_csv(spreadsheet_id: str, gid: str) -> list[list[str]]:
-    url = (
-        f"https://docs.google.com/spreadsheets/d/{spreadsheet_id}"
-        f"/export?format=csv&gid={gid}"
-    )
-    with urllib.request.urlopen(url) as res:
-        content = res.read().decode("utf-8")
+def fetch_csv(gid: str) -> list[list[str]]:
+    url = f"{PUB_BASE}?gid={gid}&single=true&output=csv"
+    content = fetch_text(url)
     reader = csv.reader(io.StringIO(content))
     return list(reader)
 
@@ -96,7 +96,7 @@ def main():
     jst = timezone(timedelta(hours=9))
     today_aware = datetime.now(jst)
 
-    data = fetch_csv(SPREADSHEET_ID, SHEET_GID)
+    data = fetch_csv(SHEET_GID)
 
     with open(OUTPUT_PATH, "w", encoding="utf-8") as f:
         f.write(f"<!-- generated: {datetime.now(timezone.utc).isoformat()} -->\n")
