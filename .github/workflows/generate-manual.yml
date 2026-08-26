@@ -8,23 +8,24 @@ on:
         description: 'どのデータを再生成するか'
         required: true
         type: choice
+        # 「値 (説明)」形式。実行時は先頭の空白までを取り出して使う
         options:
-          - birthday
-          - mhello
-          - cooking
-          - hanakin
-          - karinhello
-          - karinoshi
-          - mixjuice
-          - movies
-          - vocalo
-          - vocaloclub
-          - interview
-          - gamelive
-          - sns
-          - shopevent
-          - timeline
-          - all
+          - "birthday (バースデーイベント)"
+          - "mhello (エムハロイベント)"
+          - "cooking (クッキングコーナー)"
+          - "hanakin (宮本佳林のIGチャレンジ)"
+          - "karinhello (佳林の1日1ハロ)"
+          - "karinoshi (カリンオシ)"
+          - "mixjuice (MIX=Juice)"
+          - "movies (出演映画)"
+          - "vocalo (今日のボカロ)"
+          - "vocaloclub (宮本佳林のボカロ部)"
+          - "interview (インタビュー記事)"
+          - "gamelive (ハロ通LIVE/GAMES)"
+          - "sns (SNS一覧)"
+          - "shopevent (ハロショイベント)"
+          - "timeline (在籍タイムライン画像)"
+          - "all (すべて)"
 
 jobs:
   generate:
@@ -40,7 +41,7 @@ jobs:
           python-version: '3.12'
 
       - name: Install dependencies (timeline only)
-        if: ${{ inputs.target == 'timeline' || inputs.target == 'all' }}
+        if: ${{ startsWith(inputs.target, 'timeline') || startsWith(inputs.target, 'all') }}
         run: |
           sudo apt-get -qq update && sudo apt-get -qq install -y fonts-noto-cjk
           pip install pandas matplotlib requests
@@ -48,6 +49,8 @@ jobs:
       - name: Run generators
         run: |
           t="${{ inputs.target }}"
+          t="${t%% *}"   # "movies (出演映画)" → "movies"
+          echo "TARGET=$t" >> "$GITHUB_ENV"
           run_if() { if [ "$t" = "$1" ] || [ "$t" = "all" ]; then python "Python/$2"; fi; }
           run_if birthday   hello-birthday.py
           run_if mhello     generate_mhello.py
@@ -73,7 +76,7 @@ jobs:
           if git diff --cached --quiet; then
             echo "変更なし"
           else
-            git commit -m "自動生成: ${{ inputs.target }} ($(date -u +%Y-%m-%d))"
+            git commit -m "自動生成: $TARGET ($(date -u +%Y-%m-%d))"
             # 別のワークフローが同時にmainへpushしているとfast-forwardで弾かれるので、
             # rebaseしてから数回リトライする
             pushed=0
