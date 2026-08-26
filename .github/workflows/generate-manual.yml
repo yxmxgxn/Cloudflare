@@ -16,6 +16,7 @@ on:
           - karinhello
           - karinoshi
           - mixjuice
+          - movies
           - vocalo
           - vocaloclub
           - interview
@@ -55,6 +56,7 @@ jobs:
           run_if karinhello generate_karinhello.py
           run_if karinoshi  generate_karinoshi.py
           run_if mixjuice   generate_mixjuice.py
+          run_if movies     generate_movies.py
           run_if vocalo     generate_vocalo.py
           run_if vocaloclub generate_vocaloclub.py
           run_if interview  generate_interview.py

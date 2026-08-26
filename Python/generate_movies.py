@@ -8,9 +8,10 @@ import csv
 import re
 import html
 import io
-import urllib.request
 from datetime import datetime, timezone, timedelta
 from pathlib import Path
+
+from sheets import fetch_text
 
 PUB_BASE = (
     "https://docs.google.com/spreadsheets/d/e/"
@@ -30,8 +31,7 @@ OUTPUT_GENERATED = REPO_ROOT / "Generated" / "movies_generated.php"
 
 def fetch_csv(gid: str) -> list[dict]:
     url = f"{PUB_BASE}?gid={gid}&single=true&output=csv"
-    with urllib.request.urlopen(url) as res:
-        content = res.read().decode("utf-8")
+    content = fetch_text(url)
     reader = csv.DictReader(io.StringIO(content))
     return [row for row in reader]
 
@@ -39,8 +39,7 @@ def fetch_csv(gid: str) -> list[dict]:
 def fetch_cast_master_groups() -> dict[str, list[str]]:
     """キャストマスターから Cast_id → 割り振られたグループ一覧(Group列以降)を作る"""
     url = f"{PUB_BASE}?gid={GID_CAST_MASTER}&single=true&output=csv"
-    with urllib.request.urlopen(url) as res:
-        content = res.read().decode("utf-8")
+    content = fetch_text(url)
     rows = list(csv.reader(io.StringIO(content)))
     if not rows:
         return {}
