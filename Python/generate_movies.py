@@ -107,6 +107,9 @@ def build_stream_links(m: dict) -> str:
         links.append(_link("U-NEXT", f"https://www.video.unext.jp/title/{un}/"))
     dp = (m.get("Disney+") or "").strip()
     if dp:
+        # シートにはUUIDだけを入れる想定。entity-付きで入力されても二重にしない
+        if not dp.startswith("entity-"):
+            dp = f"entity-{dp}"
         links.append(_link("Disney+", f"https://www.disneyplus.com/ja-jp/browse/{dp}"))
     return " ".join(links)
 
