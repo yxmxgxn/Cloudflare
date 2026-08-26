@@ -106,6 +106,9 @@ def build_stream_links(m: dict) -> str:
     un = (m.get("U-next") or "").strip()
     if un:
         links.append(_link("U-NEXT", f"https://www.video.unext.jp/title/{un}/"))
+    dp = (m.get("Disney+") or "").strip()
+    if dp:
+        links.append(_link("Disney+", f"https://www.disneyplus.com/ja-jp/browse/{dp}"))
     return " ".join(links)
 
 
