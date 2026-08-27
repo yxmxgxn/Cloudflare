@@ -75,6 +75,7 @@ jobs:
           GH_TOKEN: ${{ github.token }}
         run: |
           BROKEN=$(python -c "import json;print(json.load(open('stats.json'))['broken_total'])")
+          TITLE="🔗 リンク切れレポート ($(TZ=Asia/Tokyo date +%Y-%m-%d))"
           gh label create link-check --color AE8DBC --description "リンクチェックの自動レポート" 2>/dev/null || true
           ISSUE=$(gh issue list --label link-check --state open --limit 1 --json number --jq '.[0].number // empty')
 
@@ -86,12 +87,13 @@ jobs:
 
           if [ "$BROKEN" -gt 0 ]; then
             if [ -n "$ISSUE" ]; then
-              gh issue edit "$ISSUE" --body-file issue-body.md
+              # タイトルの日付も差し替えて、いつ時点の結果か一覧から分かるようにする
+              gh issue edit "$ISSUE" --title "$TITLE" --body-file issue-body.md
               gh issue comment "$ISSUE" --body "🔁 最新のチェック結果に更新しました（リンク切れ ${BROKEN} 件）。"
               echo "Issue #$ISSUE を更新しました"
             else
               gh issue create \
-                --title "🔗 リンク切れレポート" \
+                --title "$TITLE" \
                 --label link-check \
                 --body-file issue-body.md
             fi
