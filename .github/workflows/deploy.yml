@@ -54,6 +54,19 @@ jobs:
         run: |
           [ -z "$INDEXNOW_KEY" ] && { echo "INDEXNOW_KEY未設定のためスキップ"; exit 0; }
           HOST=$(echo "$BASE_URL" | sed 's|https\?://||; s|/.*||')
+          KEY_URL="$BASE_URL/$INDEXNOW_KEY.txt"
+          # キーファイルを配信できていないと Bing は 422 を返す。先に自己診断する。
+          # (キー自体はログでマスクされるので、長さと突き合わせ結果だけ出す)
+          echo "キーの長さ: ${#INDEXNOW_KEY} 文字"
+          KEY_STATUS=$(curl -s -o /tmp/indexnow-key -w '%{http_code}' "$KEY_URL")
+          echo "キーファイル $KEY_URL → HTTP $KEY_STATUS"
+          if [ "$KEY_STATUS" != "200" ]; then
+            echo "::warning::キーファイルが配信されていない。build.sh の出力(public/<キー>.txt)を確認すること"
+          elif [ "$(cat /tmp/indexnow-key)" != "$INDEXNOW_KEY" ]; then
+            echo "::warning::キーファイルの中身がキーと一致しない"
+          else
+            echo "キーファイルOK"
+          fi
           DIFF_URLS=$(git diff --name-only --diff-filter=ACM HEAD^ HEAD 2>/dev/null \
             | grep -E '\.php$' \
             | grep -v '^common/' \
@@ -68,7 +81,8 @@ jobs:
           CLEAN_URLS=$(echo "$BASE_URL/ $DIFF_URLS" | tr -s ' ' | sed 's/^ //;s/ $//')
           echo "Sending URLs: $CLEAN_URLS"
           JSON_URLS=$(echo "$CLEAN_URLS" | tr ' ' '\n' | grep -v '^$' | sed 's/.*/"&"/' | paste -sd ',')
-          curl -s -o /dev/null -w "IndexNow HTTP status: %{http_code}\n" \
+          # 本文には 422 の理由が書いてあるので捨てない
+          curl -s -w '\nIndexNow HTTP status: %{http_code}\n' \
             -X POST "https://www.bing.com/indexnow" \
             -H "Content-Type: application/json; charset=utf-8" \
-            -d "{\"host\": \"$HOST\", \"key\": \"$INDEXNOW_KEY\", \"keyLocation\": \"$BASE_URL/$INDEXNOW_KEY.txt\", \"urlList\": [$JSON_URLS]}"
+            -d "{\"host\": \"$HOST\", \"key\": \"$INDEXNOW_KEY\", \"keyLocation\": \"$KEY_URL\", \"urlList\": [$JSON_URLS]}"
