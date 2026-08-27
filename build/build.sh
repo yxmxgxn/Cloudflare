@@ -80,6 +80,9 @@ cp robot.txt "$OUT/robots.txt"   # 正しいファイル名に直して配置
 if [ -n "${INDEXNOW_KEY:-}" ]; then
   KEY=$(printf '%s' "$INDEXNOW_KEY" | tr -d '[:space:]')
   printf '%s' "$KEY" > "$OUT/$KEY.txt"
+  echo "IndexNow キーファイルを出力した (${#KEY}文字)"
+else
+  echo "INDEXNOW_KEY が空なのでキーファイルを出力しない"
 fi
 
 # ---- CSSキャッシュバスティング(コミットIDをバージョンとして付与) ----

@@ -60,8 +60,13 @@ jobs:
           # キーファイルを配信できていないと Bing は 422 を返す。先に自己診断する。
           # (キー自体はログでマスクされるので、長さと突き合わせ結果だけ出す)
           echo "キーの長さ: ${#INDEXNOW_KEY} 文字"
-          KEY_STATUS=$(curl -s -o /tmp/indexnow-key -w '%{http_code}' "$KEY_URL")
-          echo "キーファイル $KEY_URL → HTTP $KEY_STATUS"
+          # デプロイ直後は伝播待ちで404になることがあるので数回試す
+          for i in 1 2 3 4 5; do
+            KEY_STATUS=$(curl -s -o /tmp/indexnow-key -w '%{http_code}' "$KEY_URL")
+            echo "キーファイル $KEY_URL → HTTP $KEY_STATUS ($i回目)"
+            [ "$KEY_STATUS" = "200" ] && break
+            sleep 10
+          done
           if [ "$KEY_STATUS" != "200" ]; then
             echo "::warning::キーファイルが配信されていない。build.sh の出力(public/<キー>.txt)を確認すること"
           elif [ "$(cat /tmp/indexnow-key)" != "$INDEXNOW_KEY" ]; then
