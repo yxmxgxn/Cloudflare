@@ -54,6 +54,8 @@ jobs:
         run: |
           [ -z "$INDEXNOW_KEY" ] && { echo "INDEXNOW_KEY未設定のためスキップ"; exit 0; }
           HOST=$(echo "$BASE_URL" | sed 's|https\?://||; s|/.*||')
+          # Secret に改行や空白が紛れていてもURLを壊さないよう削る(build.sh側と揃える)
+          INDEXNOW_KEY=$(printf '%s' "$INDEXNOW_KEY" | tr -d '[:space:]')
           KEY_URL="$BASE_URL/$INDEXNOW_KEY.txt"
           # キーファイルを配信できていないと Bing は 422 を返す。先に自己診断する。
           # (キー自体はログでマスクされるので、長さと突き合わせ結果だけ出す)

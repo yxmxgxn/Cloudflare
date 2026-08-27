@@ -76,8 +76,10 @@ cp robot.txt "$OUT/robots.txt"   # 正しいファイル名に直して配置
 } > "$OUT/sitemap.xml"
 
 # ---- IndexNow キーファイル(キーが設定されているときだけ) ----
+# Secret に改行や空白が紛れているとファイル名が壊れて Bing が取得できず422になるので削っておく
 if [ -n "${INDEXNOW_KEY:-}" ]; then
-  printf '%s' "$INDEXNOW_KEY" > "$OUT/$INDEXNOW_KEY.txt"
+  KEY=$(printf '%s' "$INDEXNOW_KEY" | tr -d '[:space:]')
+  printf '%s' "$KEY" > "$OUT/$KEY.txt"
 fi
 
 # ---- CSSキャッシュバスティング(コミットIDをバージョンとして付与) ----
