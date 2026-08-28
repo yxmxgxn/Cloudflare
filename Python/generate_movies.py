@@ -219,7 +219,7 @@ def build_cards(movies: list[dict], cast_by_movie: dict, master_groups: dict) ->
             bottom = f'<div class="mv-bottom">{detail_btn}{stream_html}</div>'
 
         cards.append(
-            f'<div class="movie-card" data-date="{esc(sort_date(m.get("Date")))}"'
+            f'<div class="card movie-card" data-date="{esc(sort_date(m.get("Date")))}"'
             f' data-genre="{esc(m.get("Genre"))}" data-groups="{esc("|".join(groups))}"'
             f' data-title="{esc(m.get("Title"))}"'
             f' data-search="{esc(" ".join([m.get("Title") or "", m.get("Director") or "", members, roles]))}"'

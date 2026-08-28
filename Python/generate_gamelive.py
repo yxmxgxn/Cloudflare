@@ -195,7 +195,7 @@ def build_cards(
         )
 
         cards.append(
-            f'<div class="gl-card" data-date="{date_sort}" data-title="{title}"'
+            f'<div class="card gl-card" data-date="{date_sort}" data-title="{title}"'
             f' data-groups="{esc("|".join(dict.fromkeys(canon_groups)))}"'
             f' data-names="{esc("|".join(dict.fromkeys(names)))}"'
             f' data-genres="{esc("|".join(dict.fromkeys(genres)))}"'

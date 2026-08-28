@@ -16,7 +16,7 @@
   開催日・会場・公演ごとの開演時間をまとめ、非公式サイトのハロプロセトリ検索システム「ToMoKo」にセットリストが公開されているものはリンクを貼っています。<br>
   各回でYouTubeに公開されている動画があるものは、その下にリンクをまとめています。<br>
 
-<div id="mhello-cards">
+<div id="mhello-cards" class="card-grid">
   <?php include $_SERVER['DOCUMENT_ROOT'] . '/Spreadsheet/mhello_cards.php'; ?>
 </div>
 <?php include $_SERVER['DOCUMENT_ROOT'] . '/Generated/mhello_generated.php'; ?>

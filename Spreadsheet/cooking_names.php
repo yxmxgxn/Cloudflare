@@ -1,4 +1,4 @@
-<!-- generated: 2026-08-25T15:54:02.158970+00:00 -->
+<!-- generated: 2026-08-28T14:27:23.172201+00:00 -->
 <option value="相川茉穂" data-group="アンジュルム">相川茉穂</option>
 <option value="秋山眞緒" data-group="つばきファクトリー">秋山眞緒</option>
 <option value="浅倉樹々" data-group="つばきファクトリー">浅倉樹々</option>

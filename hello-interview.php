@@ -39,7 +39,7 @@
   <label>終了 <input type="date" id="iv-to" onchange="ivFilter()"></label>
   <button type="button" id="iv-date-clear" onclick="ivDateClear()">クリア</button>
 </div>
-<div id="interview-cards">
+<div id="interview-cards" class="card-grid">
   <?php include $_SERVER['DOCUMENT_ROOT'] . '/Spreadsheet/interview_cards.php'; ?>
 </div>
 <?php include $_SERVER['DOCUMENT_ROOT'] . '/Generated/interview_generated.php'; ?>

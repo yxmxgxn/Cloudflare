@@ -34,7 +34,7 @@
   </select>
   <span id="gamelive-count"></span>
 </div>
-<div id="gamelive-cards">
+<div id="gamelive-cards" class="card-grid">
   <?php include $_SERVER['DOCUMENT_ROOT'] . '/Spreadsheet/gamelive_cards.php'; ?>
 </div>
 <?php include $_SERVER['DOCUMENT_ROOT'] . '/Generated/gamelive_generated.php'; ?>

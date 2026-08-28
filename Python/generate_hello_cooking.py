@@ -225,7 +225,7 @@ def build_cards(members: list[dict], meals_by_id: dict, videos_by_id: dict,
         search = " ".join(p for p in search_parts if p)
 
         cards.append(
-            f'<div class="ck-card" id="ck-{esc(eid)}"'
+            f'<div class="card ck-card" id="ck-{esc(eid)}"'
             f' data-groups="{esc("|".join(groups))}"'
             f' data-names="{esc("|".join(dict.fromkeys(member_names)))}"'
             f' data-cook="{esc(cook)}"'

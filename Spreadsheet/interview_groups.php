@@ -1,5 +1,6 @@
-<!-- generated: 2026-08-18T14:04:28.269734+00:00 -->
+<!-- generated: 2026-08-28T14:27:14.024165+00:00 -->
 <option value="BEYOOOOONDS">BEYOOOOONDS</option>
+<option value="Berryz工房">Berryz工房</option>
 <option value="Juice=Juice">Juice=Juice</option>
 <option value="OCHA NORMA">OCHA NORMA</option>
 <option value="℃-ute">℃-ute</option>

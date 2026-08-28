@@ -1,4 +1,4 @@
-<!-- generated: 2026-08-25T15:54:02.158970+00:00 -->
+<!-- generated: 2026-08-28T14:27:23.172201+00:00 -->
 <option value="肉">肉</option>
 <option value="魚">魚</option>
 <option value="野菜">野菜</option>

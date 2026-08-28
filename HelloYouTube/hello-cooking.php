@@ -47,7 +47,7 @@
   </select>
   <span id="cooking-count"></span>
 </div>
-<div id="cooking-cards">
+<div id="cooking-cards" class="card-grid">
   <?php include $_SERVER['DOCUMENT_ROOT'] . '/Spreadsheet/cooking_cards.php'; ?>
 </div>
 

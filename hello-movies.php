@@ -45,7 +45,7 @@
   </select>
   <span id="movies-count"></span>
 </div>
-<div id="movies-cards">
+<div id="movies-cards" class="card-grid">
   <?php include $_SERVER['DOCUMENT_ROOT'] . '/Spreadsheet/movies_cards.php'; ?>
 </div>
 <?php include $_SERVER['DOCUMENT_ROOT'] . '/Generated/movies_generated.php'; ?>

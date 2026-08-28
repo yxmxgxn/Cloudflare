@@ -178,7 +178,7 @@ def build_cards(events: list[dict], videos_by_id: dict[str, list[dict]]) -> str:
         head = rows[0]
         card_date = val(head, "Date")
         cards.append(
-            f'<div class="mh-card" id="mh-{esc(eid)}">'
+            f'<div class="card mh-card" id="mh-{esc(eid)}">'
             f'<p class="mh-title">{build_title(eid, head)}</p>'
             f'<p class="mh-meta">{build_meta(head)}</p>'
             f"{build_stages(rows, card_date)}"
