@@ -20,7 +20,7 @@ import matplotlib.pyplot as plt
 import matplotlib.patches as mpatches
 import matplotlib.font_manager as font_manager
 from io import StringIO
-from datetime import datetime, date
+from datetime import datetime, date, timezone, timedelta
 from pathlib import Path
 
 from sheets import fetch_text
@@ -40,6 +40,8 @@ REQUIRED_COLS = ["グループNo", "名前", "生年月日", "グループ加入
 
 REPO_ROOT = Path(__file__).resolve().parent.parent
 TIMELINE_DIR = REPO_ROOT / "Timeline"
+# ページ下部に出す更新日（他のジェネレータと同じ形式）
+OUTPUT_GENERATED = REPO_ROOT / "Generated" / "timeline_generated.php"
 
 # 生成するグループのリスト
 GROUPS = [
@@ -506,3 +508,12 @@ if __name__ == "__main__":
         output_path = TIMELINE_DIR / g["output"]
         draw_timeline(members, output_path, g["name"])
         print(f"✅ 保存完了: {output_path}")
+
+    # 画像を全部描き終えてから更新日を書き出す（途中で落ちたら更新しない）
+    # 他ページは「データ取得日」だが、ここは画像を作り直した日なので「更新日」
+    jst = timezone(timedelta(hours=9))
+    generated = datetime.now(jst).strftime("%Y/%m/%d")
+    OUTPUT_GENERATED.parent.mkdir(parents=True, exist_ok=True)
+    with open(OUTPUT_GENERATED, "w", encoding="utf-8") as f:
+        f.write(f'<p class="last-update">更新日：{generated}</p>\n')
+    print(f"✅ 保存完了: {OUTPUT_GENERATED}")

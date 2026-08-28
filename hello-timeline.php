@@ -31,5 +31,5 @@ function showTab(id) {
 </script>
 
 </main>
-<?php include $_SERVER['DOCUMENT_ROOT'] . '/Spreadsheet/mixjuice_generated.php'; ?>
+<?php include $_SERVER['DOCUMENT_ROOT'] . '/Generated/timeline_generated.php'; ?>
 <?php include $_SERVER['DOCUMENT_ROOT'] . '/common/footer.php'; ?>
