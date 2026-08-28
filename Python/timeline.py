@@ -19,16 +19,24 @@ matplotlib.use('Agg')
 import matplotlib.pyplot as plt
 import matplotlib.patches as mpatches
 import matplotlib.font_manager as font_manager
-import requests
 from io import StringIO
 from datetime import datetime, date
 from pathlib import Path
 
+from sheets import fetch_text
+
 # ════════════════════════════════════════════════════════
 #  ★ 設定エリア
 # ════════════════════════════════════════════════════════
-SHEET_ID  = "1u18UgoCgO23SAylJYdvRBp8TLMRqZSATf9l74QahMLY"
-SHEET_GID = "0"   # シートのgid（URLの#gid=以降の数字）
+# メンバーマスター（generate_members.py と同じ公開シート）
+PUB_BASE = (
+    "https://docs.google.com/spreadsheets/d/e/"
+    "2PACX-1vQFLNyFnLg0oxCm_39mnbRCwttmKUKffQk7_nAZxeydw41KBaFHTR9TqHsHvYvcsZ5Bgl1fQlBPCs0Q/pub"
+)
+SHEET_GID = "837040930"
+
+# 取得したCSVがこの列を持っていなければ即エラーにする
+REQUIRED_COLS = ["グループNo", "名前", "生年月日", "グループ加入日", "カラー"]
 
 REPO_ROOT = Path(__file__).resolve().parent.parent
 TIMELINE_DIR = REPO_ROOT / "Timeline"
@@ -87,20 +95,21 @@ def setup_font():
         print(f"⚠️  フォント '{FONT_NAME}' が見つかりません。")
 
 
-def load_sheet(sheet_id: str, sheet_gid: str) -> pd.DataFrame:
+def load_sheet(sheet_gid: str) -> pd.DataFrame:
     """
-    Google SheetsをCSVとして取得する。
-    gviz/tqではなくexportエンドポイントを使用することで
-    データの型推測による横展開バグを回避する。
-    sheet_gidでシートを確実に特定する。
+    メンバーマスターを公開URLからCSVで取得する。
+    以前は別スプレッドシートのIMPORTRANGEミラーを見ていたが、
+    参照が切れて中身が「#REF!」だけになり日次更新が止まったので、
+    generate_members.pyと同じマスターを直接読む。
     """
-    url = (
-        f"https://docs.google.com/spreadsheets/d/{sheet_id}/export"
-        f"?format=csv&gid={sheet_gid}"
-    )
-    resp = requests.get(url, timeout=15)
-    resp.raise_for_status()
-    return pd.read_csv(StringIO(resp.content.decode('utf-8')), header=0, dtype=str)
+    url = f"{PUB_BASE}?gid={sheet_gid}&single=true&output=csv"
+    df = pd.read_csv(StringIO(fetch_text(url)), header=0, dtype=str)
+    missing = [c for c in REQUIRED_COLS if c not in df.columns]
+    if missing:
+        raise RuntimeError(
+            f"シートの列がおかしい。不足: {missing} / 取得列: {df.columns.tolist()}"
+        )
+    return df
 
 
 def parse_date(val) -> date | None:
@@ -137,7 +146,7 @@ def calc_duration(start: date, end: date) -> tuple[int, int, int]:
     return years, months, total_days
 
 
-def load_members(sheet_id: str, sheet_gid: str, group_no: str = None) -> list[dict]:
+def load_members(sheet_gid: str, group_no: str = None) -> list[dict]:
     """
     シートを読み込んでメンバーの辞書リストに変換する。
     group_noを指定するとグループNoでフィルタする。Noneなら全員。
@@ -155,7 +164,7 @@ def load_members(sheet_id: str, sheet_gid: str, group_no: str = None) -> list[di
         色変更日が空欄 -> 旧or別カラーは別グループ時代の色なので無視、カラーのみ使用
         色変更日に日付あり -> その日を境に旧or別カラー->カラーに切り替わる
     """
-    df = load_sheet(sheet_id, sheet_gid)
+    df = load_sheet(sheet_gid)
     print(f"📋 取得列: {df.columns.tolist()}")
     print(f"📋 行数: {len(df)}")
 
@@ -491,7 +500,7 @@ if __name__ == "__main__":
     TIMELINE_DIR.mkdir(parents=True, exist_ok=True)
     for g in GROUPS:
         print(f"\n📥 {g['name']} 読み込み中...")
-        members = load_members(SHEET_ID, SHEET_GID, g["no"])
+        members = load_members(SHEET_GID, g["no"])
         print(f"✅ {len(members)} 名のデータを取得")
         print(f"🎨 タイムライン生成中...")
         output_path = TIMELINE_DIR / g["output"]

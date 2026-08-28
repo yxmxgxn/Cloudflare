@@ -22,7 +22,7 @@ jobs:
       - name: Install dependencies
         run: |
           sudo apt-get -qq update && sudo apt-get -qq install -y fonts-noto-cjk
-          pip install pandas matplotlib requests
+          pip install pandas matplotlib
 
       - name: Generate spreadsheet tables
         run: |
