@@ -1,4 +1,4 @@
-<!-- generated: 2026-08-28T14:27:14.024165+00:00 -->
+<!-- generated: 2026-09-01T13:49:37.970438+00:00 -->
 <option value="相川茉穂" data-group="アンジュルム">相川茉穂</option>
 <option value="秋山眞緒" data-group="つばきファクトリー">秋山眞緒</option>
 <option value="浅倉樹々" data-group="つばきファクトリー">浅倉樹々</option>
@@ -25,6 +25,7 @@
 <option value="岡村美波" data-group="BEYOOOOONDS">岡村美波</option>
 <option value="尾形春水" data-group="モーニング娘。">尾形春水</option>
 <option value="小片リサ" data-group="つばきファクトリー">小片リサ</option>
+<option value="小川麗奈" data-group="こぶしファクトリー">小川麗奈</option>
 <option value="小関舞" data-group="カントリー・ガールズ">小関舞</option>
 <option value="小田さくら" data-group="モーニング娘。">小田さくら</option>
 <option value="小野田華凜" data-group="ロージークロニクル">小野田華凜</option>
@@ -66,6 +67,7 @@
 <option value="高木紗友希" data-group="Juice=Juice">高木紗友希</option>
 <option value="高瀬くるみ" data-group="BEYOOOOONDS">高瀬くるみ</option>
 <option value="高橋愛" data-group="モーニング娘。">高橋愛</option>
+<option value="田口夏実" data-group="こぶしファクトリー">田口夏実</option>
 <option value="竹内朱莉" data-group="アンジュルム">竹内朱莉</option>
 <option value="田代すみれ" data-group="OCHA NORMA">田代すみれ</option>
 <option value="田中れいな" data-group="モーニング娘。">田中れいな</option>
@@ -95,6 +97,7 @@
 <option value="広本瑠璃" data-group="OCHA NORMA">広本瑠璃</option>
 <option value="福田真琳" data-group="つばきファクトリー">福田真琳</option>
 <option value="譜久村聖" data-group="モーニング娘。">譜久村聖</option>
+<option value="藤井梨央" data-group="こぶしファクトリー">藤井梨央</option>
 <option value="藤本美貴" data-group="モーニング娘。">藤本美貴</option>
 <option value="船木結" data-group="カントリー・ガールズ|アンジュルム">船木結</option>
 <option value="前田こころ" data-group="BEYOOOOONDS">前田こころ</option>
