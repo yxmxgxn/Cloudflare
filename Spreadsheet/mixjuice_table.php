@@ -1,4 +1,4 @@
-<!-- generated: 2026-09-02T20:22:57.892099+00:00 -->
+<!-- generated: 2026-09-03T20:21:57.761003+00:00 -->
 <tr data-selector="遠藤彩加里"><td><a href="https://www.tbsradio.jp/articles/111692/" target="_blank" rel="noopener noreferrer">2026/08/30</a></td><td>BE:FIRST ALL DAY / BE:FIRST</td><td>遠藤彩加里</td><td>ドキドキわくわくする曲</td></tr>
 <tr data-selector="遠藤彩加里"><td><a href="https://www.tbsradio.jp/articles/111692/" target="_blank" rel="noopener noreferrer">2026/08/30</a></td><td>ぼくらの夏休み戦争 / Chevon</td><td>遠藤彩加里</td><td>ドキドキわくわくする曲</td></tr>
 <tr data-selector="松永里愛&amp;遠藤彩加里"><td><a href="https://www.tbsradio.jp/articles/111692/" target="_blank" rel="noopener noreferrer">2026/08/30</a></td><td>結論から言ってちょうだい / Juice=Juice</td><td>松永里愛&amp;遠藤彩加里</td><td>ドキドキわくわくする曲</td></tr>
