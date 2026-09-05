@@ -207,5 +207,5 @@
   </section>
   <p class="index-news"><a href="/news">更新履歴</a></p>
 </main>
-<div class="last-update">最終更新日：2026/05/10</div>
+<div class="last-update">最終更新日：2026/09/01</div>
 <?php include $_SERVER['DOCUMENT_ROOT'] . '/common/footer.php'; ?>

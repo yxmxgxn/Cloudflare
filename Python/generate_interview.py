@@ -191,6 +191,8 @@ def build_cards(articles: list[dict], members_by_id: dict, master: dict,
         date_sort = esc(date_norm)
         title = esc(a.get("Title"))
         url = (a.get("URL") or "").strip()
+        if url == "-":
+            url = ""  # ライブリンク切れ(WebArciveのみ)のフラグ。リンク化・媒体解決の対象外にする
         media_raw = media_for(url, domain)   # 媒体名はDomain辞書から引く
         if url and not media_raw:
             unmatched.add(url)

@@ -19,6 +19,7 @@
 import argparse
 import csv
 import difflib
+import gzip
 import html as htmllib
 import hashlib
 import io
@@ -49,7 +50,7 @@ OUT_SQL = REPO_ROOT / "build" / "interview_index.sql"
 
 MAX_PAGES = 10       # 自動追尾の上限
 PAGE_NUM_MAX = 100   # 末尾数字をページ番号とみなす上限(これ以上は記事IDとみなし追尾しない)
-INDEX_VERSION = "7"  # 索引ロジックを変えたらここを上げる → src_hashが変わり全記事を再索引
+INDEX_VERSION = "9"  # 索引ロジックを変えたらここを上げる → src_hashが変わり全記事を再索引
 MAX_INDEX_CHARS = 300000  # 索引対象本文の上限(正規化後の文字数)
 BIGRAM_CHUNK = 6000       # 1 INSERT あたりのbigram数(≈31KB。D1のstatement上限に余裕を持たせる)
 BIGRAM_OVERLAP = 64       # チャンク境界を跨ぐ検索を落とさないための重なり
@@ -92,6 +93,9 @@ def fetch_html(url: str) -> str | None:
         req = urllib.request.Request(url, headers={"User-Agent": UA, "Accept-Language": "ja"})
         with urllib.request.urlopen(req, timeout=20) as r:
             raw = r.read()
+            if (r.headers.get("Content-Encoding") or "").lower() == "gzip":
+                # web.archive.orgの id_ 修飾子は元レスポンスのgzip圧縮をそのまま返してくるため
+                raw = gzip.decompress(raw)
     except Exception:
         return None
     enc = "utf-8"
@@ -104,9 +108,22 @@ def fetch_html(url: str) -> str | None:
         return raw.decode("utf-8", "replace")
 
 
+_WAYBACK_TS = re.compile(r"(/web/\d{4,14})(/)")
+
+
+def archive_id_url(arc_url: str) -> str:
+    """web.archive.orgのURLに id_ 修飾子を足す(無ければ)。
+    通常表示(ツールバー付き)はページ内に'Wayback Machine'等の文言を含み、
+    本文抽出に混入してしまう(実測: 通常1946字→id_版12943字、正しい本文はid_側)。
+    表示用リンク(スプシのWebArcive列)はそのまま人間向けの通常表示でよく、
+    索引取得のときだけこちらでid_版に変換して使う。"""
+    return _WAYBACK_TS.sub(r"\1id_\2", arc_url, count=1)
+
+
 def fetch_archive(arc_url: str, tries: int = 4) -> str:
     """ライブ取得が失敗する媒体向け: WebArchive(魚拓)から本文を取る。
     archive.orgはActionのIPをブロックしないため、ボット弾きサイトを救える。503はリトライ。"""
+    arc_url = archive_id_url(arc_url)
     for _ in range(tries):
         html = fetch_html(arc_url)  # 503等は fetch_html が None を返す
         if html:
@@ -150,6 +167,12 @@ def next_page_url(html: str, cur: str) -> str | None:
             return pr._replace(query=urllib.parse.urlencode(qs, doseq=True)).geturl()
         except ValueError:
             return None
+    # 3) 1ページ目のURLに page パラメータが無い(=暗黙の1ページ目)サイト向け:
+    #    rel=next を付けずに本文中へ直接 "?page=2" へのリンクだけ置くページャがある(例: hominis.media)。
+    #    「2」固定で拾う(1ページ目からの遷移にしか使わないため、他の数字への誤爆リスクはない)。
+    m = re.search(r'href=["\']([^"\']*[?&]page=2(?:&[^"\']*)?)["\']', html or "", re.I)
+    if m:
+        return urllib.parse.urljoin(cur, m.group(1))
     mnum = re.search(r"/(\d+)/?$", pr.path)
     if mnum and int(mnum.group(1)) < PAGE_NUM_MAX:
         n = int(mnum.group(1)) + 1
@@ -305,25 +328,37 @@ def main():
         sheet_ids.add(aid)
         extra_raw = (a.get("ExtraURL") or "").strip()
         arc = (a.get("WebArcive") or "").strip()
+        archive_only = url == "-"  # ライブリンク切れ。魚拓だけを本文取得元にする
 
-        # ExtraURL の解釈を含めてハッシュ化(空/"-"/URL群を切り替えたら再索引される)
-        src_hash = hashlib.sha1(("\n".join([INDEX_VERSION, url, extra_raw])).encode("utf-8")).hexdigest()
+        # ExtraURL の解釈を含めてハッシュ化(空/"-"/URL群を切り替えたら再索引される)。
+        # archive_onlyの間はURLが常に"-"で無意味になるため、代わりにWebArciveをハッシュに使う
+        # (魚拓のリンクを差し替えたときにちゃんと再索引されるように)
+        hash_key = arc if archive_only else url
+        src_hash = hashlib.sha1(("\n".join([INDEX_VERSION, hash_key, extra_raw])).encode("utf-8")).hexdigest()
         # current は "hash|pages"。ハッシュ一致でも pages=0(取得失敗)なら再挑戦する
         cur_hash, _, cur_pages = current.get(aid, "").partition("|")
         if cur_hash == src_hash and cur_pages not in ("", "0"):
             n_skip += 1
             continue  # 変更なし かつ 前回取得済み → 再取得しない
 
-        no_follow = extra_raw == "-"
-        extra = [] if no_follow else [u for u in re.split(r"[,\s]+", extra_raw) if u]
-        bodies, used, truncated = collect_pages(url, extra, no_follow=no_follow)
-        body = "\n".join(bodies)
-        # ライブが空/極端に短い(ボット弾き・同意壁等)なら魚拓へフォールバックし、長い方を採用
-        if len(normalize(body)) < 100 and "web.archive.org/web/" in arc:
-            ab = fetch_archive(arc)
-            if len(normalize(ab)) > len(normalize(body)):
-                bodies, used, truncated, body = [ab], [arc], False, ab
-                print(f"  ↳ {aid}: liveが空/短い → 魚拓から取得", flush=True)
+        if archive_only:
+            # ライブ取得は試みず、魚拓(web.archive.org/archive.today どちらでも可)から直接本文取得
+            body = fetch_archive(arc) if arc else ""
+            used = [arc] if body else []
+            truncated = looks_truncated(body, "")
+            if body:
+                print(f"  ↳ {aid}: URL=- のため魚拓のみから取得", flush=True)
+        else:
+            no_follow = extra_raw == "-"
+            extra = [] if no_follow else [u for u in re.split(r"[,\s]+", extra_raw) if u]
+            bodies, used, truncated = collect_pages(url, extra, no_follow=no_follow)
+            body = "\n".join(bodies)
+            # ライブが空/極端に短い(ボット弾き・同意壁等)なら魚拓へフォールバックし、長い方を採用
+            if len(normalize(body)) < 100 and "web.archive.org/web/" in arc:
+                ab = fetch_archive(arc)
+                if len(normalize(ab)) > len(normalize(body)):
+                    used, truncated, body = [arc], False, ab
+                    print(f"  ↳ {aid}: liveが空/短い → 魚拓から取得", flush=True)
         tokens = bigram_list(normalize(body)[:MAX_INDEX_CHARS])
         chunks = chunk_bigrams(tokens)
         print(f"{aid}: {len(used)}ページ連結 ({', '.join(used)})", flush=True)
