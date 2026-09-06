@@ -13,12 +13,11 @@
   <h1>ONE PLUS ONE・One on One まとめ</h1>
 <div class="opo-lead">
   <p>ハロー！プロジェクトのメンバーが二人でパフォーマンスするデュオ企画をまとめました。<br>
-  1枚のカードが1曲で、同じ曲を複数の企画で公開しているものは1枚にまとめています。</p>
-
-  <p><strong>ONE PLUS ONE</strong>はテレビ番組「ハロドリ。」の企画で、各グループの公式YouTubeチャンネルで特別編集版が公開されたものです。
-  同じ回の<strong>ハロドリ。1アングルバージョン</strong>（引きの1カメ映像）はハロー！プロジェクト公式チャンネルで公開されています。<br>
-  <strong>COVERS -One on One-</strong>は<a href="https://www.youtube.com/@M-lineMusic" target="_blank" rel="noopener noreferrer">M-line Music</a>のデュオ動画企画です。</p>
-
+  
+  <p><strong>ONE PLUS ONE</strong>はテレビ番組「ハロドリ。」のデュオ企画で、各グループの公式YouTubeチャンネルで特別編集版・<a href="https://www.youtube.com/@TVTOKYO" target="_blank" rel="noopener noreferrer">テレ東公式チャンネル</a>で1アングルバージョンが公開されています。<br>
+  <strong>COVERS -One on One-</strong>はメンバー二人のデュオ企画で特別編集版・<a href="https://www.youtube.com/@upfrontchannel" target="_blank" rel="noopener noreferrer">アップフロントチャンネル</a>で公開されています。<br>
+  COVERS -One on One-は<a href="https://helloproject.com/release/6817/" target="_blank" rel="noopener noreferrer">Blu-ray Disc + CD</a>が発売されています。</p>
+  
   <p>グループ名はその動画が公開された当時の所属で、ハロー！プロジェクトを卒業しているメンバーは「OG」としています。<br>
   当時ハロプロ研修生だったメンバーは、その後加入したグループでも絞り込めます。<br>
   メンバー名をクリックすると、そのメンバーで絞り込めます。</p>

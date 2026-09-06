@@ -3,4 +3,4 @@ Allow: /
 Disallow: /common/
 Disallow: /Spreadsheet/
 Disallow: /Timeline/
-Sitemap: https://karin.heavy.jp/sitemap.xml
+Sitemap: https://karin-archive.com/sitemap.xml

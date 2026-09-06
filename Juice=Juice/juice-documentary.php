@@ -1,5 +1,5 @@
 <?php
-  $title = "Juice=Juice結成時に公開された公式チャンネルの密着映像 密着映像まとめ";
+  $title = "Juice=Juice結成時 公式チャンネルの密着映像 まとめ";
   $description = "Juice=Juice結成時に公開されたJuice=Juiceの公式チャンネルのメジャーデビュー前後の密着映像をまとめました。";
   $jsonld_type = "Dataset";
   $about = ["name" => "Juice=Juice", "type" => "MusicGroup"];
@@ -15,7 +15,7 @@
 ?>
 
 <main>
-  <h1>Juice=Juice結成時に公開された公式チャンネルの密着映像 まとめ</h1>
+  <h1>Juice=Juice結成時 公式チャンネルの密着映像 まとめ</h1>
   <a href="https://www.youtube.com/@juicejuice" target="_blank" rel="noopener noreferrer">Juice=Juiceの公式チャンネル</a>のメジャーデビュー前後の密着映像をまとめました。
   <ul>
     <li><a href="https://www.youtube.com/watch?v=umZqsCLug3M"  target="_blank" rel="noopener noreferrer">Juice=Juice 密着映像 #1</a></li>

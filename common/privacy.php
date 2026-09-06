@@ -7,7 +7,7 @@
 <main>
 <h1>プライバシーポリシー</h1>
 
-<p>当サイト（karin.heavy.jp / 宮本佳林・M-line・ハロプロ Archive）における情報の取扱いについて定めます。</p>
+<p>当サイト（karin-archive.com / 宮本佳林・M-line・ハロプロ Archive）における情報の取扱いについて定めます。</p>
 
 <h3>1. アクセス解析について</h3>
 <p>当サイトでは、利用状況の把握のためにGoogleアナリティクス（Google Analytics）を利用しています。Googleアナリティクスはデータ収集のためにCookieを使用します。収集される情報は匿名であり、個人を特定するものではありません。収集を希望されない場合は、お使いのブラウザの設定、またはGoogleが提供するオプトアウトアドオン（<a href="https://tools.google.com/dlpage/gaoptout" target="_blank" rel="noopener">https://tools.google.com/dlpage/gaoptout</a>）により無効化できます。</p>

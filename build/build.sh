@@ -11,7 +11,7 @@ OUT="${OUT_DIR:-$ROOT/public}"
 PORT=8123
 BASE_URL="${BASE_URL:?BASE_URL を指定してください (例: https://karin-archive.example.workers.dev)}"
 BASE_URL="${BASE_URL%/}"
-OLD_URL="https://karin.heavy.jp"
+OLD_URL="https://karin-archive.com"
 
 rm -rf "$OUT"
 mkdir -p "$OUT"

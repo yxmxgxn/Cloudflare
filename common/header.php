@@ -9,13 +9,15 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <?php
   $p_title = isset($title) ? $title : "宮本佳林・M-line・ハロプロ Archive";
+  // タブ・OGP・共有に使う完全なタイトル。JSON-LD の name はページ名だけでよいので $p_title を使う
+  $p_title_full = isset($title) ? $title . " | 宮本佳林・M-line・ハロプロ Archive" : "宮本佳林・M-line・ハロプロ Archive";
   $p_desc  = isset($description) ? $description : "宮本佳林さん・M-line・ハロープロジェクトのデータを公開しています";
   // OGP画像・ホーム画面アイコンのブランド別セット(img/{karin,hello,juice}/)。各ページで 'hello'/'juice' を指定、無ければ karin
   $brand = isset($brand) ? $brand : 'karin';
 ?>
 <meta name="description" content="<?php echo $p_desc; ?>">
 
-<meta property="og:title" content="<?php echo $p_title; ?>">
+<meta property="og:title" content="<?php echo $p_title_full; ?>">
 <meta property="og:description" content="<?php echo $p_desc; ?>">
 <meta property="og:type" content="website">
 <?php
@@ -25,18 +27,16 @@
   if ($canonical_path === '/index' || $canonical_path === '') {
       $canonical_path = '/';
   }
-  $canonical_url = 'https://karin.heavy.jp' . $canonical_path;
+  $canonical_url = 'https://karin-archive.com' . $canonical_path;
 ?>
 <meta property="og:url" content="<?php echo $canonical_url; ?>">
-<meta property="og:image" content="https://karin.heavy.jp/img/<?php echo $brand; ?>/ogp-1200x630.png">
+<meta property="og:image" content="https://karin-archive.com/img/<?php echo $brand; ?>/ogp-1200x630.png">
 <meta property="og:site_name" content="宮本佳林・M-line・ハロプロ Archive">
 
+<!-- twitter:title/description/image は未指定なら og: が使われるので置かない(全ページ同じ値になる事故を防ぐ) -->
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="宮本佳林・M-line・ハロプロ Archive">
-<meta name="twitter:description" content="宮本佳林さん・M-line・ハロープロジェクトのデータを公開しています">
-<meta name="twitter:image" content="https://karin.heavy.jp/img/<?php echo $brand; ?>/ogp-1200x630.png">
 
-<title><?php if (isset($title)) {echo $title . " | 宮本佳林・M-line・ハロプロ Archive"; } else {echo "宮本佳林・M-line・ハロプロ Archive"; } ?></title>
+<title><?php echo $p_title_full; ?></title>
 
 <!-- Webフォント(style.css の body で 'Noto Sans JP' を指定しているため必要) -->
 

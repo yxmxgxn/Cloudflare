@@ -363,7 +363,7 @@ function dc_x_embed(string $label, array $tw): string {
         <a href="<?= dc_h($m['official']) ?>" target="_blank" rel="noopener noreferrer"><?= icon('link-brand', 'ic ic-20') ?>ハロー！プロジェクト公式プロフィール</a>
         <?php // シェア先URLは表示中のメンバーに合わせてJSが入れる ?>
         <a class="dc-share" target="_blank" rel="noopener noreferrer"
-           data-text="<?= dc_h($m['name'] . '（' . $m['friend'] . '）｜DECA!BEAT（デカビート）非公式まとめ') ?>"><?= icon('x', 'ic ic-20') ?>Xでシェア</a>
+           data-text="<?= dc_h($m['name'] . '（' . $m['friend'] . '）｜DECA!BEAT 非公式まとめ #デカビート') ?>"><?= icon('x', 'ic ic-20') ?>Xでシェア</a>
       </p>
       <div class="dc-embeds">
         <?= dc_x_embed('メンバー紹介ポスト', $m['intro']) ?>
@@ -522,10 +522,9 @@ function dc_x_embed(string $label, array $tw): string {
     // Xのシェアボタン。共有先はいま見ているメンバーのURLにする
     var share = panel.querySelector('.dc-share');
     if (share) {
-      share.href = 'https://x.com/intent/post'
-        + '?text=' + encodeURIComponent(share.dataset.text)
-        + '&url=' + encodeURIComponent(location.origin + location.pathname + '#' + slug)
-        + '&hashtags=' + encodeURIComponent('デカビート');
+      // 本文とURLをまとめて text に入れる(url/hashtags を分けるとXが並び順を決めてしまう)
+      share.href = 'https://x.com/intent/post?text='
+        + encodeURIComponent(share.dataset.text + '\n' + location.origin + location.pathname + '#' + slug);
     }
     // 共有できるようにURLへ反映する(履歴は増やさない)
     if (updateHash && window.history.replaceState) {

@@ -1,29 +1,38 @@
 <footer>
 <div class="share-area">
 <?php
-  $s_url = urlencode("https://karin.heavy.jp" . $_SERVER['REQUEST_URI']);
-  $s_txt = urlencode(isset($title) ? $title . " | 宮本佳林・M-line・ハロプロ Archive" : "宮本佳林・M-line・ハロプロ Archive");
+  // 共有用の絶対URL。ビルド時に build/build.sh が OLD_URL をデプロイ先ドメインへ置換する
+  $page_url  = "https://karin-archive.com" . $_SERVER['REQUEST_URI'];
+  $share_ttl = isset($p_title_full) ? $p_title_full : "宮本佳林・M-line・ハロプロ Archive";
+  // rawurlencode: 空白が + ではなく %20 になる(URLを値として渡すのでこちらが無難)
+  $s_url = rawurlencode($page_url);
+  $s_txt = rawurlencode($share_ttl);
 ?>
 <p>Share:
-  <a href="https://x.com/share?url=<?php echo $s_url; ?>&text=<?php echo $s_txt; ?>" target="_blank" class="btn-x">X</a>
-  <a href="https://www.threads.com/intent/post?text=<?php echo $s_txt; ?>&url=<?php echo $s_url; ?>" target="_blank" rel="noopener" class="btn-threads">Threads</a>
-  <a href="https://social-plugins.line.me/lineit/share?url=<?php echo $s_url; ?>" target="_blank" class="btn-line">LINE</a>
-  <button onclick="sharePage()" class="btn-copy">その他で送る/保存</button></p>
+  <a href="https://x.com/share?url=<?php echo $s_url; ?>&amp;text=<?php echo $s_txt; ?>" target="_blank" rel="noopener" class="btn-x">X</a>
+  <a href="https://www.threads.com/intent/post?text=<?php echo $s_txt; ?>&amp;url=<?php echo $s_url; ?>" target="_blank" rel="noopener" class="btn-threads">Threads</a>
+  <a href="https://social-plugins.line.me/lineit/share?url=<?php echo $s_url; ?>" target="_blank" rel="noopener" class="btn-line">LINE</a>
+  <button type="button" onclick="sharePage()" class="btn-copy">その他で送る/保存</button></p>
 </div>
 
 
 <script>
-function sharePage() {
+async function sharePage() {
+  var data = {
+    title: <?php echo json_encode($share_ttl, JSON_UNESCAPED_UNICODE | JSON_HEX_TAG | JSON_HEX_APOS | JSON_HEX_QUOT | JSON_HEX_AMP | JSON_UNESCAPED_SLASHES); ?>,
+    url:   <?php echo json_encode($page_url,  JSON_UNESCAPED_UNICODE | JSON_HEX_TAG | JSON_HEX_APOS | JSON_HEX_QUOT | JSON_HEX_AMP | JSON_UNESCAPED_SLASHES); ?>
+  };
   if (navigator.share) {
-    navigator.share({
-      title: '<?php echo $p_title; ?>',
-      url: 'https://karin.heavy.jp<?php echo $_SERVER['REQUEST_URI']; ?>'
-    }).catch(console.error);
-  } else {
-    // PCブラウザなどで共有機能がない場合は、URLをクリップボードにコピーする
-    const url = 'https://karin.heavy.jp<?php echo $_SERVER['REQUEST_URI']; ?>';
-    navigator.clipboard.writeText(url);
+    try { await navigator.share(data); }
+    catch (e) { if (e.name !== 'AbortError') console.error(e); }   // AbortErrorは利用者が閉じただけ
+    return;
+  }
+  // 共有機能がないブラウザ(PCなど)はURLをクリップボードにコピーする
+  try {
+    await navigator.clipboard.writeText(data.url);   // 完了を待ってから成功を伝える
     alert('URLをコピーしました！');
+  } catch (e) {
+    prompt('このURLをコピーしてください', data.url); // http やコピー拒否のときの逃げ道
   }
 }
 </script>
@@ -120,6 +129,8 @@ function sharePage() {
       if (!d) return;
       msg.textContent = d.error === 'rate'
         ? '短い間に送りすぎのようです。少し時間をおいてください'
+        : d.error === 'turnstile'   // 開いた直後で Turnstile がまだ読み込めていない
+        ? '確認中です。少し待ってからもう一度送信してください'
         : '送信できませんでした。時間をおいて試してください';
       sendBtn.disabled = false;
       resetTurnstile();
@@ -133,11 +144,11 @@ function sharePage() {
 </script>
 
 <ul class="footer-links">
-  <li><a href="/common/privacy" target="_blank">プライバシーポリシー</a></li>
-  <li><a href="/common/disclaimer" target="_blank">免責事項</a></li>
+  <li><a href="/common/privacy" target="_blank" rel="noopener">プライバシーポリシー</a></li>
+  <li><a href="/common/disclaimer" target="_blank" rel="noopener">免責事項</a></li>
   <li class="footer-break"></li>
-  <li><a href="https://tools.ymgn0829.workers.dev/sns-links/" target="_blank">SNS Link</a></li>
-  <li><a href="https://x.com/yxmxgxn" target="_blank">X @yxmxgxn</a></li>
+  <li><a href="https://tools.ymgn0829.workers.dev/sns-links/" target="_blank" rel="noopener">SNS Link</a></li>
+  <li><a href="https://x.com/yxmxgxn" target="_blank" rel="noopener">X @yxmxgxn</a></li>
   <li>&copy; 2026 @yxmxgxn</li>
 </ul>
 </footer>

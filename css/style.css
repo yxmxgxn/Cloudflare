@@ -674,6 +674,12 @@ footer a {
     color: #fff;
 }
 
+/* Threadsのボタン（公式色＝黒） */
+.btn-threads {
+    background: #000;
+    color: #fff;
+}
+
 /* LINEのボタン（公式色） */
 .btn-line {
     background: #06C755;
@@ -687,11 +693,12 @@ footer a {
     cursor: pointer;
 }
 
-.share-buttons a:hover {
+.share-area a:hover {
     opacity: 0.7;
 }
 
 .btn-x,
+.btn-threads,
 .btn-line,
 .btn-copy {
   display: inline-block;
@@ -2427,8 +2434,11 @@ footer a {
 }
 
 /* TikTokは縦動画なので高さを決め打ちする(埋め込み側で調整されない) */
+/* TikTokは縦動画で細いので、Xの埋め込みと同じく列の中央に置く */
 .dc-embed[data-type="tiktok"] .dc-slot {
   max-width: min(100%, 340px);
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .dc-embed[data-type="tiktok"] .dc-slot iframe {
