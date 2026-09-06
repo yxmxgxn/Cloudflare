@@ -44,22 +44,19 @@ OUTPUT_NAMES = REPO_ROOT / "Spreadsheet" / "oneplusone_names.php"
 OUTPUT_GENERATED = REPO_ROOT / "Generated" / "oneplusone_generated.php"
 
 # シートのFeature表記 → 表示名。シート側が略記なので、ここで正式名に直す。
-# 「ハロドリ。」の有無はシート側の書き方が揺れても拾えるよう両方を受ける。
 FEATURE_LABELS = {
     "COVERS -One on One": "COVERS -One on One-",
     "ONE PLUS ONE": "ONE PLUS ONE",
-    "ハロドリ。1アングルバージョン！": "ハロドリ。1アングルバージョン！",
-    "1アングルバージョン！": "ハロドリ。1アングルバージョン！",
 }
 
-# カード内の動画リンクだけの短い表記。ONE PLUS ONEと並ぶので番組名は省ける。
-# 企画プルダウンは単独で出るため、ここには入れず正式名のまま見せる。
-FEATURE_SHORT = {
-    "ハロドリ。1アングルバージョン！": "1アングルバージョン！",
-}
+# ハロドリ版の判定と、カード内リンクで省く番組名の接頭辞。
+# シート側が「ハロドリ。1アングルバージョン！」でも「1アングルバージョン」でも
+# 同じ企画として扱い、末尾の「！」の有無はシートの書き方をそのまま活かす。
+HALODORI_MARK = "1アングルバージョン"
+HALODORI_PREFIX = "ハロドリ。"
 
 # カードの代表行に選ぶ優先順位。ハロドリ版は本編(ONE PLUS ONE)の派生なので後ろ。
-FEATURE_ORDER = ["ONE PLUS ONE", "COVERS -One on One-", "ハロドリ。1アングルバージョン！"]
+FEATURE_ORDER = ["ONE PLUS ONE", "COVERS -One on One-"]
 
 # グループ絞り込みの並び順。ここに無いものは末尾にまわす。
 GROUP_ORDER = [
@@ -112,7 +109,24 @@ def feature_label(row: dict) -> str:
     for key, label in FEATURE_LABELS.items():
         if re.sub(r"[\s　]+", "", key) == raw:
             return label
-    return val(row, "Feature")
+    # ハロドリ版は「ハロドリ。」が省かれていても補う(末尾の「！」はシートのまま)
+    if HALODORI_MARK in raw and not raw.startswith(HALODORI_PREFIX):
+        return HALODORI_PREFIX + raw
+    return raw
+
+
+def feature_short(label: str) -> str:
+    """カード内リンク用。ONE PLUS ONEと並ぶので番組名の接頭辞は省く"""
+    if HALODORI_MARK in label and label.startswith(HALODORI_PREFIX):
+        return label[len(HALODORI_PREFIX):]
+    return label
+
+
+def feature_rank(label: str) -> int:
+    """カードの代表行を決める並び。ハロドリ版は本編の派生なので最後にまわす"""
+    if label in FEATURE_ORDER:
+        return FEATURE_ORDER.index(label)
+    return len(FEATURE_ORDER) + (1 if HALODORI_MARK in label else 0)
 
 
 def canon_group(group: str) -> str:
@@ -172,7 +186,7 @@ def build_videos(rows: list[dict], card_date: str) -> str:
         lines.append(
             f'<li>{icon_for_url(url, "ic")}'
             f'<a href="{esc(url)}" target="_blank" rel="noopener noreferrer">'
-            f"{esc(FEATURE_SHORT.get(label, label))}</a>"
+            f"{esc(feature_short(label))}</a>"
             f"{note}</li>"
         )
     return f'<ul class="opo-videos">{"".join(lines)}</ul>' if lines else ""
@@ -196,11 +210,7 @@ def build_cards(rows: list[dict]) -> tuple[str, list[dict]]:
     cards = []
     for key, group_rows in by_card.items():
         # 企画の優先順で並べ、先頭を代表行(カードの日付・所属の出どころ)にする
-        def feat_rank(r):
-            label = feature_label(r)
-            return FEATURE_ORDER.index(label) if label in FEATURE_ORDER else len(FEATURE_ORDER)
-
-        group_rows.sort(key=feat_rank)
+        group_rows.sort(key=lambda r: feature_rank(feature_label(r)))
         head = group_rows[0]
         card_date = val(head, "published_jst")
 
@@ -285,12 +295,9 @@ def build_feature_options(cards: list[dict]) -> str:
         for f in c["features"]:
             counts[f] = counts.get(f, 0) + 1
 
-    def order(f):
-        return FEATURE_ORDER.index(f) if f in FEATURE_ORDER else len(FEATURE_ORDER)
-
     return "\n".join(
         f'<option value="{esc(f)}">{esc(f)}（{counts[f]}）</option>'
-        for f in sorted(counts, key=order)
+        for f in sorted(counts, key=feature_rank)
     )
 
 
