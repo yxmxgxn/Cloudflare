@@ -6,6 +6,7 @@
 ?>
 <p>Share:
   <a href="https://x.com/share?url=<?php echo $s_url; ?>&text=<?php echo $s_txt; ?>" target="_blank" class="btn-x">X</a>
+  <a href="https://www.threads.com/intent/post?text=<?php echo $s_txt; ?>&url=<?php echo $s_url; ?>" target="_blank" rel="noopener" class="btn-threads">Threads</a>
   <a href="https://social-plugins.line.me/lineit/share?url=<?php echo $s_url; ?>" target="_blank" class="btn-line">LINE</a>
   <button onclick="sharePage()" class="btn-copy">その他で送る/保存</button></p>
 </div>

@@ -10,7 +10,8 @@
 // DECA!BEAT のデータ。期間限定ユニットで更新の予定がないため、
 // スプレッドシートから一度だけ書き出したものをこのファイルが直接持っている。
 // (Spreadsheet/ や Generated/ の生成物ではないので、直したいときはここを手で直す)
-// 埋め込みは元コードのHTMLを持たず、ツイートID・TikTokの動画IDだけを持つ。
+// Xの埋め込みは公式の <blockquote> をそのまま持つ($dc_tweet_html)。
+// widgets.js が読み込めればそれが埋め込みに差し替わり、読めなくても引用が残る。
 // ------------------------------------------------------------------
 
 $dc_members = [
@@ -232,6 +233,53 @@ $dc_sns = [
   ],
 ];
 
+// Xの埋め込み用マークアップ(ツイートID => 公式の <blockquote>)。
+// widgets.js が読めたときはこれが埋め込みに差し替わり、読めなければ引用のまま残る。
+$dc_tweet_html = [
+  '2028410164597129579' =>
+    '<blockquote class="twitter-tweet"><p lang="ja" dir="ltr">🌏<a href="https://x.com/hashtag/%E3%83%87%E3%82%AB%E3%83%93%E3%83%BC%E3%83%88?src=hash&amp;ref_src=twsrc%5Etfw">#デカビート</a> メンバー紹介🌏<br>❤️ 米村 姫良々（OCHA NORMA）<br><br>デカビートの頼りになるリーダー！👩‍🏫<br>回収ガンでデカボエネルギーを集めます🔫<a href="https://x.com/hashtag/Earthhacks?src=hash&amp;ref_src=twsrc%5Etfw">#Earthhacks</a> <a href="https://x.com/hashtag/%E3%83%87%E3%82%AB%E3%83%93%E3%83%BC%E3%83%88?src=hash&amp;ref_src=twsrc%5Etfw">#デカビート</a> <a href="https://x.com/hashtag/%E3%83%8F%E3%83%AD%E3%83%97%E3%83%AD?src=hash&amp;ref_src=twsrc%5Etfw">#ハロプロ</a> <a href="https://x.com/hashtag/Helloproject?src=hash&amp;ref_src=twsrc%5Etfw">#Helloproject</a> <a href="https://x.com/hashtag/ocha_norma?src=hash&amp;ref_src=twsrc%5Etfw">#ocha_norma</a> <a href="https://x.com/hashtag/%E7%B1%B3%E6%9D%91%E5%A7%AB%E8%89%AF%E3%80%85?src=hash&amp;ref_src=twsrc%5Etfw">#米村姫良々</a> <a href="https://t.co/K8pANt10p2">pic.twitter.com/K8pANt10p2</a></p>&mdash; Earth hacks【公式】 (@Earthhacks2023) <a href="https://x.com/Earthhacks2023/status/2028410164597129579?ref_src=twsrc%5Etfw">March 2, 2026</a></blockquote>',
+  '2095088783930876210' =>
+    '<blockquote class="twitter-tweet"><p lang="ja" dir="ltr">＼🌼おまたせしました🌼／<br>「DECA!BEATといっしょに！デカボMISSION vol.1」<br>5,000ACTION達成のでっかいボーナスとして、DECA!BEAT新ビジュアルを公開🪞✨<br><br>新ビジュアルでは、DECA!BEATメンバーと… <a href="https://t.co/tUrMsPOlvP">pic.twitter.com/tUrMsPOlvP</a></p>&mdash; Earth hacks【公式】 (@Earthhacks2023) <a href="https://x.com/Earthhacks2023/status/2095088783930876210?ref_src=twsrc%5Etfw">September 2, 2026</a></blockquote>',
+  '2025774505914995070' =>
+    '<blockquote class="twitter-tweet"><p lang="ja" dir="ltr">🌏<a href="https://x.com/hashtag/%E3%83%87%E3%82%AB%E3%83%93%E3%83%BC%E3%83%88?src=hash&amp;ref_src=twsrc%5Etfw">#デカビート</a> だーれだ！⑦🌏<br>デカボ×ビートで未来を変える!? <br>Earth hacks × ハロー！プロジェクト 特別ユニット結成<br><br>ユニットメンバーのデカボなエピソードと、デカボなボイスを１人ずつお届け✉️<br>本日は第７回目の投稿です！<br>誰か分かったらリプライで教えて下さいね🙊… <a href="https://t.co/zyZjY8NqX9">pic.twitter.com/zyZjY8NqX9</a></p>&mdash; Earth hacks【公式】 (@Earthhacks2023) <a href="https://x.com/Earthhacks2023/status/2025774505914995070?ref_src=twsrc%5Etfw">February 23, 2026</a></blockquote>',
+  '2028664238454243540' =>
+    '<blockquote class="twitter-tweet"><p lang="ja" dir="ltr">🌏<a href="https://x.com/hashtag/%E3%83%87%E3%82%AB%E3%83%93%E3%83%BC%E3%83%88?src=hash&amp;ref_src=twsrc%5Etfw">#デカビート</a> メンバー紹介🌏<br>🩷岡村 美波（BEYOOOOONDS）<br><br>みんなのデカボを算出・解析するデカビートのキュートな頭脳担当❣️🕵️<a href="https://x.com/hashtag/Earthhacks?src=hash&amp;ref_src=twsrc%5Etfw">#Earthhacks</a> <a href="https://x.com/hashtag/%E3%83%87%E3%82%AB%E3%83%93%E3%83%BC%E3%83%88?src=hash&amp;ref_src=twsrc%5Etfw">#デカビート</a> <a href="https://x.com/hashtag/%E3%83%8F%E3%83%AD%E3%83%97%E3%83%AD?src=hash&amp;ref_src=twsrc%5Etfw">#ハロプロ</a> <a href="https://x.com/hashtag/Helloproject?src=hash&amp;ref_src=twsrc%5Etfw">#Helloproject</a> <a href="https://x.com/hashtag/BEYOOOOONDS?src=hash&amp;ref_src=twsrc%5Etfw">#BEYOOOOONDS</a> <a href="https://x.com/hashtag/%E5%B2%A1%E6%9D%91%E7%BE%8E%E6%B3%A2?src=hash&amp;ref_src=twsrc%5Etfw">#岡村美波</a> <a href="https://t.co/nNWcJB18nI">pic.twitter.com/nNWcJB18nI</a></p>&mdash; Earth hacks【公式】 (@Earthhacks2023) <a href="https://x.com/Earthhacks2023/status/2028664238454243540?ref_src=twsrc%5Etfw">March 3, 2026</a></blockquote>',
+  '2095118103336153138' =>
+    '<blockquote class="twitter-tweet"><p lang="ja" dir="ltr">「DECA!BEATといっしょに！デカボMISSION vol.1」<br>5,000ACTION達成のでっかいボーナスとして、DECA!BEAT新ビジュアルを公開🪞✨<br><br>今回は <a href="https://x.com/hashtag/%E5%B2%A1%E6%9D%91%E7%BE%8E%E6%B3%A2?src=hash&amp;ref_src=twsrc%5Etfw">#岡村美波</a> さんと、ミイメェ🐏が登場！<br><br>🎶デカビートフレンズとは？📣<br>みんなが集めたデカボのパワーで生まれた、<br>DECA! BEATの小さなお友達。<br>DECA!… <a href="https://t.co/WWuGHou4tF">pic.twitter.com/WWuGHou4tF</a></p>&mdash; Earth hacks【公式】 (@Earthhacks2023) <a href="https://x.com/Earthhacks2023/status/2095118103336153138?ref_src=twsrc%5Etfw">September 2, 2026</a></blockquote>',
+  '2025143477059944504' =>
+    '<blockquote class="twitter-tweet"><p lang="ja" dir="ltr">🌏<a href="https://x.com/hashtag/%E3%83%87%E3%82%AB%E3%83%93%E3%83%BC%E3%83%88?src=hash&amp;ref_src=twsrc%5Etfw">#デカビート</a> だーれだ！⑥🌏<br>デカボ×ビートで未来を変える!? <br>Earth hacks × ハロー！プロジェクト 特別ユニット結成<br><br>ユニットメンバーのデカボなエピソードと、デカボなボイスを１人ずつお届け✉️<br>本日は第６回目の投稿です！<br>誰か分かったらリプライで教えて下さいね🙊<a href="https://x.com/hashtag/%E3%83%87%E3%82%AB%E3%83%93%E3%83%BC%E3%83%88?src=hash&amp;ref_src=twsrc%5Etfw">#デカビート</a>… <a href="https://t.co/IhJz6TWF09">pic.twitter.com/IhJz6TWF09</a></p>&mdash; Earth hacks【公式】 (@Earthhacks2023) <a href="https://x.com/Earthhacks2023/status/2025143477059944504?ref_src=twsrc%5Etfw">February 21, 2026</a></blockquote>',
+  '2029027249018855787' =>
+    '<blockquote class="twitter-tweet"><p lang="ja" dir="ltr">🌏<a href="https://x.com/hashtag/%E3%83%87%E3%82%AB%E3%83%93%E3%83%BC%E3%83%88?src=hash&amp;ref_src=twsrc%5Etfw">#デカビート</a> メンバー紹介🌏<br>💛江端 妃咲（Juice=Juice）<br><br>日常に隠れたデカボをスカウターであざとく見つける！👮😎<a href="https://x.com/hashtag/Earthhacks?src=hash&amp;ref_src=twsrc%5Etfw">#Earthhacks</a> <a href="https://x.com/hashtag/%E3%83%87%E3%82%AB%E3%83%93%E3%83%BC%E3%83%88?src=hash&amp;ref_src=twsrc%5Etfw">#デカビート</a> <a href="https://x.com/hashtag/%E3%83%8F%E3%83%AD%E3%83%97%E3%83%AD?src=hash&amp;ref_src=twsrc%5Etfw">#ハロプロ</a> <a href="https://x.com/hashtag/Helloproject?src=hash&amp;ref_src=twsrc%5Etfw">#Helloproject</a> <a href="https://x.com/hashtag/juicejuice?src=hash&amp;ref_src=twsrc%5Etfw">#juicejuice</a> <a href="https://x.com/hashtag/%E6%B1%9F%E7%AB%AF%E5%A6%83%E5%92%B2?src=hash&amp;ref_src=twsrc%5Etfw">#江端妃咲</a> <a href="https://t.co/tHZWzvkGRl">pic.twitter.com/tHZWzvkGRl</a></p>&mdash; Earth hacks【公式】 (@Earthhacks2023) <a href="https://x.com/Earthhacks2023/status/2029027249018855787?ref_src=twsrc%5Etfw">March 4, 2026</a></blockquote>',
+  '2095451311823278122' =>
+    '<blockquote class="twitter-tweet"><p lang="ja" dir="ltr">「DECA!BEATといっしょに！デカボMISSION vol.1」<br>5,000ACTION達成のでっかいボーナスとして、DECA!BEAT新ビジュアルを公開🪞✨<br><br>今回は <a href="https://x.com/hashtag/%E6%B1%9F%E7%AB%AF%E5%A6%83%E5%92%B2?src=hash&amp;ref_src=twsrc%5Etfw">#江端妃咲</a> さんと、エバネコ🐈‍⬛が登場！<br><br>🎶デカビートフレンズとは？📣<br>みんなが集めたデカボのパワーで生まれた、<br>DECA! BEATの小さなお友達。<br>DECA!… <a href="https://t.co/6Sohw1AkPD">pic.twitter.com/6Sohw1AkPD</a></p>&mdash; Earth hacks【公式】 (@Earthhacks2023) <a href="https://x.com/Earthhacks2023/status/2095451311823278122?ref_src=twsrc%5Etfw">September 3, 2026</a></blockquote>',
+  '2024321836063088710' =>
+    '<blockquote class="twitter-tweet"><p lang="ja" dir="ltr">🌏<a href="https://x.com/hashtag/%E3%83%87%E3%82%AB%E3%83%93%E3%83%BC%E3%83%88?src=hash&amp;ref_src=twsrc%5Etfw">#デカビート</a> だーれだ！⑤🌏<br>デカボ×ビートで未来を変える!? <br>Earth hacks × ハロー！プロジェクト 特別ユニット結成<br><br> ユニットメンバーのデカボなエピソードと、デカボなボイスを１人ずつお届け✉️<br>本日は第５回目の投稿です！<br>誰か分かったらリプライで教えて下さいね🙊<a href="https://x.com/hashtag/%E3%83%87%E3%82%AB%E3%83%93%E3%83%BC%E3%83%88?src=hash&amp;ref_src=twsrc%5Etfw">#デカビート</a>… <a href="https://t.co/VWdaOOj6nL">pic.twitter.com/VWdaOOj6nL</a></p>&mdash; Earth hacks【公式】 (@Earthhacks2023) <a href="https://x.com/Earthhacks2023/status/2024321836063088710?ref_src=twsrc%5Etfw">February 19, 2026</a></blockquote>',
+  '2029765570149974086' =>
+    '<blockquote class="twitter-tweet"><p lang="ja" dir="ltr">🌏<a href="https://x.com/hashtag/%E3%83%87%E3%82%AB%E3%83%93%E3%83%BC%E3%83%88?src=hash&amp;ref_src=twsrc%5Etfw">#デカビート</a> メンバー紹介🌏<br>🩵後藤 花（アンジュルム）<br><br>デカボを発見したらキックボードで人一倍元気に、現場に急行🛴💭<a href="https://x.com/hashtag/Earthhacks?src=hash&amp;ref_src=twsrc%5Etfw">#Earthhacks</a> <a href="https://x.com/hashtag/%E3%83%87%E3%82%AB%E3%83%93%E3%83%BC%E3%83%88?src=hash&amp;ref_src=twsrc%5Etfw">#デカビート</a> <a href="https://x.com/hashtag/%E3%83%8F%E3%83%AD%E3%83%97%E3%83%AD?src=hash&amp;ref_src=twsrc%5Etfw">#ハロプロ</a> <a href="https://x.com/hashtag/Helloproject?src=hash&amp;ref_src=twsrc%5Etfw">#Helloproject</a> <a href="https://x.com/hashtag/%E3%82%A2%E3%83%B3%E3%82%B8%E3%83%A5%E3%83%AB%E3%83%A0?src=hash&amp;ref_src=twsrc%5Etfw">#アンジュルム</a> <a href="https://x.com/hashtag/%E5%BE%8C%E8%97%A4%E8%8A%B1?src=hash&amp;ref_src=twsrc%5Etfw">#後藤花</a> <a href="https://t.co/BMbjGHmOVZ">pic.twitter.com/BMbjGHmOVZ</a></p>&mdash; Earth hacks【公式】 (@Earthhacks2023) <a href="https://x.com/Earthhacks2023/status/2029765570149974086?ref_src=twsrc%5Etfw">March 6, 2026</a></blockquote>',
+  '2095478263816867999' =>
+    '<blockquote class="twitter-tweet"><p lang="ja" dir="ltr">「DECA!BEATといっしょに！デカボMISSION vol.1」<br>5,000ACTION達成のでっかいボーナスとして、DECA!BEAT新ビジュアルを公開🪞✨<br><br>今回は <a href="https://x.com/hashtag/%E8%B1%AB%E9%A2%A8%E7%91%A0%E4%B9%83?src=hash&amp;ref_src=twsrc%5Etfw">#豫風瑠乃</a> さんと、ルノコーン🦄が登場！<br><br>🎶デカビートフレンズとは？📣<br>みんなが集めたデカボのパワーで生まれた、<br>DECA! BEATの小さなお友達。<br>DECA!… <a href="https://t.co/Uuj4n7wZ78">pic.twitter.com/Uuj4n7wZ78</a></p>&mdash; Earth hacks【公式】 (@Earthhacks2023) <a href="https://x.com/Earthhacks2023/status/2095478263816867999?ref_src=twsrc%5Etfw">September 3, 2026</a></blockquote>',
+  '2023637008669917602' =>
+    '<blockquote class="twitter-tweet"><p lang="ja" dir="ltr">🌏<a href="https://x.com/hashtag/%E3%83%87%E3%82%AB%E3%83%93%E3%83%BC%E3%83%88?src=hash&amp;ref_src=twsrc%5Etfw">#デカビート</a> だーれだ！④🌏<br>デカボ×ビートで未来を変える!? <br>Earth hacks × ハロー！プロジェクト 特別ユニット結成<br><br> ユニットメンバーのデカボなエピソードと、デカボなボイスを１人ずつお届け✉️<br>本日は第４回目の投稿です！<br>誰か分かったらリプライで教えて下さいね🙊<a href="https://x.com/hashtag/%E3%83%87%E3%82%AB%E3%83%93%E3%83%BC%E3%83%88?src=hash&amp;ref_src=twsrc%5Etfw">#デカビート</a>… <a href="https://t.co/FLr2EtWox3">pic.twitter.com/FLr2EtWox3</a></p>&mdash; Earth hacks【公式】 (@Earthhacks2023) <a href="https://x.com/Earthhacks2023/status/2023637008669917602?ref_src=twsrc%5Etfw">February 17, 2026</a></blockquote>',
+  '2029400475767062546' =>
+    '<blockquote class="twitter-tweet"><p lang="ja" dir="ltr">🌏<a href="https://x.com/hashtag/%E3%83%87%E3%82%AB%E3%83%93%E3%83%BC%E3%83%88?src=hash&amp;ref_src=twsrc%5Etfw">#デカビート</a> メンバー紹介🌏<br>💛豫風 瑠乃（つばきファクトリー）<br><br>メガホンを使い、デッカいボイスで見つけたデカボをメンバーに伝えるの！📢<a href="https://x.com/hashtag/Earthhacks?src=hash&amp;ref_src=twsrc%5Etfw">#Earthhacks</a> <a href="https://x.com/hashtag/%E3%83%87%E3%82%AB%E3%83%93%E3%83%BC%E3%83%88?src=hash&amp;ref_src=twsrc%5Etfw">#デカビート</a> <a href="https://x.com/hashtag/%E3%83%8F%E3%83%AD%E3%83%97%E3%83%AD?src=hash&amp;ref_src=twsrc%5Etfw">#ハロプロ</a> <a href="https://x.com/hashtag/Helloproject?src=hash&amp;ref_src=twsrc%5Etfw">#Helloproject</a> <a href="https://x.com/hashtag/%E3%81%A4%E3%81%B0%E3%81%8D%E3%83%95%E3%82%A1%E3%82%AF%E3%83%88%E3%83%AA%E3%83%BC?src=hash&amp;ref_src=twsrc%5Etfw">#つばきファクトリー</a> <a href="https://x.com/hashtag/%E8%B1%AB%E9%A2%A8%E7%91%A0%E4%B9%83?src=hash&amp;ref_src=twsrc%5Etfw">#豫風瑠乃</a> <a href="https://t.co/fmoaBqGUXg">pic.twitter.com/fmoaBqGUXg</a></p>&mdash; Earth hacks【公式】 (@Earthhacks2023) <a href="https://x.com/Earthhacks2023/status/2029400475767062546?ref_src=twsrc%5Etfw">March 5, 2026</a></blockquote>',
+  '2095791994874343640' =>
+    '<blockquote class="twitter-tweet"><p lang="ja" dir="ltr">「DECA!BEATといっしょに！デカボMISSION vol.1」<br>5,000ACTION達成のでっかいボーナスとして、DECA!BEAT新ビジュアルを公開🪞✨<br><br>今回は <a href="https://x.com/hashtag/%E5%BE%8C%E8%97%A4%E8%8A%B1?src=hash&amp;ref_src=twsrc%5Etfw">#後藤花</a> さんと、ハナペン🐧が登場！<br><br>🎶デカビートフレンズとは？📣<br>みんなが集めたデカボのパワーで生まれた、<br>DECA!BEATの小さなお友達。… <a href="https://t.co/yxHBtuQwsZ">pic.twitter.com/yxHBtuQwsZ</a></p>&mdash; Earth hacks【公式】 (@Earthhacks2023) <a href="https://x.com/Earthhacks2023/status/2095791994874343640?ref_src=twsrc%5Etfw">September 4, 2026</a></blockquote>',
+  '2022874484286644401' =>
+    '<blockquote class="twitter-tweet"><p lang="ja" dir="ltr">🌏<a href="https://x.com/hashtag/%E3%83%87%E3%82%AB%E3%83%93%E3%83%BC%E3%83%88?src=hash&amp;ref_src=twsrc%5Etfw">#デカビート</a> だーれだ！③🌏<br>デカボ×ビートで未来を変える!? <br>Earth hacks × ハロー！プロジェクト 特別ユニット結成<br><br> ユニットメンバーのデカボなエピソードと、デカボなボイスを１人ずつお届け✉️<br>本日は第３回目の投稿です！<br>誰か分かったらリプライで教えて下さいね🙊<a href="https://x.com/hashtag/%E3%83%87%E3%82%AB%E3%83%93%E3%83%BC%E3%83%88?src=hash&amp;ref_src=twsrc%5Etfw">#デカビート</a>… <a href="https://t.co/wrpWRUYqGa">pic.twitter.com/wrpWRUYqGa</a></p>&mdash; Earth hacks【公式】 (@Earthhacks2023) <a href="https://x.com/Earthhacks2023/status/2022874484286644401?ref_src=twsrc%5Etfw">February 15, 2026</a></blockquote>',
+  '2030124792330998166' =>
+    '<blockquote class="twitter-tweet"><p lang="ja" dir="ltr">🌏<a href="https://x.com/hashtag/%E3%83%87%E3%82%AB%E3%83%93%E3%83%BC%E3%83%88?src=hash&amp;ref_src=twsrc%5Etfw">#デカビート</a> メンバー紹介🌏<br>❤️弓桁 朱琴（モーニング娘。’26）<br><br>でっかいスタンプでデカボを認定📛<br>みんなのデカボを応援する！👊🏻🔥<a href="https://x.com/hashtag/Earthhacks?src=hash&amp;ref_src=twsrc%5Etfw">#Earthhacks</a> <a href="https://x.com/hashtag/%E3%83%87%E3%82%AB%E3%83%93%E3%83%BC%E3%83%88?src=hash&amp;ref_src=twsrc%5Etfw">#デカビート</a> <a href="https://x.com/hashtag/%E3%83%8F%E3%83%AD%E3%83%97%E3%83%AD?src=hash&amp;ref_src=twsrc%5Etfw">#ハロプロ</a> <a href="https://x.com/hashtag/Helloproject?src=hash&amp;ref_src=twsrc%5Etfw">#Helloproject</a> <a href="https://x.com/hashtag/%E3%83%A2%E3%83%BC%E3%83%8B%E3%83%B3%E3%82%B0%E5%A8%9826?src=hash&amp;ref_src=twsrc%5Etfw">#モーニング娘26</a> <a href="https://x.com/hashtag/%E5%BC%93%E6%A1%81%E6%9C%B1%E7%90%B4?src=hash&amp;ref_src=twsrc%5Etfw">#弓桁朱琴</a> <a href="https://t.co/blpDmyPnSG">pic.twitter.com/blpDmyPnSG</a></p>&mdash; Earth hacks【公式】 (@Earthhacks2023) <a href="https://x.com/Earthhacks2023/status/2030124792330998166?ref_src=twsrc%5Etfw">March 7, 2026</a></blockquote>',
+  '2095840357263282534' =>
+    '<blockquote class="twitter-tweet"><p lang="ja" dir="ltr">「DECA!BEATといっしょに！デカボMISSION vol.1」<br>5,000ACTION達成のでっかいボーナスとして、DECA!BEAT新ビジュアルを公開🪞✨<br><br>今回は <a href="https://x.com/hashtag/%E5%BC%93%E6%A1%81%E6%9C%B1%E7%90%B4?src=hash&amp;ref_src=twsrc%5Etfw">#弓桁朱琴</a> さんと、シシゲタ🦁が登場！<br><br>🎶デカビートフレンズとは？📣<br>みんなが集めたデカボのパワーで生まれた、<br>DECA!BEATの小さなお友達。… <a href="https://t.co/UBGbBGIoND">pic.twitter.com/UBGbBGIoND</a></p>&mdash; Earth hacks【公式】 (@Earthhacks2023) <a href="https://x.com/Earthhacks2023/status/2095840357263282534?ref_src=twsrc%5Etfw">September 4, 2026</a></blockquote>',
+  '2022139545064702373' =>
+    '<blockquote class="twitter-tweet"><p lang="ja" dir="ltr">🌏<a href="https://x.com/hashtag/%E3%83%87%E3%82%AB%E3%83%93%E3%83%BC%E3%83%88?src=hash&amp;ref_src=twsrc%5Etfw">#デカビート</a> だーれだ！②🌏<br>デカボ×ビートで未来を変える!? <br>Earth hacks × ハロー！プロジェクト 特別ユニット結成<br><br> ユニットメンバーのデカボなエピソードと、デカボなボイスを１人ずつお届け✉️<br>本日は第２回目の投稿です！<br>誰か分かったらリプライで教えて下さいね🙊<a href="https://x.com/hashtag/%E3%83%87%E3%82%AB%E3%83%93%E3%83%BC%E3%83%88?src=hash&amp;ref_src=twsrc%5Etfw">#デカビート</a>… <a href="https://t.co/4EtQk69jTD">pic.twitter.com/4EtQk69jTD</a></p>&mdash; Earth hacks【公式】 (@Earthhacks2023) <a href="https://x.com/Earthhacks2023/status/2022139545064702373?ref_src=twsrc%5Etfw">February 13, 2026</a></blockquote>',
+  '2030509421403734220' =>
+    '<blockquote class="twitter-tweet"><p lang="ja" dir="ltr">🌏<a href="https://x.com/hashtag/%E3%83%87%E3%82%AB%E3%83%93%E3%83%BC%E3%83%88?src=hash&amp;ref_src=twsrc%5Etfw">#デカビート</a> メンバー紹介🌏<br>💛上村 麗菜（ロージークロニクル）<br><br>スツールを使って高いところから離れたデカボもくまなくチェック🪜👀<a href="https://x.com/hashtag/Earthhacks?src=hash&amp;ref_src=twsrc%5Etfw">#Earthhacks</a> <a href="https://x.com/hashtag/%E3%83%87%E3%82%AB%E3%83%93%E3%83%BC%E3%83%88?src=hash&amp;ref_src=twsrc%5Etfw">#デカビート</a> <a href="https://x.com/hashtag/%E3%83%8F%E3%83%AD%E3%83%97%E3%83%AD?src=hash&amp;ref_src=twsrc%5Etfw">#ハロプロ</a> <a href="https://x.com/hashtag/Helloproject?src=hash&amp;ref_src=twsrc%5Etfw">#Helloproject</a> <a href="https://x.com/hashtag/%E3%83%AD%E3%83%BC%E3%82%B8%E3%83%BC%E3%82%AF%E3%83%AD%E3%83%8B%E3%82%AF%E3%83%AB?src=hash&amp;ref_src=twsrc%5Etfw">#ロージークロニクル</a> <a href="https://x.com/hashtag/%E4%B8%8A%E6%9D%91%E9%BA%97%E8%8F%9C?src=hash&amp;ref_src=twsrc%5Etfw">#上村麗菜</a> <a href="https://t.co/Ub4HwKNaAX">pic.twitter.com/Ub4HwKNaAX</a></p>&mdash; Earth hacks【公式】 (@Earthhacks2023) <a href="https://x.com/Earthhacks2023/status/2030509421403734220?ref_src=twsrc%5Etfw">March 8, 2026</a></blockquote>',
+  '2096155764264161518' =>
+    '<blockquote class="twitter-tweet"><p lang="ja" dir="ltr">「DECA!BEATといっしょに！デカボMISSION vol.1」<br>5,000ACTION達成のでっかいボーナスとして、DECA!BEAT新ビジュアルを公開🪞✨<br><br>今回は <a href="https://x.com/hashtag/%E4%B8%8A%E6%9D%91%E9%BA%97%E8%8F%9C?src=hash&amp;ref_src=twsrc%5Etfw">#上村麗菜</a> さんと、ウサレナ🐰が登場！<br><br>🎶デカビートフレンズとは？📣<br>みんなが集めたデカボのパワーで生まれた、<br>DECA!BEATの小さなお友達。… <a href="https://t.co/3R8I72qHRj">pic.twitter.com/3R8I72qHRj</a></p>&mdash; Earth hacks【公式】 (@Earthhacks2023) <a href="https://x.com/Earthhacks2023/status/2096155764264161518?ref_src=twsrc%5Etfw">September 5, 2026</a></blockquote>',
+  '2021424691878220171' =>
+    '<blockquote class="twitter-tweet"><p lang="ja" dir="ltr">🌏<a href="https://x.com/hashtag/%E3%83%87%E3%82%AB%E3%83%93%E3%83%BC%E3%83%88?src=hash&amp;ref_src=twsrc%5Etfw">#デカビート</a> だーれだ！①🌏<br>デカボ×ビートで未来を変える!? <br>Earth hacks × ハロー！プロジェクト 特別ユニット結成<br><br> 本日よりユニットメンバーのデカボなエピソードと、デカボなボイスを１人ずつお届け✉️<br>誰か分かったらリプライで教えて下さいね🙊<a href="https://x.com/hashtag/%E3%83%87%E3%82%AB%E3%83%93%E3%83%BC%E3%83%88?src=hash&amp;ref_src=twsrc%5Etfw">#デカビート</a>… <a href="https://t.co/mmB98r21Hz">pic.twitter.com/mmB98r21Hz</a></p>&mdash; Earth hacks【公式】 (@Earthhacks2023) <a href="https://x.com/Earthhacks2023/status/2021424691878220171?ref_src=twsrc%5Etfw">February 11, 2026</a></blockquote>',
+];
+
 /** 埋め込みポストの投稿元(全ポスト Earth hacks 公式) */
 const DC_X_ACCOUNT = 'Earthhacks2023';
 const DC_TIKTOK_ACCOUNT = 'decarbo46';
@@ -258,18 +306,21 @@ function dc_sns_icon(string $url): string {
  * 埋め込み1枠。中身はJSが後から入れる(選択されたメンバーの分だけ読み込む)。
  * 埋め込みが表示できない環境でも辿れるように、元ポストへのリンクは常に出す。
  */
-function dc_embed(string $type, string $label, string $id, string $url, string $linktext): string {
+function dc_embed(string $type, string $label, string $id, string $url, string $linktext, string $extra = '', string $inner = ''): string {
     return '<div class="dc-embed" data-type="' . $type . '" data-id="' . dc_h($id) . '">'
          . '<h4>' . dc_h($label) . '</h4>'
-         . '<div class="dc-slot"></div>'
+         . '<div class="dc-slot">' . $inner . '</div>'
          . '<p class="dc-embed-link"><a href="' . dc_h($url) . '" target="_blank" rel="noopener noreferrer">'
          . dc_h($linktext) . '</a></p>'
+         . $extra
          . '</div>';
 }
 
 function dc_x_embed(string $label, array $tw): string {
+    global $dc_tweet_html;
     $url = 'https://x.com/' . DC_X_ACCOUNT . '/status/' . $tw[0];
-    return dc_embed('x', $label, $tw[0], $url, 'Xで見る（' . dc_jdate($tw[1]) . '）');
+    return dc_embed('x', $label, $tw[0], $url, 'Xで見る（' . dc_jdate($tw[1]) . '）',
+                    '', $dc_tweet_html[$tw[0]] ?? '');
 }
 ?>
 
@@ -307,14 +358,18 @@ function dc_x_embed(string $label, array $tw): string {
       <p class="dc-meta"><?= dc_h($m['group']) ?><span class="dc-friend">デカビートフレンズ：<?= dc_h($m['friend']) ?></span></p>
       <p class="dc-profile-links">
         <a href="<?= dc_h($m['official']) ?>" target="_blank" rel="noopener noreferrer"><?= icon('link-brand', 'ic ic-20') ?>ハロー！プロジェクト公式プロフィール</a>
-        <a href="<?= dc_h($m['instagram']) ?>" target="_blank" rel="noopener noreferrer"><?= icon('instagram-brand', 'ic ic-20') ?>Instagram（紹介動画）</a>
+        <?php // シェア先URLは表示中のメンバーに合わせてJSが入れる ?>
+        <a class="dc-share" target="_blank" rel="noopener noreferrer"
+           data-text="<?= dc_h($m['name'] . '（' . $m['friend'] . '）｜DECA!BEAT（デカビート）まとめ') ?>"><?= icon('x', 'ic ic-20') ?>Xでシェア</a>
       </p>
       <div class="dc-embeds">
         <?= dc_x_embed('メンバー紹介ポスト', $m['intro']) ?>
         <?= dc_x_embed('新ビジュアル', $m['visual']) ?>
+        <?php // Instagramは同じ動画なので、紹介動画の枠の中に並べる ?>
         <?= dc_embed('tiktok', '紹介動画（TikTok）', $m['tiktok'],
-              'https://www.tiktok.com/@' . DC_TIKTOK_ACCOUNT . '/video/' . $m['tiktok'], 'TikTokで見る') ?>
-        <?= dc_x_embed('お披露目前のポスト「だーれだ！' . $m['dareda_no'] . '」', $m['dareda']) ?>
+              'https://www.tiktok.com/@' . DC_TIKTOK_ACCOUNT . '/video/' . $m['tiktok'], 'TikTokで見る',
+              '<p class="dc-embed-link"><a href="' . dc_h($m['instagram']) . '" target="_blank" rel="noopener noreferrer">Instagram（同じ動画）</a></p>') ?>
+        <?= dc_x_embed('お披露目前の#デカビート だーれだ！' . $m['dareda_no'], $m['dareda']) ?>
       </div>
     </div>
     <?php endforeach; ?>
@@ -390,38 +445,40 @@ window.twttr = (function (d, s, id) {
 
   // 埋め込みは選択されたメンバーの分だけ読み込む(7人分を一度に読むと重いため)
   function loadEmbeds(panel) {
+    var needTweets = false;
     panel.querySelectorAll('.dc-embed').forEach(function (box) {
       if (box.dataset.loaded) return;
       box.dataset.loaded = '1';
+
+      // Xはページ内の <blockquote> をウィジェットが埋め込みに差し替える。
+      // 差し替えに失敗しても引用テキストが残るので、読み込み中の表示は要らない。
+      if (box.dataset.type === 'x') {
+        needTweets = true;
+        return;
+      }
+
       var slot = box.querySelector('.dc-slot');
-      var id = box.dataset.id;
-      // 埋め込みが入ると .dc-loading はCSS側で隠れる(:only-child のときだけ出る)。
-      // X側のPromiseは解決しないことがあるので、消すのをJSのタイミングに頼らない。
       var note = document.createElement('p');
       note.className = 'dc-loading';
       note.textContent = '読み込み中…';
-      slot.appendChild(note);
+      slot.appendChild(note);   // 埋め込みが入るとCSS側で隠れる(:only-child のときだけ出る)
       setTimeout(function () {
         if (slot.children.length === 1) {
           note.textContent = '埋め込みを表示できませんでした。下のリンクから見られます。';
         }
       }, 12000);
 
-      if (box.dataset.type === 'x') {
-        window.twttr.ready(function (tw) {
-          tw.widgets.createTweet(id, slot, {
-            lang: 'ja', conversation: 'none', dnt: true, align: 'center'
-          });
-        });
-      } else {
-        var f = document.createElement('iframe');
-        f.src = 'https://www.tiktok.com/embed/v2/' + id;
-        f.title = 'TikTokの紹介動画';
-        f.loading = 'lazy';
-        f.allow = 'encrypted-media; fullscreen; picture-in-picture';
-        slot.appendChild(f);
-      }
+      var f = document.createElement('iframe');
+      f.src = 'https://www.tiktok.com/embed/v2/' + box.dataset.id;
+      f.title = 'TikTokの紹介動画';
+      f.loading = 'lazy';
+      f.allow = 'encrypted-media; fullscreen; picture-in-picture';
+      slot.appendChild(f);
     });
+
+    if (needTweets) {
+      window.twttr.ready(function (tw) { tw.widgets.load(panel); });
+    }
   }
 
   var memberTabs = document.getElementById('dc-member-tabs');
@@ -436,6 +493,14 @@ window.twttr = (function (d, s, id) {
       p.hidden = (p !== panel);
     });
     loadEmbeds(panel);
+    // Xのシェアボタン。共有先はいま見ているメンバーのURLにする
+    var share = panel.querySelector('.dc-share');
+    if (share) {
+      share.href = 'https://x.com/intent/post'
+        + '?text=' + encodeURIComponent(share.dataset.text)
+        + '&url=' + encodeURIComponent(location.origin + location.pathname + '#' + slug)
+        + '&hashtags=' + encodeURIComponent('デカビート');
+    }
     // 共有できるようにURLへ反映する(履歴は増やさない)
     if (updateHash && window.history.replaceState) {
       window.history.replaceState(null, '', '#' + slug);
