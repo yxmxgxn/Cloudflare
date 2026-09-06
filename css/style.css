@@ -1301,6 +1301,111 @@ footer a {
   margin: 0;
 }
 
+/*ONE PLUS ONE・One on One まとめ
+-------------------------------------*/
+.opo-lead p {
+  margin: 0 0 0.8em;
+}
+
+#opo-controls {
+  display: flex;
+  gap: 10px;
+  margin: 12px 0;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+#opo-controls select {
+  padding: 6px 10px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+}
+
+/* 絞り込み中の項目は太字にして、何で絞っているか一目で分かるようにする */
+#opo-controls select.is-active {
+  font-weight: bold;
+}
+
+#opo-reset {
+  padding: 6px 12px;
+  border: 1px solid #ccc;
+  background: #fff;
+  font-size: 13px;
+  cursor: pointer;
+}
+
+#opo-reset:hover {
+  border-color: #AE8DBC;
+  color: #AE8DBC;
+}
+
+.opo-card .opo-song {
+  font-size: 15px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.opo-card .opo-artist,
+.opo-card .opo-date {
+  font-size: 13px;
+  color: #666;
+  margin: 0;
+}
+
+.opo-card .opo-pair {
+  font-size: 14px;
+  margin: 0;
+  line-height: 1.5;
+}
+
+/* メンバー名は押すと絞り込めるので、押せることが分かる見た目にする */
+.opo-card .opo-name {
+  cursor: pointer;
+  text-decoration: underline dotted;
+  text-underline-offset: 3px;
+}
+
+.opo-card .opo-name:hover {
+  color: #AE8DBC;
+}
+
+.opo-card .opo-group {
+  font-size: 12px;
+  color: #666;
+}
+
+.opo-card .opo-x {
+  margin: 0 2px;
+  color: #999;
+}
+
+.opo-card .opo-videos {
+  list-style: none;
+  margin: 0;
+  padding: 6px 0 0;
+  border-top: 1px solid #eee;
+  font-size: 13px;
+}
+
+.opo-card .opo-videos li {
+  padding: 2px 0;
+  margin-bottom: 0;
+}
+
+.opo-card .ic {
+  margin-right: 4px;
+}
+
+.opo-card .opo-vdate {
+  color: #888;
+  font-size: 12px;
+}
+
+.opo-empty {
+  margin: 1em 0;
+  color: #888;
+}
+
 /*クッキングコーナー
 -------------------------------------*/
 #cooking-controls {

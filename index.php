@@ -181,6 +181,10 @@
         <a class="index-link" href="/HelloYouTube/hello-gamelive"><?= icon('youtube-brand', 'ic ic-20') ?>ハロプロ ファミ通ゲーム実況ch 配信アーカイブまとめ</a>
         <p class="index-desc">ハロプロメンバー・OGがYouTube「ファミ通ゲーム実況ch」（ハロ通LIVE→ハロ通GAMES）でゲーム配信したアーカイブのまとめです</p>
       </div>
+      <div class="card index-card">
+        <a class="index-link" href="/HelloYouTube/oneplusone"><?= icon('youtube-brand', 'ic ic-20') ?>ONE PLUS ONE・One on One まとめ</a>
+        <p class="index-desc">ハロプロメンバーが二人でパフォーマンスするデュオ企画「ONE PLUS ONE」「COVERS -One on One-」の曲・組み合わせ・動画のまとめです</p>
+      </div>
     </div>
   </section>
 

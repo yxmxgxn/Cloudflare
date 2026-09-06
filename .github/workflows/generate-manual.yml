@@ -18,6 +18,7 @@ on:
           - "karinoshi (カリンオシ)"
           - "members (メンバー一覧)"
           - "mixjuice (MIX=Juice)"
+          - "oneplusone (ONE PLUS ONE・One on One)"
           - "movies (出演映画)"
           - "vocalo (今日のボカロ)"
           - "vocaloclub (宮本佳林のボカロ部)"
@@ -61,6 +62,7 @@ jobs:
           run_if karinoshi  generate_karinoshi.py
           run_if members    generate_members.py
           run_if mixjuice   generate_mixjuice.py
+          run_if oneplusone generate_oneplusone.py
           run_if movies     generate_movies.py
           run_if vocalo     generate_vocalo.py
           run_if vocaloclub generate_vocaloclub.py
