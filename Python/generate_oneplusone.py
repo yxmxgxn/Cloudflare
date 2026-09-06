@@ -24,6 +24,7 @@ import io
 import re
 import urllib.request
 from datetime import datetime, timezone, timedelta
+from functools import lru_cache
 from pathlib import Path
 
 from gh_warn import warn
@@ -36,6 +37,9 @@ CSV_URL = (
 )
 
 REPO_ROOT = Path(__file__).resolve().parent.parent  # Python/ の親
+
+# 再生リストのページはUAを見て中身を返すので、ブラウザを名乗る
+PLAYLIST_UA = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) Chrome/120"
 
 OUTPUT_CARDS = REPO_ROOT / "Spreadsheet" / "oneplusone_cards.php"
 OUTPUT_FEATURES = REPO_ROOT / "Spreadsheet" / "oneplusone_features.php"
@@ -84,14 +88,16 @@ GROUP_ORDER = [
 # 原曲アーティスト列の想定名(あとから足す列なので表記の揺れを吸収する)
 ARTIST_KEYS = ("Artist", "原曲アーティスト", "OriginalArtist")
 
-# 企画名 → 再生リストID。動画URLに &list= を足すと、その動画から再生リストが続く。
+# 企画名 → 公式の再生リストID。動画URLに &list= を足すと、その動画から再生リストが続く。
 # v= があれば位置はYouTubeが解決するので index= は要らない。
-# 再生リストが消えたり非公開になっても、&list= は無視されて単品再生になるだけ。
-#   ONE PLUS ONE : ハロプロ研修生公式「ONE PLUS ONE」(62本=本編31+ハロドリ31)
-#   COVERS       : 未作成。IDが決まったら足す
+#   ONE PLUS ONE : ハロプロ研修生「ONE PLUS ONE」(本編31+ハロドリ31)
+#   COVERS       : アップフロントチャンネル「COVERS - One on One -」
+# 収録本数は生成のたびに実際の再生リストを見て確かめる(playlist_members)。
+# 未収録の動画には &list= を付けない。公式が後から足せば次の生成で自動的に繋がる。
 PLAYLISTS = {
     "ONE PLUS ONE": "PLUjhiQzhlwqLcsAgVAJRHYAbP0dEQ1xGJ",
     f"{HALODORI_PREFIX}{HALODORI_MARK}": "PLUjhiQzhlwqLcsAgVAJRHYAbP0dEQ1xGJ",
+    "COVERS -One on One-": "PLFMni9aeqKTw_nNHBiGWfPLT-VMdMez97",
 }
 
 
@@ -188,6 +194,23 @@ def sort_key_date(date_str: str) -> str:
     return s
 
 
+@lru_cache(maxsize=8)
+def playlist_members(playlist_id: str) -> frozenset:
+    """再生リストに実際に入っている動画ID。取れなければ空集合(=&list=を付けない)"""
+    url = f"https://www.youtube.com/playlist?list={playlist_id}"
+    try:
+        req = urllib.request.Request(url, headers={"User-Agent": PLAYLIST_UA})
+        with urllib.request.urlopen(req, timeout=30) as res:
+            html_text = res.read().decode("utf-8", "replace")
+    except Exception as e:
+        warn(f"再生リストを取得できませんでした({playlist_id}): {e}", title="ONE PLUS ONE")
+        return frozenset()
+    ids = frozenset(re.findall(r'"videoId":"([\w-]{11})"', html_text))
+    if not ids:
+        warn(f"再生リストが空に見えます({playlist_id})", title="ONE PLUS ONE")
+    return ids
+
+
 def video_url(row: dict) -> str:
     """video_idを正としてURLを組み立てる。企画の再生リストがあれば繋ぐ。
 
@@ -208,7 +231,8 @@ def video_url(row: dict) -> str:
     elif not url:
         return ""
     playlist = val(row, "Playlist") or PLAYLISTS.get(feature_label(row), "")
-    if playlist and "list=" not in url:
+    # 再生リストに入っていない動画に &list= を付けると別の動画から始まってしまう
+    if playlist and "list=" not in url and vid in playlist_members(playlist):
         url += ("&" if "?" in url else "?") + f"list={playlist}"
     return url
 
