@@ -73,11 +73,19 @@
   </section>
 
   <section class="index-section">
-    <h2><a href="https://ch.nicovideo.jp/miyamoto-vocalo" target="_blank" rel="noopener noreferrer">宮本佳林 ニコニコ</a></h2>
+    <h2><a href="https://www.tbsradio.jp/mp/" target="_blank" rel="noopener noreferrer">宮本佳林 ラジオ</a></h2>
     <div class="card-grid index-items">
       <div class="card index-card">
-        <a class="index-link" href="/vocalo-club"><?= icon('monitor', 'ic ic-20') ?>宮本佳林のボカロ部 紹介曲データベース</a>
-        <p class="index-desc">宮本佳林のボカロ部で紹介されたボカロ曲のデータベースです</p>
+        <a class="index-link" href="/Radio/karinoshi"><?= icon('radio', 'ic ic-20') ?>宮本佳林 Music Palette♪ カリンオシまとめ</a>
+        <p class="index-desc">TBSラジオMusic Palette♪のカリンオシのコーナーで宮本佳林さんが紹介したお菓子等をまとめです</p>
+      </div>
+      <div class="card index-card">
+        <a class="index-link" href="/Radio/karinoshi-map"><?= icon('radio', 'ic ic-20') ?>宮本佳林 Music Palette♪ カリンオシお菓子マップ</a>
+        <p class="index-desc">TBSラジオ Music Palette♪のカリンオシのコーナーで宮本佳林さんが紹介したご当地お菓子の都道府県で日本地図を塗っています</p>
+      </div>
+      <div class="card index-card">
+        <a class="index-link" href="/Radio/hellodrive"><?= icon('x-box', 'ic ic-20') ?>宮本佳林 HELLO! DRIVE! -ハロドラ- まとめ</a>
+        <p class="index-desc">宮本佳林さんがHELLO! DRIVE! -ハロドラ-でMCをやってる回のまとめです</p>
       </div>
     </div>
   </section>
@@ -111,19 +119,11 @@
   </section>
 
   <section class="index-section">
-    <h2><a href="https://www.tbsradio.jp/mp/" target="_blank" rel="noopener noreferrer">宮本佳林 ラジオ</a></h2>
+    <h2><a href="https://ch.nicovideo.jp/miyamoto-vocalo" target="_blank" rel="noopener noreferrer">宮本佳林 ニコニコ</a></h2>
     <div class="card-grid index-items">
       <div class="card index-card">
-        <a class="index-link" href="/Radio/karinoshi"><?= icon('radio', 'ic ic-20') ?>宮本佳林 Music Palette♪ カリンオシまとめ</a>
-        <p class="index-desc">TBSラジオMusic Palette♪のカリンオシのコーナーで宮本佳林さんが紹介したお菓子等をまとめです</p>
-      </div>
-      <div class="card index-card">
-        <a class="index-link" href="/Radio/karinoshi-map"><?= icon('radio', 'ic ic-20') ?>宮本佳林 Music Palette♪ カリンオシお菓子マップ</a>
-        <p class="index-desc">TBSラジオ Music Palette♪のカリンオシのコーナーで宮本佳林さんが紹介したご当地お菓子の都道府県で日本地図を塗っています</p>
-      </div>
-      <div class="card index-card">
-        <a class="index-link" href="/Radio/hellodrive"><?= icon('x-box', 'ic ic-20') ?>宮本佳林 HELLO! DRIVE! -ハロドラ- まとめ</a>
-        <p class="index-desc">宮本佳林さんがHELLO! DRIVE! -ハロドラ-でMCをやってる回のまとめです</p>
+        <a class="index-link" href="/vocalo-club"><?= icon('monitor', 'ic ic-20') ?>宮本佳林のボカロ部 紹介曲データベース</a>
+        <p class="index-desc">宮本佳林のボカロ部で紹介されたボカロ曲のデータベースです</p>
       </div>
     </div>
   </section>
