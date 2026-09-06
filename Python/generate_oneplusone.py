@@ -84,6 +84,16 @@ GROUP_ORDER = [
 # 原曲アーティスト列の想定名(あとから足す列なので表記の揺れを吸収する)
 ARTIST_KEYS = ("Artist", "原曲アーティスト", "OriginalArtist")
 
+# 企画名 → 再生リストID。動画URLに &list= を足すと、その動画から再生リストが続く。
+# v= があれば位置はYouTubeが解決するので index= は要らない。
+# 再生リストが消えたり非公開になっても、&list= は無視されて単品再生になるだけ。
+#   ONE PLUS ONE : ハロプロ研修生公式「ONE PLUS ONE」(62本=本編31+ハロドリ31)
+#   COVERS       : 未作成。IDが決まったら足す
+PLAYLISTS = {
+    "ONE PLUS ONE": "PLUjhiQzhlwqLcsAgVAJRHYAbP0dEQ1xGJ",
+    f"{HALODORI_PREFIX}{HALODORI_MARK}": "PLUjhiQzhlwqLcsAgVAJRHYAbP0dEQ1xGJ",
+}
+
 
 def fetch_csv(source: str) -> list[dict]:
     """URLでもローカルのCSVパスでも読める"""
@@ -179,12 +189,28 @@ def sort_key_date(date_str: str) -> str:
 
 
 def video_url(row: dict) -> str:
-    """url列を優先し、無ければvideo_idから組み立てる"""
-    url = val(row, "url")
-    if url:
-        return url
+    """video_idを正としてURLを組み立てる。企画の再生リストがあれば繋ぐ。
+
+    url列は無いときのフォールバックだけに使う。両方あって食い違うのは
+    片方だけ直したときなので、警告を出してvideo_id側を採る。
+    """
     vid = val(row, "video_id")
-    return f"https://www.youtube.com/watch?v={vid}" if vid else ""
+    url = val(row, "url")
+    in_url = re.search(r"[?&]v=([^&]+)", url)
+    if vid and in_url and in_url.group(1) != vid:
+        warn(
+            f"video_idとurl列が食い違っています: {vid} / {in_url.group(1)}"
+            f"（{val(row, 'Title')}）",
+            title="ONE PLUS ONE",
+        )
+    if vid:
+        url = f"https://www.youtube.com/watch?v={vid}"
+    elif not url:
+        return ""
+    playlist = val(row, "Playlist") or PLAYLISTS.get(feature_label(row), "")
+    if playlist and "list=" not in url:
+        url += ("&" if "?" in url else "?") + f"list={playlist}"
+    return url
 
 
 def card_key(row: dict) -> tuple:
