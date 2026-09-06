@@ -1,4 +1,4 @@
-<!-- generated: 2026-09-05T19:47:12.600072+00:00 -->
+<!-- generated: 2026-09-06T19:51:06.484176+00:00 -->
 <option value="北海道">北海道</option>
 <option value="青森県">青森県</option>
 <option value="岩手県">岩手県</option>
@@ -12,6 +12,7 @@
 <option value="東京都">東京都</option>
 <option value="神奈川県">神奈川県</option>
 <option value="新潟県">新潟県</option>
+<option value="富山県">富山県</option>
 <option value="石川県">石川県</option>
 <option value="福井県">福井県</option>
 <option value="長野県">長野県</option>
