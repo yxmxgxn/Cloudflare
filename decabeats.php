@@ -363,7 +363,7 @@ function dc_x_embed(string $label, array $tw): string {
         <a href="<?= dc_h($m['official']) ?>" target="_blank" rel="noopener noreferrer"><?= icon('link-brand', 'ic ic-20') ?>ハロー！プロジェクト公式プロフィール</a>
         <?php // シェア先URLは表示中のメンバーに合わせてJSが入れる ?>
         <a class="dc-share" target="_blank" rel="noopener noreferrer"
-           data-text="<?= dc_h($m['name'] . '（' . $m['friend'] . '）｜DECA!BEAT 非公式まとめ #デカビート') ?>"><?= icon('x', 'ic ic-20') ?>Xでシェア</a>
+           data-text="<?= dc_h($m['name'] . '（' . $m['friend'] . '）｜DECA!BEAT 非公式まとめ #Earthhacks #デカビート') ?>"><?= icon('x', 'ic ic-20') ?>Xでシェア</a>
       </p>
       <div class="dc-embeds">
         <?= dc_x_embed('メンバー紹介ポスト', $m['intro']) ?>

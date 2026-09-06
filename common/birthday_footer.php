@@ -8,11 +8,12 @@
   $page_url  = "https://karin-archive.com" . $_SERVER['REQUEST_URI'];
   $share_ttl = isset($p_title_full) ? $p_title_full : "宮本佳林・M-line・ハロプロ Archive";
   // rawurlencode: 空白が + ではなく %20 になる(URLを値として渡すのでこちらが無難)
+  // Xだけ url= を使わず text= に %0A で連結する(url= だと本文とURLが空白1つで繋がって改行されない)
   $s_url = rawurlencode($page_url);
   $s_txt = rawurlencode($share_ttl);
 ?>
 <p>Share:
-  <a href="https://x.com/share?url=<?php echo $s_url; ?>&amp;text=<?php echo $s_txt; ?>" target="_blank" rel="noopener" class="btn-x">X</a>
+  <a href="https://x.com/intent/post?text=<?php echo $s_txt; ?>%0A<?php echo $s_url; ?>" target="_blank" rel="noopener" class="btn-x">X</a>
   <a href="https://www.threads.com/intent/post?text=<?php echo $s_txt; ?>&amp;url=<?php echo $s_url; ?>" target="_blank" rel="noopener" class="btn-threads">Threads</a>
   <a href="https://social-plugins.line.me/lineit/share?url=<?php echo $s_url; ?>" target="_blank" rel="noopener" class="btn-line">LINE</a>
   <button type="button" onclick="sharePage()" class="btn-copy">その他で送る/保存</button></p>
