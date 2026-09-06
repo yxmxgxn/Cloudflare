@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-ハロプロのデュオ企画(ONE PLUS ONE / COVERS -One on One- / ハロドリ。1アングルバージョン！)の
+ハロプロのデュオ企画(ONE PLUS ONE / COVERS -One on One- / ハロドリ。1アングルバージョン)の
 スプレッドシートを読み取り、PHPインクルード用のカードフラグメントを生成する
 
   シート : video_id,Feature,Title,Member1,Group1,Member2,Group2,Kenshusei,published_jst,url,Artist
@@ -49,9 +49,9 @@ FEATURE_LABELS = {
     "ONE PLUS ONE": "ONE PLUS ONE",
 }
 
-# ハロドリ版の判定と、カード内リンクで省く番組名の接頭辞。
-# シート側が「ハロドリ。1アングルバージョン！」でも「1アングルバージョン」でも
-# 同じ企画として扱い、末尾の「！」の有無はシートの書き方をそのまま活かす。
+# ハロドリ版の判定と、シート側で省かれていたら補う番組名の接頭辞。
+# シートが「1アングルバージョン」でも「ハロドリ。1アングルバージョン！」でも
+# 「ハロドリ。1アングルバージョン」に揃える(末尾の「！」は付けない)。
 HALODORI_MARK = "1アングルバージョン"
 HALODORI_PREFIX = "ハロドリ。"
 
@@ -109,17 +109,12 @@ def feature_label(row: dict) -> str:
     for key, label in FEATURE_LABELS.items():
         if re.sub(r"[\s　]+", "", key) == raw:
             return label
-    # ハロドリ版は「ハロドリ。」が省かれていても補う(末尾の「！」はシートのまま)
-    if HALODORI_MARK in raw and not raw.startswith(HALODORI_PREFIX):
-        return HALODORI_PREFIX + raw
+    # ハロドリ版は「ハロドリ。」を補い、末尾の「！」は落として表記を1つに揃える
+    if HALODORI_MARK in raw:
+        raw = raw.rstrip("！!")
+        if not raw.startswith(HALODORI_PREFIX):
+            raw = HALODORI_PREFIX + raw
     return raw
-
-
-def feature_short(label: str) -> str:
-    """カード内リンク用。ONE PLUS ONEと並ぶので番組名の接頭辞は省く"""
-    if HALODORI_MARK in label and label.startswith(HALODORI_PREFIX):
-        return label[len(HALODORI_PREFIX):]
-    return label
 
 
 def feature_rank(label: str) -> int:
@@ -186,7 +181,7 @@ def build_videos(rows: list[dict], card_date: str) -> str:
         lines.append(
             f'<li>{icon_for_url(url, "ic")}'
             f'<a href="{esc(url)}" target="_blank" rel="noopener noreferrer">'
-            f"{esc(feature_short(label))}</a>"
+            f"{esc(label)}</a>"
             f"{note}</li>"
         )
     return f'<ul class="opo-videos">{"".join(lines)}</ul>' if lines else ""

@@ -16,7 +16,7 @@
   1枚のカードが1曲で、同じ曲を複数の企画で公開しているものは1枚にまとめています。</p>
 
   <p><strong>ONE PLUS ONE</strong>はテレビ番組「ハロドリ。」の企画で、各グループの公式YouTubeチャンネルで特別編集版が公開されたものです。
-  同じ回の<strong>ハロドリ。1アングルバージョン！</strong>（引きの1カメ映像）はハロー！プロジェクト公式チャンネルで公開されています。<br>
+  同じ回の<strong>ハロドリ。1アングルバージョン</strong>（引きの1カメ映像）はハロー！プロジェクト公式チャンネルで公開されています。<br>
   <strong>COVERS -One on One-</strong>は<a href="https://www.youtube.com/@M-lineMusic" target="_blank" rel="noopener noreferrer">M-line Music</a>のデュオ動画企画です。</p>
 
   <p>グループ名はその動画が公開された当時の所属で、ハロー！プロジェクトを卒業しているメンバーは「OG」としています。<br>

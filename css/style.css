@@ -2292,3 +2292,265 @@ footer a {
   font-size: 13px;
   color: #666;
 }
+
+/*DECA!BEAT（/decabeats）
+-------------------------------------*/
+.dc-lead {
+  line-height: 1.7;
+}
+
+.dc-about {
+  margin: 1em 0 1.5em;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 10px 14px;
+  background: #fff;
+}
+
+.dc-about summary {
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 15px;
+}
+
+.dc-about blockquote {
+  margin: 10px 0 0;
+  padding-left: 12px;
+  border-left: 3px solid #AE8DBC;
+  color: #444;
+  line-height: 1.8;
+}
+
+.dc-about .dc-cite {
+  margin: 8px 0 0;
+  font-size: 13px;
+}
+
+.dc-section {
+  margin: 2.5em 0;
+}
+
+.dc-section > h2 {
+  margin: 0 0 10px;
+  padding-bottom: 6px;
+  border-bottom: 1px solid #eee;
+}
+
+/* メンバー・動画の選択ボタン(枠と選択色は .tab-buttons が持つ) */
+.dc-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 14px 0;
+}
+
+.dc-tabs button {
+  margin: 0;
+  border-radius: 6px;
+  background: #fff;
+  font-size: 14px;
+  line-height: 1.4;
+  padding: 8px 12px;
+  text-align: left;
+}
+
+#dc-member-tabs button {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.dc-btn-friend {
+  font-size: 11px;
+  color: #777;
+}
+
+#dc-member-tabs button.active .dc-btn-friend {
+  color: #ccc;
+}
+
+.dc-name {
+  margin: 0;
+}
+
+.dc-yomi {
+  margin-left: 10px;
+  font-size: 13px;
+  font-weight: normal;
+  color: #777;
+}
+
+.dc-meta {
+  margin: 4px 0 0;
+  font-size: 14px;
+  color: #555;
+}
+
+.dc-friend {
+  margin-left: 12px;
+}
+
+.dc-profile-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 16px;
+  margin: 8px 0 0;
+  font-size: 14px;
+}
+
+.dc-profile-links a {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+/* 埋め込み4つ。横幅が足りなければ1列に落ちる */
+.dc-embeds {
+  display: grid;
+  /* min() を挟まないと、画面が400pxより狭いときに列がはみ出す */
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 400px), 1fr));
+  gap: 20px 28px;
+  align-items: start;
+  max-width: 1120px;
+  margin-top: 18px;
+}
+
+.dc-embed h4 {
+  margin: 0 0 6px;
+  font-size: 13px;
+  color: #555;
+  font-weight: bold;
+}
+
+.dc-slot {
+  min-height: 60px;
+}
+
+/* TikTokは縦動画なので高さを決め打ちする(埋め込み側で調整されない) */
+.dc-embed[data-type="tiktok"] .dc-slot {
+  max-width: min(100%, 340px);
+}
+
+.dc-embed[data-type="tiktok"] .dc-slot iframe {
+  display: block;
+  width: 100%;
+  height: 745px;
+  border: 0;
+  border-radius: 8px;
+}
+
+/* 埋め込みが入ったら消える(埋め込みが来ない間だけ出す) */
+.dc-loading {
+  margin: 0;
+  font-size: 13px;
+  color: #888;
+}
+
+.dc-slot .dc-loading:not(:only-child) {
+  display: none;
+}
+
+.dc-embed-link {
+  margin: 6px 0 0;
+  font-size: 13px;
+}
+
+/* YouTube: 押すまで iframe を読み込まない */
+.dc-player {
+  max-width: 720px;
+  aspect-ratio: 16 / 9;
+  border-radius: 8px;
+  overflow: hidden;
+  background: #000;
+}
+
+.dc-player iframe,
+.dc-player .dc-thumb {
+  width: 100%;
+  height: 100%;
+  display: block;
+  border: 0;
+  padding: 0;
+  background: #000;
+}
+
+.dc-player .dc-thumb {
+  position: relative;
+  cursor: pointer;
+}
+
+.dc-player .dc-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: .85;
+  display: block;
+}
+
+.dc-play {
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,.25);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-size: 18px;
+  font-weight: bold;
+  text-shadow: 0 1px 4px rgba(0,0,0,.6);
+}
+
+.dc-video-info {
+  max-width: 720px;
+  margin: 8px 0 0;
+  font-size: 14px;
+}
+
+.dc-video-list {
+  margin: 10px 0 0;
+}
+
+/* ポストのカード */
+.dc-post-cat {
+  align-self: flex-start;
+  padding: 2px 8px;
+  border-radius: 999px;
+  background: #F1ECF4;
+  color: #6B5178;
+  font-size: 11px;
+}
+
+.dc-post-link {
+  display: flex;
+  align-items: flex-start;
+  gap: 4px;
+  font-size: 15px;
+  font-weight: bold;
+  line-height: 1.45;
+  color: #333;
+}
+
+.dc-post-link:hover {
+  color: #AE8DBC;
+}
+
+.dc-post-date {
+  margin: 0;
+  font-size: 12px;
+  color: #666;
+}
+
+/* 公式リンク */
+.dc-sns {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 22px;
+  margin: 12px 0 0;
+}
+
+.dc-sns a {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 15px;
+}
