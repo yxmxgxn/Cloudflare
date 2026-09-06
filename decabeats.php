@@ -10,8 +10,8 @@
 // DECA!BEAT のデータ。期間限定ユニットで更新の予定がないため、
 // スプレッドシートから一度だけ書き出したものをこのファイルが直接持っている。
 // (Spreadsheet/ や Generated/ の生成物ではないので、直したいときはここを手で直す)
-// Xの埋め込みは公式の <blockquote> をそのまま持つ($dc_tweet_html)。
-// widgets.js が読み込めればそれが埋め込みに差し替わり、読めなくても引用が残る。
+// Xの埋め込みは公式の <blockquote> をそのまま持つ($dc_tweet_html)。data-embed に入れておき、
+// 選ばれたメンバーの分だけDOMに差し込む。差し替えに失敗しても引用テキストが残る。
 // ------------------------------------------------------------------
 
 $dc_members = [
@@ -306,10 +306,13 @@ function dc_sns_icon(string $url): string {
  * 埋め込み1枠。中身はJSが後から入れる(選択されたメンバーの分だけ読み込む)。
  * 埋め込みが表示できない環境でも辿れるように、元ポストへのリンクは常に出す。
  */
-function dc_embed(string $type, string $label, string $id, string $url, string $linktext, string $extra = '', string $inner = ''): string {
-    return '<div class="dc-embed" data-type="' . $type . '" data-id="' . dc_h($id) . '">'
+function dc_embed(string $type, string $label, string $id, string $url, string $linktext, string $extra = '', string $embed = ''): string {
+    // 埋め込みのマークアップはDOMに置かず data-embed に持たせ、選ばれたときだけ差し込む。
+    // 21件をDOMに置くと widgets.js が全件まとめてXに取りにいき、弾かれて何も出なくなる。
+    return '<div class="dc-embed" data-type="' . $type . '" data-id="' . dc_h($id) . '"'
+         . ($embed === '' ? '' : ' data-embed="' . dc_h($embed) . '"') . '>'
          . '<h4>' . dc_h($label) . '</h4>'
-         . '<div class="dc-slot">' . $inner . '</div>'
+         . '<div class="dc-slot"></div>'
          . '<p class="dc-embed-link"><a href="' . dc_h($url) . '" target="_blank" rel="noopener noreferrer">'
          . dc_h($linktext) . '</a></p>'
          . $extra
@@ -360,7 +363,7 @@ function dc_x_embed(string $label, array $tw): string {
         <a href="<?= dc_h($m['official']) ?>" target="_blank" rel="noopener noreferrer"><?= icon('link-brand', 'ic ic-20') ?>ハロー！プロジェクト公式プロフィール</a>
         <?php // シェア先URLは表示中のメンバーに合わせてJSが入れる ?>
         <a class="dc-share" target="_blank" rel="noopener noreferrer"
-           data-text="<?= dc_h($m['name'] . '（' . $m['friend'] . '）｜DECA!BEAT（デカビート）まとめ') ?>"><?= icon('x', 'ic ic-20') ?>Xでシェア</a>
+           data-text="<?= dc_h($m['name'] . '（' . $m['friend'] . '）｜DECA!BEAT（デカビート）非公式まとめ') ?>"><?= icon('x', 'ic ic-20') ?>Xでシェア</a>
       </p>
       <div class="dc-embeds">
         <?= dc_x_embed('メンバー紹介ポスト', $m['intro']) ?>
@@ -423,20 +426,6 @@ function dc_x_embed(string $label, array $tw): string {
   </section>
 </main>
 
-<!-- X埋め込みウィジェット(公式の読み込みスニペット) -->
-<script>
-window.twttr = (function (d, s, id) {
-  var js, fjs = d.getElementsByTagName(s)[0], t = window.twttr || {};
-  if (d.getElementById(id)) return t;
-  js = d.createElement(s); js.id = id; js.async = true;
-  js.src = "https://platform.x.com/widgets.js";
-  fjs.parentNode.insertBefore(js, fjs);
-  t._e = [];
-  t.ready = function (f) { t._e.push(f); };
-  return t;
-}(document, "script", "twitter-wjs"));
-</script>
-
 <script>
 (function () {
   var VIDEOS = <?= json_encode($dc_videos, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES) ?>;
@@ -450,14 +439,17 @@ window.twttr = (function (d, s, id) {
       if (box.dataset.loaded) return;
       box.dataset.loaded = '1';
 
-      // Xはページ内の <blockquote> をウィジェットが埋め込みに差し替える。
-      // 差し替えに失敗しても引用テキストが残るので、読み込み中の表示は要らない。
+      var slot = box.querySelector('.dc-slot');
+
+      // Xは <blockquote> を差し込んでからウィジェットに変換させる。
+      // 変換に失敗しても引用テキストが残るので、読み込み中の表示は要らない。
       if (box.dataset.type === 'x') {
+        slot.innerHTML = box.dataset.embed;
+        loadTwitterWidget(function () { window.twttr.widgets.load(slot); });
         needTweets = true;
         return;
       }
 
-      var slot = box.querySelector('.dc-slot');
       var note = document.createElement('p');
       note.className = 'dc-loading';
       note.textContent = '読み込み中…';
@@ -476,9 +468,43 @@ window.twttr = (function (d, s, id) {
       slot.appendChild(f);
     });
 
-    if (needTweets) {
-      window.twttr.ready(function (tw) { tw.widgets.load(panel); });
-    }
+    if (needTweets) hideQuotesWhenEmbedded(panel);
+  }
+
+  // widgets.js は必要になってから1回だけ読む
+  var twQueue = null;
+  function loadTwitterWidget(callback) {
+    if (window.twttr && window.twttr.widgets) { callback(); return; }
+    if (twQueue) { twQueue.push(callback); return; }
+    twQueue = [callback];
+    var s = document.createElement('script');
+    s.src = 'https://platform.twitter.com/widgets.js';
+    s.charset = 'utf-8';
+    s.onload = function () {
+      var queued = twQueue;
+      twQueue = null;
+      queued.forEach(function (f) { f(); });
+    };
+    document.head.appendChild(s);
+  }
+
+  // 埋め込みに差し替わった枠の引用を消す(X側でも消えるが、残ると二重に見えるので)
+  function hideQuotesWhenEmbedded(panel) {
+    var tries = 0;
+    var timer = setInterval(function () {
+      var pending = false;
+      panel.querySelectorAll('.dc-embed[data-type="x"] .dc-slot').forEach(function (slot) {
+        var quote = slot.querySelector('blockquote.twitter-tweet');
+        if (!quote || quote.hidden) return;
+        var embed = slot.querySelector('div.twitter-tweet');
+        if (embed && embed.getBoundingClientRect().height > 0) {
+          quote.hidden = true;
+        } else {
+          pending = true;
+        }
+      });
+      if (!pending || ++tries > 10) clearInterval(timer);
+    }, 1500);
   }
 
   var memberTabs = document.getElementById('dc-member-tabs');
