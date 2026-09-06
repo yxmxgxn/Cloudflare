@@ -1339,6 +1339,12 @@ footer a {
   color: #AE8DBC;
 }
 
+/* .card の display:flex がUA既定の [hidden]{display:none} に勝ってしまうので、
+   絞り込みで hidden を付けたカードを明示的に消す */
+.opo-card[hidden] {
+  display: none;
+}
+
 .opo-card .opo-song {
   font-size: 15px;
   font-weight: bold;
