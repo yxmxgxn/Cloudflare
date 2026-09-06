@@ -306,13 +306,13 @@ function dc_sns_icon(string $url): string {
  * 埋め込み1枠。中身はJSが後から入れる(選択されたメンバーの分だけ読み込む)。
  * 埋め込みが表示できない環境でも辿れるように、元ポストへのリンクは常に出す。
  */
-function dc_embed(string $type, string $label, string $id, string $url, string $linktext, string $extra = '', string $embed = ''): string {
+function dc_embed(string $type, string $label, string $id, string $url, string $linktext, string $extra = '', string $embed = '', string $slot = ''): string {
     // 埋め込みのマークアップはDOMに置かず data-embed に持たせ、選ばれたときだけ差し込む。
     // 21件をDOMに置くと widgets.js が全件まとめてXに取りにいき、弾かれて何も出なくなる。
     return '<div class="dc-embed" data-type="' . $type . '" data-id="' . dc_h($id) . '"'
          . ($embed === '' ? '' : ' data-embed="' . dc_h($embed) . '"') . '>'
          . '<h4>' . dc_h($label) . '</h4>'
-         . '<div class="dc-slot"></div>'
+         . '<div class="dc-slot">' . $slot . '</div>'
          . '<p class="dc-embed-link"><a href="' . dc_h($url) . '" target="_blank" rel="noopener noreferrer">'
          . dc_h($linktext) . '</a></p>'
          . $extra
@@ -369,9 +369,13 @@ function dc_x_embed(string $label, array $tw): string {
         <?= dc_x_embed('メンバー紹介ポスト', $m['intro']) ?>
         <?= dc_x_embed('新ビジュアル', $m['visual']) ?>
         <?php // Instagramは同じ動画なので、紹介動画の枠の中に並べる ?>
+        <?php // TikTokの埋め込みは表示するといきなり再生が始まるので、押されるまで読み込まない ?>
         <?= dc_embed('tiktok', '紹介動画（TikTok）', $m['tiktok'],
               'https://www.tiktok.com/@' . DC_TIKTOK_ACCOUNT . '/video/' . $m['tiktok'], 'TikTokで見る',
-              '<p class="dc-embed-link"><a href="' . dc_h($m['instagram']) . '" target="_blank" rel="noopener noreferrer">Instagram（同じ動画）</a></p>') ?>
+              '<p class="dc-embed-link"><a href="' . dc_h($m['instagram']) . '" target="_blank" rel="noopener noreferrer">Instagram（同じ動画）</a></p>',
+              '',
+              '<button type="button" class="dc-tiktok-play">' . icon('tiktok-brand', 'ic dc-tiktok-icon')
+              . '<span>▶ 紹介動画を再生</span></button>') ?>
         <?= dc_x_embed('お披露目前の#デカビート だーれだ！' . $m['dareda_no'], $m['dareda']) ?>
       </div>
     </div>
@@ -439,33 +443,15 @@ function dc_x_embed(string $label, array $tw): string {
       if (box.dataset.loaded) return;
       box.dataset.loaded = '1';
 
-      var slot = box.querySelector('.dc-slot');
+      // TikTokは押されたときに読み込む(表示した時点で再生が始まってしまうため)
+      if (box.dataset.type !== 'x') return;
 
       // Xは <blockquote> を差し込んでからウィジェットに変換させる。
       // 変換に失敗しても引用テキストが残るので、読み込み中の表示は要らない。
-      if (box.dataset.type === 'x') {
-        slot.innerHTML = box.dataset.embed;
-        loadTwitterWidget(function () { window.twttr.widgets.load(slot); });
-        needTweets = true;
-        return;
-      }
-
-      var note = document.createElement('p');
-      note.className = 'dc-loading';
-      note.textContent = '読み込み中…';
-      slot.appendChild(note);   // 埋め込みが入るとCSS側で隠れる(:only-child のときだけ出る)
-      setTimeout(function () {
-        if (slot.children.length === 1) {
-          note.textContent = '埋め込みを表示できませんでした。下のリンクから見られます。';
-        }
-      }, 12000);
-
-      var f = document.createElement('iframe');
-      f.src = 'https://www.tiktok.com/embed/v2/' + box.dataset.id;
-      f.title = 'TikTokの紹介動画';
-      f.loading = 'lazy';
-      f.allow = 'encrypted-media; fullscreen; picture-in-picture';
-      slot.appendChild(f);
+      var slot = box.querySelector('.dc-slot');
+      slot.innerHTML = box.dataset.embed;
+      loadTwitterWidget(function () { window.twttr.widgets.load(slot); });
+      needTweets = true;
     });
 
     if (needTweets) hideQuotesWhenEmbedded(panel);
@@ -536,6 +522,17 @@ function dc_x_embed(string $label, array $tw): string {
   memberTabs.addEventListener('click', function (e) {
     var btn = e.target.closest('button');
     if (btn) selectMember(btn.dataset.slug, true);
+  });
+
+  // TikTok: 押されたらその場で読み込む
+  document.addEventListener('click', function (e) {
+    var btn = e.target.closest('.dc-tiktok-play');
+    if (!btn) return;
+    var f = document.createElement('iframe');
+    f.src = 'https://www.tiktok.com/embed/v2/' + btn.closest('.dc-embed').dataset.id;
+    f.title = 'TikTokの紹介動画';
+    f.allow = 'encrypted-media; fullscreen; picture-in-picture';
+    btn.replaceWith(f);
   });
 
   window.addEventListener('hashchange', function () {

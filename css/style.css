@@ -2435,6 +2435,14 @@ footer a {
 }
 
 /* TikTokは縦動画なので高さを決め打ちする(埋め込み側で調整されない) */
+/* Xの埋め込みは枠の幅にあわせて描画される(220〜550pxの範囲)。
+   列いっぱいだと大きいので少し絞る。大きさを変えたいときはこの max-width */
+.dc-embed[data-type="x"] .dc-slot {
+  max-width: min(100%, 400px);
+  margin-left: auto;
+  margin-right: auto;
+}
+
 /* TikTokは縦動画で細いので、Xの埋め込みと同じく列の中央に置く */
 .dc-embed[data-type="tiktok"] .dc-slot {
   max-width: min(100%, 340px);
@@ -2591,4 +2599,31 @@ footer a {
 
 .dc-share:hover {
   border-color: #999;
+}
+
+/* TikTokの再生ボタン(表示した時点で再生が始まるので、押されるまで読み込まない) */
+.dc-tiktok-play {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: 100%;
+  aspect-ratio: 9 / 16;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background: #fafafa;
+  color: #333;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+.dc-tiktok-play:hover {
+  background: #f1ecf4;
+  border-color: #AE8DBC;
+}
+
+.dc-tiktok-icon {
+  width: 40px;
+  height: 40px;
 }
