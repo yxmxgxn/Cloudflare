@@ -58,6 +58,16 @@ HALODORI_PREFIX = "ハロドリ。"
 # カードの代表行に選ぶ優先順位。ハロドリ版は本編(ONE PLUS ONE)の派生なので後ろ。
 FEATURE_ORDER = ["ONE PLUS ONE", "COVERS -One on One-"]
 
+# 企画プルダウンの選択肢と並び順。ONE PLUS ONEとハロドリ版は必ず対で存在し、
+# 別々に選んでも同じカードしか出ないので1つの選択肢にまとめる。
+FEATURE_FILTERS = [
+    ("COVERS -One on One-", ("COVERS -One on One-",)),
+    (
+        f"ONE PLUS ONE/{HALODORI_PREFIX}{HALODORI_MARK}",
+        ("ONE PLUS ONE", f"{HALODORI_PREFIX}{HALODORI_MARK}"),
+    ),
+]
+
 # グループ絞り込みの並び順。ここに無いものは末尾にまわす。
 GROUP_ORDER = [
     "モーニング娘。",
@@ -122,6 +132,22 @@ def feature_rank(label: str) -> int:
     if label in FEATURE_ORDER:
         return FEATURE_ORDER.index(label)
     return len(FEATURE_ORDER) + (1 if HALODORI_MARK in label else 0)
+
+
+def feature_filter(label: str) -> str:
+    """企画名 → プルダウンの選択肢。想定外の企画はそのまま独立した選択肢にする"""
+    for name, members in FEATURE_FILTERS:
+        if label in members:
+            return name
+    warn(f"未知の企画名です: {label}", title="ONE PLUS ONE")
+    return label
+
+
+def filter_rank(name: str) -> int:
+    for i, (fname, _) in enumerate(FEATURE_FILTERS):
+        if fname == name:
+            return i
+    return len(FEATURE_FILTERS)
 
 
 def canon_group(group: str) -> str:
@@ -244,11 +270,15 @@ def build_cards(rows: list[dict]) -> tuple[str, list[dict]]:
                     title="ONE PLUS ONE",
                 )
         groups = {g for gs in own.values() for g in gs}
+        # 絞り込みはプルダウンの選択肢単位。ONE PLUS ONEとハロドリ版は同じ1つになる
         features = []
         for r in group_rows:
             label = feature_label(r)
-            if label and label not in features:
-                features.append(label)
+            if not label:
+                continue
+            name = feature_filter(label)
+            if name not in features:
+                features.append(name)
 
         artist = next((artist_of(r) for r in group_rows if artist_of(r)), "")
         artist_html = (
@@ -292,7 +322,7 @@ def build_feature_options(cards: list[dict]) -> str:
 
     return "\n".join(
         f'<option value="{esc(f)}">{esc(f)}（{counts[f]}）</option>'
-        for f in sorted(counts, key=feature_rank)
+        for f in sorted(counts, key=filter_rank)
     )
 
 
