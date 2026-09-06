@@ -211,25 +211,21 @@ def playlist_members(playlist_id: str) -> frozenset:
     return ids
 
 
-def video_url(row: dict) -> str:
-    """video_idを正としてURLを組み立てる。企画の再生リストがあれば繋ぐ。
+def video_id_of(row: dict) -> str:
+    """video_id列を読む。URLごと貼られていたらv=を取り出す"""
+    raw = val(row, "video_id") or val(row, "url")
+    m = re.search(r"[?&]v=([\w-]{11})", raw)
+    if m:
+        return m.group(1)
+    return raw
 
-    url列は無いときのフォールバックだけに使う。両方あって食い違うのは
-    片方だけ直したときなので、警告を出してvideo_id側を採る。
-    """
-    vid = val(row, "video_id")
-    url = val(row, "url")
-    in_url = re.search(r"[?&]v=([^&]+)", url)
-    if vid and in_url and in_url.group(1) != vid:
-        warn(
-            f"video_idとurl列が食い違っています: {vid} / {in_url.group(1)}"
-            f"（{val(row, 'Title')}）",
-            title="ONE PLUS ONE",
-        )
-    if vid:
-        url = f"https://www.youtube.com/watch?v={vid}"
-    elif not url:
+
+def video_url(row: dict) -> str:
+    """video_idからURLを組み立てる。企画の再生リストがあれば繋ぐ"""
+    vid = video_id_of(row)
+    if not vid:
         return ""
+    url = f"https://www.youtube.com/watch?v={vid}"
     playlist = val(row, "Playlist") or PLAYLISTS.get(feature_label(row), "")
     # 再生リストに入っていない動画に &list= を付けると別の動画から始まってしまう
     if playlist and "list=" not in url and vid in playlist_members(playlist):
@@ -422,9 +418,24 @@ def main():
 
     # 11文字でないvideo_idは取りこぼし(先頭のハイフンが落ちる等)なので知らせる
     for r in rows:
-        vid = val(r, "video_id")
+        vid = video_id_of(r)
         if vid and len(vid) != 11:
             warn(f"video_idが11文字ではありません: {vid}（{val(r, 'Title')}）", title="ONE PLUS ONE")
+
+    # 同じ動画IDが2行にあるのは、セルのコピペ事故で別の行の値が入ったとき。
+    # 片方の動画がシートから丸ごと消えている状態なので必ず知らせる。
+    seen: dict[str, str] = {}
+    for r in rows:
+        vid = video_id_of(r)
+        if not vid:
+            continue
+        label = f"{val(r, 'Title')}／{feature_label(r)}"
+        if vid in seen:
+            warn(
+                f"同じvideo_idが2行にあります: {vid}（{seen[vid]} と {label}）",
+                title="ONE PLUS ONE",
+            )
+        seen[vid] = label
 
     cards_html, cards = build_cards(rows)
 
