@@ -44,10 +44,18 @@ OUTPUT_NAMES = REPO_ROOT / "Spreadsheet" / "oneplusone_names.php"
 OUTPUT_GENERATED = REPO_ROOT / "Generated" / "oneplusone_generated.php"
 
 # シートのFeature表記 → 表示名。シート側が略記なので、ここで正式名に直す。
+# 「ハロドリ。」の有無はシート側の書き方が揺れても拾えるよう両方を受ける。
 FEATURE_LABELS = {
     "COVERS -One on One": "COVERS -One on One-",
     "ONE PLUS ONE": "ONE PLUS ONE",
     "ハロドリ。1アングルバージョン！": "ハロドリ。1アングルバージョン！",
+    "1アングルバージョン！": "ハロドリ。1アングルバージョン！",
+}
+
+# カード内の動画リンクだけの短い表記。ONE PLUS ONEと並ぶので番組名は省ける。
+# 企画プルダウンは単独で出るため、ここには入れず正式名のまま見せる。
+FEATURE_SHORT = {
+    "ハロドリ。1アングルバージョン！": "1アングルバージョン！",
 }
 
 # カードの代表行に選ぶ優先順位。ハロドリ版は本編(ONE PLUS ONE)の派生なので後ろ。
@@ -160,9 +168,11 @@ def build_videos(rows: list[dict], card_date: str) -> str:
         note = ""
         if val(r, "published_jst") and val(r, "published_jst") != card_date:
             note = f'<span class="opo-vdate">（{esc(format_date(val(r, "published_jst")))}公開）</span>'
+        label = feature_label(r)
         lines.append(
             f'<li>{icon_for_url(url, "ic")}'
-            f'<a href="{esc(url)}" target="_blank" rel="noopener noreferrer">{esc(feature_label(r))}</a>'
+            f'<a href="{esc(url)}" target="_blank" rel="noopener noreferrer">'
+            f"{esc(FEATURE_SHORT.get(label, label))}</a>"
             f"{note}</li>"
         )
     return f'<ul class="opo-videos">{"".join(lines)}</ul>' if lines else ""
