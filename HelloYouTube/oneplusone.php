@@ -1,6 +1,6 @@
 <?php
   $title = "ONE PLUS ONE・One on One まとめ";
-  $description = "ハロー！プロジェクトのメンバーが二人でパフォーマンスするデュオ企画「ONE PLUS ONE」（テレビ番組「ハロドリ。」連動）と、M-line Musicの「COVERS -One on One-」を曲ごとにまとめました。披露した曲・二人の組み合わせ・公開日と動画へのリンクを、企画・グループ・メンバーで絞り込めます。";
+  $description = "ハロー！プロジェクトのメンバーが二人でパフォーマンスするデュオ企画「ONE PLUS ONE」（テレビ番組「ハロドリ。」連動）と、アップフロントチャンネルの「COVERS -One on One-」を曲ごとにまとめました。披露した曲・二人の組み合わせ・公開日と動画へのリンクを、企画・グループで絞り込めます。";
   $jsonld_type = "Dataset";
   $about = [
     ["name" => "ハロー！プロジェクト", "type" => "Organization"],
