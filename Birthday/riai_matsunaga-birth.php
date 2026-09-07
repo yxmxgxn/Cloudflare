@@ -130,8 +130,8 @@
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td>2026年7月7日</td><td>16:00</td><td>Juice=Juice 松永里愛バースデーイベント2026</td><td>Zepp Haneda</td><td>東京都</td><td></td></tr>
-<tr><td>2026年7月7日</td><td>18:45</td><td>Juice=Juice 松永里愛バースデーイベント2026</td><td>Zepp Haneda</td><td>東京都</td><td></td></tr>
+<tr class="row-even"><td>2026年7月7日</td><td>16:00</td><td>Juice=Juice 松永里愛バースデーイベント2026</td><td>Zepp Haneda</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/24357" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
+<tr><td>2026年7月7日</td><td>18:45</td><td>Juice=Juice 松永里愛バースデーイベント2026</td><td>Zepp Haneda</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/24358" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
 </tbody>
 </table>
 

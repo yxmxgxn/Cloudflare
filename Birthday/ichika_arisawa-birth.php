@@ -26,8 +26,6 @@
 <tbody>
 <tr class="row-even"><td>2022年12月13日</td><td>16:45</td><td>Juice=Juice 有澤一華バースデーイベント2022</td><td>LANDMARK HALL</td><td>神奈川県</td><td><a href="https://hp-setlist.com/stage/10344" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
 <tr><td>2022年12月13日</td><td>19:00</td><td>Juice=Juice 有澤一華バースデーイベント2022</td><td>LANDMARK HALL</td><td>神奈川県</td><td><a href="https://hp-setlist.com/stage/10345" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
-<tr class="row-even"><td>2023年1月15日</td><td>17:20</td><td>Juice=Juice 有澤一華バースデーイベント2023</td><td>飛行船シアター</td><td>東京都</td><td></td></tr>
-<tr><td>2023年1月15日</td><td>19:40</td><td>Juice=Juice 有澤一華バースデーイベント2023</td><td>飛行船シアター</td><td>東京都</td><td></td></tr>
 </tbody>
 </table>
 20歳（2023年）

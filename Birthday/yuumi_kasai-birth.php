@@ -79,6 +79,23 @@
 <tr><td>2025年7月30日</td><td>19:30</td><td>つばきファクトリー 河西結心バースデーイベント2025</td><td>ヒューリックホール東京</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/22636" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
 </tbody>
 </table>
+23歳（2026年）
+<table class="birthday-table">
+<thead>
+<tr>
+<th>日付</th>
+<th>開演</th>
+<th>イベント名</th>
+<th>会場</th>
+<th>都道府県</th>
+<th>セットリスト</th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td>2026年8月4日</td><td>17:00</td><td>つばきファクトリー 河西結心バースデーイベント2026</td><td>ヒューリックホール東京</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/24430" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
+<tr><td>2026年8月4日</td><td>19:30</td><td>つばきファクトリー 河西結心バースデーイベント2026</td><td>ヒューリックホール東京</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/24431" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
+</tbody>
+</table>
 
 </main>
 <?php include $_SERVER['DOCUMENT_ROOT'] . '/Generated/birthday_generated.php'; ?>

@@ -167,6 +167,25 @@
 <tr><td>2025年7月29日</td><td>19:20</td><td>つばきファクトリー 秋山眞緒バースデーイベント2025</td><td>TOKYO FM HALL</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/22632" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
 </tbody>
 </table>
+24歳（2026年）
+<table class="birthday-table">
+<thead>
+<tr>
+<th>日付</th>
+<th>開演</th>
+<th>イベント名</th>
+<th>会場</th>
+<th>都道府県</th>
+<th>セットリスト</th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td>2026年7月29日</td><td>16:10</td><td>つばきファクトリー 秋山眞緒バースデーイベント2026 〜永遠に咲く花〜</td><td>摂津市民文化ホール</td><td>大阪府</td><td><a href="https://hp-setlist.com/stage/24372" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
+<tr><td>2026年7月29日</td><td>18:20</td><td>つばきファクトリー 秋山眞緒バースデーイベント2026 〜永遠に咲く花〜</td><td>摂津市民文化ホール</td><td>大阪府</td><td><a href="https://hp-setlist.com/stage/24373" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
+<tr class="row-even"><td>2026年8月14日</td><td>17:10</td><td>つばきファクトリー 秋山眞緒バースデーイベント2026 〜永遠に咲く花〜</td><td>飛行船シアター</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/24454" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
+<tr><td>2026年8月14日</td><td>19:30</td><td>つばきファクトリー 秋山眞緒バースデーイベント2026 〜永遠に咲く花〜</td><td>飛行船シアター</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/24455" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
+</tbody>
+</table>
 
 </main>
 <?php include $_SERVER['DOCUMENT_ROOT'] . '/Generated/birthday_generated.php'; ?>

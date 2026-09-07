@@ -132,8 +132,8 @@
 <tbody>
 <tr class="row-even"><td>2020年7月21日</td><td>17:00</td><td>Juice=Juice 金澤朋子バースデーイベント2020</td><td>COTTON CLUB</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/7020" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
 <tr><td>2020年7月21日</td><td>19:15</td><td>Juice=Juice 金澤朋子バースデーイベント2020</td><td>COTTON CLUB</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/7021" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
-<tr class="row-even"><td>2020年9月23日</td><td>17:00</td><td>Juice=Juice 金澤朋子バースデーイベント2020 アンコール公演</td><td>COTTON CLUB</td><td>東京都</td><td></td></tr>
-<tr><td>2020年9月23日</td><td>19:15</td><td>Juice=Juice 金澤朋子バースデーイベント2020 アンコール公演</td><td>COTTON CLUB</td><td>東京都</td><td></td></tr>
+<tr class="row-even"><td>2020年9月23日</td><td>17:00</td><td>Juice=Juice 金澤朋子バースデーイベント2020 アンコール公演</td><td>COTTON CLUB</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/7022" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
+<tr><td>2020年9月23日</td><td>19:15</td><td>Juice=Juice 金澤朋子バースデーイベント2020 アンコール公演</td><td>COTTON CLUB</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/7023" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
 </tbody>
 </table>
 26歳（2021年）

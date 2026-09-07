@@ -58,8 +58,8 @@
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td>2026年8月13日</td><td>17:10</td><td>アンジュルム 下井谷幸穂バースデーイベント2026</td><td>飛行船シアター</td><td>東京都</td><td></td></tr>
-<tr><td>2026年8月13日</td><td>19:30</td><td>アンジュルム 下井谷幸穂バースデーイベント2026</td><td>飛行船シアター</td><td>東京都</td><td></td></tr>
+<tr class="row-even"><td>2026年8月13日</td><td>17:10</td><td>アンジュルム 下井谷幸穂バースデーイベント2026</td><td>飛行船シアター</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/24450" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
+<tr><td>2026年8月13日</td><td>19:30</td><td>アンジュルム 下井谷幸穂バースデーイベント2026</td><td>飛行船シアター</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/24452" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
 </tbody>
 </table>
 

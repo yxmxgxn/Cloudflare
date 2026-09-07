@@ -79,9 +79,9 @@
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td>2020年11月8日</td><td>15:15</td><td>Juice=Juice 段原瑠々バースデーイベント2020 アンコール公演</td><td>COTTON CLUB</td><td>東京都</td><td></td></tr>
-<tr><td>2020年11月8日</td><td>17:15</td><td>Juice=Juice 段原瑠々バースデーイベント2020 アンコール公演</td><td>COTTON CLUB</td><td>東京都</td><td></td></tr>
-<tr class="row-even"><td>2020年11月8日</td><td>19:15</td><td>Juice=Juice 段原瑠々バースデーイベント2020 アンコール公演</td><td>COTTON CLUB</td><td>東京都</td><td></td></tr>
+<tr class="row-even"><td>2020年11月8日</td><td>15:15</td><td>Juice=Juice 段原瑠々バースデーイベント2020 アンコール公演</td><td>COTTON CLUB</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/7074" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
+<tr><td>2020年11月8日</td><td>17:15</td><td>Juice=Juice 段原瑠々バースデーイベント2020 アンコール公演</td><td>COTTON CLUB</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/7075" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
+<tr class="row-even"><td>2020年11月8日</td><td>19:15</td><td>Juice=Juice 段原瑠々バースデーイベント2020 アンコール公演</td><td>COTTON CLUB</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/7076" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
 <tr><td>2021年7月15日</td><td>16:30</td><td>Juice=Juice 段原瑠々バースデーイベント2021【2021年5月7日振替】</td><td>大田区民ホール・アプリコ 大ホール</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/7362" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
 <tr class="row-even"><td>2021年7月15日</td><td>18:50</td><td>Juice=Juice 段原瑠々バースデーイベント2021【2021年5月7日振替】</td><td>大田区民ホール・アプリコ 大ホール</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/7363" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
 </tbody>

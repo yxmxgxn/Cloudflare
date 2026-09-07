@@ -127,9 +127,8 @@
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td>2020年3月24日</td><td>19:15</td><td>モーニング娘。'20 小田さくらバースデーイベント ～さくらのしらべ9～</td><td>メルパルクホール</td><td>東京都</td><td></td></tr>
-<tr><td>2020年7月28日</td><td>17:00</td><td>モーニング娘。'20 小田さくらバースデーイベント ～さくらのしらべ9～</td><td>COTTON CLUB</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/7029" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
-<tr class="row-even"><td>2020年7月28日</td><td>19:15</td><td>モーニング娘。'20 小田さくらバースデーイベント ～さくらのしらべ9～</td><td>COTTON CLUB</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/7030" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
+<tr class="row-even"><td>2020年7月28日</td><td>17:00</td><td>モーニング娘。'20 小田さくらバースデーイベント ～さくらのしらべ9～</td><td>COTTON CLUB</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/7029" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
+<tr><td>2020年7月28日</td><td>19:15</td><td>モーニング娘。'20 小田さくらバースデーイベント ～さくらのしらべ9～</td><td>COTTON CLUB</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/7030" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
 </tbody>
 </table>
 22歳（2021年）
@@ -145,8 +144,8 @@
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td>2020年9月28日</td><td>17:00</td><td>モーニング娘。'20 小田さくらバースデーイベント ～さくらのしらべ9～ アンコール公演</td><td>COTTON CLUB</td><td>東京都</td><td></td></tr>
-<tr><td>2020年9月28日</td><td>19:15</td><td>モーニング娘。'20 小田さくらバースデーイベント ～さくらのしらべ9～ アンコール公演</td><td>COTTON CLUB</td><td>東京都</td><td></td></tr>
+<tr class="row-even"><td>2020年9月28日</td><td>17:00</td><td>モーニング娘。'20 小田さくらバースデーイベント ～さくらのしらべ9～ アンコール公演</td><td>COTTON CLUB</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/7031" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
+<tr><td>2020年9月28日</td><td>19:15</td><td>モーニング娘。'20 小田さくらバースデーイベント ～さくらのしらべ9～ アンコール公演</td><td>COTTON CLUB</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/7032" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
 <tr class="row-even"><td>2021年3月15日</td><td>16:20</td><td>モーニング娘。'21 小田さくらバースデーイベント ～さくらのしらべ10～</td><td>メルパルクホール</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/7317" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
 <tr><td>2021年3月15日</td><td>18:50</td><td>モーニング娘。'21 小田さくらバースデーイベント ～さくらのしらべ10～</td><td>メルパルクホール</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/7318" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
 <tr class="row-even"><td>2021年5月18日</td><td>17:30</td><td>モーニング娘。'21 小田さくらバースデーイベント 〜さくらのしらべ10〜 in 名古屋</td><td>ミッドランドスクエア シネマ2</td><td>愛知県</td><td><a href="https://hp-setlist.com/stage/10202" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>

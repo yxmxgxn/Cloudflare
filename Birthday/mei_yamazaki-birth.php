@@ -130,8 +130,10 @@
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td>2026年6月30日</td><td>16:50</td><td>モーニング娘。'26 山﨑愛生バースデーイベント</td><td>荒川区民会館 大ホール</td><td>東京都</td><td></td></tr>
-<tr><td>2026年6月30日</td><td>19:20</td><td>モーニング娘。'26 山﨑愛生バースデーイベント</td><td>荒川区民会館 大ホール</td><td>東京都</td><td></td></tr>
+<tr class="row-even"><td>2026年6月30日</td><td>16:50</td><td>モーニング娘。'26 山﨑愛生バースデーイベント</td><td>荒川区民会館 大ホール</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/23711" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
+<tr><td>2026年6月30日</td><td>19:20</td><td>モーニング娘。'26 山﨑愛生バースデーイベント</td><td>荒川区民会館 大ホール</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/23712" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
+<tr class="row-even"><td>2026年7月9日</td><td>18:00</td><td>モーニング娘。'26 山﨑愛生バースデーイベント in 名古屋</td><td>ミッドランドスクエア シネマ2</td><td>愛知県</td><td><a href="https://hp-setlist.com/stage/24360" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
+<tr><td>2026年7月9日</td><td>19:45</td><td>モーニング娘。'26 山﨑愛生バースデーイベント in 名古屋</td><td>ミッドランドスクエア シネマ2</td><td>愛知県</td><td><a href="https://hp-setlist.com/stage/24361" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
 </tbody>
 </table>
 

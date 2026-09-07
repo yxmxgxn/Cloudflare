@@ -139,8 +139,8 @@
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td>2020年10月27日</td><td>16:00</td><td>工藤遥バースデーイベント2020</td><td>山野ホール</td><td>東京都</td><td></td></tr>
-<tr><td>2020年10月27日</td><td>19:00</td><td>工藤遥バースデーイベント2020</td><td>山野ホール</td><td>東京都</td><td></td></tr>
+<tr class="row-even"><td>2020年10月27日</td><td>16:00</td><td>工藤遥バースデーイベント2020</td><td>山野ホール</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/27004" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
+<tr><td>2020年10月27日</td><td>19:00</td><td>工藤遥バースデーイベント2020</td><td>山野ホール</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/27005" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
 </tbody>
 </table>
 22歳（2021年）
@@ -156,8 +156,8 @@
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td>2021年10月17日</td><td>15:20</td><td>工藤遥バースデーイベント2021 ～22nd Best day ever～</td><td>江戸川区総合文化センター 大ホール</td><td>東京都</td><td></td></tr>
-<tr><td>2021年10月17日</td><td>18:10</td><td>工藤遥バースデーイベント2021 ～22nd Best day ever～</td><td>江戸川区総合文化センター 大ホール</td><td>東京都</td><td></td></tr>
+<tr class="row-even"><td>2021年10月17日</td><td>15:20</td><td>工藤遥バースデーイベント2021 ～22nd Best day ever～きょうやすSP</td><td>江戸川区総合文化センター 大ホール</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/27014" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
+<tr><td>2021年10月17日</td><td>18:10</td><td>工藤遥バースデーイベント2021 ～22nd Best day ever～きょうやすSP</td><td>江戸川区総合文化センター 大ホール</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/27015" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
 </tbody>
 </table>
 23歳（2022年）

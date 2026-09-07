@@ -146,8 +146,8 @@
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td>2026年8月5日</td><td>17:10</td><td>BEYOOOOONDS/CHICA#TETSU 江口紗耶バースデーイベント2026</td><td>飛行船シアター</td><td>東京都</td><td></td></tr>
-<tr><td>2026年8月5日</td><td>19:30</td><td>BEYOOOOONDS/CHICA#TETSU 江口紗耶バースデーイベント2026</td><td>飛行船シアター</td><td>東京都</td><td></td></tr>
+<tr class="row-even"><td>2026年8月5日</td><td>17:10</td><td>BEYOOOOONDS/CHICA#TETSU 江口紗耶バースデーイベント2026</td><td>飛行船シアター</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/26119" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
+<tr><td>2026年8月5日</td><td>19:30</td><td>BEYOOOOONDS/CHICA#TETSU 江口紗耶バースデーイベント2026</td><td>飛行船シアター</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/26265" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
 </tbody>
 </table>
 

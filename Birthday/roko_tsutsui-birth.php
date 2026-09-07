@@ -79,8 +79,8 @@
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td>2026年8月17日</td><td>16:40</td><td>OCHA NORMA 筒井澪心バースデーイベント2026</td><td>有楽町朝日ホール</td><td>東京都</td><td></td></tr>
-<tr><td>2026年8月17日</td><td>19:00</td><td>OCHA NORMA 筒井澪心バースデーイベント2026</td><td>有楽町朝日ホール</td><td>東京都</td><td></td></tr>
+<tr class="row-even"><td>2026年8月17日</td><td>16:40</td><td>OCHA NORMA 筒井澪心バースデーイベント2026</td><td>有楽町朝日ホール</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/24461" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
+<tr><td>2026年8月17日</td><td>19:00</td><td>OCHA NORMA 筒井澪心バースデーイベント2026</td><td>有楽町朝日ホール</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/24462" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
 </tbody>
 </table>
 

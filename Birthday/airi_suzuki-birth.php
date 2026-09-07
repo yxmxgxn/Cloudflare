@@ -108,9 +108,9 @@
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td>2018年8月11日</td><td>15:00</td><td>鈴木愛理FCイベント 第1回あいりまにあ会～武道館おつかれ/あっそういえば24歳おめでとう～</td><td>山野ホール</td><td>東京都</td><td></td></tr>
-<tr><td>2018年8月11日</td><td>17:45</td><td>鈴木愛理FCイベント 第1回あいりまにあ会～武道館おつかれ/あっそういえば24歳おめでとう～</td><td>山野ホール</td><td>東京都</td><td></td></tr>
-<tr class="row-even"><td>2018年8月11日</td><td>20:00</td><td>鈴木愛理FCイベント 第1回あいりまにあ会～武道館おつかれ/あっそういえば24歳おめでとう～【追加公演】</td><td>山野ホール</td><td>東京都</td><td></td></tr>
+<tr class="row-even"><td>2018年8月11日</td><td>15:00</td><td>鈴木愛理FCイベント 第1回あいりまにあ会～武道館おつかれ/あっそういえば24歳おめでとう～</td><td>山野ホール</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/26486" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
+<tr><td>2018年8月11日</td><td>17:45</td><td>鈴木愛理FCイベント 第1回あいりまにあ会～武道館おつかれ/あっそういえば24歳おめでとう～</td><td>山野ホール</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/26487" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
+<tr class="row-even"><td>2018年8月11日</td><td>20:00</td><td>鈴木愛理FCイベント 第1回あいりまにあ会～武道館おつかれ/あっそういえば24歳おめでとう～【追加公演】</td><td>山野ホール</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/26488" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
 </tbody>
 </table>
 25歳（2019年）
@@ -126,10 +126,10 @@
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td>2019年4月12日</td><td>17:30</td><td>鈴木愛理バースデーイベント2019 第2回あいりまにあ会</td><td>Zepp DiverCity</td><td>東京都</td><td></td></tr>
-<tr><td>2019年4月12日</td><td>20:30</td><td>鈴木愛理バースデーイベント2019 第2回あいりまにあ会</td><td>Zepp DiverCity</td><td>東京都</td><td></td></tr>
-<tr class="row-even"><td>2019年4月21日</td><td>15:20</td><td>鈴木愛理バースデーイベント2019 第2回あいりまにあ会【追加公演】</td><td>Zepp Namba</td><td>大阪府</td><td></td></tr>
-<tr><td>2019年4月21日</td><td>18:20</td><td>鈴木愛理バースデーイベント2019 第2回あいりまにあ会【追加公演】</td><td>Zepp Namba</td><td>大阪府</td><td></td></tr>
+<tr class="row-even"><td>2019年4月12日</td><td>17:30</td><td>鈴木愛理バースデーイベント2019 第2回あいりまにあ会</td><td>Zepp DiverCity</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/26403" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
+<tr><td>2019年4月12日</td><td>20:30</td><td>鈴木愛理バースデーイベント2019 第2回あいりまにあ会</td><td>Zepp DiverCity</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/26404" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
+<tr class="row-even"><td>2019年4月21日</td><td>15:20</td><td>鈴木愛理バースデーイベント2019 第2回あいりまにあ会【追加公演】</td><td>Zepp Namba</td><td>大阪府</td><td><a href="https://hp-setlist.com/stage/26405" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
+<tr><td>2019年4月21日</td><td>18:20</td><td>鈴木愛理バースデーイベント2019 第2回あいりまにあ会【追加公演】</td><td>Zepp Namba</td><td>大阪府</td><td><a href="https://hp-setlist.com/stage/26406" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
 </tbody>
 </table>
 26歳（2020年）
@@ -145,8 +145,8 @@
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td>2020年8月10日</td><td>14:30</td><td>鈴木愛理バースデーイベント2020 第3回あいりまにあ会</td><td>山野ホール</td><td>東京都</td><td></td></tr>
-<tr><td>2020年8月10日</td><td>18:00</td><td>鈴木愛理バースデーイベント2020 第3回あいりまにあ会</td><td>山野ホール</td><td>東京都</td><td></td></tr>
+<tr class="row-even"><td>2020年8月10日</td><td>14:30</td><td>鈴木愛理バースデーイベント2020 第3回あいりまにあ会</td><td>山野ホール</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/26480" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
+<tr><td>2020年8月10日</td><td>18:00</td><td>鈴木愛理バースデーイベント2020 第3回あいりまにあ会</td><td>山野ホール</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/26481" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
 </tbody>
 </table>
 27歳（2021年）
@@ -162,8 +162,8 @@
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td>2021年4月11日</td><td>15:10</td><td>鈴木愛理バースデーイベント2021 第4回あいりまにあ会</td><td>江戸川区総合文化センター 大ホール</td><td>東京都</td><td></td></tr>
-<tr><td>2021年4月11日</td><td>18:00</td><td>鈴木愛理バースデーイベント2021 第4回あいりまにあ会</td><td>江戸川区総合文化センター 大ホール</td><td>東京都</td><td></td></tr>
+<tr class="row-even"><td>2021年4月11日</td><td>15:10</td><td>鈴木愛理バースデーイベント2021 第4回あいりまにあ会</td><td>江戸川区総合文化センター 大ホール</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/26482" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
+<tr><td>2021年4月11日</td><td>18:00</td><td>鈴木愛理バースデーイベント2021 第4回あいりまにあ会</td><td>江戸川区総合文化センター 大ホール</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/26483" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
 </tbody>
 </table>
 28歳（2022年）
@@ -179,8 +179,8 @@
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td>2022年7月9日</td><td>15:30</td><td>鈴木愛理バースデーイベント2022 第5回あいりまにあ会 ～お願いがあるんだけど？～</td><td>Zepp DiverCity</td><td>東京都</td><td></td></tr>
-<tr><td>2022年7月9日</td><td>18:00</td><td>鈴木愛理バースデーイベント2022 第5回あいりまにあ会 ～お願いがあるんだけど？～</td><td>Zepp DiverCity</td><td>東京都</td><td></td></tr>
+<tr class="row-even"><td>2022年7月9日</td><td>15:30</td><td>鈴木愛理バースデーイベント2022 第5回あいりまにあ会 ～お願いがあるんだけど？～</td><td>Zepp DiverCity</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/26484" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
+<tr><td>2022年7月9日</td><td>18:00</td><td>鈴木愛理バースデーイベント2022 第5回あいりまにあ会 ～お願いがあるんだけど？～</td><td>Zepp DiverCity</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/26485" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
 </tbody>
 </table>
 29歳（2023年）
@@ -196,10 +196,10 @@
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td>2023年4月12日</td><td>16:30</td><td>鈴木愛理バースデーイベント2023 第6回あいりまにあ会</td><td>荒川区民会館 大ホール</td><td>東京都</td><td></td></tr>
-<tr><td>2023年4月12日</td><td>19:00</td><td>鈴木愛理バースデーイベント2023 第6回あいりまにあ会</td><td>荒川区民会館 大ホール</td><td>東京都</td><td></td></tr>
-<tr class="row-even"><td>2023年4月15日</td><td>16:20</td><td>鈴木愛理バースデーイベント2023 第6回あいりまにあ会</td><td>松下IMPホール</td><td>大阪府</td><td></td></tr>
-<tr><td>2023年4月15日</td><td>18:30</td><td>鈴木愛理バースデーイベント2023 第6回あいりまにあ会</td><td>松下IMPホール</td><td>大阪府</td><td></td></tr>
+<tr class="row-even"><td>2023年4月12日</td><td>16:30</td><td>鈴木愛理バースデーイベント2023 第6回あいりまにあ会</td><td>荒川区民会館 大ホール</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/26493" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
+<tr><td>2023年4月12日</td><td>19:00</td><td>鈴木愛理バースデーイベント2023 第6回あいりまにあ会</td><td>荒川区民会館 大ホール</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/26494" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
+<tr class="row-even"><td>2023年4月15日</td><td>16:20</td><td>鈴木愛理バースデーイベント2023 第6回あいりまにあ会</td><td>松下IMPホール</td><td>大阪府</td><td><a href="https://hp-setlist.com/stage/26495" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
+<tr><td>2023年4月15日</td><td>18:30</td><td>鈴木愛理バースデーイベント2023 第6回あいりまにあ会</td><td>松下IMPホール</td><td>大阪府</td><td><a href="https://hp-setlist.com/stage/26496" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
 </tbody>
 </table>
 30歳（2024年）
@@ -215,8 +215,8 @@
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td>2024年8月18日</td><td>16:10</td><td>鈴木愛理バースデーイベント2024 第7回あいりまにあ会</td><td>戸田市文化会館</td><td>埼玉県</td><td></td></tr>
-<tr><td>2024年8月18日</td><td>18:40</td><td>鈴木愛理バースデーイベント2024 第7回あいりまにあ会</td><td>戸田市文化会館</td><td>埼玉県</td><td></td></tr>
+<tr class="row-even"><td>2024年8月18日</td><td>16:10</td><td>鈴木愛理バースデーイベント2024 第7回あいりまにあ会</td><td>戸田市文化会館</td><td>埼玉県</td><td><a href="https://hp-setlist.com/stage/26449" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
+<tr><td>2024年8月18日</td><td>18:40</td><td>鈴木愛理バースデーイベント2024 第7回あいりまにあ会</td><td>戸田市文化会館</td><td>埼玉県</td><td><a href="https://hp-setlist.com/stage/26450" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
 </tbody>
 </table>
 31歳（2025年）
@@ -232,8 +232,8 @@
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td>2025年4月12日</td><td>15:50</td><td>鈴木愛理バースデーイベント2025 第8回あいりまにあ会</td><td>J:COMホール八王子</td><td>東京都</td><td></td></tr>
-<tr><td>2025年4月12日</td><td>18:20</td><td>鈴木愛理バースデーイベント2025 第8回あいりまにあ会</td><td>J:COMホール八王子</td><td>東京都</td><td></td></tr>
+<tr class="row-even"><td>2025年4月12日</td><td>15:50</td><td>鈴木愛理バースデーイベント2025 第8回あいりまにあ会</td><td>J:COMホール八王子</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/26451" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
+<tr><td>2025年4月12日</td><td>18:20</td><td>鈴木愛理バースデーイベント2025 第8回あいりまにあ会</td><td>J:COMホール八王子</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/26452" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
 </tbody>
 </table>
 32歳（2026年）
@@ -249,8 +249,8 @@
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td>2026年4月14日</td><td>16:20</td><td>鈴木愛理バースデーイベント2026 第9回あいりまにあ会</td><td>めぐろパーシモンホール 大ホール</td><td>東京都</td><td></td></tr>
-<tr><td>2026年4月14日</td><td>18:30</td><td>鈴木愛理バースデーイベント2026 第9回あいりまにあ会</td><td>めぐろパーシモンホール 大ホール</td><td>東京都</td><td></td></tr>
+<tr class="row-even"><td>2026年4月14日</td><td>16:20</td><td>鈴木愛理バースデーイベント2026 第9回あいりまにあ会</td><td>めぐろパーシモンホール 大ホール</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/23497" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
+<tr><td>2026年4月14日</td><td>18:30</td><td>鈴木愛理バースデーイベント2026 第9回あいりまにあ会</td><td>めぐろパーシモンホール 大ホール</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/23498" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
 </tbody>
 </table>
 
