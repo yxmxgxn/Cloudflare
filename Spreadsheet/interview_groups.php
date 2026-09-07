@@ -1,4 +1,4 @@
-<!-- generated: 2026-09-01T13:49:37.970438+00:00 -->
+<!-- generated: 2026-09-07T02:24:05.535284+00:00 -->
 <option value="BEYOOOOONDS">BEYOOOOONDS</option>
 <option value="Berryz工房">Berryz工房</option>
 <option value="Juice=Juice">Juice=Juice</option>
@@ -11,3 +11,4 @@
 <option value="ハロプロ研修生">ハロプロ研修生</option>
 <option value="モーニング娘。">モーニング娘。</option>
 <option value="ロージークロニクル">ロージークロニクル</option>
+<option value="太陽とシスコムーン">太陽とシスコムーン</option>
