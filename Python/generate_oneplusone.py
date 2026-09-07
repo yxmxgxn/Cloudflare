@@ -195,8 +195,11 @@ def sort_key_date(date_str: str) -> str:
 
 
 @lru_cache(maxsize=8)
-def playlist_members(playlist_id: str) -> frozenset:
-    """再生リストに実際に入っている動画ID。取れなければ空集合(=&list=を付けない)"""
+def playlist_positions(playlist_id: str) -> tuple:
+    """再生リストの動画IDを収録順に並べたもの。取れなければ空(=&list=を付けない)。
+
+    tupleで返すのは lru_cache に載せるため。位置は index() で引く。
+    """
     url = f"https://www.youtube.com/playlist?list={playlist_id}"
     try:
         req = urllib.request.Request(url, headers={"User-Agent": PLAYLIST_UA})
@@ -204,8 +207,8 @@ def playlist_members(playlist_id: str) -> frozenset:
             html_text = res.read().decode("utf-8", "replace")
     except Exception as e:
         warn(f"再生リストを取得できませんでした({playlist_id}): {e}", title="ONE PLUS ONE")
-        return frozenset()
-    ids = frozenset(re.findall(r'"videoId":"([\w-]{11})"', html_text))
+        return ()
+    ids = tuple(dict.fromkeys(re.findall(r'"videoId":"([\w-]{11})"', html_text)))
     if not ids:
         warn(f"再生リストが空に見えます({playlist_id})", title="ONE PLUS ONE")
     return ids
@@ -227,10 +230,14 @@ def video_url(row: dict) -> str:
         return ""
     url = f"https://www.youtube.com/watch?v={vid}"
     playlist = val(row, "Playlist") or PLAYLISTS.get(feature_label(row), "")
+    if not playlist:
+        return url
     # 再生リストに入っていない動画に &list= を付けると別の動画から始まってしまう
-    if playlist and "list=" not in url and vid in playlist_members(playlist):
-        url += ("&" if "?" in url else "?") + f"list={playlist}"
-    return url
+    ids = playlist_positions(playlist)
+    if vid not in ids:
+        return url
+    # indexは公式の再生リストでの位置。生成のたびに数え直すので並べ替えにも追随する
+    return f"{url}&list={playlist}&index={ids.index(vid) + 1}"
 
 
 def card_key(row: dict) -> tuple:
