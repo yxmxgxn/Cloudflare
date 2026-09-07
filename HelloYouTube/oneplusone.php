@@ -15,7 +15,7 @@
   <p>ハロー！プロジェクトのメンバーが二人でパフォーマンスするデュオ企画をまとめました。<br>
   
   <p><strong>ONE PLUS ONE</strong>はテレビ番組「ハロドリ。」のデュオ企画で、各グループの公式YouTubeチャンネルで特別編集版・<a href="https://www.youtube.com/@TVTOKYO" target="_blank" rel="noopener noreferrer">テレ東公式チャンネル</a>で1アングルバージョンが公開されています。<br>
-  <strong>COVERS -One on One-</strong>はメンバー二人のデュオ企画で特別編集版・<a href="https://www.youtube.com/@upfrontchannel" target="_blank" rel="noopener noreferrer">アップフロントチャンネル</a>で公開されています。<br>
+  <strong>COVERS -One on One-</strong>はメンバー二人のデュオ企画で<a href="https://www.youtube.com/@upfrontchannel" target="_blank" rel="noopener noreferrer">アップフロントチャンネル</a>に公開されています。<br>
   COVERS -One on One-は<a href="https://helloproject.com/release/6817/" target="_blank" rel="noopener noreferrer">Blu-ray Disc + CD</a>が発売されています。</p>
   
   <p>動画リンクは公式の再生リストに繋いであるので、そのまま次の動画へ続きます。並びも再生リストに準拠しています。<br>

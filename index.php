@@ -186,7 +186,7 @@
         <p class="index-desc">ハロプロメンバーが二人でパフォーマンスするデュオ企画「ONE PLUS ONE」「COVERS -One on One-」の曲・組み合わせ・動画のまとめです</p>
       </div>
       <div class="card index-card">
-        <a class="index-link" href="/decabeats"><?= icon('flower', 'ic ic-20') ?>DECA!BEAT（デカビート）まとめ</a>
+        <a class="index-link" href="/decabeats"><?= icon('flower', 'ic ic-20') ?>DECA!BEAT（デカビート）非公式まとめ</a>
         <p class="index-desc">ハロー！プロジェクトとEarth hacksのコラボで結成された特別ユニット「DECA!BEAT」のメンバー紹介ポスト・紹介動画・YouTube・グッズ紹介ポストのまとめです</p>
       </div>
     </div>

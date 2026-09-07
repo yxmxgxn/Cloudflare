@@ -14,6 +14,8 @@
   $p_desc  = isset($description) ? $description : "宮本佳林さん・M-line・ハロープロジェクトのデータを公開しています";
   // OGP画像・ホーム画面アイコンのブランド別セット(img/{karin,hello,juice}/)。各ページで 'hello'/'juice' を指定、無ければ karin
   $brand = isset($brand) ? $brand : 'karin';
+  // ページ専用のOGP画像。$og_image に絶対パス(/img/…)を入れたページだけ差し替わる
+  $p_og_image = isset($og_image) ? $og_image : "/img/{$brand}/ogp-1200x630.png";
 ?>
 <meta name="description" content="<?php echo $p_desc; ?>">
 
@@ -30,7 +32,7 @@
   $canonical_url = 'https://karin-archive.com' . $canonical_path;
 ?>
 <meta property="og:url" content="<?php echo $canonical_url; ?>">
-<meta property="og:image" content="https://karin-archive.com/img/<?php echo $brand; ?>/ogp-1200x630.png">
+<meta property="og:image" content="https://karin-archive.com<?php echo $p_og_image; ?>">
 <meta property="og:site_name" content="宮本佳林・M-line・ハロプロ Archive">
 
 <!-- twitter:title/description/image は未指定なら og: が使われるので置かない(全ページ同じ値になる事故を防ぐ) -->
