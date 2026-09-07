@@ -536,8 +536,13 @@ function dc_x_embed(string $label, array $tw): string {
   });
 
   window.addEventListener('hashchange', function () {
-    selectMember(decodeURIComponent(location.hash.slice(1)), false);
+    if (selectMember(decodeURIComponent(location.hash.slice(1)), false)) scrollToTabs();
   });
+
+  // メンバー指定のURLで来たとき、他のメンバーに移れる選択ボタンごと見えるようにする
+  function scrollToTabs() {
+    window.scrollTo(0, memberTabs.getBoundingClientRect().top + window.scrollY - 12);
+  }
 
   /* ---- YouTube ---- */
 
@@ -598,6 +603,13 @@ function dc_x_embed(string $label, array $tw): string {
   var hash = decodeURIComponent(location.hash.slice(1));
   if (!hash || !selectMember(hash, false)) {
     selectMember(memberTabs.querySelector('button').dataset.slug, false);
+  } else {
+    scrollToTabs();
+    // Webフォントの読み込みで位置がずれることがあるので、まだ動かされていなければ合わせ直す
+    var landed = window.scrollY;
+    window.addEventListener('load', function () {
+      if (Math.abs(window.scrollY - landed) < 40) scrollToTabs();
+    });
   }
   showVideo(0, false);
 })();
