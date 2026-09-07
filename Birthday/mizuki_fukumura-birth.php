@@ -176,8 +176,8 @@
 <tbody>
 <tr class="row-even"><td>2020年10月30日</td><td>17:00</td><td>モーニング娘。'20 譜久村聖バースデーイベント</td><td>メルパルクホール</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/7116" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
 <tr><td>2020年10月30日</td><td>19:45</td><td>モーニング娘。'20 譜久村聖バースデーイベント</td><td>メルパルクホール</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/7117" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
-<tr class="row-even"><td>2020年11月18日</td><td>17:30</td><td>モーニング娘。'20 譜久村聖バースデーイベント アンコール公演</td><td>COTTON CLUB</td><td>東京都</td><td></td></tr>
-<tr><td>2020年11月18日</td><td>19:30</td><td>モーニング娘。'20 譜久村聖バースデーイベント アンコール公演</td><td>COTTON CLUB</td><td>東京都</td><td></td></tr>
+<tr class="row-even"><td>2020年11月18日</td><td>17:30</td><td>モーニング娘。'20 譜久村聖バースデーイベント アンコール公演</td><td>COTTON CLUB</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/7118" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
+<tr><td>2020年11月18日</td><td>19:30</td><td>モーニング娘。'20 譜久村聖バースデーイベント アンコール公演</td><td>COTTON CLUB</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/7119" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
 </tbody>
 </table>
 25歳（2021年）
@@ -244,8 +244,8 @@
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td>2024年11月23日</td><td>16:50</td><td>譜久村聖FCイベント2024～いいふくの日に乾杯!!～</td><td>江戸川区総合文化センター 大ホール</td><td>東京都</td><td></td></tr>
-<tr><td>2024年11月23日</td><td>19:40</td><td>譜久村聖FCイベント2024～いいふくの日に乾杯!!～</td><td>江戸川区総合文化センター 大ホール</td><td>東京都</td><td></td></tr>
+<tr class="row-even"><td>2024年11月23日</td><td>16:50</td><td>譜久村聖FCイベント2024～いいふくの日に乾杯!!～</td><td>江戸川区総合文化センター 大ホール</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/21921" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
+<tr><td>2024年11月23日</td><td>19:40</td><td>譜久村聖FCイベント2024～いいふくの日に乾杯!!～</td><td>江戸川区総合文化センター 大ホール</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/21922" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
 </tbody>
 </table>
 29歳（2025年）

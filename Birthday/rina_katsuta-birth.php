@@ -198,9 +198,9 @@
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td>2023年4月9日</td><td>13:40</td><td>勝田里奈バースデーイベント2023</td><td>イベントスペース 渋谷DAIA</td><td>東京都</td><td></td></tr>
-<tr><td>2023年4月9日</td><td>15:50</td><td>勝田里奈バースデーイベント2023</td><td>イベントスペース 渋谷DAIA</td><td>東京都</td><td></td></tr>
-<tr class="row-even"><td>2023年4月9日</td><td>17:50</td><td>勝田里奈バースデーイベント2023</td><td>イベントスペース 渋谷DAIA</td><td>東京都</td><td></td></tr>
+<tr class="row-even"><td>2023年4月9日</td><td>13:40</td><td>勝田里奈バースデーイベント2023</td><td>イベントスペース 渋谷DAIA</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/26757" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
+<tr><td>2023年4月9日</td><td>15:50</td><td>勝田里奈バースデーイベント2023</td><td>イベントスペース 渋谷DAIA</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/26758" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
+<tr class="row-even"><td>2023年4月9日</td><td>17:50</td><td>勝田里奈バースデーイベント2023</td><td>イベントスペース 渋谷DAIA</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/26759" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
 </tbody>
 </table>
 26歳（2024年）
@@ -216,9 +216,9 @@
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td>2024年4月6日</td><td>13:40</td><td>勝田里奈バースデーイベント2024</td><td>イベントスペース 渋谷DAIA</td><td>東京都</td><td></td></tr>
-<tr><td>2024年4月6日</td><td>15:50</td><td>勝田里奈バースデーイベント2024</td><td>イベントスペース 渋谷DAIA</td><td>東京都</td><td></td></tr>
-<tr class="row-even"><td>2024年4月6日</td><td>17:50</td><td>勝田里奈バースデーイベント2024</td><td>イベントスペース 渋谷DAIA</td><td>東京都</td><td></td></tr>
+<tr class="row-even"><td>2024年4月6日</td><td>13:40</td><td>勝田里奈バースデーイベント2024</td><td>イベントスペース 渋谷DAIA</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/26775" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
+<tr><td>2024年4月6日</td><td>15:50</td><td>勝田里奈バースデーイベント2024</td><td>イベントスペース 渋谷DAIA</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/26776" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
+<tr class="row-even"><td>2024年4月6日</td><td>17:50</td><td>勝田里奈バースデーイベント2024</td><td>イベントスペース 渋谷DAIA</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/26777" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
 </tbody>
 </table>
 27歳（2025年）
@@ -234,9 +234,9 @@
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td>2025年4月20日</td><td>13:40</td><td>勝田里奈バースデーイベント2025</td><td>イベントスペース 渋谷DAIA</td><td>東京都</td><td></td></tr>
-<tr><td>2025年4月20日</td><td>15:50</td><td>勝田里奈バースデーイベント2025</td><td>イベントスペース 渋谷DAIA</td><td>東京都</td><td></td></tr>
-<tr class="row-even"><td>2025年4月20日</td><td>17:50</td><td>勝田里奈バースデーイベント2025</td><td>イベントスペース 渋谷DAIA</td><td>東京都</td><td></td></tr>
+<tr class="row-even"><td>2025年4月20日</td><td>13:40</td><td>勝田里奈バースデーイベント2025</td><td>イベントスペース 渋谷DAIA</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/26797" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
+<tr><td>2025年4月20日</td><td>15:50</td><td>勝田里奈バースデーイベント2025</td><td>イベントスペース 渋谷DAIA</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/26798" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
+<tr class="row-even"><td>2025年4月20日</td><td>17:50</td><td>勝田里奈バースデーイベント2025</td><td>イベントスペース 渋谷DAIA</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/26799" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
 </tbody>
 </table>
 28歳（2026年）
@@ -252,9 +252,9 @@
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td>2026年5月2日</td><td>13:40</td><td>勝田里奈バースデーイベント2026</td><td>イベントスペース 渋谷DAIA</td><td>東京都</td><td></td></tr>
-<tr><td>2026年5月2日</td><td>15:50</td><td>勝田里奈バースデーイベント2026</td><td>イベントスペース 渋谷DAIA</td><td>東京都</td><td></td></tr>
-<tr class="row-even"><td>2026年5月2日</td><td>17:50</td><td>勝田里奈バースデーイベント2026</td><td>イベントスペース 渋谷DAIA</td><td>東京都</td><td></td></tr>
+<tr class="row-even"><td>2026年5月2日</td><td>13:40</td><td>勝田里奈バースデーイベント2026</td><td>イベントスペース 渋谷DAIA</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/26820" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
+<tr><td>2026年5月2日</td><td>15:50</td><td>勝田里奈バースデーイベント2026</td><td>イベントスペース 渋谷DAIA</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/26821" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
+<tr class="row-even"><td>2026年5月2日</td><td>17:50</td><td>勝田里奈バースデーイベント2026</td><td>イベントスペース 渋谷DAIA</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/26822" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
 </tbody>
 </table>
 

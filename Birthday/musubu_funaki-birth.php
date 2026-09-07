@@ -62,7 +62,7 @@
 <tbody>
 <tr class="row-even"><td>2018年5月21日</td><td>17:45</td><td>アンジュルム／カントリー・ガールズ 船木結バースデーイベント2018</td><td>スクエア荏原ひらつかホール</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/6121" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
 <tr><td>2018年5月21日</td><td>19:30</td><td>アンジュルム／カントリー・ガールズ 船木結バースデーイベント2018</td><td>スクエア荏原ひらつかホール</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/6122" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
-<tr class="row-even"><td>2018年6月19日</td><td>19:30</td><td>アンジュルム/カントリー・ガールズ 船木結バースデーイベント2018 in 名古屋</td><td>ミッドランドスクエア シネマ2</td><td>愛知県</td><td><a href="https://hp-setlist.com/stage/10099" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
+<tr class="row-even"><td>2018年6月19日</td><td>19:30</td><td>アンジュルム／カントリー・ガールズ 船木結バースデーイベント2018 in 名古屋</td><td>ミッドランドスクエア シネマ2</td><td>愛知県</td><td><a href="https://hp-setlist.com/stage/10099" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
 </tbody>
 </table>
 17歳（2019年）

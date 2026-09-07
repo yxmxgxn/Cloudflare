@@ -77,8 +77,10 @@
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td>2026年7月17日</td><td>17:10</td><td>OCHA NORMA 窪田七海バースデーイベント2026</td><td>飛行船シアター</td><td>東京都</td><td></td></tr>
-<tr><td>2026年7月17日</td><td>19:30</td><td>OCHA NORMA 窪田七海バースデーイベント2026</td><td>飛行船シアター</td><td>東京都</td><td></td></tr>
+<tr class="row-even"><td>2026年7月17日</td><td>17:10</td><td>OCHA NORMA 窪田七海バースデーイベント2026</td><td>飛行船シアター</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/24104" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
+<tr><td>2026年7月17日</td><td>19:30</td><td>OCHA NORMA 窪田七海バースデーイベント2026</td><td>飛行船シアター</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/22600" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
+<tr class="row-even"><td>2026年8月13日</td><td>16:30</td><td>OCHA NORMA 窪田七海・中山夏月姫バースデーイベント2026 in 大阪</td><td>YES THEATER</td><td>大阪府</td><td><a href="https://hp-setlist.com/stage/24449" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
+<tr><td>2026年8月13日</td><td>18:30</td><td>OCHA NORMA 窪田七海・中山夏月姫バースデーイベント2026 in 大阪</td><td>YES THEATER</td><td>大阪府</td><td><a href="https://hp-setlist.com/stage/24451" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
 </tbody>
 </table>
 

@@ -130,6 +130,8 @@
 <tbody>
 <tr class="row-even"><td>2026年5月12日</td><td>17:00</td><td>モーニング娘。'26 岡村ほまれバースデーイベント</td><td>一ツ橋ホール</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/23815" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
 <tr><td>2026年5月12日</td><td>19:20</td><td>モーニング娘。'26 岡村ほまれバースデーイベント</td><td>一ツ橋ホール</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/23816" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
+<tr class="row-even"><td>2026年7月17日</td><td>18:00</td><td>モーニング娘。'26 岡村ほまれバースデーイベント in 名古屋【2026年5月25日振替公演】</td><td>ミッドランドスクエア シネマ2</td><td>愛知県</td><td><a href="https://hp-setlist.com/stage/24370" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
+<tr><td>2026年7月17日</td><td>19:45</td><td>モーニング娘。'26 岡村ほまれバースデーイベント in 名古屋【2026年5月25日振替公演】</td><td>ミッドランドスクエア シネマ2</td><td>愛知県</td><td><a href="https://hp-setlist.com/stage/24371" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
 </tbody>
 </table>
 

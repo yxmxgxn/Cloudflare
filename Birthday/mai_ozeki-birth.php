@@ -95,8 +95,8 @@
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td>2022年2月10日</td><td>16:45</td><td>小関舞バースデーイベント2022</td><td>LANDMARK HALL</td><td>神奈川県</td><td></td></tr>
-<tr><td>2022年2月10日</td><td>18:50</td><td>小関舞バースデーイベント2022</td><td>LANDMARK HALL</td><td>神奈川県</td><td></td></tr>
+<tr class="row-even"><td>2022年2月10日</td><td>16:45</td><td>小関舞バースデーイベント2022</td><td>LANDMARK HALL</td><td>神奈川県</td><td><a href="https://hp-setlist.com/stage/26729" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
+<tr><td>2022年2月10日</td><td>18:50</td><td>小関舞バースデーイベント2022</td><td>LANDMARK HALL</td><td>神奈川県</td><td><a href="https://hp-setlist.com/stage/26730" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
 </tbody>
 </table>
 21歳（2023年）

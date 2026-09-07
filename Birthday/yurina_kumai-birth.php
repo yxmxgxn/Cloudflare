@@ -110,8 +110,8 @@
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td>2018年8月3日</td><td>18:00</td><td>熊井友理奈バースデーイベント～ENJOY!25♡～</td><td>渋谷シダックスカルチャーホール</td><td>東京都</td><td></td></tr>
-<tr><td>2018年8月3日</td><td>20:30</td><td>熊井友理奈バースデーイベント～ENJOY!25♡～</td><td>渋谷シダックスカルチャーホール</td><td>東京都</td><td></td></tr>
+<tr class="row-even"><td>2018年8月3日</td><td>18:00</td><td>熊井友理奈バースデーイベント～ENJOY!25♡～</td><td>渋谷シダックスカルチャーホール</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/26671" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
+<tr><td>2018年8月3日</td><td>20:30</td><td>熊井友理奈バースデーイベント～ENJOY!25♡～</td><td>渋谷シダックスカルチャーホール</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/26672" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
 </tbody>
 </table>
 26歳（2019年）
@@ -127,10 +127,10 @@
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td>2019年8月3日</td><td>14:00</td><td>熊井友理奈 カジュアルディナーショー2019～令和！ENJOY! My Birthday!!～</td><td>ミュージックレストラン La Donna</td><td>東京都</td><td></td></tr>
-<tr><td>2019年8月3日</td><td>18:30</td><td>熊井友理奈 カジュアルディナーショー2019～令和！ENJOY! My Birthday!!～</td><td>ミュージックレストラン La Donna</td><td>東京都</td><td></td></tr>
-<tr class="row-even"><td>2019年8月4日</td><td>14:00</td><td>熊井友理奈 カジュアルディナーショー2019～令和！ENJOY! My Birthday!!～</td><td>ミュージックレストラン La Donna</td><td>東京都</td><td></td></tr>
-<tr><td>2019年8月4日</td><td>18:30</td><td>熊井友理奈 カジュアルディナーショー2019～令和！ENJOY! My Birthday!!～</td><td>ミュージックレストラン La Donna</td><td>東京都</td><td></td></tr>
+<tr class="row-even"><td>2019年8月3日</td><td>14:00</td><td>熊井友理奈カジュアルディナーショー2019～令和！ENJOY! My Birthday!!～</td><td>ミュージックレストラン La Donna</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/26683" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
+<tr><td>2019年8月3日</td><td>18:30</td><td>熊井友理奈カジュアルディナーショー2019～令和！ENJOY! My Birthday!!～</td><td>ミュージックレストラン La Donna</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/26684" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
+<tr class="row-even"><td>2019年8月4日</td><td>14:00</td><td>熊井友理奈カジュアルディナーショー2019～令和！ENJOY! My Birthday!!～</td><td>ミュージックレストラン La Donna</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/26685" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
+<tr><td>2019年8月4日</td><td>18:30</td><td>熊井友理奈カジュアルディナーショー2019～令和！ENJOY! My Birthday!!～</td><td>ミュージックレストラン La Donna</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/26686" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
 </tbody>
 </table>
 27歳（2020年）
@@ -164,9 +164,9 @@
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td>2021年8月7日</td><td>13:00</td><td>熊井友理奈バースデーイベント2021</td><td>渋谷シダックスカルチャーホール</td><td>東京都</td><td></td></tr>
-<tr><td>2021年8月7日</td><td>15:30</td><td>熊井友理奈バースデーイベント2021</td><td>渋谷シダックスカルチャーホール</td><td>東京都</td><td></td></tr>
-<tr class="row-even"><td>2021年8月7日</td><td>18:00</td><td>熊井友理奈バースデーイベント2021</td><td>渋谷シダックスカルチャーホール</td><td>東京都</td><td></td></tr>
+<tr class="row-even"><td>2021年8月7日</td><td>13:00</td><td>熊井友理奈バースデーイベント2021</td><td>渋谷シダックスカルチャーホール</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/26719" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
+<tr><td>2021年8月7日</td><td>15:30</td><td>熊井友理奈バースデーイベント2021</td><td>渋谷シダックスカルチャーホール</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/26720" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
+<tr class="row-even"><td>2021年8月7日</td><td>18:00</td><td>熊井友理奈バースデーイベント2021</td><td>渋谷シダックスカルチャーホール</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/26721" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
 </tbody>
 </table>
 29歳（2022年）
@@ -182,9 +182,9 @@
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td>2022年8月6日</td><td>13:00</td><td>熊井友理奈バースデーイベント2022 ～8＋－×÷3＝29～</td><td>渋谷シダックスカルチャーホール</td><td>東京都</td><td></td></tr>
-<tr><td>2022年8月6日</td><td>15:30</td><td>熊井友理奈バースデーイベント2022 ～8＋－×÷3＝29～</td><td>渋谷シダックスカルチャーホール</td><td>東京都</td><td></td></tr>
-<tr class="row-even"><td>2022年8月6日</td><td>18:00</td><td>熊井友理奈バースデーイベント2022 ～8＋－×÷3＝29～</td><td>渋谷シダックスカルチャーホール</td><td>東京都</td><td></td></tr>
+<tr class="row-even"><td>2022年8月6日</td><td>13:00</td><td>熊井友理奈バースデーイベント2022 ～8＋－×÷3＝29～</td><td>渋谷シダックスカルチャーホール</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/26740" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
+<tr><td>2022年8月6日</td><td>15:30</td><td>熊井友理奈バースデーイベント2022 ～8＋－×÷3＝29～</td><td>渋谷シダックスカルチャーホール</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/26741" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
+<tr class="row-even"><td>2022年8月6日</td><td>18:00</td><td>熊井友理奈バースデーイベント2022 ～8＋－×÷3＝29～</td><td>渋谷シダックスカルチャーホール</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/26742" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
 </tbody>
 </table>
 30歳（2023年）
@@ -200,9 +200,9 @@
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td>2023年8月12日</td><td>13:00</td><td>熊井友理奈バースデーイベント2023 ～MISOJI～</td><td>渋谷シダックスカルチャーホール</td><td>東京都</td><td></td></tr>
-<tr><td>2023年8月12日</td><td>15:30</td><td>熊井友理奈バースデーイベント2023 ～MISOJI～</td><td>渋谷シダックスカルチャーホール</td><td>東京都</td><td></td></tr>
-<tr class="row-even"><td>2023年8月12日</td><td>18:00</td><td>熊井友理奈バースデーイベント2023 ～MISOJI～</td><td>渋谷シダックスカルチャーホール</td><td>東京都</td><td></td></tr>
+<tr class="row-even"><td>2023年8月12日</td><td>13:00</td><td>熊井友理奈バースデーイベント2023 ～MISOJI～</td><td>渋谷シダックスカルチャーホール</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/26760" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
+<tr><td>2023年8月12日</td><td>15:30</td><td>熊井友理奈バースデーイベント2023 ～MISOJI～</td><td>渋谷シダックスカルチャーホール</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/26761" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
+<tr class="row-even"><td>2023年8月12日</td><td>18:00</td><td>熊井友理奈バースデーイベント2023 ～MISOJI～</td><td>渋谷シダックスカルチャーホール</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/26762" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
 </tbody>
 </table>
 31歳（2024年）
@@ -218,8 +218,8 @@
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td>2024年7月31日</td><td>17:40</td><td>熊井友理奈バースデーイベント2024～熊井ちゃんとみんなの夏休み～</td><td>渋谷シダックスカルチャーホール</td><td>東京都</td><td></td></tr>
-<tr><td>2024年7月31日</td><td>20:00</td><td>熊井友理奈バースデーイベント2024～熊井ちゃんとみんなの夏休み～</td><td>渋谷シダックスカルチャーホール</td><td>東京都</td><td></td></tr>
+<tr class="row-even"><td>2024年7月31日</td><td>17:40</td><td>熊井友理奈バースデーイベント2024～熊井ちゃんとみんなの夏休み～</td><td>渋谷シダックスカルチャーホール</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/26786" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
+<tr><td>2024年7月31日</td><td>20:00</td><td>熊井友理奈バースデーイベント2024～熊井ちゃんとみんなの夏休み～</td><td>渋谷シダックスカルチャーホール</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/26787" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
 </tbody>
 </table>
 32歳（2025年）
@@ -238,6 +238,24 @@
 <tr class="row-even"><td>2025年8月3日</td><td>13:40</td><td>KUMA MEETING 2025～オンタイムでいきます！！～</td><td>イベントスペース 渋谷DAIA</td><td>東京都</td><td></td></tr>
 <tr><td>2025年8月3日</td><td>16:00</td><td>KUMA MEETING 2025～オンタイムでいきます！！～</td><td>イベントスペース 渋谷DAIA</td><td>東京都</td><td></td></tr>
 <tr class="row-even"><td>2025年8月3日</td><td>18:10</td><td>KUMA MEETING 2025～オンタイムでいきます！！～</td><td>イベントスペース 渋谷DAIA</td><td>東京都</td><td></td></tr>
+</tbody>
+</table>
+33歳（2026年）
+<table class="birthday-table">
+<thead>
+<tr>
+<th>日付</th>
+<th>開演</th>
+<th>イベント名</th>
+<th>会場</th>
+<th>都道府県</th>
+<th>セットリスト</th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td>2026年8月1日</td><td>13:40</td><td>KUMA MEETING 2026</td><td>イベントスペース 渋谷DAIA</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/24425" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
+<tr><td>2026年8月1日</td><td>16:00</td><td>KUMA MEETING 2026</td><td>イベントスペース 渋谷DAIA</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/24426" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
+<tr class="row-even"><td>2026年8月1日</td><td>18:10</td><td>KUMA MEETING 2026</td><td>イベントスペース 渋谷DAIA</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/24427" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
 </tbody>
 </table>
 

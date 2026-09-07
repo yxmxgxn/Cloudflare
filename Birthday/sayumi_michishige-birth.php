@@ -73,8 +73,8 @@
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td>2018年7月13日</td><td>17:45</td><td>道重さゆみバースデーイベント2018</td><td>山野ホール</td><td>東京都</td><td></td></tr>
-<tr><td>2018年7月13日</td><td>20:15</td><td>道重さゆみバースデーイベント2018</td><td>山野ホール</td><td>東京都</td><td></td></tr>
+<tr class="row-even"><td>2018年7月13日</td><td>17:45</td><td>道重さゆみバースデーイベント2018</td><td>山野ホール</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/26995" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
+<tr><td>2018年7月13日</td><td>20:15</td><td>道重さゆみバースデーイベント2018</td><td>山野ホール</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/26996" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
 </tbody>
 </table>
 30歳（2019年）
@@ -90,8 +90,8 @@
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td>2019年7月15日</td><td>15:00</td><td>道重さゆみバースデーイベント2019</td><td>山野ホール</td><td>東京都</td><td></td></tr>
-<tr><td>2019年7月15日</td><td>17:45</td><td>道重さゆみバースデーイベント2019</td><td>山野ホール</td><td>東京都</td><td></td></tr>
+<tr class="row-even"><td>2019年7月15日</td><td>15:00</td><td>道重さゆみバースデーイベント2019</td><td>山野ホール</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/26997" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
+<tr><td>2019年7月15日</td><td>17:45</td><td>道重さゆみバースデーイベント2019</td><td>山野ホール</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/26998" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
 </tbody>
 </table>
 31歳（2020年）
@@ -124,8 +124,8 @@
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td>2021年7月13日</td><td>16:15</td><td>道重さゆみバースデーイベント2021</td><td>Zepp DiverCity</td><td>東京都</td><td></td></tr>
-<tr><td>2021年7月13日</td><td>18:40</td><td>道重さゆみバースデーイベント2021</td><td>Zepp DiverCity</td><td>東京都</td><td></td></tr>
+<tr class="row-even"><td>2021年7月13日</td><td>16:15</td><td>道重さゆみバースデーイベント2021</td><td>Zepp DiverCity</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/27009" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
+<tr><td>2021年7月13日</td><td>18:40</td><td>道重さゆみバースデーイベント2021</td><td>Zepp DiverCity</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/27010" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
 </tbody>
 </table>
 33歳（2022年）
@@ -192,8 +192,8 @@
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td>2025年6月28日</td><td>15:00</td><td>道重さゆみファンクラブ会員限定バースデーライブ★「SAYUMING&quot;F&quot;ANDOLL」</td><td>横浜Bay Hall</td><td>神奈川県</td><td></td></tr>
-<tr><td>2025年6月28日</td><td>19:00</td><td>道重さゆみファンクラブ会員限定バースデーライブ★「SAYUMING&quot;F&quot;ANDOLL」</td><td>横浜Bay Hall</td><td>神奈川県</td><td></td></tr>
+<tr class="row-even"><td>2025年6月28日</td><td>15:00</td><td>道重さゆみファンクラブ会員限定バースデーライブ★「SAYUMING&quot;F&quot;ANDOLL」</td><td>横浜Bay Hall</td><td>神奈川県</td><td><a href="https://hp-setlist.com/stage/27031" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
+<tr><td>2025年6月28日</td><td>19:00</td><td>道重さゆみファンクラブ会員限定バースデーライブ★「SAYUMING&quot;F&quot;ANDOLL」</td><td>横浜Bay Hall</td><td>神奈川県</td><td><a href="https://hp-setlist.com/stage/27032" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
 </tbody>
 </table>
 

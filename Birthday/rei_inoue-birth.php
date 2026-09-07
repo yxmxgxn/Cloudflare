@@ -97,8 +97,8 @@
 <tbody>
 <tr class="row-even"><td>2020年7月27日</td><td>17:00</td><td>Juice=Juice 井上玲音バースデーイベント2020</td><td>COTTON CLUB</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/7025" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
 <tr><td>2020年7月27日</td><td>19:15</td><td>Juice=Juice 井上玲音バースデーイベント2020</td><td>COTTON CLUB</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/7026" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
-<tr class="row-even"><td>2020年9月24日</td><td>17:00</td><td>Juice=Juice 井上玲音バースデーイベント2020 アンコール公演</td><td>COTTON CLUB</td><td>東京都</td><td></td></tr>
-<tr><td>2020年9月24日</td><td>19:15</td><td>Juice=Juice 井上玲音バースデーイベント2020 アンコール公演</td><td>COTTON CLUB</td><td>東京都</td><td></td></tr>
+<tr class="row-even"><td>2020年9月24日</td><td>17:00</td><td>Juice=Juice 井上玲音バースデーイベント2020 アンコール公演</td><td>COTTON CLUB</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/7027" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
+<tr><td>2020年9月24日</td><td>19:15</td><td>Juice=Juice 井上玲音バースデーイベント2020 アンコール公演</td><td>COTTON CLUB</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/7028" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
 </tbody>
 </table>
 20歳（2021年）
@@ -203,8 +203,8 @@
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td>2026年7月13日</td><td>16:20</td><td>Juice=Juice 井上玲音バースデーイベント2026</td><td>KT Zepp Yokohama</td><td>神奈川県</td><td></td></tr>
-<tr><td>2026年7月13日</td><td>19:00</td><td>Juice=Juice 井上玲音バースデーイベント2026</td><td>KT Zepp Yokohama</td><td>神奈川県</td><td></td></tr>
+<tr class="row-even"><td>2026年7月13日</td><td>16:20</td><td>Juice=Juice 井上玲音バースデーイベント2026</td><td>KT Zepp Yokohama</td><td>神奈川県</td><td><a href="https://hp-setlist.com/stage/24362" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
+<tr><td>2026年7月13日</td><td>19:00</td><td>Juice=Juice 井上玲音バースデーイベント2026</td><td>KT Zepp Yokohama</td><td>神奈川県</td><td><a href="https://hp-setlist.com/stage/24364" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
 </tbody>
 </table>
 

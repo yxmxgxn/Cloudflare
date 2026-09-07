@@ -82,6 +82,24 @@
 <tr class="row-even"><td>2019年5月28日</td><td>19:30</td><td>こぶしファクトリー 浜浦彩乃バースデーイベント2019 in 名古屋</td><td>ミッドランドスクエア シネマ2</td><td>愛知県</td><td><a href="https://hp-setlist.com/stage/10144" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
 </tbody>
 </table>
+26歳（2026年）
+<table class="birthday-table">
+<thead>
+<tr>
+<th>日付</th>
+<th>開演</th>
+<th>イベント名</th>
+<th>会場</th>
+<th>都道府県</th>
+<th>セットリスト</th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td>2026年6月7日</td><td>13:10</td><td>浜浦彩乃 Birthday LIVE</td><td>SCHOOL LIVE &amp; BAR TOKYO</td><td>東京都</td><td></td></tr>
+<tr><td>2026年6月7日</td><td>16:00</td><td>浜浦彩乃 Birthday LIVE</td><td>SCHOOL LIVE &amp; BAR TOKYO</td><td>東京都</td><td></td></tr>
+<tr class="row-even"><td>2026年6月7日</td><td>18:50</td><td>浜浦彩乃 Birthday LIVE</td><td>SCHOOL LIVE &amp; BAR TOKYO</td><td>東京都</td><td></td></tr>
+</tbody>
+</table>
 
 </main>
 <?php include $_SERVER['DOCUMENT_ROOT'] . '/Generated/birthday_generated.php'; ?>

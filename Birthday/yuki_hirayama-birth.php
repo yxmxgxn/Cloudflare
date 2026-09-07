@@ -79,8 +79,6 @@
 <tbody>
 <tr class="row-even"><td>2026年7月14日</td><td>16:45</td><td>アンジュルム 平山遊季バースデーイベント2026</td><td>せたがやイーグレットホール</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/24366" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
 <tr><td>2026年7月14日</td><td>19:15</td><td>アンジュルム 平山遊季バースデーイベント2026</td><td>せたがやイーグレットホール</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/24367" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
-<tr class="row-even"><td>2026年8月20日</td><td>18:00</td><td>アンジュルム 平山遊季バースデーイベント2026 in 名古屋</td><td>ミッドランドスクエア シネマ2</td><td>愛知県</td><td></td></tr>
-<tr><td>2026年8月20日</td><td>19:45</td><td>アンジュルム 平山遊季バースデーイベント2026 in 名古屋</td><td>ミッドランドスクエア シネマ2</td><td>愛知県</td><td></td></tr>
 </tbody>
 </table>
 

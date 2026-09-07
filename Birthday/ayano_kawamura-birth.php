@@ -61,8 +61,8 @@
 <tbody>
 <tr class="row-even"><td>2020年9月25日</td><td>17:00</td><td>アンジュルム 川村文乃バースデーイベント2020</td><td>COTTON CLUB</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/7087" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
 <tr><td>2020年9月25日</td><td>19:15</td><td>アンジュルム 川村文乃バースデーイベント2020</td><td>COTTON CLUB</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/7088" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
-<tr class="row-even"><td>2020年11月12日</td><td>17:00</td><td>アンジュルム 川村文乃バースデーイベント2020 アンコール公演</td><td>COTTON CLUB</td><td>東京都</td><td></td></tr>
-<tr><td>2020年11月12日</td><td>19:15</td><td>アンジュルム 川村文乃バースデーイベント2020 アンコール公演</td><td>COTTON CLUB</td><td>東京都</td><td></td></tr>
+<tr class="row-even"><td>2020年11月12日</td><td>17:00</td><td>アンジュルム 川村文乃バースデーイベント2020 アンコール公演</td><td>COTTON CLUB</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/7089" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
+<tr><td>2020年11月12日</td><td>19:15</td><td>アンジュルム 川村文乃バースデーイベント2020 アンコール公演</td><td>COTTON CLUB</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/7090" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
 </tbody>
 </table>
 22歳（2021年）

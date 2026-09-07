@@ -169,8 +169,8 @@
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td>2018年2月5日</td><td>18:00</td><td>中島早貴バースデーイベント</td><td>山野ホール</td><td>東京都</td><td></td></tr>
-<tr><td>2018年2月5日</td><td>20:40</td><td>中島早貴バースデーイベント</td><td>山野ホール</td><td>東京都</td><td></td></tr>
+<tr class="row-even"><td>2018年2月5日</td><td>18:00</td><td>中島早貴バースデーイベント2018</td><td>山野ホール</td><td>東京都</td><td></td></tr>
+<tr><td>2018年2月5日</td><td>20:40</td><td>中島早貴バースデーイベント2018</td><td>山野ホール</td><td>東京都</td><td></td></tr>
 </tbody>
 </table>
 25歳（2019年）
@@ -203,8 +203,8 @@
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td>2020年2月5日</td><td>16:50</td><td>中島早貴バースデーイベント2020～GOLD★GOLD～</td><td>山野ホール</td><td>東京都</td><td></td></tr>
-<tr><td>2020年2月5日</td><td>19:30</td><td>中島早貴バースデーイベント2020～GOLD★GOLD～</td><td>山野ホール</td><td>東京都</td><td></td></tr>
+<tr class="row-even"><td>2020年2月5日</td><td>16:50</td><td>中島早貴バースデーイベント2020～GOLD★GOLD～</td><td>山野ホール</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/26692" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
+<tr><td>2020年2月5日</td><td>19:30</td><td>中島早貴バースデーイベント2020～GOLD★GOLD～</td><td>山野ホール</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/26693" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
 </tbody>
 </table>
 27歳（2021年）
@@ -237,9 +237,9 @@
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td>2026年2月22日</td><td>13:00</td><td>中島早貴バースデーイベント2026-お久しぶりのBirthday Partyへようこそ-</td><td>渋谷シダックスカルチャーホール</td><td>東京都</td><td></td></tr>
-<tr><td>2026年2月22日</td><td>15:50</td><td>中島早貴バースデーイベント2026-お久しぶりのBirthday Partyへようこそ-</td><td>渋谷シダックスカルチャーホール</td><td>東京都</td><td></td></tr>
-<tr class="row-even"><td>2026年2月22日</td><td>18:00</td><td>中島早貴バースデーイベント2026-お久しぶりのBirthday Partyへようこそ-</td><td>渋谷シダックスカルチャーホール</td><td>東京都</td><td></td></tr>
+<tr class="row-even"><td>2026年2月22日</td><td>13:00</td><td>中島早貴バースデーイベント2026-お久しぶりのBirthday Partyへようこそ-</td><td>渋谷シダックスカルチャーホール</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/26817" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
+<tr><td>2026年2月22日</td><td>15:50</td><td>中島早貴バースデーイベント2026-お久しぶりのBirthday Partyへようこそ-</td><td>渋谷シダックスカルチャーホール</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/26818" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
+<tr class="row-even"><td>2026年2月22日</td><td>18:00</td><td>中島早貴バースデーイベント2026-お久しぶりのBirthday Partyへようこそ-</td><td>渋谷シダックスカルチャーホール</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/26819" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
 </tbody>
 </table>
 
