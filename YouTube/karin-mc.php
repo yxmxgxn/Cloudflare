@@ -99,7 +99,7 @@
     <li><a href="https://www.youtube.com/watch?v=v4rfNYe55WA" target="_blank" rel="noopener noreferrer">ハロ！ステ#198（宮本佳林&羽賀朱音） 2016/12/7</a></li>
     <li><a href="https://www.youtube.com/watch?v=NKU7CzzAxnc" target="_blank" rel="noopener noreferrer">ハロ！ステ#214（宮本佳林&山木梨沙） 2017/04/12</a></li>
     <li><a href="https://www.youtube.com/watch?v=Vvb899za9-A" target="_blank" rel="noopener noreferrer">ハロ！ステ#245（宮本佳林&野村みな美） 2017/11/15</a></li>
-    <li><a href="https://www.youtube.com/watch?v=vSzkhVZRBxk" target="_blank" rel="noopener noreferrer">ハロ！ステ#280 （宮本佳林&宮本佳林） 2019/05/29</a></li>
+    <li><a href="https://www.youtube.com/watch?v=vSzkhVZRBxk" target="_blank" rel="noopener noreferrer">ハロ！ステ#280 （宮本佳林） 2019/05/29</a></li>
     <li><a href="https://www.youtube.com/watch?v=nF_rDO-Yldw" target="_blank" rel="noopener noreferrer">ハロ！ステ#334（宮本佳林&川村文乃） 2020/04/01</a></li>
     <li><a href="https://www.youtube.com/watch?v=FWuFOm-WOvQ" target="_blank" rel="noopener noreferrer">ハロ！ステ#349（宮本佳林&竹内朱莉） 2020/11/4</a></li>
   </ul>

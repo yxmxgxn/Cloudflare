@@ -39,7 +39,7 @@
     <li><a href="/Birthday/miki_nonaka-birth">野中美希</a></li>
     <li><a href="/Birthday/maria_makino-birth">牧野真莉愛</a></li>
     <li><a href="/Birthday/akane_haga-birth">羽賀朱音</a></li>
-    <li><a href="/Birthday/reina_yokomyama-birth">横山玲奈</a></li>
+    <li><a href="/Birthday/reina_yokoyama-birth">横山玲奈</a></li>
     <li><a href="/Birthday/kaede_kaga-birth">加賀楓</a></li>
     <li><a href="/Birthday/chisaki_morito-birth">森戸知沙希</a></li>
     <li><a href="/Birthday/rio_kitagawa-birth">北川莉央</a></li>
