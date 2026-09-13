@@ -1,4 +1,4 @@
-<!-- generated: 2026-08-28T14:27:23.172201+00:00 -->
+<!-- generated: 2026-09-13T15:02:13.906710+00:00 -->
 <option value="相川茉穂" data-group="アンジュルム">相川茉穂</option>
 <option value="秋山眞緒" data-group="つばきファクトリー">秋山眞緒</option>
 <option value="浅倉樹々" data-group="つばきファクトリー">浅倉樹々</option>
@@ -65,6 +65,7 @@
 <option value="筒井澪心" data-group="OCHA NORMA">筒井澪心</option>
 <option value="中西香菜" data-group="アンジュルム">中西香菜</option>
 <option value="中山夏月姫" data-group="OCHA NORMA">中山夏月姫</option>
+<option value="長野桃羽" data-group="アンジュルム">長野桃羽</option>
 <option value="夏焼雅" data-group="Berryz工房">夏焼雅</option>
 <option value="新沼希空" data-group="つばきファクトリー">新沼希空</option>
 <option value="西﨑美空" data-group="OCHA NORMA">西﨑美空</option>
