@@ -108,6 +108,9 @@ grep -rl --include='*.html' --include='*.xml' --include='*.txt' -F "$OLD_URL" "$
   echo "/karinsong.php       /YouTube/karin-song   301"
   echo "/index.php / 301"
   echo "/index.html / 301"
+  # 外部サイトへ移転したツール(ページ本体はリポジトリから削除済み)
+  echo "/Tool/post-context     https://tools.ymgn0829.workers.dev/post-context/ 301"
+  echo "/Tool/post-context.php https://tools.ymgn0829.workers.dev/post-context/ 301"
   # 全ページ: .php付きURL → クリーンURL
   while IFS= read -r p; do
     echo "/$p.php /$p 301"
