@@ -10,7 +10,8 @@
  * id    : YouTubeの動画ID(必須)
  * start : 再生開始位置(秒)。URLの &t=◯s にあたる(省略可)
  * title : カードの見出し(必須)
- * sub   : 見出しの下の補足(省略可)
+ * date  : 公開日・配信日。見出しの上に小さく出す(省略可。'2026/05/12' のように書く)
+ * sub   : 見出しの下の補足。複数行にしたいときは配列で渡す(省略可)
  *
  * サムネイルを押すまでiframeは読み込まない(lite embed)。
  */
@@ -48,9 +49,12 @@ function video_cards(array $videos): string
               . '<img src="https://i.ytimg.com/vi/' . vc_h($id) . '/hqdefault.jpg" alt="" loading="lazy">'
               . '<span class="vc-play">▶ ' . ($start ? vc_hms($start) . 'から再生' : '再生') . '</span>'
               . '</button>'
-              . '<p class="vc-title">' . vc_h($v['title']) . '</p>'
-              . (empty($v['sub']) ? '' : '<p class="vc-sub">' . vc_h($v['sub']) . '</p>')
-              . '<p class="vc-link"><a href="' . vc_h($url) . '" target="_blank" rel="noopener noreferrer">'
+              . (empty($v['date']) ? '' : '<p class="vc-date">' . vc_h($v['date']) . '</p>')
+              . '<p class="vc-title">' . vc_h($v['title']) . '</p>';
+        foreach ((array)($v['sub'] ?? []) as $line) {
+            $out .= '<p class="vc-sub">' . vc_h($line) . '</p>';
+        }
+        $out .= '<p class="vc-link"><a href="' . vc_h($url) . '" target="_blank" rel="noopener noreferrer">'
               . icon('youtube-brand', 'ic ic-20') . 'YouTubeで見る</a></p>'
               . '</div>';
     }
