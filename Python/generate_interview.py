@@ -10,6 +10,7 @@ PHPインクルード用のカード・フィルタ選択肢フラグメント�
 import csv
 import html
 import io
+import os
 import re
 import urllib.parse
 import urllib.request
@@ -179,7 +180,7 @@ def build_members_block(names: list[str], groups_display: list[str]) -> str:
 
 
 def build_cards(articles: list[dict], members_by_id: dict, master: dict,
-                domain: dict, unmatched: set) -> str:
+                domain: dict, unmatched: dict) -> str:
     cards = []
     for a in articles:
         aid = (a.get("ID") or "").strip()
@@ -195,7 +196,7 @@ def build_cards(articles: list[dict], members_by_id: dict, master: dict,
             url = ""  # ライブリンク切れ(WebArciveのみ)のフラグ。リンク化・媒体解決の対象外にする
         media_raw = media_for(url, domain)   # 媒体名はDomain辞書から引く
         if url and not media_raw:
-            unmatched.add(url)
+            unmatched[url] = aid
         media = esc(media_raw)
         feature = esc(a.get("Feature"))
         archive = (a.get("WebArcive") or "").strip()
@@ -292,7 +293,7 @@ def main():
     member_rows = fetch_csv(GID_MEMBERS)
     master = fetch_master()
     domain = fetch_domain()
-    unmatched: set[str] = set()
+    unmatched: dict[str, str] = {}  # URL → 記事ID
 
     members_by_id: dict[str, list[dict]] = {}
     for m in member_rows:
@@ -330,8 +331,37 @@ def main():
     if unmatched:
         warn("Domainシート未登録(媒体名が空になる): " + "、".join(sorted(unmatched)),
              title="Domain未登録URL")
+    write_domain_report(unmatched)
     print(f"生成完了: {OUTPUT_CARDS} ({len(articles)} 記事 / メンバー {len(name_set)} 名 / "
           f"Domain未登録 {len(unmatched)} 件)")
+
+
+def write_domain_report(unmatched: dict[str, str]) -> None:
+    """Domain未登録URLのIssue本文(Markdown)を書き出す。0件なら空ファイル(=Issueを閉じる合図)。
+    出力先は環境変数 INTERVIEW_DOMAIN_REPORT(Actionsが一時ディレクトリを指定)。未設定なら何もしない。
+    本文は実行ごとに変わる情報(日時・実行URL)を含めない: 内容が同じなら通知しないための比較に使う。"""
+    path = os.environ.get("INTERVIEW_DOMAIN_REPORT")
+    if not path:
+        return
+    if not unmatched:
+        Path(path).write_text("", encoding="utf-8")
+        return
+    by_host: dict[str, list[tuple[str, str]]] = {}
+    for url, aid in unmatched.items():
+        host = urllib.parse.urlparse(url).netloc.lower().removeprefix("www.")
+        by_host.setdefault(host, []).append((aid, url))
+    lines = [
+        "インタビュー記事のURLのうち、Domainシートのどの Prefix にも一致しないものがあります。",
+        "該当記事は媒体名が空欄で表示されています。Domainシートに `Prefix, Media` を1行足すと、次回の生成で解消します。",
+        "",
+        "| 候補Prefix | 件数 | 記事 |",
+        "|---|---|---|",
+    ]
+    for host in sorted(by_host):
+        items = sorted(by_host[host])
+        refs = "<br>".join(f"{aid} {url}" for aid, url in items)
+        lines.append(f"| `{host}` | {len(items)} | {refs} |")
+    Path(path).write_text("\n".join(lines) + "\n", encoding="utf-8")
 
 
 if __name__ == "__main__":

@@ -12,7 +12,7 @@
   各カードは、掲載日とタイトル（記事リンク）、媒体・連載名、メンバーで構成されています。</p>
   <p>グループ・メンバー名での絞り込み、掲載日・タイトルでの並び替え、記事本文を対象にしたキーワード検索ができます</p>
   <p>右下のWeb Archiveからアーカイブを開けます。</p>
-  <p>2026/08/14 宮本佳林さん・OCHA NORMA・ロージークロニクルを中心に掲載しています。</p>
+  <p>2026/09/14 宮本佳林さん・工藤遥さん・OCHA NORMA・ロージークロニクルは網羅していると思います。</p>
 <div id="interview-controls">
   <input type="text" id="iv-search" placeholder="記事本文をキーワード検索…" oninput="ivSearchInput()">
   <select id="iv-group" onchange="ivGroupChange()">

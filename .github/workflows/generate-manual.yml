@@ -35,6 +35,7 @@ jobs:
     permissions:
       contents: write
       actions: write
+      issues: write
     steps:
       - uses: actions/checkout@v4
 
@@ -49,6 +50,9 @@ jobs:
           pip install pandas matplotlib requests
 
       - name: Run generators
+        env:
+          # generate_interview.py が Domain未登録URLのIssue本文をここへ書く(未実行なら作られない)
+          INTERVIEW_DOMAIN_REPORT: ${{ runner.temp }}/interview_domain.md
         run: |
           t="${{ inputs.target }}"
           t="${t%% *}"   # "movies (出演映画)" → "movies"
@@ -71,6 +75,37 @@ jobs:
           run_if sns        generate_sns.py
           run_if shopevent  generate_shopevent.py
           run_if timeline   timeline.py
+
+      # インタビューのURLがDomainシートに無ければIssueを1本だけ立てる(既にあれば内容が変わった時だけ更新)。
+      # 全部登録されたら自動でクローズ。通知の失敗でデータ更新(下のcommit)を止めない。
+      - name: Domain未登録URLのIssue
+        continue-on-error: true
+        env:
+          GH_TOKEN: ${{ github.token }}
+          REPORT: ${{ runner.temp }}/interview_domain.md
+        run: |
+          if [ ! -f "$REPORT" ]; then echo "interviewは今回未実行"; exit 0; fi
+          LABEL=interview-domain
+          TITLE="🌐 インタビュー: Domainシート未登録のURLがあります"
+          RUN_URL="${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}"
+          gh label create "$LABEL" --color AE8DBC --description "インタビューのDomain未登録URL" 2>/dev/null || true
+          ISSUE=$(gh issue list --label "$LABEL" --state open --limit 1 --json number --jq '.[0].number // empty')
+
+          if [ -s "$REPORT" ]; then
+            if [ -z "$ISSUE" ]; then
+              gh issue create --title "$TITLE" --label "$LABEL" --body-file "$REPORT"
+            elif [ "$(gh issue view "$ISSUE" --json body --jq .body)" != "$(cat "$REPORT")" ]; then
+              gh issue edit "$ISSUE" --body-file "$REPORT"
+              gh issue comment "$ISSUE" --body "🔁 未登録URLの一覧が変わったので更新しました（[実行ログ]($RUN_URL)）。"
+            else
+              echo "Issue #$ISSUE と内容が同じなので通知しない"
+            fi
+          elif [ -n "$ISSUE" ]; then
+            gh issue comment "$ISSUE" --body "✅ 全URLがDomainシートに一致したのでクローズします（[実行ログ]($RUN_URL)）。"
+            gh issue close "$ISSUE"
+          else
+            echo "Domain未登録なし"
+          fi
 
       - name: Commit & push if changed
         run: |

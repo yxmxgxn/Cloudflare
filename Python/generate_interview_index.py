@@ -50,7 +50,7 @@ OUT_SQL = REPO_ROOT / "build" / "interview_index.sql"
 
 MAX_PAGES = 10       # 自動追尾の上限
 PAGE_NUM_MAX = 100   # 末尾数字をページ番号とみなす上限(これ以上は記事IDとみなし追尾しない)
-INDEX_VERSION = "9"  # 索引ロジックを変えたらここを上げる → src_hashが変わり全記事を再索引
+INDEX_VERSION = "10"  # 索引ロジックを変えたらここを上げる → src_hashが変わり全記事を再索引
 MAX_INDEX_CHARS = 300000  # 索引対象本文の上限(正規化後の文字数)
 BIGRAM_CHUNK = 6000       # 1 INSERT あたりのbigram数(≈31KB。D1のstatement上限に余裕を持たせる)
 BIGRAM_OVERLAP = 64       # チャンク境界を跨ぐ検索を落とさないための重なり
@@ -148,6 +148,55 @@ def extract_body(html: str) -> str:
 
 
 # ---- ページ自動追尾 ----
+_HREF = re.compile(r'href=["\']([^"\'#]+)', re.I)
+
+
+def _path_segs(path: str) -> list[str]:
+    return path.rstrip("/").split("/")
+
+
+def _page_segment_diff(a: urllib.parse.ParseResult, b: urllib.parse.ParseResult) -> int | None:
+    """2つのURLが「PAGE_NUM_MAX未満の数字の区間1つだけ」違うなら、その区間の位置を返す。
+    ホスト・クエリ・区間数・他の区間がすべて同じであることが条件。
+    大きい数字(記事ID)の違いは対象外なので、/37296/1/1/1 のような隣の記事は該当しない。"""
+    if a.netloc != b.netloc or a.query != b.query:
+        return None
+    sa, sb = _path_segs(a.path), _path_segs(b.path)
+    if len(sa) != len(sb):
+        return None
+    diff = [i for i, (x, y) in enumerate(zip(sa, sb)) if x != y]
+    if len(diff) != 1:
+        return None
+    i = diff[0]
+    if sa[i].isdigit() and sb[i].isdigit() and int(sa[i]) < PAGE_NUM_MAX and int(sb[i]) < PAGE_NUM_MAX:
+        return i
+    return None
+
+
+def _sibling_page_link(html: str, cur: str) -> str | None:
+    """ページ内に実在するリンクのうち「現在URLと数字の区間が1つだけ違い、その値が+1」のものを次ページとする。
+    ・実在するリンクしか選ばない: rollingstonejapan.com は存在しないページ番号でも200で空ページを返すため、
+      番号を機械的に作ると空ページまで連結してしまう
+    ・数字が変わる区間が複数ある場合は、いちばん左(上位階層)をページ番号とみなす。
+      rollingstone は /記事ID/ページ/写真/ の階層で、写真の枚数がページ数より多い記事もあるため
+      「リンク数の多い区間」で選ぶと写真送りを辿ってしまう(実測で10ページ暴走した)"""
+    pr = urllib.parse.urlparse(cur)
+    segs = _path_segs(pr.path)
+    cands: dict[int, str] = {}
+    varying: set[int] = set()
+    for href in _HREF.findall(html or ""):
+        u = urllib.parse.urlparse(urllib.parse.urljoin(cur, href))
+        i = _page_segment_diff(pr, u)
+        if i is None:
+            continue
+        varying.add(i)
+        if int(_path_segs(u.path)[i]) == int(segs[i]) + 1:
+            cands[i] = u.geturl()
+    if not varying:
+        return None
+    return cands.get(min(varying))  # ページ番号の区間に次が無ければ最終ページ
+
+
 def next_page_url(html: str, cur: str) -> str | None:
     """rel=next もしくは同一パスの連番から次ページURLを推測。"""
     # 1) <link rel="next"> / <a rel="next">
@@ -173,6 +222,12 @@ def next_page_url(html: str, cur: str) -> str | None:
     m = re.search(r'href=["\']([^"\']*[?&]page=2(?:&[^"\']*)?)["\']', html or "", re.I)
     if m:
         return urllib.parse.urljoin(cur, m.group(1))
+    # 4) ページ番号がパスの途中にあるサイト向け(例: rollingstonejapan.com /detail/37295/1/1/1 → /37295/2/1/1)。
+    #    下の 5) は末尾の数字しか見ないため /1/1/2 を作ってしまう。こちらを先に試す。
+    sib = _sibling_page_link(html, cur)
+    if sib:
+        return sib
+    # 5) 末尾 /N を +1
     mnum = re.search(r"/(\d+)/?$", pr.path)
     if mnum and int(mnum.group(1)) < PAGE_NUM_MAX:
         n = int(mnum.group(1)) + 1
@@ -215,8 +270,12 @@ def _stem(u: str):
 
 def same_article(cur: str, nxt: str) -> bool:
     """next先が「同じ記事の別ページ」か。別スラッグ(=別記事)なら False。
-    suumo等の rel=next が“次の記事”を指すケースの暴走連結を防ぐ。"""
-    return _stem(cur) == _stem(nxt)
+    suumo等の rel=next が“次の記事”を指すケースの暴走連結を防ぐ。
+    途中の区間がページ番号のURL(/37295/1/1/1 と /37295/2/1/1)は末尾基準の _stem では別物になるので、
+    「小さい数字の区間が1つだけ違う」も同一記事とみなす。"""
+    if _stem(cur) == _stem(nxt):
+        return True
+    return _page_segment_diff(urllib.parse.urlparse(cur), urllib.parse.urlparse(nxt)) is not None
 
 
 TITLE_SIM_MIN = 0.6  # ページ間タイトル類似度の下限(実測: 同一記事の別ページ≈0.9+ / 別記事≈0.3)
@@ -235,6 +294,23 @@ def title_ok(a: str, b: str) -> bool:
     if not a or not b:
         return True
     return difflib.SequenceMatcher(None, a, b).ratio() >= TITLE_SIM_MIN
+
+
+# 本文がこれ以上似ていたら「同じページの別URL」とみなす。
+# 実測: 同一記事の別ページどうし 最大0.920(hominis、関連記事欄が残るため高め) /
+#       rollingstone の写真違いURL(本文同一でキャプションだけ違う) 0.994〜1.000
+BODY_DUP_MIN = 0.97
+
+
+def near_duplicate(body: str, bodies: list[str]) -> bool:
+    """既に取ったページのどれかと本文がほぼ同じか。先頭200字の一致だけでは、
+    写真キャプション等だけ違う同内容ページを見逃すため、本文全体で比べる。"""
+    nb = normalize(body)
+    for b in bodies:
+        sm = difflib.SequenceMatcher(None, nb, normalize(b), autojunk=False)
+        if sm.quick_ratio() >= BODY_DUP_MIN and sm.ratio() >= BODY_DUP_MIN:
+            return True
+    return False
 
 
 def collect_pages(main_url: str, extra: list[str], no_follow: bool = False):
@@ -268,7 +344,7 @@ def collect_pages(main_url: str, extra: list[str], no_follow: bool = False):
     for _ in range(MAX_PAGES):
         html = fetch_html(cur)
         body = extract_body(html or "")
-        if not body or body[:200] in seen:
+        if not body or body[:200] in seen or near_duplicate(body, bodies):
             break
         cur_title = _page_title(html or "")
         # 2ページ目以降: タイトルが前ページと似ていなければ別記事とみなし追加せず終了
