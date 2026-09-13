@@ -24,6 +24,9 @@ $dc_members = [
     'friend' => 'キラニャ',
     'official' => 'https://helloproject.com/ochanorma/kirara_yonemura/',
     'instagram' => 'https://www.instagram.com/p/DVNJYG7Eydl/',
+    'mission' => 'MISSION#1 移動の際に階段を利用する',
+    'score' => '100',
+    'spot' => '652916',
     'intro' => ['2028410164597129579', '2026-03-02'],
     'visual' => ['2095088783930876210', '2026-09-02'],
     'tiktok' => '7611005836357356821',
@@ -38,6 +41,9 @@ $dc_members = [
     'friend' => 'ミイメェ',
     'official' => 'https://helloproject.com/beyooooonds/minami_okamura/',
     'instagram' => 'https://www.instagram.com/p/DVQXHd7E2fy/',
+    'mission' => 'MISSION#2 リサイクルのためにゴミを分別する',
+    'score' => '74',
+    'spot' => '653194',
     'intro' => ['2028664238454243540', '2026-03-03'],
     'visual' => ['2095118103336153138', '2026-09-02'],
     'tiktok' => '7611469573522492692',
@@ -52,6 +58,9 @@ $dc_members = [
     'friend' => 'エバネコ',
     'official' => 'https://helloproject.com/juicejuice/kisaki_ebata/',
     'instagram' => 'https://www.instagram.com/p/DVSVLJxkwXR/',
+    'mission' => 'MISSION#3 買い物の際にマイバッグを利用する',
+    'score' => '59',
+    'spot' => '653195',
     'intro' => ['2029027249018855787', '2026-03-04'],
     'visual' => ['2095451311823278122', '2026-09-03'],
     'tiktok' => '7611752871318605077',
@@ -66,6 +75,9 @@ $dc_members = [
     'friend' => 'ルノコーン',
     'official' => 'https://helloproject.com/tsubakifactory/runo_yofu/',
     'instagram' => 'https://www.instagram.com/p/DVV3lpTkxYz/',
+    'mission' => 'MISSION#4 牛肉の代わりに魚を食べる',
+    'score' => '84',
+    'spot' => '653280',
     'intro' => ['2029400475767062546', '2026-03-05'],
     'visual' => ['2095478263816867999', '2026-09-03'],
     'tiktok' => '7612262625329597716',
@@ -80,6 +92,9 @@ $dc_members = [
     'friend' => 'ハナペン',
     'official' => 'https://helloproject.com/angerme/hana_goto/',
     'instagram' => 'https://www.instagram.com/p/DVXbEpOkx1f/',
+    'mission' => 'MISSION#5 マイボトルを利用する',
+    'score' => '88',
+    'spot' => '653282',
     'intro' => ['2029765570149974086', '2026-03-06'],
     'visual' => ['2095791994874343640', '2026-09-04'],
     'tiktok' => '7612486397647244564',
@@ -94,6 +109,9 @@ $dc_members = [
     'friend' => 'シシゲタ',
     'official' => 'https://helloproject.com/morningmusume/ako_yumigeta/',
     'instagram' => 'https://www.instagram.com/p/DVatzf-E9AG/',
+    'mission' => 'MISSION#6 2Lの水をペットボトル1本で買う',
+    'score' => '55',
+    'spot' => '653295',
     'intro' => ['2030124792330998166', '2026-03-07'],
     'visual' => ['2095840357263282534', '2026-09-04'],
     'tiktok' => '7612960023349628181',
@@ -108,6 +126,9 @@ $dc_members = [
     'friend' => 'ウサレナ',
     'official' => 'https://helloproject.com/rosychronicle/rena_kamimura/',
     'instagram' => 'https://www.instagram.com/p/DVdPXTLE3MR/',
+    'mission' => 'MISSION#7 卵かけご飯を食べる',
+    'score' => '21',
+    'spot' => '653300',
     'intro' => ['2030509421403734220', '2026-03-08'],
     'visual' => ['2096155764264161518', '2026-09-05'],
     'tiktok' => '7613323791078329620',
@@ -149,6 +170,12 @@ $dc_videos = [
     'url' => 'https://www.youtube.com/watch?v=wvDA5TWn-4M&t=338s',
     'id' => 'wvDA5TWn-4M',
     'start' => 338,
+  ],
+  [
+    'title' => 'TOKYO GX ACTION イベント・ダンプラ動画撮影の裏側',
+    'date' => '2026年9月10日',
+    'url' => 'https://www.youtube.com/watch?v=83LCma6C8xs',
+    'id' => '83LCma6C8xs',
   ],
 ];
 
@@ -232,6 +259,10 @@ $dc_sns = [
     'title' => 'Earth hacks Instagram',
     'url' => 'https://www.instagram.com/earthhacks.jp/',
   ],
+  [
+    'title' => 'DECA!BEATといっしょに！デカボミッション vol.1 | プラチナマップ',
+    'url' => 'https://platinumaps.jp/d/deca-beat',
+  ],
 ];
 
 // Xの埋め込み用マークアップ(ツイートID => 公式の <blockquote>)。
@@ -284,6 +315,8 @@ $dc_tweet_html = [
 /** 埋め込みポストの投稿元(全ポスト Earth hacks 公式) */
 const DC_X_ACCOUNT = 'Earthhacks2023';
 const DC_TIKTOK_ACCOUNT = 'decarbo46';
+/** デカボミッション vol.1 のマップ(各メンバーのミッションは ?spot= で開く) */
+const DC_MISSION_URL = 'https://platinumaps.jp/d/deca-beat';
 
 function dc_h(string $s): string {
     return htmlspecialchars($s, ENT_QUOTES, 'UTF-8');
@@ -360,6 +393,7 @@ function dc_x_embed(string $label, array $tw): string {
     <div class="dc-panel" id="dc-panel-<?= dc_h($m['slug']) ?>" hidden>
       <h3 class="dc-name"><?= dc_h($m['name']) ?><span class="dc-yomi"><?= dc_h($m['yomi']) ?></span></h3>
       <p class="dc-meta"><?= dc_h($m['group']) ?><span class="dc-friend">デカビートフレンズ：<?= dc_h($m['friend']) ?></span></p>
+      <p class="dc-mission"><a href="<?= dc_h(DC_MISSION_URL . '?culture=ja&spot=' . $m['spot']) ?>" target="_blank" rel="noopener noreferrer"><?= dc_h($m['mission']) ?>（デカボスコア<?= dc_h($m['score']) ?>％）</a></p>
       <p class="dc-profile-links">
         <a href="<?= dc_h($m['official']) ?>" target="_blank" rel="noopener noreferrer"><?= icon('link-brand', 'ic ic-20') ?>ハロー！プロジェクト公式プロフィール</a>
         <?php // シェア先URLは表示中のメンバーに合わせてJSが入れる ?>

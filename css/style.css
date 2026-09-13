@@ -2397,6 +2397,12 @@ footer a {
   margin-left: 12px;
 }
 
+/* そのメンバーのデカボミッション(プラチナマップの個別ページへ) */
+.dc-mission {
+  margin: 4px 0 0;
+  font-size: 14px;
+}
+
 .dc-profile-links {
   display: flex;
   flex-wrap: wrap;
