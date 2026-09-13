@@ -1,4 +1,4 @@
-<!-- generated: 2026-09-07T20:58:16.651010+00:00 -->
+<!-- generated: 2026-09-12T19:58:44.395209+00:00 -->
 <tr data-selector="松永里愛"><td><a href="https://www.tbsradio.jp/articles/111897/" target="_blank" rel="noopener noreferrer">2026/09/06</a></td><td>Stand by me / Ben E King</td><td>松永里愛</td><td>夏休みの思い出の曲</td></tr>
 <tr data-selector="石山咲良"><td><a href="https://www.tbsradio.jp/articles/111897/" target="_blank" rel="noopener noreferrer">2026/09/06</a></td><td>あー夏休み / TUBE</td><td>石山咲良</td><td>夏休みの思い出の曲</td></tr>
 <tr data-selector="松永里愛&amp;石山咲良"><td><a href="https://www.tbsradio.jp/articles/111897/" target="_blank" rel="noopener noreferrer">2026/09/06</a></td><td>FUNKY FLUSHIN' / Juice＝Juice</td><td>松永里愛&amp;石山咲良</td><td>夏休みの思い出の曲</td></tr>
