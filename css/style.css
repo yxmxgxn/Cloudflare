@@ -2633,3 +2633,71 @@ footer a {
   width: 40px;
   height: 40px;
 }
+
+/*動画カード(common/video_cards.php。YouTube/ 以下のまとめページで共通)
+-------------------------------------*/
+.vc-card .vc-thumb {
+  position: relative;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  background: #000;
+  border-radius: 6px;
+  overflow: hidden;
+  aspect-ratio: 16 / 9;
+  width: 100%;
+}
+
+.vc-card .vc-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: .85;
+  display: block;
+  transition: opacity .15s;
+}
+
+.vc-card .vc-thumb:hover img {
+  opacity: 1;
+}
+
+.vc-card .vc-play {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-size: 16px;
+  text-shadow: 0 1px 4px rgba(0,0,0,.8);
+}
+
+.vc-card .vc-player {
+  aspect-ratio: 16 / 9;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.vc-card .vc-player iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+  display: block;
+}
+
+.vc-card .vc-title {
+  font-size: 15px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.vc-card .vc-sub {
+  font-size: 13px;
+  color: #666;
+  margin: 0;
+}
+
+.vc-card .vc-link {
+  font-size: 13px;
+  margin: auto 0 0;
+}

@@ -35,6 +35,7 @@ pages=$(find . -name '*.php' \
   ! -path './common/header.php' \
   ! -path './common/icons.php' \
   ! -path './common/footer.php' \
+  ! -path './common/video_cards.php' \
   ! -path './common/birthday_footer.php' \
   ! -path './Birthday/birthday_generated.php' \
   ! -name '404.php' ! -name 'index.php' \
