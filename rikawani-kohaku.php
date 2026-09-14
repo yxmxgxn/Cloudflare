@@ -1,6 +1,6 @@
 <?php
   $title = "島倉りか りかワニ紅白歌合戦 選曲まとめ";
-  $description = "ワニブックス NewsCrunch（ニュースクランチ）の連載「りかワニ紅白歌合戦」で、BEYOOOOONDS島倉りかさんがテーマごとに紅組・白組に分けて選んだ昭和歌謡と勝敗のまとめです。サイト終了で読めなくなった記事はウェブアーカイブにリンクしています。";
+  $description = "WANI BOOKS Newsクランチ！（ニュースクランチ）の連載「りかワニ紅白歌合戦」で、BEYOOOOONDS島倉りかさんがテーマごとに紅組・白組に分けて選んだ昭和歌謡と勝敗のまとめです。サイト終了で読めなくなった記事はウェブアーカイブにリンクしています。";
   $jsonld_type = "Dataset";
   $about = [
     "島倉りか",
@@ -106,7 +106,7 @@
 
 <main>
   <h1>島倉りか りかワニ紅白歌合戦 選曲まとめ</h1>
-  <p>ワニブックスのWebマガジン NewsCrunch（ニュースクランチ）で連載されていた「りかワニ紅白歌合戦」の選曲まとめです。<br>
+  <p>WANI BOOKS Newsクランチ！（ニュースクランチ）で連載されていた「りかワニ紅白歌合戦」の選曲まとめです。<br>
   昭和歌謡好きのBEYOOOOONDS 島倉りかさんが毎回テーマを決めて紅組・白組から1曲ずつ選び、どちらが勝ちかを決めていました。<br>
   記事は現在読めなくなっているため、リンクは<a href="https://web.archive.org/" target="_blank" rel="noopener noreferrer">Wayback Machine</a>の魚拓に飛びます。<br>
   <a href="https://web.archive.org/web/20220307091302/https://wanibooks-newscrunch.com/category/series-031" target="_blank" rel="noopener noreferrer">連載の記事一覧ページ（魚拓）</a></p>
