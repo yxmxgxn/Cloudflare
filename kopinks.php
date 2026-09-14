@@ -6,12 +6,14 @@
 
 <main>
   <h1>コピンク* コピンクス！一言集</h1>
-  コピンク*名義でアルバムコピンクス！メロディーズ〜star chart〜に収録されたコピンクス！一言集の書き起こしです<br>
-    <a href="https://music.youtube.com/watch?v=lrtxqLc9Mdc" target="_blank" rel="noopener noreferrer">YouTube Musicはこちら</a><br>
+  <p>コピンク*名義で<a href="https://helloproject.com/release/2208/" target="_blank" rel="noopener noreferrer">アルバムコピンクス！メロディーズ〜star chart〜</a>に収録されたコピンクス！一言集の書き起こしです。</p>
+  <p>
+    https://helloproject.com/release/2208/<br>
     登場人物：コピンク（声：宮本佳林）、ゴロー（声：さわやか五郎）<br>
     漢字の変換、語尾等は主観です
-    <p>
-      コピンク「バンガローって10回言います！バンガロー、バンガロー、バンガロー、バンガロー、バングガッ、ガンバロー！」<br>
+  </p>
+  <p>
+    コピンク「バンガローって10回言います！バンガロー、バンガロー、バンガロー、バンガロー、バングガッ、ガンバロー！」<br>
     </p>
     <p>
       コピンク「好きな食べ物を聞かれたら、ママが作った！って頭につけるとなんかアイドルっぽくなるよ！」<br>
