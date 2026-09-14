@@ -1,4 +1,4 @@
-<!-- generated: 2026-09-13T20:05:31.290982+00:00 -->
+<!-- generated: 2026-09-14T21:15:52.150254+00:00 -->
 <tr data-selector="松永里愛"><td><a href="https://www.tbsradio.jp/articles/112098/" target="_blank" rel="noopener noreferrer">2026/09/13</a></td><td>POP STAR / 平井堅</td><td>松永里愛</td><td>自分が生まれた年にリリースされた曲</td></tr>
 <tr data-selector="石山咲良"><td><a href="https://www.tbsradio.jp/articles/112098/" target="_blank" rel="noopener noreferrer">2026/09/13</a></td><td>奇跡の香りダンス。 / 松浦亜弥</td><td>石山咲良</td><td>自分が生まれた年にリリースされた曲</td></tr>
 <tr data-selector="松永里愛&amp;石山咲良"><td><a href="https://www.tbsradio.jp/articles/112098/" target="_blank" rel="noopener noreferrer">2026/09/13</a></td><td>私が言う前に抱きしめなきゃね / Juice＝Juice</td><td>松永里愛&amp;石山咲良</td><td>自分が生まれた年にリリースされた曲</td></tr>
