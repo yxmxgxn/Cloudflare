@@ -360,7 +360,8 @@ def write_domain_report(unmatched: dict[str, str]) -> None:
     for host in sorted(by_host):
         items = sorted(by_host[host])
         refs = "<br>".join(f"{aid} {url}" for aid, url in items)
-        lines.append(f"| `{host}` | {len(items)} | {refs} |")
+        label = f"`{host}`" if host else "⚠ URL欄がURLではない"  # タイトル等を誤って入れた行
+        lines.append(f"| {label} | {len(items)} | {refs} |")
     Path(path).write_text("\n".join(lines) + "\n", encoding="utf-8")
 
 

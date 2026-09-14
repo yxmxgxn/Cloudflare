@@ -189,6 +189,10 @@
         <a class="index-link" href="/decabeats"><?= icon('flower', 'ic ic-20') ?>DECA!BEAT（デカビート）非公式まとめ</a>
         <p class="index-desc">ハロー！プロジェクトとEarth hacksのコラボで結成された特別ユニット「DECA!BEAT」のメンバー紹介ポスト・紹介動画・YouTube・グッズ紹介ポストのまとめです</p>
       </div>
+      <div class="card index-card">
+        <a class="index-link" href="/rikawani-kohaku"><?= icon('article', 'ic ic-20') ?>島倉りか りかワニ紅白歌合戦 選曲まとめ</a>
+        <p class="index-desc">ワニブックス NewsCrunchの連載「りかワニ紅白歌合戦」で島倉りかさんが紅組・白組に選んだ昭和歌謡と勝敗のまとめです</p>
+      </div>
     </div>
   </section>
 
@@ -215,5 +219,5 @@
   </section>
   <p class="index-news"><a href="/news">更新履歴</a></p>
 </main>
-<div class="last-update">最終更新日：2026/09/01</div>
+<div class="last-update">最終更新日：2026/09/15</div>
 <?php include $_SERVER['DOCUMENT_ROOT'] . '/common/footer.php'; ?>
