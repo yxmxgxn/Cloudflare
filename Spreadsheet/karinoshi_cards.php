@@ -1,4 +1,4 @@
-<!-- generated: 2026-09-15T20:43:50.075508+00:00 -->
+<!-- generated: 2026-09-16T20:44:25.849570+00:00 -->
 <div class="karin-card" data-pref="東京都">
 <p class="karin-header">東京都 やげん堀 七味唐がらし えびせんべい</p>
 
