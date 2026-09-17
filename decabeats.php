@@ -240,6 +240,18 @@ $dc_posts = [
     'date' => '2026年9月5日',
     'url' => 'https://x.com/Earthhacks2023/status/2096190978843607276',
   ],
+  [
+    'cat' => 'デカボMISSION',
+    'title' => 'GROUP SHOTS 米村姫良々・弓桁朱琴',
+    'date' => '2026年9月16日',
+    'url' => 'https://x.com/Earthhacks2023/status/2100183391857688863',
+  ],
+  [
+    'cat' => 'デカボMISSION',
+    'title' => 'GROUP SHOTS 岡村美波・後藤花・上村麗菜',
+    'date' => '2026年9月17日',
+    'url' => 'https://x.com/Earthhacks2023/status/2100539941247988191',
+  ],
 ];
 
 $dc_sns = [
@@ -318,6 +330,13 @@ const DC_TIKTOK_ACCOUNT = 'decarbo46';
 /** デカボミッション vol.1 のマップ(各メンバーのミッションは ?spot= で開く) */
 const DC_MISSION_URL = 'https://platinumaps.jp/d/deca-beat';
 
+/**
+ * Xにセンシティブ判定をかけられたポスト(埋め込みAPIが TweetTombstone を返す)。
+ * Xアプリ以外には出さない扱いなので、本文の引用も出さずリンクだけにする。
+ * 判定が解除されたらこの配列から外せば元どおり埋め込みになる。
+ */
+const DC_NO_EMBED = ['2030124792330998166'];   // 弓桁朱琴 メンバー紹介ポスト(2026-03-07)
+
 function dc_h(string $s): string {
     return htmlspecialchars($s, ENT_QUOTES, 'UTF-8');
 }
@@ -356,8 +375,13 @@ function dc_embed(string $type, string $label, string $id, string $url, string $
 function dc_x_embed(string $label, array $tw): string {
     global $dc_tweet_html;
     $url = 'https://x.com/' . DC_X_ACCOUNT . '/status/' . $tw[0];
-    return dc_embed('x', $label, $tw[0], $url, 'Xで見る（' . dc_jdate($tw[1]) . '）',
-                    '', $dc_tweet_html[$tw[0]] ?? '');
+    $link = 'Xで見る（' . dc_jdate($tw[1]) . '）';
+    if (in_array($tw[0], DC_NO_EMBED, true)) {
+        return dc_embed('gone', $label, $tw[0], $url, $link, '', '',
+            '<p class="dc-gone">このポストはXでセンシティブな内容として扱われているため、'
+            . '埋め込みでは表示できません。Xアプリでは見られます。</p>');
+    }
+    return dc_embed('x', $label, $tw[0], $url, $link, '', $dc_tweet_html[$tw[0]] ?? '');
 }
 ?>
 

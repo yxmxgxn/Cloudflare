@@ -2465,6 +2465,18 @@ footer a {
 }
 
 /* 埋め込みが入ったら消える(埋め込みが来ない間だけ出す) */
+/* Xが埋め込みを止めたポストの断り書き */
+.dc-gone {
+  margin: 0;
+  padding: 14px 16px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background: #fafafa;
+  font-size: 13px;
+  line-height: 1.7;
+  color: #666;
+}
+
 .dc-loading {
   margin: 0;
   font-size: 13px;
