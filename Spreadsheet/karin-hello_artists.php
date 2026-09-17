@@ -1,4 +1,4 @@
-<!-- generated: 2026-09-13T20:05:30.626740+00:00 -->
+<!-- generated: 2026-09-16T20:44:23.217139+00:00 -->
 <option value="10人祭">10人祭</option>
 <option value="Berryz工房">Berryz工房</option>
 <option value="BEYOOOOONDS">BEYOOOOONDS</option>
@@ -31,6 +31,7 @@
 <option value="モーニング娘。'19">モーニング娘。'19</option>
 <option value="モーニング娘。さくら組">モーニング娘。さくら組</option>
 <option value="リボーンイレブン">リボーンイレブン</option>
+<option value="太陽とシスコムーン">太陽とシスコムーン</option>
 <option value="安倍なつみ">安倍なつみ</option>
 <option value="後浦なつみ">後浦なつみ</option>
 <option value="後藤真希">後藤真希</option>
