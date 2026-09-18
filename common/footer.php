@@ -148,7 +148,7 @@ async function sharePage() {
   <li><a href="/common/privacy" target="_blank" rel="noopener">プライバシーポリシー</a></li>
   <li><a href="/common/disclaimer" target="_blank" rel="noopener">免責事項</a></li>
   <li class="footer-break"></li>
-  <li><a href="https://tools.ymgn0829.workers.dev/sns-links/" target="_blank" rel="noopener">SNS Link</a></li>
+  <li><a href="https://tools.yxmxgxn.workers.dev/sns-links/" target="_blank" rel="noopener">SNS Link</a></li>
   <li><a href="https://x.com/yxmxgxn" target="_blank" rel="noopener">X @yxmxgxn</a></li>
   <li>&copy; 2026 @yxmxgxn</li>
 </ul>
