@@ -242,15 +242,21 @@ $dc_posts = [
   ],
   [
     'cat' => 'デカボMISSION',
-    'title' => 'GROUP SHOTS 米村姫良々・弓桁朱琴',
+    'title' => 'ワッチャ☆GROUP SHOTS 米村姫良々・弓桁朱琴',
     'date' => '2026年9月16日',
     'url' => 'https://x.com/Earthhacks2023/status/2100183391857688863',
   ],
   [
     'cat' => 'デカボMISSION',
-    'title' => 'GROUP SHOTS 岡村美波・後藤花・上村麗菜',
+    'title' => 'ワッチャ☆GROUP SHOTS 岡村美波・後藤花・上村麗菜',
     'date' => '2026年9月17日',
     'url' => 'https://x.com/Earthhacks2023/status/2100539941247988191',
+  ],
+  [
+    'cat' => 'デカボMISSION',
+    'title' => 'ワッチャ☆GROUP SHOTS 江端妃咲・豫風瑠乃',
+    'date' => '2026年9月17日',
+    'url' => 'https://x.com/Earthhacks2023/status/2100902046258086051',
   ],
 ];
 
