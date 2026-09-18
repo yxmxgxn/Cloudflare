@@ -1026,6 +1026,53 @@ footer a {
   margin: 0;
 }
 
+/* 連載・企画名: 押すと同じ連載の記事だけに絞り込む */
+.iv-card .iv-feature {
+  padding: 0;
+  border: 0;
+  background: none;
+  font: inherit;
+  color: inherit;
+  text-align: left;
+  cursor: pointer;
+  text-decoration: underline dotted #AE8DBC;
+  text-underline-offset: 2px;
+}
+
+.iv-card .iv-feature:hover {
+  color: #AE8DBC;
+}
+
+#iv-feature-filter {
+  display: flex;
+  gap: 6px;
+  align-items: center;
+  flex-wrap: wrap;
+  margin: 0 0 8px;
+  font-size: 14px;
+}
+
+#iv-feature-filter[hidden] {
+  display: none;
+}
+
+#iv-feature-filter b {
+  background: #AE8DBC;
+  color: #fff;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-weight: normal;
+}
+
+#iv-feature-clear {
+  padding: 4px 10px;
+  border: 1px solid #ccc;
+  background: #fff;
+  cursor: pointer;
+  font-size: 13px;
+  border-radius: 4px;
+}
+
 .iv-card .iv-members {
   font-size: 13px;
   margin: 2px 0 0;

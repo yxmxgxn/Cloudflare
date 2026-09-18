@@ -11,6 +11,13 @@ CREATE VIRTUAL TABLE IF NOT EXISTS article_fts USING fts5(
   bigram
 );
 
+-- タイトル・Feature・媒体名・メンバー名(スプシの値)。1項目1行、索引ワークフローのたびに全件入れ直す。
+-- 本文とは別テーブルにして、本文とタイトルの境目をまたいだ偽の一致を防ぐ。
+CREATE VIRTUAL TABLE IF NOT EXISTS article_meta_fts USING fts5(
+  id UNINDEXED,
+  bigram
+);
+
 -- 増分索引・再索引用のメタ。
 -- src_hash: 取得元URL群のハッシュ。一致すれば再取得スキップ。
 -- body: 掃除済み本文（私的保持・再索引用）。読める本文を一切持ちたくなければ列ごと削除可。

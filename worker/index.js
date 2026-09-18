@@ -3,6 +3,7 @@
  *
  * 役割:
  *   - /api/interview-search?q=… : D1 の全文検索(bigram×FTS5)を引き、一致した記事IDだけ返す。
+ *     対象は本文と、スプシのタイトル・Feature・媒体名・メンバー名。
  *     本文・スニペットは一切返さない。
  *   - POST /api/feedback : フッターの匿名フィードバックを受け、D1 に保存して Discord へ通知。
  *   - /_feedback?t=… : 受け取ったフィードバックの管理ページ(トークン一致時のみ。不一致は404)。
@@ -12,7 +13,7 @@
  */
 
 const MAX_Q = 100;      // クエリ長の上限
-const LIMIT = 500;      // 返す最大ID数
+const LIMIT = 5000;     // 返す最大ID数(記事総数より十分大きく。500だとよくある語で結果が欠けた)
 
 // 索引時と完全に一致させる正規化: NFKC→小文字→日本語と英数字以外を除去
 function normalize(s) {
@@ -51,11 +52,24 @@ async function handleSearch(url, env) {
   const match = buildMatch(q);
   if (!match) return json({ ids: [] }); // 2文字未満などは空(サーバ絞り込み無効)
 
-  // 1記事のbigramは複数行に分割されているため DISTINCT で重複IDをまとめる
-  const { results } = await env.DB
-    .prepare("SELECT DISTINCT id FROM article_fts WHERE article_fts MATCH ? LIMIT ?")
-    .bind(match, LIMIT)
-    .all();
+  // 本文(article_fts) と タイトル・Feature・媒体名・メンバー名(article_meta_fts) の両方を引く。
+  // 1記事が複数行に分かれているので UNION で重複IDをまとめる。
+  let results;
+  try {
+    ({ results } = await env.DB
+      .prepare(
+        "SELECT id FROM article_fts WHERE article_fts MATCH ?1 " +
+        "UNION SELECT id FROM article_meta_fts WHERE article_meta_fts MATCH ?1 LIMIT ?2"
+      )
+      .bind(match, LIMIT)
+      .all());
+  } catch (e) {
+    // article_meta_fts は索引ワークフロー初回実行時に作られる。それまでは本文だけで検索する
+    ({ results } = await env.DB
+      .prepare("SELECT DISTINCT id FROM article_fts WHERE article_fts MATCH ? LIMIT ?")
+      .bind(match, LIMIT)
+      .all());
+  }
 
   return json({ ids: results.map((r) => r.id) });
 }

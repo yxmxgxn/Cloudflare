@@ -10,12 +10,12 @@
   <h1>ハロー！プロジェクト メンバーのWeb記事まとめ</h1>
   <p>ハロー！プロジェクト メンバーのWebインタビュー・Web上での記事をまとめています。<br>
   各カードは、掲載日とタイトル（記事リンク）、媒体・連載名、メンバーで構成されています。</p>
-  <p>グループ・メンバー名での絞り込み、掲載日・タイトルでの並び替え、記事本文を対象にしたキーワード検索ができます</p>
+  <p>グループ・メンバー名での絞り込み、掲載日・タイトルでの並び替え、記事本文・タイトル・連載名・メンバー名を対象にしたキーワード検索ができます。カードの連載名を押すと、その連載の記事だけに絞り込めます。</p>
   <p>右下のWeb Archiveからアーカイブを開けます。</p>
   <p>2026/09/14 宮本佳林さん・工藤遥さん・OCHA NORMA・ロージークロニクルを中心に集めています。</p>
   <p>管理人の独断と偏見で集めているので、取捨選択になっていることをご容赦ください</p>
 <div id="interview-controls">
-  <input type="text" id="iv-search" placeholder="記事本文をキーワード検索…" oninput="ivSearchInput()">
+  <input type="text" id="iv-search" placeholder="本文・タイトル・連載名・メンバー名を検索…" oninput="ivSearchInput()">
   <select id="iv-group" onchange="ivGroupChange()">
     <option value="">グループ</option>
     <?php include $_SERVER['DOCUMENT_ROOT'] . '/Spreadsheet/interview_groups.php'; ?>
@@ -40,6 +40,10 @@
   <label>終了 <input type="date" id="iv-to" onchange="ivFilter()"></label>
   <button type="button" id="iv-date-clear" onclick="ivDateClear()">クリア</button>
 </div>
+<div id="iv-feature-filter" hidden>
+  <span>連載・企画：</span><b id="iv-feature-name"></b>
+  <button type="button" id="iv-feature-clear" onclick="ivFeatureClear()" aria-label="連載・企画の絞り込みを解除">解除</button>
+</div>
 <div id="interview-cards" class="card-grid">
   <?php include $_SERVER['DOCUMENT_ROOT'] . '/Spreadsheet/interview_cards.php'; ?>
 </div>
@@ -55,6 +59,7 @@
       id: el.getAttribute('data-id') || '',
       date: el.getAttribute('data-date') || '',
       title: el.getAttribute('data-title') || '',
+      feature: el.getAttribute('data-feature') || '',
       groups: (el.getAttribute('data-groups') || '').split('|'),
       activeGroups: (el.getAttribute('data-active-groups') || '').split('|'),
       names: (el.getAttribute('data-names') || '').split('|'),
@@ -67,6 +72,7 @@
   var serverIds = null;
   var searchSeq = 0;   // 古いレスポンスを無視するためのトークン
   var searchTimer = null;
+  var featureFilter = '';  // カードの連載名を押したときの絞り込み(完全一致)。'' = 無効
 
   // 入力のたびにデバウンスしてから全文検索を叩く
   function ivSearchInput() {
@@ -117,7 +123,8 @@
       var matchNm = !nmFilter || nmList.indexOf(nmFilter) !== -1;
       var matchDate = (!from || (c.date && c.date >= from)) &&
                       (!to || (c.date && c.date <= to));
-      return matchQ && matchGr && matchNm && matchDate;
+      var matchFt = !featureFilter || c.feature === featureFilter;
+      return matchQ && matchGr && matchNm && matchDate && matchFt;
     });
 
     filtered.sort(function(a, b) {
@@ -157,6 +164,23 @@
   function ivDateClear() {
     document.getElementById('iv-from').value = '';
     document.getElementById('iv-to').value = '';
+    ivFilter();
+  }
+
+  // カードの連載名を押す → 同じ連載名の記事だけに絞る(検索語ではなく値の完全一致)
+  container.addEventListener('click', function(e) {
+    var b = e.target.closest('.iv-feature');
+    if (!b) return;
+    featureFilter = b.getAttribute('data-feature') || '';
+    document.getElementById('iv-feature-name').textContent = featureFilter;
+    document.getElementById('iv-feature-filter').hidden = false;
+    ivFilter();
+    document.getElementById('interview-controls').scrollIntoView({ block: 'start', behavior: 'smooth' });
+  });
+
+  function ivFeatureClear() {
+    featureFilter = '';
+    document.getElementById('iv-feature-filter').hidden = true;
     ivFilter();
   }
 
@@ -226,6 +250,7 @@
   window.ivDateToggle = ivDateToggle;
   window.ivDateClear = ivDateClear;
   window.ivOpenAll = ivOpenAll;
+  window.ivFeatureClear = ivFeatureClear;
 })();
 </script>
 <?php include $_SERVER['DOCUMENT_ROOT'] . '/common/footer.php'; ?>

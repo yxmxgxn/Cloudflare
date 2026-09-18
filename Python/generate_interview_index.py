@@ -39,6 +39,10 @@ try:
 except ImportError:
     trafilatura = None
 
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+# 媒体名・メンバーは表示側(カード)と同じ解決方法を使う
+from generate_interview import GID_MEMBERS, fetch_csv, fetch_domain, media_for  # noqa: E402
+
 PUB_BASE = (
     "https://docs.google.com/spreadsheets/d/e/"
     "2PACX-1vQUuY0kp6M2i3IBrzIJ0rxkRI19oqwdGFUszeQvsTJyydQJZae5OXrVEgshlXsDR906hUOm6497dUsr/pub"
@@ -377,6 +381,35 @@ def sql_str(s: str) -> str:
     return "'" + (s or "").replace("'", "''") + "'"
 
 
+def build_meta_stmts(articles: list[dict]) -> list[str]:
+    """タイトル・Feature・媒体名・メンバー名を article_meta_fts に全件入れ直すSQL。
+    ・本文(article_fts)とは別テーブル: 本文の末尾とタイトルの頭がくっついて偽の一致が起きないように
+    ・1項目1行: タイトルとFeatureの境目をまたいだ偽の一致も起きないように
+    ・毎回全件作り直す: 1記事数十文字で軽く、ハッシュ判定が要らない(Featureを直しても本文は再取得しない)
+    ・URLが空や"-"の記事(本文を索引できない)も、タイトル等では検索に載る"""
+    names: dict[str, list[str]] = {}
+    for m in fetch_csv(GID_MEMBERS):
+        mid, n = (m.get("ID") or "").strip(), (m.get("Name") or "").strip()
+        if mid and n:
+            names.setdefault(mid, []).append(n)
+    domain = fetch_domain()
+
+    stmts = ["DELETE FROM article_meta_fts;"]
+    for a in articles:
+        aid = (a.get("ID") or "").strip()
+        if not aid:
+            continue
+        url = (a.get("URL") or "").strip()
+        fields = [a.get("Title"), a.get("Feature"), media_for("" if url == "-" else url, domain),
+                  *names.get(aid, [])]
+        for f in dict.fromkeys((x or "").strip() for x in fields):
+            toks = bigram_list(normalize(f))
+            if toks:
+                stmts.append(f"INSERT INTO article_meta_fts(id,bigram) "
+                             f"VALUES({sql_str(aid)},{sql_str(' '.join(toks))});")
+    return stmts
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--current", help="D1から出した {id: src_hash} のJSON。増分判定に使う")
@@ -460,14 +493,15 @@ def main():
         stmts.append(f"DELETE FROM article_fts WHERE id={sql_str(aid)};")
         stmts.append(f"DELETE FROM article_src WHERE id={sql_str(aid)};")
 
+    meta = build_meta_stmts(articles)  # タイトル・Feature等は毎回全件入れ直す
+    stmts.extend(meta)
+
     out = Path(args.out)
     out.parent.mkdir(parents=True, exist_ok=True)
-    if stmts:
-        out.write_text("\n".join(stmts) + "\n", encoding="utf-8")
-    else:
-        out.write_text("-- 変更なし\n", encoding="utf-8")
+    out.write_text("\n".join(stmts) + "\n", encoding="utf-8")
 
-    print(f"\n生成: {out}  更新{n_new} / スキップ{n_skip} / 削除{len(removed)}")
+    print(f"\n生成: {out}  本文 更新{n_new} / スキップ{n_skip} / 削除{len(removed)}"
+          f"  メタデータ {len(meta) - 1}行")
 
 
 if __name__ == "__main__":

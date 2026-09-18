@@ -213,8 +213,10 @@ def build_cards(articles: list[dict], members_by_id: dict, master: dict,
             f'<span class="iv-title">{title_html}</span></p>'
         )
 
-        # 2段目: Feature / Media (Featureはある時のみ)
-        sub_parts = [x for x in [feature, media] if x]
+        # 2段目: Feature / Media (Featureはある時のみ)。Featureは押すと同じFeatureの記事に絞り込むボタン
+        feature_html = (f'<button type="button" class="iv-feature" data-feature="{feature}"'
+                        f' title="この連載・企画の記事だけ表示">{feature}</button>') if feature else ""
+        sub_parts = [x for x in [feature_html, media] if x]
         sub = f'<p class="iv-sub">{" / ".join(sub_parts)}</p>' if sub_parts else ""
 
         # 3段目以降: メンバー(名前の行) + グループの行
@@ -254,6 +256,7 @@ def build_cards(articles: list[dict], members_by_id: dict, master: dict,
 
         cards.append(
             f'<div class="card iv-card" data-id="{esc(aid)}" data-date="{date_sort}" data-title="{title}"'
+            f' data-feature="{feature}"'
             f' data-groups="{esc("|".join(dict.fromkeys(all_groups)))}"'
             f' data-active-groups="{esc("|".join(dict.fromkeys(active_groups)))}"'
             f' data-names="{esc("|".join(names))}"'
