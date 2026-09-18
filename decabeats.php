@@ -18,8 +18,12 @@
 $dc_members = [
   [
     'slug' => 'kirara_yonemura',
+    'no' => '01',
+    'leader' => true,
+    'catch' => ['デカビートの頼りになるリーダー！', '回収ガンでデカボエネルギーを集める。'],
     'name' => '米村姫良々',
     'yomi' => 'よねむらきらら',
+    'birthday' => '2004-04-30',
     'group' => 'OCHA NORMA',
     'friend' => 'キラニャ',
     'official' => 'https://helloproject.com/ochanorma/kirara_yonemura/',
@@ -35,8 +39,11 @@ $dc_members = [
   ],
   [
     'slug' => 'minami_okamura',
+    'no' => '02',
+    'catch' => ['みんなのデカボを算出・解析する', 'デカビートのキュートな頭脳担当。'],
     'name' => '岡村美波',
     'yomi' => 'おかむらみなみ',
+    'birthday' => '2004-10-20',
     'group' => 'BEYOOOOONDS',
     'friend' => 'ミイメェ',
     'official' => 'https://helloproject.com/beyooooonds/minami_okamura/',
@@ -52,8 +59,11 @@ $dc_members = [
   ],
   [
     'slug' => 'kisaki_ebata',
+    'no' => '03',
+    'catch' => ['日常に隠れたデカボを', 'スカウターであざとく見つける！'],
     'name' => '江端妃咲',
     'yomi' => 'えばたきさき',
+    'birthday' => '2007-01-30',
     'group' => 'Juice=Juice',
     'friend' => 'エバネコ',
     'official' => 'https://helloproject.com/juicejuice/kisaki_ebata/',
@@ -69,8 +79,11 @@ $dc_members = [
   ],
   [
     'slug' => 'runo_yofu',
+    'no' => '04',
+    'catch' => ['メガホンを使い、デッカいボイスで', '見つけたデカボをメンバーに伝えるの！'],
     'name' => '豫風瑠乃',
     'yomi' => 'よふうるの',
+    'birthday' => '2007-12-20',
     'group' => 'つばきファクトリー',
     'friend' => 'ルノコーン',
     'official' => 'https://helloproject.com/tsubakifactory/runo_yofu/',
@@ -86,8 +99,11 @@ $dc_members = [
   ],
   [
     'slug' => 'hana_goto',
+    'no' => '05',
+    'catch' => ['デカボを発見したらキックボードで', '人一倍元気に、現場に急行！'],
     'name' => '後藤花',
     'yomi' => 'ごとうはな',
+    'birthday' => '2008-06-05',
     'group' => 'アンジュルム',
     'friend' => 'ハナペン',
     'official' => 'https://helloproject.com/angerme/hana_goto/',
@@ -103,8 +119,11 @@ $dc_members = [
   ],
   [
     'slug' => 'ako_yumigeta',
+    'no' => '06',
+    'catch' => ['デッカいスタンプでデカボを認定！', 'みんなのデカボを応援する！'],
     'name' => '弓桁朱琴',
     'yomi' => 'ゆみげたあこ',
+    'birthday' => '2008-07-08',
     'group' => 'モーニング娘。\'26',
     'friend' => 'シシゲタ',
     'official' => 'https://helloproject.com/morningmusume/ako_yumigeta/',
@@ -120,8 +139,11 @@ $dc_members = [
   ],
   [
     'slug' => 'rena_kamimura',
+    'no' => '07',
+    'catch' => ['スツールを使って高いところから', '隠れたデカボもくまなくチェック'],
     'name' => '上村麗菜',
     'yomi' => 'かみむられな',
+    'birthday' => '2009-06-15',
     'group' => 'ロージークロニクル',
     'friend' => 'ウサレナ',
     'official' => 'https://helloproject.com/rosychronicle/rena_kamimura/',
@@ -347,6 +369,12 @@ function dc_h(string $s): string {
     return htmlspecialchars($s, ENT_QUOTES, 'UTF-8');
 }
 
+/** 誕生日から今日(日本時間)の年齢。ページは毎日ビルドされるので誕生日当日に上がる */
+function dc_age(string $ymd): int {
+    $tz = new DateTimeZone('Asia/Tokyo');
+    return (new DateTimeImmutable($ymd, $tz))->diff(new DateTimeImmutable('today', $tz))->y;
+}
+
 /** 2026-03-02 → 2026年3月2日 */
 function dc_jdate(string $ymd): string {
     [$y, $m, $d] = array_map('intval', explode('-', $ymd));
@@ -413,7 +441,7 @@ function dc_x_embed(string $label, array $tw): string {
     <div class="tab-buttons dc-tabs" id="dc-member-tabs">
       <?php foreach ($dc_members as $m): ?>
       <button type="button" data-slug="<?= dc_h($m['slug']) ?>">
-        <span class="dc-btn-name"><?= dc_h($m['name']) ?></span>
+        <span class="dc-btn-name"><span class="dc-btn-no"><?= dc_h($m['no']) ?></span><?= dc_h($m['name']) ?></span>
         <span class="dc-btn-friend"><?= dc_h($m['friend']) ?></span>
       </button>
       <?php endforeach; ?>
@@ -421,8 +449,10 @@ function dc_x_embed(string $label, array $tw): string {
 
     <?php foreach ($dc_members as $m): ?>
     <div class="dc-panel" id="dc-panel-<?= dc_h($m['slug']) ?>" hidden>
-      <h3 class="dc-name"><?= dc_h($m['name']) ?><span class="dc-yomi"><?= dc_h($m['yomi']) ?></span></h3>
+      <h3 class="dc-name"><span class="dc-no"><?= dc_h($m['no']) ?></span><?= dc_h($m['name']) ?><span class="dc-yomi"><?= dc_h($m['yomi']) ?></span><?php if (!empty($m['leader'])): ?><span class="dc-leader">リーダー</span><?php endif; ?></h3>
+      <p class="dc-catch"><?= dc_h($m['catch'][0]) ?><br><?= dc_h($m['catch'][1]) ?></p>
       <p class="dc-meta"><?= dc_h($m['group']) ?><span class="dc-friend">デカビートフレンズ：<?= dc_h($m['friend']) ?></span></p>
+      <p class="dc-birthday">誕生日：<?= dc_h(dc_jdate($m['birthday'])) ?>（<?= dc_age($m['birthday']) ?>歳）</p>
       <p class="dc-mission"><a href="<?= dc_h(DC_MISSION_URL . '?culture=ja&spot=' . $m['spot']) ?>" target="_blank" rel="noopener noreferrer"><?= dc_h($m['mission']) ?>（デカボスコア<?= dc_h($m['score']) ?>％）</a></p>
       <p class="dc-profile-links">
         <a href="<?= dc_h($m['official']) ?>" target="_blank" rel="noopener noreferrer"><?= icon('link-brand', 'ic ic-20') ?>ハロー！プロジェクト公式プロフィール</a>

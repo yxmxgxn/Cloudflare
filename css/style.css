@@ -2427,6 +2427,42 @@ footer a {
   margin: 0;
 }
 
+/* メンバー番号(公式のメンバー紹介と同じ 01〜07) */
+.dc-no {
+  margin-right: 10px;
+  font-weight: 900;
+  color: #0000FF;
+}
+
+.dc-btn-no {
+  margin-right: 5px;
+  font-weight: bold;
+  color: #0000FF;
+}
+
+#dc-member-tabs button.active .dc-btn-no {
+  color: #9E9EFF;
+}
+
+.dc-leader {
+  display: inline-block;
+  margin-left: 10px;
+  padding: 1px 10px;
+  border: 2px solid #000;
+  background: #9CF48E;
+  font-size: 12px;
+  font-weight: bold;
+  vertical-align: 3px;
+}
+
+/* 公式のメンバー紹介文(2行) */
+.dc-catch {
+  margin: 8px 0 6px;
+  font-size: 15px;
+  font-weight: bold;
+  line-height: 1.7;
+}
+
 .dc-yomi {
   margin-left: 10px;
   font-size: 13px;
@@ -2442,6 +2478,12 @@ footer a {
 
 .dc-friend {
   margin-left: 12px;
+}
+
+.dc-birthday {
+  margin: 4px 0 0;
+  font-size: 14px;
+  color: #555;
 }
 
 /* そのメンバーのデカボミッション(プラチナマップの個別ページへ) */
