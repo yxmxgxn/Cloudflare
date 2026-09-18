@@ -1,4 +1,4 @@
-<!-- generated: 2026-09-13T15:00:04.128998+00:00 -->
+<!-- generated: 2026-09-18T14:02:13.366369+00:00 -->
 <option value="相川茉穂" data-group="アンジュルム">相川茉穂</option>
 <option value="秋山眞緒" data-group="つばきファクトリー">秋山眞緒</option>
 <option value="浅倉樹々" data-group="つばきファクトリー">浅倉樹々</option>
@@ -54,6 +54,7 @@
 <option value="工藤遥" data-group="モーニング娘。">工藤遥</option>
 <option value="工藤由愛" data-group="Juice=Juice">工藤由愛</option>
 <option value="窪田七海" data-group="OCHA NORMA">窪田七海</option>
+<option value="小島はな" data-group="BEYOOOOONDS">小島はな</option>
 <option value="小林萌花" data-group="BEYOOOOONDS">小林萌花</option>
 <option value="小湊美和" data-group="太陽とシスコムーン">小湊美和</option>
 <option value="後藤花" data-group="アンジュルム">後藤花</option>
@@ -69,6 +70,7 @@
 <option value="島倉りか" data-group="OCHA NORMA">島倉りか</option>
 <option value="下井谷幸穂" data-group="アンジュルム">下井谷幸穂</option>
 <option value="鈴木愛理" data-group="℃-ute">鈴木愛理</option>
+<option value="鈴木香音" data-group="モーニング娘。">鈴木香音</option>
 <option value="須藤茉麻" data-group="Berryz工房">須藤茉麻</option>
 <option value="相馬優芽" data-group="ロージークロニクル">相馬優芽</option>
 <option value="高木紗友希" data-group="Juice=Juice">高木紗友希</option>
@@ -116,6 +118,7 @@
 <option value="松原ユリヤ" data-group="ロージークロニクル">松原ユリヤ</option>
 <option value="松本わかな" data-group="アンジュルム">松本わかな</option>
 <option value="真野恵里菜" data-group="">真野恵里菜</option>
+<option value="道重さゆみ" data-group="モーニング娘。">道重さゆみ</option>
 <option value="宮崎由加" data-group="Juice=Juice">宮崎由加</option>
 <option value="宮本佳林" data-group="Juice=Juice">宮本佳林</option>
 <option value="村越彩菜" data-group="ロージークロニクル">村越彩菜</option>
@@ -138,4 +141,5 @@
 <option value="豫風瑠乃" data-group="つばきファクトリー">豫風瑠乃</option>
 <option value="和田彩花" data-group="アンジュルム">和田彩花</option>
 <option value="和田桜子" data-group="こぶしファクトリー">和田桜子</option>
+<option value="山崎夢羽" data-group="">山崎夢羽</option>
 <option value="林 仁愛" data-group="">林 仁愛</option>
