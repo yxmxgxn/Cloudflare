@@ -154,8 +154,8 @@
         <p class="index-desc">ハロープロジェクトのメンバーが出演している映画作品のまとめです</p>
       </div>
       <div class="card index-card">
-        <a class="index-link" href="/hello-interview"><?= icon('article', 'ic ic-20') ?>ハロプロメンバー インタビュー記事まとめ</a>
-        <p class="index-desc">ハロープロジェクトのメンバーが登場するWebインタビュー記事のまとめです</p>
+        <a class="index-link" href="/hello-articles"><?= icon('article', 'ic ic-20') ?>ハロプロメンバーが語るインタビュー・Web記事まとめ</a>
+        <p class="index-desc">ハロー！プロジェクトのメンバー本人の言葉が読めるWeb記事（インタビュー・対談・連載・コラムなど）のまとめです</p>
       </div>
       <div class="card index-card">
         <a class="index-link" href="/hello-shop-event"><?= icon('mic', 'ic ic-20') ?>ハロショ イベントまとめ</a>

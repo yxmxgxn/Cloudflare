@@ -25,7 +25,7 @@
   <dt>2026-08-08</dt>
   <dd><a href="/HelloYouTube/hello-gamelive">ファミ通ゲーム実況ch</a>のページを追加</dd>
   <dt>2026-08-07</dt>
-  <dd><a href="/hello-interview">インタビュー</a>のページを追加</dd>
+  <dd><a href="/hello-articles">インタビュー</a>のページを追加</dd>
   <dt>2026-07-30</dt>
   <dd><a href="/instagram/HANAKIN-insta">宮本佳林 HANAKINチャレンジ</a>のページを追加</dd>
   <dt>2026-07-26</dt>

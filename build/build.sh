@@ -108,6 +108,9 @@ grep -rl --include='*.html' --include='*.xml' --include='*.txt' -F "$OLD_URL" "$
   echo "/karinsong.php       /YouTube/karin-song   301"
   echo "/index.php / 301"
   echo "/index.html / 301"
+  # 改名したページ(実態に合わせて「インタビュー」→「インタビュー・Web記事」へ)
+  echo "/hello-interview     /hello-articles       301"
+  echo "/hello-interview.php /hello-articles       301"
   # 外部サイトへ移転したツール(ページ本体はリポジトリから削除済み)
   echo "/Tool/post-context     https://tools.yxmxgxn.workers.dev/post-context/ 301"
   echo "/Tool/post-context.php https://tools.yxmxgxn.workers.dev/post-context/ 301"
