@@ -12,6 +12,7 @@ import html
 import io
 import os
 import re
+import unicodedata
 import urllib.parse
 import urllib.request
 from datetime import datetime, timezone, timedelta
@@ -174,7 +175,7 @@ def sort_date(s: str) -> str:
 
 def _pad_date(s: str, is_end: bool) -> str:
     """'2017' / '2017/6/11' / '2017年6月11日' を 'YYYY-MM-DD' に。欠けは開始なら01/01、終了なら12/31。"""
-    parts = [p for p in re.split(r"[-/年月日\.\s]", (s or "").strip()) if p]
+    parts = re.findall(r"\d+", s or "")  # 数字だけ拾う(区切り・「頃」などは無視)
     if not parts:
         return ""
     y = parts[0].zfill(4)
@@ -185,7 +186,7 @@ def _pad_date(s: str, is_end: bool) -> str:
 
 def disp_date(s: str) -> str:
     """表示用: どの形式('2019年5月23日'・'2019/5/23'・'2019')でも yyyy/mm/dd に整形(粒度は保つ)。"""
-    parts = [p for p in re.split(r"[-/年月日\.\s]", (s or "").strip()) if p]
+    parts = re.findall(r"\d+", s or "")  # 数字だけ拾う(区切り・「頃」などは無視)
     if not parts:
         return ""
     out = parts[0].zfill(4)
@@ -396,6 +397,7 @@ def main():
         warn("Domainシート未登録(媒体名が空になる): " + "、".join(sorted(unmatched)),
              title="Domain未登録URL")
     write_domain_report(unmatched)
+    write_member_report(member_rows, master)
     print(f"生成完了: {OUTPUT_CARDS} ({len(articles)} 記事 / メンバー {len(name_set)} 名 / "
           f"Domain未登録 {len(unmatched)} 件)")
 
@@ -426,6 +428,42 @@ def write_domain_report(unmatched: dict[str, str]) -> None:
         refs = "<br>".join(f"{aid} {url}" for aid, url in items)
         label = f"`{host}`" if host else "⚠ URL欄がURLではない"  # タイトル等を誤って入れた行
         lines.append(f"| {label} | {len(items)} | {refs} |")
+    Path(path).write_text("\n".join(lines) + "\n", encoding="utf-8")
+
+
+# 旧字・異体字 → 通用字。表記ゆれの候補探しにだけ使う
+_VARIANTS = str.maketrans({"﨑": "崎", "髙": "高", "濵": "浜", "邊": "辺", "邉": "辺", "齊": "斉", "齋": "斎"})
+
+
+def _loose(name: str) -> str:
+    return re.sub(r"\s", "", unicodedata.normalize("NFKC", name)).translate(_VARIANTS)
+
+
+def write_member_report(member_rows: list[dict], master: dict) -> None:
+    """メンバーシートの名前がよみがなマスターに無いときのIssue本文を書き出す。0件なら空ファイル。
+    出力先は環境変数 INTERVIEW_MEMBER_REPORT。スペース・旧字違いならマスター側の表記を候補に出す。"""
+    path = os.environ.get("INTERVIEW_MEMBER_REPORT")
+    if not path:
+        return
+    missing: dict[str, list[str]] = {}
+    for m in member_rows:
+        n = (m.get("Name") or "").strip()
+        if n and n not in master:
+            missing.setdefault(n, []).append((m.get("ID") or "").strip())
+    if not missing:
+        Path(path).write_text("", encoding="utf-8")
+        return
+    loose = {_loose(k): k for k in master}
+    lines = [
+        "インタビューのメンバーシートに、よみがなマスターに無い名前があります。",
+        "マスターと表記が違うと別人扱いになり、メンバー絞り込みで出てきません。",
+        "",
+        "| 名前 | 記事 | 候補 |",
+        "|---|---|---|",
+    ]
+    for n in sorted(missing):
+        cand = loose.get(_loose(n))
+        lines.append(f"| `{n}` | {'、'.join(sorted(missing[n]))} | {f'`{cand}` に直す' if cand else '(マスターに追加?)'} |")
     Path(path).write_text("\n".join(lines) + "\n", encoding="utf-8")
 
 

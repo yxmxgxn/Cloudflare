@@ -53,6 +53,8 @@ jobs:
         env:
           # generate_interview.py が Domain未登録URLのIssue本文をここへ書く(未実行なら作られない)
           INTERVIEW_DOMAIN_REPORT: ${{ runner.temp }}/interview_domain.md
+          # 同じく、メンバーシートの名前がよみがなマスターに無いときのIssue本文
+          INTERVIEW_MEMBER_REPORT: ${{ runner.temp }}/interview_member.md
         run: |
           t="${{ inputs.target }}"
           t="${t%% *}"   # "movies (出演映画)" → "movies"
@@ -76,36 +78,42 @@ jobs:
           run_if shopevent  generate_shopevent.py
           run_if timeline   timeline.py
 
-      # インタビューのURLがDomainシートに無ければIssueを1本だけ立てる(既にあれば内容が変わった時だけ更新)。
-      # 全部登録されたら自動でクローズ。通知の失敗でデータ更新(下のcommit)を止めない。
-      - name: Domain未登録URLのIssue
+      # インタビューのシートに要確認の行があればIssueを種類ごとに1本だけ立てる(既にあれば内容が変わった時だけ更新)。
+      #   Domain未登録URL / よみがなマスターに無いメンバー名
+      # 全部解消したら自動でクローズ。通知の失敗でデータ更新(下のcommit)を止めない。
+      - name: インタビューの要確認Issue
         continue-on-error: true
         env:
           GH_TOKEN: ${{ github.token }}
-          REPORT: ${{ runner.temp }}/interview_domain.md
+          TMP: ${{ runner.temp }}
         run: |
-          if [ ! -f "$REPORT" ]; then echo "interviewは今回未実行"; exit 0; fi
-          LABEL=interview-domain
-          TITLE="🌐 インタビュー: Domainシート未登録のURLがあります"
           RUN_URL="${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}"
-          gh label create "$LABEL" --color AE8DBC --description "インタビューのDomain未登録URL" 2>/dev/null || true
-          ISSUE=$(gh issue list --label "$LABEL" --state open --limit 1 --json number --jq '.[0].number // empty')
-
-          if [ -s "$REPORT" ]; then
-            if [ -z "$ISSUE" ]; then
-              gh issue create --title "$TITLE" --label "$LABEL" --body-file "$REPORT"
-            elif [ "$(gh issue view "$ISSUE" --json body --jq .body)" != "$(cat "$REPORT")" ]; then
-              gh issue edit "$ISSUE" --body-file "$REPORT"
-              gh issue comment "$ISSUE" --body "🔁 未登録URLの一覧が変わったので更新しました（[実行ログ]($RUN_URL)）。"
+          # sync_issue 本文ファイル ラベル タイトル 何の一覧か
+          sync_issue() {
+            REPORT=$1; LABEL=$2; TITLE=$3; WHAT=$4
+            if [ ! -f "$REPORT" ]; then echo "interviewは今回未実行"; return; fi
+            gh label create "$LABEL" --color AE8DBC --description "$WHAT" 2>/dev/null || true
+            ISSUE=$(gh issue list --label "$LABEL" --state open --limit 1 --json number --jq '.[0].number // empty')
+            if [ -s "$REPORT" ]; then
+              if [ -z "$ISSUE" ]; then
+                gh issue create --title "$TITLE" --label "$LABEL" --body-file "$REPORT"
+              elif [ "$(gh issue view "$ISSUE" --json body --jq .body)" != "$(cat "$REPORT")" ]; then
+                gh issue edit "$ISSUE" --body-file "$REPORT"
+                gh issue comment "$ISSUE" --body "🔁 ${WHAT}の一覧が変わったので更新しました（[実行ログ]($RUN_URL)）。"
+              else
+                echo "Issue #$ISSUE と内容が同じなので通知しない"
+              fi
+            elif [ -n "$ISSUE" ]; then
+              gh issue comment "$ISSUE" --body "✅ ${WHAT}がなくなったのでクローズします（[実行ログ]($RUN_URL)）。"
+              gh issue close "$ISSUE"
             else
-              echo "Issue #$ISSUE と内容が同じなので通知しない"
+              echo "${WHAT}なし"
             fi
-          elif [ -n "$ISSUE" ]; then
-            gh issue comment "$ISSUE" --body "✅ 全URLがDomainシートに一致したのでクローズします（[実行ログ]($RUN_URL)）。"
-            gh issue close "$ISSUE"
-          else
-            echo "Domain未登録なし"
-          fi
+          }
+          sync_issue "$TMP/interview_domain.md" interview-domain \
+            "🌐 インタビュー: Domainシート未登録のURLがあります" "インタビューのDomain未登録URL"
+          sync_issue "$TMP/interview_member.md" interview-member \
+            "👤 インタビュー: よみがなマスターに無いメンバー名があります" "インタビューのマスター未登録メンバー"
 
       - name: Commit & push if changed
         run: |
