@@ -1,4 +1,5 @@
-<!-- generated: 2026-09-18T14:02:13.366369+00:00 -->
+<!-- generated: 2026-09-19T07:30:10.553397+00:00 -->
+<option value="BEYO12" data-group="">BEYO12</option>
 <option value="相川茉穂" data-group="アンジュルム">相川茉穂</option>
 <option value="秋山眞緒" data-group="つばきファクトリー">秋山眞緒</option>
 <option value="浅倉樹々" data-group="つばきファクトリー">浅倉樹々</option>
