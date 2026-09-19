@@ -18,6 +18,7 @@ from datetime import datetime, timezone, timedelta
 from pathlib import Path
 
 from gh_warn import warn_missing_members, warn
+import generate_members  # メンバー一覧スプシ(平家みちよから並ぶ)の行順を、カードのメンバー表示順に使う
 
 PUB_BASE = (
     "https://docs.google.com/spreadsheets/d/e/"
@@ -74,6 +75,55 @@ def fetch_master() -> dict[str, dict]:
                 "grad": (row.get("GradDate") or "").strip(),
             })
     return result
+
+
+def _int(s: str):
+    s = (s or "").strip()
+    return int(s) if s.isdigit() else None
+
+
+def fetch_member_order() -> dict:
+    """メンバー一覧スプシ(在籍日数ページと同じ。平家みちよから並ぶ)から、カード内の並び順に使う情報を読む。
+    このシートは1人1行で、移籍したメンバーは今の(メインの)グループの枠にいる。
+      グループ: 'Juice=Juice（こぶしファクトリー）' → メイン=Juice=Juice / 前=こぶしファクトリー
+      グループNo: グループの並び / ソートID: メイングループ内の順 / サブID: 前のグループ内の順
+    戻り値: {"people": {名前: {...}}, "group_no": {グループ名: グループNo}}"""
+    data = generate_members.fetch_csv(generate_members.SHEET_GID)
+    h = [x.strip() for x in data[0]]
+    col = {k: h.index(k) for k in ("名前", "グループ", "グループNo", "ソートID", "サブID")}
+    people: dict[str, dict] = {}
+    group_no: dict[str, int] = {}
+    for i, r in enumerate(data[1:]):
+        r = r + [""] * (len(h) - len(r))
+        name = r[col["名前"]].strip()
+        if not name or name in people:
+            continue
+        g = r[col["グループ"]].strip()
+        m = re.match(r"(.*?)[（(](.*)[）)]\s*$", g)
+        main = (m.group(1) if m else g).strip()
+        # 「・」はグループ名自体に含まれる(カントリー・ガールズ)ので区切りに使わない
+        prev = [x.strip() for x in re.split(r"[、,/]", m.group(2))] if m else []
+        gno = _int(r[col["グループNo"]])
+        people[name] = {"row": i, "main": main, "prev": prev, "gno": gno,
+                        "sort": _int(r[col["ソートID"]]), "sub": _int(r[col["サブID"]])}
+        if gno is not None:
+            group_no.setdefault(main, gno)
+    return {"people": people, "group_no": group_no}
+
+
+def member_sort_key(name: str, era_group: str, order: dict):
+    """カード内のメンバーの並び。記事の時点で在籍していたグループ(era_group)の枠で並べる:
+    今のグループの記事ならソートID、前のグループの記事ならサブID。
+    グループ同士はグループNo順。一覧に無い人は最後(sortedは安定なので入力順のまま)。"""
+    p = order["people"].get(name)
+    if not p:
+        return (1, 0, 0, 0)
+    big = 10 ** 6
+    if era_group and era_group != p["main"] and era_group in p["prev"]:
+        gno, pos = order["group_no"].get(era_group, p["gno"]), p["sub"]
+    else:
+        gno, pos = p["gno"], p["sort"]
+    return (0, big if gno is None else gno, big if pos is None else pos, p["row"])
 
 
 def fetch_domain() -> dict[str, str]:
@@ -184,7 +234,7 @@ def build_members_block(names: list[str], groups_display: list[str]) -> str:
 
 
 def build_cards(articles: list[dict], members_by_id: dict, master: dict,
-                domain: dict, unmatched: dict) -> str:
+                domain: dict, unmatched: dict, member_order: dict) -> str:
     cards = []
     for a in articles:
         aid = (a.get("ID") or "").strip()
@@ -228,9 +278,12 @@ def build_cards(articles: list[dict], members_by_id: dict, master: dict,
         # 3段目以降: メンバー(名前の行) + グループの行
         names = list(dict.fromkeys(
             (m.get("Name") or "").strip() for m in members_by_id.get(aid, []) if (m.get("Name") or "").strip()))
+        # スプシへの入力順ではなく、メンバー一覧の並び(公式に近い順)で表示する
+        infos = {n: member_info(n, date_norm, master) for n in names}
+        names = sorted(names, key=lambda n: member_sort_key(n, infos[n][0], member_order))
         disp_groups, all_groups, active_groups, active_names = [], [], [], []
         for n in names:
-            dgroup, active, agroup, mgroups = member_info(n, date_norm, master)
+            dgroup, active, agroup, mgroups = infos[n]
             if dgroup:
                 disp_groups.append(dgroup)
             all_groups.extend(mgroups)
@@ -326,7 +379,8 @@ def main():
     OUTPUT_GENERATED.parent.mkdir(parents=True, exist_ok=True)
     OUTPUT_CARDS.parent.mkdir(parents=True, exist_ok=True)
     with open(OUTPUT_CARDS, "w", encoding="utf-8") as f:
-        f.write(stamp + build_cards(articles, members_by_id, master, domain, unmatched) + "\n")
+        f.write(stamp + build_cards(articles, members_by_id, master, domain, unmatched,
+                                    fetch_member_order()) + "\n")
     with open(OUTPUT_GROUPS, "w", encoding="utf-8") as f:
         f.write(stamp + build_group_options(groups) + "\n")
     with open(OUTPUT_NAMES, "w", encoding="utf-8") as f:
