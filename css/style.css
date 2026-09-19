@@ -1026,8 +1026,10 @@ footer a {
   margin: 0;
 }
 
-/* 連載・企画名: 押すと同じ連載の記事だけに絞り込む */
-.iv-card .iv-feature {
+/* 連載・企画名 / 媒体名 / メンバー名: 押すとその値で絞り込むボタン(見た目は文字のまま) */
+.iv-card .iv-feature,
+.iv-card .iv-media,
+.iv-card .iv-member {
   padding: 0;
   border: 0;
   background: none;
@@ -1039,24 +1041,33 @@ footer a {
   text-underline-offset: 2px;
 }
 
-.iv-card .iv-feature:hover {
+.iv-card .iv-feature:hover,
+.iv-card .iv-media:hover,
+.iv-card .iv-member:hover {
   color: #AE8DBC;
 }
 
-#iv-feature-filter {
+/* 絞り込み中の表示(「連載・企画：○○ 解除」「媒体：○○ 解除」) */
+#iv-chips {
   display: flex;
-  gap: 6px;
+  gap: 6px 16px;
   align-items: center;
   flex-wrap: wrap;
   margin: 0 0 8px;
   font-size: 14px;
 }
 
-#iv-feature-filter[hidden] {
+#iv-chips[hidden] {
   display: none;
 }
 
-#iv-feature-filter b {
+#iv-chips .iv-chip {
+  display: inline-flex;
+  gap: 6px;
+  align-items: center;
+}
+
+#iv-chips b {
   background: #AE8DBC;
   color: #fff;
   padding: 2px 8px;
@@ -1064,7 +1075,7 @@ footer a {
   font-weight: normal;
 }
 
-#iv-feature-clear {
+#iv-chips button {
   padding: 4px 10px;
   border: 1px solid #ccc;
   background: #fff;

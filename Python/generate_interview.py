@@ -169,10 +169,14 @@ def member_info(name: str, date_norm: str, master: dict):
 
 
 def build_members_block(names: list[str], groups_display: list[str]) -> str:
-    """メンバー名を1行、その下にグループを列挙(重複まとめ・元グループも名前のまま)。"""
+    """メンバー名を1行、その下にグループを列挙(重複まとめ・元グループも名前のまま)。
+    名前は押すとメンバー絞り込み(プルダウン)にその人をセットするボタン。"""
     if not names:
         return ""
-    name_line = f'<p class="iv-member-names">{"・".join(esc(n) for n in names)}</p>'
+    buttons = "・".join(
+        f'<button type="button" class="iv-member" data-name="{esc(n)}"'
+        f' title="{esc(n)}さんの記事だけ表示">{esc(n)}</button>' for n in names)
+    name_line = f'<p class="iv-member-names">{buttons}</p>'
     group_line = ""
     if groups_display:
         group_line = f'<p class="iv-member-groups">{"・".join(esc(g) for g in groups_display)}</p>'
@@ -213,10 +217,12 @@ def build_cards(articles: list[dict], members_by_id: dict, master: dict,
             f'<span class="iv-title">{title_html}</span></p>'
         )
 
-        # 2段目: Feature / Media (Featureはある時のみ)。Featureは押すと同じFeatureの記事に絞り込むボタン
+        # 2段目: Feature / Media (あるものだけ)。どちらも押すと同じ値の記事に絞り込むボタン
         feature_html = (f'<button type="button" class="iv-feature" data-feature="{feature}"'
                         f' title="この連載・企画の記事だけ表示">{feature}</button>') if feature else ""
-        sub_parts = [x for x in [feature_html, media] if x]
+        media_html = (f'<button type="button" class="iv-media" data-media="{media}"'
+                      f' title="この媒体の記事だけ表示">{media}</button>') if media else ""
+        sub_parts = [x for x in [feature_html, media_html] if x]
         sub = f'<p class="iv-sub">{" / ".join(sub_parts)}</p>' if sub_parts else ""
 
         # 3段目以降: メンバー(名前の行) + グループの行
@@ -235,9 +241,10 @@ def build_cards(articles: list[dict], members_by_id: dict, master: dict,
         disp_groups = list(dict.fromkeys(disp_groups))
         members_html = build_members_block(names, disp_groups)
 
-        # 最後: 魚拓リンク(右寄せ)。URLの種類でラベルを出し分ける
+        # 最後: 魚拓リンク(右寄せ)。元記事が読めるなら出さない。
+        # URLが "-"(リンク切れ) か空欄で、元記事へのリンクが無いカードだけ魚拓を見せる。
         arc = ""
-        if archive:
+        if archive and not url:
             if re.search(r"archive\.(today|ph|is|md|li|vn|fo)", archive):
                 label = "archive.today"
             else:
@@ -256,7 +263,7 @@ def build_cards(articles: list[dict], members_by_id: dict, master: dict,
 
         cards.append(
             f'<div class="card iv-card" data-id="{esc(aid)}" data-date="{date_sort}" data-title="{title}"'
-            f' data-feature="{feature}"'
+            f' data-feature="{feature}" data-media="{media}"'
             f' data-groups="{esc("|".join(dict.fromkeys(all_groups)))}"'
             f' data-active-groups="{esc("|".join(dict.fromkeys(active_groups)))}"'
             f' data-names="{esc("|".join(names))}"'

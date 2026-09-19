@@ -614,9 +614,10 @@ function dc_x_embed(string $label, array $tw): string {
     return true;
   }
 
+  // 選んだら選択ボタンが画面の上に来るところまで送る(その下にメンバーの中身が続く)
   memberTabs.addEventListener('click', function (e) {
     var btn = e.target.closest('button');
-    if (btn) selectMember(btn.dataset.slug, true);
+    if (btn && selectMember(btn.dataset.slug, true)) scrollToTabs(true);
   });
 
   // TikTok: 押されたらその場で読み込む
@@ -635,8 +636,11 @@ function dc_x_embed(string $label, array $tw): string {
   });
 
   // メンバー指定のURLで来たとき、他のメンバーに移れる選択ボタンごと見えるようにする
-  function scrollToTabs() {
-    window.scrollTo(0, memberTabs.getBoundingClientRect().top + window.scrollY - 12);
+  function scrollToTabs(smooth) {
+    window.scrollTo({
+      top: memberTabs.getBoundingClientRect().top + window.scrollY - 12,
+      behavior: smooth ? 'smooth' : 'auto'
+    });
   }
 
   /* ---- YouTube ---- */
