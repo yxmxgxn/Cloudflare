@@ -398,6 +398,7 @@ def main():
              title="Domain未登録URL")
     write_domain_report(unmatched)
     write_member_report(member_rows, master)
+    write_data_report(articles, member_rows)
     print(f"生成完了: {OUTPUT_CARDS} ({len(articles)} 記事 / メンバー {len(name_set)} 名 / "
           f"Domain未登録 {len(unmatched)} 件)")
 
@@ -465,6 +466,112 @@ def write_member_report(member_rows: list[dict], master: dict) -> None:
         cand = loose.get(_loose(n))
         lines.append(f"| `{n}` | {'、'.join(sorted(missing[n]))} | {f'`{cand}` に直す' if cand else '(マスターに追加?)'} |")
     Path(path).write_text("\n".join(lines) + "\n", encoding="utf-8")
+
+
+def _cell(s: str, limit: int = 60) -> str:
+    """Markdownの表に置ける形にする(改行・|を潰して短く)。空欄は(空欄)。"""
+    s = re.sub(r"\s+", " ", (s or "")).strip().replace("|", "\\|")
+    if not s:
+        return "(空欄)"
+    return f"`{s[:limit]}…`" if len(s) > limit else f"`{s}`"
+
+
+def check_articles(articles: list[dict], member_rows: list[dict]) -> list[tuple[str, str, str]]:
+    """記事シート・メンバーシートの明らかな入力ミスを拾う。戻り値: (種類, 場所, 中身) の一覧。
+    「載っていて当然の記事が載っていない」「列を間違えて入れた」を見つけるのが目的で、
+    埋めていないだけの欄(Feature・メンバー無し・欠番ID)は対象にしない。"""
+    today = datetime.now(timezone(timedelta(hours=9))).strftime("%Y-%m-%d")
+    found: list[tuple[str, str, str]] = []
+    seen_id: dict[str, int] = {}
+    seen_url: dict[str, str] = {}
+
+    for i, a in enumerate(articles, start=2):  # スプシの行番号(1行目は見出し)
+        aid = (a.get("ID") or "").strip()
+        vals = {k: (v or "").strip() for k, v in a.items() if k}
+        if not aid:
+            # IDが無い行は生成でまるごと無視される。何か書いてあるなら入れ忘れ
+            if any(vals.values()):
+                found.append(("ID欄が空(カードに出ていない)", f"{i}行目",
+                              _cell(vals.get("Title") or vals.get("URL"))))
+            continue
+        if not re.fullmatch(r"ID\d{4}", aid):
+            found.append(("IDの形が違う", f"{i}行目", _cell(aid)))
+        if aid in seen_id:
+            found.append(("IDが重複", f"{aid}", f"{seen_id[aid]}行目と{i}行目"))
+        seen_id[aid] = i
+
+        url = vals.get("URL", "")
+        if not url:
+            found.append(("URLが空(魚拓だけなら `-` を入れる)", aid, _cell(vals.get("Title"))))
+        elif url != "-" and not url.startswith("http"):
+            found.append(("URL欄がURLではない", aid, _cell(url)))
+        elif url != "-":
+            if url in seen_url:
+                found.append(("同じURLが2回", aid, f"{seen_url[url]}と重複 {_cell(url)}"))
+            seen_url[url] = aid
+
+        arc = vals.get("WebArcive", "")
+        if arc and not arc.startswith("http"):
+            found.append(("WebArcive欄がURLではない", aid, _cell(arc)))
+        elif url == "-" and not arc:
+            found.append(("元記事が `-` なのに魚拓が無い(本文が取れない)", aid, _cell(vals.get("Title"))))
+
+        extra = vals.get("ExtraURL", "")
+        if extra and extra != "-" and not extra.startswith("http"):
+            found.append(("ExtraURL欄がURLではない", aid, _cell(extra)))
+
+        date = vals.get("Date", "")
+        norm = _pad_date(date, False)
+        if not date:
+            found.append(("Dateが空", aid, _cell(vals.get("Title"))))
+        elif not norm:
+            found.append(("Dateが日付として読めない", aid, _cell(date)))
+        elif norm > today:
+            found.append(("Dateが未来", aid, _cell(date)))
+        elif norm < "1997-01-01":
+            found.append(("Dateが古すぎる(ハロプロ以前)", aid, _cell(date)))
+
+        if not vals.get("Title"):
+            found.append(("Titleが空", aid, _cell(url)))
+
+    for i, m in enumerate(member_rows, start=2):
+        mid = (m.get("ID") or "").strip()
+        name = (m.get("Name") or "").strip()
+        if not mid and not name:
+            continue
+        if not mid:
+            found.append(("メンバーシート: ID欄が空", f"{i}行目", _cell(name)))
+        elif mid not in seen_id:
+            found.append(("メンバーシート: 記事シートに無いID", f"{i}行目", f"{_cell(mid)} {_cell(name)}"))
+        elif not name:
+            found.append(("メンバーシート: Name欄が空", mid, f"{i}行目"))
+    return found
+
+
+def write_data_report(articles: list[dict], member_rows: list[dict]) -> None:
+    """スプシの入力ミスのIssue本文を書き出す。0件なら空ファイル。出力先は環境変数 INTERVIEW_DATA_REPORT。"""
+    path = os.environ.get("INTERVIEW_DATA_REPORT")
+    if not path:
+        return
+    found = check_articles(articles, member_rows)
+    if found:
+        warn(f"スプシの要確認: {len(found)} 件", title="インタビューのデータ")
+    if not found:
+        Path(path).write_text("", encoding="utf-8")
+        return
+    by_kind: dict[str, list[tuple[str, str]]] = {}
+    for kind, where, what in found:
+        by_kind.setdefault(kind, []).append((where, what))
+    lines = ["インタビューのスプレッドシートに、入力ミスと思われる行があります。", ""]
+    for kind in sorted(by_kind, key=lambda k: (-len(by_kind[k]), k)):
+        items = by_kind[kind]
+        lines += [f"### {kind}（{len(items)}件）", "", "| 場所 | 中身 |", "|---|---|"]
+        for where, what in items[:50]:
+            lines.append(f"| {where} | {what} |")
+        if len(items) > 50:
+            lines.append(f"| … | ほか{len(items) - 50}件 |")
+        lines.append("")
+    Path(path).write_text("\n".join(lines), encoding="utf-8")
 
 
 if __name__ == "__main__":

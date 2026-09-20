@@ -55,6 +55,8 @@ jobs:
           INTERVIEW_DOMAIN_REPORT: ${{ runner.temp }}/interview_domain.md
           # 同じく、メンバーシートの名前がよみがなマスターに無いときのIssue本文
           INTERVIEW_MEMBER_REPORT: ${{ runner.temp }}/interview_member.md
+          # 同じく、スプシの入力ミス(URL欄がURLでない・ID欄が空など)のIssue本文
+          INTERVIEW_DATA_REPORT: ${{ runner.temp }}/interview_data.md
         run: |
           t="${{ inputs.target }}"
           t="${t%% *}"   # "movies (出演映画)" → "movies"
@@ -79,7 +81,7 @@ jobs:
           run_if timeline   timeline.py
 
       # インタビューのシートに要確認の行があればIssueを種類ごとに1本だけ立てる(既にあれば内容が変わった時だけ更新)。
-      #   Domain未登録URL / よみがなマスターに無いメンバー名
+      #   Domain未登録URL / よみがなマスターに無いメンバー名 / スプシの入力ミス
       # 全部解消したら自動でクローズ。通知の失敗でデータ更新(下のcommit)を止めない。
       - name: インタビューの要確認Issue
         continue-on-error: true
@@ -114,6 +116,8 @@ jobs:
             "🌐 インタビュー: Domainシート未登録のURLがあります" "インタビューのDomain未登録URL"
           sync_issue "$TMP/interview_member.md" interview-member \
             "👤 インタビュー: よみがなマスターに無いメンバー名があります" "インタビューのマスター未登録メンバー"
+          sync_issue "$TMP/interview_data.md" interview-data \
+            "🧹 インタビュー: スプレッドシートに入力ミスがあります" "インタビューのスプシ入力ミス"
 
       - name: Commit & push if changed
         run: |
