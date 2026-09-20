@@ -1,4 +1,4 @@
-<!-- generated: 2026-09-19T19:52:33.101354+00:00 -->
+<!-- generated: 2026-09-20T20:06:14.996130+00:00 -->
 <option value="10人祭">10人祭</option>
 <option value="Berryz工房">Berryz工房</option>
 <option value="BEYOOOOONDS">BEYOOOOONDS</option>
@@ -29,6 +29,7 @@
 <option value="モーニング娘。'15">モーニング娘。'15</option>
 <option value="モーニング娘。'16">モーニング娘。'16</option>
 <option value="モーニング娘。'19">モーニング娘。'19</option>
+<option value="モーニング娘。'20">モーニング娘。'20</option>
 <option value="モーニング娘。さくら組">モーニング娘。さくら組</option>
 <option value="リボーンイレブン">リボーンイレブン</option>
 <option value="太陽とシスコムーン">太陽とシスコムーン</option>
