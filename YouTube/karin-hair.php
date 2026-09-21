@@ -26,13 +26,5 @@
     <li><a href="https://www.youtube.com/watch?v=-2QIniKaoi0&t=2943s"  target="_blank" rel="noopener noreferrer">ハロ！ステ#247 2017/11/29</a></li>
     <li><a href="https://www.youtube.com/watch?v=rkJXf6E7uso&t=2641s"  target="_blank" rel="noopener noreferrer">ハロ！ステ#205 植村あかり 2017/2/1</a></li>
   </ul>
-  全部をまとめたものをYouTubeにアップしました<br>
-  <iframe 
-    width="560" 
-    height="315" 
-    src="https://www.youtube.com/embed/lQ1iS4XyUF4" 
-    frameborder="0" 
-    allowfullscreen>
-  </iframe>
 <div class="last-update">最終更新日：2026/05/15</div>
 <?php include $_SERVER['DOCUMENT_ROOT'] . '/common/footer.php'; ?>

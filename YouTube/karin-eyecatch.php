@@ -60,14 +60,6 @@
       <tr class="row-even"><td><a href="https://www.youtube.com/watch?v=rrfuqAZPaVQ&t=2538s" target="_blank" rel="noopener noreferrer">2020/12/09</a></td><td><a href="https://www.youtube.com/watch?v=rrfuqAZPaVQ&t=2538s" target="_blank" rel="noopener noreferrer">ハロ！ステ</a></td><td><a href="https://www.youtube.com/watch?v=rrfuqAZPaVQ&t=2538s" target="_blank" rel="noopener noreferrer">354</a></td><td><a href="https://www.youtube.com/watch?v=rrfuqAZPaVQ&t=2538s" target="_blank" rel="noopener noreferrer">42:18</a></td><td class="serif"><a href="https://www.youtube.com/watch?v=rrfuqAZPaVQ&t=2538s" target="_blank" rel="noopener noreferrer">「ありがとう また明日」</a></td></tr>
     </tbody>
   </table>
-  全部をまとめたものをYouTubeにアップしました<br>
-  <iframe 
-    width="560" 
-    height="315" 
-    src="https://www.youtube.com/embed/9TMthrah1EU" 
-    frameborder="0" 
-    allowfullscreen>
-  </iframe>
 </main>
 <div class="last-update">最終更新日：2026/05/10</div>
 <?php include $_SERVER['DOCUMENT_ROOT'] . '/common/footer.php'; ?>
