@@ -9,24 +9,8 @@
 <main>
 <p class="site-title"><a href="/hello-birthday">メンバー一覧に戻る</a></p>
 <h1>上村麗菜バースデーイベント会場まとめ</h1>
-<p>上村麗菜さん（2009年6月15日生まれ）のこれまでのバースデーイベントをまとめました。非公式サイトのハロプロセトリ検索システム「ToMoKo」にてセットリストが公開されていたものはリンクを貼っています。</p>
-17歳（2026年）
-<table class="birthday-table">
-<thead>
-<tr>
-<th>日付</th>
-<th>開演</th>
-<th>イベント名</th>
-<th>会場</th>
-<th>都道府県</th>
-<th>セットリスト</th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td>2026年6月25日</td><td>17:10</td><td>ロージークロニクル 吉田姫杷・上村麗菜バースデーイベント2026</td><td>I'M A SHOW</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/23778" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
-<tr><td>2026年6月25日</td><td>19:30</td><td>ロージークロニクル 吉田姫杷・上村麗菜バースデーイベント2026</td><td>I'M A SHOW</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/23779" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
-</tbody>
-</table>
+<p>上村麗菜さん（生まれ）のこれまでのバースデーイベントをまとめました。非公式サイトのハロプロセトリ検索システム「ToMoKo」にてセットリストが公開されていたものはリンクを貼っています。</p>
+
 
 </main>
 <?php include $_SERVER['DOCUMENT_ROOT'] . '/Generated/birthday_generated.php'; ?>

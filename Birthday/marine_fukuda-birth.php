@@ -9,75 +9,8 @@
 <main>
 <p class="site-title"><a href="/hello-birthday">メンバー一覧に戻る</a></p>
 <h1>福田真琳バースデーイベント会場まとめ</h1>
-<p>福田真琳さん（2004年10月18日生まれ）のこれまでのバースデーイベントをまとめました。非公式サイトのハロプロセトリ検索システム「ToMoKo」にてセットリストが公開されていたものはリンクを貼っています。</p>
-18歳（2022年）
-<table class="birthday-table">
-<thead>
-<tr>
-<th>日付</th>
-<th>開演</th>
-<th>イベント名</th>
-<th>会場</th>
-<th>都道府県</th>
-<th>セットリスト</th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td>2022年10月17日</td><td>16:45</td><td>つばきファクトリー 福田真琳バースデーイベント2022</td><td>LANDMARK HALL</td><td>神奈川県</td><td><a href="https://hp-setlist.com/stage/9844" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
-<tr><td>2022年10月17日</td><td>19:00</td><td>つばきファクトリー 福田真琳バースデーイベント2022</td><td>LANDMARK HALL</td><td>神奈川県</td><td><a href="https://hp-setlist.com/stage/9845" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
-</tbody>
-</table>
-19歳（2023年）
-<table class="birthday-table">
-<thead>
-<tr>
-<th>日付</th>
-<th>開演</th>
-<th>イベント名</th>
-<th>会場</th>
-<th>都道府県</th>
-<th>セットリスト</th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td>2023年10月18日</td><td>17:10</td><td>つばきファクトリー 福田真琳バースデーイベント2023</td><td>山野ホール</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/20602" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
-<tr><td>2023年10月18日</td><td>19:40</td><td>つばきファクトリー 福田真琳バースデーイベント2023</td><td>山野ホール</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/20603" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
-</tbody>
-</table>
-20歳（2024年）
-<table class="birthday-table">
-<thead>
-<tr>
-<th>日付</th>
-<th>開演</th>
-<th>イベント名</th>
-<th>会場</th>
-<th>都道府県</th>
-<th>セットリスト</th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td>2024年10月17日</td><td>17:00</td><td>つばきファクトリー 福田真琳バースデーイベント2024</td><td>山野ホール</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/21770" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
-<tr><td>2024年10月17日</td><td>19:30</td><td>つばきファクトリー 福田真琳バースデーイベント2024</td><td>山野ホール</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/21771" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
-</tbody>
-</table>
-21歳（2025年）
-<table class="birthday-table">
-<thead>
-<tr>
-<th>日付</th>
-<th>開演</th>
-<th>イベント名</th>
-<th>会場</th>
-<th>都道府県</th>
-<th>セットリスト</th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td>2025年10月21日</td><td>17:00</td><td>つばきファクトリー 福田真琳バースデーイベント2025</td><td>ヒューリックホール東京</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/22914" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
-<tr><td>2025年10月21日</td><td>19:30</td><td>つばきファクトリー 福田真琳バースデーイベント2025</td><td>ヒューリックホール東京</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/22917" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
-</tbody>
-</table>
+<p>福田真琳さん（生まれ）のこれまでのバースデーイベントをまとめました。非公式サイトのハロプロセトリ検索システム「ToMoKo」にてセットリストが公開されていたものはリンクを貼っています。</p>
+
 
 </main>
 <?php include $_SERVER['DOCUMENT_ROOT'] . '/Generated/birthday_generated.php'; ?>
