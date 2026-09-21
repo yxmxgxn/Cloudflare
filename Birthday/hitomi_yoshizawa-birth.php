@@ -3,7 +3,6 @@
   $description = "吉澤ひとみさんのこれまでのバースデーイベントの開催日時・会場をまとめました。セットリストが非公式サイト「Tomoko」に公開されていたものはリンクしています。";
   $jsonld_type = "Dataset";
   $about = "吉澤ひとみ";
-  $brand = "hello";
   include $_SERVER['DOCUMENT_ROOT'] . '/common/header.php';
 ?>
 

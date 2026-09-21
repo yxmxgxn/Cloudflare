@@ -3,7 +3,6 @@
   $description = "高木紗友希さんのこれまでのバースデーイベントの開催日時・会場をまとめました。セットリストが非公式サイト「Tomoko」に公開されていたものはリンクしています。";
   $jsonld_type = "Dataset";
   $about = "高木紗友希";
-  $brand = "hello";
   include $_SERVER['DOCUMENT_ROOT'] . '/common/header.php';
 ?>
 

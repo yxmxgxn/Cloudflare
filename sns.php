@@ -2,7 +2,6 @@
   $title = "ハロプロ SNS一覧";
   $description = "ハロー！プロジェクトの現役メンバー・OGの公式SNS（X・Instagram・YouTube・TikTok・Threads・アメブロほか）を一覧でまとめました。名前・読み仮名での検索、所属・SNSごとの絞り込みができます。";
   $jsonld_type = "Dataset";
-  $brand = 'hello';
   include $_SERVER['DOCUMENT_ROOT'] . '/common/header.php';
 ?>
 

@@ -6,7 +6,6 @@
     "島倉りか",
     ["name" => "BEYOOOOONDS", "type" => "MusicGroup"],
   ];
-  $brand = 'hello';
   include $_SERVER['DOCUMENT_ROOT'] . '/common/header.php';
 
   $WB = 'https://web.archive.org/web/';

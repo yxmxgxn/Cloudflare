@@ -2,7 +2,6 @@
   $title = "ハロショ イベントまとめ";
   $description = "ハロー！プロジェクトオフィシャルショップ（ハロショ）東京秋葉原店・大阪店で行われたトークイベント「ハロショ千夜一夜」「千夜一夜アネックス」「大阪独演会」「大阪二人会」などを一覧にまとめました。開催日・出演メンバー・各部のタイトル・会場で絞り込めます。";
   $jsonld_type = "Dataset";
-  $brand = 'hello';
   include $_SERVER['DOCUMENT_ROOT'] . '/common/header.php';
 ?>
 

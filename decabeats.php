@@ -2,7 +2,6 @@
   $title = "DECA!BEAT（デカビート）非公式まとめ";
   $description = "ハロー！プロジェクトとEarth hacksのコラボレーションで生まれた特別ユニット「DECA!BEAT（デカビート）」の非公式まとめ。メンバーごとの紹介ポスト・新ビジュアル・TikTokの紹介動画・お披露目前のデカボなボイスを埋め込みでまとめ、YouTubeのMVやDANCE PRACTICE、グッズ紹介ポストへのリンクも掲載しています。";
   $jsonld_type = "CollectionPage";
-  $brand = 'hello';
   $og_image = '/img/decabeat/ogp-1200x630.png';   // このページ専用のOGP画像
   include $_SERVER['DOCUMENT_ROOT'] . '/common/header.php';
 ?>

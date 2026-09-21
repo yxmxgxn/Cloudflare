@@ -3,7 +3,6 @@
   $description = "笠原桃奈さんのこれまでのバースデーイベントの開催日時・会場をまとめました。セットリストが非公式サイト「Tomoko」に公開されていたものはリンクしています。";
   $jsonld_type = "Dataset";
   $about = "笠原桃奈";
-  $brand = "hello";
   include $_SERVER['DOCUMENT_ROOT'] . '/common/header.php';
 ?>
 

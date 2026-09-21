@@ -3,7 +3,6 @@
   $description = "遠藤彩加里さんのこれまでのバースデーイベントの開催日時・会場をまとめました。セットリストが非公式サイト「Tomoko」に公開されていたものはリンクしています。";
   $jsonld_type = "Dataset";
   $about = "遠藤彩加里";
-  $brand = "hello";
   include $_SERVER['DOCUMENT_ROOT'] . '/common/header.php';
 ?>
 

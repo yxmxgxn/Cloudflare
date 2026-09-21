@@ -2,7 +2,6 @@
   $title = "ハロプロ ファミ通ゲーム実況ch 配信アーカイブまとめ";
   $description = "ハロプロメンバー・OGがYouTube「ファミ通ゲーム実況ch」・「ファミ通TUBE」で配信したアーカイブ（番組名はハロ通LIVE→ハロ通GAMESと変遷）を一覧でまとめました。配信日・出演メンバー・プレイしたゲームごとに整理し、各動画へのリンクを掲載しています。ダイジェスト版・ショート版は含みません。";
   $jsonld_type = "Dataset";
-  $brand = 'hello';
   include $_SERVER['DOCUMENT_ROOT'] . '/common/header.php';
 ?>
 

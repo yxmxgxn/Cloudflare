@@ -1,7 +1,6 @@
 <?php
   $title = "ハロプロ各グループタイムライン画像"; 
   $description = "モーニング娘。・アンジュルム・Juice=Juice・つばきファクトリー各グループの全メンバーのタイムライン画像を表示しています。";
-  $brand = 'hello';
   include $_SERVER['DOCUMENT_ROOT'] . '/common/header.php';
 ?>
 

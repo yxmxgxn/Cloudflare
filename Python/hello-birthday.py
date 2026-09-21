@@ -148,7 +148,6 @@ def build_php(member_name: str, events: list[dict], generated_date: str) -> str:
         f'  $description = "{escape_html(description)}";\n'
         f'  $jsonld_type = "Dataset";\n'
         f'  $about = "{escape_php(member_name)}";\n'
-        f'  $brand = "hello";\n'
         f'  include $_SERVER[\'DOCUMENT_ROOT\'] . \'/common/header.php\';\n'
         f'?>\n\n'
         f'<main>\n'

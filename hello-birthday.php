@@ -2,7 +2,6 @@
   $title = "ハロプロバースデーイベントまとめ"; 
   $description = "ハロプロメンバーのバースデーイベントがどこで行われてきたのかメンバーごとにまとめました。年度ごとにタイトル・日付・会場・時間とセットリストへのリンクを含めています。";
   $jsonld_type = "Dataset";
-  $brand = 'hello';
   include $_SERVER['DOCUMENT_ROOT'] . '/common/header.php';
 ?>
 

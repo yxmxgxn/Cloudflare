@@ -15,7 +15,6 @@
     ["name" => "OCHA NORMA", "type" => "MusicGroup"],
     ["name" => "ロージークロニクル", "type" => "MusicGroup"],
   ];
-  $brand = 'hello';
   include $_SERVER['DOCUMENT_ROOT'] . '/common/header.php';
 ?>
 

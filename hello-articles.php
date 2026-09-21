@@ -2,7 +2,6 @@
   $title = "ハロプロメンバーが語るインタビュー・Web記事まとめ";
   $description = "ハロー！プロジェクトのメンバー本人の言葉が読めるWeb記事（インタビュー・対談・連載・コラムなど）をまとめています。掲載日・媒体・連載名ごとに整理し、各記事へのリンクとWeb Archiveも掲載しています。";
   $jsonld_type = "Dataset";
-  $brand = 'hello';
   include $_SERVER['DOCUMENT_ROOT'] . '/common/header.php';
 ?>
 
