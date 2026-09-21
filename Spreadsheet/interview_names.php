@@ -1,5 +1,4 @@
-<!-- generated: 2026-09-19T17:42:28.447489+00:00 -->
-<option value="BEYO12" data-group="">BEYO12</option>
+<!-- generated: 2026-09-21T13:58:06.556509+00:00 -->
 <option value="相川茉穂" data-group="アンジュルム">相川茉穂</option>
 <option value="秋山眞緒" data-group="つばきファクトリー">秋山眞緒</option>
 <option value="浅倉樹々" data-group="つばきファクトリー">浅倉樹々</option>
@@ -142,5 +141,3 @@
 <option value="豫風瑠乃" data-group="つばきファクトリー">豫風瑠乃</option>
 <option value="和田彩花" data-group="アンジュルム">和田彩花</option>
 <option value="和田桜子" data-group="こぶしファクトリー">和田桜子</option>
-<option value="山崎夢羽" data-group="">山崎夢羽</option>
-<option value="林 仁愛" data-group="">林 仁愛</option>
