@@ -95,17 +95,33 @@
     font-size: .92em;
     line-height: 1.35;
   }
+  /* 名前の横の印。グループ色がないもの(事務所名など)は黒枠、
+     現役のグループ名は公式のグループ色で塗って白抜きにする */
   .sns-badge {
     display: inline-block;
     margin-left: .35em;
     padding: .05em .5em;
     font-size: .72em;
     font-weight: bold;
-    color: #fff;
-    background: var(--accent);
+    color: var(--group-on, #000);
+    background: var(--group, transparent);
+    border: 1px solid var(--group, #000);
     border-radius: 999px;
     vertical-align: middle;
   }
+  /* グループ色は公式サイトの CSS(helloproject.com と jp-r.co.jp で同一)の
+     --color-<グループ>-primary の値そのまま。見づらくても公式に合わせる。
+     data-group は兼任だと「Juice=Juice|こぶしファクトリー」のように先頭が現所属なので前方一致で見る */
+  .sns-card[data-bucket="genin"][data-group^="モーニング娘。"]     { --group: #d92c1b; --group-on: #fff; }
+  .sns-card[data-bucket="genin"][data-group^="アンジュルム"]       { --group: #1d91cd; --group-on: #fff; }
+  .sns-card[data-bucket="genin"][data-group^="Juice=Juice"]        { --group: #7263aa; --group-on: #fff; }
+  .sns-card[data-bucket="genin"][data-group^="つばきファクトリー"] { --group: #ef93bb; --group-on: #fff; }
+  .sns-card[data-bucket="genin"][data-group^="BEYOOOOONDS"]        { --group: #20a239; --group-on: #fff; }
+  .sns-card[data-bucket="genin"][data-group^="OCHA NORMA"]         { --group: #f1881a; --group-on: #fff; }
+  .sns-card[data-bucket="genin"][data-group^="ロージークロニクル"] { --group: #f5d11f; --group-on: #fff; }
+  .sns-card[data-bucket="genin"][data-group^="ハロプロ研修生"]     { --group: #92c75b; --group-on: #fff; }
+  /* 「ハロプロ研修生」にも前方一致するので、必ずその後ろに書く */
+  .sns-card[data-bucket="genin"][data-group^="ハロプロ研修生北海道"] { --group: #56b7c7; --group-on: #fff; }
 
   .sns-links {
     display: flex;
