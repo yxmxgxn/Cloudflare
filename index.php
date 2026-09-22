@@ -142,6 +142,10 @@
     <h2><a href="https://helloproject.com/" target="_blank" rel="noopener noreferrer">ハロー！プロジェクト</a></h2>
     <div class="card-grid index-items">
       <div class="card index-card">
+        <a class="index-link" href="/sns"><?= icon('link-brand', 'ic ic-20') ?>ハロプロ SNS一覧</a>
+        <p class="index-desc">ハロー！プロジェクトの現役メンバー・OGの公式SNS（X・Instagram・YouTube・TikTok・アメブロほか）をまとめた一覧です。名前での検索や、所属・SNSごとの絞り込みができます</p>
+      </div>
+      <div class="card index-card">
         <a class="index-link" href="/members_table"><?= icon('flower', 'ic ic-20') ?>ハロプロ卒業公演・デビュー・卒業日・在籍日数</a>
         <p class="index-desc">ハロープロジェクトのメンバーの卒業公演の場所・デビュー・卒業日・在籍日数をまとめです</p>
       </div>
