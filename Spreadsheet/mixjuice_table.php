@@ -1,4 +1,4 @@
-<!-- generated: 2026-09-21T21:31:42.979633+00:00 -->
+<!-- generated: 2026-09-22T20:43:40.056142+00:00 -->
 <tr data-selector="松永里愛"><td><a href="https://www.tbsradio.jp/articles/112336/" target="_blank" rel="noopener noreferrer">2026/09/20</a></td><td>Born This Way / レディー・ガガ</td><td>松永里愛</td><td>スーパースターをイメージする曲</td></tr>
 <tr data-selector="石山咲良"><td><a href="https://www.tbsradio.jp/articles/112336/" target="_blank" rel="noopener noreferrer">2026/09/20</a></td><td>troublemaker / 嵐</td><td>石山咲良</td><td>スーパースターをイメージする曲</td></tr>
 <tr data-selector="松永里愛&amp;石山咲良"><td><a href="https://www.tbsradio.jp/articles/112336/" target="_blank" rel="noopener noreferrer">2026/09/20</a></td><td>Goal～明日はあっちだよ～ / Juice＝Juice</td><td>松永里愛&amp;石山咲良</td><td>スーパースターをイメージする曲</td></tr>
