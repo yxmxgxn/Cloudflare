@@ -119,9 +119,6 @@
   .sns-card[data-bucket="genin"][data-group^="BEYOOOOONDS"]        { --group: #20a239; --group-on: #fff; }
   .sns-card[data-bucket="genin"][data-group^="OCHA NORMA"]         { --group: #f1881a; --group-on: #fff; }
   .sns-card[data-bucket="genin"][data-group^="ロージークロニクル"] { --group: #f5d11f; --group-on: #fff; }
-  .sns-card[data-bucket="genin"][data-group^="ハロプロ研修生"]     { --group: #92c75b; --group-on: #fff; }
-  /* 「ハロプロ研修生」にも前方一致するので、必ずその後ろに書く */
-  .sns-card[data-bucket="genin"][data-group^="ハロプロ研修生北海道"] { --group: #56b7c7; --group-on: #fff; }
 
   .sns-links {
     display: flex;
