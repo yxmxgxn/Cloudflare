@@ -76,7 +76,7 @@ jobs:
         run: |
           BROKEN=$(python -c "import json;print(json.load(open('stats.json'))['broken_total'])")
           TITLE="🔗 リンク切れレポート ($(TZ=Asia/Tokyo date +%Y-%m-%d))"
-          gh label create link-check --color AE8DBC --description "リンクチェックの自動レポート" 2>/dev/null || true
+          gh label create link-check --color 8C6BB8 --description "リンクチェックの自動レポート" 2>/dev/null || true
           ISSUE=$(gh issue list --label link-check --state open --limit 1 --json number --jq '.[0].number // empty')
 
           {

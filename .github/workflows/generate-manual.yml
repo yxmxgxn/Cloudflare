@@ -94,7 +94,7 @@ jobs:
           sync_issue() {
             REPORT=$1; LABEL=$2; TITLE=$3; WHAT=$4
             if [ ! -f "$REPORT" ]; then echo "interviewは今回未実行"; return; fi
-            gh label create "$LABEL" --color AE8DBC --description "$WHAT" 2>/dev/null || true
+            gh label create "$LABEL" --color 8C6BB8 --description "$WHAT" 2>/dev/null || true
             ISSUE=$(gh issue list --label "$LABEL" --state open --limit 1 --json number --jq '.[0].number // empty')
             if [ -s "$REPORT" ]; then
               if [ -z "$ISSUE" ]; then

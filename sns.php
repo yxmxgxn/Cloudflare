@@ -58,7 +58,7 @@
     border-radius: 6px;
   }
   #sns-controls input[type=text] { flex: 1 1 16em; }
-  #sns-controls select.is-active { font-weight: bold; border-color: #AE8DBC; }
+  #sns-controls select.is-active { font-weight: bold; border-color: var(--accent); }
   #sns-count { color: #666; font-size: .9em; }
 
   #sns-affil {
@@ -102,7 +102,7 @@
     font-size: .72em;
     font-weight: bold;
     color: #fff;
-    background: #AE8DBC;
+    background: var(--accent);
     border-radius: 999px;
     vertical-align: middle;
   }
@@ -124,7 +124,7 @@
     border: 1px solid #e2dbe7;
     border-radius: 999px;
   }
-  .sns-link:hover { background: #AE8DBC; border-color: #AE8DBC; color: #fff; }
+  .sns-link:hover { background: var(--accent); border-color: var(--accent); color: #fff; }
   .sns-icon-link { padding: .22em; line-height: 0; }
   .sns-ic { display: block; }
 
@@ -163,7 +163,7 @@
     border-top: 1px dashed #e2dbe7;
   }
   .sns-card.expanded .sns-archive-layer { display: flex; }
-  .sns-card.expanded .sns-arc-toggle { color: #AE8DBC; border-style: solid; }
+  .sns-card.expanded .sns-arc-toggle { color: var(--accent); border-style: solid; }
   .sns-archive { opacity: .5; }
 </style>
 

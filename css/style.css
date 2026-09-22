@@ -1,5 +1,11 @@
 @charset "UTF-8";
 
+/* サイトのアクセントカラー。紫はすべてこれを参照する(直書きしない)。
+   toolsサイト(tools.yxmxgxn.workers.dev)と同じ色 */
+:root {
+  --accent: #8C6BB8;
+}
+
 body {
   font-family: 'Noto Sans JP', sans-serif;
 }
@@ -25,7 +31,7 @@ a {
   cursor: pointer;
 }
 a:hover {
-  color: #C4A8ED;
+  color: var(--accent);
 }
 
 a img {
@@ -159,7 +165,7 @@ table {
 }
 
 .index-card .index-link:hover {
-  color: #AE8DBC;
+  color: var(--accent);
 }
 
 .index-card .index-desc {
@@ -242,8 +248,10 @@ main {
   white-space: nowrap;
 }
 
+/* 卒業公演一覧の宮本佳林の行。目立たせすぎないよう、アクセントカラーとは別に
+   ごく薄い紫(#8C6BB8 を白に1割混ぜた色)にする */
 #hp-members tr.karin {
-  background: #C4A8ED !important;
+  background: #F3F0F8 !important;
 }
 
 #hp-filter {
@@ -626,7 +634,7 @@ footer a {
 .share-buttons {
     text-align: center;
     padding: 32px 0;
-    border-top: 1px solid #AE8DBC; /* 上に細いラインを入れる */
+    border-top: 1px solid var(--accent); /* 上に細いラインを入れる */
 }
 
 .share-buttons p {
@@ -766,8 +774,8 @@ footer a {
 }
 
 #mv-lead.active {
-  background: #AE8DBC;
-  border-color: #AE8DBC;
+  background: var(--accent);
+  border-color: var(--accent);
   color: #fff;
 }
 
@@ -960,8 +968,8 @@ footer a {
 }
 
 #iv-date-toggle.is-active {
-  background: #AE8DBC;
-  border-color: #AE8DBC;
+  background: var(--accent);
+  border-color: var(--accent);
   color: #fff;
 }
 
@@ -1013,11 +1021,11 @@ footer a {
 .iv-card .iv-title a {
   color: inherit;
   text-decoration: none;
-  border-bottom: 1px solid #AE8DBC;
+  border-bottom: 1px solid var(--accent);
 }
 
 .iv-card .iv-title a:hover {
-  color: #AE8DBC;
+  color: var(--accent);
 }
 
 .iv-card .iv-sub {
@@ -1037,14 +1045,14 @@ footer a {
   color: inherit;
   text-align: left;
   cursor: pointer;
-  text-decoration: underline dotted #AE8DBC;
+  text-decoration: underline dotted var(--accent);
   text-underline-offset: 2px;
 }
 
 .iv-card .iv-feature:hover,
 .iv-card .iv-media:hover,
 .iv-card .iv-member:hover {
-  color: #AE8DBC;
+  color: var(--accent);
 }
 
 /* 絞り込み中の表示(「連載・企画：○○ 解除」「媒体：○○ 解除」) */
@@ -1068,7 +1076,7 @@ footer a {
 }
 
 #iv-chips b {
-  background: #AE8DBC;
+  background: var(--accent);
   color: #fff;
   padding: 2px 8px;
   border-radius: 4px;
@@ -1159,11 +1167,11 @@ footer a {
 .gl-card .gl-title a {
   color: inherit;
   text-decoration: none;
-  border-bottom: 1px solid #AE8DBC;
+  border-bottom: 1px solid var(--accent);
 }
 
 .gl-card .gl-title a:hover {
-  color: #AE8DBC;
+  color: var(--accent);
 }
 
 .gl-card .gl-members {
@@ -1177,11 +1185,11 @@ footer a {
 
 .gl-card .gl-name {
   cursor: pointer;
-  border-bottom: 1px dotted #AE8DBC;
+  border-bottom: 1px dotted var(--accent);
 }
 
 .gl-card .gl-name:hover {
-  color: #AE8DBC;
+  color: var(--accent);
 }
 
 .gl-card .gl-group {
@@ -1282,7 +1290,7 @@ footer a {
   display: inline-block;
   margin-top: 0.75em;
   padding: 8px 16px;
-  background: #AE8DBC;
+  background: var(--accent);
   border-radius: 4px;
   color: #fff !important;
   text-decoration: none;
@@ -1300,7 +1308,7 @@ footer a {
 .ctx-bml-link {
   display: inline-block;
   padding: 8px 16px;
-  background: #AE8DBC;
+  background: var(--accent);
   border-radius: 4px;
   color: #fff !important;
   text-decoration: none;
@@ -1400,8 +1408,8 @@ footer a {
 }
 
 #opo-reset:hover {
-  border-color: #AE8DBC;
-  color: #AE8DBC;
+  border-color: var(--accent);
+  color: var(--accent);
 }
 
 /* .card の display:flex がUA既定の [hidden]{display:none} に勝ってしまうので、
@@ -1437,7 +1445,7 @@ footer a {
 }
 
 .opo-card .opo-name:hover {
-  color: #AE8DBC;
+  color: var(--accent);
 }
 
 .opo-card .opo-group {
@@ -1529,11 +1537,11 @@ footer a {
 
 .ck-card .ck-name {
   cursor: pointer;
-  border-bottom: 1px dotted #AE8DBC;
+  border-bottom: 1px dotted var(--accent);
 }
 
 .ck-card .ck-name:hover {
-  color: #AE8DBC;
+  color: var(--accent);
 }
 
 .ck-card .ck-cook {
@@ -1557,7 +1565,7 @@ footer a {
 
 .ck-card .ck-tags {
   font-size: 11px;
-  color: #AE8DBC;
+  color: var(--accent);
   margin-left: 6px;
 }
 
@@ -1674,7 +1682,7 @@ footer a {
 }
 
 .eyecatch-table tbody tr:hover td {
-  background: #f3eef6; /* アクセント #AE8DBC の薄い版 */
+  background: #f3eef6; /* アクセント var(--accent) の薄い版 */
 }
 
 /* ===== 匿名フィードバック(フッター) ===== */
@@ -1686,7 +1694,7 @@ footer a {
 
 .fb summary {
   cursor: pointer;
-  color: #AE8DBC;
+  color: var(--accent);
   font-size: 14px;
   text-align: center;
   padding: 6px;
@@ -1723,8 +1731,8 @@ footer a {
 }
 
 .fb-kind.is-on {
-  background: #AE8DBC;
-  border-color: #AE8DBC;
+  background: var(--accent);
+  border-color: var(--accent);
   color: #fff;
 }
 
@@ -1751,7 +1759,7 @@ footer a {
 }
 
 .fb-send {
-  background: #AE8DBC;
+  background: var(--accent);
   color: #fff;
   border: none;
   border-radius: 4px;
@@ -1773,7 +1781,7 @@ footer a {
 .fb-thanks {
   margin: 0;
   font-size: 14px;
-  color: #AE8DBC;
+  color: var(--accent);
   text-align: center;
 }
 
@@ -1816,8 +1824,8 @@ footer a {
 }
 
 #vc-reset:hover {
-  border-color: #AE8DBC;
-  color: #AE8DBC;
+  border-color: var(--accent);
+  color: var(--accent);
 }
 
 #vc-count {
@@ -1890,16 +1898,16 @@ footer a {
 }
 
 .vc-who:hover {
-  color: #AE8DBC;
+  color: var(--accent);
 }
 
 .vc-song {
-  border-bottom: 1px solid #AE8DBC;
+  border-bottom: 1px solid var(--accent);
   text-decoration: none;
 }
 
 .vc-song:hover {
-  color: #AE8DBC;
+  color: var(--accent);
 }
 
 .vc-vocals {
@@ -1971,7 +1979,7 @@ footer a {
   margin: 1em 0 0;
   padding: 10px 14px;
   background: #f7f3f9;
-  border-left: 3px solid #AE8DBC;
+  border-left: 3px solid var(--accent);
   font-size: 13px;
 }
 
@@ -2025,12 +2033,12 @@ footer a {
 }
 
 .vc-guest-link {
-  border-bottom: 1px dotted #AE8DBC;
+  border-bottom: 1px dotted var(--accent);
   cursor: pointer;
 }
 
 .vc-guest-link:hover {
-  color: #AE8DBC;
+  color: var(--accent);
 }
 
 .vc-guest-note {
@@ -2091,8 +2099,8 @@ footer a {
 }
 
 #hs-reset:hover {
-  border-color: #AE8DBC;
-  color: #AE8DBC;
+  border-color: var(--accent);
+  color: var(--accent);
 }
 
 #hs-arc {
@@ -2104,12 +2112,12 @@ footer a {
 }
 
 #hs-arc:hover {
-  border-color: #AE8DBC;
-  color: #AE8DBC;
+  border-color: var(--accent);
+  color: var(--accent);
 }
 
 #hs-arc[aria-pressed="true"] {
-  border-color: #AE8DBC;
+  border-color: var(--accent);
   background: #F4EEF7;
   color: #7A5A88;
 }
@@ -2174,10 +2182,10 @@ footer a {
   width: fit-content;
   margin-top: 4px;
   padding: 0 5px;
-  border: 1px solid #AE8DBC;
+  border: 1px solid var(--accent);
   border-radius: 3px;
   font-size: 11px;
-  color: #AE8DBC;
+  color: var(--accent);
   vertical-align: 1px;
 }
 
@@ -2213,7 +2221,7 @@ footer a {
 }
 
 .hs-name:hover {
-  color: #AE8DBC;
+  color: var(--accent);
   text-decoration: underline;
 }
 
@@ -2257,8 +2265,8 @@ footer a {
 
 .hs-blog:hover,
 .hs-arc:hover {
-  border-color: #AE8DBC;
-  color: #AE8DBC;
+  border-color: var(--accent);
+  color: var(--accent);
 }
 
 /* ブログごと消えている回。魚拓しか残っていないことが分かるようにしておく */
@@ -2381,7 +2389,7 @@ footer a {
 .dc-about blockquote {
   margin: 10px 0 0;
   padding-left: 12px;
-  border-left: 3px solid #AE8DBC;
+  border-left: 3px solid var(--accent);
   color: #444;
   line-height: 1.8;
 }
@@ -2668,7 +2676,7 @@ footer a {
 }
 
 .dc-post-link:hover {
-  color: #AE8DBC;
+  color: var(--accent);
 }
 
 .dc-post-date {
@@ -2738,7 +2746,7 @@ footer a {
 
 .dc-tiktok-play:hover {
   background: #f1ecf4;
-  border-color: #AE8DBC;
+  border-color: var(--accent);
 }
 
 .dc-tiktok-icon {
@@ -2891,7 +2899,7 @@ footer a {
   margin-right: 6px;
   padding: 0 6px;
   border-radius: 4px;
-  background: #AE8DBC;
+  background: var(--accent);
   color: #fff;
   font-size: 12px;
   font-weight: bold;

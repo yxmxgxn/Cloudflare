@@ -118,7 +118,7 @@ async function notifyDiscord(webhook, row) {
       embeds: [{
         title: FB_LABEL[row.kind] || "種別なし",
         description: body,
-        color: 0xae8dbc,
+        color: 0x8c6bb8,
         fields: [{ name: "ページ", value: row.page_url || "(不明)" }],
         timestamp: row.created_at,
       }],
@@ -204,14 +204,15 @@ function fbAdminHtml(rows, token) {
 <meta name="robots" content="noindex,nofollow">
 <title>フィードバック (${unread})</title>
 <style>
+:root{--accent:#8C6BB8}
 body{font-family:system-ui,sans-serif;max-width:760px;margin:0 auto;padding:16px;color:#333;line-height:1.7}
-h1{font-size:18px;border-bottom:2px solid #AE8DBC;padding-bottom:8px}
+h1{font-size:18px;border-bottom:2px solid var(--accent);padding-bottom:8px}
 ul{list-style:none;padding:0}
 li{border:1px solid #ddd;border-radius:6px;padding:12px;margin-bottom:12px}
-li.unread{border-left:4px solid #AE8DBC;background:#faf8fc}
+li.unread{border-left:4px solid var(--accent);background:#faf8fc}
 li.read{opacity:.55}
 .meta{font-size:12px;color:#666;display:flex;gap:12px;flex-wrap:wrap;align-items:center}
-.meta b{color:#AE8DBC}
+.meta b{color:var(--accent)}
 p{white-space:pre-wrap;word-break:break-word;margin:8px 0}
 button{font-size:12px;padding:4px 10px;margin-right:6px;cursor:pointer;border:1px solid #bbb;border-radius:4px;background:#fff}
 </style></head><body>

@@ -85,10 +85,10 @@
   },
   "article": {
     "vb": "0 0 64 44",
-    "svg": "<rect width=\"64\" height=\"44\" rx=\"6\" fill=\"#AE8DBC\"/><g fill=\"white\"><rect x=\"12\" y=\"12\" width=\"40\" height=\"4\" rx=\"2\"/><rect x=\"12\" y=\"21\" width=\"40\" height=\"4\" rx=\"2\"/><rect x=\"12\" y=\"30\" width=\"26\" height=\"4\" rx=\"2\"/></g>"
+    "svg": "<rect width=\"64\" height=\"44\" rx=\"6\" fill=\"#8C6BB8\"/><g fill=\"white\"><rect x=\"12\" y=\"12\" width=\"40\" height=\"4\" rx=\"2\"/><rect x=\"12\" y=\"21\" width=\"40\" height=\"4\" rx=\"2\"/><rect x=\"12\" y=\"30\" width=\"26\" height=\"4\" rx=\"2\"/></g>"
   },
   "mic": {
     "vb": "0 0 24 24",
-    "svg": "<rect x=\"9\" y=\"2\" width=\"6\" height=\"12\" rx=\"3\" fill=\"#AE8DBC\"/><path d=\"M5 11a7 7 0 0 0 14 0\" fill=\"none\" stroke=\"#AE8DBC\" stroke-width=\"2\" stroke-linecap=\"round\"/><path d=\"M12 18v4M8 22h8\" fill=\"none\" stroke=\"#AE8DBC\" stroke-width=\"2\" stroke-linecap=\"round\"/>"
+    "svg": "<rect x=\"9\" y=\"2\" width=\"6\" height=\"12\" rx=\"3\" fill=\"#8C6BB8\"/><path d=\"M5 11a7 7 0 0 0 14 0\" fill=\"none\" stroke=\"#8C6BB8\" stroke-width=\"2\" stroke-linecap=\"round\"/><path d=\"M12 18v4M8 22h8\" fill=\"none\" stroke=\"#8C6BB8\" stroke-width=\"2\" stroke-linecap=\"round\"/>"
   }
 }
