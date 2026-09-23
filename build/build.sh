@@ -108,6 +108,14 @@ grep -rl --include='*.html' --include='*.xml' --include='*.txt' -F "$OLD_URL" "$
   echo "/karinsong.php       /YouTube/karin-song   301"
   echo "/index.php / 301"
   echo "/index.html / 301"
+  # 改名したディレクトリ(URLに = が入ると %3D にエスケープされるため)
+  # .php付きの方を先に書く(先に一致したルールが使われるので、:splat より前に置く)
+  while IFS= read -r p; do
+    case "$p" in
+      JuiceJuice/*) echo "/Juice=Juice/${p##*/}.php /$p 301" ;;
+    esac
+  done <<< "$pages"
+  echo "/Juice=Juice/* /JuiceJuice/:splat 301"
   # 改名したページ(実態に合わせて「インタビュー」→「インタビュー・Web記事」へ)
   echo "/hello-interview     /hello-articles       301"
   echo "/hello-interview.php /hello-articles       301"
@@ -121,7 +129,7 @@ grep -rl --include='*.html' --include='*.xml' --include='*.txt' -F "$OLD_URL" "$
   # ディレクトリ整理で移動したページ: 旧フラットURL → 新URL(.php付きも)
   while IFS= read -r p; do
     case "$p" in
-      YouTube/*|Radio/*|Juice=Juice/*|X/*|instagram/*|Tool/*)
+      YouTube/*|Radio/*|JuiceJuice/*|X/*|instagram/*|Tool/*)
         base="${p##*/}"
         echo "/$base /$p 301"
         echo "/$base.php /$p 301"

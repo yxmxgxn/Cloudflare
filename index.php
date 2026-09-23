@@ -30,7 +30,7 @@
         <p class="index-desc">宮本佳林さんがユニットで歌っている公式ライブ映像のまとめです</p>
       </div>
       <div class="card index-card">
-        <a class="index-link" href="/Juice=Juice/juice_live-karin"><?= icon('youtube-brand', 'ic ic-20') ?>宮本佳林 Juice=Juiceライブ映像まとめ</a>
+        <a class="index-link" href="/JuiceJuice/juice_live-karin"><?= icon('youtube-brand', 'ic ic-20') ?>宮本佳林 Juice=Juiceライブ映像まとめ</a>
         <p class="index-desc">宮本佳林さんのJuice=Juice時代のライブの映像をまとめました</p>
       </div>
       <div class="card index-card">
@@ -204,7 +204,7 @@
     <h2><a href="https://helloproject.com/juicejuice/" target="_blank" rel="noopener noreferrer">Juice=Juice</a></h2>
     <div class="card-grid index-items">
       <div class="card index-card">
-        <a class="index-link" href="/Juice=Juice/juicejuice-song"><?= icon('disc', 'ic ic-20') ?>Juice=Juice 楽曲まとめ</a>
+        <a class="index-link" href="/JuiceJuice/juicejuice-song"><?= icon('disc', 'ic ic-20') ?>Juice=Juice 楽曲まとめ</a>
         <p class="index-desc">発売されているJuice=Juiceの曲をまとめました</p>
       </div>
       <div class="card index-card">
@@ -212,7 +212,7 @@
         <p class="index-desc">TBSラジオ 宮本佳林 Music Pallet♪のJuice=Juice 松永里愛のMIX=Juiceのコーナーで選曲された曲をまとめです</p>
       </div>
       <div class="card index-card">
-        <a class="index-link" href="/Juice=Juice/juice-documentary"><?= icon('youtube-brand', 'ic ic-20') ?>Juice=Juice 密着映像まとめ</a>
+        <a class="index-link" href="/JuiceJuice/juice-documentary"><?= icon('youtube-brand', 'ic ic-20') ?>Juice=Juice 密着映像まとめ</a>
         <p class="index-desc">Juice=Juiceの公式チャンネルの密着映像をまとめです</p>
       </div>
       <div class="card index-card">
