@@ -2917,6 +2917,7 @@ footer a {
 }
 
 .sc-filter select,
+.sc-filter input,
 .sc-filter button {
   padding: 5px 8px;
   border: 1px solid #ccc;
