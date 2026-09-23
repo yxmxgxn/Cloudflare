@@ -2828,6 +2828,160 @@ footer a {
   margin: auto 0 0;
 }
 
+/* .card の display:flex がUA既定の [hidden]{display:none} に勝ってしまうので、
+   絞り込みで hidden を付けたカードを明示的に消す */
+.vc-card[hidden] {
+  display: none;
+}
+
+/* 曲カード(song_cards): 同じ曲の映像の一覧。押すとカード上部で再生する */
+.sc-card .sc-list {
+  list-style: none;
+  margin: 0;
+  padding: 6px 0 0;
+  border-top: 1px solid #eee;
+}
+
+.sc-card .sc-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 6px;
+  margin: 0;
+  border-radius: 6px;
+}
+
+.sc-card .sc-item.is-current {
+  background: #f4eff7;
+}
+
+.sc-card .sc-pick {
+  flex: 1;
+  min-width: 0;
+  position: relative;
+  padding: 5px 6px 5px 22px;
+  border: none;
+  background: none;
+  text-align: left;
+  font: inherit;
+  font-size: 13px;
+  line-height: 1.45;
+  color: inherit;
+  cursor: pointer;
+}
+
+.sc-card .sc-pick::before {
+  content: "▶";
+  position: absolute;
+  left: 7px;
+  top: 5px;
+  font-size: 10px;
+  line-height: 19px;
+  color: #bbb;
+}
+
+.sc-card .sc-label,
+.sc-card .sc-note {
+  display: block;
+}
+
+.sc-card .sc-item.is-current .sc-pick::before,
+.sc-card .sc-pick:hover::before {
+  color: #AE8DBC;
+}
+
+.sc-card .sc-pick:hover .sc-label {
+  color: #AE8DBC;
+}
+
+.sc-card .sc-note {
+  font-size: 12px;
+  color: #888;
+}
+
+.sc-card .sc-yt {
+  flex: none;
+  padding: 5px 2px 0 0;
+}
+
+.sc-card .sc-yt .ic {
+  margin-right: 0;
+}
+
+/* 曲カードの絞り込み */
+.sc-filter {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  margin-top: 1em;
+}
+
+.sc-filter select,
+.sc-filter button {
+  padding: 5px 8px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  background: #fff;
+  font: inherit;
+  font-size: 13px;
+}
+
+.sc-filter select.is-active {
+  border-color: #AE8DBC;
+  background: #f4eff7;
+}
+
+.sc-filter button {
+  cursor: pointer;
+}
+
+.sc-filter button:hover {
+  border-color: #AE8DBC;
+  color: #AE8DBC;
+}
+
+.sc-count {
+  font-size: 13px;
+  color: #666;
+}
+
+/* 曲カードの目次(アルバム・シングルへのジャンプ) */
+.sc-toc ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin: 1em 0 0;
+}
+
+.sc-toc li {
+  margin: 0;
+}
+
+.sc-toc a {
+  display: inline-block;
+  padding: 3px 10px;
+  border: 1px solid #ddd;
+  border-radius: 999px;
+  background: #fff;
+  font-size: 13px;
+  text-decoration: none;
+}
+
+.sc-toc a:hover {
+  border-color: #AE8DBC;
+  color: #AE8DBC;
+}
+
+/* 曲カードのセクション見出し(アルバム・シングルごと) */
+.sc-section {
+  margin-top: 2em;
+}
+
+.sc-section-desc {
+  font-size: 14px;
+  color: #555;
+}
+
 /* ===== りかワニ紅白歌合戦 ===== */
 
 .rw-score {
