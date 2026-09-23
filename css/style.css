@@ -1097,6 +1097,10 @@ footer a {
   display: none;
 }
 
+#interview-cards.iv-paged .iv-card.iv-shown {
+  display: flex;   /* .card と同じ */
+}
+
 #iv-more-wrap {
   display: flex;
   gap: 10px;

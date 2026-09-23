@@ -1,4 +1,4 @@
-<!-- generated: 2026-09-21T13:58:06.556509+00:00 -->
+<!-- generated: 2026-09-23T12:53:15.524027+00:00 -->
 <option value="相川茉穂" data-group="アンジュルム">相川茉穂</option>
 <option value="秋山眞緒" data-group="つばきファクトリー">秋山眞緒</option>
 <option value="浅倉樹々" data-group="つばきファクトリー">浅倉樹々</option>
@@ -59,6 +59,7 @@
 <option value="小湊美和" data-group="太陽とシスコムーン">小湊美和</option>
 <option value="後藤花" data-group="アンジュルム">後藤花</option>
 <option value="後藤真希" data-group="モーニング娘。">後藤真希</option>
+<option value="斉藤瞳" data-group="メロン記念日">斉藤瞳</option>
 <option value="斉藤円香" data-group="OCHA NORMA">斉藤円香</option>
 <option value="櫻井梨央" data-group="モーニング娘。">櫻井梨央</option>
 <option value="佐々木莉佳子" data-group="アンジュルム">佐々木莉佳子</option>

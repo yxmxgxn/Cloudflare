@@ -58,7 +58,7 @@ done <<< "$pages"
 echo "rendered $count pages"
 
 # ---- 静的アセット ----
-cp -r css img Timeline "$OUT/"
+cp -r css img Timeline data "$OUT/"
 cp robot.txt "$OUT/robots.txt"   # 正しいファイル名に直して配置
 
 # ---- sitemap.xml 生成(旧sitemap.ymlのロジックを移植: common/news/404を除外) ----

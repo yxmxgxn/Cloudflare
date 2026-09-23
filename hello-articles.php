@@ -11,11 +11,12 @@
   各カードは、掲載日とタイトル（記事リンク）、媒体・連載名、メンバーで構成されています。</p>
   <p>グループ・メンバー名での絞り込み、掲載日・タイトルでの並び替え、記事本文・タイトル・連載名・メンバー名を対象にしたキーワード検索ができます。カードの連載名・媒体名・メンバー名を押すと、それで絞り込めます。</p>
   <p>元記事が読めなくなったものは、右下のWeb Archiveからアーカイブを開けます。</p>
-  <p>最初は掲載日が新しい20件だけを表示しています。絞り込み・検索をすると、その結果を同じく20件ずつ表示します。</p>
+  <p>このページを開いた時点では、掲載日が新しい20件だけを読み込んでいます。グループ・メンバーを選ぶか、検索ワードを入れてEnterを押すと、全<?= trim(@file_get_contents($_SERVER['DOCUMENT_ROOT'] . '/Generated/interview_total.txt')) ?: '' ?>件から絞り込んで20件ずつ表示します。</p>
   <p>2026/09/14 宮本佳林さん・工藤遥さん・OCHA NORMA・ロージークロニクルを中心に集めています。</p>
   <p>管理人の独断と偏見で集めているので、取捨選択になっていることをご容赦ください</p>
 <div id="interview-controls">
-  <input type="text" id="iv-search" placeholder="本文・タイトル・連載名・メンバー名を検索…" oninput="ivSearchInput()">
+  <input type="text" id="iv-search" placeholder="本文・タイトル・連載名・メンバー名を検索（Enterで実行）" onkeydown="ivSearchKey(event)">
+  <button type="button" id="iv-search-go" onclick="ivSearch()">検索</button>
   <select id="iv-group" onchange="ivGroupChange()">
     <option value="">グループ</option>
     <?php include $_SERVER['DOCUMENT_ROOT'] . '/Spreadsheet/interview_groups.php'; ?>
@@ -41,7 +42,7 @@
   <button type="button" id="iv-date-clear" onclick="ivDateClear()">クリア</button>
 </div>
 <div id="iv-chips" hidden></div>
-<div id="interview-cards" class="card-grid">
+<div id="interview-cards" class="card-grid" data-total="<?= trim(@file_get_contents($_SERVER['DOCUMENT_ROOT'] . '/Generated/interview_total.txt')) ?: '0' ?>">
   <?php include $_SERVER['DOCUMENT_ROOT'] . '/Spreadsheet/interview_cards.php'; ?>
 </div>
 <div id="iv-more-wrap" hidden>
@@ -54,9 +55,17 @@
 <script>
 (function() {
   var container = document.getElementById('interview-cards');
-  // JSが動く前に1200件が一瞬描かれないよう、最初に全部隠す(表示する分だけ後で戻す)
-  container.classList.add('iv-paged');
-  var allCards = Array.from(container.querySelectorAll('.iv-card')).map(function(el) {
+  var allCards = [];
+  // HTMLに入っているのは新着20件だけ。残りは絞り込み・検索・「次の20件」で初めて読む
+  var loaded = false;      // 全件JSONを読み込み済みか
+  var loading = null;      // 読み込み中のPromise(二重fetch防止)
+
+  function scanCards() {
+    allCards = Array.prototype.map.call(container.querySelectorAll('.iv-card'), cardInfo);
+    initDateRange();
+  }
+
+  function cardInfo(el) {
     return {
       el: el,
       id: el.getAttribute('data-id') || '',
@@ -70,26 +79,46 @@
       activeNames: (el.getAttribute('data-active-names') || '').split('|'),
       search: (el.getAttribute('data-search') || '').toLowerCase(),
     };
-  });
+  }
+
+  // 全件(data/interview-cards.json)を一度だけ読み込んでカードを差し替える
+  function ensureAll() {
+    if (loaded) return Promise.resolve();
+    if (loading) return loading;
+    var count = document.getElementById('interview-count');
+    count.textContent = '読み込み中…';
+    loading = fetch('/data/interview-cards.json')
+      .then(function(r) { return r.json(); })
+      .then(function(data) {
+        container.innerHTML = (data.cards || []).join('');
+        container.classList.add('iv-paged');   // ここから先は表示分だけ見せる
+        loaded = true;
+        scanCards();
+      })
+      .catch(function() {
+        count.textContent = '記事一覧を読み込めませんでした';
+      })
+      .then(function() { loading = null; });
+    return loading;
+  }
 
   // 全文検索の結果(記事IDの集合)。null = 検索未適用(サーバ絞り込み無効)
   var serverIds = null;
   var searchSeq = 0;   // 古いレスポンスを無視するためのトークン
-  var searchTimer = null;
   // カードの連載名・媒体名を押したときの絞り込み(値の完全一致)。'' = 無効
   var chipFilters = { feature: '', media: '' };
   var CHIP_LABEL = { feature: '連載・企画', media: '媒体' };
 
-  // 入力のたびにデバウンスしてから全文検索を叩く
-  function ivSearchInput() {
-    clearTimeout(searchTimer);
-    searchTimer = setTimeout(ivSearch, 250);
+  // 検索はEnter(または検索ボタン)で実行する。入力のたびには走らせない
+  function ivSearchKey(e) {
+    if (e.key === 'Enter') { e.preventDefault(); ivSearch(); }
   }
 
   function ivSearch() {
     var q = document.getElementById('iv-search').value.trim();
     if (q.length < 2) { serverIds = null; ivFilter(); return; }
     var mySeq = ++searchSeq;
+    ensureAll();
     fetch('/api/interview-search?q=' + encodeURIComponent(q))
       .then(function(r) { return r.json(); })
       .then(function(data) {
@@ -119,17 +148,17 @@
 
   // lastFiltered の先頭 shown 件だけを表示する
   function ivRender() {
-    allCards.forEach(function(c) { c.el.style.display = 'none'; });
+    allCards.forEach(function(c) { c.el.classList.remove('iv-shown'); });
     var view = lastFiltered.slice(0, shown);
     view.forEach(function(c) {
-      c.el.style.display = '';
+      c.el.classList.add('iv-shown');
       container.appendChild(c.el);
     });
 
     var total = lastFiltered.length;
     document.getElementById('interview-count').textContent =
-      total ? view.length + ' 件を表示 / ' + total + ' 件中（全' + allCards.length + ' 件）'
-            : '0 件 / 全' + allCards.length + ' 件';
+      total ? view.length + ' 件を表示 / ' + total + ' 件中'
+            : '該当なし / 全' + allCards.length + ' 件';
 
     var rest = total - view.length;
     var wrap = document.getElementById('iv-more-wrap');
@@ -143,16 +172,28 @@
   }
 
   function ivMore() {
+    if (!loaded) {   // 初期表示(新着20件)からの「次」は、まず全件を読み込む
+      ensureAll().then(function() { ivApply(); shown = PAGE * 2; ivRender(); });
+      return;
+    }
     shown += PAGE;
     ivRender();
   }
 
   function ivMoreAll() {
-    shown = lastFiltered.length;
-    ivRender();
+    ensureAll().then(function() {
+      if (!lastFiltered.length) ivApply();
+      shown = lastFiltered.length;
+      ivRender();
+    });
   }
 
+  // 操作の入口。全件をまだ読んでいなければ先に読み込む
   function ivFilter() {
+    ensureAll().then(ivApply);
+  }
+
+  function ivApply() {
     var grFilter = document.getElementById('iv-group').value;
     var nmFilter = document.getElementById('iv-name').value;
     var sort = document.getElementById('iv-sort').value;
@@ -270,7 +311,7 @@
   function ivOpenAll() {
     var urls = [];
     allCards.forEach(function(c) {
-      if (c.el.style.display === 'none') return;      // 非表示は対象外
+      if (loaded && !c.el.classList.contains('iv-shown')) return;   // 表示中のものだけ
       // 元記事へのリンク。元記事が読めないカードは魚拓のリンク
       var a = c.el.querySelector('.iv-title a') || c.el.querySelector('.iv-arc a');
       if (a && a.href) urls.push(a.href);             // どちらも無い記事はスキップ
@@ -315,7 +356,7 @@
   }
 
   // カレンダーの選択可能範囲をデータの最小/最大日に合わせる
-  (function initDateRange() {
+  function initDateRange() {
     var dates = allCards.map(function(c) { return c.date; })
                         .filter(function(d) { return d; }).sort();
     if (!dates.length) return;
@@ -324,12 +365,21 @@
       var el = document.getElementById(id);
       el.min = lo; el.max = hi;
     });
-  })();
+  }
 
-  ivFilter();
+  // 初期表示: HTMLに入っている新着20件をそのまま見せるだけ(全件は読まない)
+  var TOTAL = parseInt(container.getAttribute('data-total') || '0', 10);
+  scanCards();
+  document.getElementById('interview-count').textContent =
+    '新着 ' + allCards.length + ' 件を表示 / 全' + (TOTAL || allCards.length) + ' 件';
+  document.getElementById('iv-more-wrap').hidden = false;
+  document.getElementById('iv-more').textContent = '次の' + PAGE + '件を表示';
+  document.getElementById('iv-more-all').textContent = '残りをすべて表示';
+
   window.ivFilter = ivFilter;
   window.ivGroupChange = ivGroupChange;
-  window.ivSearchInput = ivSearchInput;
+  window.ivSearch = ivSearch;
+  window.ivSearchKey = ivSearchKey;
   window.ivDateToggle = ivDateToggle;
   window.ivDateClear = ivDateClear;
   window.ivOpenAll = ivOpenAll;

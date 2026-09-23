@@ -10,6 +10,7 @@ PHPインクルード用のカード・フィルタ選択肢フラグメント�
 import csv
 import html
 import io
+import json
 import os
 import re
 import unicodedata
@@ -43,6 +44,10 @@ OUTPUT_CARDS = REPO_ROOT / "Spreadsheet" / "interview_cards.php"
 OUTPUT_GROUPS = REPO_ROOT / "Spreadsheet" / "interview_groups.php"
 OUTPUT_NAMES = REPO_ROOT / "Spreadsheet" / "interview_names.php"
 OUTPUT_GENERATED = REPO_ROOT / "Generated" / "interview_generated.php"
+# 全カードのHTML(絞り込み・検索をした時だけ読む)。build.sh が public/ にコピーする
+OUTPUT_CARDS_JSON = REPO_ROOT / "data" / "interview-cards.json"
+OUTPUT_TOTAL = REPO_ROOT / "Generated" / "interview_total.txt"
+FIRST_CARDS = 20   # ページのHTMLに直接入れる新着カードの数
 
 
 def fetch_csv(gid: str) -> list[dict]:
@@ -235,7 +240,9 @@ def build_members_block(names: list[str], groups_display: list[str]) -> str:
 
 
 def build_cards(articles: list[dict], members_by_id: dict, master: dict,
-                domain: dict, unmatched: dict, member_order: dict) -> str:
+                domain: dict, unmatched: dict, member_order: dict) -> list[tuple[str, str]]:
+    """カードのHTMLを (掲載日YYYY-MM-DD, HTML) の一覧で返す。
+    ページに埋め込むのは新着分だけで、残りはJSONにして必要になった時だけ読ませる。"""
     cards = []
     for a in articles:
         aid = (a.get("ID") or "").strip()
@@ -315,7 +322,7 @@ def build_cards(articles: list[dict], members_by_id: dict, master: dict,
         search = " ".join([a.get("Title") or "", media_raw,
                            a.get("Feature") or "", " ".join(names)])
 
-        cards.append(
+        cards.append((date_norm,
             f'<div class="card iv-card" data-id="{esc(aid)}" data-date="{date_sort}" data-title="{title}"'
             f' data-feature="{feature}" data-media="{media}"'
             f' data-groups="{esc("|".join(dict.fromkeys(all_groups)))}"'
@@ -325,8 +332,8 @@ def build_cards(articles: list[dict], members_by_id: dict, master: dict,
             f' data-search="{esc(search)}">'
             f"{head}{sub}{members_html}{arc}"
             "</div>"
-        )
-    return "\n".join(cards)
+        ))
+    return cards
 
 
 def build_group_options(groups: list[str]) -> str:
@@ -379,15 +386,26 @@ def main():
 
     OUTPUT_GENERATED.parent.mkdir(parents=True, exist_ok=True)
     OUTPUT_CARDS.parent.mkdir(parents=True, exist_ok=True)
+    cards = build_cards(articles, members_by_id, master, domain, unmatched, fetch_member_order())
+    # ページに直接入れるのは掲載日が新しい順に FIRST_CARDS 件だけ。
+    # 1200件をHTMLに全部入れると、来た人にもクローラにも「全部載っている一覧」を読ませることになるため。
+    newest = [html for _, html in sorted(cards, key=lambda c: c[0], reverse=True)[:FIRST_CARDS]]
     with open(OUTPUT_CARDS, "w", encoding="utf-8") as f:
-        f.write(stamp + build_cards(articles, members_by_id, master, domain, unmatched,
-                                    fetch_member_order()) + "\n")
+        f.write(stamp + "\n".join(newest) + "\n")
+    # 残り(=全件)は絞り込み・検索をした時だけ読み込むJSONへ
+    OUTPUT_CARDS_JSON.parent.mkdir(parents=True, exist_ok=True)
+    with open(OUTPUT_CARDS_JSON, "w", encoding="utf-8") as f:
+        json.dump({"generated": datetime.now(timezone.utc).isoformat(),
+                   "cards": [html for _, html in cards]}, f, ensure_ascii=False, separators=(",", ":"))
     with open(OUTPUT_GROUPS, "w", encoding="utf-8") as f:
         f.write(stamp + build_group_options(groups) + "\n")
     with open(OUTPUT_NAMES, "w", encoding="utf-8") as f:
         f.write(stamp + build_name_options(names_sorted, master) + "\n")
     with open(OUTPUT_GENERATED, "w", encoding="utf-8") as f:
         f.write(f'<p class="last-update">データ取得日：{generated}</p>\n')
+    # 総件数はページ側が「全◯件」と出すのに使う(HTMLにはカードが20件しか無いので数えられない)
+    with open(OUTPUT_TOTAL, "w", encoding="utf-8") as f:
+        f.write(f"{len(cards)}")
 
     warn_missing_members(
         sorted(n for n in name_set if n not in master),
