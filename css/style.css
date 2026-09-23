@@ -1092,6 +1092,40 @@ footer a {
   border-radius: 4px;
 }
 
+/* 1200件超を一度に描くと重いので、JSが表示する分だけ display を戻す */
+#interview-cards.iv-paged .iv-card {
+  display: none;
+}
+
+#iv-more-wrap {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin: 16px 0 8px;
+}
+
+#iv-more-wrap[hidden] {
+  display: none;
+}
+
+#iv-more-wrap button {
+  padding: 10px 20px;
+  border: 1px solid #ccc;
+  background: #fff;
+  cursor: pointer;
+  font-size: 15px;
+  border-radius: 6px;
+}
+
+#iv-more-wrap button:hover {
+  border-color: var(--accent);
+}
+
+#iv-more-wrap button[hidden] {
+  display: none;
+}
+
 .iv-card .iv-members {
   font-size: 13px;
   margin: 2px 0 0;

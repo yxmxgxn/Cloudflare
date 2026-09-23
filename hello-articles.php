@@ -11,6 +11,7 @@
   各カードは、掲載日とタイトル（記事リンク）、媒体・連載名、メンバーで構成されています。</p>
   <p>グループ・メンバー名での絞り込み、掲載日・タイトルでの並び替え、記事本文・タイトル・連載名・メンバー名を対象にしたキーワード検索ができます。カードの連載名・媒体名・メンバー名を押すと、それで絞り込めます。</p>
   <p>元記事が読めなくなったものは、右下のWeb Archiveからアーカイブを開けます。</p>
+  <p>最初は掲載日が新しい20件だけを表示しています。絞り込み・検索をすると、その結果を同じく20件ずつ表示します。</p>
   <p>2026/09/14 宮本佳林さん・工藤遥さん・OCHA NORMA・ロージークロニクルを中心に集めています。</p>
   <p>管理人の独断と偏見で集めているので、取捨選択になっていることをご容赦ください</p>
 <div id="interview-controls">
@@ -43,12 +44,18 @@
 <div id="interview-cards" class="card-grid">
   <?php include $_SERVER['DOCUMENT_ROOT'] . '/Spreadsheet/interview_cards.php'; ?>
 </div>
+<div id="iv-more-wrap" hidden>
+  <button type="button" id="iv-more" onclick="ivMore()"></button>
+  <button type="button" id="iv-more-all" onclick="ivMoreAll()"></button>
+</div>
 <?php include $_SERVER['DOCUMENT_ROOT'] . '/Generated/interview_generated.php'; ?>
 
 </main>
 <script>
 (function() {
   var container = document.getElementById('interview-cards');
+  // JSが動く前に1200件が一瞬描かれないよう、最初に全部隠す(表示する分だけ後で戻す)
+  container.classList.add('iv-paged');
   var allCards = Array.from(container.querySelectorAll('.iv-card')).map(function(el) {
     return {
       el: el,
@@ -105,6 +112,46 @@
     return s;
   }
 
+  // 一度に出すカードの数。全部(1200件超)を並べるとスマホで重いので少しずつ出す
+  var PAGE = 20;
+  var shown = PAGE;            // 今表示している件数
+  var lastFiltered = [];       // 絞り込み後のカード(並び替え済み)
+
+  // lastFiltered の先頭 shown 件だけを表示する
+  function ivRender() {
+    allCards.forEach(function(c) { c.el.style.display = 'none'; });
+    var view = lastFiltered.slice(0, shown);
+    view.forEach(function(c) {
+      c.el.style.display = '';
+      container.appendChild(c.el);
+    });
+
+    var total = lastFiltered.length;
+    document.getElementById('interview-count').textContent =
+      total ? view.length + ' 件を表示 / ' + total + ' 件中（全' + allCards.length + ' 件）'
+            : '0 件 / 全' + allCards.length + ' 件';
+
+    var rest = total - view.length;
+    var wrap = document.getElementById('iv-more-wrap');
+    wrap.hidden = rest <= 0;
+    if (rest > 0) {
+      document.getElementById('iv-more').textContent = '次の' + Math.min(PAGE, rest) + '件を表示';
+      var all = document.getElementById('iv-more-all');
+      all.textContent = '残り' + rest + '件をすべて表示';
+      all.hidden = rest <= PAGE;
+    }
+  }
+
+  function ivMore() {
+    shown += PAGE;
+    ivRender();
+  }
+
+  function ivMoreAll() {
+    shown = lastFiltered.length;
+    ivRender();
+  }
+
   function ivFilter() {
     var grFilter = document.getElementById('iv-group').value;
     var nmFilter = document.getElementById('iv-name').value;
@@ -133,14 +180,9 @@
       return b.date.localeCompare(a.date);
     });
 
-    allCards.forEach(function(c) { c.el.style.display = 'none'; });
-    filtered.forEach(function(c) {
-      c.el.style.display = '';
-      container.appendChild(c.el);
-    });
-
-    document.getElementById('interview-count').textContent =
-      filtered.length + ' 件 / 全' + allCards.length + ' 件';
+    lastFiltered = filtered;
+    shown = PAGE;     // 絞り込みが変わったら1ページ目に戻す
+    ivRender();
 
     // 選択中(先頭の既定以外を選んだ)プルダウンだけ太字にする
     Array.prototype.forEach.call(
@@ -291,6 +333,8 @@
   window.ivDateToggle = ivDateToggle;
   window.ivDateClear = ivDateClear;
   window.ivOpenAll = ivOpenAll;
+  window.ivMore = ivMore;
+  window.ivMoreAll = ivMoreAll;
 })();
 </script>
 <?php include $_SERVER['DOCUMENT_ROOT'] . '/common/footer.php'; ?>
