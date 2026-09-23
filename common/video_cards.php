@@ -32,6 +32,10 @@
  *            label : 一覧に出す名前(ライブ名・歌っているメンバーなど)
  *            note  : label の下に小さく出す補足(日付・会場など)。配列なら複数行、空文字の行は出さない(省略可)
  *   カード上部は1本目のサムネイル。一覧の映像を押すと、その映像がカード上部で再生される。
+ *
+ * ■ その場で再生させたくないとき(動画が多いページなど)
+ *   第2引数に ['embed' => false] を渡すと、サムネイルも一覧もYouTubeを新しいタブで開くだけになる。
+ *   ページの中では統一すること(同じページで混ぜない)。
  */
 
 require_once __DIR__ . '/icons.php';
@@ -65,15 +69,22 @@ function vc_play_attrs(array $v, string $title): string
          . ' data-title="' . vc_h($title) . '"';
 }
 
-/** 押すまでiframeを読み込まないサムネイル */
-function vc_thumb(array $v, string $title): string
+/**
+ * サムネイル。$embed が true なら押した時にその場で再生(それまでiframeは読み込まない)、
+ * false なら YouTube を新しいタブで開くだけ(動画が多いページはこちら)。
+ */
+function vc_thumb(array $v, string $title, bool $embed = true): string
 {
     $start = (int)($v['start'] ?? 0);
+    $time = $start ? vc_hms($start) . 'から' : '';
+    $inner = '<img src="https://i.ytimg.com/vi/' . vc_h($v['id']) . '/hqdefault.jpg" alt="" loading="lazy">'
+           . '<span class="vc-play">▶ ' . ($time === '' ? ($embed ? '再生' : 'YouTubeで見る') : $time . ($embed ? '再生' : '見る')) . '</span>';
+    if (!$embed) {
+        return '<a class="vc-thumb" href="' . vc_h(vc_url($v)) . '" target="_blank" rel="noopener noreferrer"'
+             . ' aria-label="' . vc_h($title) . ' をYouTubeで見る">' . $inner . '</a>';
+    }
     return '<button type="button" class="vc-thumb"' . vc_play_attrs($v, $title)
-         . ' aria-label="' . vc_h($title) . ' を再生">'
-         . '<img src="https://i.ytimg.com/vi/' . vc_h($v['id']) . '/hqdefault.jpg" alt="" loading="lazy">'
-         . '<span class="vc-play">▶ ' . ($start ? vc_hms($start) . 'から再生' : '再生') . '</span>'
-         . '</button>';
+         . ' aria-label="' . vc_h($title) . ' を再生">' . $inner . '</button>';
 }
 
 function vc_subs($sub): string
@@ -85,12 +96,13 @@ function vc_subs($sub): string
     return $out;
 }
 
-function video_cards(array $videos): string
+function video_cards(array $videos, array $opts = []): string
 {
+    $embed = $opts['embed'] ?? true;   // false ならその場で再生せずYouTubeを開く
     $out = '<div class="card-grid vc-grid">';
     foreach ($videos as $v) {
         $out .= '<div class="card vc-card">'
-              . vc_thumb($v, $v['title'])
+              . vc_thumb($v, $v['title'], $embed)
               . (empty($v['date']) ? '' : '<p class="vc-date">' . vc_h($v['date']) . '</p>')
               . '<p class="vc-title">' . vc_h($v['title']) . '</p>'
               . vc_subs($v['sub'] ?? null)
@@ -98,11 +110,12 @@ function video_cards(array $videos): string
               . icon('youtube-brand', 'ic ic-20') . 'YouTubeで見る</a></p>'
               . '</div>';
     }
-    return $out . '</div>' . vc_script();
+    return $out . '</div>' . ($embed ? vc_script() : '');
 }
 
-function song_cards(array $songs): string
+function song_cards(array $songs, array $opts = []): string
 {
+    $embed = $opts['embed'] ?? true;   // false ならその場で再生せずYouTubeを開く
     $out = '<div class="card-grid vc-grid">';
     foreach ($songs as $s) {
         $attrs = '';
@@ -110,19 +123,21 @@ function song_cards(array $songs): string
             $attrs .= ' data-' . vc_h($k) . '="' . vc_h($val) . '"';
         }
         $out .= '<div class="card vc-card sc-card"' . $attrs . '>'
-              . '<div class="vc-stage">' . vc_thumb($s['videos'][0], $s['title']) . '</div>'
+              . '<div class="vc-stage">' . vc_thumb($s['videos'][0], $s['title'], $embed) . '</div>'
               . '<p class="vc-title">' . vc_h($s['title']) . '</p>'
               . vc_subs($s['sub'] ?? null)
               . '<ul class="sc-list">';
         foreach ($s['videos'] as $i => $v) {
             $start = (int)($v['start'] ?? 0);
             $out .= '<li class="sc-item' . ($i === 0 ? ' is-current' : '') . '">'
-                  . '<button type="button" class="sc-pick"' . vc_play_attrs($v, $s['title']) . '>'
+                  . ($embed
+                        ? '<button type="button" class="sc-pick"' . vc_play_attrs($v, $s['title']) . '>'
+                        : '<a class="sc-pick" href="' . vc_h(vc_url($v)) . '" target="_blank" rel="noopener noreferrer">')
                   . '<span class="sc-label">' . vc_h($v['label']) . '</span>'
                   . implode('', array_map(
                         fn($n) => '<span class="sc-note">' . vc_h($n) . '</span>',
                         array_filter((array)($v['note'] ?? []), 'strlen')))
-                  . '</button>'
+                  . ($embed ? '</button>' : '</a>')
                   . '<a class="sc-yt" href="' . vc_h(vc_url($v)) . '" target="_blank" rel="noopener noreferrer"'
                   . ' title="YouTubeで開く' . ($start ? '（' . vc_hms($start) . 'から）' : '') . '">'
                   . icon('youtube-brand', 'ic ic-20', 'YouTubeで開く') . '</a>'
@@ -130,7 +145,7 @@ function song_cards(array $songs): string
         }
         $out .= '</ul></div>';
     }
-    return $out . '</div>' . vc_script();
+    return $out . '</div>' . ($embed ? vc_script() : '');
 }
 
 /** 再生用のスクリプト。1ページに1回だけ出す(何度呼んでも重複しない) */
