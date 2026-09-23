@@ -361,7 +361,7 @@ def build_cards(members: list[Member]) -> str:
         card_cls = "sns-card"
         if has_archive:
             card_cls += " has-archive"
-            toggle = '<button type="button" class="sns-arc-toggle">アーカイブ ▾</button>'
+            toggle = '<button type="button" class="sns-arc-toggle">アメブロアーカイブ ▾</button>'
             archive_block = f'<div class="sns-archive-layer">{archive_html}</div>'
         official_row = f'<div class="sns-official">{official_html}</div>' if official_html else ""
         cards.append(

@@ -11,7 +11,7 @@
   <p>人数が多いので、スクロールで探すより<strong>検索欄に名前（読み仮名でも可）を入れる</strong>のが早いです。</p>
   <p>所属・グループ（現役／OG問わず）・SNSの種類で絞り込めます。</p>
   <p>グループで「モーニング娘。」を選んで「ハロプロ」のチェックを外せば、OGのモーニング娘。だけを出せます。</p>
-  <p>「アーカイブ ▾」があるカードはクリックすると過去のアメブロが開きます。</p>
+  <p>「アメブロアーカイブ ▾」ボタンを押すと過去のアメブロが開きます。</p>
   <p>掲載順は現役、OGは加入順で、アップフロント系列に所属している人を先にしていますが私の恣意的な順番になってしまっているのでご容赦ください。</p>
 <div id="sns-controls">
   <input type="text" id="sns-search" placeholder="名前・読み仮名・SNSのIDで検索…" oninput="snsFilter()">
@@ -88,7 +88,6 @@
     padding: .5em .55em;
     background: #fff;
   }
-  .sns-card.has-archive { cursor: pointer; }
   .sns-name {
     margin: 0 0 .4em;
     font-weight: bold;
@@ -222,9 +221,9 @@
     );
   }
 
-  // アーカイブのあるカードはクリックで展開/折りたたみ(リンククリックは除外)
+  // 「アメブロアーカイブ ▾」ボタンだけで展開/折りたたみ(カード本体やバッジのクリックは無反応)
   container.addEventListener('click', function(e) {
-    if (e.target.closest('a')) return;
+    if (!e.target.closest('.sns-arc-toggle')) return;
     var card = e.target.closest('.sns-card.has-archive');
     if (card) card.classList.toggle('expanded');
   });
