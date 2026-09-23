@@ -1,6 +1,6 @@
 <?php
-  $title = "宮本佳林 メイキング映像 まとめ"; 
-  $description = "宮本佳林のMV撮影などのメイキング映像をまとめました。";
+  $title = "宮本佳林 メイキング映像 まとめ";
+  $description = "宮本佳林さんのMV撮影・YouTube動画などのメイキング映像をまとめました。";
   $jsonld_type = "Dataset";
   $about = "宮本佳林";
   // グループ単体
@@ -12,58 +12,70 @@
   //   ["name" => "譜久村聖"],                          // typeなし → Person
   // ];
   include $_SERVER['DOCUMENT_ROOT'] . '/common/header.php';
+  require_once $_SERVER['DOCUMENT_ROOT'] . '/common/video_cards.php';
+
+// ------------------------------------------------------------------
+// 見出し => その中のメイキング映像。1本 = 1カード。
+//   date : 動画の公開日  title : 曲名・内容  sub : メイキングの種類
+// 本数が多いページなので、その場では再生せずYouTubeを開く(embed => false)。
+// ------------------------------------------------------------------
+$mk_sections = [
+  '宮本佳林 MV撮影メイキング' => [
+    ['id' => 'M2U9jhDaTqM', 'start' => 837, 'date' => '2020/12/24', 'title' => '未来のフィラメント', 'sub' => 'MV撮影メイキング'],
+    ['id' => 'xiigep_9Wqc', 'start' => 839, 'date' => '2021/11/4', 'title' => 'どうして僕らにはやる気がないのか(2021)', 'sub' => 'MV撮影メイキング'],
+    ['id' => '1KGj5qxlnlM', 'start' => 145, 'date' => '2021/11/18', 'title' => '氷点下', 'sub' => 'MV撮影メイキング'],
+    ['id' => 'Ruu4rvbP5oA', 'start' => 177, 'date' => '2021/12/2', 'title' => '規格外のロマンス', 'sub' => 'MV撮影メイキング'],
+    ['id' => 'eN-w-UQNVvk', 'start' => 185, 'date' => '2022/6/2', 'title' => 'なんてったって I Love You', 'sub' => 'MV撮影メイキング'],
+    ['id' => 'aFFH9U05AwY', 'start' => 187, 'date' => '2022/6/9', 'title' => 'ハウリング', 'sub' => 'MV撮影メイキング'],
+    ['id' => '9-BuBwIVmnQ', 'start' => 203, 'date' => '2023/11/9', 'title' => 'バンビーナ・バンビーノ', 'sub' => 'MV撮影メイキング'],
+    ['id' => 'KBbSSuVnCRg', 'start' => 173, 'date' => '2023/11/23', 'title' => 'Lonely Bus', 'sub' => 'MV撮影メイキング'],
+    ['id' => 'KbCkPfiHz6U', 'start' => 1627, 'date' => '2025/6/6', 'title' => 'キケンな魔法', 'sub' => 'MV撮影メイキング'],
+    ['id' => 'MG8n0fmkOfA', 'start' => 1775, 'date' => '2025/6/13', 'title' => 'ビースト！', 'sub' => 'MV撮影メイキング'],
+    ['id' => '8dEOrLVnQAU', 'start' => 1670, 'date' => '2025/6/20', 'title' => 'SUPER IDOL -Especial-(Single Ver.)', 'sub' => 'MV撮影メイキング'],
+    ['id' => 'uEt_hyCxm0Q', 'start' => 772, 'date' => '2026/7/23', 'title' => 'HANAKIN', 'sub' => 'MV撮影メイキング'],
+    ['id' => 'Grnf0Kbh0qE', 'start' => 995, 'date' => '2026/7/30', 'title' => 'シャニカマー', 'sub' => 'MV撮影メイキング'],
+  ],
+  '宮本佳林 舞台 メイキング' => [
+    ['id' => 'lW-3ARXEm18', 'start' => 197, 'date' => '2022/9/8', 'title' => 'STAGE VANGUARD「悪嬢転生」', 'sub' => 'メイキング映像'],
+  ],
+  '宮本佳林 YouTube動画撮影 メイキング' => [
+    ['id' => '5dJvQZM0h5Q', 'start' => 1028, 'date' => '2021/8/27', 'title' => '少女K 踊ってみた', 'sub' => '撮影メイキング'],
+    ['id' => 'k0UKxgbaDo8', 'start' => 562, 'date' => '2021/9/3', 'title' => '優柔不断だね、Guilty 歌唱動画', 'sub' => '撮影メイキング'],
+    ['id' => 'Iv7J1M4UWGc', 'start' => 1027, 'date' => '2021/10/1', 'title' => 'やっちまいな 歌唱動画', 'sub' => '撮影メイキング'],
+    ['id' => 'ylw8j8bDudQ', 'start' => 874, 'date' => '2022/8/5', 'title' => 'COVERS One on One 佐藤優樹 x 宮本佳林 (ジュリン) 「ほたる祭りの日」', 'sub' => '撮影メイキング'],
+    ['id' => 'GuwSjZQLdMI', 'start' => 677, 'date' => '2022/10/14', 'title' => '愛してるの言葉だけで 歌唱・イイオンナごっこ ダンス動画', 'sub' => 'メイキング'],
+    ['id' => 'WOAHynr0fOU', 'start' => 1076, 'date' => '2022/10/21', 'title' => 'アコースティックスタジオライブ', 'sub' => '撮影メイキング'],
+    ['id' => 'hDkrX2T-dYI', 'start' => 611, 'date' => '2024/3/1', 'title' => 'COVERS One on One 宮本佳林 × 小関舞 「白いTOKYO」', 'sub' => '撮影メイキング'],
+    ['id' => 'T_GZW_myPSM', 'start' => 1418, 'date' => '2024/3/15', 'title' => 'COVERS One on One 宮本佳林 ×稲場愛香 「微炭酸」', 'sub' => '撮影メイキング'],
+  ],
+  'Juice=Juice MV撮影メイキング' => [
+    ['id' => 'SyjZaWb4vBY', 'start' => 2057, 'date' => '2013/11/13', 'title' => 'イジワルしないで 抱きしめてよ', 'sub' => 'MV撮影メイキング'],
+    ['id' => '4yTg2ptJyzU', 'start' => 2029, 'date' => '2015/7/23', 'title' => '続いていくSTORY', 'sub' => 'MV撮影メイキング'],
+    ['id' => '_jWWll2vM7Y', 'start' => 1180, 'date' => '2015/7/30', 'title' => 'CHOICE & CHANCE', 'sub' => 'MV撮影メイキング'],
+    ['id' => 'ju4r3PC-xEc', 'start' => 2070, 'date' => '2016/1/21', 'title' => 'カラダだけが大人になったんじゃない', 'sub' => 'MV撮影メイキング'],
+    ['id' => 'c6IOPO2423Y', 'start' => 202, 'date' => '2016/10/28', 'title' => 'Dream Road～心が躍り出してる～', 'sub' => 'MV撮影メイキング'],
+    ['id' => 'mpLIwucmIPw', 'start' => 190, 'date' => '2016/11/4', 'title' => 'KEEP ON 上昇志向!!', 'sub' => 'MV撮影メイキング'],
+    ['id' => 'hBuSXDFZ938', 'start' => 1259, 'date' => '2016/11/11', 'title' => '明日やろうはバカやろう', 'sub' => 'MV撮影メイキング'],
+    ['id' => 'zPoiE7-eCV0', 'start' => 1073, 'date' => '2017/4/19', 'title' => '地団駄ダンス', 'sub' => 'MV撮影メイキング'],
+    ['id' => 'zy41AkM9kVM', 'start' => 148, 'date' => '2019/3/28', 'title' => 'Good bye & Good luck！', 'sub' => 'MV撮影メイキング'],
+    ['id' => 'NLjc0xYKgJc', 'start' => 116, 'date' => '2019/4/4', 'title' => '微炭酸', 'sub' => 'MV撮影メイキング'],
+    ['id' => 'JX6JYsdnHyI', 'start' => 306, 'date' => '2020/3/26', 'title' => 'ポップミュージック', 'sub' => 'MV撮影メイキング'],
+    ['id' => 'EcOri7ZVbKM', 'start' => 191, 'date' => '2020/4/16', 'title' => '好きって言ってよ', 'sub' => 'MV撮影メイキング'],
+  ],
+];
 ?>
 
 <main>
- <h1>宮本佳林 メイキング映像 まとめ</h1>
- 宮本佳林さんのMV撮影・YouTube動画などのメイキング映像をまとめました
+  <h1>宮本佳林 メイキング映像 まとめ</h1>
+  <p>宮本佳林さんのMV撮影・YouTube動画などのメイキング映像をまとめました。<br>
+  日付は動画の公開日です。押すとYouTubeが新しいタブで開き、メイキングの場面から始まります。</p>
 
- <h3>宮本佳林 MV撮影メイキング</h3>
- <ul>
-  <li><a href="https://www.youtube.com/watch?v=xiigep_9Wqc&t=839s" target="_blank" rel="noopener noreferrer">どうして僕らにはやる気がないのか(2021) MV撮影メイキング</a></li>
-  <li><a href="https://www.youtube.com/watch?v=1KGj5qxlnlM&t=145s" target="_blank" rel="noopener noreferrer">氷点下 MV撮影メイキング</a></li>
-  <li><a href="https://www.youtube.com/watch?v=Ruu4rvbP5oA&t=177s" target="_blank" rel="noopener noreferrer">規格外のロマンス MV撮影メイキング</a></li>
-  <li><a href="https://www.youtube.com/watch?v=M2U9jhDaTqM&t=837s" target="_blank" rel="noopener noreferrer">未来のフィラメント MV撮影メイキング</a></li>
-  <li><a href="https://www.youtube.com/watch?v=eN-w-UQNVvk&t=185s target="_blank" rel="noopener noreferrer">なんてったって I Love You MV撮影メイキング</a></li>
-  <li><a href="https://www.youtube.com/watch?v=aFFH9U05AwY&t=187s" target="_blank" rel="noopener noreferrer">ハウリング MV撮影メイキング</a></li>
-  <li><a href="https://www.youtube.com/watch?v=9-BuBwIVmnQ&t=203s" target="_blank" rel="noopener noreferrer">バンビーナ・バンビーノ MV撮影メイキング</a></li>
-  <li><a href="https://www.youtube.com/watch?v=KBbSSuVnCRg&t=173s" target="_blank" rel="noopener noreferrer">Lonely Bus MV撮影メイキング</a></li>
-  <li><a href="https://www.youtube.com/watch?v=KbCkPfiHz6U&t=1627s" target="_blank" rel="noopener noreferrer">キケンな魔法 MV撮影メイキング</a></li>
-  <li><a href="https://www.youtube.com/watch?v=MG8n0fmkOfA&t=1775s" target="_blank" rel="noopener noreferrer">ビースト！ MV撮影メイキング</a></li>
-  <li><a href="https://www.youtube.com/watch?v=8dEOrLVnQAU&t=1670s" target="_blank" rel="noopener noreferrer">SUPER IDOL -Especial-(Single Ver.) MV撮影メイキング</a></li>
-  <li><a href="https://www.youtube.com/watch?v=uEt_hyCxm0Q&t=772s" target="_blank" rel="noopener noreferrer">HANAKIN MV 撮影メイキング</a></li>
-  <li><a href="https://www.youtube.com/watch?v=Grnf0Kbh0qE&t=995s" target="_blank" rel="noopener noreferrer">シャニカマー MV撮影メイキング</a></li>
- </ul>
- <h3>宮本佳林 舞台 メイキング</h3>
- <ul>
-  <li><a href="https://www.youtube.com/watch?v=lW-3ARXEm18&t=197s" target="_blank" rel="noopener noreferrer">STAGE VANGUARD「悪嬢転生」メイキング映像</a></li>
- </ul>
- <h3>宮本佳林 YouTube動画撮影 メイキング</h3>
- <ul>
-  <li><a href="https://www.youtube.com/watch?v=hDkrX2T-dYI&t=611s" target="_blank" rel="noopener noreferrer">COVERS One on One 宮本佳林 × 小関舞 「白いTOKYO」 撮影メイキング 撮影メイキング</a></li>
-  <li><a href="https://www.youtube.com/watch?v=T_GZW_myPSM&t=1418s" target="_blank" rel="noopener noreferrer">COVERS One on One 宮本佳林 ×稲場愛香 「微炭酸」 撮影メイキング</a></li>
-  <li><a href="https://www.youtube.com/watch?v=ylw8j8bDudQ&t=874s" target="_blank" rel="noopener noreferrer">COVERS One on One 佐藤優樹 x 宮本佳林 (ジュリン) 「ほたる祭りの日」 撮影メイキング</a></li>
-  <li><a href="https://www.youtube.com/watch?v=5dJvQZM0h5Q&t=1028s" target="_blank" rel="noopener noreferrer">少女K 踊ってみた 撮影メイキング</a></li>
-  <li><a href="https://www.youtube.com/watch?v=k0UKxgbaDo8&t=562s" target="_blank" rel="noopener noreferrer">優柔不断だね、Guilty 歌唱動画 撮影メイキング</a></li>
-  <li><a href="https://www.youtube.com/watch?v=GuwSjZQLdMI&t=677s" target="_blank" rel="noopener noreferrer">愛してるの言葉だけで 歌唱・イイオンナごっこ ダンス動画 メイキング</a></li>
-  <li><a href="https://www.youtube.com/watch?v=WOAHynr0fOU&t=1076s" target="_blank" rel="noopener noreferrer">アコースティックスタジオライブ 撮影メイキング</a></li>
-  <li><a href="https://www.youtube.com/watch?v=Iv7J1M4UWGc&t=1027s" target="_blank" rel="noopener noreferrer">やっちまいな 歌唱動画 撮影メイキング</a></li> </ul>
- </ul>
- <h3>Juice=Juice MV撮影メイキング</h3>
- <ul>
-  <li><a href="https://www.youtube.com/watch?v=SyjZaWb4vBY&t=2057s" target="_blank" rel="noopener noreferrer">イジワルしないで 抱きしめてよ MV撮影メイキング</a></li>
-  <li><a href="https://www.youtube.com/watch?v=_jWWll2vM7Y&t=1180s" target="_blank" rel="noopener noreferrer">CHOICE & CHANCE MV撮影メイキング</a></li>
-  <li><a href="https://www.youtube.com/watch?v=4yTg2ptJyzU&t=2029s" target="_blank" rel="noopener noreferrer">続いていくSTORY MV撮影メイキング</a></li>
-  <li><a href="https://www.youtube.com/watch?v=ju4r3PC-xEc&t=2070s" target="_blank" rel="noopener noreferrer">カラダだけが大人になったんじゃない MV撮影メイキング</a></li>
-  <li><a href="https://www.youtube.com/watch?v=c6IOPO2423Y&t=202s" target="_blank" rel="noopener noreferrer">Dream Road～心が躍り出してる～ MV撮影メイキング</a></li>
-  <li><a href="https://www.youtube.com/watch?v=mpLIwucmIPw&t=190s" target="_blank" rel="noopener noreferrer">KEEP ON 上昇志向!! MV撮影メイキング</a></li>
-  <li><a href="https://www.youtube.com/watch?v=hBuSXDFZ938&t=1259s" target="_blank" rel="noopener noreferrer">明日やろうはバカやろう MV撮影メイキング</a></li>
-  <li><a href="https://www.youtube.com/watch?v=zPoiE7-eCV0&t=1073s" target="_blank" rel="noopener noreferrer">地団駄ダンス MV撮影メイキング</a></li>
-  <li><a href="https://www.youtube.com/watch?v=NLjc0xYKgJc&t=116s" target="_blank" rel="noopener noreferrer">微炭酸 MV撮影メイキング</a></li>
-  <li><a href="https://www.youtube.com/watch?v=zy41AkM9kVM&t=148s target="_blank" rel="noopener noreferrer">Good bye & Good luck！ MV撮影メイキング</a></li>
-  <li><a href="https://www.youtube.com/watch?v=JX6JYsdnHyI&t=306s" target="_blank" rel="noopener noreferrer">ポップミュージック MV撮影メイキング</a></li>
-  <li><a href="https://www.youtube.com/watch?v=EcOri7ZVbKM&t=191s" target="_blank" rel="noopener noreferrer">好きって言ってよ MV撮影メイキング</a></li> </ul>
- </ul>
+  <?php foreach ($mk_sections as $name => $rows): ?>
+  <section class="sc-section">
+    <h2><?= vc_h($name) ?></h2>
+    <?= video_cards($rows, ['embed' => false]) ?>
+  </section>
+  <?php endforeach; ?>
 </main>
 <div class="last-update">最終更新日：2026/08/14</div>
 <?php include $_SERVER['DOCUMENT_ROOT'] . '/common/footer.php'; ?>
