@@ -109,13 +109,17 @@ grep -rl --include='*.html' --include='*.xml' --include='*.txt' -F "$OLD_URL" "$
   echo "/index.php / 301"
   echo "/index.html / 301"
   # 改名したディレクトリ(URLに = が入ると %3D にエスケープされるため)
-  # .php付きの方を先に書く(先に一致したルールが使われるので、:splat より前に置く)
+  # :splat を使うと、それ以降の全ルールが「動的ルール」扱いになり上限100件を超えて
+  # デプロイが失敗する(Birthday の .php 転送だけで100件超)。静的ルール(上限2000)のまま
+  # にするため、ワイルドカードを使わずページごとに列挙する。
   while IFS= read -r p; do
     case "$p" in
-      JuiceJuice/*) echo "/Juice=Juice/${p##*/}.php /$p 301" ;;
+      JuiceJuice/*)
+        echo "/Juice=Juice/${p##*/}.php /$p 301"
+        echo "/Juice=Juice/${p##*/} /$p 301"
+        ;;
     esac
   done <<< "$pages"
-  echo "/Juice=Juice/* /JuiceJuice/:splat 301"
   # 改名したページ(実態に合わせて「インタビュー」→「インタビュー・Web記事」へ)
   echo "/hello-interview     /hello-articles       301"
   echo "/hello-interview.php /hello-articles       301"
