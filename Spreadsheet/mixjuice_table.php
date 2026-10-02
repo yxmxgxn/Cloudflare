@@ -1,4 +1,4 @@
-<!-- generated: 2026-10-01T22:12:47.529673+00:00 -->
+<!-- generated: 2026-10-02T21:40:36.731022+00:00 -->
 <tr data-selector="松永里愛"><td><a href="https://www.tbsradio.jp/articles/112512/" target="_blank" rel="noopener noreferrer">2026/09/27</a></td><td>大不正解 / back number</td><td>松永里愛</td><td>低音ボイスでも盛り上がる曲</td></tr>
 <tr data-selector="石山咲良"><td><a href="https://www.tbsradio.jp/articles/112512/" target="_blank" rel="noopener noreferrer">2026/09/27</a></td><td>Fiesta!Fiesta! / Juice=Juice</td><td>石山咲良</td><td>低音ボイスでも盛り上がる曲</td></tr>
 <tr data-selector="松永里愛&amp;石山咲良"><td><a href="https://www.tbsradio.jp/articles/112512/" target="_blank" rel="noopener noreferrer">2026/09/27</a></td><td>アレコレしたい / Juice＝Juice</td><td>松永里愛&amp;石山咲良</td><td>低音ボイスでも盛り上がる曲</td></tr>
