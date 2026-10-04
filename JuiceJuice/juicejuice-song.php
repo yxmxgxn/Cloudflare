@@ -296,7 +296,7 @@
       <td>上杉洋史</td>
     </tr>
     <tr>
-      <td><a href="https://www.youtube.com/watch?v=QX8b0JzJz4o" target="_blank" rel="noopener noreferrer">Va-Va-Voom▶️</a>・<a href="https://www.youtube.com/watch?v=R4c7o1QG7mc&t=262s" target="_blank" rel="noopener noreferrer">🎥</a></td>
+      <td>Va-Va-Voom<a href="https://www.youtube.com/watch?v=R4c7o1QG7mc&t=262s" target="_blank" rel="noopener noreferrer">🎥</a></td>
       <td>児玉雨子</td>
       <td>Shusui/Josef Melin</td>
       <td>Josef Melin</td>
