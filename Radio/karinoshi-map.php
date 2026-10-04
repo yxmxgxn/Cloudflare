@@ -9,6 +9,8 @@
   リンクで<a href="https://www.tbsradio.jp/mp/" target="_blank" rel="noopener noreferrer">TBSラジオ Music Palette♪</a>のページと紹介ポストに飛びます。<br>
   紹介回数で色を深くしています。</p>
 <p>Xのポストのまとめは<a href="/Radio/karinoshi" target="_blank" rel="noopener noreferrer">こちら</a></p>
+<p>追記<br>
+宮本佳林さんのMusic Palette♪は2026/09/27が最終回なので、このページの更新は終わります。</p>
 <div class="karinoshi-map">
 <style>
 .karinoshi-map{

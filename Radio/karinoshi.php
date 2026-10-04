@@ -19,6 +19,10 @@
   <p>TBSラジオ Music Palette♪のカリンオシのコーナーで宮本佳林さんが紹介したお菓子等をXにてポストされたものをまとめています<br>
   放送日（日時）ページをクリックすると<a href="https://www.tbsradio.jp/mp/" target="_blank" rel="noopener noreferrer">TBSラジオ Music Palette♪</a>のページに飛びます<br>
   また都道府県タグでフィルタリングできます</p>
+
+  <p>追記<br>
+  宮本佳林さんのMusic Palette♪は2026/09/27が最終回なので、このページの更新は終わります。</p>
+
   <p>日本地図を塗っていっているページは<a href="/Radio/karinoshi-map" target="_blank" rel="noopener noreferrer">こちら</a></p>
  
   <div id="karin-oshi-wrap">
