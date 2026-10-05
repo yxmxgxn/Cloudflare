@@ -16,12 +16,15 @@ SHEET_GID      = "1463327244"
 
 from pathlib import Path
 
+from icons import icon
 from sheets import fetch_text
 
 REPO_ROOT = Path(__file__).resolve().parent.parent  # Python/ の親
 
 OUTPUT_PATH = REPO_ROOT / "Spreadsheet" / "mixjuice_table.php"
 OUTPUT_GENERATED = REPO_ROOT / "Generated" / "mixjuice_generated.php"
+
+X_ICON = icon("x", label="Xのポスト")
 
 def fetch_csv(gid: str) -> list[list[str]]:
     url = f"{PUB_BASE}?gid={gid}&single=true&output=csv"
@@ -86,7 +89,10 @@ def build_table(data: list[list[str]]) -> str:
             if url else escape_html(broadcast_date)
         )
         if x_url:
-            date_cell += f' / <a href="{escape_html(x_url)}" target="_blank" rel="noopener noreferrer">X</a>'
+            date_cell += (
+                f' / <a href="{escape_html(x_url)}" target="_blank" rel="noopener noreferrer">'
+                f'{X_ICON}</a>'
+            )
         song_cell = f"{song} / {artist}" if artist else song
 
         lines.append(
