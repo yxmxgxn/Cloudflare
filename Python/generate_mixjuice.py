@@ -63,7 +63,13 @@ def build_table(data: list[list[str]]) -> str:
         broadcast_date = pad_date(row.get("放送日", ""))
         article_no = row.get("ArticleNo.", "")
         url = f"https://www.tbsradio.jp/articles/{article_no}/" if article_no else ""
-        song           = escape_html(row.get("曲名", ""))
+        # X列はポストIDのみ。19桁あるのでスプシで数値扱いされると指数表記に崩れる
+        x_id = row.get("X", "")
+        if x_id and not x_id.isdigit():
+            print(f"警告: X列がポストIDではありません ({broadcast_date}): {x_id}")
+            x_id = ""
+        x_url = f"https://x.com/PaletteTbs/status/{x_id}" if x_id else ""
+        song          = escape_html(row.get("曲名", ""))
         artist         = escape_html(row.get("アーティスト", ""))
         selector       = escape_html(row.get("選曲者", ""))
         theme          = escape_html(row.get("テーマ", ""))
@@ -79,6 +85,8 @@ def build_table(data: list[list[str]]) -> str:
             f'<a href="{escape_html(url)}" target="_blank" rel="noopener noreferrer">{escape_html(broadcast_date)}</a>'
             if url else escape_html(broadcast_date)
         )
+        if x_url:
+            date_cell += f' / <a href="{escape_html(x_url)}" target="_blank" rel="noopener noreferrer">X</a>'
         song_cell = f"{song} / {artist}" if artist else song
 
         lines.append(
