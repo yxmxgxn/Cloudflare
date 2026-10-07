@@ -1,4 +1,4 @@
-<!-- generated: 2026-10-07T07:11:48.045739+00:00 -->
+<!-- generated: 2026-10-07T07:59:28.888883+00:00 -->
 <article class="card bt-card" id="FC167">
 <p class="bt-meta"><span class="bt-date">2026/09/27</span><span class="bt-pref">三重県</span></p>
 <h2 class="bt-title">JR東海 おいないさ、伊勢キャンペーンプレゼンツ 伊勢鈴蘭がご案内！聖地巡礼 伊勢満喫ツアー</h2>
@@ -1155,6 +1155,6 @@
 </article>
 <article class="card bt-card" id="FC001">
 <p class="bt-meta"><span class="bt-date">2001/10/13〜10/14</span><span class="bt-pref">北海道</span></p>
-<h2 class="bt-title">カントリー娘。ファンの集い「君はカントリー娘。の応援団」in 花畑牧場</h2>
+<h2 class="bt-title">カントリー娘。ファンの集い「君はカントリー娘。の応援団」in 花畑牧場 test</h2>
 <p class="bt-members">りんね・あさみ（カントリー娘。）</p>
 </article>
