@@ -5,7 +5,7 @@
 スプレッドシートは4タブ:
   ツアー   (gid=0)
     ID,Group,Departure,Arrival,LiveDate,Title,Prefecture,LivePlace,LivePrefecture,
-    YouTube,YouTube2,Live Title,Tomoko,Hello! Project Wiki
+    YouTube,YouTube2,Live Title,Tomoko,Hello! Project Wiki(サイトには載せないので読まない)
     ※ ヘッダーに末尾空白が付いているものがあるので strip して読む
     LiveDate/LivePlace … ツアー内のライブ。ツアーにライブが無く、同じ日に別チケットの
                          ライブがある回は Live Title にそのライブ名が入る(日付・会場は同じ列)
@@ -20,7 +20,7 @@
 
 海外ツアー(Prefecture が47都道府県以外)は日程を yyyy/mm までにし、ライブ日付は出さない。
 
-hello-funclubtour.php から include される。
+hello-fanclub.php から include される。
 """
 
 import csv
@@ -209,8 +209,6 @@ def card_html(t: dict, news: dict, members: dict, setlists: dict) -> str:
     for col, label in (("YouTube", "YouTube"), ("YouTube2", "YouTube 2")):
         if t[col]:
             links.append(link(t[col], icon("youtube-brand") + label))
-    if t["Hello! Project Wiki"]:
-        links.append(link(t["Hello! Project Wiki"], "helloproject.fandom.com"))
     if t["Tomoko"]:
         links.append(link(t["Tomoko"], "セットリスト（ToMoKo）"))
     if links:
