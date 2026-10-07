@@ -1,6 +1,6 @@
 <?php
   $title = "宮本佳林 メイキング映像 まとめ";
-  $description = "宮本佳林さんのMV撮影・YouTube動画などのメイキング映像をまとめました。";
+  $description = "宮本佳林さんのMV撮影・YouTube動画などのメイキング映像をまとめました。時間指定をしているので該当の個所から再生できます。";
   $jsonld_type = "Dataset";
   $about = "宮本佳林";
   // グループ単体
