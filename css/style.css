@@ -3102,7 +3102,8 @@ footer a {
 /*ファンクラブツアーまとめ(hello-funclubtour)
 -------------------------------------*/
 .bt-lead p { margin: 0 0 0.8em; }
-.bt-grid { grid-template-columns: repeat(auto-fill, minmax(min(100%, 360px), 1fr)); align-items: start; }
+/* 1枚は最小280px、ただし (全幅-gap×3)/4 より狭くしないので横は最大4枚 */
+.bt-grid { grid-template-columns: repeat(auto-fill, minmax(max(min(100%, 280px), calc((100% - 42px) / 4)), 1fr)); align-items: start; }
 .bt-card p { margin: 0; }
 .bt-meta { display: flex; flex-wrap: wrap; gap: 6px 10px; align-items: center; font-size: 14px; color: #555; }
 .bt-pref { border: 1px solid #ccc; border-radius: 999px; padding: 0 8px; font-size: 12px; }
