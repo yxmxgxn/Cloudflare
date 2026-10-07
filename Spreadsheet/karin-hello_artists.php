@@ -1,9 +1,10 @@
-<!-- generated: 2026-10-03T20:26:27.448217+00:00 -->
+<!-- generated: 2026-10-06T22:06:38.678548+00:00 -->
 <option value="10人祭">10人祭</option>
 <option value="Berryz工房">Berryz工房</option>
 <option value="BEYOOOOONDS">BEYOOOOONDS</option>
 <option value="Buono!">Buono!</option>
 <option value="DIY♡">DIY♡</option>
+<option value="HI-FIN">HI-FIN</option>
 <option value="High-King">High-King</option>
 <option value="Juice=Juice">Juice=Juice</option>
 <option value="MilkyWay">MilkyWay</option>

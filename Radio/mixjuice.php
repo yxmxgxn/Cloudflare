@@ -7,57 +7,6 @@
     ["name" => "Juice=Juice", "type" => "MusicGroup"],  // グループだけ明示
   ];
   include $_SERVER['DOCUMENT_ROOT'] . '/common/header.php';
-
-  $CSV_URL = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vQGBS0Tm7Z9I32xmJ0PzdFma5Q5tJpvg71v8JRw7-QSlQsr57nqkYeVy0kSEOYttMg6FZfucZiHFYYt/pub?gid=1463327244&single=true&output=csv';
-
-  function parse_csv_line($line) {
-    $result = [];
-    $cur = '';
-    $inQuote = false;
-    $len = strlen($line);
-    for ($i = 0; $i < $len; $i++) {
-      $c = $line[$i];
-      if ($inQuote) {
-        if ($c === '"' && isset($line[$i+1]) && $line[$i+1] === '"') {
-          $cur .= '"'; $i++;
-        } elseif ($c === '"') {
-          $inQuote = false;
-        } else {
-          $cur .= $c;
-        }
-      } else {
-        if ($c === '"') {
-          $inQuote = true;
-        } elseif ($c === ',') {
-          $result[] = trim($cur);
-          $cur = '';
-        } else {
-          $cur .= $c;
-        }
-      }
-    }
-    $result[] = trim($cur);
-    return $result;
-  }
-
-  $csv_text = @file_get_contents($CSV_URL);
-  $rows = [];
-  $headers = [];
-
-  if ($csv_text) {
-    $lines = explode("\n", $csv_text);
-    $headers = parse_csv_line($lines[0]);
-    for ($i = 1; $i < count($lines); $i++) {
-      $line = trim($lines[$i]);
-      if (!$line) continue;
-      $values = parse_csv_line($line);
-      $row = [];
-      foreach ($headers as $idx => $h) {
-        $row[$h] = isset($values[$idx]) ? $values[$idx] : '';
-      }
-      $rows[] = $row;
-    }
-  }
 ?>
 
 <main>
