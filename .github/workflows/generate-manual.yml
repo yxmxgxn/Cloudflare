@@ -26,6 +26,7 @@ on:
           - "gamelive (ハロ通LIVE/GAMES)"
           - "sns (SNS一覧)"
           - "shopevent (ハロショイベント)"
+          - "bustour (ファンクラブツアー)"
           - "timeline (在籍タイムライン画像)"
           - "all (すべて)"
 
@@ -78,6 +79,7 @@ jobs:
           run_if gamelive   generate_gamelive.py
           run_if sns        generate_sns.py
           run_if shopevent  generate_shopevent.py
+          run_if bustour    generate_bustour.py
           run_if timeline   timeline.py
 
       # インタビューのシートに要確認の行があればIssueを種類ごとに1本だけ立てる(既にあれば内容が変わった時だけ更新)。

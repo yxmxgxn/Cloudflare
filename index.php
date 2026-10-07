@@ -166,6 +166,10 @@
         <p class="index-desc">ハロショ(ハロー！プロジェクトオフィシャルショップ)で行われたトークイベントのまとめです</p>
       </div>
       <div class="card index-card">
+        <a class="index-link" href="/hello-funclubtour"><?= icon('pin', 'ic ic-20') ?>ハロプロ ファンクラブツアーまとめ</a>
+        <p class="index-desc">ハロー！プロジェクトのファンクラブツアー（バスツアー）のまとめです</p>
+      </div>
+      <div class="card index-card">
         <a class="index-link" href="/hello-birthday"><?= icon('flower', 'ic ic-20') ?>ハロプロバースデーイベントまとめ</a>
         <p class="index-desc">ハロープロジェクトのメンバーのバースデーイベントの会場を個人でまとめたページへのリンク集です</p>
       </div>
