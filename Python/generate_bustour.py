@@ -20,7 +20,7 @@
 
 海外ツアー(Prefecture が47都道府県以外)は日程を yyyy/mm までにし、ライブ日付は出さない。
 
-hello-fanclub.php から include される。
+hello-fanclubtour.php から include される。
 """
 
 import csv
