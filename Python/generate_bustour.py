@@ -54,8 +54,6 @@ PREFECTURES = {
     "熊本県", "大分県", "宮崎県", "鹿児島県", "沖縄県",
 }
 
-WEEKDAYS = "月火水木金土日"
-
 REPO_ROOT = Path(__file__).resolve().parent.parent  # Python/ の親
 OUTPUT_CARDS = REPO_ROOT / "Spreadsheet" / "bustour_cards.php"
 OUTPUT_GENERATED = REPO_ROOT / "Generated" / "bustour_generated.php"
@@ -87,7 +85,7 @@ def parse_date(s: str) -> date | None:
 
 
 def ymd(d: date) -> str:
-    return f'{d.year}/{d.month:02d}/{d.day:02d}<span class="bt-dow">（{WEEKDAYS[d.weekday()]}）</span>'
+    return f"{d.year}/{d.month:02d}/{d.day:02d}"
 
 
 def link(url: str, label: str, cls: str = "bt-link") -> str:
@@ -212,9 +210,9 @@ def card_html(t: dict, news: dict, members: dict, setlists: dict) -> str:
         if t[col]:
             links.append(link(t[col], icon("youtube-brand") + label))
     if t["Hello! Project Wiki"]:
-        links.append(link(t["Hello! Project Wiki"], "Hello! Project Wiki"))
+        links.append(link(t["Hello! Project Wiki"], "helloproject.fandom.com"))
     if t["Tomoko"]:
-        links.append(link(t["Tomoko"], "セットリスト"))
+        links.append(link(t["Tomoko"], "セットリスト（ToMoKo）"))
     if links:
         lines.append(f'<p class="bt-links">{"".join(links)}</p>')
 

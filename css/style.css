@@ -3105,7 +3105,6 @@ footer a {
 .bt-grid { grid-template-columns: repeat(auto-fill, minmax(min(100%, 360px), 1fr)); align-items: start; }
 .bt-card p { margin: 0; }
 .bt-meta { display: flex; flex-wrap: wrap; gap: 6px 10px; align-items: center; font-size: 14px; color: #555; }
-.bt-dow { font-size: 0.85em; }
 .bt-pref { border: 1px solid #ccc; border-radius: 999px; padding: 0 8px; font-size: 12px; }
 .bt-overseas { border-color: var(--accent); color: var(--accent); }
 .bt-title { font-size: 17px; font-weight: bold; margin: 2px 0; line-height: 1.5; }
