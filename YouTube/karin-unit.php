@@ -466,5 +466,5 @@ arsort($member_count);
   filter();
 })();
 </script>
-<div class="last-update">最終更新日：2026/08/14</div>
+<div class="last-update">最終更新日：2026/10/09</div>
 <?php include $_SERVER['DOCUMENT_ROOT'] . '/common/footer.php'; ?>
