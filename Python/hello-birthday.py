@@ -104,15 +104,17 @@ def build_rows(events: list[dict]) -> str:
         )
     return "\n".join(lines)
 
-BIRTHDAY_KEYS = ("birthday", "生年月日", "誕生日", "birth")
+COLUMNS = [
+    "member_id", "php_name", "birthday", "member_name", "eventName",
+    "date", "startTime", "venueName", "prefectureName", "tomoko_url",
+]
 
 def get_birthday(events: list[dict]) -> str:
-    """メンバーの行のどれかに入っている生年月日を返す（列名の揺れも吸収）"""
+    """メンバーの行のどれかに入っている birthday を返す"""
     for ev in events:
-        for key in BIRTHDAY_KEYS:
-            value = ev.get(key, "").strip()
-            if value and parse_date(value) is not None:
-                return value
+        value = ev.get("birthday", "").strip()
+        if value and parse_date(value) is not None:
+            return value
     return ""
 
 def build_sections(events: list[dict]) -> str:
@@ -193,7 +195,9 @@ def main():
     data = fetch_csv(CSV_URL)
 
     headers = [h.strip() for h in data[0]]
-    print(f"列: {headers}")
+    missing = [c for c in COLUMNS if c not in headers]
+    if missing:
+        raise SystemExit(f"CSVに必要な列がありません: {missing}（列: {headers}）")
 
     # (php_name, member_name) でグループ化
     member_events: dict[tuple, list[dict]] = defaultdict(list)
