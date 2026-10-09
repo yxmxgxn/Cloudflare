@@ -257,5 +257,5 @@ $solo_desc = [
   </section>
   <?php endforeach; ?>
 </main>
-<div class="last-update">最終更新日：2026/08/21</div>
+<div class="last-update">最終更新日：2026/10/09</div>
 <?php include $_SERVER['DOCUMENT_ROOT'] . '/common/footer.php'; ?>
