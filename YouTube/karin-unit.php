@@ -185,6 +185,9 @@ $unit_songs = [
   ['artist' => 'M-line', 'title' => 'We are the M-line!!', 'videos' => [
     ['id' => 'pIOG2xW_Nys', 'members' => '宮本佳林・佐藤優樹・小関舞', 'live' => 'M-line Special 2025 Spring～move it on～', 'when' => '2025/3/2 新宿ReNY'],
   ]],
+  ['artist' => 'M-line', 'title' => 'Music Voyager', 'videos' => [
+    ['id' => 'r6D7M4tm0dk', 'members' => '譜久村聖・佐藤優樹・宮本佳林・森戸知沙希・小関舞', 'live' => 'M-line Special 2026 Spring ～LOVELY～', 'when' => '2026/5/6 横浜Bay Hall'],
+  ]],
   ['artist' => 'NEXT YOU', 'title' => '大人の事情', 'videos' => [
     ['id' => '05TC_caYjvU', 'start' => 982, 'members' => '宮本佳林・平井美葉', 'live' => 'エムハロイベント vol.4～宮本佳林×BEYOOOOONDS/SeasoningS 平井美葉～', 'when' => '2025/10/28 せたがやイーグレットホール'],
   ]],
