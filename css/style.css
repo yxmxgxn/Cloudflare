@@ -485,26 +485,18 @@ main {
 
 #kh-post-results .kh-post {
   border: 1px solid #ccc;
-  padding: 10px 12px;
-  margin-bottom: 8px;
+  padding: 8px 12px;
+  margin-bottom: 6px;
+  font-size: 14px;
 }
 
-#kh-post-results .kh-post-meta {
-  font-size: 13px;
-  color: #888;
-  margin-bottom: 4px;
-}
-
-#kh-post-results .kh-post-meta a {
+#kh-post-results .kh-post a {
   color: #4a7cc7;
   text-decoration: none;
 }
 
-#kh-post-results .kh-post-text {
-  margin: 0;
-  font-size: 14px;
-  line-height: 1.7;
-  white-space: pre-wrap;
+#kh-post-results .kh-post a:hover {
+  text-decoration: underline;
 }
  
 #karinhello a {

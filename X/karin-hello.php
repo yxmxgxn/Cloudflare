@@ -26,7 +26,6 @@
   <span id="kh-post-count"></span>
 </div>
 <div id="kh-post-results"></div>
-<?php include $_SERVER['DOCUMENT_ROOT'] . '/Spreadsheet/karin-hello_posts.php'; ?>
 
 <div id="karinhello-controls">
   <input type="text" id="kh-search" placeholder="曲名・アーティスト・作詞作曲編曲で絞り込み…" oninput="khFilter()">
@@ -126,56 +125,70 @@
   window.khSort = khSort;
 })();
 
+// ポスト本文の検索。本文はページに持たず、Worker が一致したポストIDだけ返す
 (function() {
-  var posts = JSON.parse(document.getElementById('kh-posts').textContent);
   var input = document.getElementById('kh-post-q');
   var results = document.getElementById('kh-post-results');
   var count = document.getElementById('kh-post-count');
 
-  function highlight(parent, text, q) {
-    var lower = text.toLowerCase();
-    var pos = 0, i;
-    while ((i = lower.indexOf(q, pos)) !== -1) {
-      parent.appendChild(document.createTextNode(text.slice(pos, i)));
-      var mark = document.createElement('mark');
-      mark.textContent = text.slice(i, i + q.length);
-      parent.appendChild(mark);
-      pos = i + q.length;
-    }
-    parent.appendChild(document.createTextNode(text.slice(pos)));
-  }
+  var posts = {};
+  var order = [];
+  document.querySelectorAll('#kh-tbody tr[data-post]').forEach(function(tr) {
+    var id = tr.getAttribute('data-post');
+    if (!id) return;
+    var link = tr.cells[0].querySelector('a');
+    posts[id] = {
+      date: tr.cells[0].textContent.trim(),
+      url: link ? link.href : '',
+      song: tr.cells[1].textContent.trim(),
+      artist: tr.getAttribute('data-artist') || ''
+    };
+    order.push(id);
+  });
 
-  function search() {
-    var q = input.value.trim().toLowerCase();
+  var timer = null;
+  var seq = 0;
+
+  function render(ids) {
     results.textContent = '';
-    if (!q) { count.textContent = ''; return; }
+    var hit = {};
+    ids.forEach(function(id) { hit[id] = true; });
+    var shown = order.filter(function(id) { return hit[id]; });
+    count.textContent = shown.length + ' 件';
 
-    var hits = posts.filter(function(p) { return p.text.toLowerCase().indexOf(q) !== -1; });
-    count.textContent = hits.length + ' 件';
-
-    hits.forEach(function(p) {
+    shown.forEach(function(id) {
+      var p = posts[id];
       var card = document.createElement('div');
       card.className = 'kh-post';
-
-      var meta = document.createElement('div');
-      meta.className = 'kh-post-meta';
       var date = document.createElement(p.url ? 'a' : 'span');
       date.textContent = p.date;
       if (p.url) { date.href = p.url; date.target = '_blank'; date.rel = 'noopener noreferrer'; }
-      meta.appendChild(date);
-      meta.appendChild(document.createTextNode('　' + p.song + ' / ' + p.artist));
-
-      var body = document.createElement('p');
-      body.className = 'kh-post-text';
-      highlight(body, p.text, q);
-
-      card.appendChild(meta);
-      card.appendChild(body);
+      card.appendChild(date);
+      card.appendChild(document.createTextNode('　' + p.song + ' / ' + p.artist));
       results.appendChild(card);
     });
   }
 
-  input.addEventListener('input', search);
+  function search() {
+    var q = input.value.trim();
+    var mySeq = ++seq;
+    if (!q) { results.textContent = ''; count.textContent = ''; return; }
+    if (q.length < 2) { results.textContent = ''; count.textContent = '2文字以上で検索'; return; }
+
+    fetch('/api/karinhello-search?q=' + encodeURIComponent(q))
+      .then(function(r) { if (!r.ok) throw new Error(r.status); return r.json(); })
+      .then(function(d) { if (mySeq === seq) render(d.ids || []); })
+      .catch(function() {
+        if (mySeq !== seq) return;
+        results.textContent = '';
+        count.textContent = '検索できませんでした';
+      });
+  }
+
+  input.addEventListener('input', function() {
+    clearTimeout(timer);
+    timer = setTimeout(search, 250);
+  });
 })();
 </script>
 <?php include $_SERVER['DOCUMENT_ROOT'] . '/common/footer.php'; ?>

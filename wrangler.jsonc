@@ -18,6 +18,12 @@
       "binding": "DB",
       "database_name": "karin-interview",
       "database_id": "830920cc-15cf-4522-b9cb-6a96fade5273"
+    },
+    {
+      // #佳林の１日１ハロ のポスト本文検索(bigram索引のみ。本文は持たない)
+      "binding": "HELLO_DB",
+      "database_name": "karin-hello",
+      "database_id": "9cbb8446-a16b-4051-ac67-5767774d0a19"
     }
   ]
 }

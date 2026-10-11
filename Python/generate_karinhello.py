@@ -6,7 +6,9 @@ PHPインクルード用のtr/tdフラグメント・アーティスト一覧・
 
 import csv
 import io
-import json
+import os
+import re
+import unicodedata
 from datetime import datetime, timezone, timedelta
 
 PUB_BASE = (
@@ -25,7 +27,6 @@ REPO_ROOT = Path(__file__).resolve().parent.parent  # Python/ の親
 
 OUTPUT_TABLE = REPO_ROOT / "Spreadsheet" / "karin-hello_table.php"
 OUTPUT_ARTISTS = REPO_ROOT / "Spreadsheet" / "karin-hello_artists.php"
-OUTPUT_POSTS = REPO_ROOT / "Spreadsheet" / "karin-hello_posts.php"
 OUTPUT_GENERATED = REPO_ROOT / "Generated" / "karin-hello_generated.php"
 
 def fetch_csv(gid: str) -> list[list[str]]:
@@ -64,9 +65,6 @@ def parse_rows(data: list[list[str]]) -> list[dict]:
             continue
         raw += [""] * (len(headers) - len(raw))
         row = {headers[i]: clean(raw[i]) for i in range(len(headers))}
-        if "Comment" in headers:
-            # ポスト本文は改行を残して表示する
-            row["Comment"] = raw[headers.index("Comment")].replace("\r", "").strip()
         if not row.get("曲名", ""):
             continue
         rows.append(row)
@@ -78,21 +76,27 @@ def post_url_of(row: dict) -> str:
     post_id = row.get("ポスト", "")
     return f"https://x.com/karin__miyamoto/status/{post_id}" if post_id else ""
 
-def build_posts(rows: list[dict]) -> str:
-    posts = [
-        {
-            "date": pad_date(row.get("ポスト日", "")),
-            "url": post_url_of(row),
-            "song": row.get("曲名", ""),
-            "artist": row.get("アーティスト名", ""),
-            "text": row["Comment"],
-        }
-        for row in rows
-        if row.get("Comment")
-    ]
-    # </script> で埋め込みが途切れないよう < をエスケープする
-    payload = json.dumps(posts, ensure_ascii=False).replace("<", "\\u003c")
-    return f'<script type="application/json" id="kh-posts">{payload}</script>'
+# ---- Worker(worker/index.js)の normalize / bigrams と一致させること ----
+_KEEP = re.compile(r"[^0-9a-z々぀-ヿ㐀-䶿一-鿿]")
+
+def normalize(s: str) -> str:
+    return _KEEP.sub("", unicodedata.normalize("NFKC", s or "").lower())
+
+def bigrams(s: str) -> str:
+    return " ".join(s[i:i + 2] for i in range(len(s) - 1))
+
+def sql_str(s: str) -> str:
+    return "'" + s.replace("'", "''") + "'"
+
+def build_index_sql(rows: list[dict]) -> str:
+    """ポスト本文の検索索引(D1 karin-hello の post_fts)を全件入れ直すSQL。本文そのものは入れない。"""
+    stmts = ["DELETE FROM post_fts;"]
+    for row in rows:
+        post_id = row.get("ポスト", "")
+        grams = bigrams(normalize(row.get("Comment", "")))
+        if post_id and grams:
+            stmts.append(f"INSERT INTO post_fts(id,bigram) VALUES({sql_str(post_id)},{sql_str(grams)});")
+    return "\n".join(stmts) + "\n"
 
 def build_table(rows: list[dict]) -> str:
     lines = []
@@ -135,7 +139,7 @@ def build_table(rows: list[dict]) -> str:
         )
 
         lines.append(
-            f'<tr data-artist="{artist}">'
+            f'<tr data-artist="{artist}" data-post="{escape_html(row.get("ポスト", ""))}">'
             f"<td>{date_cell}</td>"
             f'<td class="kh-song">{song}</td>'
             f'<td class="kh-artist">{artist}</td>'
@@ -181,10 +185,11 @@ def main():
         f.write(f"<!-- generated: {datetime.now(timezone.utc).isoformat()} -->\n")
         f.write(build_table(rows) + "\n")
 
-    # posts
-    with open(OUTPUT_POSTS, "w", encoding="utf-8") as f:
-        f.write(f"<!-- generated: {datetime.now(timezone.utc).isoformat()} -->\n")
-        f.write(build_posts(rows) + "\n")
+    # 検索索引。本文から作るのでリポジトリには置かず、指定されたときだけ書き出す(CIでD1へ適用→破棄)
+    index_sql = os.environ.get("KARINHELLO_INDEX_SQL")
+    if index_sql:
+        Path(index_sql).parent.mkdir(parents=True, exist_ok=True)
+        Path(index_sql).write_text(build_index_sql(rows), encoding="utf-8")
 
     # artists
     with open(OUTPUT_ARTISTS, "w", encoding="utf-8") as f:
@@ -198,7 +203,7 @@ def main():
     with open(OUTPUT_GENERATED, "w", encoding="utf-8") as f:
         f.write(f'<p class="last-update">データ取得日：{generated}</p>\n')
 
-    print(f"生成完了: {OUTPUT_TABLE} / {OUTPUT_ARTISTS} / {OUTPUT_POSTS} / {OUTPUT_GENERATED} ({len(data)-1} 行処理)")
+    print(f"生成完了: {OUTPUT_TABLE} / {OUTPUT_ARTISTS} / {OUTPUT_GENERATED} ({len(data)-1} 行処理)")
 
 if __name__ == "__main__":
     main()

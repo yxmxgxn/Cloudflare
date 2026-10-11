@@ -32,6 +32,9 @@ jobs:
             python "Python/generate_${script}.py" || { echo "::error::${script} failed"; failed=1; }
           done
           exit $failed
+        env:
+          # 1日1ハロのポスト本文検索の索引。リポジトリには入れず、後のステップで D1 に適用する
+          KARINHELLO_INDEX_SQL: build/karinhello_index.sql
 
       - name: Generate timeline images
         run: python Python/timeline.py
@@ -59,3 +62,13 @@ jobs:
           fi
         env:
           GH_TOKEN: ${{ github.token }}
+
+      # 表の更新を止めないよう、検索索引の適用はコミットの後にする
+      - name: Update karin-hello search index (D1)
+        if: hashFiles('build/karinhello_index.sql') != ''
+        run: |
+          npx wrangler@4 d1 execute karin-hello --remote --file worker/karinhello-schema.sql
+          npx wrangler@4 d1 execute karin-hello --remote --file build/karinhello_index.sql
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}

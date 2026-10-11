@@ -5,6 +5,7 @@
  *   - /api/interview-search?q=… : D1 の全文検索(bigram×FTS5)を引き、一致した記事IDだけ返す。
  *     対象は本文と、スプシのタイトル・Feature・媒体名・メンバー名。
  *     本文・スニペットは一切返さない。
+ *   - /api/karinhello-search?q=… : #佳林の１日１ハロ のポスト本文を同じ方式で引き、一致したポストIDだけ返す(D1 karin-hello)。
  *   - POST /api/feedback : フッターの匿名フィードバックを受け、D1 に保存して Discord へ通知。
  *   - /_feedback?t=… : 受け取ったフィードバックの管理ページ(トークン一致時のみ。不一致は404)。
  *   - それ以外の全リクエスト : 静的アセット(env.ASSETS)へ委譲。既存ページの挙動は不変。
@@ -71,6 +72,17 @@ async function handleSearch(url, env) {
       .all());
   }
 
+  return json({ ids: results.map((r) => r.id) });
+}
+
+// #佳林の１日１ハロ のポスト本文検索。一致したポストIDだけ返す(本文は D1 にも持っていない)
+async function handleKarinHelloSearch(url, env) {
+  const match = buildMatch(url.searchParams.get("q") || "");
+  if (!match) return json({ ids: [] });
+  const { results } = await env.HELLO_DB
+    .prepare("SELECT id FROM post_fts WHERE post_fts MATCH ? LIMIT ?")
+    .bind(match, LIMIT)
+    .all();
   return json({ ids: results.map((r) => r.id) });
 }
 
@@ -278,6 +290,15 @@ export default {
         return await handleSearch(url, env);
       } catch (e) {
         return json({ error: "search_failed" }, 500);
+      }
+    }
+
+    if (url.pathname === "/api/karinhello-search") {
+      if (request.method !== "GET") return json({ error: "method" }, 405);
+      try {
+        return await handleKarinHelloSearch(url, env);
+      } catch (e) {
+        return json({ error: "search_failed" }, 500, "no-store");
       }
     }
 
