@@ -40,6 +40,8 @@
         <th onclick="khSort('artist')" id="kh-th-artist">アーティスト</th>
         <th>アルバム</th>
         <th>YT</th>
+        <th>Spotify</th>
+        <th>Amazon Music</th>
         <th>作詞</th>
         <th>作曲</th>
         <th>編曲</th>
@@ -65,9 +67,9 @@
       date:     tr.cells[0] ? tr.cells[0].textContent.trim() : '',
       song:     tr.cells[1] ? tr.cells[1].textContent.trim() : '',
       artist:   tr.getAttribute('data-artist') || '',
-      lyricist: tr.cells[5] ? tr.cells[5].textContent.trim() : '',
-      composer: tr.cells[6] ? tr.cells[6].textContent.trim() : '',
-      arranger: tr.cells[7] ? tr.cells[7].textContent.trim() : '',
+      lyricist: tr.cells[7] ? tr.cells[7].textContent.trim() : '',
+      composer: tr.cells[8] ? tr.cells[8].textContent.trim() : '',
+      arranger: tr.cells[9] ? tr.cells[9].textContent.trim() : '',
     };
   });
 

@@ -79,6 +79,10 @@ def build_table(data: list[list[str]]) -> str:
         album        = escape_html(row.get("アルバム名", ""))
         yt_id        = row.get("YouTube Music", "")
         yt_url       = f"https://music.youtube.com/watch?v={yt_id}" if yt_id else ""
+        spotify_id   = row.get("Spotify", "")
+        spotify_url  = f"https://open.spotify.com/track/{spotify_id}" if spotify_id else ""
+        amazon_id    = row.get("Amazon Music", "")
+        amazon_url   = f"https://music.amazon.co.jp/tracks/{amazon_id}" if amazon_id else ""
         lyricist     = escape_html(row.get("作詞", ""))
         composer     = escape_html(row.get("作曲", ""))
         arranger     = escape_html(row.get("編曲", ""))
@@ -95,6 +99,14 @@ def build_table(data: list[list[str]]) -> str:
             f'<a href="{escape_html(yt_url)}" target="_blank" rel="noopener noreferrer" title="YouTube Music">{icon("youtube-brand", "ic ic-20")}</a>'
             if yt_url else ""
         )
+        spotify_cell = (
+            f'<a href="{escape_html(spotify_url)}" target="_blank" rel="noopener noreferrer" title="Spotify">{icon("spotify-brand", "ic ic-20")}</a>'
+            if spotify_url else ""
+        )
+        amazon_cell = (
+            f'<a href="{escape_html(amazon_url)}" target="_blank" rel="noopener noreferrer" title="Amazon Music">{icon("amazon-music-brand", "ic ic-20")}</a>'
+            if amazon_url else ""
+        )
 
         lines.append(
             f'<tr data-artist="{artist}">'
@@ -103,6 +115,8 @@ def build_table(data: list[list[str]]) -> str:
             f'<td class="kh-artist">{artist}</td>'
             f'<td class="kh-album">{album_cell}</td>'
             f'<td class="kh-yt">{yt_cell}</td>'
+            f'<td class="kh-spotify">{spotify_cell}</td>'
+            f'<td class="kh-amazon">{amazon_cell}</td>'
             f'<td class="kh-lyricist">{lyricist}</td>'
             f'<td class="kh-composer">{composer}</td>'
             f'<td class="kh-arranger">{arranger}</td>'
