@@ -6,6 +6,7 @@ PHPインクルード用のtr/tdフラグメント・アーティスト一覧・
 
 import csv
 import io
+import json
 from datetime import datetime, timezone, timedelta
 
 PUB_BASE = (
@@ -24,6 +25,7 @@ REPO_ROOT = Path(__file__).resolve().parent.parent  # Python/ の親
 
 OUTPUT_TABLE = REPO_ROOT / "Spreadsheet" / "karin-hello_table.php"
 OUTPUT_ARTISTS = REPO_ROOT / "Spreadsheet" / "karin-hello_artists.php"
+OUTPUT_POSTS = REPO_ROOT / "Spreadsheet" / "karin-hello_posts.php"
 OUTPUT_GENERATED = REPO_ROOT / "Generated" / "karin-hello_generated.php"
 
 def fetch_csv(gid: str) -> list[list[str]]:
@@ -53,7 +55,7 @@ def escape_html(s: str) -> str:
     )
 
 
-def build_table(data: list[list[str]]) -> str:
+def parse_rows(data: list[list[str]]) -> list[dict]:
     headers = [h.strip() for h in data[0]]
 
     rows = []
@@ -62,16 +64,40 @@ def build_table(data: list[list[str]]) -> str:
             continue
         raw += [""] * (len(headers) - len(raw))
         row = {headers[i]: clean(raw[i]) for i in range(len(headers))}
+        if "Comment" in headers:
+            # ポスト本文は改行を残して表示する
+            row["Comment"] = raw[headers.index("Comment")].replace("\r", "").strip()
         if not row.get("曲名", ""):
             continue
         rows.append(row)
 
     rows.sort(key=lambda row: pad_date(row.get("ポスト日", "")), reverse=True)
+    return rows
 
+def post_url_of(row: dict) -> str:
+    post_id = row.get("ポスト", "")
+    return f"https://x.com/karin__miyamoto/status/{post_id}" if post_id else ""
+
+def build_posts(rows: list[dict]) -> str:
+    posts = [
+        {
+            "date": pad_date(row.get("ポスト日", "")),
+            "url": post_url_of(row),
+            "song": row.get("曲名", ""),
+            "artist": row.get("アーティスト名", ""),
+            "text": row["Comment"],
+        }
+        for row in rows
+        if row.get("Comment")
+    ]
+    # </script> で埋め込みが途切れないよう < をエスケープする
+    payload = json.dumps(posts, ensure_ascii=False).replace("<", "\\u003c")
+    return f'<script type="application/json" id="kh-posts">{payload}</script>'
+
+def build_table(rows: list[dict]) -> str:
     lines = []
     for row in rows:
-        post_id      = row.get("ポスト", "")
-        post_url     = f"https://x.com/karin__miyamoto/status/{post_id}" if post_id else ""
+        post_url     = post_url_of(row)
         post_date    = pad_date(row.get("ポスト日", ""))
         song         = escape_html(row.get("曲名", ""))
         artist       = escape_html(row.get("アーティスト名", ""))
@@ -148,11 +174,17 @@ def main():
     today_aware = datetime.now(jst)
 
     data = fetch_csv(SHEET_GID)
+    rows = parse_rows(data)
 
     # table
     with open(OUTPUT_TABLE, "w", encoding="utf-8") as f:
         f.write(f"<!-- generated: {datetime.now(timezone.utc).isoformat()} -->\n")
-        f.write(build_table(data) + "\n")
+        f.write(build_table(rows) + "\n")
+
+    # posts
+    with open(OUTPUT_POSTS, "w", encoding="utf-8") as f:
+        f.write(f"<!-- generated: {datetime.now(timezone.utc).isoformat()} -->\n")
+        f.write(build_posts(rows) + "\n")
 
     # artists
     with open(OUTPUT_ARTISTS, "w", encoding="utf-8") as f:
@@ -166,7 +198,7 @@ def main():
     with open(OUTPUT_GENERATED, "w", encoding="utf-8") as f:
         f.write(f'<p class="last-update">データ取得日：{generated}</p>\n')
 
-    print(f"生成完了: {OUTPUT_TABLE} / {OUTPUT_ARTISTS} / {OUTPUT_GENERATED} ({len(data)-1} 行処理)")
+    print(f"生成完了: {OUTPUT_TABLE} / {OUTPUT_ARTISTS} / {OUTPUT_POSTS} / {OUTPUT_GENERATED} ({len(data)-1} 行処理)")
 
 if __name__ == "__main__":
     main()

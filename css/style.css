@@ -450,9 +450,61 @@ main {
   min-width: 5em;
 }
 
-#karinhello td.kh-yt {
+#karinhello td.kh-yt,
+#karinhello td.kh-spotify,
+#karinhello td.kh-amazon {
   text-align: center;
   min-width: 2em;
+}
+
+#kh-post-search {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  margin: 16px 0 8px;
+}
+
+#kh-post-search input {
+  flex: 1;
+  min-width: 100px;
+  padding: 6px 10px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+}
+
+#kh-post-count {
+  font-size: 13px;
+  color: #888;
+  white-space: nowrap;
+}
+
+#kh-post-results {
+  max-height: 60vh;
+  overflow-y: auto;
+}
+
+#kh-post-results .kh-post {
+  border: 1px solid #ccc;
+  padding: 10px 12px;
+  margin-bottom: 8px;
+}
+
+#kh-post-results .kh-post-meta {
+  font-size: 13px;
+  color: #888;
+  margin-bottom: 4px;
+}
+
+#kh-post-results .kh-post-meta a {
+  color: #4a7cc7;
+  text-decoration: none;
+}
+
+#kh-post-results .kh-post-text {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.7;
+  white-space: pre-wrap;
 }
  
 #karinhello a {

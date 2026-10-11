@@ -1,6 +1,6 @@
 <?php
   $title = "#佳林の１日１ハロまとめ"; 
-  $description = "宮本佳林さんがハロープロジェクトサブスク解禁にともない毎日ハロプロの曲を1曲紹介する企画をまとめました。日付に元ポスト・アルバム名に公式のリンク・YouTube MusicのURLや作詞作曲編曲などをいれています。";
+  $description = "宮本佳林さんがハロープロジェクトサブスク解禁にともない毎日ハロプロの曲を1曲紹介する企画をまとめました。日付に元ポスト・アルバム名に公式のリンク・YouTube Music／Spotify／Amazon MusicのURLや作詞作曲編曲などをいれています。";
   $jsonld_type = "Dataset";
   $about = "宮本佳林";
   // グループ単体
@@ -17,11 +17,16 @@
 <main>
   <h1>#佳林の１日１ハロまとめ</h1>
   宮本佳林さんがXでハロープロジェクトサブスク解禁にともない毎日ハロプロの曲を<a href="https://x.com/search?q=%23%E4%BD%B3%E6%9E%97%E3%81%AE1%E6%97%A51%E3%83%8F%E3%83%AD%20from%3A%40karin__miyamoto&src=typed_query&f=live" target="_blank" rel="noopener noreferrer">#佳林の１日１ハロ</a>で1曲紹介する企画をまとめました。<br>
-  日付に元ポスト・アルバム名に公式のリンク・YouTube MusicのURLや作詞作曲編曲などをいれています。<br>
+  日付に元ポスト・アルバム名に公式のリンク・YouTube Music／Spotify／Amazon MusicのURLや作詞作曲編曲などをいれています。<br>
   アーティスト名・作詞作曲編曲でフィルタをかけられます。<br>
-  <a href="https://music.youtube.com/playlist?list=PLayn2_W-cVe4" target="_blank" rel="noopener noreferrer">YouTube Musicのプレイリスト</a>を作りました。<br>
-  日付に元ポスト・アルバム名に公式のリンク・YouTube MusicのURLや作詞作曲編曲などをいれています。<br>
-  <a href="https://docs.google.com/spreadsheets/d/1kmPtWU7KqQIaNUfX_-kdW0mElJ5zVgFGZqY9h8IXQJU/edit?gid=0#gid=0" target="_blank" rel="noopener noreferrer">ファイルを操作した場合はこちら（スプレッドシート）</a><br>
+  プレイリストを作りました：<a href="https://music.youtube.com/playlist?list=PLAbxdMpUP3BU" target="_blank" rel="noopener noreferrer">YouTube Music</a>・<a href="https://open.spotify.com/playlist/5YVrEQ0hb7LTOviTXum8zi" target="_blank" rel="noopener noreferrer">Spotify</a>・<a href="https://music.amazon.co.jp/user-playlists/46349edb307f4bda8ab48d0f060a0c69jajp" target="_blank" rel="noopener noreferrer">Amazon Music</a><br>
+
+<div id="kh-post-search">
+  <input type="search" id="kh-post-q" placeholder="ポストの本文を検索…" aria-label="ポストの本文を検索">
+  <span id="kh-post-count"></span>
+</div>
+<div id="kh-post-results"></div>
+<?php include $_SERVER['DOCUMENT_ROOT'] . '/Spreadsheet/karin-hello_posts.php'; ?>
 
 <div id="karinhello-controls">
   <input type="text" id="kh-search" placeholder="曲名・アーティスト・作詞作曲編曲で絞り込み…" oninput="khFilter()">
@@ -119,6 +124,58 @@
 
   window.khFilter = khFilter;
   window.khSort = khSort;
+})();
+
+(function() {
+  var posts = JSON.parse(document.getElementById('kh-posts').textContent);
+  var input = document.getElementById('kh-post-q');
+  var results = document.getElementById('kh-post-results');
+  var count = document.getElementById('kh-post-count');
+
+  function highlight(parent, text, q) {
+    var lower = text.toLowerCase();
+    var pos = 0, i;
+    while ((i = lower.indexOf(q, pos)) !== -1) {
+      parent.appendChild(document.createTextNode(text.slice(pos, i)));
+      var mark = document.createElement('mark');
+      mark.textContent = text.slice(i, i + q.length);
+      parent.appendChild(mark);
+      pos = i + q.length;
+    }
+    parent.appendChild(document.createTextNode(text.slice(pos)));
+  }
+
+  function search() {
+    var q = input.value.trim().toLowerCase();
+    results.textContent = '';
+    if (!q) { count.textContent = ''; return; }
+
+    var hits = posts.filter(function(p) { return p.text.toLowerCase().indexOf(q) !== -1; });
+    count.textContent = hits.length + ' 件';
+
+    hits.forEach(function(p) {
+      var card = document.createElement('div');
+      card.className = 'kh-post';
+
+      var meta = document.createElement('div');
+      meta.className = 'kh-post-meta';
+      var date = document.createElement(p.url ? 'a' : 'span');
+      date.textContent = p.date;
+      if (p.url) { date.href = p.url; date.target = '_blank'; date.rel = 'noopener noreferrer'; }
+      meta.appendChild(date);
+      meta.appendChild(document.createTextNode('　' + p.song + ' / ' + p.artist));
+
+      var body = document.createElement('p');
+      body.className = 'kh-post-text';
+      highlight(body, p.text, q);
+
+      card.appendChild(meta);
+      card.appendChild(body);
+      results.appendChild(card);
+    });
+  }
+
+  input.addEventListener('input', search);
 })();
 </script>
 <?php include $_SERVER['DOCUMENT_ROOT'] . '/common/footer.php'; ?>
