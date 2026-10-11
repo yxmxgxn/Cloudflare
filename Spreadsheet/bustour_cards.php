@@ -1,4 +1,4 @@
-<!-- generated: 2026-10-07T07:17:20.661099+00:00 -->
+<!-- generated: 2026-10-07T15:25:09.139575+00:00 -->
 <article class="card bt-card" id="FC167">
 <p class="bt-meta"><span class="bt-date">2026/09/27</span><span class="bt-pref">三重県</span></p>
 <h2 class="bt-title">JR東海 おいないさ、伊勢キャンペーンプレゼンツ 伊勢鈴蘭がご案内！聖地巡礼 伊勢満喫ツアー</h2>
@@ -17,7 +17,7 @@
 <h2 class="bt-title">矢島舞美＆中島早貴の“しましま旅”in湯LOVE草津</h2>
 <p class="bt-members">矢島舞美・中島早貴（℃-ute）</p>
 <p class="bt-live"><span class="bt-label">ツアー内ライブ</span>2026/09/13</p>
-<p class="bt-links"><a class="bt-link" href="https://www.upfc.jp/m-line/news_detail.php?@uid=T9LMmeZ9TaZYBWef" target="_blank" rel="noopener noreferrer">ファンクラブお知らせ（WebArchive）</a><a class="bt-link" href="https://event.bigs.jp/shimashima-travel2026/" target="_blank" rel="noopener noreferrer">旅行会社お知らせ</a></p>
+<p class="bt-links"><a class="bt-link" href="https://www.upfc.jp/m-line/news_detail.php?@uid=T9LMmeZ9TaZYBWef" target="_blank" rel="noopener noreferrer">ファンクラブお知らせ</a><a class="bt-link" href="https://event.bigs.jp/shimashima-travel2026/" target="_blank" rel="noopener noreferrer">旅行会社お知らせ</a></p>
 </article>
 <article class="card bt-card" id="FC165">
 <p class="bt-meta"><span class="bt-date">2026/08/29〜08/30</span><span class="bt-pref">長野県</span></p>
@@ -38,14 +38,14 @@
 <h2 class="bt-title">須藤茉麻・夏焼雅・熊井友理奈スッペシャルバスツアー in 那須高原「トラベリーズ.com 2026」</h2>
 <p class="bt-members">須藤茉麻・夏焼雅・熊井友理奈</p>
 <p class="bt-live"><span class="bt-label">ツアー内ライブ</span>2026/05/24 大正堂くろいそみるひぃホール 小ホール</p>
-<p class="bt-links"><a class="bt-link" href="https://event.bigs.jp/traberryz.com-2026/" target="_blank" rel="noopener noreferrer">旅行会社お知らせ</a></p>
+<p class="bt-links"><a class="bt-link" href="https://up-front-create.com/event/a24ba984fb9ef412e949bc618e37ffd39c81fbd8/" target="_blank" rel="noopener noreferrer">ファンクラブお知らせ</a><a class="bt-link" href="https://event.bigs.jp/traberryz.com-2026/" target="_blank" rel="noopener noreferrer">旅行会社お知らせ</a></p>
 </article>
 <article class="card bt-card" id="FC162">
 <p class="bt-meta"><span class="bt-date">2026/04/04〜04/05</span><span class="bt-pref">千葉県</span></p>
 <h2 class="bt-title">千葉県館山市×つばきファクトリーFCツアー ～キャメリア館山物語～</h2>
 <p class="bt-members">谷本安美・小野瑞歩・小野田紗栞・秋山眞緒・河西結心・福田真琳・豫風瑠乃・石井泉羽・村田結生・土居楓奏・西村乙輝（つばきファクトリー）</p>
 <p class="bt-live"><span class="bt-label bt-label-sep">別チケットのライブ</span>千葉県館山市×つばきファクトリー 地域活性化コンサート ナルチカ 2026 つばきファクトリー in 館山<span class="bt-live-sub">2026/04/05 千葉県南総文化ホール 大ホール</span></p>
-<p class="bt-links"><a class="bt-link" href="https://www.upfc.jp/helloproject/news_detail.php?%40uid=sdnIr28PVmE4rgAX" target="_blank" rel="noopener noreferrer">ファンクラブお知らせ</a><a class="bt-link" href="https://bonichi.com/kanko/1212312-2/" target="_blank" rel="noopener noreferrer">旅行会社お知らせ</a><a class="bt-link" href="https://www.youtube.com/watch?v=3lEAfd9ZN4c" target="_blank" rel="noopener noreferrer"><svg class="ic" viewBox="0 0 64 44" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><rect width="64" height="44" rx="10" fill="#FF0000"/><polygon points="22,8 54,22 22,36" fill="white"/></svg>YouTube</a><a class="bt-link" href="https://hp-setlist.com/event/12439" target="_blank" rel="noopener noreferrer">セットリスト（ToMoKo）</a></p>
+<p class="bt-links"><a class="bt-link" href="https://www.upfc.jp/helloproject/news_detail.php?@uid=sdnIr28PVmE4rgAX" target="_blank" rel="noopener noreferrer">ファンクラブお知らせ</a><a class="bt-link" href="https://bonichi.com/kanko/1212312-2/" target="_blank" rel="noopener noreferrer">旅行会社お知らせ</a><a class="bt-link" href="https://www.youtube.com/watch?v=3lEAfd9ZN4c" target="_blank" rel="noopener noreferrer"><svg class="ic" viewBox="0 0 64 44" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><rect width="64" height="44" rx="10" fill="#FF0000"/><polygon points="22,8 54,22 22,36" fill="white"/></svg>YouTube</a><a class="bt-link" href="https://hp-setlist.com/event/12439" target="_blank" rel="noopener noreferrer">セットリスト（ToMoKo）</a></p>
 </article>
 <article class="card bt-card" id="FC161">
 <p class="bt-meta"><span class="bt-date">2026/02/28</span><span class="bt-pref">三重県</span></p>
@@ -59,7 +59,7 @@
 <h2 class="bt-title">岡山県備前市×備YOOOOONDS Fanclub Tour in BE前の陣ZIN</h2>
 <p class="bt-members">江口紗耶・高瀬くるみ・岡村美波・平井美葉・里吉うたの（BEYOOOOONDS）</p>
 <p class="bt-live"><span class="bt-label bt-label-sep">別チケットのライブ</span>岡山県備前市×BEYOOOOONDS 地域活性化コンサート ナルチカ 2025 BEYOOOOONDS in 備前<span class="bt-live-sub">2025/11/09 備前市市民センター ホール</span></p>
-<p class="bt-links"><a class="bt-link" href="https://www.upfc.jp/helloproject/news_detail.php?@uid=GYssbiKXyhIsGgNB" target="_blank" rel="noopener noreferrer">ファンクラブお知らせ</a><a class="bt-link" href="https://web.archive.org/web/20250613073103/https://friendspack.jp/plan/5279/" target="_blank" rel="noopener noreferrer">旅行会社お知らせ（WebArchive）</a><a class="bt-link" href="https://www.youtube.com/watch?v=rJTJA8oI8t4" target="_blank" rel="noopener noreferrer"><svg class="ic" viewBox="0 0 64 44" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><rect width="64" height="44" rx="10" fill="#FF0000"/><polygon points="22,8 54,22 22,36" fill="white"/></svg>YouTube</a><a class="bt-link" href="https://www.youtube.com/watch?v=YH-gW0oHyYc" target="_blank" rel="noopener noreferrer"><svg class="ic" viewBox="0 0 64 44" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><rect width="64" height="44" rx="10" fill="#FF0000"/><polygon points="22,8 54,22 22,36" fill="white"/></svg>YouTube 2</a><a class="bt-link" href="https://hp-setlist.com/event/12288" target="_blank" rel="noopener noreferrer">セットリスト（ToMoKo）</a></p>
+<p class="bt-links"><a class="bt-link" href="https://www.upfc.jp/helloproject/news_detail.php?@uid=uI5pNnB8jsnxLaye" target="_blank" rel="noopener noreferrer">ファンクラブお知らせ</a><a class="bt-link" href="https://web.archive.org/web/20250613073103/https://friendspack.jp/plan/5279/" target="_blank" rel="noopener noreferrer">旅行会社お知らせ（WebArchive）</a><a class="bt-link" href="https://www.youtube.com/watch?v=rJTJA8oI8t4" target="_blank" rel="noopener noreferrer"><svg class="ic" viewBox="0 0 64 44" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><rect width="64" height="44" rx="10" fill="#FF0000"/><polygon points="22,8 54,22 22,36" fill="white"/></svg>YouTube</a><a class="bt-link" href="https://www.youtube.com/watch?v=YH-gW0oHyYc" target="_blank" rel="noopener noreferrer"><svg class="ic" viewBox="0 0 64 44" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><rect width="64" height="44" rx="10" fill="#FF0000"/><polygon points="22,8 54,22 22,36" fill="white"/></svg>YouTube 2</a><a class="bt-link" href="https://hp-setlist.com/event/12288" target="_blank" rel="noopener noreferrer">セットリスト（ToMoKo）</a></p>
 </article>
 <article class="card bt-card" id="FC159">
 <p class="bt-meta"><span class="bt-date">2025/10/24〜10/25</span><span class="bt-pref">長野県</span></p>
@@ -87,7 +87,7 @@
 <h2 class="bt-title">石川県加賀市×OCHA NORMAファンクラブツアー ～OCHA NORMA ヨリドリ！茶柱紀行 in 加賀温泉～</h2>
 <p class="bt-members">斉藤円香・広本瑠璃・米村姫良々・窪田七海・中山夏月姫・西﨑美空・北原もも・筒井澪心（OCHA NORMA）</p>
 <p class="bt-live"><span class="bt-label bt-label-sep">別チケットのライブ</span>石川県加賀市×OCHA NORMA 地域活性化コンサート ナルチカ 2025 OCHA NORMA in 加賀<span class="bt-live-sub">2025/04/20 加賀市文化会館 大ホール</span></p>
-<p class="bt-links"><a class="bt-link" href="https://www.upfc.jp/helloproject/news_detail.php?@uid=0rrG13aXPhrujq0f" target="_blank" rel="noopener noreferrer">ファンクラブお知らせ</a><a class="bt-link" href="https://web.archive.org/web/20250210162120/https://www2.hokutetsu.co.jp/funpage.html" target="_blank" rel="noopener noreferrer">旅行会社お知らせ（WebArchive）</a><a class="bt-link" href="https://www.youtube.com/watch?v=NX5LJGWJmzY" target="_blank" rel="noopener noreferrer"><svg class="ic" viewBox="0 0 64 44" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><rect width="64" height="44" rx="10" fill="#FF0000"/><polygon points="22,8 54,22 22,36" fill="white"/></svg>YouTube</a><a class="bt-link" href="https://hp-setlist.com/event/12083" target="_blank" rel="noopener noreferrer">セットリスト（ToMoKo）</a></p>
+<p class="bt-links"><a class="bt-link" href="https://www.upfc.jp/helloproject/news_detail.php?@uid=n4dPu7WHtwexwn6q" target="_blank" rel="noopener noreferrer">ファンクラブお知らせ</a><a class="bt-link" href="https://web.archive.org/web/20250210162120/https://www2.hokutetsu.co.jp/funpage.html" target="_blank" rel="noopener noreferrer">旅行会社お知らせ（WebArchive）</a><a class="bt-link" href="https://www.youtube.com/watch?v=NX5LJGWJmzY" target="_blank" rel="noopener noreferrer"><svg class="ic" viewBox="0 0 64 44" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><rect width="64" height="44" rx="10" fill="#FF0000"/><polygon points="22,8 54,22 22,36" fill="white"/></svg>YouTube</a><a class="bt-link" href="https://hp-setlist.com/event/12083" target="_blank" rel="noopener noreferrer">セットリスト（ToMoKo）</a></p>
 </article>
 <article class="card bt-card" id="FC155">
 <p class="bt-meta"><span class="bt-date">2025/03/08〜03/09</span><span class="bt-pref">静岡県</span></p>
@@ -115,14 +115,14 @@
 <h2 class="bt-title">BEYOOOOONDS Hoooooliday Fanclub Tour in 苗場の陣ZIN</h2>
 <p class="bt-members">島倉りか・西田汐里・江口紗耶・高瀬くるみ・前田こころ・岡村美波・清野桃々姫・平井美葉・小林萌花・里吉うたの（BEYOOOOONDS）</p>
 <p class="bt-live"><span class="bt-label">ツアー内ライブ</span>2024/08/19 苗場プリンス ブリザーディウム</p>
-<p class="bt-links"><a class="bt-link" href="https://event.bigs.jp/beyo_hoooooliday/" target="_blank" rel="noopener noreferrer">旅行会社お知らせ</a><a class="bt-link" href="https://www.youtube.com/watch?v=q9U6OuDVHN8" target="_blank" rel="noopener noreferrer"><svg class="ic" viewBox="0 0 64 44" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><rect width="64" height="44" rx="10" fill="#FF0000"/><polygon points="22,8 54,22 22,36" fill="white"/></svg>YouTube</a><a class="bt-link" href="https://hp-setlist.com/event/12895" target="_blank" rel="noopener noreferrer">セットリスト（ToMoKo）</a></p>
+<p class="bt-links"><a class="bt-link" href="https://web.archive.org/web/20240613072103/http://www.up-fc.jp/helloproject/news_Info.php?id=23896" target="_blank" rel="noopener noreferrer">ファンクラブお知らせ（WebArchive）</a><a class="bt-link" href="https://event.bigs.jp/beyo_hoooooliday/" target="_blank" rel="noopener noreferrer">旅行会社お知らせ</a><a class="bt-link" href="https://www.youtube.com/watch?v=q9U6OuDVHN8" target="_blank" rel="noopener noreferrer"><svg class="ic" viewBox="0 0 64 44" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><rect width="64" height="44" rx="10" fill="#FF0000"/><polygon points="22,8 54,22 22,36" fill="white"/></svg>YouTube</a><a class="bt-link" href="https://hp-setlist.com/event/12895" target="_blank" rel="noopener noreferrer">セットリスト（ToMoKo）</a></p>
 </article>
 <article class="card bt-card" id="FC151">
 <p class="bt-meta"><span class="bt-date">2024/08/03〜08/04</span><span class="bt-pref">群馬県</span></p>
 <h2 class="bt-title">森戸知沙希・小関舞 おぜちぃバスツアー ～ 遅れてやってきた修学旅行 in 群馬 ～</h2>
 <p class="bt-members">森戸知沙希・小関舞</p>
 <p class="bt-live"><span class="bt-label">ツアー内ライブ</span>2024/08/04 榛名文化会館 エコール</p>
-<p class="bt-links"><a class="bt-link" href="https://event.bigs.jp/ozechii2024/" target="_blank" rel="noopener noreferrer">旅行会社お知らせ</a></p>
+<p class="bt-links"><a class="bt-link" href="https://web.archive.org/web/20240724093153/http://www.up-fc.jp/m-line/news_Info.php?id=23818" target="_blank" rel="noopener noreferrer">ファンクラブお知らせ（WebArchive）</a><a class="bt-link" href="https://event.bigs.jp/ozechii2024/" target="_blank" rel="noopener noreferrer">旅行会社お知らせ</a></p>
 </article>
 <article class="card bt-card" id="FC150">
 <p class="bt-meta"><span class="bt-date">2024/06/29〜06/30</span><span class="bt-pref">山梨県</span></p>
@@ -136,21 +136,21 @@
 <h2 class="bt-title">Morning Days Happy Holiday 15期メンバー 北川莉央・岡村ほまれ・山﨑愛生ファンクラブツアー in 信州</h2>
 <p class="bt-members">北川莉央・岡村ほまれ・山﨑愛生（モーニング娘。&#x27;24）</p>
 <p class="bt-live"><span class="bt-label">ツアー内ライブ</span>2024/06/23 岡谷市文化会館カノラホール</p>
-<p class="bt-links"><a class="bt-link" href="https://event.bigs.jp/morningdays15/" target="_blank" rel="noopener noreferrer">旅行会社お知らせ</a><a class="bt-link" href="https://www.youtube.com/watch?v=gPTHa7s48aA" target="_blank" rel="noopener noreferrer"><svg class="ic" viewBox="0 0 64 44" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><rect width="64" height="44" rx="10" fill="#FF0000"/><polygon points="22,8 54,22 22,36" fill="white"/></svg>YouTube</a><a class="bt-link" href="https://hp-setlist.com/event/12899" target="_blank" rel="noopener noreferrer">セットリスト（ToMoKo）</a></p>
+<p class="bt-links"><a class="bt-link" href="https://web.archive.org/web/20240616081725/http://www.up-fc.jp/helloproject/news_Info.php?id=23529" target="_blank" rel="noopener noreferrer">ファンクラブお知らせ（WebArchive）</a><a class="bt-link" href="https://event.bigs.jp/morningdays15/" target="_blank" rel="noopener noreferrer">旅行会社お知らせ</a><a class="bt-link" href="https://www.youtube.com/watch?v=gPTHa7s48aA" target="_blank" rel="noopener noreferrer"><svg class="ic" viewBox="0 0 64 44" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><rect width="64" height="44" rx="10" fill="#FF0000"/><polygon points="22,8 54,22 22,36" fill="white"/></svg>YouTube</a><a class="bt-link" href="https://hp-setlist.com/event/12899" target="_blank" rel="noopener noreferrer">セットリスト（ToMoKo）</a></p>
 </article>
 <article class="card bt-card" id="FC148">
 <p class="bt-meta"><span class="bt-date">2024/03/02〜03/03</span><span class="bt-pref">静岡県</span></p>
 <h2 class="bt-title">Juice=Juice Fanclub Tour Miracle×Juice×Bus4 in IZU</h2>
 <p class="bt-members">植村あかり・段原瑠々・井上玲音・工藤由愛・松永里愛・有澤一華・入江里咲・江端妃咲・石山咲良・遠藤彩加里（Juice=Juice）</p>
 <p class="bt-live"><span class="bt-label">ツアー内ライブ</span>2024/03/03 伊東市観光会館 ホール</p>
-<p class="bt-links"><a class="bt-link" href="https://event.bigs.jp/juicejuice2024/" target="_blank" rel="noopener noreferrer">旅行会社お知らせ</a><a class="bt-link" href="https://www.youtube.com/watch?v=N-ssXDgd-nQ" target="_blank" rel="noopener noreferrer"><svg class="ic" viewBox="0 0 64 44" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><rect width="64" height="44" rx="10" fill="#FF0000"/><polygon points="22,8 54,22 22,36" fill="white"/></svg>YouTube</a><a class="bt-link" href="https://hp-setlist.com/event/12896" target="_blank" rel="noopener noreferrer">セットリスト（ToMoKo）</a></p>
+<p class="bt-links"><a class="bt-link" href="https://web.archive.org/web/20241010103318/http://www.up-fc.jp/helloproject/news_Info.php?id=22945" target="_blank" rel="noopener noreferrer">ファンクラブお知らせ（WebArchive）</a><a class="bt-link" href="https://event.bigs.jp/juicejuice2024/" target="_blank" rel="noopener noreferrer">旅行会社お知らせ</a><a class="bt-link" href="https://www.youtube.com/watch?v=N-ssXDgd-nQ" target="_blank" rel="noopener noreferrer"><svg class="ic" viewBox="0 0 64 44" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><rect width="64" height="44" rx="10" fill="#FF0000"/><polygon points="22,8 54,22 22,36" fill="white"/></svg>YouTube</a><a class="bt-link" href="https://hp-setlist.com/event/12896" target="_blank" rel="noopener noreferrer">セットリスト（ToMoKo）</a></p>
 </article>
 <article class="card bt-card" id="FC147">
 <p class="bt-meta"><span class="bt-date">2023/11/25〜11/26</span><span class="bt-pref">長野県</span></p>
 <h2 class="bt-title">稲場愛香・小関舞ファンクラブツアー in 白樺湖～しらかばっちょとおぜきねこ～</h2>
 <p class="bt-members">稲場愛香・小関舞</p>
 <p class="bt-live"><span class="bt-label">ツアー内ライブ</span>2023/11/26 八ヶ岳やまびこホール（山梨県）</p>
-<p class="bt-links"><a class="bt-link" href="https://event.bigs.jp/manakamai/" target="_blank" rel="noopener noreferrer">旅行会社お知らせ</a><a class="bt-link" href="https://www.youtube.com/watch?v=hbyFI3jdgNQ" target="_blank" rel="noopener noreferrer"><svg class="ic" viewBox="0 0 64 44" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><rect width="64" height="44" rx="10" fill="#FF0000"/><polygon points="22,8 54,22 22,36" fill="white"/></svg>YouTube</a><a class="bt-link" href="https://hp-setlist.com/event/12894" target="_blank" rel="noopener noreferrer">セットリスト（ToMoKo）</a></p>
+<p class="bt-links"><a class="bt-link" href="https://web.archive.org/web/20240814130410/http://www.up-fc.jp/m-line/news_Info.php?id=22315" target="_blank" rel="noopener noreferrer">ファンクラブお知らせ（WebArchive）</a><a class="bt-link" href="https://event.bigs.jp/manakamai/" target="_blank" rel="noopener noreferrer">旅行会社お知らせ</a><a class="bt-link" href="https://www.youtube.com/watch?v=hbyFI3jdgNQ" target="_blank" rel="noopener noreferrer"><svg class="ic" viewBox="0 0 64 44" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><rect width="64" height="44" rx="10" fill="#FF0000"/><polygon points="22,8 54,22 22,36" fill="white"/></svg>YouTube</a><a class="bt-link" href="https://hp-setlist.com/event/12894" target="_blank" rel="noopener noreferrer">セットリスト（ToMoKo）</a></p>
 </article>
 <article class="card bt-card" id="FC146">
 <p class="bt-meta"><span class="bt-date">2023/11/18〜11/19</span><span class="bt-pref">岡山県</span></p>
@@ -164,14 +164,14 @@
 <h2 class="bt-title">宮本佳林ファンクラブツアー2023 ～佳林党 特別会～ in 山梨</h2>
 <p class="bt-members">宮本佳林</p>
 <p class="bt-live"><span class="bt-label">ツアー内ライブ</span>2023/08/28 山梨市花かげホール</p>
-<p class="bt-links"><a class="bt-link" href="https://event.bigs.jp/karintou/" target="_blank" rel="noopener noreferrer">旅行会社お知らせ</a><a class="bt-link" href="https://www.youtube.com/watch?v=OHBkr62lC4M" target="_blank" rel="noopener noreferrer"><svg class="ic" viewBox="0 0 64 44" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><rect width="64" height="44" rx="10" fill="#FF0000"/><polygon points="22,8 54,22 22,36" fill="white"/></svg>YouTube</a><a class="bt-link" href="https://hp-setlist.com/event/12900" target="_blank" rel="noopener noreferrer">セットリスト（ToMoKo）</a></p>
+<p class="bt-links"><a class="bt-link" href="https://www.jp-r.co.jp/event/0c6f0bfd4d995624fcd8285ed55ba71ed6cc95c9/" target="_blank" rel="noopener noreferrer">ファンクラブお知らせ</a><a class="bt-link" href="https://event.bigs.jp/karintou/" target="_blank" rel="noopener noreferrer">旅行会社お知らせ</a><a class="bt-link" href="https://www.youtube.com/watch?v=OHBkr62lC4M" target="_blank" rel="noopener noreferrer"><svg class="ic" viewBox="0 0 64 44" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><rect width="64" height="44" rx="10" fill="#FF0000"/><polygon points="22,8 54,22 22,36" fill="white"/></svg>YouTube</a><a class="bt-link" href="https://hp-setlist.com/event/12900" target="_blank" rel="noopener noreferrer">セットリスト（ToMoKo）</a></p>
 </article>
 <article class="card bt-card" id="FC144">
 <p class="bt-meta"><span class="bt-date">2023/08/06〜08/07</span><span class="bt-pref">群馬県</span></p>
 <h2 class="bt-title">Morning Days Happy Holiday 9期メンバー 譜久村聖・生田衣梨奈ファンクラブツアー in 群馬</h2>
 <p class="bt-members">譜久村聖・生田衣梨奈（モーニング娘。&#x27;23）</p>
 <p class="bt-live"><span class="bt-label">ツアー内ライブ</span>2023/08/07 伊勢崎市境総合文化センター 大ホール</p>
-<p class="bt-links"><a class="bt-link" href="https://event.bigs.jp/ponpon2023/" target="_blank" rel="noopener noreferrer">旅行会社お知らせ</a><a class="bt-link" href="https://www.youtube.com/watch?v=prsMK4cyBhk" target="_blank" rel="noopener noreferrer"><svg class="ic" viewBox="0 0 64 44" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><rect width="64" height="44" rx="10" fill="#FF0000"/><polygon points="22,8 54,22 22,36" fill="white"/></svg>YouTube</a><a class="bt-link" href="https://hp-setlist.com/event/12901" target="_blank" rel="noopener noreferrer">セットリスト（ToMoKo）</a></p>
+<p class="bt-links"><a class="bt-link" href="https://web.archive.org/web/20230609091028/http://www.up-fc.jp/helloproject/news_Info.php?id=21648" target="_blank" rel="noopener noreferrer">ファンクラブお知らせ（WebArchive）</a><a class="bt-link" href="https://event.bigs.jp/ponpon2023/" target="_blank" rel="noopener noreferrer">旅行会社お知らせ</a><a class="bt-link" href="https://www.youtube.com/watch?v=prsMK4cyBhk" target="_blank" rel="noopener noreferrer"><svg class="ic" viewBox="0 0 64 44" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><rect width="64" height="44" rx="10" fill="#FF0000"/><polygon points="22,8 54,22 22,36" fill="white"/></svg>YouTube</a><a class="bt-link" href="https://hp-setlist.com/event/12901" target="_blank" rel="noopener noreferrer">セットリスト（ToMoKo）</a></p>
 </article>
 <article class="card bt-card" id="FC143">
 <p class="bt-meta"><span class="bt-date">2020/02/22〜02/23</span><span class="bt-pref">静岡県</span></p>
@@ -254,6 +254,7 @@
 <p class="bt-meta"><span class="bt-date">2019/01/19〜01/20</span><span class="bt-pref">千葉県</span></p>
 <h2 class="bt-title">岡井千聖ファンクラブツアー～房総で浅イイ話～</h2>
 <p class="bt-members">岡井千聖</p>
+<p class="bt-links"><a class="bt-link" href="https://web.archive.org/web/20240716063432/http://www.up-fc.jp/m-line/news_Info.php?id=12780" target="_blank" rel="noopener noreferrer">ファンクラブお知らせ（WebArchive）</a></p>
 </article>
 <article class="card bt-card" id="FC131">
 <p class="bt-meta"><span class="bt-date">2018/12/01〜12/02</span><span class="bt-pref">静岡県</span></p>
@@ -788,7 +789,7 @@
 <h2 class="bt-title">キューティー観光社ファンクラブツアー in HAWAII</h2>
 <p class="bt-members">矢島舞美・中島早貴・鈴木愛理・岡井千聖・萩原舞（℃-ute）</p>
 <p class="bt-live"><span class="bt-label">ツアー内ライブ</span>ハワイ大学 Andrews Outdoor Theater</p>
-<p class="bt-links"><a class="bt-link" href="https://web.archive.org/web/20120608044720/http://www.up-fc.jp/helloproject/news_Info.php?id=77" target="_blank" rel="noopener noreferrer">ファンクラブお知らせ（WebArchive）</a></p>
+<p class="bt-links"><a class="bt-link" href="https://web.archive.org/web/20090511090555/http://www.up-fc.jp/helloproject/091news.php" target="_blank" rel="noopener noreferrer">ファンクラブお知らせ（WebArchive）</a></p>
 <details class="bt-setlist"><summary>セットリスト</summary><table class="bt-sl-table"><thead><tr><th>No.</th><th>曲名／（歌唱者）</th><th>原曲アーティスト</th></tr></thead><tbody><tr><td class="bt-sl-no">1</td><td>まっさらブルージーンズ</td><td>℃-ute</td></tr><tr><td class="bt-sl-no">2</td><td>ピラッ! 乙女の願い／梅田えりか・中島早貴・萩原舞</td><td>プッチモニV</td></tr><tr><td class="bt-sl-no">3</td><td>Go Go Go!</td><td>℃-ute</td></tr><tr><td class="bt-sl-no">4</td><td>MY BOY／矢島舞美・鈴木愛理・岡井千聖</td><td>Buono!</td></tr><tr><td class="bt-sl-no">5</td><td>甘い罠</td><td>℃-ute</td></tr><tr><td class="bt-sl-no">6</td><td>私立共学</td><td>℃-ute</td></tr><tr><td class="bt-sl-no">7</td><td>EVERYDAY 絶好調!!</td><td>℃-ute</td></tr><tr><td class="bt-sl-no">8</td><td>忘れたくない夏</td><td>℃-ute</td></tr><tr><td class="bt-sl-no">9</td><td>JUMP!!</td><td>℃-ute</td></tr></tbody></table></details>
 </article>
 <article class="card bt-card" id="FC055">
@@ -1123,6 +1124,6 @@
 </article>
 <article class="card bt-card" id="FC001">
 <p class="bt-meta"><span class="bt-date">2001/10/13〜10/14</span><span class="bt-pref">北海道</span></p>
-<h2 class="bt-title">カントリー娘。ファンの集い「君はカントリー娘。の応援団」in 花畑牧場</h2>
+<h2 class="bt-title">カントリー娘。ファンの集い「君はカントリー娘。の応援団」in 花畑牧場 test</h2>
 <p class="bt-members">りんね・あさみ（カントリー娘。）</p>
 </article>

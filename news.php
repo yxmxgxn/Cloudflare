@@ -8,90 +8,92 @@
 <main>
   このHPの更新履歴です。更新日時と内部リンク、また修正内容を掲載しています。※軽微な修正やデータ追加は省略しています。
   <dl>
-  <dt>2026-09-15</dt>
+  <dt>2026/10/09</dt>
+  <dd><a href="/fanclub-tour">ファンクラブツアー</a>のページを追加</dd>
+  <dt>2026/10/01</dt>
+  <dd><a href="/hello-articles">インタビュー</a>のページを動的な検索に変更</dd>
+  <dt>2026/09/15</dt>
   <dd><a href="/rikawani-kohaku">りかワニ紅白歌合戦</a>のページを追加</dd>
-  <dt>2026-08-19</dt>
+  <dt>2026/08/19</dt>
   <dd>定期クロールでリンク切れを実装</dd>
-  <dt>2026-08-17</dt>
+  <dt>2026/08/17</dt>
   <dd><a href="/vocalo-club">宮本佳林のボカロ部</a>を追加</dd>
-  <dt>2026-08-15</dt>
-  <dd>自分のプロフィール集をサイトの下に設置</dd>
-  <dt>2026-08-15</dt>
+  <dt>2026/08/15</dt>
   <dd>フッターに誤りの報告・追加のご要望を追加、ダッシュボードで確認できるように構築</dd>
-  <dt>2026-08-14</dt>
+  <dt>2026/08/14</dt>
   <dd><a href="/instagram/HANAKIN-insta">宮本佳林 HANAKINチャレンジ</a>にシャニカマー45°チャレンジを追加</dd>
-  <dt>2026-08-14</dt>
+  <dt>2026/08/14</dt>
   <dd>メンバーによみがなとグループを持たせて、フィルタさせるときに利用するように修正</dd>
-  <dt>2026-08-08</dt>
+  <dt>2026/08/08</dt>
   <dd><a href="/HelloYouTube/hello-gamelive">ファミ通ゲーム実況ch</a>のページを追加</dd>
-  <dt>2026-08-07</dt>
+  <dt>2026/08/07</dt>
   <dd><a href="/hello-articles">インタビュー</a>のページを追加</dd>
-  <dt>2026-07-30</dt>
+  <dt>2026/07/30</dt>
   <dd><a href="/instagram/HANAKIN-insta">宮本佳林 HANAKINチャレンジ</a>のページを追加</dd>
-  <dt>2026-07-26</dt>
+  <dt>2026/07/26</dt>
   <dd><a href="/HelloYouTube/hello-cooking">ハロプロ クッキングコーナー</a>のページを追加</dd>
-  <dt>2026-07-25</dt>
+  <dt>2026/07/25</dt>
   <dd><a href="/HelloYouTube/MHello">エムハロイベント</a>のページを追加</dd>
-  <dt>2026-07-16</dt>
+  <dt>2026/07/16</dt>
   <dd><a href="/Radio/karinoshi-map">カリオンオシマップ</a>のページを追加</dd>
-  <dt>2026-07-14</dt>
+  <dt>2026/07/14</dt>
   <dd><a href="/hello-movies">ハロプロメンバー出演映画</a>のページを追加</dd>
-  <dt>2026-07-11</dt>
+  <dt>2026/07/11</dt>
   <dd>サーバーをCloudflareに移行、ドメイン・ディレクトリ構造の変更しました。</dd>
-  <dt>2026-06-16</dt>
+  <dt>2026/06/16</dt>
   <dd><a href="/common/privacy">プライバシーポリシー</a>・<a href="/common/disclaimer">免責事項</a>のページを追加</dd>
-  <dt>2026-06-10</dt>
+  <dt>2026/06/10</dt>
   <dd><a href="/hello-birthday">バースデーイベント</a>のページを追加</dd>
-  <dt>2026-05-24</dt>
+  <dt>2026/05/24</dt>
   <dd><a href="/hello-timeline">ハロプロタイムライン</a>のページを追加</dd>
-  <dt>2026-05-21</dt>
+  <dt>2026/05/21</dt>
   <dd><a href="/members_table">卒業公演・在籍日数</a>のスプレッドシートを並び替えられるようIDとメンバーカラーをグループ追加など</dd>
-  <dt>2026-05-20</dt>
+  <dt>2026/05/20</dt>
   <dd><a href="/Radio/karinoshi">カリンオシce</a>をスプレッドシートから読み取って静的なテーブルを生成し、動的にスクロールしたところだけ埋め込まれたポストを展開する方式にして、速度を改善</dd>
-  <dt>2026-05-19</dt>
+  <dt>2026/05/19</dt>
   <dd><a href="/Radio/mixjuice">MIX-Juice</a>をスプレッドシートから読み取って静的なテーブルを生成する方式に修正</dd>
-  <dt>2026-05-19</dt>
+  <dt>2026/05/19</dt>
   <dd><a href="/members_table">卒業公演・在籍日数</a>をスプレッドシートから読み取って静的なテーブルを生成し、その際に年齢と現役の在籍日数を更新する方式に修正</dd>
-  <dt>2026-05-19</dt>
+  <dt>2026/05/19</dt>
   <dd><a href="/X/karin-hello">#佳林の１日１ハロ</a>をスプレッドシートから読み取って静的なテーブルを生成する方式に修正</dd>
-  <dt>2026-05-19</dt>
+  <dt>2026/05/19</dt>
   <dd><a href="/X/karin-vocalo">今日のボカロ</a>をスプレッドシートから読み取って静的なテーブルを生成する方式に修正</dd>
-  <dt>2026-05-17</dt>
+  <dt>2026/05/17</dt>
   <dd><a href="/JuiceJuice/juice-documentary">Juice=Juice密着映像</a>を追加</dd>
-  <dt>2026-05-17</dt>
+  <dt>2026/05/17</dt>
   <dd><a href="/YouTube/karin-dance">ハロ！ステダンス部</a>を追加</dd>
-  <dt>2026-05-17</dt>
+  <dt>2026/05/17</dt>
   <dd><a href="/JuiceJuice/juicejuice-song">Juice=Juice楽曲</a>を追加</dd>
-  <dt>2026-05-17</dt>
+  <dt>2026/05/17</dt>
   <dd><a href="/JuiceJuice/juice_live-karin">Juice=Juiceライブ映像</a>を追加</dd>
-  <dt>2026-05-15</dt>
+  <dt>2026/05/15</dt>
   <dd><a href="/YouTube/karin-making">メイキング映像ch</a>を追加</dd>
-  <dt>2026-05-15</dt>
+  <dt>2026/05/15</dt>
   <dd><a href="/famitsugamelive">ファミ通ゲーム実況ch</a>を追加</dd>
-  <dt>2026-05-15</dt>
-  <dd><a href="/YouTube/karin-mc">MC/a>を追加</dd>
-  <dt>2026-05-11</dt>
+  <dt>2026/05/15</dt>
+  <dd><a href="/YouTube/karin-mc">MC</a>を追加</dd>
+  <dt>2026/05/11</dt>
   <dd><a href="/kopinks">コピンク* コピンクス！一言集</a>を追加</dd>
-  <dt>2026-05-11</dt>
+  <dt>2026/05/11</dt>
   <dd><a href="/YouTube/karin-song">宮本佳林 ソロ曲まとめ</a>を追加</dd>
-   <dt>2026-05-11</dt>
+  <dt>2026/05/11</dt>
   <dd><a href="/instagram/karin-insta">宮本佳林 インスタグラム ライブ アーカイブまとめ</a>を追加</dd>
-  <dt>2026-05-10</dt>
+  <dt>2026/05/10</dt>
   <dd><a href="/YouTube/karin-eyecatch">宮本佳林 ハロ！ステ アプカミ GREEN ROOMアイキャッチまとめ</a>を追加</dd>
-  <dt>2026-05-10</dt>
+  <dt>2026/05/10</dt>
   <dd><a href="/YouTube/karin-rec">宮本佳林レコーディングまとめ</a>を追加</dd>
-  <dt>2026-05-10</dt>
+  <dt>2026/05/10</dt>
   <dd><a href="/YouTube/karin-hair">宮本佳林ヘアアレンジまとめ</a>を追加</dd>
-  <dt>2026-05-10</dt>
+  <dt>2026/05/10</dt>
   <dd><a href="/X/karin-vocalo">#今日のボカロまとめ</a>を追加</dd>
-  <dt>2026-05-10</dt>
-  <dd><a href="/Radio/karinoshi">カリンオシまとめ</a>都道府県順に修正</a></dd>
-  <dt>2026-05-10<</dt>
+  <dt>2026/05/10</dt>
+  <dd><a href="/Radio/karinoshi">カリンオシまとめ</a>都道府県順に修正</dd>
+  <dt>2026/05/10</dt>
   <dd>NEWSの設置とログの記録</dd>
-  <dt>2026-04-20</dt>
-  <dd>サーバー契約・サイト運営開始・これから怒涛の更新</a></dd>
-  <dt>1998-12-01</dt>
-  <dd>宮本佳林さん誕生</a></dd>
+  <dt>2026/04/20</dt>
+  <dd>サーバー契約・サイト運営開始・これから怒涛の更新</dd>
+  <dt>1998/12/01</dt>
+  <dd>宮本佳林さん誕生</dd>
 </dl>
 
 <?php include $_SERVER['DOCUMENT_ROOT'] . '/common/footer.php'; ?>

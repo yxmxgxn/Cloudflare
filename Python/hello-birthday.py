@@ -104,13 +104,35 @@ def build_rows(events: list[dict]) -> str:
         )
     return "\n".join(lines)
 
-def build_sections(events: list[dict]) -> str:
-    # date が有効で、birthday/date から年齢を計算できる行だけ残す
-    valid = []
+COLUMNS = [
+    "member_id", "php_name", "birthday", "member_name", "eventName",
+    "date", "startTime", "venueName", "prefectureName", "tomoko_url",
+]
+
+def get_birthday(events: list[dict]) -> str:
+    """メンバーの行のどれかに入っている birthday を返す"""
     for ev in events:
-        if not ev.get("date", "").strip():
-            continue
-        age = calc_age(ev.get("birthday", ""), ev.get("date", ""))
+        value = ev.get("birthday", "").strip()
+        if value and parse_date(value) is not None:
+            return value
+    return ""
+
+def build_sections(events: list[dict]) -> str:
+    birthday = get_birthday(events)
+    dated = [ev for ev in events if ev.get("date", "").strip()]
+
+    # 生年月日が取れないときは、行を捨てずにイベント年で区切って出す
+    if not birthday:
+        dated.sort(key=lambda x: parse_date(x.get("date", "")) or datetime.min)
+        sections = []
+        for year, group in groupby(dated, key=lambda x: (parse_date(x.get("date", "")) or datetime.min).year):
+            label = f"{year}年" if year != datetime.min.year else "日付不明"
+            sections.append(build_table(label, list(group)))
+        return "\n".join(sections)
+
+    valid = []
+    for ev in dated:
+        age = calc_age(birthday, ev.get("date", ""))
         if age is None:
             continue
         valid.append({**ev, "_age": age})
@@ -121,25 +143,28 @@ def build_sections(events: list[dict]) -> str:
     for age, group in groupby(valid, key=lambda x: x["_age"]):
         group_list = list(group)
         # その歳の誕生日の暦年（例: 2000年生まれの25歳 → 2025年）
-        bd = parse_date(group_list[0].get("birthday", ""))
+        bd = parse_date(birthday)
         year_label = f"（{bd.year + age}年）" if bd is not None else ""
-        rows = build_rows(group_list)
-        sections.append(
-            f"{age}歳{year_label}\n"
-            f"<table class=\"birthday-table\">\n"
-            f"<thead>\n<tr>\n"
-            f"<th>日付</th>\n<th>開演</th>\n<th>イベント名</th>\n"
-            f"<th>会場</th>\n<th>都道府県</th>\n<th>セットリスト</th>\n"
-            f"</tr>\n</thead>\n<tbody>\n"
-            f"{rows}\n"
-            f"</tbody>\n</table>"
-        )
+        sections.append(build_table(f"{age}歳{year_label}", group_list))
     return "\n".join(sections)
+
+def build_table(label: str, group_list: list[dict]) -> str:
+    rows = build_rows(group_list)
+    return (
+        f"{label}\n"
+        f"<table class=\"birthday-table\">\n"
+        f"<thead>\n<tr>\n"
+        f"<th>日付</th>\n<th>開演</th>\n<th>イベント名</th>\n"
+        f"<th>会場</th>\n<th>都道府県</th>\n<th>セットリスト</th>\n"
+        f"</tr>\n</thead>\n<tbody>\n"
+        f"{rows}\n"
+        f"</tbody>\n</table>"
+    )
 
 def build_php(member_name: str, events: list[dict], generated_date: str) -> str:
     title       = f"{member_name}バースデーイベントまとめ"
     description = f"{member_name}さんのこれまでのバースデーイベントの開催日時・会場をまとめました。セットリストが非公式サイト「Tomoko」に公開されていたものはリンクしています。"
-    birthday    = events[0].get("birthday", "").strip() if events else ""
+    birthday    = get_birthday(events)
     sections    = build_sections(events)
     valid_count = sum(1 for ev in events if ev.get("date", "").strip())
     return (
@@ -153,7 +178,7 @@ def build_php(member_name: str, events: list[dict], generated_date: str) -> str:
         f'<main>\n'
         f'<p class="site-title"><a href="/hello-birthday">メンバー一覧に戻る</a></p>\n'
         f'<h1>{escape_html(member_name)}バースデーイベント会場まとめ</h1>\n'
-        f'<p>{escape_html(member_name)}さん（{escape_html(birthday)}生まれ）のこれまでのバースデーイベントをまとめました。'
+        f'<p>{escape_html(member_name)}さん{f"（{escape_html(format_date(birthday))}生まれ）" if birthday else ""}のこれまでのバースデーイベントをまとめました。'
         f'非公式サイトのハロプロセトリ検索システム「ToMoKo」にてセットリストが公開されていたものはリンクを貼っています。</p>\n'
         f'{sections}\n\n'
         f'</main>\n'
@@ -170,6 +195,9 @@ def main():
     data = fetch_csv(CSV_URL)
 
     headers = [h.strip() for h in data[0]]
+    missing = [c for c in COLUMNS if c not in headers]
+    if missing:
+        raise SystemExit(f"CSVに必要な列がありません: {missing}（列: {headers}）")
 
     # (php_name, member_name) でグループ化
     member_events: dict[tuple, list[dict]] = defaultdict(list)

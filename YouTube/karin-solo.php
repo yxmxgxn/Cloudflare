@@ -157,9 +157,11 @@ $solo_sections = [
     ]],
     ['title' => 'Spinel Hearts', 'videos' => [
       ['id' => 'dXhiDRnP1aQ', 'label' => '宮本佳林 LIVE 2025～魔法のたからばこ～', 'note' => '2025/11/24 SOUND SHOWER ark 清水'],
+      ['id' => 'dRQ0mElf-js', 'start' => 1333, 'label' => '5th シングル発売記念イベント', 'note' => '2026/7/16 サンシャインシティ 噴水広場'],
     ]],
     ['title' => 'アンタイトル', 'videos' => [
       ['id' => 'N3lSmAuD8-k', 'label' => '宮本佳林 Sweet Box 2026～Happy Valentine\'s Day!～「Sugar Drop」', 'note' => '2026/2/15 第一ホテル両国「清澄」'],
+      ['id' => '6kRfzpxPAIs', 'start' => 634, 'label' => '5th シングル発売記念イベント', 'note' => '2026/7/16 サンシャインシティ 噴水広場'],
     ]],
   ],
   'STAGE VANGUARD「ザ☆アイドル！」オリジナルサウンドトラック' => [
@@ -255,5 +257,5 @@ $solo_desc = [
   </section>
   <?php endforeach; ?>
 </main>
-<div class="last-update">最終更新日：2026/08/21</div>
+<div class="last-update">最終更新日：2026/10/09</div>
 <?php include $_SERVER['DOCUMENT_ROOT'] . '/common/footer.php'; ?>
