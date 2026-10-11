@@ -154,7 +154,7 @@
     var hit = {};
     ids.forEach(function(id) { hit[id] = true; });
     var shown = order.filter(function(id) { return hit[id]; });
-    count.textContent = shown.length + ' 件';
+    count.textContent = shown.length ? shown.length + ' 件' : '見つかりませんでした';
 
     shown.forEach(function(id) {
       var p = posts[id];
@@ -181,7 +181,7 @@
       .catch(function() {
         if (mySeq !== seq) return;
         results.textContent = '';
-        count.textContent = '検索できませんでした';
+        count.textContent = '検索でエラーが起きました';
       });
   }
 
