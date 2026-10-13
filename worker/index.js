@@ -7,6 +7,7 @@
  *     本文・スニペットは一切返さない。
  *   - /api/karinhello-search?q=… : #佳林の１日１ハロ のポスト本文を同じ方式で引き、一致したポストIDだけ返す(D1 karin-hello)。
  *   - /api/insta?account=…&from=…&to=…&q=…&before=… : ハロプロ Instagram 投稿を日付の新しい順に返す(D1 karin-hello)。
+ *   - /api/insta-calendar?month=YYYY-MM&… : 上と同じ条件で、その月の日ごとの投稿数を返す。
  *   - POST /api/feedback : フッターの匿名フィードバックを受け、D1 に保存して Discord へ通知。
  *   - /_feedback?t=… : 受け取ったフィードバックの管理ページ(トークン一致時のみ。不一致は404)。
  *   - それ以外の全リクエスト : 静的アセット(env.ASSETS)へ委譲。既存ページの挙動は不変。
@@ -92,8 +93,8 @@ async function handleKarinHelloSearch(url, env) {
 const INSTA_PAGE = 100;
 const DATE_RE = /^\d{4}-\d{2}-\d{2}$/;
 
-async function handleInsta(url, env) {
-  const p = url.searchParams;
+// account / from / to / q の共通条件
+function instaWhere(p) {
   const where = [];
   const args = [];
   const accounts = (p.get("account") || "").split(",").map((a) => a.trim()).filter(Boolean).slice(0, 100);
@@ -105,13 +106,19 @@ async function handleInsta(url, env) {
   const to = p.get("to") || "";
   if (DATE_RE.test(from)) { where.push("ts >= ?"); args.push(from); }
   if (DATE_RE.test(to)) { where.push("ts < ?"); args.push(to + " 99"); } // その日の終わりまで
-  const before = p.get("before") || "";
-  if (before) { where.push("ts < ?"); args.push(before.slice(0, 16)); }
   const match = buildMatch(p.get("q") || "");
   if (match) {
     where.push("id IN (SELECT id FROM insta_fts WHERE insta_fts MATCH ?)");
     args.push(match);
   }
+  return { where, args };
+}
+
+async function handleInsta(url, env) {
+  const p = url.searchParams;
+  const { where, args } = instaWhere(p);
+  const before = p.get("before") || "";
+  if (before) { where.push("ts < ?"); args.push(before.slice(0, 16)); }
   const sql =
     "SELECT id, account, ts, permalink, media_type, excerpt FROM insta_post" +
     (where.length ? " WHERE " + where.join(" AND ") : "") +
@@ -119,6 +126,27 @@ async function handleInsta(url, env) {
   args.push(INSTA_PAGE);
   const { results } = await env.HELLO_DB.prepare(sql).bind(...args).all();
   return json({ posts: results, more: results.length === INSTA_PAGE }, 200, "public, max-age=300");
+}
+
+// カレンダー用: month=YYYY-MM の日ごとの投稿数(account / q の条件込み。from / to は無視)
+async function handleInstaCalendar(url, env) {
+  const p = new URLSearchParams(url.searchParams);
+  const month = p.get("month") || "";
+  if (!/^\d{4}-\d{2}$/.test(month)) return json({ error: "month" }, 400);
+  p.delete("from");
+  p.delete("to");
+  const { where, args } = instaWhere(p);
+  const [y, m] = month.split("-").map(Number);
+  const next = m === 12 ? `${y + 1}-01` : `${y}-${String(m + 1).padStart(2, "0")}`;
+  where.push("ts >= ?", "ts < ?");
+  args.push(month, next);
+  const { results } = await env.HELLO_DB
+    .prepare(`SELECT substr(ts, 1, 10) AS d, COUNT(*) AS n FROM insta_post WHERE ${where.join(" AND ")} GROUP BY d`)
+    .bind(...args)
+    .all();
+  const days = {};
+  for (const r of results) days[r.d] = r.n;
+  return json({ days }, 200, "public, max-age=300");
 }
 
 /* ============================ 匿名フィードバック ============================ */
@@ -341,6 +369,15 @@ export default {
       if (request.method !== "GET") return json({ error: "method" }, 405);
       try {
         return await handleInsta(url, env);
+      } catch (e) {
+        return json({ error: "insta_failed" }, 500, "no-store");
+      }
+    }
+
+    if (url.pathname === "/api/insta-calendar") {
+      if (request.method !== "GET") return json({ error: "method" }, 405);
+      try {
+        return await handleInstaCalendar(url, env);
       } catch (e) {
         return json({ error: "insta_failed" }, 500, "no-store");
       }
