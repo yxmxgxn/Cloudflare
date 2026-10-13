@@ -27,6 +27,7 @@ $dc_members = [
     'friend' => 'キラニャ',
     'official' => 'https://helloproject.com/ochanorma/kirara_yonemura/',
     'instagram' => 'https://www.instagram.com/p/DVNJYG7Eydl/',
+    'action' => 'なるべく階段を使う！',
     'mission' => 'MISSION#1 移動の際に階段を利用する',
     'score' => '100',
     'spot' => '652916',
@@ -47,6 +48,7 @@ $dc_members = [
     'friend' => 'ミイメェ',
     'official' => 'https://helloproject.com/beyooooonds/minami_okamura/',
     'instagram' => 'https://www.instagram.com/p/DVQXHd7E2fy/',
+    'action' => 'アンティーク・蚤の市に行く！',
     'mission' => 'MISSION#2 リサイクルのためにゴミを分別する',
     'score' => '74',
     'spot' => '653194',
@@ -67,6 +69,7 @@ $dc_members = [
     'friend' => 'エバネコ',
     'official' => 'https://helloproject.com/juicejuice/kisaki_ebata/',
     'instagram' => 'https://www.instagram.com/p/DVSVLJxkwXR/',
+    'action' => 'マイバッグを持ち歩く！',
     'mission' => 'MISSION#3 買い物の際にマイバッグを利用する',
     'score' => '59',
     'spot' => '653195',
@@ -87,6 +90,7 @@ $dc_members = [
     'friend' => 'ルノコーン',
     'official' => 'https://helloproject.com/tsubakifactory/runo_yofu/',
     'instagram' => 'https://www.instagram.com/p/DVV3lpTkxYz/',
+    'action' => '一駅分歩く！',
     'mission' => 'MISSION#4 牛肉の代わりに魚を食べる',
     'score' => '84',
     'spot' => '653280',
@@ -107,6 +111,7 @@ $dc_members = [
     'friend' => 'ハナペン',
     'official' => 'https://helloproject.com/angerme/hana_goto/',
     'instagram' => 'https://www.instagram.com/p/DVXbEpOkx1f/',
+    'action' => 'マイボトルを使う！',
     'mission' => 'MISSION#5 マイボトルを利用する',
     'score' => '88',
     'spot' => '653282',
@@ -127,6 +132,7 @@ $dc_members = [
     'friend' => 'シシゲタ',
     'official' => 'https://helloproject.com/morningmusume/ako_yumigeta/',
     'instagram' => 'https://www.instagram.com/p/DVatzf-E9AG/',
+    'action' => 'ショートヘアーで、ドライヤー節電！',
     'mission' => 'MISSION#6 2Lの水をペットボトル1本で買う',
     'score' => '55',
     'spot' => '653295',
@@ -147,6 +153,7 @@ $dc_members = [
     'friend' => 'ウサレナ',
     'official' => 'https://helloproject.com/rosychronicle/rena_kamimura/',
     'instagram' => 'https://www.instagram.com/p/DVdPXTLE3MR/',
+    'action' => '電気をこまめに消す！',
     'mission' => 'MISSION#7 卵かけご飯を食べる',
     'score' => '21',
     'spot' => '653300',
@@ -459,6 +466,7 @@ function dc_x_embed(string $label, array $tw): string {
       <p class="dc-catch"><?= dc_h($m['catch'][0]) ?><br><?= dc_h($m['catch'][1]) ?></p>
       <p class="dc-meta"><?= dc_h($m['group']) ?><span class="dc-friend">デカビートフレンズ：<?= dc_h($m['friend']) ?></span></p>
       <p class="dc-birthday">誕生日：<?= dc_h(dc_jdate($m['birthday'])) ?>（<?= dc_age($m['birthday']) ?>歳）</p>
+      <p class="dc-action">MY「デカボ」アクション：<?= dc_h($m['action']) ?></p>
       <p class="dc-mission"><a href="<?= dc_h(DC_MISSION_URL . '?culture=ja&spot=' . $m['spot']) ?>" target="_blank" rel="noopener noreferrer"><?= dc_h($m['mission']) ?>（デカボスコア<?= dc_h($m['score']) ?>％）</a></p>
       <p class="dc-profile-links">
         <a href="<?= dc_h($m['official']) ?>" target="_blank" rel="noopener noreferrer"><?= icon('link-brand', 'ic ic-20') ?>ハロー！プロジェクト公式プロフィール</a>
