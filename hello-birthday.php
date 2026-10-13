@@ -154,6 +154,7 @@
     <li><a href="/Birthday/mihane_ishii-birth">石井泉羽</a></li>
     <li><a href="/Birthday/yuu_murata-birth">村田結生</a></li>
     <li><a href="/Birthday/fuka_doi-birth">土居楓奏</a></li>
+    <li><a href="/Birthday/itsuki_nishimura-birth">土居楓奏</a></li>
   </ul>
   <h2>BEYOOOOONDS</h2>
   <ul>
