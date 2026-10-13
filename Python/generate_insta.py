@@ -99,6 +99,17 @@ def fetch_page(user_id: str, token: str, username: str, after: str | None) -> di
         return json.loads(res.read().decode("utf-8"))
 
 
+def err_text(e: urllib.error.HTTPError) -> str:
+    """APIエラーを短く。ビジネス/クリエイターでないアカウントは subcode 2207013 で返る。"""
+    try:
+        err = json.loads(e.read().decode("utf-8")).get("error", {})
+    except ValueError:
+        return f"HTTP {e.code}"
+    if err.get("error_subcode") == 2207013:
+        return "個人アカウント(取得不可)"
+    return f"{err.get('code')}/{err.get('error_subcode')} {err.get('message', '')}"
+
+
 def to_jst(ts: str) -> str:
     # 例: 2026-10-13T10:00:00+0000
     return datetime.strptime(ts, "%Y-%m-%dT%H:%M:%S%z").astimezone(JST).strftime("%Y-%m-%d %H:%M")
@@ -164,8 +175,7 @@ def main() -> None:
             calls += 1
         except urllib.error.HTTPError as e:
             calls += 1
-            body = e.read().decode("utf-8", "replace")[:200]
-            failed.append(f"{user}: {body}")
+            failed.append(f"{user}: {err_text(e)}")
             continue
         media = data.get("business_discovery", {}).get("media", {})
         for p in media.get("data", []):
@@ -183,7 +193,7 @@ def main() -> None:
                 calls += 1
             except urllib.error.HTTPError as e:
                 calls += 1
-                failed.append(f"{user}(遡り): {e.read().decode('utf-8', 'replace')[:200]}")
+                failed.append(f"{user}(遡り): {err_text(e)}")
                 break
             media = data.get("business_discovery", {}).get("media", {})
             for p in media.get("data", []):
