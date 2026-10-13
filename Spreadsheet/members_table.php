@@ -1,4 +1,4 @@
-<!-- generated: 2026-10-13T17:52:18.308627+00:00 -->
+<!-- generated: 2026-10-13T22:09:21.000774+00:00 -->
 <tr><td><a href="https://ja.wikipedia.org/wiki/%E7%94%9F%E7%94%B0%E8%A1%A3%E6%A2%A8%E5%A5%88" target="_blank" rel="noopener noreferrer">生田衣梨奈</a></td><td>モーニング娘。</td><td>1997年7月7日</td><td>29歳</td><td>2011年1月2日</td><td>2025年7月8日</td><td>日本武道館</td><td>5301日</td></tr>
 <tr class="active-member"><td><a href="https://ja.wikipedia.org/wiki/%E5%B0%8F%E7%94%B0%E3%81%95%E3%81%8F%E3%82%89" target="_blank" rel="noopener noreferrer">小田さくら</a></td><td>モーニング娘。</td><td>1999年3月12日</td><td>27歳</td><td>2012年9月14日</td><td></td><td></td><td>5143日</td></tr>
 <tr><td><a href="https://ja.wikipedia.org/wiki/%E5%97%A3%E6%B0%B8%E6%A1%83%E5%AD%90" target="_blank" rel="noopener noreferrer">嗣永桃子</a></td><td>Berryz工房（カントリー・ガールズ）</td><td>1992年3月6日</td><td>34歳</td><td>2003年7月6日</td><td>2017年6月30日</td><td>青海野外特設会場</td><td>5108日</td></tr>
