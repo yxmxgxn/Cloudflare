@@ -264,6 +264,23 @@
 <tr><td>2025年10月31日</td><td>19:15</td><td>譜久村聖バースデーイベント'25～29th 幸&quot;ふく&quot;歓迎！～</td><td>タワーホール船堀 大ホール</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/22958" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
 </tbody>
 </table>
+30歳（2026年）
+<table class="birthday-table">
+<thead>
+<tr>
+<th>日付</th>
+<th>開演</th>
+<th>イベント名</th>
+<th>会場</th>
+<th>都道府県</th>
+<th>セットリスト</th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td>2026年10月28日</td><td>17:15</td><td>譜久村聖バースデーイベント2026</td><td>北とぴあ さくらホール</td><td>東京都</td><td></td></tr>
+<tr><td>2026年10月28日</td><td>19:30</td><td>譜久村聖バースデーイベント2026</td><td>北とぴあ さくらホール</td><td>東京都</td><td></td></tr>
+</tbody>
+</table>
 
 </main>
 <?php include $_SERVER['DOCUMENT_ROOT'] . '/Generated/birthday_generated.php'; ?>

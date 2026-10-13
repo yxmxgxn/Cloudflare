@@ -61,6 +61,23 @@
 <tr><td>2025年10月22日</td><td>19:20</td><td>Juice=Juice 入江里咲バースデーイベント2025</td><td>新都市ホール</td><td>神奈川県</td><td><a href="https://hp-setlist.com/stage/22920" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
 </tbody>
 </table>
+21歳（2026年）
+<table class="birthday-table">
+<thead>
+<tr>
+<th>日付</th>
+<th>開演</th>
+<th>イベント名</th>
+<th>会場</th>
+<th>都道府県</th>
+<th>セットリスト</th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td>2026年10月23日</td><td>16:40</td><td>Juice=Juice 入江里咲バースデーイベント2026</td><td>有楽町朝日ホール</td><td>東京都</td><td></td></tr>
+<tr><td>2026年10月23日</td><td>19:00</td><td>Juice=Juice 入江里咲バースデーイベント2026</td><td>有楽町朝日ホール</td><td>東京都</td><td></td></tr>
+</tbody>
+</table>
 
 </main>
 <?php include $_SERVER['DOCUMENT_ROOT'] . '/Generated/birthday_generated.php'; ?>

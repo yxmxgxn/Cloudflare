@@ -133,6 +133,23 @@
 <tr><td>2025年10月30日</td><td>19:20</td><td>BEYOOOOONDS/雨ノ森 川海 岡村美波バースデーイベント2025</td><td>新都市ホール</td><td>神奈川県</td><td><a href="https://hp-setlist.com/stage/22956" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
 </tbody>
 </table>
+22歳（2026年）
+<table class="birthday-table">
+<thead>
+<tr>
+<th>日付</th>
+<th>開演</th>
+<th>イベント名</th>
+<th>会場</th>
+<th>都道府県</th>
+<th>セットリスト</th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td>2026年10月29日</td><td>17:10</td><td>BEYOOOOONDS/雨ノ森 川海 岡村美波バースデーイベント2026</td><td>I'M A SHOW</td><td>東京都</td><td></td></tr>
+<tr><td>2026年10月29日</td><td>19:30</td><td>BEYOOOOONDS/雨ノ森 川海 岡村美波バースデーイベント2026</td><td>I'M A SHOW</td><td>東京都</td><td></td></tr>
+</tbody>
+</table>
 
 </main>
 <?php include $_SERVER['DOCUMENT_ROOT'] . '/Generated/birthday_generated.php'; ?>

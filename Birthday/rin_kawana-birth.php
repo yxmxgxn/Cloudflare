@@ -99,6 +99,23 @@
 <tr><td>2026年1月30日</td><td>19:45</td><td>アンジュルム 伊勢鈴蘭・川名凜バースデーイベント in 名古屋</td><td>ミッドランドスクエア シネマ2</td><td>愛知県</td><td><a href="https://hp-setlist.com/stage/23232" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
 </tbody>
 </table>
+23歳（2026年）
+<table class="birthday-table">
+<thead>
+<tr>
+<th>日付</th>
+<th>開演</th>
+<th>イベント名</th>
+<th>会場</th>
+<th>都道府県</th>
+<th>セットリスト</th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td>2026年12月8日</td><td>17:00</td><td>アンジュルム 川名凜バースデーイベント2026</td><td>一ツ橋ホール</td><td>東京都</td><td></td></tr>
+<tr><td>2026年12月8日</td><td>19:30</td><td>アンジュルム 川名凜バースデーイベント2026</td><td>一ツ橋ホール</td><td>東京都</td><td></td></tr>
+</tbody>
+</table>
 
 </main>
 <?php include $_SERVER['DOCUMENT_ROOT'] . '/Generated/birthday_generated.php'; ?>

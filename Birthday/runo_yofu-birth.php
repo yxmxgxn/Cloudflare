@@ -82,6 +82,23 @@
 <tr><td>2026年1月15日</td><td>18:30</td><td>つばきファクトリー 豫風瑠乃バースデーイベント in 大阪</td><td>YES THEATER</td><td>大阪府</td><td><a href="https://hp-setlist.com/stage/23206" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
 </tbody>
 </table>
+19歳（2026年）
+<table class="birthday-table">
+<thead>
+<tr>
+<th>日付</th>
+<th>開演</th>
+<th>イベント名</th>
+<th>会場</th>
+<th>都道府県</th>
+<th>セットリスト</th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td>2026年12月15日</td><td>17:00</td><td>つばきファクトリー 豫風瑠乃バースデーイベント2026</td><td>一ツ橋ホール</td><td>東京都</td><td></td></tr>
+<tr><td>2026年12月15日</td><td>19:30</td><td>つばきファクトリー 豫風瑠乃バースデーイベント2026</td><td>一ツ橋ホール</td><td>東京都</td><td></td></tr>
+</tbody>
+</table>
 
 </main>
 <?php include $_SERVER['DOCUMENT_ROOT'] . '/Generated/birthday_generated.php'; ?>

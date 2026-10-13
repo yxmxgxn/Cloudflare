@@ -78,6 +78,23 @@
 <tr><td>2025年11月10日</td><td>19:20</td><td>モーニング娘。'25 櫻井梨央バースデーイベント</td><td>渋谷区文化総合センター大和田 さくらホール</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/23018" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
 </tbody>
 </table>
+21歳（2026年）
+<table class="birthday-table">
+<thead>
+<tr>
+<th>日付</th>
+<th>開演</th>
+<th>イベント名</th>
+<th>会場</th>
+<th>都道府県</th>
+<th>セットリスト</th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td>2026年11月10日</td><td>17:00</td><td>モーニング娘。'26 櫻井梨央バースデーイベント</td><td>NEW PIER HALL</td><td>東京都</td><td></td></tr>
+<tr><td>2026年11月10日</td><td>19:30</td><td>モーニング娘。'26 櫻井梨央バースデーイベント</td><td>NEW PIER HALL</td><td>東京都</td><td></td></tr>
+</tbody>
+</table>
 
 </main>
 <?php include $_SERVER['DOCUMENT_ROOT'] . '/Generated/birthday_generated.php'; ?>

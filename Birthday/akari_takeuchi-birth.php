@@ -251,6 +251,23 @@
 <tr><td>2025年11月1日</td><td>17:40</td><td>竹内朱莉バースデーイベント2025～Ⅲ～</td><td>TOKYO FM HALL</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/22962" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
 </tbody>
 </table>
+29歳（2026年）
+<table class="birthday-table">
+<thead>
+<tr>
+<th>日付</th>
+<th>開演</th>
+<th>イベント名</th>
+<th>会場</th>
+<th>都道府県</th>
+<th>セットリスト</th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td>2026年11月20日</td><td>17:40</td><td>竹内朱莉バースデーイベント2026～Ⅳ～</td><td>スタァライト劇場</td><td>東京都</td><td></td></tr>
+<tr><td>2026年11月20日</td><td>19:50</td><td>竹内朱莉バースデーイベント2026～Ⅳ～</td><td>スタァライト劇場</td><td>東京都</td><td></td></tr>
+</tbody>
+</table>
 
 </main>
 <?php include $_SERVER['DOCUMENT_ROOT'] . '/Generated/birthday_generated.php'; ?>

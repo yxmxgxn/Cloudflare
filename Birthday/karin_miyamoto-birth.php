@@ -233,6 +233,22 @@
 <tr><td>2025年12月1日</td><td>19:30</td><td>宮本佳林バースデーイベント2025 ～ハロプロ懐メロでメロメロ～</td><td>一ツ橋ホール</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/23101" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
 </tbody>
 </table>
+28歳（2026年）
+<table class="birthday-table">
+<thead>
+<tr>
+<th>日付</th>
+<th>開演</th>
+<th>イベント名</th>
+<th>会場</th>
+<th>都道府県</th>
+<th>セットリスト</th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td>2026年12月19日</td><td></td><td>宮本佳林バースデーイベント2026</td><td>LANDMARK HALL</td><td>神奈川県</td><td></td></tr>
+</tbody>
+</table>
 
 </main>
 <?php include $_SERVER['DOCUMENT_ROOT'] . '/Generated/birthday_generated.php'; ?>
