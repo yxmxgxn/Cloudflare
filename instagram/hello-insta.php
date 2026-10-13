@@ -63,8 +63,8 @@
             font: inherit; font-size: .85em; padding: 0; cursor: pointer; }
   .ig-day:disabled { cursor: default; opacity: .35; }
   .ig-day .n { font-size: .75em; font-weight: bold; }
-  .ig-day.has { background: rgba(225, 48, 108, calc(.12 + var(--lv) * .5)); }
-  .ig-day.sel { outline: 2px solid #e1306c; outline-offset: -2px; }
+  .ig-day.has { background: color-mix(in srgb, var(--accent) calc(12% + var(--lv) * 50%), transparent); }
+  .ig-day.sel { outline: 2px solid var(--accent); outline-offset: -2px; }
   .ig-day.today { text-decoration: underline; }
   #ig-list { list-style: none; padding: 0; }
   #ig-list li { padding: .5em 0; border-bottom: 1px solid rgba(128,128,128,.25); }
