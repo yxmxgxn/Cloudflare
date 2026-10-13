@@ -6,6 +6,7 @@
  *     対象は本文と、スプシのタイトル・Feature・媒体名・メンバー名。
  *     本文・スニペットは一切返さない。
  *   - /api/karinhello-search?q=… : #佳林の１日１ハロ のポスト本文を同じ方式で引き、一致したポストIDだけ返す(D1 karin-hello)。
+ *   - /api/insta?account=…&from=…&to=…&q=…&before=… : ハロプロ Instagram 投稿を日付の新しい順に返す(D1 karin-hello)。
  *   - POST /api/feedback : フッターの匿名フィードバックを受け、D1 に保存して Discord へ通知。
  *   - /_feedback?t=… : 受け取ったフィードバックの管理ページ(トークン一致時のみ。不一致は404)。
  *   - それ以外の全リクエスト : 静的アセット(env.ASSETS)へ委譲。既存ページの挙動は不変。
@@ -84,6 +85,40 @@ async function handleKarinHelloSearch(url, env) {
     .bind(match, LIMIT)
     .all();
   return json({ ids: results.map((r) => r.id) });
+}
+
+// ハロプロ Instagram 投稿一覧。account はカンマ区切り、from/to は YYYY-MM-DD、
+// before は前ページ最後の ts(さらに古いものを返す)。q があれば本文の bigram 一致で絞る。
+const INSTA_PAGE = 100;
+const DATE_RE = /^\d{4}-\d{2}-\d{2}$/;
+
+async function handleInsta(url, env) {
+  const p = url.searchParams;
+  const where = [];
+  const args = [];
+  const accounts = (p.get("account") || "").split(",").map((a) => a.trim()).filter(Boolean).slice(0, 100);
+  if (accounts.length) {
+    where.push(`account IN (${accounts.map(() => "?").join(",")})`);
+    args.push(...accounts);
+  }
+  const from = p.get("from") || "";
+  const to = p.get("to") || "";
+  if (DATE_RE.test(from)) { where.push("ts >= ?"); args.push(from); }
+  if (DATE_RE.test(to)) { where.push("ts < ?"); args.push(to + " 99"); } // その日の終わりまで
+  const before = p.get("before") || "";
+  if (before) { where.push("ts < ?"); args.push(before.slice(0, 16)); }
+  const match = buildMatch(p.get("q") || "");
+  if (match) {
+    where.push("id IN (SELECT id FROM insta_fts WHERE insta_fts MATCH ?)");
+    args.push(match);
+  }
+  const sql =
+    "SELECT id, account, ts, permalink, media_type, excerpt FROM insta_post" +
+    (where.length ? " WHERE " + where.join(" AND ") : "") +
+    " ORDER BY ts DESC LIMIT ?";
+  args.push(INSTA_PAGE);
+  const { results } = await env.HELLO_DB.prepare(sql).bind(...args).all();
+  return json({ posts: results, more: results.length === INSTA_PAGE }, 200, "public, max-age=300");
 }
 
 /* ============================ 匿名フィードバック ============================ */
@@ -299,6 +334,15 @@ export default {
         return await handleKarinHelloSearch(url, env);
       } catch (e) {
         return json({ error: "search_failed" }, 500, "no-store");
+      }
+    }
+
+    if (url.pathname === "/api/insta") {
+      if (request.method !== "GET") return json({ error: "method" }, 405);
+      try {
+        return await handleInsta(url, env);
+      } catch (e) {
+        return json({ error: "insta_failed" }, 500, "no-store");
       }
     }
 

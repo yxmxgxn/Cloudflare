@@ -36,14 +36,36 @@ jobs:
           # 1日1ハロのポスト本文検索の索引。リポジトリには入れず、後のステップで D1 に適用する
           KARINHELLO_INDEX_SQL: build/karinhello_index.sql
 
+      - name: Fetch Instagram posts
+        run: python Python/generate_insta.py
+        env:
+          IG_USER_ID: ${{ secrets.IG_USER_ID }}
+          IG_ACCESS_TOKEN: ${{ secrets.IG_ACCESS_TOKEN }}
+          # 投稿は D1 に追記する。SQL はリポジトリに入れず、後のステップで適用する
+          INSTA_SQL: build/insta.sql
+
       - name: Generate timeline images
         run: python Python/timeline.py
+
+      # 遡りの進捗(data/insta_state.json)は D1 への適用が成功したときだけコミットする。
+      # 失敗したら翌日同じ範囲を取り直す。表の更新は止めない。
+      - name: Update Instagram archive (D1)
+        id: insta_d1
+        if: hashFiles('build/insta.sql') != ''
+        continue-on-error: true
+        run: |
+          npx wrangler@4 d1 execute karin-hello --remote --file worker/insta-schema.sql
+          npx wrangler@4 d1 execute karin-hello --remote --file build/insta.sql
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
 
       - name: Commit & push if changed
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add Spreadsheet Generated Timeline
+          if [ "${{ steps.insta_d1.outcome }}" = "success" ]; then git add data/insta_state.json; fi
           if git diff --cached --quiet; then
             echo "変更なし"
           else
