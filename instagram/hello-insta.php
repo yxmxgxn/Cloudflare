@@ -1,13 +1,13 @@
 <?php
   $title = "ハロプロ Instagram 投稿アーカイブ";
-  $description = "ハロー！プロジェクト現役メンバーと宮本佳林さんの公式Instagramの投稿を、日付・メンバー・本文で検索できるアーカイブです。毎日自動で更新しています。";
+  $description = "ハロー！プロジェクト現役メンバーとOG（J.P ROOM・M-line・UP-FRONT PROMOTION）の公式Instagramの投稿を、日付・メンバー・本文で検索できるアーカイブです。毎日自動で更新しています。";
   $jsonld_type = "Dataset";
   include $_SERVER['DOCUMENT_ROOT'] . '/common/header.php';
 ?>
 
 <main>
   <h1>ハロプロ Instagram 投稿アーカイブ</h1>
-  <p>ハロー！プロジェクト現役メンバーと宮本佳林さんの公式Instagramの投稿を、日付・メンバー・本文で探せます。</p>
+  <p>ハロー！プロジェクト現役メンバーとOG（J.P ROOM・M-line・UP-FRONT PROMOTION）の公式Instagramの投稿を、日付・メンバー・本文で探せます。</p>
   <p>Instagramでは難しい「日付で遡る」「本文で検索」ができるように、投稿を毎日自動で集めています。リンクはInstagramの投稿に飛びます。</p>
 
 <form id="ig-controls" onsubmit="igSearch(); return false;">

@@ -1,10 +1,11 @@
 #!/usr/bin/env python3
 """
-ハロプロ現役メンバー(+宮本佳林)の Instagram 投稿を Graph API の Business Discovery で取得し、
+ハロプロ現役メンバーと一部OGの Instagram 投稿を Graph API の Business Discovery で取得し、
 D1(karin-hello の insta_post / insta_fts)へ流し込む SQL と、ページ用のアカウント選択肢を出力する。
 
-対象アカウント: SNS一覧の accounts スプレッドシートで所属が現役グループのメンバーの instagram 行
-+ EXTRA_ACCOUNTS。メンバーの加入・卒業はスプレッドシート側の更新に追従する
+対象アカウント: SNS一覧の accounts スプレッドシートの instagram 行のうち、
+所属が現役グループの人と、OGのうち J.P ROOM / UP-FRONT PROMOTION 所属・M-line 会員の人
+(og_section)+ EXTRA_ACCOUNTS。メンバーの加入・卒業はスプレッドシート側の更新に追従する
 (卒業して対象外になっても、D1 に貯めた投稿は消さない)。
 
 Business Discovery はビジネス/クリエイターアカウントしか引けず、1回で最大50件、
@@ -39,10 +40,8 @@ PAGE_SIZE = 50
 MAX_CALLS = 150          # 1回の実行で使うAPI呼び出しの上限(上限200/時に余裕を残す)
 EXCERPT_LEN = 80
 
-# スプレッドシートの現役判定に乗らないが対象にするアカウント: ユーザー名 → (表示名, グループ)
-EXTRA_ACCOUNTS: dict[str, tuple[str, str]] = {
-    "karin_miyamoto.official": ("宮本佳林", "OG"),
-}
+# スプレッドシートの判定に乗らないが対象にするアカウント: ユーザー名 → (表示名, 見出し)
+EXTRA_ACCOUNTS: dict[str, tuple[str, str]] = {}
 
 REPO_ROOT = Path(__file__).resolve().parent.parent
 STATE_FILE = REPO_ROOT / "data" / "insta_state.json"
@@ -73,18 +72,37 @@ def esc(s: str) -> str:
     return (s or "").replace("&", "&amp;").replace("<", "&lt;").replace(">", "&gt;").replace('"', "&quot;")
 
 
+def og_section(m) -> str:
+    """対象にするOGなら選択肢の見出し(所属)を返す。対象外は空文字。
+    J.P ROOM / UP-FRONT PROMOTION 所属と、M-line 会員ページを持つ人(=M-line)。"""
+    if m.affiliation == "jproom":
+        return "J.P ROOM"
+    if m.affiliation == "upfrontpromotion":
+        return "UP-FRONT PROMOTION"
+    if any(platform == "m-line" for platform, _, _ in m.accounts):
+        return "M-line"
+    return ""
+
+
 def target_accounts() -> dict[str, tuple[str, str]]:
-    """ユーザー名 → (表示名, グループ表示名)。現役はグループ順→加入順。"""
+    """ユーザー名 → (表示名, 見出し)。現役(グループ順→加入順)のあとにOG(所属ごと→加入順)。"""
     rows = fetch_rows(f"{PUB_BASE}?gid={GID_ACCOUNTS}&single=true&output=csv")
     members, _ = load_members(rows)
     order = list(GROUPS)
-    members = sorted((m for m in members if m.affiliation in GROUPS),
-                     key=lambda m: (order.index(m.affiliation), m.num))
-    out: dict[str, tuple[str, str]] = {}
+    og_order = ["J.P ROOM", "M-line", "UP-FRONT PROMOTION"]
+    picked = []
     for m in members:
-        for platform, id_, _ in m.accounts:
-            if platform == "instagram":
-                out[id_.strip().strip("/").lower()] = (m.name, GROUPS[m.affiliation])
+        if m.affiliation in GROUPS:
+            picked.append(((0, order.index(m.affiliation), m.num), m, GROUPS[m.affiliation]))
+        elif m.affiliation != "retirement" and (sec := og_section(m)):
+            picked.append(((1, og_order.index(sec), m.num), m, sec))
+    out: dict[str, tuple[str, str]] = {}
+    for _, m, section in sorted(picked, key=lambda t: t[0]):
+        users = [id_.strip().strip("/").lower() for platform, id_, _ in m.accounts if platform == "instagram"]
+        for user in users:
+            # 複数アカウントを持つ人(例: 書道用の別アカウント)はユーザー名を添えて区別する
+            name = m.name if len(users) == 1 else f"{m.name}（@{user}）"
+            out.setdefault(user, (name, section))
     for user, v in EXTRA_ACCOUNTS.items():
         out.setdefault(user, v)
     return out
