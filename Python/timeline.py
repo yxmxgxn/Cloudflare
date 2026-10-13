@@ -51,7 +51,9 @@ GROUPS = [
     {"name": "つばきファクトリー", "no": "15", "output": "timeline_tsubaki.png"},
     # サブグループがあるので、サブID→加入日→ソートIDの順で並べ、境目に点線とユニット名を入れる
     {"name": "BEYOOOOONDS",      "no": "16", "output": "timeline_beyo.png",
-     "sub_names": {1: "雨ノ森 川海", 2: "CHICA#TETSU", 3: "SeasoningS"}},
+     "sub_names": {1: "雨ノ森 川海", 2: "CHICA#TETSU", 3: "SeasoningS"},
+     # 最初の加入日（2017/5/5）ではなく、グループとしての結成日を出す
+     "formation": date(2018, 10, 19)},
 ]
 
 FONT_PATH  = "/usr/share/fonts/opentype/noto/NotoSansCJK-Regular.ttc"
@@ -313,9 +315,9 @@ def load_members(sheet_gid: str, group_no: str = None, sort_by_sub: bool = False
     return members
 
 
-def build_title(members: list[dict], sheet_name: str) -> str:
-    """タイトル文字列を組み立てる。"""
-    formation     = min(m["debut"] for m in members)
+def build_title(members: list[dict], sheet_name: str, formation: date | None = None) -> str:
+    """タイトル文字列を組み立てる。formation未指定なら最初の加入日を結成日とする。"""
+    formation     = formation or min(m["debut"] for m in members)
     total         = len(members)
     formation_str = f"{formation.year}年{formation.month}月{formation.day}日"
     return f"{sheet_name} 在籍タイムライン（計{total}人　結成日：{formation_str}）"
@@ -327,7 +329,8 @@ def to_year(d: date) -> float:
 
 
 def draw_timeline(members: list[dict], output_path: str, sheet_name: str,
-                  sub_names: dict[int, str] | None = None):
+                  sub_names: dict[int, str] | None = None,
+                  formation: date | None = None):
     """
     在籍タイムラインを描画してPNGに保存する。
 
@@ -489,7 +492,7 @@ def draw_timeline(members: list[dict], output_path: str, sheet_name: str,
         spine.set_edgecolor(COLOR_SPINE)
 
     # ── タイトル ────────────────────────────────────────
-    title = build_title(members, sheet_name)
+    title = build_title(members, sheet_name, formation)
     ax.set_title(title, color=COLOR_TEXT, fontsize=FONT_SIZE_TITLE,
                  pad=10, fontweight="bold")
 
@@ -576,7 +579,7 @@ if __name__ == "__main__":
         print(f"✅ {len(members)} 名のデータを取得")
         print(f"🎨 タイムライン生成中...")
         output_path = TIMELINE_DIR / g["output"]
-        draw_timeline(members, output_path, g["name"], g.get("sub_names"))
+        draw_timeline(members, output_path, g["name"], g.get("sub_names"), g.get("formation"))
         print(f"✅ 保存完了: {output_path}")
 
     # 画像を全部描き終えてから更新日を書き出す（途中で落ちたら更新しない）
