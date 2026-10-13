@@ -1,4 +1,4 @@
-<!-- generated: 2026-09-30T05:00:54.729703+00:00 -->
+<!-- generated: 2026-10-13T13:44:54.744715+00:00 -->
 <option value="秋葉原店">秋葉原店（90）</option>
 <option value="大阪店">大阪店（75）</option>
 <option value="配信のみ">配信のみ（33）</option>
