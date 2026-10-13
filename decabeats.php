@@ -200,6 +200,12 @@ $dc_videos = [
   ],
 ];
 
+// どっちっちchannel(毎週更新)。新しい回はここに足す
+$dc_dotchicchi = [
+  ['title' => '#1 豫風瑠乃×米村姫良々', 'url' => 'https://www.youtube.com/watch?v=acQZk0gb8SA'],
+  ['title' => '#2 上村麗菜×米村姫良々', 'url' => 'https://www.youtube.com/watch?v=P6bgjmfNP1Y'],
+];
+
 $dc_posts = [
   [
     'cat' => '全メンバー解禁',
@@ -354,6 +360,7 @@ $dc_tweet_html = [
 /** 埋め込みポストの投稿元(全ポスト Earth hacks 公式) */
 const DC_X_ACCOUNT = 'Earthhacks2023';
 const DC_TIKTOK_ACCOUNT = 'decarbo46';
+const DC_YT_CHANNEL_URL = 'https://www.youtube.com/@decarbo46';
 /** デカボミッション vol.1 のマップ(各メンバーのミッションは ?spot= で開く) */
 const DC_MISSION_URL = 'https://platinumaps.jp/d/deca-beat';
 
@@ -494,6 +501,20 @@ function dc_x_embed(string $label, array $tw): string {
         <?php endforeach; ?>
       </ul>
     </noscript>
+  </section>
+
+  <!-- どっちっちchannel -->
+  <section class="dc-section" id="dotchicchi">
+    <h2>どっちっちchannel</h2>
+    <p>DECA!BEATのYouTubeチャンネルで毎週更新中です。</p>
+    <ul class="dc-sns">
+      <li><a href="<?= dc_h(DC_YT_CHANNEL_URL) ?>" target="_blank" rel="noopener noreferrer"><?= icon('youtube-brand', 'ic ic-20') ?>どっちっちchannel（YouTube）</a></li>
+    </ul>
+    <ul class="dc-video-list">
+      <?php foreach ($dc_dotchicchi as $v): ?>
+      <li><a href="<?= dc_h($v['url']) ?>" target="_blank" rel="noopener noreferrer"><?= icon('youtube-brand', 'ic ic-20') ?><?= dc_h($v['title']) ?></a></li>
+      <?php endforeach; ?>
+    </ul>
   </section>
 
   <!-- ポスト -->
