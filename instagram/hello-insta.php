@@ -146,7 +146,8 @@
       li.appendChild(t);
     }
     var a = document.createElement("a");
-    a.href = post.permalink;
+    // /reel/ だと別の動画に飛ばされることがあるので、リールも開ける /p/ にそろえる
+    a.href = post.permalink.replace("/reel/", "/p/");
     a.target = "_blank";
     a.rel = "noopener noreferrer";
     if (post.excerpt) highlight(a, post.excerpt, q); else a.textContent = "（本文なし）";
