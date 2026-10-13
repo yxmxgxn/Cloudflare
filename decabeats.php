@@ -205,12 +205,20 @@ $dc_videos = [
     'url' => 'https://www.youtube.com/watch?v=83LCma6C8xs',
     'id' => '83LCma6C8xs',
   ],
+  [
+    'title' => '環境省『デコ活2ndステージ』発表会',
+    'date' => '2026年9月28日',
+    'url' => 'https://www.youtube.com/watch?v=l-IUnSeHQZ4',
+    'id' => 'l-IUnSeHQZ4',
+  ],
 ];
 
 // どっちっちchannel(毎週更新)。新しい回はここに足す
 $dc_dotchicchi = [
-  ['title' => '#1 豫風瑠乃×米村姫良々', 'url' => 'https://www.youtube.com/watch?v=acQZk0gb8SA'],
-  ['title' => '#2 上村麗菜×米村姫良々', 'url' => 'https://www.youtube.com/watch?v=P6bgjmfNP1Y'],
+  ['title' => '#1 豫風瑠乃×米村姫良々', 'url' => 'https://www.youtube.com/watch?v=acQZk0gb8SA',
+   'credit' => 'ロケ協力', 'place' => '原宿さくら亭', 'place_url' => 'https://www.sakuratei.co.jp/'],
+  ['title' => '#2 上村麗菜×米村姫良々', 'url' => 'https://www.youtube.com/watch?v=P6bgjmfNP1Y',
+   'credit' => '撮影地協力', 'place' => 'EMPORIO cafe&dining', 'place_url' => 'https://www.emporio.tv/'],
 ];
 
 $dc_posts = [
@@ -520,7 +528,7 @@ function dc_x_embed(string $label, array $tw): string {
     </ul>
     <ul class="dc-video-list">
       <?php foreach ($dc_dotchicchi as $v): ?>
-      <li><a href="<?= dc_h($v['url']) ?>" target="_blank" rel="noopener noreferrer"><?= icon('youtube-brand', 'ic ic-20') ?><?= dc_h($v['title']) ?></a></li>
+      <li><a href="<?= dc_h($v['url']) ?>" target="_blank" rel="noopener noreferrer"><?= icon('youtube-brand', 'ic ic-20') ?><?= dc_h($v['title']) ?></a><?php if (!empty($v['place'])): ?>（<?= dc_h($v['credit']) ?>：<a href="<?= dc_h($v['place_url']) ?>" target="_blank" rel="noopener noreferrer"><?= dc_h($v['place']) ?></a>）<?php endif; ?></li>
       <?php endforeach; ?>
     </ul>
   </section>
