@@ -49,6 +49,9 @@ GROUPS = [
     {"name": "アンジュルム",      "no": "11",  "output": "timeline_anj.png"},
     {"name": "Juice=Juice",      "no": "12",  "output": "timeline_juice.png"},
     {"name": "つばきファクトリー", "no": "15", "output": "timeline_tsubaki.png"},
+    # サブグループがあるので、サブID→加入日→ソートIDの順で並べ、境目に点線とユニット名を入れる
+    {"name": "BEYOOOOONDS",      "no": "16", "output": "timeline_beyo.png",
+     "sub_names": {1: "雨ノ森 川海", 2: "CHICA#TETSU", 3: "SeasoningS"}},
 ]
 
 FONT_PATH  = "/usr/share/fonts/opentype/noto/NotoSansCJK-Regular.ttc"
@@ -79,6 +82,7 @@ COLOR_TEXT    = "black"
 COLOR_GRID    = "#cccccc"
 COLOR_SPINE   = "#aaaaaa"
 COLOR_MISSING = "#aaaaaa"
+COLOR_SUBNAME = "#555555"   # サブグループ名
 # ════════════════════════════════════════════════════════
 
 
@@ -148,10 +152,11 @@ def calc_duration(start: date, end: date) -> tuple[int, int, int]:
     return years, months, total_days
 
 
-def load_members(sheet_gid: str, group_no: str = None) -> list[dict]:
+def load_members(sheet_gid: str, group_no: str = None, sort_by_sub: bool = False) -> list[dict]:
     """
     シートを読み込んでメンバーの辞書リストに変換する。
     group_noを指定するとグループNoでフィルタする。Noneなら全員。
+    sort_by_subがTrueならサブIDを最優先キーにして並べる（サブグループのあるグループ用）。
 
     列名（マスターデータのヘッダーと一致）:
         名前, 生年月日, ハロプロ卒業日, グループ加入日,
@@ -190,6 +195,7 @@ def load_members(sheet_gid: str, group_no: str = None) -> list[dict]:
     COL_COLOR_PREV2  = "旧カラー2"
     COL_COLOR_CHANGE2= "色変更日2"
     COL_SORT_ID      = "ソートID"
+    COL_SUB_ID       = "サブID"
     COL_LEADER_START = "リーダー就任"
     COL_LEADER_END   = "リーダー交代"
     COL_SUB_START    = "サブリーダー就任"
@@ -209,6 +215,7 @@ def load_members(sheet_gid: str, group_no: str = None) -> list[dict]:
         color_prev2   = str(row[COL_COLOR_PREV2]).strip() if COL_COLOR_PREV2  in row else ""
         color_change2 = parse_date(row[COL_COLOR_CHANGE2])if COL_COLOR_CHANGE2 in row else None
         sort_id       = float(row[COL_SORT_ID]) if COL_SORT_ID in row and pd.notna(row[COL_SORT_ID]) and str(row[COL_SORT_ID]).strip() != "" else 9999
+        sub_id        = float(row[COL_SUB_ID])  if COL_SUB_ID  in row and pd.notna(row[COL_SUB_ID])  and str(row[COL_SUB_ID]).strip()  != "" else 9999
 
         # リーダー・サブリーダーの期間を取得
         leader_start = parse_date(row[COL_LEADER_START]) if COL_LEADER_START in row else None
@@ -291,14 +298,18 @@ def load_members(sheet_gid: str, group_no: str = None) -> list[dict]:
             "join_age_y":    join_age_y,
             "join_age_m":    join_age_m,
             "sort_id":       sort_id,
+            "sub_id":        sub_id,
             "leader_start":  leader_start,
             "leader_end":    leader_end,
             "sub_start":     sub_start,
             "sub_end":       sub_end,
         })
 
-    # デビュー日→ソートIDの順で昇順ソート
-    members.sort(key=lambda m: (m["debut"], m["sort_id"]))
+    # デビュー日→ソートIDの順で昇順ソート（sort_by_subならサブIDを先頭に）
+    if sort_by_sub:
+        members.sort(key=lambda m: (m["sub_id"], m["debut"], m["sort_id"]))
+    else:
+        members.sort(key=lambda m: (m["debut"], m["sort_id"]))
     return members
 
 
@@ -315,7 +326,8 @@ def to_year(d: date) -> float:
     return d.year + (d.timetuple().tm_yday - 1) / 365.25
 
 
-def draw_timeline(members: list[dict], output_path: str, sheet_name: str):
+def draw_timeline(members: list[dict], output_path: str, sheet_name: str,
+                  sub_names: dict[int, str] | None = None):
     """
     在籍タイムラインを描画してPNGに保存する。
 
@@ -343,6 +355,7 @@ def draw_timeline(members: list[dict], output_path: str, sheet_name: str):
     ax.set_facecolor(COLOR_BG)
 
     # ── 各メンバーのバーとラベル ─────────────────────────
+    name_texts = []   # サブグループ名の位置決めに使う
     for i, m in enumerate(members):
         y       = i
         x_start = to_year(m["debut"])
@@ -425,9 +438,9 @@ def draw_timeline(members: list[dict], output_path: str, sheet_name: str):
                     markersize=5, clip_on=False, zorder=5)
 
         # ── 左ラベル: 名前（大）＋加入年齢（小） ────────
-        ax.text(x_start - 0.08, y - 0.16, m["name"],
+        name_texts.append(ax.text(x_start - 0.08, y - 0.16, m["name"],
                 ha="right", va="center",
-                fontsize=FONT_SIZE_NAME, color=COLOR_TEXT, fontweight="bold")
+                fontsize=FONT_SIZE_NAME, color=COLOR_TEXT, fontweight="bold"))
         if m["join_age_y"] is not None:
             ax.text(x_start - 0.08, y + 0.2,
                     f"{m['join_age_y']}歳{m['join_age_m']}か月",
@@ -480,15 +493,36 @@ def draw_timeline(members: list[dict], output_path: str, sheet_name: str):
     ax.set_title(title, color=COLOR_TEXT, fontsize=FONT_SIZE_TITLE,
                  pad=10, fontweight="bold")
 
-    # ── 凡例（左下） ────────────────────────────────────
-    legend_elements = [
-        mpatches.Patch(color=LEADER_COLOR,    label="━ リーダー期間"),
-        mpatches.Patch(color=SUBLEADER_COLOR, label="━ サブリーダー期間"),
-        mpatches.Patch(color="#aaaaaa",       label="▶ = 現役メンバー"),
-    ]
-    ax.legend(handles=legend_elements, loc="lower left",
-              facecolor="white", edgecolor=COLOR_SPINE,
-              labelcolor=COLOR_TEXT, fontsize=FONT_SIZE_SUB)
+    # ── サブグループ: 境目に点線、各ユニットの真ん中の人の名前の左にユニット名 ──
+    if sub_names:
+        fig.canvas.draw()   # 名前ラベルの幅を測るため一度描画する
+        to_data = ax.transData.inverted()
+        units: dict = {}
+        for i, m in enumerate(members):
+            units.setdefault(m["sub_id"], []).append(i)
+        for sid, idxs in units.items():
+            if idxs[0] > 0:
+                ax.axhline(idxs[0] - 0.5, color="#888888", linestyle=(0, (4, 3)),
+                           linewidth=1.0, zorder=1)
+            label = sub_names.get(int(sid)) if sid != 9999 else None
+            if not label:
+                continue
+            mid = idxs[(len(idxs) - 1) // 2]
+            left_px = name_texts[mid].get_window_extent().x0
+            x_left = to_data.transform((left_px, 0))[0]
+            ax.text(x_left - 0.12, mid, label, ha="right", va="center",
+                    fontsize=FONT_SIZE_NAME, color=COLOR_SUBNAME,
+                    fontweight="bold", clip_on=False)
+
+    # ── 凡例: 文字やバーに重ならない位置を選ぶ ──────────
+    # 該当者のいない役職は凡例に出さない（BEYOOOOONDSにはサブリーダーがいない等）
+    legend_elements = []
+    if any(m["leader_start"] for m in members):
+        legend_elements.append(mpatches.Patch(color=LEADER_COLOR, label="━ リーダー期間"))
+    if any(m["sub_start"] for m in members):
+        legend_elements.append(mpatches.Patch(color=SUBLEADER_COLOR, label="━ サブリーダー期間"))
+    legend_elements.append(mpatches.Patch(color="#aaaaaa", label="▶ = 現役メンバー"))
+    place_legend(fig, ax, legend_elements)
 
     # ── 保存 ────────────────────────────────────────────
     plt.tight_layout()
@@ -497,16 +531,52 @@ def draw_timeline(members: list[dict], output_path: str, sheet_name: str):
     plt.close()
 
 
+def place_legend(fig, ax, handles):
+    """
+    凡例を置く。loc="best" はテキストを避けてくれないので、
+    軸内を格子状に動かして名前・日数ラベルとバーとの重なりを数え、
+    重なりが無い（無ければ最小の）位置を採る。左下から順に探すので、空いていれば従来どおり左下。
+    """
+    kw = dict(handles=handles, facecolor="white", edgecolor=COLOR_SPINE,
+              labelcolor=COLOR_TEXT, fontsize=FONT_SIZE_SUB, loc="lower left")
+    fig.canvas.draw()
+    renderer = fig.canvas.get_renderer()
+    obstacles = [t.get_window_extent(renderer) for t in ax.texts]
+    obstacles += [p.get_window_extent(renderer) for p in ax.patches]
+    leg = ax.legend(**kw)
+    box = leg.get_window_extent(renderer)
+    ax_box = ax.get_window_extent(renderer)
+    w = box.width / ax_box.width
+    h = box.height / ax_box.height
+    steps = 40
+    best, best_hits = (0.0, 0.0), None
+    for iy in range(steps + 1):
+        fy = iy / steps * (1 - h)
+        for ix in range(steps + 1):
+            fx = ix / steps * (1 - w)
+            x0 = ax_box.x0 + fx * ax_box.width
+            y0 = ax_box.y0 + fy * ax_box.height
+            cand = box.from_bounds(x0, y0, box.width, box.height)
+            hits = sum(cand.overlaps(o) for o in obstacles)
+            if best_hits is None or hits < best_hits:
+                best, best_hits = (fx, fy), hits
+            if hits == 0:
+                break
+        if best_hits == 0:
+            break
+    ax.legend(bbox_to_anchor=best, **kw)
+
+
 # ════════════════════════════════════════════════════════
 if __name__ == "__main__":
     TIMELINE_DIR.mkdir(parents=True, exist_ok=True)
     for g in GROUPS:
         print(f"\n📥 {g['name']} 読み込み中...")
-        members = load_members(SHEET_GID, g["no"])
+        members = load_members(SHEET_GID, g["no"], sort_by_sub="sub_names" in g)
         print(f"✅ {len(members)} 名のデータを取得")
         print(f"🎨 タイムライン生成中...")
         output_path = TIMELINE_DIR / g["output"]
-        draw_timeline(members, output_path, g["name"])
+        draw_timeline(members, output_path, g["name"], g.get("sub_names"))
         print(f"✅ 保存完了: {output_path}")
 
     # 画像を全部描き終えてから更新日を書き出す（途中で落ちたら更新しない）
