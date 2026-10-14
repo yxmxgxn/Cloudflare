@@ -1,4 +1,4 @@
-<!-- generated: 2026-10-13T13:51:08.662843+00:00 -->
+<!-- generated: 2026-10-14T00:57:49.512817+00:00 -->
 <option value="有澤一華">有澤一華</option>
 <option value="生田衣梨奈">生田衣梨奈</option>
 <option value="石井泉羽">石井泉羽</option>
@@ -30,9 +30,13 @@
 <option value="里吉うたの">里吉うたの</option>
 <option value="島川波菜">島川波菜</option>
 <option value="島倉りか">島倉りか</option>
+<option value="杉原明紗">杉原明紗</option>
+<option value="相馬優芽">相馬優芽</option>
 <option value="竹内朱莉">竹内朱莉</option>
 <option value="土居楓奏">土居楓奏</option>
+<option value="長野桃羽">長野桃羽</option>
 <option value="西﨑美空">西﨑美空</option>
+<option value="西村乙輝">西村乙輝</option>
 <option value="橋迫鈴">橋迫鈴</option>
 <option value="橋田歩果">橋田歩果</option>
 <option value="林仁愛">林仁愛</option>
