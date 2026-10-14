@@ -146,7 +146,7 @@
         <p class="index-desc">ハロー！プロジェクトの現役メンバー・OGの公式SNS（X・Instagram・YouTube・TikTok・アメブロほか）をまとめた一覧です。名前での検索や、所属・SNSごとの絞り込みができます</p>
       </div>
       <div class="card index-card">
-        <a class="index-link" href="https://hello-ameblo.yxmxgxn.workers.dev/"><?= icon('ameblo', 'ic ic-20') ?>ハロプロ アメブロ検索</a>
+        <a class="index-link" href="https://ameblo.karin-archive.com/"><?= icon('ameblo', 'ic ic-20') ?>ハロプロ アメブロ検索</a>
         <p class="index-desc">ハロー！プロジェクトの現役メンバー・OGのアメブロを、本文と日付から探せる検索サイトです。メンバーで絞り込み、一致した箇所の前後を見て元記事へ飛べます</p>
       </div>
       <div class="card index-card">
