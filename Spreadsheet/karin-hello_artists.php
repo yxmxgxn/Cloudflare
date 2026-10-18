@@ -1,4 +1,4 @@
-<!-- generated: 2026-10-17T19:56:30.437310+00:00 -->
+<!-- generated: 2026-10-18T19:56:27.370136+00:00 -->
 <option value="10人祭">10人祭</option>
 <option value="Berryz工房">Berryz工房</option>
 <option value="BEYOOOOONDS">BEYOOOOONDS</option>
@@ -8,8 +8,8 @@
 <option value="HI-FIN">HI-FIN</option>
 <option value="High-King">High-King</option>
 <option value="Juice=Juice">Juice=Juice</option>
-<option value="MilkyWay">MilkyWay</option>
 <option value="T&amp;Cボンバー">T&amp;Cボンバー</option>
+<option value="V.A.">V.A.</option>
 <option value="W">W</option>
 <option value="℃-ute">℃-ute</option>
 <option value="こぶしファクトリー">こぶしファクトリー</option>
