@@ -13,7 +13,9 @@
 - ただし消えたページを 404 にせずトップや上の階層へ転送するサイトも多い。200 で返ってきても
   転送先がトップ・上の階層なら「実質リンク切れ」としてリンク切れに数える。
   それ以外の場所へ転送されたものは、引っ越しかもしれないので別枠の「転送」に元と先を並べる。
-  http→https、www の有無、末尾スラッシュ、index.html だけの違いは転送とみなさない。
+  www の有無、末尾スラッシュ、index.html だけの違いは転送とみなさない。
+- http のリンクは、相手が https に対応したら貼り替えたい。http→https の転送に加えて、
+  転送しないサイトも https で開けるか1回だけ試し、開ければ「https化」として知らせる。
 - 接続エラーは並列実行中の一時的な詰まりでよく起きるので、最後に直列でもう一度確かめる。
 - YouTube は削除済み動画でも watch ページが 200 を返すので oEmbed で生死を判定する。
 - 除外したいドメイン・URLは link-check/ignore.txt に書く(理由もそこにコメントで残す)。
@@ -238,6 +240,8 @@ def classify_redirect(url: str, final: str):
     src_host, src_path = _comparable(url)
     dst_host, dst_path = _comparable(final)
     if (src_host, src_path) == (dst_host, dst_path):
+        if urlsplit(url).scheme == "http" and urlsplit(final).scheme == "https":
+            return "https", "https へ転送"
         return None
     if src_path and not LANG_TOP_RE.fullmatch(src_path):
         if dst_path == "" or LANG_TOP_RE.fullmatch(dst_path):
@@ -296,6 +300,23 @@ def check_url(session, url: str, timeout=TIMEOUT) -> tuple[str, str, str, str]:
     return "warn", "unknown", "http", ""
 
 
+def https_version(session, url: str) -> str:
+    """http の URL が https でも同じページとして開けるなら、その https の URL を返す"""
+    https_url = "https://" + url[len("http://"):]
+    try:
+        res = session.head(https_url, timeout=TIMEOUT, allow_redirects=True)
+        if res.status_code >= 400:
+            res = session.get(https_url, timeout=TIMEOUT, allow_redirects=True, stream=True)
+            res.close()
+    except requests.RequestException:  # 証明書エラーなど = まだ対応していない
+        return ""
+    # https 側が http へ送り返してくるサイトもあるので、着いた先まで確かめる
+    if (res.status_code < 400 and urlsplit(res.url).scheme == "https"
+            and _comparable(res.url) == _comparable(url)):
+        return res.url
+    return ""
+
+
 _progress_lock = threading.Lock()
 _done = 0
 
@@ -309,7 +330,13 @@ def check_domain(host: str, urls: list[str], total: int, delay_scale: float) -> 
     for i, url in enumerate(urls):
         if i:
             time.sleep(delay)
-        results.append((url,) + check_url(session, url))
+        row = (url,) + check_url(session, url)
+        if row[1] == "ok" and url.startswith("http://"):
+            time.sleep(delay)
+            upgraded = https_version(session, url)
+            if upgraded:
+                row = (url, "https", "https でも開ける", "probe", upgraded)
+        results.append(row)
         with _progress_lock:
             _done += 1
             if _done % 100 == 0:
@@ -344,6 +371,7 @@ def build_report(base_url, external, internal_broken, results, counts, elapsed, 
     broken = sorted([r for r in results if r[1] == "broken"])
     warn = sorted([r for r in results if r[1] == "warn"])
     moved = sorted([r for r in results if r[1] == "moved"])
+    upgrade = sorted([r for r in results if r[1] == "https"])
 
     def sources(url):
         pages = sorted(external.get(url, []))
@@ -358,6 +386,8 @@ def build_report(base_url, external, internal_broken, results, counts, elapsed, 
     L.append(f"- 検査した内部リンク: **{counts['internal']:,}** 件")
     L.append(f"- 🔴 **リンク切れ {len(broken) + len(internal_broken):,} 件**"
              f"（外部 {len(broken):,} / 内部 {len(internal_broken):,}）")
+    if upgrade:
+        L.append(f"- 🔒 **https化 {len(upgrade):,} 件**（https に対応したので貼り替え推奨）")
     if moved:
         L.append(f"- 🟡 別のページへ転送 {len(moved):,} 件（引っ越しなら新しいURLに貼り替えると安心）")
     if warn:
@@ -388,6 +418,17 @@ def build_report(base_url, external, internal_broken, results, counts, elapsed, 
         if len(broken) > max_items:
             L.append("")
             L.append(f"…ほか {len(broken) - max_items} 件（全件は Actions の成果物 report.md を参照）")
+        L.append("")
+
+    if upgrade:
+        L.append(f"### 🔒 https化（{len(upgrade)}件）")
+        L.append("")
+        L.append("http で貼ってあるリンクのうち、相手が https に対応したもの。URLを https に貼り替えてください。")
+        L.append("")
+        for url, _v, detail, _k, final in upgrade[:max_items]:
+            L.append(f"- [{detail}] {url}")
+            L.append(f"  - 貼り替え先: {final}")
+            L.append(sources(url))
         L.append("")
 
     if moved:
@@ -498,6 +539,7 @@ def main() -> int:
         "broken_total": len(broken) + len(internal_broken),
         "warn": len([r for r in results if r[1] == "warn"]),
         "moved": len([r for r in results if r[1] == "moved"]),
+        "https": len([r for r in results if r[1] == "https"]),
         "checked": len(targets),
         "ignored": ignored,
         "elapsed_sec": round(elapsed),
