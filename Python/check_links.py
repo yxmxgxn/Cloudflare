@@ -10,6 +10,10 @@
 - **「リンク切れ」と呼ぶのは 404 / 410 / DNS解決不能だけ**にする。403・405・429・5xx・
   タイムアウトは「相手がbotを弾いた」のか「本当に消えた」のか区別がつかず、報告すると
   誤検知だらけになって誰も読まなくなるため、別枠の「要確認」に落とす。
+- ただし消えたページを 404 にせずトップや上の階層へ転送するサイトも多い。200 で返ってきても
+  転送先がトップ・上の階層なら「実質リンク切れ」としてリンク切れに数える。
+  それ以外の場所へ転送されたものは、引っ越しかもしれないので別枠の「転送」に元と先を並べる。
+  http→https、www の有無、末尾スラッシュ、index.html だけの違いは転送とみなさない。
 - 接続エラーは並列実行中の一時的な詰まりでよく起きるので、最後に直列でもう一度確かめる。
 - YouTube は削除済み動画でも watch ページが 200 を返すので oEmbed で生死を判定する。
 - 除外したいドメイン・URLは link-check/ignore.txt に書く(理由もそこにコメントで残す)。
@@ -26,7 +30,7 @@ from collections import defaultdict
 from concurrent.futures import ThreadPoolExecutor
 from datetime import datetime, timezone, timedelta
 from pathlib import Path
-from urllib.parse import urlsplit, urlunsplit, urljoin, quote
+from urllib.parse import urlsplit, urlunsplit, urljoin, quote, unquote
 
 import requests
 
@@ -72,6 +76,10 @@ PLACEHOLDER_RE = re.compile(r"\$\{|\{\{|<%|%s\b|\$\(")
 TAG_RE = re.compile(r"<(\w+)\b([^>]*)>")
 HREF_RE = re.compile(r"""(?:href|src)\s*=\s*["']([^"']+)["']""", re.I)
 REL_RE = re.compile(r"""\brel\s*=\s*["']([^"']*)["']""", re.I)
+# 転送先の比較で同じページとみなす末尾 (/index.html など)
+INDEX_RE = re.compile(r"/index\.(?:html?|php)$", re.I)
+# /ja や /en-us は言語別のトップページ
+LANG_TOP_RE = re.compile(r"/[a-z]{2}(?:-[a-z]{2})?")
 YT_ID_RE = re.compile(
     r"(?:youtube\.com/watch\?(?:[^\"']*&)?v=|youtu\.be/|youtube\.com/embed/|youtube\.com/shorts/)"
     r"([A-Za-z0-9_-]{11})"
@@ -217,6 +225,29 @@ def classify_error(e: Exception) -> tuple[str, str, str]:
     return "warn", type(e).__name__, "network"
 
 
+def _comparable(url: str) -> tuple[str, str]:
+    """転送前後を比べるための (ホスト, パス)。http/https・www・末尾スラッシュ・index.html は無視"""
+    s = urlsplit(url)
+    host = (s.hostname or "").lower().removeprefix("www.")
+    path = INDEX_RE.sub("", unquote(s.path)).rstrip("/")
+    return host, path
+
+
+def classify_redirect(url: str, final: str):
+    """転送されていれば (判定, 詳細) を返す。実質同じページなら None"""
+    src_host, src_path = _comparable(url)
+    dst_host, dst_path = _comparable(final)
+    if (src_host, src_path) == (dst_host, dst_path):
+        return None
+    if src_path and not LANG_TOP_RE.fullmatch(src_path):
+        if dst_path == "" or LANG_TOP_RE.fullmatch(dst_path):
+            where = "トップ" if dst_host == src_host else "別サイトのトップ"
+            return "broken", f"{where}へ転送 (ページが消えた可能性大)"
+        if dst_host == src_host and src_path.startswith(dst_path + "/"):
+            return "broken", "上の階層へ転送 (ページが消えた可能性大)"
+    return "moved", "別のページへ転送"
+
+
 def check_youtube(session, video_id: str, timeout) -> tuple[str, str, str]:
     """oEmbed で動画の生死を判定する。watch ページは削除済みでも 200 を返すため"""
     target = quote(f"https://www.youtube.com/watch?v={video_id}", safe="")
@@ -233,11 +264,11 @@ def check_youtube(session, video_id: str, timeout) -> tuple[str, str, str]:
     return classify_status(res.status_code)
 
 
-def check_url(session, url: str, timeout=TIMEOUT) -> tuple[str, str, str]:
-    """(判定, 詳細, 種別) を返す。判定は ok / broken / warn"""
+def check_url(session, url: str, timeout=TIMEOUT) -> tuple[str, str, str, str]:
+    """(判定, 詳細, 種別, 転送先) を返す。判定は ok / broken / warn / moved。転送先は転送されたときだけ"""
     yt = YT_ID_RE.search(url)
     if yt and "youtube.com/oembed" not in url:
-        return check_youtube(session, yt.group(1), timeout)
+        return check_youtube(session, yt.group(1), timeout) + ("",)
 
     for attempt in (1, 2):
         try:
@@ -250,13 +281,19 @@ def check_url(session, url: str, timeout=TIMEOUT) -> tuple[str, str, str]:
             if attempt == 1:
                 time.sleep(RETRY_WAIT)
                 continue
-            return classify_error(e)
+            return classify_error(e) + ("",)
 
         if res.status_code >= 500 and attempt == 1:
             time.sleep(RETRY_WAIT)
             continue
-        return classify_status(res.status_code)
-    return "warn", "unknown", "http"
+        verdict, detail, kind = classify_status(res.status_code)
+        # 転送の先で 200 が返っても、行き着いた先が元のページとは限らない
+        if verdict == "ok" and res.history:
+            redirect = classify_redirect(url, res.url)
+            if redirect:
+                return redirect + ("redirect", res.url)
+        return verdict, detail, kind, ""
+    return "warn", "unknown", "http", ""
 
 
 _progress_lock = threading.Lock()
@@ -306,6 +343,12 @@ def build_report(base_url, external, internal_broken, results, counts, elapsed, 
     now = datetime.now(JST).strftime("%Y-%m-%d %H:%M JST")
     broken = sorted([r for r in results if r[1] == "broken"])
     warn = sorted([r for r in results if r[1] == "warn"])
+    moved = sorted([r for r in results if r[1] == "moved"])
+
+    def sources(url):
+        pages = sorted(external.get(url, []))
+        return (f"  - 掲載元: {', '.join(f'[{p}]({base_url}{p})' for p in pages[:10])}"
+                + ("…" if len(pages) > 10 else ""))
 
     L = []
     L.append("## リンクチェック結果")
@@ -315,6 +358,8 @@ def build_report(base_url, external, internal_broken, results, counts, elapsed, 
     L.append(f"- 検査した内部リンク: **{counts['internal']:,}** 件")
     L.append(f"- 🔴 **リンク切れ {len(broken) + len(internal_broken):,} 件**"
              f"（外部 {len(broken):,} / 内部 {len(internal_broken):,}）")
+    if moved:
+        L.append(f"- 🟡 別のページへ転送 {len(moved):,} 件（引っ越しなら新しいURLに貼り替えると安心）")
     if warn:
         L.append(f"- ⚪ 要確認 {len(warn):,} 件（アクセス拒否・一時障害の可能性。切れているとは限らない）")
     L.append("")
@@ -333,23 +378,37 @@ def build_report(base_url, external, internal_broken, results, counts, elapsed, 
     if broken:
         L.append(f"### 🔴 外部リンク切れ（{len(broken)}件）")
         L.append("")
-        L.append("404 / 410 / ドメイン消滅だけを載せています。")
+        L.append("404 / 410 / ドメイン消滅と、トップや上の階層へ飛ばされるものを載せています。")
         L.append("")
-        for url, _v, detail, _k in broken[:max_items]:
-            pages = sorted(external.get(url, []))
+        for url, _v, detail, _k, final in broken[:max_items]:
             L.append(f"- [{detail}] {url}")
-            L.append(f"  - 掲載元: {', '.join(f'[{p}]({base_url}{p})' for p in pages[:10])}"
-                     + ("…" if len(pages) > 10 else ""))
+            if final:
+                L.append(f"  - 転送先: {final}")
+            L.append(sources(url))
         if len(broken) > max_items:
             L.append("")
             L.append(f"…ほか {len(broken) - max_items} 件（全件は Actions の成果物 report.md を参照）")
+        L.append("")
+
+    if moved:
+        L.append(f"<details><summary>🟡 別のページへ転送 {len(moved)}件"
+                 "（ページは開けるが、元と違う場所に着いた。引っ越しか、別の記事に差し替わったか）</summary>")
+        L.append("")
+        for url, _v, _d, _k, final in moved[:max_items]:
+            L.append(f"- {url}")
+            L.append(f"  - 転送先: {final}")
+            L.append(sources(url))
+        if len(moved) > max_items:
+            L.append(f"- …ほか {len(moved) - max_items} 件")
+        L.append("")
+        L.append("</details>")
         L.append("")
 
     if warn:
         L.append(f"<details><summary>⚪ 要確認 {len(warn)}件"
                  "（botを弾かれた・一時的に繋がらなかった。ブラウザでは普通に開けることが多い）</summary>")
         L.append("")
-        for url, _v, detail, _k in warn[:200]:
+        for url, _v, detail, _k, _f in warn[:200]:
             L.append(f"- [{detail}] {url}")
         if len(warn) > 200:
             L.append(f"- …ほか {len(warn) - 200} 件")
@@ -438,6 +497,7 @@ def main() -> int:
         "broken_internal": len(internal_broken),
         "broken_total": len(broken) + len(internal_broken),
         "warn": len([r for r in results if r[1] == "warn"]),
+        "moved": len([r for r in results if r[1] == "moved"]),
         "checked": len(targets),
         "ignored": ignored,
         "elapsed_sec": round(elapsed),
