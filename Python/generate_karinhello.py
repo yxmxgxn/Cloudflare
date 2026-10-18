@@ -100,11 +100,10 @@ def build_index_sql(rows: list[dict]) -> str:
 
 # 配信サービス: (ID列, URL列, IDからURLを作るときの前置き, title, アイコン, tdのclass)
 # ID列が空ならURL列を見る。セルにURLがそのまま入っていればそれを使う。
-# ヘッダーに「Amazon Music」が2つある(ID列とURL列)ので、行の辞書では後ろのURL列が残る。
 SERVICES = (
     ("YouTube Music", "Youtube Music URL", "https://music.youtube.com/watch?v=", "YouTube Music", "youtube-brand", "kh-yt"),
     ("Spotify", "Spotify URL", "https://open.spotify.com/track/", "Spotify", "spotify-brand", "kh-spotify"),
-    ("Amazon Music", "Amazon Music", "https://music.amazon.co.jp/tracks/", "Amazon Music", "amazon-music-brand", "kh-amazon"),
+    ("Amazon Music", "Amazon Music URL", "https://music.amazon.co.jp/tracks/", "Amazon Music", "amazon-music-brand", "kh-amazon"),
     ("LINE MUSIC", "LINE URL", "https://music.line.me/webapp/track/", "LINE MUSIC", "line-music-brand", "kh-line"),
     ("AWA", "AWA URL", "https://s.awa.fm/track/", "AWA", "awa-brand", "kh-awa"),
 )
