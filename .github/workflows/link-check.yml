@@ -68,13 +68,14 @@ jobs:
         if: always()
         run: cat report.md >> "$GITHUB_STEP_SUMMARY" || true
 
-      # 壊れたリンクがあればIssueを1本だけ立てる(既にあれば本文を差し替える)。
-      # 全部直ってチェックが通ったら自動でクローズする。
+      # 壊れたリンクか https に貼り替えられるリンクがあればIssueを1本だけ立てる
+      # (既にあれば本文を差し替える)。全部直ってチェックが通ったら自動でクローズする。
       - name: Create or update issue
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
           BROKEN=$(python -c "import json;print(json.load(open('stats.json'))['broken_total'])")
+          HTTPS=$(python -c "import json;print(json.load(open('stats.json')).get('https', 0))")
           TITLE="🔗 リンク切れレポート ($(TZ=Asia/Tokyo date +%Y-%m-%d))"
           gh label create link-check --color 8C6BB8 --description "リンクチェックの自動レポート" 2>/dev/null || true
           ISSUE=$(gh issue list --label link-check --state open --limit 1 --json number --jq '.[0].number // empty')
@@ -85,11 +86,11 @@ jobs:
             cat report.md
           } > issue-body.md
 
-          if [ "$BROKEN" -gt 0 ]; then
+          if [ "$BROKEN" -gt 0 ] || [ "$HTTPS" -gt 0 ]; then
             if [ -n "$ISSUE" ]; then
               # タイトルの日付も差し替えて、いつ時点の結果か一覧から分かるようにする
               gh issue edit "$ISSUE" --title "$TITLE" --body-file issue-body.md
-              gh issue comment "$ISSUE" --body "🔁 最新のチェック結果に更新しました（リンク切れ ${BROKEN} 件）。"
+              gh issue comment "$ISSUE" --body "🔁 最新のチェック結果に更新しました（リンク切れ ${BROKEN} 件・https化 ${HTTPS} 件）。"
               echo "Issue #$ISSUE を更新しました"
             else
               gh issue create \
@@ -98,9 +99,9 @@ jobs:
                 --body-file issue-body.md
             fi
           else
-            echo "リンク切れなし"
+            echo "リンク切れ・https化なし"
             if [ -n "$ISSUE" ]; then
-              gh issue comment "$ISSUE" --body "✅ 今回のチェックではリンク切れがゼロだったのでクローズします。"
+              gh issue comment "$ISSUE" --body "✅ 今回のチェックではリンク切れ・https化ともにゼロだったのでクローズします。"
               gh issue close "$ISSUE"
             fi
           fi
