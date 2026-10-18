@@ -9,7 +9,7 @@
   <h1>ハロプロメンバーが語るインタビュー・Web記事まとめ</h1>
   <p>ハロー！プロジェクトのメンバー本人の言葉が読めるWeb記事（インタビュー・対談・連載・コラムなど）をまとめています。<br>
   各カードは、掲載日とタイトル（記事リンク）、媒体・連載名、メンバーで構成されています。</p>
-  <p>グループ・メンバー名での絞り込み、掲載日・タイトルでの並び替え、記事本文・タイトル・連載名・メンバー名を対象にしたキーワード検索ができます。カードの連載名・媒体名・メンバー名を押すと、それで絞り込めます。検索すると、本文とタイトル等のどちらで一致したかがカードに出ます。</p>
+  <p>グループ・メンバー名での絞り込み、掲載日・タイトルでの並び替え、記事本文・タイトル・連載名・メンバー名を対象にしたキーワード検索ができます。カードの連載名・媒体名・メンバー名を押すと、それで絞り込めます。検索すると、本文とタイトル等のどちらで一致したかがカードに出ます。年別・媒体別の件数は<a href="/hello-articles-stats">件数のページ</a>にまとめています。</p>
   <p>掲載から30日以内の記事には「NEW」が付きます。元記事が読めなくなったものには「リンク切れ」が付いていて、右下のWeb Archiveからアーカイブを開けます。</p>
   <p>このページを開いた時点では、掲載日が新しい20件だけを読み込んでいます。グループ・メンバーを選ぶか、検索ワードを入れてEnterを押すと、全<?= trim(@file_get_contents($_SERVER['DOCUMENT_ROOT'] . '/Generated/interview_total.txt')) ?: '' ?>件から絞り込んで20件ずつ表示します。</p>
   <p>2026/09/14 宮本佳林さん・工藤遥さん・OCHA NORMA・ロージークロニクルを中心に集めています。</p>
@@ -68,8 +68,97 @@
 
   function scanCards() {
     allCards = Array.prototype.map.call(container.querySelectorAll('.iv-card'), cardInfo);
-    allCards.forEach(function(c) { c.el.classList.toggle('iv-new', c.date >= NEW_SINCE); });
+    allCards.forEach(function(c) {
+      c.el.classList.toggle('iv-new', c.date >= NEW_SINCE);
+      addRelatedButton(c.el);
+    });
     initDateRange();
+  }
+
+  // 「関連する記事」: 押したときだけ、そのカードの中に近い記事を数件出す
+  var RELATED_MAX = 3;
+
+  function addRelatedButton(el) {
+    var p = document.createElement('p');
+    p.className = 'iv-rel';
+    var b = document.createElement('button');
+    b.type = 'button';
+    b.className = 'iv-rel-btn';
+    b.setAttribute('aria-expanded', 'false');
+    b.textContent = '関連する記事';
+    p.appendChild(b);
+    el.insertBefore(p, el.querySelector('.iv-arc'));
+  }
+
+  // 同じ連載 > メンバーの重なり(顔ぶれが近いほど上) > 同じ媒体、同点なら掲載日が近い順
+  function relatedOf(c) {
+    var t = Date.parse(c.date) || 0;
+    var scored = [];
+    allCards.forEach(function(d) {
+      if (d.id === c.id) return;
+      var sameFeature = c.feature && d.feature === c.feature;
+      var shared = c.names.filter(function(n) { return n && d.names.indexOf(n) !== -1; }).length;
+      if (!sameFeature && !shared) return;
+      var union = c.names.length + d.names.length - shared;
+      var score = (sameFeature ? 100 : 0) + (shared ? 30 * shared / union : 0) + (c.media && d.media === c.media ? 5 : 0);
+      var gap = Math.abs((Date.parse(d.date) || 0) - t);
+      scored.push({ d: d, score: score, gap: gap, why: sameFeature ? '同じ連載' : '同じメンバー' });
+    });
+    scored.sort(function(a, b) { return b.score - a.score || a.gap - b.gap; });
+    return scored.slice(0, RELATED_MAX);
+  }
+
+  function toggleRelated(btn) {
+    var card = btn.closest('.iv-card');
+    var open = btn.getAttribute('aria-expanded') === 'true';
+    var list = card.querySelector('.iv-rel-list');
+    if (open) {
+      if (list) list.hidden = true;
+      btn.setAttribute('aria-expanded', 'false');
+      return;
+    }
+    if (list) {
+      list.hidden = false;
+      btn.setAttribute('aria-expanded', 'true');
+      return;
+    }
+    var id = card.getAttribute('data-id');
+    ensureAll().then(function() {
+      // 全件を読み込むとカードが作り直されるので、ボタンも取り直す
+      var c = allCards.find(function(x) { return x.id === id; });
+      if (!c) return;
+      if (!lastFiltered.length) ivApply();
+      var b = c.el.querySelector('.iv-rel-btn');
+      var ul = document.createElement('ul');
+      ul.className = 'iv-rel-list';
+      var items = relatedOf(c);
+      if (!items.length) {
+        var none = document.createElement('li');
+        none.textContent = '見つかりませんでした';
+        ul.appendChild(none);
+      }
+      items.forEach(function(r) {
+        var li = document.createElement('li');
+        var date = document.createElement('span');
+        date.className = 'iv-rel-date';
+        date.textContent = r.d.el.querySelector('.iv-date').firstChild.textContent;  // 表示用の日付(粒度そのまま)
+        var src = r.d.el.querySelector('.iv-title a') || r.d.el.querySelector('.iv-arc a');
+        var title = document.createElement(src ? 'a' : 'span');
+        title.textContent = r.d.title;
+        if (src) {
+          title.href = src.href;
+          title.target = '_blank';
+          title.rel = 'noopener noreferrer';
+        }
+        var why = document.createElement('span');
+        why.className = 'iv-rel-why';
+        why.textContent = r.why;
+        li.appendChild(date); li.appendChild(title); li.appendChild(why);
+        ul.appendChild(li);
+      });
+      b.parentNode.appendChild(ul);
+      b.setAttribute('aria-expanded', 'true');
+    });
   }
 
   function cardInfo(el) {
@@ -197,7 +286,7 @@
     p.className = 'iv-hit';
     p.textContent = inBody && inMeta ? '本文・タイトル等に一致' : inBody ? '本文に一致' : 'タイトル等に一致';
     if (inMeta) p.title = 'タイトル等 = タイトル・連載名・媒体名・メンバー名';
-    c.el.insertBefore(p, c.el.querySelector('.iv-arc'));
+    c.el.insertBefore(p, c.el.querySelector('.iv-rel'));
   }
 
   function ivMore() {
@@ -279,100 +368,10 @@
     ivFilter();
   }
 
-  // 件数の内訳(年別・媒体別)。開いているときだけ、今の絞り込み結果から数える
-  var STATS_MEDIA_TOP = 10;
-
-  function ivStatsToggle() {
-    if (!document.getElementById('iv-stats').open) return;
-    if (loaded) renderStats(); else ivFilter();   // 全件を読んでから数える(ivApply が renderStats を呼ぶ)
-  }
-
-  function renderStats() {
-    var box = document.getElementById('iv-stats-body');
-    if (!document.getElementById('iv-stats').open || !loaded) return;
-    var years = {}, media = {};
-    lastFiltered.forEach(function(c) {
-      var y = c.date.slice(0, 4) || '';
-      years[y] = (years[y] || 0) + 1;
-      if (c.media) media[c.media] = (media[c.media] || 0) + 1;
-    });
-    var yearRows = Object.keys(years).sort().reverse().map(function(y) {
-      return { label: y ? y + '年' : '日付なし', n: years[y], year: y };
-    });
-    var mediaKeys = Object.keys(media).sort(function(a, b) { return media[b] - media[a] || a.localeCompare(b, 'ja'); });
-    var mediaRows = mediaKeys.slice(0, STATS_MEDIA_TOP).map(function(m) {
-      return { label: m, n: media[m], media: m };
-    });
-
-    box.textContent = '';
-    if (!lastFiltered.length) { box.textContent = '該当する記事がありません'; return; }
-    box.appendChild(statsList('年別', yearRows, function(r) {
-      return r.year ? function() { ivPickYear(r.year); } : null;
-    }));
-    var ml = statsList('媒体別（上位' + Math.min(STATS_MEDIA_TOP, mediaKeys.length) + '）', mediaRows, function(r) {
-      return function() {
-        chipFilters.media = r.media;
-        renderChips();
-        ivFilter();
-      };
-    });
-    var rest = mediaKeys.length - mediaRows.length;
-    if (rest > 0) {
-      var more = document.createElement('p');
-      more.className = 'iv-stats-rest';
-      more.textContent = 'ほか ' + rest + ' 媒体';
-      ml.appendChild(more);
-    }
-    box.appendChild(ml);
-  }
-
-  // 見出し + 「ラベル ▬▬ 件数」の行。行を押すとその値で絞り込む(onPick が null の行は押せない)
-  function statsList(heading, rows, onPick) {
-    var max = rows.reduce(function(m, r) { return Math.max(m, r.n); }, 0);
-    var sec = document.createElement('section');
-    sec.className = 'iv-stats-list';
-    var h = document.createElement('h3');
-    h.textContent = heading;
-    sec.appendChild(h);
-    rows.forEach(function(r) {
-      var pick = onPick(r);
-      var row = document.createElement(pick ? 'button' : 'div');
-      row.className = 'iv-stats-row';
-      if (pick) {
-        row.type = 'button';
-        row.title = r.label + 'の記事だけ表示';
-        row.addEventListener('click', pick);
-      }
-      var label = document.createElement('span');
-      label.className = 'iv-stats-label';
-      label.textContent = r.label;
-      var track = document.createElement('span');
-      track.className = 'iv-stats-track';
-      track.setAttribute('aria-hidden', 'true');
-      var bar = document.createElement('span');
-      bar.className = 'iv-stats-bar';
-      bar.style.width = (max ? r.n / max * 100 : 0) + '%';
-      track.appendChild(bar);
-      var n = document.createElement('span');
-      n.className = 'iv-stats-n';
-      n.textContent = r.n + '件';
-      row.appendChild(label); row.appendChild(track); row.appendChild(n);
-      sec.appendChild(row);
-    });
-    return sec;
-  }
-
-  // 年を押す → 期間をその年の1/1〜12/31にする(期間パネルも開いて、何で絞っているか見せる)
-  function ivPickYear(y) {
-    document.getElementById('iv-from').value = y + '-01-01';
-    document.getElementById('iv-to').value = y + '-12-31';
-    var p = document.getElementById('iv-date-panel');
-    if (p.hidden) ivDateToggle();
-    ivFilter();
-  }
-
   // カード内の連載名・媒体名・メンバー名を押したときの絞り込み
   container.addEventListener('click', function(e) {
+    var rel = e.target.closest('.iv-rel-btn');
+    if (rel) { toggleRelated(rel); return; }
     var b = e.target.closest('.iv-feature, .iv-media, .iv-member');
     if (!b) return;
     if (b.classList.contains('iv-member')) {
@@ -496,6 +495,20 @@
   document.getElementById('iv-more-wrap').hidden = false;
   document.getElementById('iv-more').textContent = '次の' + PAGE + '件を表示';
   document.getElementById('iv-more-all').textContent = '残りをすべて表示';
+
+  // 件数のページ(hello-articles-stats)から ?year=2024 / ?media=媒体名 で来たら、その絞り込みで開く
+  var params = new URLSearchParams(location.search);
+  var qYear = params.get('year') || '', qMedia = params.get('media') || '';
+  if (/^\d{4}$/.test(qYear)) {
+    document.getElementById('iv-from').value = qYear + '-01-01';
+    document.getElementById('iv-to').value = qYear + '-12-31';
+    ivDateToggle();   // 期間パネルを開いて、何で絞っているか見せる
+  }
+  if (qMedia) {
+    chipFilters.media = qMedia;
+    renderChips();
+  }
+  if (/^\d{4}$/.test(qYear) || qMedia) ivFilter();
 
   window.ivFilter = ivFilter;
   window.ivGroupChange = ivGroupChange;

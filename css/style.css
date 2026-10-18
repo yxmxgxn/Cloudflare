@@ -1266,28 +1266,92 @@ footer a {
   white-space: nowrap;
 }
 
-/* 件数の内訳(年別・媒体別)。行を押すとその年・媒体で絞り込む */
-#iv-stats {
-  margin: 0 0 8px;
+/* 関連する記事(押したときだけカード内に数件出す)。カードの下端に寄せ、魚拓リンクはその下 */
+.iv-card .iv-rel {
+  margin: auto 0 0;
+  font-size: 12px;
+}
+
+.iv-card .iv-rel ~ .iv-arc {
+  margin-top: 0;
+}
+
+.iv-card .iv-rel-btn {
+  padding: 0;
+  border: 0;
+  background: none;
+  font: inherit;
+  color: #888;
+  cursor: pointer;
+}
+
+.iv-card .iv-rel-btn::after {
+  content: " ▾";
+}
+
+.iv-card .iv-rel-btn[aria-expanded="true"]::after {
+  content: " ▴";
+}
+
+.iv-card .iv-rel-btn:hover {
+  color: var(--accent);
+}
+
+.iv-card .iv-rel-list {
+  margin: 4px 0 0;
+  padding: 6px 8px;
+  background: #f7f5fa;
+  border-radius: 6px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.iv-card .iv-rel-list[hidden] {
+  display: none;
+}
+
+.iv-card .iv-rel-list li {
+  line-height: 1.5;
+}
+
+.iv-card .iv-rel-date {
+  color: #888;
+  margin-right: 6px;
+}
+
+.iv-card .iv-rel-list a {
+  color: #333;
+}
+
+.iv-card .iv-rel-list a:hover {
+  color: var(--accent);
+}
+
+.iv-card .iv-rel-why {
+  margin-left: 6px;
+  color: #888;
+  white-space: nowrap;
+}
+
+/* インタビュー・Web記事の件数(hello-articles-stats)。行を押すと一覧をその年・媒体で絞り込んで開く */
+.iv-stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 16px 32px;
   font-size: 14px;
 }
 
-#iv-stats summary {
-  cursor: pointer;
-  color: #666;
+.iv-stats-list h2 {
+  font-size: 16px;
+  margin: 0 0 6px;
 }
 
-#iv-stats-body {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 8px 24px;
-  margin-top: 8px;
-}
-
-.iv-stats-list h3 {
+.iv-stats-list details summary {
+  margin: 6px 4px 0;
   font-size: 13px;
   color: #888;
-  margin: 0 0 4px;
+  cursor: pointer;
 }
 
 .iv-stats-row {
@@ -1303,14 +1367,12 @@ footer a {
   font: inherit;
   color: inherit;
   text-align: left;
+  box-sizing: border-box;
 }
 
-button.iv-stats-row {
-  cursor: pointer;
-}
-
-button.iv-stats-row:hover {
+a.iv-stats-row:hover {
   background: #f4f0f9;
+  color: inherit;
 }
 
 .iv-stats-label {
@@ -1338,11 +1400,6 @@ button.iv-stats-row:hover {
   font-variant-numeric: tabular-nums;
 }
 
-.iv-stats-rest {
-  margin: 2px 4px;
-  font-size: 12px;
-  color: #888;
-}
 
 /* ===== ファミ通ゲーム実況ch 配信アーカイブまとめ ===== */
 
