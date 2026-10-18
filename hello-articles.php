@@ -9,8 +9,8 @@
   <h1>ハロプロメンバーが語るインタビュー・Web記事まとめ</h1>
   <p>ハロー！プロジェクトのメンバー本人の言葉が読めるWeb記事（インタビュー・対談・連載・コラムなど）をまとめています。<br>
   各カードは、掲載日とタイトル（記事リンク）、媒体・連載名、メンバーで構成されています。</p>
-  <p>グループ・メンバー名での絞り込み、掲載日・タイトルでの並び替え、記事本文・タイトル・連載名・メンバー名を対象にしたキーワード検索ができます。カードの連載名・媒体名・メンバー名を押すと、それで絞り込めます。</p>
-  <p>元記事が読めなくなったものは、右下のWeb Archiveからアーカイブを開けます。</p>
+  <p>グループ・メンバー名での絞り込み、掲載日・タイトルでの並び替え、記事本文・タイトル・連載名・メンバー名を対象にしたキーワード検索ができます。カードの連載名・媒体名・メンバー名を押すと、それで絞り込めます。検索すると、本文とタイトル等のどちらで一致したかがカードに出ます。</p>
+  <p>掲載から30日以内の記事には「NEW」が付きます。元記事が読めなくなったものには「リンク切れ」が付いていて、右下のWeb Archiveからアーカイブを開けます。</p>
   <p>このページを開いた時点では、掲載日が新しい20件だけを読み込んでいます。グループ・メンバーを選ぶか、検索ワードを入れてEnterを押すと、全<?= trim(@file_get_contents($_SERVER['DOCUMENT_ROOT'] . '/Generated/interview_total.txt')) ?: '' ?>件から絞り込んで20件ずつ表示します。</p>
   <p>2026/09/14 宮本佳林さん・工藤遥さん・OCHA NORMA・ロージークロニクルを中心に集めています。</p>
   <p>管理人の独断と偏見で集めているので、取捨選択になっていることをご容赦ください</p>
@@ -60,8 +60,15 @@
   var loaded = false;      // 全件JSONを読み込み済みか
   var loading = null;      // 読み込み中のPromise(二重fetch防止)
 
+  // 掲載日が閲覧日から30日以内なら NEW(ページは定期生成なので、判定は見た日に合わせてここでする)
+  var NEW_SINCE = (function() {
+    var d = new Date(Date.now() - 30 * 86400000);
+    return d.getFullYear() + '-' + ('0' + (d.getMonth() + 1)).slice(-2) + '-' + ('0' + d.getDate()).slice(-2);
+  })();
+
   function scanCards() {
     allCards = Array.prototype.map.call(container.querySelectorAll('.iv-card'), cardInfo);
+    allCards.forEach(function(c) { c.el.classList.toggle('iv-new', c.date >= NEW_SINCE); });
     initDateRange();
   }
 
@@ -104,6 +111,8 @@
 
   // 全文検索の結果(記事IDの集合)。null = 検索未適用(サーバ絞り込み無効)
   var serverIds = null;
+  // そのうち本文で一致したID / タイトル・連載名・媒体名・メンバー名で一致したID(カードの印に使う)
+  var hitBody = null, hitMeta = null;
   var searchSeq = 0;   // 古いレスポンスを無視するためのトークン
   // カードの連載名・媒体名を押したときの絞り込み(値の完全一致)。'' = 無効
   var chipFilters = { feature: '', media: '' };
@@ -116,7 +125,7 @@
 
   function ivSearch() {
     var q = document.getElementById('iv-search').value.trim();
-    if (q.length < 2) { serverIds = null; ivFilter(); return; }
+    if (q.length < 2) { serverIds = hitBody = hitMeta = null; ivFilter(); return; }
     var mySeq = ++searchSeq;
     ensureAll();
     fetch('/api/interview-search?q=' + encodeURIComponent(q))
@@ -124,12 +133,17 @@
       .then(function(data) {
         if (mySeq !== searchSeq) return;          // 新しい入力が来ていたら破棄
         serverIds = new Set(data.ids || []);
+        hitBody = data.body ? new Set(data.body) : null;
+        hitMeta = data.meta ? new Set(data.meta) : null;
         ivFilter();
       })
       .catch(function() {                          // API不通時はクライアント絞り込みに退避
         if (mySeq !== searchSeq) return;
-        serverIds = clientFallback(q);
-        ivFilter();
+        ensureAll().then(function() {             // 全件を読み終えてから部分一致を取る
+          serverIds = hitMeta = clientFallback(q);
+          hitBody = null;
+          ivApply();
+        });
       });
   }
 
@@ -152,6 +166,7 @@
     var view = lastFiltered.slice(0, shown);
     view.forEach(function(c) {
       c.el.classList.add('iv-shown');
+      setHitLabel(c);
       container.appendChild(c.el);
     });
 
@@ -169,6 +184,20 @@
       all.textContent = '残り' + rest + '件をすべて表示';
       all.hidden = rest <= PAGE;
     }
+  }
+
+  // 検索中は、本文とタイトル等のどちらで一致したかをカードに書く(本文そのものは出さない)
+  function setHitLabel(c) {
+    var old = c.el.querySelector('.iv-hit');
+    if (old) old.remove();
+    if (serverIds === null) return;
+    var inBody = hitBody && hitBody.has(c.id), inMeta = hitMeta && hitMeta.has(c.id);
+    if (!inBody && !inMeta) return;
+    var p = document.createElement('p');
+    p.className = 'iv-hit';
+    p.textContent = inBody && inMeta ? '本文・タイトル等に一致' : inBody ? '本文に一致' : 'タイトル等に一致';
+    if (inMeta) p.title = 'タイトル等 = タイトル・連載名・媒体名・メンバー名';
+    c.el.insertBefore(p, c.el.querySelector('.iv-arc'));
   }
 
   function ivMore() {
@@ -247,6 +276,98 @@
   function ivDateClear() {
     document.getElementById('iv-from').value = '';
     document.getElementById('iv-to').value = '';
+    ivFilter();
+  }
+
+  // 件数の内訳(年別・媒体別)。開いているときだけ、今の絞り込み結果から数える
+  var STATS_MEDIA_TOP = 10;
+
+  function ivStatsToggle() {
+    if (!document.getElementById('iv-stats').open) return;
+    if (loaded) renderStats(); else ivFilter();   // 全件を読んでから数える(ivApply が renderStats を呼ぶ)
+  }
+
+  function renderStats() {
+    var box = document.getElementById('iv-stats-body');
+    if (!document.getElementById('iv-stats').open || !loaded) return;
+    var years = {}, media = {};
+    lastFiltered.forEach(function(c) {
+      var y = c.date.slice(0, 4) || '';
+      years[y] = (years[y] || 0) + 1;
+      if (c.media) media[c.media] = (media[c.media] || 0) + 1;
+    });
+    var yearRows = Object.keys(years).sort().reverse().map(function(y) {
+      return { label: y ? y + '年' : '日付なし', n: years[y], year: y };
+    });
+    var mediaKeys = Object.keys(media).sort(function(a, b) { return media[b] - media[a] || a.localeCompare(b, 'ja'); });
+    var mediaRows = mediaKeys.slice(0, STATS_MEDIA_TOP).map(function(m) {
+      return { label: m, n: media[m], media: m };
+    });
+
+    box.textContent = '';
+    if (!lastFiltered.length) { box.textContent = '該当する記事がありません'; return; }
+    box.appendChild(statsList('年別', yearRows, function(r) {
+      return r.year ? function() { ivPickYear(r.year); } : null;
+    }));
+    var ml = statsList('媒体別（上位' + Math.min(STATS_MEDIA_TOP, mediaKeys.length) + '）', mediaRows, function(r) {
+      return function() {
+        chipFilters.media = r.media;
+        renderChips();
+        ivFilter();
+      };
+    });
+    var rest = mediaKeys.length - mediaRows.length;
+    if (rest > 0) {
+      var more = document.createElement('p');
+      more.className = 'iv-stats-rest';
+      more.textContent = 'ほか ' + rest + ' 媒体';
+      ml.appendChild(more);
+    }
+    box.appendChild(ml);
+  }
+
+  // 見出し + 「ラベル ▬▬ 件数」の行。行を押すとその値で絞り込む(onPick が null の行は押せない)
+  function statsList(heading, rows, onPick) {
+    var max = rows.reduce(function(m, r) { return Math.max(m, r.n); }, 0);
+    var sec = document.createElement('section');
+    sec.className = 'iv-stats-list';
+    var h = document.createElement('h3');
+    h.textContent = heading;
+    sec.appendChild(h);
+    rows.forEach(function(r) {
+      var pick = onPick(r);
+      var row = document.createElement(pick ? 'button' : 'div');
+      row.className = 'iv-stats-row';
+      if (pick) {
+        row.type = 'button';
+        row.title = r.label + 'の記事だけ表示';
+        row.addEventListener('click', pick);
+      }
+      var label = document.createElement('span');
+      label.className = 'iv-stats-label';
+      label.textContent = r.label;
+      var track = document.createElement('span');
+      track.className = 'iv-stats-track';
+      track.setAttribute('aria-hidden', 'true');
+      var bar = document.createElement('span');
+      bar.className = 'iv-stats-bar';
+      bar.style.width = (max ? r.n / max * 100 : 0) + '%';
+      track.appendChild(bar);
+      var n = document.createElement('span');
+      n.className = 'iv-stats-n';
+      n.textContent = r.n + '件';
+      row.appendChild(label); row.appendChild(track); row.appendChild(n);
+      sec.appendChild(row);
+    });
+    return sec;
+  }
+
+  // 年を押す → 期間をその年の1/1〜12/31にする(期間パネルも開いて、何で絞っているか見せる)
+  function ivPickYear(y) {
+    document.getElementById('iv-from').value = y + '-01-01';
+    document.getElementById('iv-to').value = y + '-12-31';
+    var p = document.getElementById('iv-date-panel');
+    if (p.hidden) ivDateToggle();
     ivFilter();
   }
 

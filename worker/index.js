@@ -3,7 +3,7 @@
  *
  * 役割:
  *   - /api/interview-search?q=… : D1 の全文検索(bigram×FTS5)を引き、一致した記事IDだけ返す。
- *     対象は本文と、スプシのタイトル・Feature・媒体名・メンバー名。
+ *     対象は本文と、スプシのタイトル・Feature・媒体名・メンバー名(どちらで一致したかのID一覧も返す)。
  *     本文・スニペットは一切返さない。
  *   - /api/karinhello-search?q=… : #佳林の１日１ハロ のポスト本文を同じ方式で引き、一致したポストIDだけ返す(D1 karin-hello)。
  *   - POST /api/feedback : フッターの匿名フィードバックを受け、D1 に保存して Discord へ通知。
@@ -52,28 +52,20 @@ function json(obj, status = 200, cache = "public, max-age=60") {
 async function handleSearch(url, env) {
   const q = url.searchParams.get("q") || "";
   const match = buildMatch(q);
-  if (!match) return json({ ids: [] }); // 2文字未満などは空(サーバ絞り込み無効)
+  if (!match) return json({ ids: [], body: [], meta: [] }); // 2文字未満などは空(サーバ絞り込み無効)
 
-  // 本文(article_fts) と タイトル・Feature・媒体名・メンバー名(article_meta_fts) の両方を引く。
-  // 1記事が複数行に分かれているので UNION で重複IDをまとめる。
-  let results;
-  try {
-    ({ results } = await env.DB
-      .prepare(
-        "SELECT id FROM article_fts WHERE article_fts MATCH ?1 " +
-        "UNION SELECT id FROM article_meta_fts WHERE article_meta_fts MATCH ?1 LIMIT ?2"
-      )
-      .bind(match, LIMIT)
-      .all());
-  } catch (e) {
-    // article_meta_fts は索引ワークフロー初回実行時に作られる。それまでは本文だけで検索する
-    ({ results } = await env.DB
-      .prepare("SELECT DISTINCT id FROM article_fts WHERE article_fts MATCH ? LIMIT ?")
-      .bind(match, LIMIT)
-      .all());
-  }
+  // 本文(article_fts) と タイトル・Feature・媒体名・メンバー名(article_meta_fts) を別々に引き、
+  // どちらで一致したかをカードに出せるようにする(返すのはIDだけ)。
+  const query = (table) => env.DB
+    .prepare(`SELECT DISTINCT id FROM ${table} WHERE ${table} MATCH ? LIMIT ?`)
+    .bind(match, LIMIT)
+    .all()
+    .then(({ results }) => results.map((r) => r.id));
 
-  return json({ ids: results.map((r) => r.id) });
+  // article_meta_fts は索引ワークフロー初回実行時に作られる。それまでは本文だけで検索する
+  const [body, meta] = await Promise.all([query("article_fts"), query("article_meta_fts").catch(() => [])]);
+
+  return json({ ids: [...new Set([...body, ...meta])], body, meta });
 }
 
 // #佳林の１日１ハロ のポスト本文検索。一致したポストIDだけ返す(本文は D1 にも持っていない)

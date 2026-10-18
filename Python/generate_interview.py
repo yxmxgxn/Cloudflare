@@ -243,6 +243,17 @@ def build_cards(articles: list[dict], members_by_id: dict, master: dict,
                 domain: dict, unmatched: dict, member_order: dict) -> list[tuple[str, str]]:
     """カードのHTMLを (掲載日YYYY-MM-DD, HTML) の一覧で返す。
     ページに埋め込むのは新着分だけで、残りはJSONにして必要になった時だけ読ませる。"""
+    # 連載・企画の通し番号: 同じFeatureの記事を掲載日順(同日はID順)に数える
+    by_feature: dict[str, list[tuple[str, str]]] = {}
+    for a in articles:
+        aid, feat = (a.get("ID") or "").strip(), (a.get("Feature") or "").strip()
+        if aid and feat:
+            by_feature.setdefault(feat, []).append((_pad_date(a.get("Date"), False), aid))
+    feature_no: dict[str, tuple[int, int]] = {}
+    for items in by_feature.values():
+        for i, (_, aid) in enumerate(sorted(items), start=1):
+            feature_no[aid] = (i, len(items))
+
     cards = []
     for a in articles:
         aid = (a.get("ID") or "").strip()
@@ -270,14 +281,19 @@ def build_cards(articles: list[dict], members_by_id: dict, master: dict,
             )
         else:
             title_html = title
+        # 元記事が読めない(魚拓だけ)カードには印を付ける。新着の印はページ側が閲覧日で付ける
+        dead = "" if url else '<span class="iv-badge iv-badge-dead">リンク切れ</span>'
         head = (
-            f'<p class="iv-head"><span class="iv-date">{date_disp}</span>'
+            f'<p class="iv-head"><span class="iv-date">{date_disp}{dead}</span>'
             f'<span class="iv-title">{title_html}</span></p>'
         )
 
         # 2段目: Feature / Media (あるものだけ)。どちらも押すと同じ値の記事に絞り込むボタン
         feature_html = (f'<button type="button" class="iv-feature" data-feature="{feature}"'
                         f' title="この連載・企画の記事だけ表示">{feature}</button>') if feature else ""
+        no, total = feature_no.get(aid, (0, 0))
+        if feature and total > 1:
+            feature_html += f'<span class="iv-feature-no">第{no}回／全{total}回</span>'
         media_html = (f'<button type="button" class="iv-media" data-media="{media}"'
                       f' title="この媒体の記事だけ表示">{media}</button>') if media else ""
         sub_parts = [x for x in [feature_html, media_html] if x]
@@ -323,7 +339,7 @@ def build_cards(articles: list[dict], members_by_id: dict, master: dict,
                            a.get("Feature") or "", " ".join(names)])
 
         cards.append((date_norm,
-            f'<div class="card iv-card" data-id="{esc(aid)}" data-date="{date_sort}" data-title="{title}"'
+            f'<div class="card iv-card{"" if url else " iv-dead"}" data-id="{esc(aid)}" data-date="{date_sort}" data-title="{title}"'
             f' data-feature="{feature}" data-media="{media}"'
             f' data-groups="{esc("|".join(dict.fromkeys(all_groups)))}"'
             f' data-active-groups="{esc("|".join(dict.fromkeys(active_groups)))}"'
