@@ -104,6 +104,7 @@ SERVICES = (
     ("YouTube Music", "Youtube Music URL", "https://music.youtube.com/watch?v=", "YouTube Music", "youtube-brand", "kh-yt"),
     ("Spotify", "Spotify URL", "https://open.spotify.com/track/", "Spotify", "spotify-brand", "kh-spotify"),
     ("Amazon Music", "Amazon Music URL", "https://music.amazon.co.jp/tracks/", "Amazon Music", "amazon-music-brand", "kh-amazon"),
+    ("Apple Music", "Apple Music URL", "https://music.apple.com/jp/song/", "Apple Music", "apple-music-brand", "kh-apple"),
     ("LINE MUSIC", "LINE URL", "https://music.line.me/webapp/track/", "LINE MUSIC", "line-music-brand", "kh-line"),
     ("AWA", "AWA URL", "https://s.awa.fm/track/", "AWA", "awa-brand", "kh-awa"),
 )
