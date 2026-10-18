@@ -19,7 +19,8 @@
   宮本佳林さんがXでハロープロジェクトサブスク解禁にともない毎日ハロプロの曲を<a href="https://x.com/search?q=%23%E4%BD%B3%E6%9E%97%E3%81%AE1%E6%97%A51%E3%83%8F%E3%83%AD%20from%3A%40karin__miyamoto&src=typed_query&f=live" target="_blank" rel="noopener noreferrer">#佳林の１日１ハロ</a>で1曲紹介する企画をまとめました。<br>
   日付に元ポスト・アルバム名に公式のリンク・YouTube Music／Spotify／Amazon MusicのURLや作詞作曲編曲などをいれています。<br>
   アーティスト名・作詞作曲編曲でフィルタをかけられます。<br>
-  プレイリストを作りました：<a href="https://music.youtube.com/playlist?list=PLAbxdMpUP3BU" target="_blank" rel="noopener noreferrer">YouTube Music</a>・<a href="https://open.spotify.com/playlist/5YVrEQ0hb7LTOviTXum8zi" target="_blank" rel="noopener noreferrer">Spotify</a>・<a href="https://music.amazon.co.jp/user-playlists/46349edb307f4bda8ab48d0f060a0c69jajp" target="_blank" rel="noopener noreferrer">Amazon Music</a><br>
+  プレイリストを作りました：<a href="https://music.youtube.com/playlist?list=PLAbxdMpUP3BU" target="_blank" rel="noopener noreferrer" class="kh-playlist" data-embed="https://www.youtube.com/embed/videoseries?list=PLAbxdMpUP3BU">YouTube Music</a>・<a href="https://open.spotify.com/playlist/5YVrEQ0hb7LTOviTXum8zi" target="_blank" rel="noopener noreferrer" class="kh-playlist" data-embed="https://open.spotify.com/embed/playlist/5YVrEQ0hb7LTOviTXum8zi">Spotify</a>・<a href="https://music.amazon.co.jp/user-playlists/46349edb307f4bda8ab48d0f060a0c69jajp" target="_blank" rel="noopener noreferrer" class="kh-playlist" data-embed="https://music.amazon.co.jp/embed/46349edb307f4bda8ab48d0f060a0c69jajp/?id=EpScUMtmV8&amp;marketplaceId=A1VC38T7YXB528&amp;musicTerritory=JP">Amazon Music</a><br>
+  <div id="kh-playlist-embed" hidden></div>
 
 <div id="kh-post-search">
   <input type="search" id="kh-post-q" placeholder="ポストの本文を検索…" aria-label="ポストの本文を検索">
@@ -123,6 +124,29 @@
 
   window.khFilter = khFilter;
   window.khSort = khSort;
+})();
+
+// プレイリストのリンクを押したら、その下に埋め込みプレイヤーを出す（同じリンクをもう一度押すと閉じる）
+(function() {
+  var box = document.getElementById('kh-playlist-embed');
+  var current = null;
+  document.querySelectorAll('a.kh-playlist').forEach(function(a) {
+    a.addEventListener('click', function(e) {
+      if (e.ctrlKey || e.metaKey || e.shiftKey || e.button !== 0) return;
+      e.preventDefault();
+      box.textContent = '';
+      if (current === a) { current = null; box.hidden = true; return; }
+      current = a;
+      var f = document.createElement('iframe');
+      f.src = a.getAttribute('data-embed');
+      f.title = a.textContent + ' プレイリスト';
+      f.allow = 'autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture';
+      f.allowFullscreen = true;
+      f.referrerPolicy = 'strict-origin-when-cross-origin';
+      box.appendChild(f);
+      box.hidden = false;
+    });
+  });
 })();
 
 // ポスト本文の検索。本文はページに持たず、Worker が一致したポストIDだけ返す
