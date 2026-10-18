@@ -452,7 +452,9 @@ main {
 
 #karinhello td.kh-yt,
 #karinhello td.kh-spotify,
-#karinhello td.kh-amazon {
+#karinhello td.kh-amazon,
+#karinhello td.kh-line,
+#karinhello td.kh-awa {
   text-align: center;
   min-width: 2em;
 }

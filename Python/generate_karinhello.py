@@ -98,6 +98,31 @@ def build_index_sql(rows: list[dict]) -> str:
             stmts.append(f"INSERT INTO post_fts(id,bigram) VALUES({sql_str(post_id)},{sql_str(grams)});")
     return "\n".join(stmts) + "\n"
 
+# 配信サービス: (ID列, URL列, IDからURLを作るときの前置き, title, アイコン, tdのclass)
+# ID列が空ならURL列を見る。セルにURLがそのまま入っていればそれを使う。
+# ヘッダーに「Amazon Music」が2つある(ID列とURL列)ので、行の辞書では後ろのURL列が残る。
+SERVICES = (
+    ("YouTube Music", "Youtube Music URL", "https://music.youtube.com/watch?v=", "YouTube Music", "youtube-brand", "kh-yt"),
+    ("Spotify", "Spotify URL", "https://open.spotify.com/track/", "Spotify", "spotify-brand", "kh-spotify"),
+    ("Amazon Music", "Amazon Music", "https://music.amazon.co.jp/tracks/", "Amazon Music", "amazon-music-brand", "kh-amazon"),
+    ("LINE MUSIC", "LINE URL", "https://music.line.me/webapp/track/", "LINE MUSIC", "line-music-brand", "kh-line"),
+    ("AWA", "AWA URL", "https://s.awa.fm/track/", "AWA", "awa-brand", "kh-awa"),
+)
+
+def service_url(row: dict, id_col: str, url_col: str, prefix: str) -> str:
+    value = row.get(id_col, "") or row.get(url_col, "")
+    if not value:
+        return ""
+    if value.startswith(("http://", "https://")):
+        return value
+    return prefix + value
+
+def service_cell(row: dict, id_col: str, url_col: str, prefix: str, title: str, icon_name: str) -> str:
+    url = service_url(row, id_col, url_col, prefix)
+    if not url:
+        return ""
+    return f'<a href="{escape_html(url)}" target="_blank" rel="noopener noreferrer" title="{title}">{icon(icon_name, "ic ic-20")}</a>'
+
 def build_table(rows: list[dict]) -> str:
     lines = []
     for row in rows:
@@ -107,12 +132,6 @@ def build_table(rows: list[dict]) -> str:
         artist       = escape_html(row.get("アーティスト名", ""))
         official_url = row.get("公式URL", "")
         album        = escape_html(row.get("アルバム名", ""))
-        yt_id        = row.get("YouTube Music", "")
-        yt_url       = f"https://music.youtube.com/watch?v={yt_id}" if yt_id else ""
-        spotify_id   = row.get("Spotify", "")
-        spotify_url  = f"https://open.spotify.com/track/{spotify_id}" if spotify_id else ""
-        amazon_id    = row.get("Amazon Music", "")
-        amazon_url   = f"https://music.amazon.co.jp/tracks/{amazon_id}" if amazon_id else ""
         lyricist     = escape_html(row.get("作詞", ""))
         composer     = escape_html(row.get("作曲", ""))
         arranger     = escape_html(row.get("編曲", ""))
@@ -125,17 +144,9 @@ def build_table(rows: list[dict]) -> str:
             f'<a href="{escape_html(official_url)}" target="_blank" rel="noopener noreferrer">{album}</a>'
             if official_url else album
         )
-        yt_cell = (
-            f'<a href="{escape_html(yt_url)}" target="_blank" rel="noopener noreferrer" title="YouTube Music">{icon("youtube-brand", "ic ic-20")}</a>'
-            if yt_url else ""
-        )
-        spotify_cell = (
-            f'<a href="{escape_html(spotify_url)}" target="_blank" rel="noopener noreferrer" title="Spotify">{icon("spotify-brand", "ic ic-20")}</a>'
-            if spotify_url else ""
-        )
-        amazon_cell = (
-            f'<a href="{escape_html(amazon_url)}" target="_blank" rel="noopener noreferrer" title="Amazon Music">{icon("amazon-music-brand", "ic ic-20")}</a>'
-            if amazon_url else ""
+        service_cells = "".join(
+            f'<td class="{css}">{service_cell(row, id_col, url_col, prefix, title, icon_name)}</td>'
+            for id_col, url_col, prefix, title, icon_name, css in SERVICES
         )
 
         lines.append(
@@ -144,9 +155,7 @@ def build_table(rows: list[dict]) -> str:
             f'<td class="kh-song">{song}</td>'
             f'<td class="kh-artist">{artist}</td>'
             f'<td class="kh-album">{album_cell}</td>'
-            f'<td class="kh-yt">{yt_cell}</td>'
-            f'<td class="kh-spotify">{spotify_cell}</td>'
-            f'<td class="kh-amazon">{amazon_cell}</td>'
+            f"{service_cells}"
             f'<td class="kh-lyricist">{lyricist}</td>'
             f'<td class="kh-composer">{composer}</td>'
             f'<td class="kh-arranger">{arranger}</td>'

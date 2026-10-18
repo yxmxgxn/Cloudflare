@@ -1,6 +1,6 @@
 <?php
   $title = "#佳林の１日１ハロまとめ"; 
-  $description = "宮本佳林さんがハロープロジェクトサブスク解禁にともない毎日ハロプロの曲を1曲紹介する企画をまとめました。日付に元ポスト・アルバム名に公式のリンク・YouTube Music／Spotify／Amazon MusicのURLや作詞作曲編曲などをいれています。";
+  $description = "宮本佳林さんがハロープロジェクトサブスク解禁にともない毎日ハロプロの曲を1曲紹介する企画をまとめました。日付に元ポスト・アルバム名に公式のリンク・YouTube Music／Spotify／Amazon Music／LINE MUSIC／AWAのURLや作詞作曲編曲などをいれています。";
   $jsonld_type = "Dataset";
   $about = "宮本佳林";
   // グループ単体
@@ -17,7 +17,7 @@
 <main>
   <h1>#佳林の１日１ハロまとめ</h1>
   宮本佳林さんがXでハロープロジェクトサブスク解禁にともない毎日ハロプロの曲を<a href="https://x.com/search?q=%23%E4%BD%B3%E6%9E%97%E3%81%AE1%E6%97%A51%E3%83%8F%E3%83%AD%20from%3A%40karin__miyamoto&src=typed_query&f=live" target="_blank" rel="noopener noreferrer">#佳林の１日１ハロ</a>で1曲紹介する企画をまとめました。<br>
-  日付に元ポスト・アルバム名に公式のリンク・YouTube Music／Spotify／Amazon MusicのURLや作詞作曲編曲などをいれています。<br>
+  日付に元ポスト・アルバム名に公式のリンク・YouTube Music／Spotify／Amazon Music／LINE MUSIC／AWAのURLや作詞作曲編曲などをいれています。<br>
   アーティスト名・作詞作曲編曲でフィルタをかけられます。<br>
   プレイリストを作りました：<a href="https://music.youtube.com/playlist?list=PLAbxdMpUP3BU" target="_blank" rel="noopener noreferrer" class="kh-playlist" data-embed="https://www.youtube.com/embed/videoseries?list=PLAbxdMpUP3BU">YouTube Music</a>・<a href="https://open.spotify.com/playlist/5YVrEQ0hb7LTOviTXum8zi" target="_blank" rel="noopener noreferrer" class="kh-playlist" data-embed="https://open.spotify.com/embed/playlist/5YVrEQ0hb7LTOviTXum8zi">Spotify</a>・<a href="https://music.amazon.co.jp/user-playlists/46349edb307f4bda8ab48d0f060a0c69jajp" target="_blank" rel="noopener noreferrer" class="kh-playlist" data-embed="https://music.amazon.co.jp/embed/46349edb307f4bda8ab48d0f060a0c69jajp/?id=EpScUMtmV8&amp;marketplaceId=A1VC38T7YXB528&amp;musicTerritory=JP">Amazon Music</a><br>
   <div id="kh-playlist-embed" hidden></div>
@@ -47,6 +47,8 @@
         <th>YT</th>
         <th>Spotify</th>
         <th>Amazon Music</th>
+        <th>LINE MUSIC</th>
+        <th>AWA</th>
         <th>作詞</th>
         <th>作曲</th>
         <th>編曲</th>
@@ -72,9 +74,9 @@
       date:     tr.cells[0] ? tr.cells[0].textContent.trim() : '',
       song:     tr.cells[1] ? tr.cells[1].textContent.trim() : '',
       artist:   tr.getAttribute('data-artist') || '',
-      lyricist: tr.cells[7] ? tr.cells[7].textContent.trim() : '',
-      composer: tr.cells[8] ? tr.cells[8].textContent.trim() : '',
-      arranger: tr.cells[9] ? tr.cells[9].textContent.trim() : '',
+      lyricist: tr.cells[9] ? tr.cells[9].textContent.trim() : '',
+      composer: tr.cells[10] ? tr.cells[10].textContent.trim() : '',
+      arranger: tr.cells[11] ? tr.cells[11].textContent.trim() : '',
     };
   });
 
