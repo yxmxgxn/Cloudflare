@@ -3367,3 +3367,27 @@ a.iv-stats-row:hover {
 .bt-sl-table { width: 100%; border-collapse: collapse; font-size: 13px; margin: 8px 0 0; }
 .bt-sl-table th, .bt-sl-table td { border-bottom: 1px solid #eee; padding: 4px 6px; text-align: left; vertical-align: top; }
 .bt-sl-no { white-space: nowrap; color: #666; }
+
+/* ---- 最強のセトリ (karin-setlist.php) ---- */
+.ks-lead p { margin: 0 0 0.8em; }
+.ks-grid { grid-template-columns: repeat(auto-fill, minmax(max(min(100%, 300px), calc((100% - 28px) / 3)), 1fr)); align-items: start; }
+.ks-card p { margin: 0; }
+.ks-meta { display: flex; gap: 10px; font-size: 13px; color: #555; }
+.ks-count { border: 1px solid #ccc; border-radius: 999px; padding: 0 8px; font-size: 12px; }
+.ks-title { font-size: 17px; font-weight: bold; margin: 2px 0; line-height: 1.5; }
+.ks-by { font-size: 14px; }
+.ks-rank { display: inline-block; font-size: 11px; background: #f1edf7; color: var(--accent); border-radius: 4px; padding: 0 6px; margin-left: 6px; }
+.ks-tags { display: flex; flex-wrap: wrap; gap: 4px; margin-top: 4px !important; }
+.ks-tag { font-size: 12px; border: 1px solid #ddd; border-radius: 4px; padding: 0 6px; }
+.ks-tag-k { color: #888; margin-right: 4px; }
+.ks-links { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 6px !important; }
+.ks-link { border: 1px solid #ddd; border-radius: 6px; padding: 2px 8px; font-size: 13px; display: inline-flex; align-items: center; gap: 4px; }
+.ks-embed { margin-top: 8px; }
+.ks-embed iframe { display: block; width: 100%; aspect-ratio: 16 / 9; border: 0; border-radius: 8px; }
+.ks-note { font-size: 12px; color: #888; margin-top: 4px !important; }
+.ks-songs { list-style: none; padding: 0; margin: 8px 0 0; font-size: 13px; }
+.ks-songs li { display: grid; grid-template-columns: 2em 1fr auto; column-gap: 6px; padding: 4px 0; border-bottom: 1px solid #eee; }
+.ks-no { color: #888; text-align: right; grid-row: span 2; }
+.ks-song { overflow-wrap: anywhere; }
+.ks-id { font-size: 11px; line-height: 1.8; color: #888; grid-column: 3; grid-row: 1; align-self: start; }
+.ks-artist { grid-column: 2 / 4; font-size: 12px; color: #666; }
