@@ -3382,12 +3382,4 @@ a.iv-stats-row:hover {
 .ks-tag-k { color: #888; margin-right: 4px; }
 .ks-links { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 6px !important; }
 .ks-link { border: 1px solid #ddd; border-radius: 6px; padding: 2px 8px; font-size: 13px; display: inline-flex; align-items: center; gap: 4px; }
-.ks-embed { margin-top: 8px; }
-.ks-embed iframe { display: block; width: 100%; aspect-ratio: 16 / 9; border: 0; border-radius: 8px; }
 .ks-note { font-size: 12px; color: #888; margin-top: 4px !important; }
-.ks-songs { list-style: none; padding: 0; margin: 8px 0 0; font-size: 13px; }
-.ks-songs li { display: grid; grid-template-columns: 2em 1fr auto; column-gap: 6px; padding: 4px 0; border-bottom: 1px solid #eee; }
-.ks-no { color: #888; text-align: right; grid-row: span 2; }
-.ks-song { overflow-wrap: anywhere; }
-.ks-id { font-size: 11px; line-height: 1.8; color: #888; grid-column: 3; grid-row: 1; align-self: start; }
-.ks-artist { grid-column: 2 / 4; font-size: 12px; color: #666; }
