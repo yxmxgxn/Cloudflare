@@ -15,6 +15,10 @@
         <a class="index-link" href="/YouTube/karin-song"><?= icon('disc', 'ic ic-20') ?>宮本佳林ソロ曲・コラボレーションなどJuice=Juice以外の曲まとめ</a>
         <p class="index-desc">発売されている宮本佳林さんソロ曲・コラボレーションなどJuice=Juice以外の曲をまとめました</p>
       </div>
+      <div class="card index-card">
+        <a class="index-link" href="/karin-setlist"><?= icon('youtube-brand', 'ic ic-20') ?>宮本佳林 最強のセトリ プレイリストまとめ</a>
+        <p class="index-desc">宮本佳林さんのツアーのセトリサイトで公開された「最強のセトリ」をYouTubeのプレイリストにしてまとめました</p>
+      </div>
     </div>
   </section>
 
