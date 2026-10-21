@@ -20,7 +20,7 @@ CREATE VIRTUAL TABLE IF NOT EXISTS article_meta_fts USING fts5(
 
 -- 増分索引・再索引用のメタ。
 -- src_hash: 取得元URL群のハッシュ。一致すれば再取得スキップ。
--- body: 掃除済み本文（私的保持・再索引用）。読める本文を一切持ちたくなければ列ごと削除可。
+-- body: 本文の先頭2000字のプレビュー（BODY_PREVIEW）。全文は article_fts の bigram 索引側にある。読める本文を一切持ちたくなければ列ごと削除可。
 CREATE TABLE IF NOT EXISTS article_src (
   id         TEXT PRIMARY KEY,
   src_hash   TEXT,
