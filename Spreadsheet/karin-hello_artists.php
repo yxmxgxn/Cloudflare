@@ -1,4 +1,4 @@
-<!-- generated: 2026-10-20T21:06:03.068884+00:00 -->
+<!-- generated: 2026-10-21T21:05:44.691083+00:00 -->
 <option value="10人祭">10人祭</option>
 <option value="Berryz工房">Berryz工房</option>
 <option value="BEYOOOOONDS">BEYOOOOONDS</option>
@@ -17,8 +17,8 @@
 <option value="つんく">つんく</option>
 <option value="アンジュルム">アンジュルム</option>
 <option value="カントリー・ガールズ">カントリー・ガールズ</option>
-<option value="カントリー娘。に石川梨華(モーニング娘｡)">カントリー娘。に石川梨華(モーニング娘｡)</option>
 <option value="カントリー娘。に紺野と藤本(モーニング娘｡)">カントリー娘。に紺野と藤本(モーニング娘｡)</option>
+<option value="カントリー娘｡に石川梨華(モーニング娘｡)">カントリー娘｡に石川梨華(モーニング娘｡)</option>
 <option value="スマイレージ">スマイレージ</option>
 <option value="セクシー8">セクシー8</option>
 <option value="ドリームモーニング娘。">ドリームモーニング娘。</option>
@@ -27,6 +27,7 @@
 <option value="プッチモニ">プッチモニ</option>
 <option value="ミニモニ">ミニモニ</option>
 <option value="ミニモニ。">ミニモニ。</option>
+<option value="ミニモニ｡">ミニモニ｡</option>
 <option value="メロウクアッド">メロウクアッド</option>
 <option value="メロン記念日">メロン記念日</option>
 <option value="モーニング娘。">モーニング娘。</option>
