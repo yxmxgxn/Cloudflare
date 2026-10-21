@@ -1,4 +1,4 @@
-<!-- generated: 2026-10-04T13:28:03.249484+00:00 -->
+<!-- generated: 2026-10-21T13:12:10.286799+00:00 -->
 <optgroup label="まとめて">
 <option value="__synth">合成音声のみ</option>
 <option value="__human">人間ボーカルを含む</option>
@@ -12,7 +12,7 @@
 <option value="人間">人間</option>
 </optgroup>
 <optgroup label="ボーカル">
-<option value="初音ミク">初音ミク（199曲）</option>
+<option value="初音ミク">初音ミク（198曲）</option>
 <option value="GUMI">GUMI（67曲）</option>
 <option value="鏡音リン">鏡音リン（47曲）</option>
 <option value="IA">IA（27曲）</option>

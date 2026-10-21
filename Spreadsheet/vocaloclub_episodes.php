@@ -1,4 +1,6 @@
-<!-- generated: 2026-10-04T13:28:03.249484+00:00 -->
+<!-- generated: 2026-10-21T13:12:10.286799+00:00 -->
+<option value="11">第11回</option>
+<option value="10">第10回</option>
 <option value="8">第8回（岡田彩夢）</option>
 <option value="7">第7回（豫風瑠乃）</option>
 <option value="6">第6回（山田せいあ）</option>
