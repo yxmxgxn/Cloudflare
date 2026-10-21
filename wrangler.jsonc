@@ -30,7 +30,7 @@
     {
       // 宮本佳林のブログに残した自分のコメント(Cron が書き込む)
       "binding": "COMMENT_DB",
-      "database_name": "DB_NAME_TBD",
+      "database_name": "karin-blog-comment",
       "database_id": "9fe65bf5-bd1d-4aeb-87bf-2ccb8918d5b1"
     }
   ]
