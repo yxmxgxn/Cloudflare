@@ -193,7 +193,7 @@ function fbAdminHtml(rows, token) {
       <div class="meta">
         <b>${esc(FB_LABEL[r.kind] || "種別なし")}</b>
         <time>${esc(r.created_at)}</time>
-        ${r.page_url ? `<a href="${esc(r.page_url)}" target="_blank">${esc(r.page_url)}</a>` : ""}
+        ${r.page_url ? `<a href="${esc(r.page_url)}" target="_blank" rel="noopener noreferrer">${esc(r.page_url)}</a>` : ""}
       </div>
       <p>${esc(r.body)}</p>
       <form method="post" action="?t=${q}">
