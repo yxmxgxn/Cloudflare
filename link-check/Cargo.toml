@@ -1,0 +1,11 @@
+[package]
+name = "link-check"
+version = "0.1.0"
+edition = "2024"
+publish = false
+description = "Python/check_links.py の Rust 版(移植中)"
+
+[dependencies]
+clap = { version = "4.6", features = ["derive"] }
+htmlize = { version = "1.1", features = ["unescape"] }
+regex = "1.13"
