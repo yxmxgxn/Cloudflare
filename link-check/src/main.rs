@@ -1,20 +1,22 @@
 //! ビルド済み public/ のリンクを検査する。Python/check_links.py の Rust 版(移植中)。
 //!
 //! 使い方:
-//!     cargo run --release --manifest-path link-check/Cargo.toml -- --root public
+//!     cargo run --release --manifest-path link-check/Cargo.toml -- \
+//!         --root public --out report.md --stats stats.json
 //!
-//! リンクの収集・サイト内リンクの検査・外部リンクのHTTP検査まで移した。
-//! 結果はまだ1行1件のタブ区切りで標準出力に出すだけで、レポート(report.md / stats.json)は
-//! Python 版が作る。--list を付けるとHTTPは送らず、検査対象の一覧だけを出す。
+//! 出力は Python 版と同じ report.md / stats.json。
+//! --list を付けるとHTTPは送らず、検査対象の一覧だけを出す。
 //! 判断の方針は check_links.py 冒頭のコメントを参照。
 
 mod check;
 mod collect;
 mod internal;
 mod redirect;
+mod report;
 mod urlsplit;
 
 use std::collections::BTreeMap;
+use std::fs;
 use std::path::PathBuf;
 use std::process::ExitCode;
 use std::time::Instant;
@@ -24,7 +26,7 @@ use clap::Parser;
 use crate::check::{Options, check_all};
 use crate::collect::{collect_links, is_ignored, load_ignore_rules};
 use crate::internal::{load_redirects, resolve_internal};
-use crate::redirect::Verdict;
+use crate::report::{Counts, build_report, stats};
 use crate::urlsplit::urlsplit;
 
 #[derive(Parser)]
@@ -37,6 +39,13 @@ struct Args {
     /// 除外リスト
     #[arg(long, default_value = concat!(env!("CARGO_MANIFEST_DIR"), "/ignore.txt"))]
     ignore: PathBuf,
+    #[arg(long, default_value = "link-check-report.md")]
+    out: PathBuf,
+    #[arg(long, default_value = "link-check-stats.json")]
+    stats: PathBuf,
+    /// レポートに載せる最大件数
+    #[arg(long, default_value_t = 150)]
+    max_items: usize,
     /// 動作確認用: 検査するURL数の上限
     #[arg(long, default_value_t = 0)]
     limit: usize,
@@ -122,17 +131,22 @@ async fn main() -> ExitCode {
         .collect();
     eprintln!("ドメイン数 {}（最多: {}）", by_host.len(), top.join(", "));
 
-    for (path, pages) in &internal_broken {
-        let pages: Vec<&str> = pages.iter().map(String::as_str).collect();
-        println!("broken-internal\t{path}\t{}", pages.join(" "));
-    }
     if args.list {
+        for (path, pages) in &internal_broken {
+            let pages: Vec<&str> = pages.iter().map(String::as_str).collect();
+            println!("broken-internal\t{path}\t{}", pages.join(" "));
+        }
         for url in &targets {
             println!("check\t{url}");
         }
         return ExitCode::SUCCESS;
     }
 
+    let counts = Counts {
+        checked: targets.len(),
+        ignored,
+        internal: internal.len(),
+    };
     let opts = Options {
         workers: args.workers,
         delay_scale: args.delay_scale,
@@ -146,18 +160,29 @@ async fn main() -> ExitCode {
             return ExitCode::from(2);
         }
     };
-    for (url, o) in &results {
-        println!("{}\t{url}\t{}\t{}", o.verdict.as_str(), o.detail, o.last);
+    let elapsed = started.elapsed();
+
+    let report = build_report(
+        &args.base_url,
+        &external,
+        &internal_broken,
+        &results,
+        &counts,
+        elapsed,
+        args.max_items,
+    );
+    let stats = stats(&results, internal_broken.len(), &counts, elapsed);
+    let written = fs::write(&args.out, report).and_then(|()| {
+        let json = serde_json::to_string_pretty(&stats).expect("Stats は必ずJSONにできる");
+        fs::write(&args.stats, json)
+    });
+    if let Err(e) = written {
+        eprintln!("エラー: レポートを書き出せません: {e}");
+        return ExitCode::from(2);
     }
-    let count = |v: Verdict| results.iter().filter(|(_, o)| o.verdict == v).count();
     eprintln!(
-        "リンク切れ 外部 {} / 内部 {}・https化 {}・転送 {}・要確認 {}（所要 {} 秒）",
-        count(Verdict::Broken),
-        internal_broken.len(),
-        count(Verdict::Https),
-        count(Verdict::Moved),
-        count(Verdict::Warn),
-        started.elapsed().as_secs()
+        "{}",
+        serde_json::to_string(&stats).expect("Stats は必ずJSONにできる")
     );
     ExitCode::SUCCESS
 }

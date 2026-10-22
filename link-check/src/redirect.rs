@@ -24,18 +24,6 @@ pub enum Verdict {
     Https,
 }
 
-impl Verdict {
-    pub fn as_str(self) -> &'static str {
-        match self {
-            Verdict::Ok => "ok",
-            Verdict::Broken => "broken",
-            Verdict::Warn => "warn",
-            Verdict::Moved => "moved",
-            Verdict::Https => "https",
-        }
-    }
-}
-
 // 転送先の比較で同じページとみなす末尾 (/index.html など)
 static INDEX_RE: LazyLock<Regex> =
     LazyLock::new(|| Regex::new(r"(?i)/index\.(?:html?|php)$").unwrap());
