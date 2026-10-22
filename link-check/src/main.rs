@@ -3,25 +3,28 @@
 //! 使い方:
 //!     cargo run --release --manifest-path link-check/Cargo.toml -- --root public
 //!
-//! いまはネットワークを使わない部分(リンクの収集・除外・サイト内リンクの検査)まで。
-//! 外部リンクへのHTTP検査とレポート出力はまだ Python 版を使う。
+//! リンクの収集・サイト内リンクの検査・外部リンクのHTTP検査まで移した。
+//! 結果はまだ1行1件のタブ区切りで標準出力に出すだけで、レポート(report.md / stats.json)は
+//! Python 版が作る。--list を付けるとHTTPは送らず、検査対象の一覧だけを出す。
 //! 判断の方針は check_links.py 冒頭のコメントを参照。
 
+mod check;
 mod collect;
 mod internal;
-// 外部リンクのHTTP検査を移すまでは main から呼ばれない
-#[allow(dead_code)]
 mod redirect;
 mod urlsplit;
 
 use std::collections::BTreeMap;
 use std::path::PathBuf;
 use std::process::ExitCode;
+use std::time::Instant;
 
 use clap::Parser;
 
+use crate::check::{Options, check_all};
 use crate::collect::{collect_links, is_ignored, load_ignore_rules};
 use crate::internal::{load_redirects, resolve_internal};
+use crate::redirect::Verdict;
 use crate::urlsplit::urlsplit;
 
 #[derive(Parser)]
@@ -37,9 +40,22 @@ struct Args {
     /// 動作確認用: 検査するURL数の上限
     #[arg(long, default_value_t = 0)]
     limit: usize,
+    /// 並列に処理するドメイン数
+    #[arg(long, default_value_t = 12)]
+    workers: usize,
+    /// リクエスト間隔の倍率
+    #[arg(long, default_value_t = 1.0)]
+    delay_scale: f64,
+    /// 直列で再検査する最大件数
+    #[arg(long, default_value_t = 300)]
+    recheck_limit: usize,
+    /// HTTPは送らず、検査対象の一覧だけを出す
+    #[arg(long)]
+    list: bool,
 }
 
-fn main() -> ExitCode {
+#[tokio::main]
+async fn main() -> ExitCode {
     let args = Args::parse();
     if !args.root.is_dir() {
         eprintln!(
@@ -90,12 +106,12 @@ fn main() -> ExitCode {
         ignored
     );
 
-    let mut by_host: BTreeMap<String, Vec<&String>> = BTreeMap::new();
+    let mut by_host: BTreeMap<String, Vec<String>> = BTreeMap::new();
     for url in &targets {
         by_host
             .entry(urlsplit(url).hostname())
             .or_default()
-            .push(url);
+            .push(url.to_string());
     }
     let mut busiest: Vec<_> = by_host.iter().map(|(h, u)| (h, u.len())).collect();
     busiest.sort_by_key(|(_, n)| std::cmp::Reverse(*n));
@@ -108,10 +124,40 @@ fn main() -> ExitCode {
 
     for (path, pages) in &internal_broken {
         let pages: Vec<&str> = pages.iter().map(String::as_str).collect();
-        println!("BROKEN-INTERNAL\t{path}\t{}", pages.join(" "));
+        println!("broken-internal\t{path}\t{}", pages.join(" "));
     }
-    for url in &targets {
-        println!("CHECK\t{url}");
+    if args.list {
+        for url in &targets {
+            println!("check\t{url}");
+        }
+        return ExitCode::SUCCESS;
     }
+
+    let opts = Options {
+        workers: args.workers,
+        delay_scale: args.delay_scale,
+        recheck_limit: args.recheck_limit,
+    };
+    let started = Instant::now();
+    let results = match check_all(by_host, &opts).await {
+        Ok(r) => r,
+        Err(e) => {
+            eprintln!("エラー: HTTPクライアントを作れません: {e}");
+            return ExitCode::from(2);
+        }
+    };
+    for (url, o) in &results {
+        println!("{}\t{url}\t{}\t{}", o.verdict.as_str(), o.detail, o.last);
+    }
+    let count = |v: Verdict| results.iter().filter(|(_, o)| o.verdict == v).count();
+    eprintln!(
+        "リンク切れ 外部 {} / 内部 {}・https化 {}・転送 {}・要確認 {}（所要 {} 秒）",
+        count(Verdict::Broken),
+        internal_broken.len(),
+        count(Verdict::Https),
+        count(Verdict::Moved),
+        count(Verdict::Warn),
+        started.elapsed().as_secs()
+    );
     ExitCode::SUCCESS
 }

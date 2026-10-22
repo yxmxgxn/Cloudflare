@@ -24,6 +24,18 @@ pub enum Verdict {
     Https,
 }
 
+impl Verdict {
+    pub fn as_str(self) -> &'static str {
+        match self {
+            Verdict::Ok => "ok",
+            Verdict::Broken => "broken",
+            Verdict::Warn => "warn",
+            Verdict::Moved => "moved",
+            Verdict::Https => "https",
+        }
+    }
+}
+
 // 転送先の比較で同じページとみなす末尾 (/index.html など)
 static INDEX_RE: LazyLock<Regex> =
     LazyLock::new(|| Regex::new(r"(?i)/index\.(?:html?|php)$").unwrap());
@@ -32,7 +44,7 @@ static LANG_TOP_RE: LazyLock<Regex> =
     LazyLock::new(|| Regex::new(r"^/[a-z]{2}(?:-[a-z]{2})?$").unwrap());
 
 /// 転送前後を比べるための (ホスト, パス)。http/https・www・末尾スラッシュ・index.html は無視
-fn comparable(url: &str) -> (String, String) {
+pub fn comparable(url: &str) -> (String, String) {
     let split = urlsplit(url);
     let hostname = split.hostname();
     let host = hostname
