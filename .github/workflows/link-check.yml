@@ -68,6 +68,69 @@ jobs:
         if: always()
         run: cat report.md >> "$GITHUB_STEP_SUMMARY" || true
 
+      # ---- Rust版(link-check/)の試走 ----
+      # Python版と結果を見比べるため、しばらく両方を走らせる。Issueは引き続きPython版の結果で立て、
+      # Rust版は成果物とサマリーに残すだけ。失敗してもジョブ全体は落とさない。
+      - name: Setup Rust
+        if: always()
+        continue-on-error: true
+        run: rustup toolchain install stable --profile minimal && rustup default stable
+
+      - uses: Swatinem/rust-cache@v2
+        if: always()
+        continue-on-error: true
+        with:
+          workspaces: link-check
+
+      - name: Check links (Rust)
+        if: always()
+        continue-on-error: true
+        run: |
+          cargo run --release --locked --manifest-path link-check/Cargo.toml -- \
+            --root public \
+            --base-url "${BASE_URL:-https://karin-archive.com}" \
+            --out report-rust.md \
+            --stats stats-rust.json \
+            --delay-scale "${{ github.event.inputs.delay_scale || '1.0' }}"
+        env:
+          BASE_URL: ${{ vars.BASE_URL }}
+
+      - name: Upload report (Rust)
+        if: always()
+        continue-on-error: true
+        uses: actions/upload-artifact@v6
+        with:
+          name: link-check-report-rust
+          path: |
+            report-rust.md
+            stats-rust.json
+          retention-days: 90
+
+      - name: Compare with Rust
+        if: always()
+        continue-on-error: true
+        run: |
+          {
+            echo
+            echo "## Rust版との比較"
+            echo
+            echo "| | Python | Rust |"
+            echo "|---|---:|---:|"
+            for key in broken_external broken_internal warn moved https checked elapsed_sec; do
+              py=$(python -c "import json;print(json.load(open('stats.json')).get('$key', '-'))" 2>/dev/null || echo -)
+              rs=$(python -c "import json;print(json.load(open('stats-rust.json')).get('$key', '-'))" 2>/dev/null || echo -)
+              echo "| $key | $py | $rs |"
+            done
+            echo
+            echo "<details><summary>レポートの差分（チェック日時の行を除く）</summary>"
+            echo
+            echo '```diff'
+            diff <(grep -v チェック日時 report.md) <(grep -v チェック日時 report-rust.md) || true
+            echo '```'
+            echo
+            echo "</details>"
+          } >> "$GITHUB_STEP_SUMMARY"
+
       # 壊れたリンクか https に貼り替えられるリンクがあればIssueを1本だけ立てる
       # (既にあれば本文を差し替える)。全部直ってチェックが通ったら自動でクローズする。
       - name: Create or update issue
