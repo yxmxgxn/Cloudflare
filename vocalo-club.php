@@ -58,34 +58,46 @@
   <span id="vc-count"></span>
 </div>
 
+<?php
+  // 数百行の表を1枚で出すと、開いた瞬間に全行をレイアウトして遅いスマホで1秒以上固まる。
+  // 見出しだけの表の下に VC_CHUNK 行ずつの表を並べ、画面外の表は CSS(.vc-chunk の content-visibility)で
+  // 描画を後回しにする。HTMLには全行がそのまま入るので、検索・AIからの見え方は変わらない。
+  // 列幅は table-layout: fixed と colgroup で決まるので、表を分けても列はそろう。
+  // 全体を1つの .table-scroll で包み、横スクロールは表をまたいで一緒に動かす
+  // (footer.php の自動ラップは .table-scroll の中の表を飛ばす)。
+  const VC_CHUNK = 50;
+  function vc_chunked_table(string $rowsFile, string $tableClass, string $colgroup, string $headRow): void {
+    ob_start();
+    include $rowsFile;
+    $rows = preg_split('/(?=<tr\b)/', ob_get_clean());
+    $lead = array_shift($rows);  // 先頭の生成日時コメント
+    $open = '<table class="' . $tableClass . '">' . $colgroup;
+    echo '<div class="table-scroll vc-table-wrap">';
+    echo $open, '<thead>', $headRow, '</thead></table>';
+    foreach (array_chunk($rows, VC_CHUNK) as $i => $chunk) {
+      echo '<div class="vc-chunk">', $open, '<tbody>', $i === 0 ? $lead : '', implode('', $chunk), '</tbody></table></div>';
+    }
+    echo '</div>';
+  }
+?>
 <div id="vc-view-episode" class="vc-view">
-  <table id="vc-episode-table">
-    <colgroup>
-      <col class="vc-col-ep"><col class="vc-col-who"><col class="vc-col-name">
-      <col class="vc-col-composer"><col class="vc-col-date"><col class="vc-col-notes">
-    </colgroup>
-    <thead>
-      <tr><th>回</th><th>紹介者</th><th>曲名【ボーカル】</th><th>P名</th><th>投稿日</th><th>形式・備考</th></tr>
-    </thead>
-    <tbody>
-      <?php include $_SERVER['DOCUMENT_ROOT'] . '/Spreadsheet/vocaloclub_episode_rows.php'; ?>
-    </tbody>
-  </table>
+  <?php vc_chunked_table(
+    $_SERVER['DOCUMENT_ROOT'] . '/Spreadsheet/vocaloclub_episode_rows.php',
+    'vc-table vc-episode-table',
+    '<colgroup><col class="vc-col-ep"><col class="vc-col-who"><col class="vc-col-name">'
+      . '<col class="vc-col-composer"><col class="vc-col-date"><col class="vc-col-notes"></colgroup>',
+    '<tr><th>回</th><th>紹介者</th><th>曲名【ボーカル】</th><th>P名</th><th>投稿日</th><th>形式・備考</th></tr>'
+  ); ?>
 </div>
 
 <div id="vc-view-track" class="vc-view" hidden>
-  <table id="vc-track-table">
-    <colgroup>
-      <col class="vc-tcol-name"><col class="vc-tcol-composer"><col class="vc-tcol-date">
-      <col class="vc-tcol-count"><col class="vc-tcol-eps">
-    </colgroup>
-    <thead>
-      <tr><th>曲名【ボーカル】</th><th>P名</th><th>投稿日</th><th>回数</th><th>登場した回</th></tr>
-    </thead>
-    <tbody>
-      <?php include $_SERVER['DOCUMENT_ROOT'] . '/Spreadsheet/vocaloclub_track_rows.php'; ?>
-    </tbody>
-  </table>
+  <?php vc_chunked_table(
+    $_SERVER['DOCUMENT_ROOT'] . '/Spreadsheet/vocaloclub_track_rows.php',
+    'vc-table vc-track-table',
+    '<colgroup><col class="vc-tcol-name"><col class="vc-tcol-composer"><col class="vc-tcol-date">'
+      . '<col class="vc-tcol-count"><col class="vc-tcol-eps"></colgroup>',
+    '<tr><th>曲名【ボーカル】</th><th>P名</th><th>投稿日</th><th>回数</th><th>登場した回</th></tr>'
+  ); ?>
 </div>
 
 <p id="vc-empty" class="vc-empty" hidden>条件に合う曲がありませんでした。</p>
@@ -107,13 +119,13 @@
     });
   }
 
-  var epRows = collect('#vc-episode-table .vc-row', [
+  var epRows = collect('#vc-view-episode .vc-row', [
     { key: 'episodes', attr: 'episode' },
     { key: 'speakers', attr: 'speakers', list: true },
     { key: 'vkeys', attr: 'vkeys', list: true },
     { key: 'kind', attr: 'kind' }
   ]);
-  var trRows = collect('#vc-track-table .vc-trow', [
+  var trRows = collect('#vc-view-track .vc-trow', [
     { key: 'episodes', attr: 'episodes', list: true },
     { key: 'speakers', attr: 'speakers', list: true },
     { key: 'vkeys', attr: 'vkeys', list: true }
@@ -132,6 +144,7 @@
     var en = document.getElementById('vc-engine').value;
 
     var isEpisode = (view === 'episode');
+    var viewEl = document.getElementById(isEpisode ? 'vc-view-episode' : 'vc-view-track');
     document.getElementById('vc-view-episode').hidden = !isEpisode;
     document.getElementById('vc-view-track').hidden = isEpisode;
 
@@ -151,6 +164,14 @@
         r.el.classList.toggle('vc-odd', shown % 2 === 1);
         shown++;
       }
+    });
+
+    // 絞り込み中は表の描画の後回し(.vc-chunk の content-visibility)をやめ、該当行のない表は畳む。
+    // 後回しにした表は描く前の仮の高さを確保したままなので、結果の下に数万pxの空白が残るため
+    var filtered = shown < rows.length;
+    viewEl.classList.toggle('is-filtered', filtered);
+    Array.prototype.forEach.call(viewEl.querySelectorAll('.vc-chunk'), function (c) {
+      c.hidden = filtered && !c.querySelector('tr:not([hidden])');
     });
 
     document.getElementById('vc-count').textContent =
