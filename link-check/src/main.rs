@@ -9,6 +9,9 @@
 
 mod collect;
 mod internal;
+// 外部リンクのHTTP検査を移すまでは main から呼ばれない
+#[allow(dead_code)]
+mod redirect;
 mod urlsplit;
 
 use std::collections::BTreeMap;

@@ -8,4 +8,5 @@ description = "Python/check_links.py の Rust 版(移植中)"
 [dependencies]
 clap = { version = "4.6", features = ["derive"] }
 htmlize = { version = "1.1", features = ["unescape"] }
+percent-encoding = "2.3"
 regex = "1.13"
