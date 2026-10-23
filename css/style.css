@@ -2727,10 +2727,6 @@ a.iv-stats-row:hover {
 
 /*DECA!BEAT（/decabeats）
 -------------------------------------*/
-.dc-lead {
-  line-height: 1.7;
-}
-
 .dc-about {
   margin: 1em 0 1.5em;
   border: 1px solid #ddd;
@@ -2789,20 +2785,34 @@ a.iv-stats-row:hover {
 #dc-member-tabs button {
   display: flex;
   flex-direction: column;
-  gap: 3px;
+  gap: 2px;
 }
 
-.dc-btn-friend {
-  font-size: 11px;
-  color: #777;
-}
+/* スマホでは7人を4列×2段に収める */
+@media (max-width: 600px) {
+  #dc-member-tabs {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 6px;
+  }
 
-#dc-member-tabs button.active .dc-btn-friend {
-  color: #ccc;
+  #dc-member-tabs button {
+    padding: 6px 4px;
+    font-size: 12px;
+    text-align: center;
+    align-items: center;
+  }
 }
 
 .dc-name {
   margin: 0;
+}
+
+.dc-name > a:not(.dc-share) {
+  color: inherit;
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 4px;
 }
 
 /* メンバー番号(公式のメンバー紹介と同じ 01〜07) */
@@ -2848,20 +2858,19 @@ a.iv-stats-row:hover {
   color: #777;
 }
 
+/* グループ・フレンズ・誕生日を1行に(狭ければ折り返す) */
 .dc-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2px 14px;
   margin: 4px 0 0;
   font-size: 14px;
   color: #555;
 }
 
-.dc-friend {
-  margin-left: 12px;
-}
-
-.dc-birthday {
+.dc-action {
   margin: 4px 0 0;
   font-size: 14px;
-  color: #555;
 }
 
 /* そのメンバーのデカボミッション(プラチナマップの個別ページへ) */
@@ -2870,37 +2879,78 @@ a.iv-stats-row:hover {
   font-size: 14px;
 }
 
-.dc-profile-links {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 6px 16px;
-  margin: 8px 0 0;
-  font-size: 14px;
+/* 埋め込み4枚を1枚ずつめくるカード。後ろに2枚重なって見える影を付ける */
+.dc-deck {
+  max-width: 460px;
+  margin-top: 16px;
 }
 
-.dc-profile-links a {
-  display: inline-flex;
-  align-items: center;
+.dc-deck-tabs {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
   gap: 4px;
 }
 
-/* 埋め込み4つ。横幅が足りなければ1列に落ちる */
-.dc-embeds {
-  display: grid;
-  /* min() を挟まないと、画面が400pxより狭いときに列がはみ出す */
-  grid-template-columns: repeat(auto-fit, minmax(min(100%, 400px), 1fr));
-  gap: 20px 28px;
-  align-items: start;
-  max-width: 1120px;
+.dc-deck-tabs button {
+  padding: 7px 2px;
+  border: 2px solid #000;
+  border-bottom: 0;
+  border-radius: 8px 8px 0 0;
+  background: #f3f3f3;
+  font-size: 12px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.dc-deck-tabs button.active {
+  background: #9CF48E;
+}
+
+.dc-deck .dc-embeds {
+  padding: 14px 12px;
+  border: 2px solid #000;
+  border-radius: 0 0 10px 10px;
+  background: #fff;
+  box-shadow: 5px 5px 0 #fff, 5px 5px 0 2px #000, 10px 10px 0 #fff, 10px 10px 0 2px #000;
+  min-height: 200px;
+}
+
+.dc-embed:not([hidden]) {
+  animation: dc-flip 0.25s ease-out;
+}
+
+@keyframes dc-flip {
+  from { opacity: 0; transform: translateX(12px); }
+  to   { opacity: 1; transform: none; }
+}
+
+.dc-deck-nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 18px;
   margin-top: 18px;
 }
 
-.dc-embed h4 {
-  margin: 0 0 8px;
-  font-size: 16px;
-  color: #555;
+.dc-deck-nav button {
+  width: 40px;
+  height: 40px;
+  border: 2px solid #000;
+  border-radius: 50%;
+  background: #fff;
+  font-size: 22px;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.dc-deck-nav button:hover {
+  background: #9CF48E;
+}
+
+.dc-deck-count {
+  font-size: 14px;
   font-weight: bold;
-  text-align: center;
+  font-variant-numeric: tabular-nums;
 }
 
 .dc-slot {
@@ -3075,7 +3125,15 @@ a.iv-stats-row:hover {
   margin: 0 0 6px;
 }
 
+/* 名前の行の右に小さく置く */
 .dc-share {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  margin-left: 10px;
+  vertical-align: 3px;
+  font-size: 12px;
+  font-weight: normal;
   padding: 3px 10px;
   border: 1px solid #ccc;
   border-radius: 999px;

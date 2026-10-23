@@ -219,6 +219,18 @@ $dc_dotchicchi = [
    'credit' => 'ロケ協力', 'place' => '原宿さくら亭', 'place_url' => 'https://www.sakuratei.co.jp/'],
   ['title' => '#2 上村麗菜×米村姫良々', 'url' => 'https://www.youtube.com/watch?v=P6bgjmfNP1Y',
    'credit' => '撮影地協力', 'place' => 'EMPORIO cafe&dining', 'place_url' => 'https://www.emporio.tv/'],
+  ['title' => '#3 岡村美波×米村姫良々', 'url' => 'https://www.youtube.com/watch?v=mZF7dc_mEf8',
+   'credit' => '撮影協力', 'place' => 'EMPORIO cafe&dining', 'place_url' => 'https://www.emporio.tv/'],
+];
+
+// J-WAVEのPodcast「offの日、どっちっち？」(2回で終了)
+$dc_podcasts = [
+  ['title' => '#67 米村姫良々・岡村美波', 'date' => '2026年4月3日',
+   'url' => 'https://open.spotify.com/episode/68CKVEiM7p5HN6vOaNhGRb',
+   'article' => 'https://www.j-wave.co.jp/podcasts/docchicchi/entry/260403.html'],
+  ['title' => '#68 米村姫良々・岡村美波', 'date' => '2026年4月17日',
+   'url' => 'https://open.spotify.com/episode/5kkwGyKYTXeRxqUjWcsAvq',
+   'article' => 'https://www.j-wave.co.jp/podcasts/docchicchi/entry/260417.html'],
 ];
 
 $dc_posts = [
@@ -417,9 +429,10 @@ function dc_sns_icon(string $url): string {
 function dc_embed(string $type, string $label, string $id, string $url, string $linktext, string $extra = '', string $embed = '', string $slot = ''): string {
     // 埋め込みのマークアップはDOMに置かず data-embed に持たせ、選ばれたときだけ差し込む。
     // 21件をDOMに置くと widgets.js が全件まとめてXに取りにいき、弾かれて何も出なくなる。
+    // 見出しはカードの切り替えボタンが兼ねるので、ここでは読み上げ用のラベルだけ持つ
     return '<div class="dc-embed" data-type="' . $type . '" data-id="' . dc_h($id) . '"'
-         . ($embed === '' ? '' : ' data-embed="' . dc_h($embed) . '"') . '>'
-         . '<h4>' . dc_h($label) . '</h4>'
+         . ($embed === '' ? '' : ' data-embed="' . dc_h($embed) . '"')
+         . ' role="tabpanel" aria-label="' . dc_h($label) . '" hidden>'
          . '<div class="dc-slot">' . $slot . '</div>'
          . '<p class="dc-embed-link"><a href="' . dc_h($url) . '" target="_blank" rel="noopener noreferrer">'
          . dc_h($linktext) . '</a></p>'
@@ -443,9 +456,6 @@ function dc_x_embed(string $label, array $tw): string {
 <main>
   <h1>DECA!BEAT（デカビート）非公式まとめ</h1>
 
-  <p class="dc-lead">ハロー！プロジェクトとEarth hacksがコラボレーションして生まれたDECA!BEATの、各メンバーの紹介ポスト・新ビジュアル・TikTokでの紹介動画・お披露目前のデカボなボイスを見やすくまとめています。<br>
-  またYouTubeのMVやDANCE PRACTICE・オフショットの動画もその場で再生でき、そのほかグッズ紹介などのポストもカードで並べています。</p>
-
   <details class="dc-about">
     <summary>DECA!BEATとは（公式プロフィールより）</summary>
     <blockquote cite="https://co.earth-hacks.jp/decabeat/">
@@ -457,32 +467,36 @@ function dc_x_embed(string $label, array $tw): string {
   <!-- メンバー -->
   <section class="dc-section" id="members">
     <h2>メンバー</h2>
-    <p>メンバーを選ぶと、そのメンバーの紹介ポスト・新ビジュアル・紹介動画・お披露目前の「だーれだ」ポストが表示されます。</p>
+    <p>メンバーを選ぶと、デカビートフレンズ・紹介ポスト・新ビジュアル・紹介TikTok・お披露目前の「だーれだ」が表示されます。</p>
 
     <div class="tab-buttons dc-tabs" id="dc-member-tabs">
       <?php foreach ($dc_members as $m): ?>
       <button type="button" data-slug="<?= dc_h($m['slug']) ?>">
-        <span class="dc-btn-name"><span class="dc-btn-no"><?= dc_h($m['no']) ?></span><?= dc_h($m['name']) ?></span>
-        <span class="dc-btn-friend"><?= dc_h($m['friend']) ?></span>
+        <span class="dc-btn-no"><?= dc_h($m['no']) ?></span>
+        <span class="dc-btn-name"><?= dc_h($m['name']) ?></span>
       </button>
       <?php endforeach; ?>
     </div>
 
     <?php foreach ($dc_members as $m): ?>
     <div class="dc-panel" id="dc-panel-<?= dc_h($m['slug']) ?>" hidden>
-      <h3 class="dc-name"><span class="dc-no"><?= dc_h($m['no']) ?></span><?= dc_h($m['name']) ?><span class="dc-yomi"><?= dc_h($m['yomi']) ?></span><?php if (!empty($m['leader'])): ?><span class="dc-leader">リーダー</span><?php endif; ?></h3>
-      <p class="dc-catch"><?= dc_h($m['catch'][0]) ?><br><?= dc_h($m['catch'][1]) ?></p>
-      <p class="dc-meta"><?= dc_h($m['group']) ?><span class="dc-friend">デカビートフレンズ：<?= dc_h($m['friend']) ?></span></p>
-      <p class="dc-birthday">誕生日：<?= dc_h(dc_jdate($m['birthday'])) ?>（<?= dc_age($m['birthday']) ?>歳）</p>
-      <p class="dc-action">MY「デカボ」アクション：<?= dc_h($m['action']) ?></p>
-      <p class="dc-mission"><a href="<?= dc_h(DC_MISSION_URL . '?culture=ja&spot=' . $m['spot']) ?>" target="_blank" rel="noopener noreferrer"><?= dc_h($m['mission']) ?>（デカボスコア<?= dc_h($m['score']) ?>％）</a></p>
-      <p class="dc-profile-links">
-        <a href="<?= dc_h($m['official']) ?>" target="_blank" rel="noopener noreferrer"><?= icon('link-brand', 'ic ic-20') ?>ハロー！プロジェクト公式プロフィール</a>
+      <?php // 名前はハロー！プロジェクト公式プロフィールへのリンクを兼ねる ?>
+      <h3 class="dc-name"><span class="dc-no"><?= dc_h($m['no']) ?></span><a href="<?= dc_h($m['official']) ?>" target="_blank" rel="noopener noreferrer" title="ハロー！プロジェクト公式プロフィール"><?= dc_h($m['name']) ?></a><span class="dc-yomi"><?= dc_h($m['yomi']) ?></span><?php if (!empty($m['leader'])): ?><span class="dc-leader">リーダー</span><?php endif; ?>
         <?php // シェア先URLは表示中のメンバーに合わせてJSが入れる ?>
         <a class="dc-share" target="_blank" rel="noopener noreferrer"
-           data-text="<?= dc_h($m['name'] . '（' . $m['friend'] . '）｜DECA!BEAT 非公式まとめ #Earthhacks #デカビート') ?>"><?= icon('x', 'ic ic-20') ?>Xでシェア</a>
-      </p>
-      <div class="dc-embeds">
+           data-text="<?= dc_h($m['name'] . '（' . $m['friend'] . '）｜DECA!BEAT 非公式まとめ #Earthhacks #デカビート') ?>"><?= icon('x', 'ic ic-20') ?>シェア</a></h3>
+      <p class="dc-catch"><?= dc_h($m['catch'][0]) ?><br><?= dc_h($m['catch'][1]) ?></p>
+      <p class="dc-meta"><span><?= dc_h($m['group']) ?></span><span>デカビートフレンズ：<?= dc_h($m['friend']) ?></span><span>誕生日：<?= dc_h(dc_jdate($m['birthday'])) ?>（<?= dc_age($m['birthday']) ?>歳）</span></p>
+      <p class="dc-action">MY「デカボ」アクション：<?= dc_h($m['action']) ?></p>
+      <p class="dc-mission"><a href="<?= dc_h(DC_MISSION_URL . '?culture=ja&spot=' . $m['spot']) ?>" target="_blank" rel="noopener noreferrer"><?= dc_h($m['mission']) ?>（デカボスコア<?= dc_h($m['score']) ?>％）</a></p>
+      <?php // 埋め込み4枚は一度に並べず、1枚ずつめくって見せる(表示した1枚だけ読み込む) ?>
+      <div class="dc-deck">
+        <div class="dc-deck-tabs" role="tablist">
+          <?php foreach (['紹介ポスト', '新ビジュアル', '紹介TikTok', 'だーれだ' . $m['dareda_no']] as $i => $label): ?>
+          <button type="button" role="tab" data-card="<?= $i ?>"><?= dc_h($label) ?></button>
+          <?php endforeach; ?>
+        </div>
+        <div class="dc-embeds">
         <?= dc_x_embed('メンバー紹介ポスト', $m['intro']) ?>
         <?= dc_x_embed('新ビジュアル', $m['visual']) ?>
         <?php // Instagramは同じ動画なので、紹介動画の枠の中に並べる ?>
@@ -494,6 +508,12 @@ function dc_x_embed(string $label, array $tw): string {
               '<button type="button" class="dc-tiktok-play">' . icon('tiktok-brand', 'ic dc-tiktok-icon')
               . '<span>▶ 紹介動画を再生</span></button>') ?>
         <?= dc_x_embed('お披露目前の#デカビート だーれだ！' . $m['dareda_no'], $m['dareda']) ?>
+        </div>
+        <div class="dc-deck-nav">
+          <button type="button" class="dc-deck-prev" aria-label="前のカード">‹</button>
+          <span class="dc-deck-count">1 / 4</span>
+          <button type="button" class="dc-deck-next" aria-label="次のカード">›</button>
+        </div>
       </div>
     </div>
     <?php endforeach; ?>
@@ -529,6 +549,13 @@ function dc_x_embed(string $label, array $tw): string {
     <ul class="dc-video-list">
       <?php foreach ($dc_dotchicchi as $v): ?>
       <li><a href="<?= dc_h($v['url']) ?>" target="_blank" rel="noopener noreferrer"><?= icon('youtube-brand', 'ic ic-20') ?><?= dc_h($v['title']) ?></a><?php if (!empty($v['place'])): ?>（<?= dc_h($v['credit']) ?>：<a href="<?= dc_h($v['place_url']) ?>" target="_blank" rel="noopener noreferrer"><?= dc_h($v['place']) ?></a>）<?php endif; ?></li>
+      <?php endforeach; ?>
+    </ul>
+
+    <h3>Podcast「offの日、どっちっち？」（J-WAVE）</h3>
+    <ul class="dc-video-list">
+      <?php foreach ($dc_podcasts as $v): ?>
+      <li><a href="<?= dc_h($v['url']) ?>" target="_blank" rel="noopener noreferrer"><?= icon('spotify-brand', 'ic ic-20') ?><?= dc_h($v['title']) ?></a>（<?= dc_h($v['date']) ?>・<a href="<?= dc_h($v['article']) ?>" target="_blank" rel="noopener noreferrer">J-WAVEの記事</a>）</li>
       <?php endforeach; ?>
     </ul>
   </section>
@@ -567,26 +594,68 @@ function dc_x_embed(string $label, array $tw): string {
 
   /* ---- メンバー ---- */
 
-  // 埋め込みは選択されたメンバーの分だけ読み込む(7人分を一度に読むと重いため)
-  function loadEmbeds(panel) {
-    var needTweets = false;
-    panel.querySelectorAll('.dc-embed').forEach(function (box) {
-      if (box.dataset.loaded) return;
-      box.dataset.loaded = '1';
+  // 埋め込みはめくって表示された1枚だけ読み込む
+  function loadEmbed(box) {
+    if (box.dataset.loaded) return;
+    box.dataset.loaded = '1';
 
-      // TikTokは押されたときに読み込む(表示した時点で再生が始まってしまうため)
-      if (box.dataset.type !== 'x') return;
+    // TikTokは押されたときに読み込む(表示した時点で再生が始まってしまうため)
+    if (box.dataset.type !== 'x') return;
 
-      // Xは <blockquote> を差し込んでからウィジェットに変換させる。
-      // 変換に失敗しても引用テキストが残るので、読み込み中の表示は要らない。
-      var slot = box.querySelector('.dc-slot');
-      slot.innerHTML = box.dataset.embed;
-      loadTwitterWidget(function () { window.twttr.widgets.load(slot); });
-      needTweets = true;
-    });
-
-    if (needTweets) hideQuotesWhenEmbedded(panel);
+    // Xは <blockquote> を差し込んでからウィジェットに変換させる。
+    // 変換に失敗しても引用テキストが残るので、読み込み中の表示は要らない。
+    var slot = box.querySelector('.dc-slot');
+    slot.innerHTML = box.dataset.embed;
+    loadTwitterWidget(function () { window.twttr.widgets.load(slot); });
+    hideQuotesWhenEmbedded(box);
   }
+
+  // カードを i 枚目にめくる(端まで行ったら反対側に回る)
+  function showCard(deck, i) {
+    var cards = deck.querySelectorAll('.dc-embed');
+    i = (i + cards.length) % cards.length;
+    deck.dataset.current = i;
+    cards.forEach(function (c, k) {
+      // めくって隠したTikTokは読み込み直して止める(見えないまま音が鳴り続けるので)
+      var f = c.querySelector('iframe');
+      if (k !== i && !c.hidden && f && c.dataset.type === 'tiktok') f.src = f.src;
+      c.hidden = (k !== i);
+    });
+    deck.querySelectorAll('.dc-deck-tabs button').forEach(function (b, k) {
+      b.classList.toggle('active', k === i);
+      b.setAttribute('aria-selected', k === i ? 'true' : 'false');
+    });
+    deck.querySelector('.dc-deck-count').textContent = (i + 1) + ' / ' + cards.length;
+    loadEmbed(cards[i]);
+  }
+
+  document.addEventListener('click', function (e) {
+    var deck = e.target.closest('.dc-deck');
+    if (!deck) return;
+    var cur = Number(deck.dataset.current || 0);
+    var tab = e.target.closest('.dc-deck-tabs button');
+    if (tab) showCard(deck, Number(tab.dataset.card));
+    else if (e.target.closest('.dc-deck-prev')) showCard(deck, cur - 1);
+    else if (e.target.closest('.dc-deck-next')) showCard(deck, cur + 1);
+  });
+
+  // スマホでは左右のスワイプでもめくれる
+  document.querySelectorAll('.dc-deck .dc-embeds').forEach(function (area) {
+    var x0 = null, y0 = 0;
+    area.addEventListener('touchstart', function (e) {
+      x0 = e.touches[0].clientX;
+      y0 = e.touches[0].clientY;
+    }, { passive: true });
+    area.addEventListener('touchend', function (e) {
+      if (x0 === null) return;
+      var dx = e.changedTouches[0].clientX - x0;
+      var dy = e.changedTouches[0].clientY - y0;
+      x0 = null;
+      if (Math.abs(dx) < 50 || Math.abs(dx) < Math.abs(dy) * 1.5) return;
+      var deck = area.closest('.dc-deck');
+      showCard(deck, Number(deck.dataset.current || 0) + (dx < 0 ? 1 : -1));
+    });
+  });
 
   // widgets.js は必要になってから1回だけ読む
   var twQueue = null;
@@ -606,21 +675,14 @@ function dc_x_embed(string $label, array $tw): string {
   }
 
   // 埋め込みに差し替わった枠の引用を消す(X側でも消えるが、残ると二重に見えるので)
-  function hideQuotesWhenEmbedded(panel) {
+  // (別のカードにめくられている間は高さが0なので、表示中に判定できるまで待つ)
+  function hideQuotesWhenEmbedded(box) {
     var tries = 0;
     var timer = setInterval(function () {
-      var pending = false;
-      panel.querySelectorAll('.dc-embed[data-type="x"] .dc-slot').forEach(function (slot) {
-        var quote = slot.querySelector('blockquote.twitter-tweet');
-        if (!quote || quote.hidden) return;
-        var embed = slot.querySelector('div.twitter-tweet');
-        if (embed && embed.getBoundingClientRect().height > 0) {
-          quote.hidden = true;
-        } else {
-          pending = true;
-        }
-      });
-      if (!pending || ++tries > 10) clearInterval(timer);
+      var quote = box.querySelector('blockquote.twitter-tweet');
+      var embed = box.querySelector('div.twitter-tweet');
+      if (quote && embed && embed.getBoundingClientRect().height > 0) quote.hidden = true;
+      if (!quote || quote.hidden || ++tries > 20) clearInterval(timer);
     }, 1500);
   }
 
@@ -635,7 +697,8 @@ function dc_x_embed(string $label, array $tw): string {
     document.querySelectorAll('.dc-panel').forEach(function (p) {
       p.hidden = (p !== panel);
     });
-    loadEmbeds(panel);
+    var deck = panel.querySelector('.dc-deck');
+    showCard(deck, Number(deck.dataset.current || 0));
     // Xのシェアボタン。共有先はいま見ているメンバーのURLにする
     var share = panel.querySelector('.dc-share');
     if (share) {
