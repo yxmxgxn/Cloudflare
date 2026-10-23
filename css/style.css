@@ -2084,17 +2084,33 @@ a.iv-stats-row:hover {
    min-width は .table-scroll での横スクロールを前提にした値。スマホの画面幅に
    詰め込もうとすると1セルが3行以上に折り返して逆に読みづらいので、
    セルがほぼ2行以内に収まる幅(回ビュー1000px / 曲ビュー900px)を確保してある。 */
-#vc-episode-table,
-#vc-track-table {
+.vc-table {
   border-collapse: collapse;
   table-layout: fixed;
   width: 100%;
   font-size: 13px;
-  margin-top: 1em;
+  margin: 0;   /* 全 table に付く上下16pxの余白が、分けた表の数だけ積み重ならないように */
 }
 
-#vc-episode-table { min-width: 1000px; }
-#vc-track-table   { min-width: 900px; }
+/* 見出しの表は .table-scroll の直下にあり、.table-scroll > table の min-width: max-content に
+   負けないよう class を2つ重ねて詳細度を上げる(行の表と幅がそろわなくなる) */
+.vc-table.vc-episode-table { min-width: 1000px; }
+.vc-table.vc-track-table   { min-width: 900px; }
+
+/* 1枚の表だったころと同じ余白にする。当時は表の上(1em)と下(16px)の余白が .table-scroll の内側にあって
+   外の余白と重ならなかったので、ここでも枠の内側(見出しの表の margin と枠の padding)で取る */
+.vc-table-wrap { padding-bottom: 16px; }
+.vc-table-wrap > .vc-table { margin-top: 1em; }
+
+/* 表は vocalo-club.php で見出しの表と50行ずつの表に分けてある。画面外の表は描画を後回しにする。
+   1900px は50行分の実測(スマホ約1950px・PC約1570px)。描いた後は実際の高さを覚えるので目安でよい。
+   絞り込み中は JS が .is-filtered を付けて後回しをやめる(仮の高さが空白として残るため) */
+.vc-chunk {
+  content-visibility: auto;
+  contain-intrinsic-size: auto 1900px;
+  margin-top: -1px;   /* 表の境目で上下の罫線が二重にならないように重ねる */
+}
+.vc-view.is-filtered .vc-chunk { content-visibility: visible; }
 
 .vc-col-ep       { width: 8%; }
 .vc-col-who      { width: 10%; }
@@ -2109,10 +2125,8 @@ a.iv-stats-row:hover {
 .vc-tcol-count    { width: 7%; }
 .vc-tcol-eps      { width: 31%; }
 
-#vc-episode-table th,
-#vc-episode-table td,
-#vc-track-table th,
-#vc-track-table td {
+.vc-table th,
+.vc-table td {
   border: 1px solid #ccc;
   padding: 6px 10px;
   text-align: left;
@@ -2120,15 +2134,13 @@ a.iv-stats-row:hover {
   overflow-wrap: anywhere;   /* 長いP名やラベルが列からはみ出さないように */
 }
 
-#vc-episode-table th,
-#vc-track-table th {
+.vc-table th {
   background: #f5f5f5;
   white-space: nowrap;
 }
 
 /* 縞模様は JS が付ける(非表示行があると nth-child ではずれるため) */
-#vc-episode-table tbody tr.vc-odd,
-#vc-track-table tbody tr.vc-odd {
+.vc-table tbody tr.vc-odd {
   background: #f9f9f9;
 }
 
@@ -2163,7 +2175,7 @@ a.iv-stats-row:hover {
 }
 
 /* パフォーマンス行(宮本・ゲストが歌った/踊った)は薄い色を敷いて紹介と区別する */
-#vc-episode-table tbody tr.vc-row-perf td {
+.vc-episode-table tbody tr.vc-row-perf td {
   background: #f7f3f9;
 }
 

@@ -5,43 +5,10 @@
   include $_SERVER['DOCUMENT_ROOT'] . '/common/header.php';
 ?>
 
-<main>
-  <h1>ハロプロ SNS一覧</h1>
-  <p>ハロー！プロジェクトの現役メンバー・OGの公式SNSアカウントを一覧でまとめました。</p>
-  <p>人数が多いので、スクロールで探すより<strong>検索欄に名前（読み仮名でも可）を入れる</strong>のが早いです。</p>
-  <p>所属・グループ（現役／OG問わず）・SNSの種類で絞り込めます。</p>
-  <p>グループで「モーニング娘。」を選んで「ハロプロ」のチェックを外せば、OGのモーニング娘。だけを出せます。</p>
-  <p>「アメブロアーカイブ ▾」ボタンを押すと過去のアメブロが開きます。</p>
-  <p>掲載順は現役、OGは加入順で、アップフロント系列に所属している人を先にしていますが私の恣意的な順番になってしまっているのでご容赦ください。</p>
-<div id="sns-controls">
-  <input type="text" id="sns-search" placeholder="名前・読み仮名・SNSのIDで検索…" oninput="snsFilter()">
-  <fieldset id="sns-affil">
-    <label><input type="checkbox" class="sns-aff-box" value="genin" checked onchange="snsFilter()"> ハロプロ</label>
-    <label><input type="checkbox" class="sns-aff-box" value="jproom" checked onchange="snsFilter()"> J.P ROOM</label>
-    <label><input type="checkbox" class="sns-aff-box" value="mline" checked onchange="snsFilter()"> M-line</label>
-    <label><input type="checkbox" class="sns-aff-box" value="upfrontcreate" checked onchange="snsFilter()"> UP-FRONT CREATE</label>
-    <label><input type="checkbox" class="sns-aff-box" value="upfrontpromotion" checked onchange="snsFilter()"> UP-FRONT PROMOTION</label>
-    <label><input type="checkbox" class="sns-aff-box" value="justpro" checked onchange="snsFilter()"> ジャストプロ</label>
-    <label><input type="checkbox" class="sns-aff-box" value="other" checked onchange="snsFilter()"> フリー・その他</label>
-    <label><input type="checkbox" class="sns-aff-box" value="retirement" onchange="snsFilter()"> 引退済み</label>
-  </fieldset>
-  <select id="sns-group" onchange="snsFilter()">
-    <option value="">グループ</option>
-    <?php include $_SERVER['DOCUMENT_ROOT'] . '/Spreadsheet/sns_groups.php'; ?>
-  </select>
-  <select id="sns-platform" onchange="snsFilter()">
-    <option value="">SNS</option>
-    <?php include $_SERVER['DOCUMENT_ROOT'] . '/Spreadsheet/sns_platforms.php'; ?>
-  </select>
-  <span id="sns-count"></span>
-</div>
-<div id="sns-cards">
-  <?php include $_SERVER['DOCUMENT_ROOT'] . '/Spreadsheet/sns_cards.php'; ?>
-</div>
-<?php include $_SERVER['DOCUMENT_ROOT'] . '/Generated/sns_generated.php'; ?>
-
-</main>
-
+<?php
+  // スタイルはカードより前に置く。後ろにあると約200枚のカードをいったん素のまま描いてから描き直すうえ、
+  // .sns-card の content-visibility がその素の大きさを覚えてしまい、スクロールが重くなる
+?>
 <style>
   #sns-controls {
     display: flex;
@@ -82,11 +49,16 @@
   }
   @media (min-width: 600px) { #sns-cards { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
   @media (min-width: 860px) { #sns-cards { grid-template-columns: repeat(4, minmax(0, 1fr)); } }
+  /* 200枚近いカードを開いた瞬間に全部描くと、遅いスマホで1秒以上固まる。
+     画面外のカードは近づくまで描画を後回しにする(HTMLの中身はそのままなので検索・AIには全部見える)。
+     120px は実測したカード高さの中央値。描いた後は実際の高さを覚えるので目安でよい */
   .sns-card {
     border: 1px solid #e2dbe7;
     border-radius: 8px;
     padding: .5em .55em;
     background: #fff;
+    content-visibility: auto;
+    contain-intrinsic-size: auto 120px;
   }
   .sns-name {
     margin: 0 0 .4em;
@@ -178,6 +150,43 @@
   .sns-card.expanded .sns-arc-toggle { color: var(--accent); border-style: solid; }
   .sns-archive { opacity: .5; }
 </style>
+
+<main>
+  <h1>ハロプロ SNS一覧</h1>
+  <p>ハロー！プロジェクトの現役メンバー・OGの公式SNSアカウントを一覧でまとめました。</p>
+  <p>人数が多いので、スクロールで探すより<strong>検索欄に名前（読み仮名でも可）を入れる</strong>のが早いです。</p>
+  <p>所属・グループ（現役／OG問わず）・SNSの種類で絞り込めます。</p>
+  <p>グループで「モーニング娘。」を選んで「ハロプロ」のチェックを外せば、OGのモーニング娘。だけを出せます。</p>
+  <p>「アメブロアーカイブ ▾」ボタンを押すと過去のアメブロが開きます。</p>
+  <p>掲載順は現役、OGは加入順で、アップフロント系列に所属している人を先にしていますが私の恣意的な順番になってしまっているのでご容赦ください。</p>
+<div id="sns-controls">
+  <input type="text" id="sns-search" placeholder="名前・読み仮名・SNSのIDで検索…" oninput="snsFilter()">
+  <fieldset id="sns-affil">
+    <label><input type="checkbox" class="sns-aff-box" value="genin" checked onchange="snsFilter()"> ハロプロ</label>
+    <label><input type="checkbox" class="sns-aff-box" value="jproom" checked onchange="snsFilter()"> J.P ROOM</label>
+    <label><input type="checkbox" class="sns-aff-box" value="mline" checked onchange="snsFilter()"> M-line</label>
+    <label><input type="checkbox" class="sns-aff-box" value="upfrontcreate" checked onchange="snsFilter()"> UP-FRONT CREATE</label>
+    <label><input type="checkbox" class="sns-aff-box" value="upfrontpromotion" checked onchange="snsFilter()"> UP-FRONT PROMOTION</label>
+    <label><input type="checkbox" class="sns-aff-box" value="justpro" checked onchange="snsFilter()"> ジャストプロ</label>
+    <label><input type="checkbox" class="sns-aff-box" value="other" checked onchange="snsFilter()"> フリー・その他</label>
+    <label><input type="checkbox" class="sns-aff-box" value="retirement" onchange="snsFilter()"> 引退済み</label>
+  </fieldset>
+  <select id="sns-group" onchange="snsFilter()">
+    <option value="">グループ</option>
+    <?php include $_SERVER['DOCUMENT_ROOT'] . '/Spreadsheet/sns_groups.php'; ?>
+  </select>
+  <select id="sns-platform" onchange="snsFilter()">
+    <option value="">SNS</option>
+    <?php include $_SERVER['DOCUMENT_ROOT'] . '/Spreadsheet/sns_platforms.php'; ?>
+  </select>
+  <span id="sns-count"></span>
+</div>
+<div id="sns-cards">
+  <?php include $_SERVER['DOCUMENT_ROOT'] . '/Spreadsheet/sns_cards.php'; ?>
+</div>
+<?php include $_SERVER['DOCUMENT_ROOT'] . '/Generated/sns_generated.php'; ?>
+
+</main>
 
 <script>
 (function() {
