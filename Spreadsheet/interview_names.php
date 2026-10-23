@@ -1,4 +1,4 @@
-<!-- generated: 2026-10-06T17:03:07.022278+00:00 -->
+<!-- generated: 2026-10-23T17:01:14.715626+00:00 -->
 <option value="相川茉穂" data-group="アンジュルム">相川茉穂</option>
 <option value="秋山眞緒" data-group="つばきファクトリー">秋山眞緒</option>
 <option value="浅倉樹々" data-group="つばきファクトリー">浅倉樹々</option>
@@ -154,6 +154,3 @@
 <option value="リンリン" data-group="モーニング娘。">リンリン</option>
 <option value="和田彩花" data-group="アンジュルム">和田彩花</option>
 <option value="和田桜子" data-group="こぶしファクトリー">和田桜子</option>
-<option value="カンナギマロ" data-group="">カンナギマロ</option>
-<option value="小関 舞" data-group="">小関 舞</option>
-<option value="山崎夢羽" data-group="">山崎夢羽</option>
