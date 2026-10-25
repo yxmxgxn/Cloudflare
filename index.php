@@ -15,11 +15,6 @@
         <a class="index-link" href="/YouTube/karin-song"><?= icon('disc', 'ic ic-20') ?>宮本佳林ソロ曲・コラボレーションなどJuice=Juice以外の曲まとめ</a>
         <p class="index-desc">発売されている宮本佳林さんソロ曲・コラボレーションなどJuice=Juice以外の曲をまとめました</p>
       </div>
-      <div class="card index-card">
-        <a class="index-link" href="/karin-setlist"><?= icon('youtube-brand', 'ic ic-20') ?>宮本佳林 最強のセトリ プレイリストまとめ</a>
-        <p class="index-desc">宮本佳林さんのツアーのセトリサイトで公開された「最強のセトリ」をYouTubeのプレイリストにしてまとめました</p>
-      </div>
-    </div>
   </section>
 
   <section class="index-section">
@@ -112,7 +107,7 @@
     <h2><a href="https://www.instagram.com/karin_miyamoto.official/" target="_blank" rel="noopener noreferrer">宮本佳林 Instagram</a> / <a href="https://www.tiktok.com/@karin_miyamoto" target="_blank" rel="noopener noreferrer">TikTok</a></h2>
     <div class="card-grid index-items">
       <div class="card index-card">
-        <a class="index-link" href="/instagram/karin-insta"><?= icon('instagram', 'ic ic-20') ?>宮本佳林 インスタライブ アーカイブまとめ</a>
+        <a class="index-link" href="/instagram/karin-insta"><?= icon('instagram', 'ic ic-20') ?>宮本佳林 インスタライブまとめ</a>
         <p class="index-desc">宮本佳林さんがInstagramでライブ配信をしてアーカイブが残されているもののまとめです</p>
       </div>
       <div class="card index-card">
@@ -135,6 +130,10 @@
   <section class="index-section">
     <h2>宮本佳林 その他</h2>
     <div class="card-grid index-items">
+      <div class="card index-card">
+          <a class="index-link" href="/karin-setlist">宮本佳林 最強のセトリ プレイリストまとめ</a>
+          <p class="index-desc">宮本佳林さんのツアーのセトリサイトで公開された「最強のセトリ」をYouTubeのプレイリストにしてまとめました</p>
+      </div>
       <div class="card index-card">
         <a class="index-link" href="/kopinks"><?= icon('disc', 'ic ic-20') ?>コピンク* コピンクス！一言集</a>
         <p class="index-desc">コピンク*名義でアルバムコピンクス！メロディーズ〜star chart〜に収録されたコピンクス！一言集の書き起こしです</p>
@@ -170,25 +169,45 @@
         <p class="index-desc">ハロー！プロジェクトのメンバー本人の言葉が読めるWeb記事（インタビュー・対談・連載・コラムなど）のまとめです</p>
       </div>
       <div class="card index-card">
-        <a class="index-link" href="/hello-shop-event"><?= icon('mic', 'ic ic-20') ?>ハロショ イベントまとめ</a>
-        <p class="index-desc">ハロショ(ハロー！プロジェクトオフィシャルショップ)で行われたトークイベントのまとめです</p>
+        <a class="index-link" href="/helloHLS"><?= icon('palette', 'ic ic-20') ?>ハロプロメンバーカラーHLS色空間配置</a>
+        <p class="index-desc">ハロープロジェクトのメンバーのメンバーカラーをHLS色空間に配置したものです</p>
+      </div>
+      <div class="card index-card">
+        <a class="index-link" href="/decabeats"><?= icon('flower', 'ic ic-20') ?>DECA!BEAT（デカビート）非公式まとめ</a>
+        <p class="index-desc">ハロー！プロジェクトとEarth hacksのコラボで結成された特別ユニット「DECA!BEAT」のメンバー紹介ポスト・紹介動画・YouTube・グッズ紹介ポストのまとめです</p>
+      </div>
+      <div class="card index-card">
+        <a class="index-link" href="/rikawani-kohaku"><?= icon('article', 'ic ic-20') ?>島倉りか りかワニ紅白歌合戦 選曲まとめ</a>
+        <p class="index-desc">ワニブックス NewsCrunchの連載「りかワニ紅白歌合戦」で島倉りかさんが紅組・白組に選んだ昭和歌謡と勝敗のまとめです</p>
+      </div>
+    </div>
+  </section>
+    
+  <section class="index-section">
+    <h2>ハロー！プロジェクト イベント</h2>
+    <div class="card-grid index-items">
+      <div class="card index-card">
+        <a class="index-link" href="/hello-birthday"><?= icon('flower', 'ic ic-20') ?>ハロプロバースデーイベントまとめ</a>
+        <p class="index-desc">ハロープロジェクトのメンバーのバースデーイベントの会場を個人でまとめたページへのリンク集です</p>
       </div>
       <div class="card index-card">
         <a class="index-link" href="/hello-fanclubtour"><?= icon('pin', 'ic ic-20') ?>ハロプロ ファンクラブツアーまとめ</a>
         <p class="index-desc">ハロー！プロジェクトのファンクラブツアー（バスツアー）のまとめです</p>
       </div>
       <div class="card index-card">
-        <a class="index-link" href="/hello-birthday"><?= icon('flower', 'ic ic-20') ?>ハロプロバースデーイベントまとめ</a>
-        <p class="index-desc">ハロープロジェクトのメンバーのバースデーイベントの会場を個人でまとめたページへのリンク集です</p>
-      </div>
-      <div class="card index-card">
-        <a class="index-link" href="/helloHLS"><?= icon('palette', 'ic ic-20') ?>ハロプロメンバーカラーHLS色空間配置</a>
-        <p class="index-desc">ハロープロジェクトのメンバーのメンバーカラーをHLS色空間に配置したものです</p>
+        <a class="index-link" href="/hello-shop-event"><?= icon('mic', 'ic ic-20') ?>ハロショ イベントまとめ</a>
+        <p class="index-desc">ハロショ(ハロー！プロジェクトオフィシャルショップ)で行われたトークイベントのまとめです</p>
       </div>
       <div class="card index-card">
         <a class="index-link" href="/HelloYouTube/MHello"><?= icon('youtube-brand', 'ic ic-20') ?>エムハロイベントまとめ</a>
         <p class="index-desc">M-lineメンバーとハロプロ現役メンバーが共演するエムハロイベントの開催日・会場・セットリスト・YouTube動画のまとめです</p>
       </div>
+    </div>
+  </section>
+
+  <section class="index-section">
+    <h2>ハロー！プロジェクト YouTube</h2>
+    <div class="card-grid index-items">
       <div class="card index-card">
         <a class="index-link" href="/HelloYouTube/hello-cooking"><?= icon('youtube-brand', 'ic ic-20') ?>ハロプロ クッキングコーナーまとめ</a>
         <p class="index-desc">ハロプロメンバーがYouTube番組で料理に挑戦したクッキングコーナーの料理・出演者・動画のまとめです</p>
@@ -200,14 +219,6 @@
       <div class="card index-card">
         <a class="index-link" href="/HelloYouTube/oneplusone"><?= icon('youtube-brand', 'ic ic-20') ?>ONE PLUS ONE・One on One まとめ</a>
         <p class="index-desc">ハロプロメンバーが二人でパフォーマンスするデュオ企画「ONE PLUS ONE」「COVERS -One on One-」の曲・組み合わせ・動画のまとめです</p>
-      </div>
-      <div class="card index-card">
-        <a class="index-link" href="/decabeats"><?= icon('flower', 'ic ic-20') ?>DECA!BEAT（デカビート）非公式まとめ</a>
-        <p class="index-desc">ハロー！プロジェクトとEarth hacksのコラボで結成された特別ユニット「DECA!BEAT」のメンバー紹介ポスト・紹介動画・YouTube・グッズ紹介ポストのまとめです</p>
-      </div>
-      <div class="card index-card">
-        <a class="index-link" href="/rikawani-kohaku"><?= icon('article', 'ic ic-20') ?>島倉りか りかワニ紅白歌合戦 選曲まとめ</a>
-        <p class="index-desc">ワニブックス NewsCrunchの連載「りかワニ紅白歌合戦」で島倉りかさんが紅組・白組に選んだ昭和歌謡と勝敗のまとめです</p>
       </div>
     </div>
   </section>

@@ -1,5 +1,5 @@
 <?php
-  $title = "宮本佳林インスタグラム ライブ アーカイブまとめ"; 
+  $title = "宮本佳林 インスタライブまとめ";
   $description = "宮本佳林さんがInstagramでライブ配信をしてアーカイブが残されているもののまとめです。動画のリンクはInstagramのアーカイブに飛びます。動画の長さも書いています。";
   $jsonld_type = "Dataset";
   $about = "宮本佳林";
@@ -15,7 +15,7 @@
 ?>
 
 <main>
-  <h1>宮本佳林インスタグラム ライブ アーカイブまとめ</h1>
+  <h1>宮本佳林 インスタライブまとめ</h1>
   宮本佳林さんが<a href="https://www.instagram.com/karin_miyamoto.official/" target="_blank" rel="noopener noreferrer">Instagram</a>でライブ配信をしてアーカイブが残されているもののまとめです。
   <div class="indent">
   以下は"https://www.instagram.com/p/"で始まるURLのもので、ライブ配信のアーカイブが残されているものです。必ずこのURLで行ってください、"https://www.instagram.com/reel/"だと他の動画に飛ばされたりします
