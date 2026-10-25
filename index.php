@@ -112,7 +112,7 @@
     <h2><a href="https://www.instagram.com/karin_miyamoto.official/" target="_blank" rel="noopener noreferrer">宮本佳林 Instagram</a> / <a href="https://www.tiktok.com/@karin_miyamoto" target="_blank" rel="noopener noreferrer">TikTok</a></h2>
     <div class="card-grid index-items">
       <div class="card index-card">
-        <a class="index-link" href="/instagram/karin-insta"><?= icon('instagram', 'ic ic-20') ?>宮本佳林 インスタライブ アーカイブまとめ</a>
+        <a class="index-link" href="/instagram/karin-insta"><?= icon('instagram', 'ic ic-20') ?>宮本佳林 インスタライブまとめ</a>
         <p class="index-desc">宮本佳林さんがInstagramでライブ配信をしてアーカイブが残されているもののまとめです</p>
       </div>
       <div class="card index-card">
