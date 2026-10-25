@@ -1,5 +1,5 @@
 <?php
-  $title = "宮本佳林 M-line Music・ハロ！ステ・Girls Night Out・tiny tiny MCまとめ";
+  $title = "宮本佳林 YouTube MCまとめ";
   $description = "宮本佳林さんがM-line Music・ハロ！ステ・Girls Night Out・アプカミ・tiny tinyでMCをやってる回をまとめました。一緒にしている人も書いています。";
   $jsonld_type = "Dataset";
   $about = "宮本佳林";
@@ -241,7 +241,7 @@ $mc_cards = array_map(fn($s) => [
 ?>
 
 <main>
-  <h1>宮本佳林 M-line Music / ハロ！ステ / Girls Night Out / tiny tiny MCまとめ</h1>
+  <h1>宮本佳林 YouTube MCまとめ</h1>
   <p>宮本佳林さんが<a href="https://www.youtube.com/mlinemusic" target="_blank" rel="noopener noreferrer">M-line Music</a>・<a href="https://www.youtube.com/helloprojectstation" target="_blank" rel="noopener noreferrer">ハロ！ステ</a>・<a href="https://www.youtube.com/girlsnightoutch" target="_blank" rel="noopener noreferrer">Girls Night Out</a>・<a href="https://www.youtube.com/upcomi" target="_blank" rel="noopener noreferrer">アプカミ</a>・<a href="https://www.youtube.com/tinytinytiny" target="_blank" rel="noopener noreferrer">tiny tiny</a>でMCをやっている回をまとめました。<br>
   M-line Musicは同じMCで2回ずつなので、2回を1枚にまとめています。日付は動画の公開日です。<br>
   本数が多いので、押すとYouTubeが新しいタブで開きます。</p>

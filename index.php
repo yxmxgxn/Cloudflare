@@ -12,7 +12,7 @@
     <h2><a href="https://www.jp-r.co.jp/release/?filterType=member&viewType=member&members=40" target="_blank" rel="noopener noreferrer">宮本佳林 楽曲</a></h2>
     <div class="card-grid index-items">
       <div class="card index-card">
-        <a class="index-link" href="/YouTube/karin-song"><?= icon('disc', 'ic ic-20') ?>宮本佳林ソロ曲・コラボレーションなどJuice=Juice以外の曲まとめ</a>
+        <a class="index-link" href="/YouTube/karin-song"><?= icon('disc', 'ic ic-20') ?>宮本佳林ソロ曲まとめ</a>
         <p class="index-desc">発売されている宮本佳林さんソロ曲・コラボレーションなどJuice=Juice以外の曲をまとめました</p>
       </div>
   </section>
@@ -45,7 +45,7 @@
         <p class="index-desc">宮本佳林さんがレコーディングしている映像のまとめです</p>
       </div>
       <div class="card index-card">
-        <a class="index-link" href="/YouTube/karin-mc"><?= icon('youtube-brand', 'ic ic-20') ?>宮本佳林 M-line / ハロ！ステ / Girls Night Out Music MCまとめ</a>
+        <a class="index-link" href="/YouTube/karin-mc"><?= icon('youtube-brand', 'ic ic-20') ?>宮本佳林 YouTube MCまとめ</a>
         <p class="index-desc">宮本佳林さんがM-line Music・ハロ！ステ・Girls Night OutでMCしてる回のまとめです</p>
       </div>
       <div class="card index-card">
