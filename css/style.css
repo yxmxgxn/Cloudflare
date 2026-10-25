@@ -44,6 +44,9 @@ a img:hover {
 h1 {
   font-size: 32px;
   margin-left: 0;
+  /* 上下の余白を詰める(ブラウザ既定は 0.67em ずつ) */
+  margin-top: 0.2em;
+  margin-bottom: 0.3em;
 }
 
 h2 {
@@ -84,7 +87,7 @@ h2, h3 {
 -------------------------------------*/
 .card-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 260px), 1fr));
   gap: 14px;
   margin-top: 1em;
 }
@@ -140,11 +143,11 @@ table {
 /*トップページ
 -------------------------------------*/
 .index-lead {
-  margin: 0 0 20px;
+  margin: 0 0 10px;
 }
 
 .index-section {
-  margin-bottom: 28px;
+  margin-bottom: 20px;
 }
 
 .index-section > h2 {
@@ -799,6 +802,16 @@ footer a {
 /* スマホでは見出しのh1を一回り小さくして、2行に収める */
 header h1 {
   font-size: 22px;
+}
+}
+
+/* PC: 本文の幅をスマホに近い読みやすい幅に寄せる。カードは列幅 260px なので最大3列 */
+@media screen and (min-width: 769px) {
+header,
+main {
+  max-width: 960px;
+  margin-left: auto;
+  margin-right: auto;
 }
 }
 
@@ -3077,42 +3090,27 @@ a.iv-stats-row:hover {
 
 /*動画カード(common/video_cards.php。YouTube/ 以下のまとめページで共通)
 -------------------------------------*/
+/* サムネイルは出さず、再生ボタン(文字)だけ置く。長い動画の途中から始まるため画像と場面が合わない */
 .vc-card .vc-thumb {
-  display: block;
+  display: inline-block;
+  align-self: flex-start;
   text-decoration: none;
-  position: relative;
-  border: none;
-  padding: 0;
+  border: 1px solid #ddd;
+  border-radius: 999px;
+  padding: 4px 12px;
+  background: #fff;
+  color: #333;
+  font-size: 14px;
   cursor: pointer;
-  background: #000;
-  border-radius: 6px;
-  overflow: hidden;
-  aspect-ratio: 16 / 9;
-  width: 100%;
 }
 
-.vc-card .vc-thumb img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  opacity: .85;
-  display: block;
-  transition: opacity .15s;
-}
-
-.vc-card .vc-thumb:hover img {
-  opacity: 1;
+.vc-card .vc-thumb:hover {
+  border-color: var(--accent);
+  color: var(--accent);
 }
 
 .vc-card .vc-play {
-  position: absolute;
-  inset: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #fff;
-  font-size: 16px;
-  text-shadow: 0 1px 4px rgba(0,0,0,.8);
+  white-space: nowrap;
 }
 
 .vc-card .vc-player {

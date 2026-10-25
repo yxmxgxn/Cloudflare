@@ -77,8 +77,8 @@ function vc_thumb(array $v, string $title, bool $embed = true): string
 {
     $start = (int)($v['start'] ?? 0);
     $time = $start ? vc_hms($start) . 'から' : '';
-    $inner = '<img src="https://i.ytimg.com/vi/' . vc_h($v['id']) . '/hqdefault.jpg" alt="" loading="lazy">'
-           . '<span class="vc-play">▶ ' . ($time === '' ? ($embed ? '再生' : 'YouTubeで見る') : $time . ($embed ? '再生' : '見る')) . '</span>';
+    // サムネイルは出さない(長い動画の途中から始まるので、画像と場面が合わないため)
+    $inner = '<span class="vc-play">▶ ' . ($time === '' ? ($embed ? '再生' : 'YouTubeで見る') : $time . ($embed ? '再生' : '見る')) . '</span>';
     if (!$embed) {
         return '<a class="vc-thumb" href="' . vc_h(vc_url($v)) . '" target="_blank" rel="noopener noreferrer"'
              . ' aria-label="' . vc_h($title) . ' をYouTubeで見る">' . $inner . '</a>';

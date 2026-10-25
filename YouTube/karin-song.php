@@ -1,5 +1,5 @@
 <?php
-  $title = "宮本佳林ソロ曲・コラボレーションなどJuice=Juice以外の曲まとめ";
+  $title = "宮本佳林ソロ曲まとめ";
   $description = "発売されている宮本佳林さんソロ曲・コラボレーションなどJuice=Juice以外の曲をまとめました。作詞作曲編曲、MVがあるものはYouTubeのリンクを貼っています";
   $jsonld_type = "Dataset";
   $about = "宮本佳林";
@@ -15,7 +15,7 @@
 ?>
 
 <main>
-  <h1>宮本佳林ソロ曲・コラボレーションなどJuice=Juice以外の曲まとめ</h1>
+  <h1>宮本佳林ソロ曲まとめ</h1>
   発売されている宮本佳林さんソロ曲・コラボレーションなどJuice=Juice以外の曲をまとめました。公式のリンク、作詞作曲編曲、Music Videoに▶️、歌唱動画に🎤、一番新しいライブ映像に🎥・Dance Practiceに💃を付けました
   <h2>シングル</h2>
    <table id="karin-disco">
