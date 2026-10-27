@@ -187,6 +187,8 @@
 <tbody>
 <tr class="row-even"><td>2026年11月13日</td><td>17:20</td><td>つばきファクトリー 谷本安美バースデーイベント2026</td><td>LANDMARK HALL</td><td>神奈川県</td><td></td></tr>
 <tr><td>2026年11月13日</td><td>19:40</td><td>つばきファクトリー 谷本安美バースデーイベント2026</td><td>LANDMARK HALL</td><td>神奈川県</td><td></td></tr>
+<tr class="row-even"><td>2026年12月8日</td><td>18:00</td><td>つばきファクトリー 谷本安美・石井泉羽バースデーイベント2026 in 名古屋</td><td>ミッドランドスクエア シネマ2</td><td>愛知県</td><td></td></tr>
+<tr><td>2026年12月8日</td><td>19:45</td><td>つばきファクトリー 谷本安美・石井泉羽バースデーイベント2026 in 名古屋</td><td>ミッドランドスクエア シネマ2</td><td>愛知県</td><td></td></tr>
 </tbody>
 </table>
 

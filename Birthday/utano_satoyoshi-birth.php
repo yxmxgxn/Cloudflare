@@ -129,6 +129,23 @@
 <tr><td>2025年9月18日</td><td>19:40</td><td>BEYOOOOONDS/SeasoningS 里吉うたのバースデーイベント2025</td><td>LANDMARK HALL</td><td>神奈川県</td><td><a href="https://hp-setlist.com/stage/22785" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
 </tbody>
 </table>
+26歳（2026年）
+<table class="birthday-table">
+<thead>
+<tr>
+<th>日付</th>
+<th>開演</th>
+<th>イベント名</th>
+<th>会場</th>
+<th>都道府県</th>
+<th>セットリスト</th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td>2026年9月15日</td><td>17:10</td><td>BEYOOOOONDS/SeasoningS 里吉うたのバースデーイベント2026</td><td>飛行船シアター</td><td></td><td></td></tr>
+<tr><td>2026年9月15日</td><td>19:30</td><td>BEYOOOOONDS/SeasoningS 里吉うたのバースデーイベント2026</td><td>飛行船シアター</td><td></td><td></td></tr>
+</tbody>
+</table>
 
 </main>
 <?php include $_SERVER['DOCUMENT_ROOT'] . '/Generated/birthday_generated.php'; ?>

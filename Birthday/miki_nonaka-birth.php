@@ -209,6 +209,23 @@
 <tr><td>2025年10月9日</td><td>19:20</td><td>Morning Musume。'25 Miki Nonaka Birthday Event</td><td>荒川区民会館 大ホール</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/22864" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
 </tbody>
 </table>
+27歳（2026年）
+<table class="birthday-table">
+<thead>
+<tr>
+<th>日付</th>
+<th>開演</th>
+<th>イベント名</th>
+<th>会場</th>
+<th>都道府県</th>
+<th>セットリスト</th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td>2026年10月16日</td><td>16:40</td><td>Morning Musume。'26 Miki Nonaka Birthday Event</td><td>有楽町朝日ホール</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/27064" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
+<tr><td>2026年10月16日</td><td>19:00</td><td>Morning Musume。'26 Miki Nonaka Birthday Event</td><td>有楽町朝日ホール</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/27065" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
+</tbody>
+</table>
 
 </main>
 <?php include $_SERVER['DOCUMENT_ROOT'] . '/Generated/birthday_generated.php'; ?>

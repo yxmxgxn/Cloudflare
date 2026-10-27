@@ -220,6 +220,23 @@
 <tr><td>2025年9月20日</td><td>18:00</td><td>高橋愛バースデーイベント いちごのビスケットはお好き？「見た目は少女、年齢は39祭(さい)」若作り？いいえ、能力です</td><td>TOKYO FM HALL</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/26806" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
 </tbody>
 </table>
+40歳（2026年）
+<table class="birthday-table">
+<thead>
+<tr>
+<th>日付</th>
+<th>開演</th>
+<th>イベント名</th>
+<th>会場</th>
+<th>都道府県</th>
+<th>セットリスト</th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td>2026年9月14日</td><td>17:20</td><td>高橋愛バースデーイベント　40祭♡愛のビックバン</td><td>TOKYO FM HALL</td><td>東京都</td><td></td></tr>
+<tr><td>2026年9月14日</td><td>19:30</td><td>高橋愛バースデーイベント　40祭♡愛のビックバン</td><td>TOKYO FM HALL</td><td>東京都</td><td></td></tr>
+</tbody>
+</table>
 
 </main>
 <?php include $_SERVER['DOCUMENT_ROOT'] . '/Generated/birthday_generated.php'; ?>

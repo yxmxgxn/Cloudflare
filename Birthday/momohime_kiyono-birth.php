@@ -132,6 +132,23 @@
 <tr><td>2024年12月2日</td><td>19:40</td><td>BEYOOOOONDS/雨ノ森 川海 清野桃々姫バースデーイベント2024</td><td>横浜Bay Hall</td><td>神奈川県</td><td><a href="https://hp-setlist.com/stage/21934" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
 </tbody>
 </table>
+22歳（2026年）
+<table class="birthday-table">
+<thead>
+<tr>
+<th>日付</th>
+<th>開演</th>
+<th>イベント名</th>
+<th>会場</th>
+<th>都道府県</th>
+<th>セットリスト</th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td>2027年1月15日</td><td>17:10</td><td>BEYOOOOONDS/雨ノ森 川海 清野桃々姫バースデーイベント2027</td><td>I'M A SHOW</td><td>東京都</td><td></td></tr>
+<tr><td>2027年1月15日</td><td>19:30</td><td>BEYOOOOONDS/雨ノ森 川海 清野桃々姫バースデーイベント2027</td><td>I'M A SHOW</td><td>東京都</td><td></td></tr>
+</tbody>
+</table>
 
 </main>
 <?php include $_SERVER['DOCUMENT_ROOT'] . '/Generated/birthday_generated.php'; ?>
