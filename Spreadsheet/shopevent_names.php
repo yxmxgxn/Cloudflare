@@ -1,4 +1,4 @@
-<!-- generated: 2026-10-13T13:44:54.744158+00:00 -->
+<!-- generated: 2026-10-27T05:20:12.385968+00:00 -->
 <option value="相川茉穂" data-group="アンジュルム">相川茉穂（1）</option>
 <option value="秋山眞緒" data-group="つばきファクトリー">秋山眞緒（4）</option>
 <option value="浅倉樹々" data-group="つばきファクトリー">浅倉樹々（3）</option>
@@ -12,7 +12,7 @@
 <option value="一岡伶奈" data-group="BEYOOOOONDS">一岡伶奈（1）</option>
 <option value="稲場愛香" data-group="カントリー・ガールズ|Juice=Juice">稲場愛香（5）</option>
 <option value="井上春華" data-group="モーニング娘。">井上春華（1）</option>
-<option value="井上玲音" data-group="こぶしファクトリー|Juice=Juice">井上玲音（2）</option>
+<option value="井上玲音" data-group="こぶしファクトリー|Juice=Juice">井上玲音（3）</option>
 <option value="入江里咲" data-group="Juice=Juice">入江里咲（2）</option>
 <option value="植村あかり" data-group="Juice=Juice">植村あかり（3）</option>
 <option value="植村葉純" data-group="ロージークロニクル">植村葉純（3）</option>
@@ -50,7 +50,7 @@
 <option value="小林萌花" data-group="BEYOOOOONDS">小林萌花（2）</option>
 <option value="斉藤円香" data-group="OCHA NORMA">斉藤円香（4）</option>
 <option value="櫻井梨央" data-group="モーニング娘。">櫻井梨央（2）</option>
-<option value="佐々木莉佳子" data-group="アンジュルム">佐々木莉佳子（3）</option>
+<option value="佐々木莉佳子" data-group="アンジュルム">佐々木莉佳子（4）</option>
 <option value="佐藤優樹" data-group="モーニング娘。">佐藤優樹（3）</option>
 <option value="里吉うたの" data-group="BEYOOOOONDS">里吉うたの（2）</option>
 <option value="鞘師里保" data-group="モーニング娘。">鞘師里保（1）</option>
@@ -104,12 +104,12 @@
 <option value="船木結" data-group="カントリー・ガールズ|アンジュルム">船木結（2）</option>
 <option value="前田こころ" data-group="BEYOOOOONDS">前田こころ（3）</option>
 <option value="牧野真莉愛" data-group="モーニング娘。">牧野真莉愛（3）</option>
-<option value="松永里愛" data-group="Juice=Juice">松永里愛（3）</option>
+<option value="松永里愛" data-group="Juice=Juice">松永里愛（4）</option>
 <option value="松原ユリヤ" data-group="ロージークロニクル">松原ユリヤ（1）</option>
 <option value="松本わかな" data-group="アンジュルム">松本わかな（4）</option>
 <option value="道重さゆみ" data-group="モーニング娘。">道重さゆみ（1）</option>
 <option value="宮崎由加" data-group="Juice=Juice">宮崎由加（2）</option>
-<option value="宮本佳林" data-group="Juice=Juice">宮本佳林（5）</option>
+<option value="宮本佳林" data-group="Juice=Juice">宮本佳林（6）</option>
 <option value="村越彩菜" data-group="ロージークロニクル">村越彩菜（4）</option>
 <option value="村田結生" data-group="つばきファクトリー">村田結生（2）</option>
 <option value="室田瑞希" data-group="アンジュルム">室田瑞希（1）</option>
