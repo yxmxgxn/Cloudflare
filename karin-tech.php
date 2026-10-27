@@ -44,10 +44,24 @@
       'url' => 'https://zepp-vote.karindayodayooooon.workers.dev/',
     ],
     [
+      'date' => '2026/10/02',
+      'title' => 'ツアーサイトファンのみんなとデバッグ配信💻',
+      'desc' => null,
+      'url' => 'https://www.youtube.com/watch?v=wDl3w--ev3s',
+      'label' => 'YouTubeで見る',
+    ],
+    [
       'date' => '2026/10/09',
       'title' => '宮本佳林5周年記念LIVE TOUR 2026 ～ぼくのかんがえたさいきょうのセトリ',
       'desc' => null,
       'url' => 'https://karin-tour-production.karindayodayooooon.workers.dev/',
+    ],
+    [
+      'date' => '2026/10/09',
+      'title' => 'ツアーサイトリリース配信💻',
+      'desc' => null,
+      'url' => 'https://www.youtube.com/watch?v=YBG2dSOsFmA',
+      'label' => 'YouTubeで見る',
     ],
   ];
 
