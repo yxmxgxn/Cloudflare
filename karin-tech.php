@@ -2,9 +2,12 @@
   $title = "宮本佳林 テック仕事まとめ";
   $description = "宮本佳林さんのテック仕事（公開されたサイトや企画）を年代順にまとめています。";
   include $_SERVER['DOCUMENT_ROOT'] . '/common/header.php';
-  require_once $_SERVER['DOCUMENT_ROOT'] . '/common/video_cards.php';
 
-  // 公開されたものだけを、古い順に並べる。URLや日付が未確認のものは null にする
+  // 技術ブログ(アメブロ)。URLが決まったら入れる
+  $tech_blog = null;
+
+  // 公開されたものだけを、古い順に並べる。URLや日付が未確認のものは null にする。
+  // 'blog' => アメブロの記事URL を書くと「ブログ」ボタンが出る
   $history = [
     [
       'date' => '2026/06/15',
@@ -70,7 +73,7 @@
   $tour_pages = [
     ['title' => '最強のセトリを作る', 'path' => '/submit', 'desc' => 'ハロプロサブスク解禁楽曲からセットリストを投稿'],
     ['title' => 'みんなのセトリを見る', 'path' => '/setlists', 'desc' => '投稿されたセットリストを閲覧・いいね'],
-    ['title' => '称号を管理', 'path' => '/schedule', 'desc' => 'ツアーの日程を選んで、披露される曲に投票'],
+    ['title' => '（ページ名確認中）', 'path' => '/schedule', 'desc' => 'ツアーの日程を選んで、披露される曲に投票'],
     ['title' => '会場スタンプカード', 'path' => '/stamps', 'desc' => 'ツアーの現地でQRコードを読むとスタンプがもらえる'],
     ['title' => '実績解除リスト（攻略本）', 'path' => '/achievements', 'desc' => '攻略本付きの実績を解除すると称号がもらえる'],
     ['title' => '冒険者の書 / 引き継ぎ', 'path' => '/adventurer-book', 'desc' => '環境が変わったときに、引き継ぎ用の12桁のコードを入力'],
@@ -80,7 +83,7 @@
     ['title' => '衣装・ペットランキング', 'path' => '/equipment/ranking', 'desc' => '選ばれた衣装とペットのランキング'],
   ];
 
-  // 登壇。古い順。概要は各イベントページの紹介文
+  // 登壇。古い順。概要は各イベントページの紹介文。'blog' => アメブロの記事URL を書くと「ブログ」ボタンが出る
   $talks = [
     [
       'conference' => 'Cloudflare Workers Tech Talks in Tokyo #8',
@@ -208,30 +211,25 @@
 <?php if (!empty($item['desc'])): ?>
     <p><?= htmlspecialchars($item['desc']) ?></p>
 <?php endif; ?>
+    <p class="ks-links">
 <?php if (!empty($item['url'])): ?>
-    <p class="ks-links"><a class="ks-link" href="<?= htmlspecialchars($item['url']) ?>" target="_blank" rel="noopener noreferrer"><?= htmlspecialchars($item['label'] ?? 'サイトを開く') ?></a></p>
-<?php else: ?>
-    <p class="ks-note"><?= htmlspecialchars($item['note'] ?? '公開URLなし') ?></p>
+      <a class="ks-link" href="<?= htmlspecialchars($item['url']) ?>" target="_blank" rel="noopener noreferrer"><?= htmlspecialchars($item['label'] ?? 'サイトを開く') ?></a>
 <?php endif; ?>
+<?php if (!empty($item['blog'])): ?>
+      <a class="ks-link" href="<?= htmlspecialchars($item['blog']) ?>" target="_blank" rel="noopener noreferrer">ブログ</a>
+<?php endif; ?>
+    </p>
   </article>
 <?php endforeach; ?>
 </div>
 
-<h2>ツアーサイトでできること</h2>
+<h2>環境</h2>
 <div class="ks-lead">
-  <p><a href="<?= htmlspecialchars($tour_site) ?>/" target="_blank" rel="noopener noreferrer">宮本佳林5周年記念LIVE TOUR 2026 ～ぼくのかんがえたさいきょうのセトリ</a>の機能です。</p>
-  <p>アカウントは5桁の数字・衣装・ペットを選んで作ります。別の環境に引き継ぐための12桁のコードが配られます。</p>
-</div>
-<div class="card-grid ks-grid">
-<?php foreach ($tour_pages as $page): ?>
-  <article class="card ks-card">
-    <h3 class="ks-title"><?= htmlspecialchars($page['title']) ?></h3>
-<?php if (!empty($page['desc'])): ?>
-    <p><?= htmlspecialchars($page['desc']) ?></p>
+  <p>公開先は Cloudflare Workers（workers.dev）です。アンケート&amp;ボイス配布サイトだけ Cloudflare Pages（pages.dev）です。</p>
+  <p>開発は Cursor を使い、AIと対話しながら作っています（バイブコーディング）。</p>
+<?php if (!empty($tech_blog)): ?>
+  <p class="ks-links"><a class="ks-link" href="<?= htmlspecialchars($tech_blog) ?>" target="_blank" rel="noopener noreferrer">技術ブログ（アメブロ）</a></p>
 <?php endif; ?>
-    <p class="ks-links"><a class="ks-link" href="<?= htmlspecialchars($tour_site . $page['path']) ?>" target="_blank" rel="noopener noreferrer">ページを開く</a></p>
-  </article>
-<?php endforeach; ?>
 </div>
 
 <h2>登壇</h2>
@@ -255,18 +253,13 @@
 <?php foreach ($talk['links'] as [$label, $url]): ?>
       <a class="ks-link" href="<?= htmlspecialchars($url) ?>" target="_blank" rel="noopener noreferrer"><?= htmlspecialchars($label) ?></a>
 <?php endforeach; ?>
+<?php if (!empty($talk['blog'])): ?>
+      <a class="ks-link" href="<?= htmlspecialchars($talk['blog']) ?>" target="_blank" rel="noopener noreferrer">ブログ</a>
+<?php endif; ?>
     </p>
   </article>
 <?php endforeach; ?>
 </div>
-
-<h2>YouTube Live</h2>
-<p>サムネイルを押すと、その場で再生されます。</p>
-<?= video_cards([
-  ['id' => 'ZnhFXyFOjto', 'date' => '2026/07/31', 'title' => 'みんなと協力して家でMV再現配信✨'],
-  ['id' => 'wDl3w--ev3s', 'date' => '2026/10/02', 'title' => 'ツアーサイトファンのみんなとデバッグ配信💻'],
-  ['id' => 'YBG2dSOsFmA', 'date' => '2026/10/09', 'title' => 'ツアーサイトリリース配信💻'],
-]) ?>
 
 <h2>インタビュー</h2>
 <div class="card-grid ks-grid">
@@ -285,6 +278,23 @@
 <?php endforeach; ?>
 </div>
 <p>テック以外も含めたインタビューは「<a href="/hello-articles">ハロプロメンバーが語るインタビュー・Web記事まとめ</a>」にまとめています。</p>
+
+<h2>ログインして使うサイト：ツアーサイト</h2>
+<div class="ks-lead">
+  <p><a href="<?= htmlspecialchars($tour_site) ?>/" target="_blank" rel="noopener noreferrer">宮本佳林5周年記念LIVE TOUR 2026 ～ぼくのかんがえたさいきょうのセトリ</a>の機能です。</p>
+  <p>アカウントは5桁の数字・衣装・ペットを選んで作ります。別の環境に引き継ぐための12桁のコードが配られます。</p>
+</div>
+<div class="card-grid ks-grid">
+<?php foreach ($tour_pages as $page): ?>
+  <article class="card ks-card">
+    <h3 class="ks-title"><?= htmlspecialchars($page['title']) ?></h3>
+<?php if (!empty($page['desc'])): ?>
+    <p><?= htmlspecialchars($page['desc']) ?></p>
+<?php endif; ?>
+    <p class="ks-links"><a class="ks-link" href="<?= htmlspecialchars($tour_site . $page['path']) ?>" target="_blank" rel="noopener noreferrer">ページを開く</a></p>
+  </article>
+<?php endforeach; ?>
+</div>
 
 </main>
 <?php include $_SERVER['DOCUMENT_ROOT'] . '/common/footer.php'; ?>
