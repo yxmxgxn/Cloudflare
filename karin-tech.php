@@ -49,6 +49,74 @@
       'url' => 'https://karin-tour-production.karindayodayooooon.workers.dev/',
     ],
   ];
+
+  // 登壇。古い順。概要は各イベントページの紹介文
+  $talks = [
+    [
+      'conference' => 'Cloudflare Workers Tech Talks in Tokyo #8',
+      'title' => 'アイドルから見たもの作りの本質',
+      'date' => '2026/08/27',
+      'time' => '16:30〜16:50',
+      'place' => 'TODA HALL & CONFERENCE TOKYO Bホール',
+      'host' => '和田裕介',
+      'desc' => null,
+      'links' => [
+        ['イベントページ', 'https://workers-tech.connpass.com/event/400818/'],
+        ['Web Archive', 'https://web.archive.org/web/20261027124609/https://workers-tech.connpass.com/event/400818/'],
+      ],
+    ],
+    [
+      'conference' => 'Qiita Conference 2026 Autumn',
+      'title' => 'AI時代だからこそ大事にするべき、開発という名の愛情',
+      'date' => '2026/10/27',
+      'time' => '19:35〜19:55',
+      'place' => null,
+      'host' => 'Qiita株式会社',
+      'desc' => "ITスキルが全くないアイドルが、10時間生配信を支えるシステムをバイブコーディングで作りました。\n\n"
+        . "コードは一行も書けず、読めもしません。\nそれでも当日、システムは一度も止まりませんでした。\n\n"
+        . "なぜ自分で作ろうと思ったのか。\n移動中のスマホで何を考えて仕様書を詰めていたのか。\n"
+        . "AIが出してきたものに対して、知識がない人間が何を基準に「これでいい」「これは違う」と判断していたのか。\n\n"
+        . "自分の作ったものを紐解いていく中で見えてきたのは、\nAI時代とは真逆に捉えられがちな「愛」でした。\n\n"
+        . "このシステムで誰がどれだけ幸せになってくれるのか。\n技術ではなく、そこが全部を決めていました。",
+      'links' => [
+        ['イベントページ', 'https://qiita.com/conference/2026-autumn'],
+        ['Web Archive', 'https://web.archive.org/web/20260908041615/https://qiita.com/conference/2026-autumn'],
+      ],
+    ],
+    [
+      'conference' => 'NIIGATA AI EXPO 2026',
+      'title' => 'プログラミング知識ゼロのアイドルがAIで「やりたい」を次々カタチにできた理由',
+      'date' => '2026/10/28',
+      'time' => '15:30〜16:00',
+      'place' => '万代島多目的広場 大かま Stage A',
+      'host' => '新潟県AI活用推進ラボ事務局',
+      'desc' => 'コード知識ゼロから、生成AIの指示だけでファン参加型サイトやアンケート、生配信システムなどを自作。「こんなことができたらいいな」を最短で形にした実体験をもとに、AIを活用したものづくりの可能性と、専門人材不足に悩む地方中小企業へのヒントを語る。',
+      'links' => [
+        ['イベントページ', 'https://niigata-ai.jp/expo/stageevent'],
+        ['Web Archive', 'https://web.archive.org/web/20261027125445/https://niigata-ai.jp/expo/stageevent'],
+      ],
+    ],
+    [
+      'conference' => 'Findy x playground',
+      'title' => 'アイドルが1人開発を完走した裏側 ―playgroundと宮本佳林さんが語る“欲しい”を言語化する力',
+      'date' => '2026/10/29',
+      'time' => '19:05〜19:55',
+      'place' => 'ファインディ オフィス',
+      'host' => 'ファインディ株式会社',
+      'desc' => "本イベントでは、歌手・タレントの宮本佳林さんが、10時間配信を支えるシステムを1人で開発・完走した事例を起点に、playground社が実践する「1プロダクト1人」の開発体制まで、これからのAI時代における開発のあり方を深掘りします。\n\n"
+        . "宮本さんは、「SATOYAMA&SATOUMIへ行こう」でplayground社の顔認証チケットに触れたことをきっかけに、オフィスを訪問。代表の伊藤さんやエンジニアの方からWebアプリ開発を直接学び、その後のCursorを使った開発にもつながっていきました。ご本人もブログで「playgroundさんとの出会いがなければ今の宮本はいません」と語っています。\n"
+        . "参考： 元アイドルがバイブコーディングできるようになるまで。\n\n"
+        . "そんな宮本さんの事例では、楽曲プロモーションという目的から逆算して「何をつくるか」を考える発想力、自然言語でAIと対話しながら仕様を進化させていく開発プロセス、そして運用・ユーザー体験・セキュリティまで見据えた設計に焦点を当てます。\n\n"
+        . "また、宮本さんの開発を支えたplayground社では、なぜ開発チームを解散し「1プロダクト1人」という体制へ移行したのか。その背景にある思想や、AIに任せること／人が担うことの境界線について掘り下げます。\n\n"
+        . "「つくること」そのものがAIによって大きく変わりつつある今、求められるのは単にコードを書くスキルだけではありません。2つの事例を通じて、AIに代替されにくい本質的なスキルとは何か、そしてこれからのエンジニア像や開発プロセスはどう変わっていくのかを、一緒に考える場を目指します。",
+      'links' => [
+        ['イベントページ（connpass）', 'https://findy.connpass.com/event/406424/'],
+        ['Web Archive（connpass）', 'https://web.archive.org/web/20261027125835/https://findy.connpass.com/event/406424/'],
+        ['イベントページ（Findy）', 'https://findy-code.io/events/3J6COy3ogFL4x'],
+        ['Web Archive（Findy）', 'https://web.archive.org/web/20261027130807/https://findy-code.io/events/3J6COy3ogFL4x'],
+      ],
+    ],
+  ];
 ?>
 
 <main>
@@ -71,6 +139,32 @@
 <?php else: ?>
     <p class="ks-note"><?= htmlspecialchars($item['note'] ?? '公開URLなし') ?></p>
 <?php endif; ?>
+  </article>
+<?php endforeach; ?>
+</div>
+
+<h2>登壇</h2>
+<div class="card-grid ks-grid">
+<?php foreach ($talks as $talk): ?>
+  <article class="card ks-card">
+    <p class="ks-meta"><span class="ks-date"><?= htmlspecialchars($talk['date'] . ' ' . $talk['time']) ?></span></p>
+    <h3 class="ks-title"><?= htmlspecialchars($talk['title']) ?></h3>
+    <p class="ks-by"><?= htmlspecialchars($talk['conference']) ?></p>
+<?php if (!empty($talk['place'])): ?>
+    <p class="ks-note">会場：<?= htmlspecialchars($talk['place']) ?></p>
+<?php endif; ?>
+    <p class="ks-note">主催：<?= htmlspecialchars($talk['host']) ?></p>
+<?php if (!empty($talk['desc'])): ?>
+    <details>
+      <summary>概要</summary>
+      <p><?= nl2br(htmlspecialchars($talk['desc'])) ?></p>
+    </details>
+<?php endif; ?>
+    <p class="ks-links">
+<?php foreach ($talk['links'] as [$label, $url]): ?>
+      <a class="ks-link" href="<?= htmlspecialchars($url) ?>" target="_blank" rel="noopener noreferrer"><?= htmlspecialchars($label) ?></a>
+<?php endforeach; ?>
+    </p>
   </article>
 <?php endforeach; ?>
 </div>
