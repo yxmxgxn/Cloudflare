@@ -151,7 +151,8 @@
     ],
   ];
 
-  // インタビュー。古い順。hello-articles にも同じ記事がある。Web Archive が取れなかった記事は archive を null にする
+  // インタビュー。古い順。hello-articles にも同じ記事がある。Web Archive が取れなかった記事は archive を null にする。
+  // 'label' はリンクの文言(既定は「記事を読む」。動画なら「YouTubeで見る」)
   $interviews = [
     [
       'date' => '2026/08/06',
@@ -193,42 +194,50 @@
       'media_url' => 'https://toyokeizai.net/',
       'archive' => 'https://web.archive.org/web/20260919061455/https://toyokeizai.net/articles/-/956932?display=b',
     ],
+    [
+      'date' => '2026/09/25',
+      'title' => '【業界騒然】アイドルがAIでシステム開発 / アイドルサイボーグのプロフェッショナル哲学 / 独学で学ぶ最短学習法 / ファンを巻き込む最強のPM思考 / 失敗を物語に変えるフェイルセーフ設計の全貌',
+      'url' => 'https://www.youtube.com/watch?v=CqmalArD2Hg',
+      'label' => 'YouTubeで見る',
+      'media' => 'テクノロジーメディア「Newbee」',
+      'media_url' => 'https://newbee.co.jp/',
+      'archive' => null,
+    ],
   ];
 ?>
 
 <main>
   <h1>宮本佳林 テック仕事まとめ</h1>
-<div class="ks-lead">
+<div class="kt-lead">
   <p>公開されたものだけを、年代順に並べています。</p>
 </div>
 
 <h2>ヒストリー</h2>
-<div class="card-grid ks-grid">
+<ul class="kt-list">
 <?php foreach ($history as $item): ?>
-  <article class="card ks-card">
-    <p class="ks-meta"><span class="ks-date"><?= htmlspecialchars($item['date'] ?? '日付未定') ?></span></p>
-    <h3 class="ks-title"><?= htmlspecialchars($item['title']) ?></h3>
-<?php if (!empty($item['desc'])): ?>
-    <p><?= htmlspecialchars($item['desc']) ?></p>
-<?php endif; ?>
-    <p class="ks-links">
+  <li>
+    <span class="kt-date"><?= htmlspecialchars($item['date'] ?? '日付未定') ?></span>
 <?php if (!empty($item['url'])): ?>
-      <a class="ks-link" href="<?= htmlspecialchars($item['url']) ?>" target="_blank" rel="noopener noreferrer"><?= htmlspecialchars($item['label'] ?? 'サイトを開く') ?></a>
+    <a class="kt-title" href="<?= htmlspecialchars($item['url']) ?>" target="_blank" rel="noopener noreferrer"><?= htmlspecialchars($item['title']) ?></a>
+<?php else: ?>
+    <span class="kt-title"><?= htmlspecialchars($item['title']) ?></span>
+<?php endif; ?>
+<?php if (!empty($item['desc'])): ?>
+    <span class="kt-desc"><?= htmlspecialchars($item['desc']) ?></span>
 <?php endif; ?>
 <?php if (!empty($item['blog'])): ?>
-      <a class="ks-link" href="<?= htmlspecialchars($item['blog']) ?>" target="_blank" rel="noopener noreferrer">ブログ</a>
+    <span class="kt-sub"><a href="<?= htmlspecialchars($item['blog']) ?>" target="_blank" rel="noopener noreferrer">ブログ</a></span>
 <?php endif; ?>
-    </p>
-  </article>
+  </li>
 <?php endforeach; ?>
-</div>
+</ul>
 
 <h2>環境</h2>
-<div class="ks-lead">
+<div class="kt-lead">
   <p>公開先は Cloudflare Workers（workers.dev）です。アンケート&amp;ボイス配布サイトだけ Cloudflare Pages（pages.dev）です。</p>
   <p>開発は Cursor を使い、AIと対話しながら作っています（バイブコーディング）。</p>
 <?php if (!empty($tech_blog)): ?>
-  <p class="ks-links"><a class="ks-link" href="<?= htmlspecialchars($tech_blog) ?>" target="_blank" rel="noopener noreferrer">技術ブログ（アメブロ）</a></p>
+  <p><a href="<?= htmlspecialchars($tech_blog) ?>" target="_blank" rel="noopener noreferrer">技術ブログ（アメブロ）</a></p>
 <?php endif; ?>
 </div>
 
@@ -262,39 +271,32 @@
 </div>
 
 <h2>インタビュー</h2>
-<div class="card-grid ks-grid">
+<ul class="kt-list">
 <?php foreach ($interviews as $iv): ?>
-  <article class="card ks-card">
-    <p class="ks-meta"><span class="ks-date"><?= htmlspecialchars($iv['date']) ?></span></p>
-    <h3 class="ks-title"><?= htmlspecialchars($iv['title']) ?></h3>
-    <p class="ks-by"><a href="<?= htmlspecialchars($iv['media_url']) ?>" target="_blank" rel="noopener noreferrer"><?= htmlspecialchars($iv['media']) ?></a></p>
-    <p class="ks-links">
-      <a class="ks-link" href="<?= htmlspecialchars($iv['url']) ?>" target="_blank" rel="noopener noreferrer">記事を読む</a>
-<?php if (!empty($iv['archive'])): ?>
-      <a class="ks-link" href="<?= htmlspecialchars($iv['archive']) ?>" target="_blank" rel="noopener noreferrer">Web Archive</a>
-<?php endif; ?>
-    </p>
-  </article>
+  <li>
+    <span class="kt-date"><?= htmlspecialchars($iv['date']) ?></span>
+    <a class="kt-title" href="<?= htmlspecialchars($iv['url']) ?>" target="_blank" rel="noopener noreferrer"><?= htmlspecialchars($iv['title']) ?></a>
+    <span class="kt-sub"><a href="<?= htmlspecialchars($iv['media_url']) ?>" target="_blank" rel="noopener noreferrer"><?= htmlspecialchars($iv['media']) ?></a><?php if (!empty($iv['label'])): ?><a href="<?= htmlspecialchars($iv['url']) ?>" target="_blank" rel="noopener noreferrer"><?= htmlspecialchars($iv['label']) ?></a><?php endif; ?><?php if (!empty($iv['archive'])): ?><a href="<?= htmlspecialchars($iv['archive']) ?>" target="_blank" rel="noopener noreferrer">Web Archive</a><?php endif; ?></span>
+  </li>
 <?php endforeach; ?>
-</div>
+</ul>
 <p>テック以外も含めたインタビューは「<a href="/hello-articles">ハロプロメンバーが語るインタビュー・Web記事まとめ</a>」にまとめています。</p>
 
 <h2>ログインして使うサイト：ツアーサイト</h2>
-<div class="ks-lead">
+<div class="kt-lead">
   <p><a href="<?= htmlspecialchars($tour_site) ?>/" target="_blank" rel="noopener noreferrer">宮本佳林5周年記念LIVE TOUR 2026 ～ぼくのかんがえたさいきょうのセトリ</a>の機能です。</p>
   <p>アカウントは5桁の数字・衣装・ペットを選んで作ります。別の環境に引き継ぐための12桁のコードが配られます。</p>
 </div>
-<div class="card-grid ks-grid">
+<ul class="kt-list">
 <?php foreach ($tour_pages as $page): ?>
-  <article class="card ks-card">
-    <h3 class="ks-title"><?= htmlspecialchars($page['title']) ?></h3>
+  <li>
+    <a class="kt-title" href="<?= htmlspecialchars($tour_site . $page['path']) ?>" target="_blank" rel="noopener noreferrer"><?= htmlspecialchars($page['title']) ?></a>
 <?php if (!empty($page['desc'])): ?>
-    <p><?= htmlspecialchars($page['desc']) ?></p>
+    <span class="kt-desc"><?= htmlspecialchars($page['desc']) ?></span>
 <?php endif; ?>
-    <p class="ks-links"><a class="ks-link" href="<?= htmlspecialchars($tour_site . $page['path']) ?>" target="_blank" rel="noopener noreferrer">ページを開く</a></p>
-  </article>
+  </li>
 <?php endforeach; ?>
-</div>
+</ul>
 
 </main>
 <?php include $_SERVER['DOCUMENT_ROOT'] . '/common/footer.php'; ?>
