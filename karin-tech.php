@@ -132,6 +132,50 @@
       ],
     ],
   ];
+
+  // インタビュー。古い順。hello-articles にも同じ記事がある。Web Archive が取れなかった記事は archive を null にする
+  $interviews = [
+    [
+      'date' => '2026/08/06',
+      'title' => '宮本佳林、“バイブコーディング”への尽きない探究心　AIには「私の“分身”になってほしい」',
+      'url' => 'https://realsound.jp/tech/2026/08/post-2481666.html',
+      'media' => 'リアルサウンド テック',
+      'media_url' => 'https://realsound.jp/tech',
+      'archive' => 'https://web.archive.org/web/20260806061739/https://realsound.jp/tech/2026/08/post-2481666.html',
+    ],
+    [
+      'date' => '2026/08/27',
+      'title' => 'AIを使いこなすアイドル・宮本佳林はどのようにして生まれたのか',
+      'url' => 'https://natalie.mu/music/column/686866',
+      'media' => '音楽ナタリー',
+      'media_url' => 'https://natalie.mu/music',
+      'archive' => null,
+    ],
+    [
+      'date' => '2026/09/06',
+      'title' => '元Juice=Juiceエースの27歳・宮本佳林、AI開発で後輩たちと同時期ブレイクの現在地「感情に波はない」',
+      'url' => 'https://encount.press/archives/1060593/',
+      'media' => 'ENCOUNT',
+      'media_url' => 'https://encount.press/',
+      'archive' => 'https://web.archive.org/web/20260919055143/https://encount.press/archives/1060593/',
+    ],
+    [
+      'date' => '2026/09/10',
+      'title' => '｢すごいことをしている感覚はない｣プログラミング未経験のアイドル･宮本佳林がAIで診断サイトも生配信の仕組みも"自作"できた舞台裏',
+      'url' => 'https://toyokeizai.net/articles/-/956929?display=b',
+      'media' => '東洋経済オンライン',
+      'media_url' => 'https://toyokeizai.net/',
+      'archive' => 'https://web.archive.org/web/20260919061409/https://toyokeizai.net/articles/-/956929?display=b',
+    ],
+    [
+      'date' => '2026/09/10',
+      'title' => 'AIで企画書を作って修正案まで用意…元Juice=Juice･宮本佳林が示す"歌って踊るだけではない"新時代のアイドル像',
+      'url' => 'https://toyokeizai.net/articles/-/956932?display=b',
+      'media' => '東洋経済オンライン',
+      'media_url' => 'https://toyokeizai.net/',
+      'archive' => 'https://web.archive.org/web/20260919061455/https://toyokeizai.net/articles/-/956932?display=b',
+    ],
+  ];
 ?>
 
 <main>
@@ -191,6 +235,24 @@
   ['id' => 'wDl3w--ev3s', 'date' => '2026/10/02', 'title' => 'ツアーサイトファンのみんなとデバッグ配信💻'],
   ['id' => 'YBG2dSOsFmA', 'date' => '2026/10/09', 'title' => 'ツアーサイトリリース配信💻'],
 ]) ?>
+
+<h2>インタビュー</h2>
+<div class="card-grid ks-grid">
+<?php foreach ($interviews as $iv): ?>
+  <article class="card ks-card">
+    <p class="ks-meta"><span class="ks-date"><?= htmlspecialchars($iv['date']) ?></span></p>
+    <h3 class="ks-title"><?= htmlspecialchars($iv['title']) ?></h3>
+    <p class="ks-by"><a href="<?= htmlspecialchars($iv['media_url']) ?>" target="_blank" rel="noopener noreferrer"><?= htmlspecialchars($iv['media']) ?></a></p>
+    <p class="ks-links">
+      <a class="ks-link" href="<?= htmlspecialchars($iv['url']) ?>" target="_blank" rel="noopener noreferrer">記事を読む</a>
+<?php if (!empty($iv['archive'])): ?>
+      <a class="ks-link" href="<?= htmlspecialchars($iv['archive']) ?>" target="_blank" rel="noopener noreferrer">Web Archive</a>
+<?php endif; ?>
+    </p>
+  </article>
+<?php endforeach; ?>
+</div>
+<p>テック以外も含めたインタビューは「<a href="/hello-articles">ハロプロメンバーが語るインタビュー・Web記事まとめ</a>」にまとめています。</p>
 
 </main>
 <?php include $_SERVER['DOCUMENT_ROOT'] . '/common/footer.php'; ?>
