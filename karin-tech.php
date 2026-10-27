@@ -65,6 +65,21 @@
     ],
   ];
 
+  // ツアーサイト(ヒストリーの最後のサイト)の機能。サイトのメニュー順
+  $tour_site = 'https://karin-tour-production.karindayodayooooon.workers.dev';
+  $tour_pages = [
+    ['title' => '最強のセトリを作る', 'path' => '/submit', 'desc' => 'ハロプロサブスク解禁楽曲からセットリストを投稿'],
+    ['title' => 'みんなのセトリを見る', 'path' => '/setlists', 'desc' => '投稿されたセットリストを閲覧・いいね'],
+    ['title' => '称号を管理', 'path' => '/schedule', 'desc' => 'ツアーの日程を選んで、披露される曲に投票'],
+    ['title' => '会場スタンプカード', 'path' => '/stamps', 'desc' => 'ツアーの現地でQRコードを読むとスタンプがもらえる'],
+    ['title' => '実績解除リスト（攻略本）', 'path' => '/achievements', 'desc' => '攻略本付きの実績を解除すると称号がもらえる'],
+    ['title' => '冒険者の書 / 引き継ぎ', 'path' => '/adventurer-book', 'desc' => '環境が変わったときに、引き継ぎ用の12桁のコードを入力'],
+    ['title' => 'バグ報告・修正依頼', 'path' => '/report', 'desc' => 'サイトのバグ報告・修正依頼'],
+    ['title' => '利用ポリシー・免責事項', 'path' => '/policy', 'desc' => null],
+    ['title' => '称号を管理', 'path' => '/title', 'desc' => '自分で選んだ称号と、実績で解除された称号が見られる'],
+    ['title' => '衣装・ペットランキング', 'path' => '/equipment/ranking', 'desc' => '選ばれた衣装とペットのランキング'],
+  ];
+
   // 登壇。古い順。概要は各イベントページの紹介文
   $talks = [
     [
@@ -198,6 +213,23 @@
 <?php else: ?>
     <p class="ks-note"><?= htmlspecialchars($item['note'] ?? '公開URLなし') ?></p>
 <?php endif; ?>
+  </article>
+<?php endforeach; ?>
+</div>
+
+<h2>ツアーサイトでできること</h2>
+<div class="ks-lead">
+  <p><a href="<?= htmlspecialchars($tour_site) ?>/" target="_blank" rel="noopener noreferrer">宮本佳林5周年記念LIVE TOUR 2026 ～ぼくのかんがえたさいきょうのセトリ</a>の機能です。</p>
+  <p>アカウントは5桁の数字・衣装・ペットを選んで作ります。別の環境に引き継ぐための12桁のコードが配られます。</p>
+</div>
+<div class="card-grid ks-grid">
+<?php foreach ($tour_pages as $page): ?>
+  <article class="card ks-card">
+    <h3 class="ks-title"><?= htmlspecialchars($page['title']) ?></h3>
+<?php if (!empty($page['desc'])): ?>
+    <p><?= htmlspecialchars($page['desc']) ?></p>
+<?php endif; ?>
+    <p class="ks-links"><a class="ks-link" href="<?= htmlspecialchars($tour_site . $page['path']) ?>" target="_blank" rel="noopener noreferrer">ページを開く</a></p>
   </article>
 <?php endforeach; ?>
 </div>
