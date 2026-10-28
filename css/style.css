@@ -3466,3 +3466,8 @@ a.iv-stats-row:hover {
 .kt-desc { display: block; font-size: 14px; color: #333; }
 .kt-sub { display: block; font-size: 13px; color: #777; }
 .kt-sub a + a::before { content: "／"; color: #aaa; margin: 0 4px; }
+.kt-stack { display: grid; grid-template-columns: max-content 1fr; gap: 0 12px; margin: 4px 0 0; font-size: 13px; }
+.kt-stack dt { color: #777; }
+.kt-stack dd { margin: 0; }
+.kt-blogs::before { content: "ブログ："; }
+.kt-reading { padding-left: 1.6em; }

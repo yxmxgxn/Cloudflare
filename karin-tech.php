@@ -3,11 +3,8 @@
   $description = "宮本佳林さんのテック仕事（公開されたサイトや企画）を年代順にまとめています。";
   include $_SERVER['DOCUMENT_ROOT'] . '/common/header.php';
 
-  // 技術ブログ(アメブロ)。URLが決まったら入れる
-  $tech_blog = null;
-
   // 公開されたものだけを、古い順に並べる。URLや日付が未確認のものは null にする。
-  // 'blog' => アメブロの記事URL を書くと「ブログ」ボタンが出る
+  // 'stack' => [[項目, 中身], ...] で構成、'blogs' => [[リンク名, アメブロの記事URL], ...] でブログへのリンクが出る
   $history = [
     [
       'date' => '2026/06/15',
@@ -26,6 +23,15 @@
       'title' => 'アンケート&ボイス配布サイト',
       'desc' => 'リリースイベント会場でQRコードを読み込んでアンケートに答えると、その日だけ聴けるボイスメッセージが流れる',
       'url' => 'https://hanakin-survey.pages.dev/',
+      'stack' => [
+        ['実装', 'Cursor'],
+        ['クラウド', 'Cloudflare Pages + Workers'],
+        ['使ったサービス', 'D1 + R2 + KV + Turnstile'],
+      ],
+      'blogs' => [
+        ['アンケートシステムの技術ブログ①', 'https://ameblo.jp/miyamotokarin-official/entry-12974691151.html'],
+        ['アンケートシステムの技術ブログ②', 'https://ameblo.jp/miyamotokarin-official/entry-12974750978.html'],
+      ],
     ],
     [
       'date' => '2026/07/31',
@@ -33,12 +39,27 @@
       'desc' => null,
       'url' => 'https://www.youtube.com/watch?v=ZnhFXyFOjto',
       'label' => 'YouTubeで見る',
+      'stack' => [
+        ['実装', 'Claude Code'],
+        ['クラウド', 'Cloudflare Workers + KV'],
+        ['X集計', 'RapidAPI'],
+        ['AI判定アプリ（ローカル）', 'Node.js + Express'],
+        ['画像判定', 'OpenAI API'],
+        ['配信画面', 'OBS + YouTube'],
+      ],
+      'blogs' => [
+        ['配信システムの技術ブログ①', 'https://ameblo.jp/miyamotokarin-official/entry-12974432505.html'],
+        ['配信システムの技術ブログ②', 'https://ameblo.jp/miyamotokarin-official/entry-12974440752.html'],
+      ],
     ],
     [
       'date' => null,
       'title' => 'WithLIVE 全通特典サイト',
       'desc' => 'WithLIVEで参加後にもらえるキーワードを全部集めると、特典動画が閲覧できる',
       'url' => 'https://hanakin-withlive.karindayodayooooon.workers.dev/',
+      'stack' => [
+        ['特典動画の配信', 'Cloudflare Workers + R2'],
+      ],
     ],
     [
       'date' => '2026/09/18',
@@ -52,12 +73,18 @@
       'desc' => null,
       'url' => 'https://www.youtube.com/watch?v=wDl3w--ev3s',
       'label' => 'YouTubeで見る',
+      'blogs' => [
+        ['デバッグ配信とサイトの裏側', 'https://ameblo.jp/miyamotokarin-official/entry-12980414977.html'],
+      ],
     ],
     [
       'date' => '2026/10/09',
       'title' => '宮本佳林5周年記念LIVE TOUR 2026 ～ぼくのかんがえたさいきょうのセトリ',
       'desc' => null,
       'url' => 'https://karin-tour-production.karindayodayooooon.workers.dev/',
+      'blogs' => [
+        ['デバッグ配信とサイトの裏側', 'https://ameblo.jp/miyamotokarin-official/entry-12980414977.html'],
+      ],
     ],
     [
       'date' => '2026/10/09',
@@ -83,7 +110,7 @@
     ['title' => '衣装・ペットランキング', 'path' => '/equipment/ranking', 'desc' => '選ばれた衣装とペットのランキング'],
   ];
 
-  // 登壇。古い順。概要は各イベントページの紹介文。'blog' => アメブロの記事URL を書くと「ブログ」ボタンが出る
+  // 登壇。古い順。概要は各イベントページの紹介文。'blogs' => [[リンク名, アメブロの記事URL], ...] でボタンが出る
   $talks = [
     [
       'conference' => 'Cloudflare Workers Tech Talks in Tokyo #8',
@@ -96,6 +123,9 @@
       'links' => [
         ['イベントページ', 'https://workers-tech.connpass.com/event/400818/'],
         ['Web Archive', 'https://web.archive.org/web/20261027124609/https://workers-tech.connpass.com/event/400818/'],
+      ],
+      'blogs' => [
+        ['感想ブログ', 'https://ameblo.jp/miyamotokarin-official/entry-12976962844.html'],
       ],
     ],
     [
@@ -149,6 +179,12 @@
         ['Web Archive（Findy）', 'https://web.archive.org/web/20261027130807/https://findy-code.io/events/3J6COy3ogFL4x'],
       ],
     ],
+  ];
+
+  // 読み物。非エンジニアにも読める、作ったきっかけや開発の流れのブログ。上から順に通しで読む
+  $reading = [
+    ['title' => 'バズを受けて書いた、開発の経緯', 'url' => 'https://ameblo.jp/miyamotokarin-official/entry-12974640519.html'],
+    ['title' => 'ツアーサイトまでの流れ', 'url' => 'https://ameblo.jp/miyamotokarin-official/entry-12980415652.html'],
   ];
 
   // インタビュー。古い順。hello-articles にも同じ記事がある。Web Archive が取れなかった記事は archive を null にする。
@@ -209,7 +245,8 @@
 <main>
   <h1>宮本佳林 テック仕事まとめ</h1>
 <div class="kt-lead">
-  <p>公開されたものだけを、年代順に並べています。</p>
+  <p>宮本佳林さんが作ったサイトや配信の仕組みを、公開されたものだけ年代順に並べています。それぞれの簡単な構成と、本人がくわしく書いたブログへのリンクも付けました。</p>
+  <p>技術の話はちょっと…という人は、作ったきっかけや開発の流れを書いたブログを<a href="#reading">「読み物」</a>にまとめています。</p>
 </div>
 
 <h2>ヒストリー</h2>
@@ -225,21 +262,19 @@
 <?php if (!empty($item['desc'])): ?>
     <span class="kt-desc"><?= htmlspecialchars($item['desc']) ?></span>
 <?php endif; ?>
-<?php if (!empty($item['blog'])): ?>
-    <span class="kt-sub"><a href="<?= htmlspecialchars($item['blog']) ?>" target="_blank" rel="noopener noreferrer">ブログ</a></span>
+<?php if (!empty($item['stack'])): ?>
+    <dl class="kt-stack">
+<?php foreach ($item['stack'] as [$k, $v]): ?>
+      <dt><?= htmlspecialchars($k) ?></dt><dd><?= htmlspecialchars($v) ?></dd>
+<?php endforeach; ?>
+    </dl>
+<?php endif; ?>
+<?php if (!empty($item['blogs'])): ?>
+    <span class="kt-sub kt-blogs"><?php foreach ($item['blogs'] as [$label, $url]): ?><a href="<?= htmlspecialchars($url) ?>" target="_blank" rel="noopener noreferrer"><?= htmlspecialchars($label) ?></a><?php endforeach; ?></span>
 <?php endif; ?>
   </li>
 <?php endforeach; ?>
 </ul>
-
-<h2>環境</h2>
-<div class="kt-lead">
-  <p>公開先は Cloudflare Workers（workers.dev）です。アンケート&amp;ボイス配布サイトだけ Cloudflare Pages（pages.dev）です。</p>
-  <p>開発は Cursor を使い、AIと対話しながら作っています（バイブコーディング）。</p>
-<?php if (!empty($tech_blog)): ?>
-  <p><a href="<?= htmlspecialchars($tech_blog) ?>" target="_blank" rel="noopener noreferrer">技術ブログ（アメブロ）</a></p>
-<?php endif; ?>
-</div>
 
 <h2>登壇</h2>
 <div class="card-grid ks-grid">
@@ -262,9 +297,9 @@
 <?php foreach ($talk['links'] as [$label, $url]): ?>
       <a class="ks-link" href="<?= htmlspecialchars($url) ?>" target="_blank" rel="noopener noreferrer"><?= htmlspecialchars($label) ?></a>
 <?php endforeach; ?>
-<?php if (!empty($talk['blog'])): ?>
-      <a class="ks-link" href="<?= htmlspecialchars($talk['blog']) ?>" target="_blank" rel="noopener noreferrer">ブログ</a>
-<?php endif; ?>
+<?php foreach ($talk['blogs'] ?? [] as [$label, $url]): ?>
+      <a class="ks-link" href="<?= htmlspecialchars($url) ?>" target="_blank" rel="noopener noreferrer"><?= htmlspecialchars($label) ?></a>
+<?php endforeach; ?>
     </p>
   </article>
 <?php endforeach; ?>
@@ -286,6 +321,7 @@
 <div class="kt-lead">
   <p><a href="<?= htmlspecialchars($tour_site) ?>/" target="_blank" rel="noopener noreferrer">宮本佳林5周年記念LIVE TOUR 2026 ～ぼくのかんがえたさいきょうのセトリ</a>の機能です。</p>
   <p>アカウントは5桁の数字・衣装・ペットを選んで作ります。別の環境に引き継ぐための12桁のコードが配られます。</p>
+  <p>どうやって作ったのかは<a href="https://ameblo.jp/miyamotokarin-official/entry-12980414977.html" target="_blank" rel="noopener noreferrer">サイトの裏側を書いたブログ</a>に、ここまでの流れは<a href="#reading">「読み物」</a>にあります。</p>
 </div>
 <ul class="kt-list">
 <?php foreach ($tour_pages as $page): ?>
@@ -297,6 +333,16 @@
   </li>
 <?php endforeach; ?>
 </ul>
+
+<h2 id="reading">読み物：作ったきっかけと開発の流れ</h2>
+<div class="kt-lead">
+  <p>どうして自分で作ろうと思ったのか、AIとどう作ってきたのかを、本人がブログに書いています。技術を知らなくても読めるので、上から順に通して読むのがおすすめです。</p>
+</div>
+<ol class="kt-list kt-reading">
+<?php foreach ($reading as $r): ?>
+  <li><a class="kt-title" href="<?= htmlspecialchars($r['url']) ?>" target="_blank" rel="noopener noreferrer"><?= htmlspecialchars($r['title']) ?></a></li>
+<?php endforeach; ?>
+</ol>
 
 </main>
 <?php include $_SERVER['DOCUMENT_ROOT'] . '/common/footer.php'; ?>
