@@ -195,6 +195,25 @@
 <tr><td>2026年1月26日</td><td>18:20</td><td>稲場愛香バースデーイベントLv28～まなかん舞踏会へようこそ♡～</td><td>YES THEATER</td><td>大阪府</td><td><a href="https://hp-setlist.com/stage/23228" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
 </tbody>
 </table>
+29歳（2026年）
+<table class="birthday-table">
+<thead>
+<tr>
+<th>日付</th>
+<th>開演</th>
+<th>イベント名</th>
+<th>会場</th>
+<th>都道府県</th>
+<th>セットリスト</th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td>2027年1月9日</td><td>15:40</td><td>稲場愛香バースデーイベントLv29 ～20代ラストもよろしくね～</td><td>YES THEATER</td><td>大阪府</td><td></td></tr>
+<tr><td>2027年1月9日</td><td>17:40</td><td>稲場愛香バースデーイベントLv29 ～20代ラストもよろしくね～</td><td>YES THEATER</td><td>大阪府</td><td></td></tr>
+<tr class="row-even"><td>2027年1月21日</td><td>17:10</td><td>稲場愛香バースデーイベントLv29 ～20代ラストもよろしくね～</td><td>I'M A SHOW</td><td>東京都</td><td></td></tr>
+<tr><td>2027年1月21日</td><td>19:30</td><td>稲場愛香バースデーイベントLv29 ～20代ラストもよろしくね～</td><td>I'M A SHOW</td><td>東京都</td><td></td></tr>
+</tbody>
+</table>
 
 </main>
 <?php include $_SERVER['DOCUMENT_ROOT'] . '/Generated/birthday_generated.php'; ?>

@@ -206,6 +206,25 @@
 <tr><td>2024年1月26日</td><td>18:50</td><td>Juice=Juice 植村あかりバースデーイベント2024 ～うえむランドへようこそ！～</td><td>YES THEATER</td><td>大阪府</td><td><a href="https://hp-setlist.com/stage/20907" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
 </tbody>
 </table>
+28歳（2026年）
+<table class="birthday-table">
+<thead>
+<tr>
+<th>日付</th>
+<th>開演</th>
+<th>イベント名</th>
+<th>会場</th>
+<th>都道府県</th>
+<th>セットリスト</th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td>2026年12月24日</td><td>16:30</td><td>植村あかりバースデーイベント2026</td><td>YES THEATER</td><td>大阪府</td><td></td></tr>
+<tr><td>2026年12月24日</td><td>18:30</td><td>植村あかりバースデーイベント2026</td><td>YES THEATER</td><td>大阪府</td><td></td></tr>
+<tr class="row-even"><td>2027年1月14日</td><td>17:40</td><td>植村あかりバースデーイベント2026</td><td>I'M A SHOW</td><td>東京都</td><td></td></tr>
+<tr><td>2027年1月14日</td><td>19:50</td><td>植村あかりバースデーイベント2026</td><td>I'M A SHOW</td><td>東京都</td><td></td></tr>
+</tbody>
+</table>
 
 </main>
 <?php include $_SERVER['DOCUMENT_ROOT'] . '/Generated/birthday_generated.php'; ?>
