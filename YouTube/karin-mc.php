@@ -153,6 +153,7 @@ $mc_shows = [
     ['id' => 'JpO8c8YyMQk', 'no' => '#223', 'date' => '2025/12/5'],
   ]],
   ['channel' => 'M-line Music', 'title' => 'M-line Music#239', 'mc' => '宮本佳林・豫風瑠乃', 'videos' => [
+    ['id' => 'N3lSmAuD8-k', 'no' => '#238', 'date' => '2026/3/27'],   
     ['id' => 'yePXvMbtjO0', 'no' => '#239', 'date' => '2026/4/2'],
   ]],
   ['channel' => 'M-line Music', 'title' => 'M-line Music#254・#255', 'mc' => '宮本佳林・島川波菜', 'videos' => [
@@ -284,5 +285,5 @@ $mc_cards = array_map(fn($s) => [
   filter();
 })();
 </script>
-<div class="last-update">最終更新日：2026/08/14</div>
+<div class="last-update">最終更新日：2026/11/01</div>
 <?php include $_SERVER['DOCUMENT_ROOT'] . '/common/footer.php'; ?>
