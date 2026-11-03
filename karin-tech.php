@@ -3,8 +3,14 @@
   $description = "宮本佳林さんのテック仕事（公開されたサイトや企画）を年代順にまとめています。";
   include $_SERVER['DOCUMENT_ROOT'] . '/common/header.php';
 
-  // 公開されたものだけを、古い順に並べる。URLや日付が未確認のものは null にする。
-  // 'stack' => [[項目, 中身], ...] で構成、'blogs' => [[リンク名, アメブロの記事URL], ...] でブログへのリンクが出る
+  // リンクの後ろに付ける種類の表示(（YouTube）など)
+  function kt_kind(string $url, string $default): string
+  {
+      return str_contains($url, 'youtube.com/') ? 'YouTube' : $default;
+  }
+
+  // 公開されたものだけを、古い順に並べる。日付が未確認・期間限定でリンクしないものは null にする。
+  // 'blogs' => [[リンク名, アメブロの記事URL], ...] でブログへのリンクが出る
   $history = [
     [
       'date' => '2026/06/15',
@@ -22,12 +28,7 @@
       'date' => '2026/06/28',
       'title' => 'アンケート&ボイス配布サイト',
       'desc' => 'リリースイベント会場でQRコードを読み込んでアンケートに答えると、その日だけ聴けるボイスメッセージが流れる',
-      'url' => 'https://hanakin-survey.pages.dev/',
-      'stack' => [
-        ['実装', 'Cursor'],
-        ['クラウド', 'Cloudflare Pages + Workers'],
-        ['使ったサービス', 'D1 + R2 + KV + Turnstile'],
-      ],
+      'url' => null,  // 期間限定(会場ごと)のサイトなのでリンクしない
       'blogs' => [
         ['アンケートシステムの技術ブログ①', 'https://ameblo.jp/miyamotokarin-official/entry-12974691151.html'],
         ['アンケートシステムの技術ブログ②', 'https://ameblo.jp/miyamotokarin-official/entry-12974750978.html'],
@@ -38,15 +39,6 @@
       'title' => 'みんなと協力して家にあるものでMV再現10時間配信',
       'desc' => null,
       'url' => 'https://www.youtube.com/watch?v=ZnhFXyFOjto',
-      'label' => 'YouTubeで見る',
-      'stack' => [
-        ['実装', 'Claude Code'],
-        ['クラウド', 'Cloudflare Workers + KV'],
-        ['X集計', 'RapidAPI'],
-        ['AI判定アプリ（ローカル）', 'Node.js + Express'],
-        ['画像判定', 'OpenAI API'],
-        ['配信画面', 'OBS + YouTube'],
-      ],
       'blogs' => [
         ['配信システムの技術ブログ①', 'https://ameblo.jp/miyamotokarin-official/entry-12974432505.html'],
         ['配信システムの技術ブログ②', 'https://ameblo.jp/miyamotokarin-official/entry-12974440752.html'],
@@ -56,10 +48,7 @@
       'date' => null,
       'title' => 'WithLIVE 全通特典サイト',
       'desc' => 'WithLIVEで参加後にもらえるキーワードを全部集めると、特典動画が閲覧できる',
-      'url' => 'https://hanakin-withlive.karindayodayooooon.workers.dev/',
-      'stack' => [
-        ['特典動画の配信', 'Cloudflare Workers + R2'],
-      ],
+      'url' => null,  // 期間限定のサイトなのでリンクしない
     ],
     [
       'date' => '2026/09/18',
@@ -72,7 +61,6 @@
       'title' => 'ツアーサイトファンのみんなとデバッグ配信💻',
       'desc' => null,
       'url' => 'https://www.youtube.com/watch?v=wDl3w--ev3s',
-      'label' => 'YouTubeで見る',
       'blogs' => [
         ['デバッグ配信とサイトの裏側', 'https://ameblo.jp/miyamotokarin-official/entry-12980414977.html'],
       ],
@@ -91,23 +79,7 @@
       'title' => 'ツアーサイトリリース配信💻',
       'desc' => null,
       'url' => 'https://www.youtube.com/watch?v=YBG2dSOsFmA',
-      'label' => 'YouTubeで見る',
     ],
-  ];
-
-  // ツアーサイト(ヒストリーの最後のサイト)の機能。サイトのメニュー順
-  $tour_site = 'https://karin-tour-production.karindayodayooooon.workers.dev';
-  $tour_pages = [
-    ['title' => '最強のセトリを作る', 'path' => '/submit', 'desc' => 'ハロプロサブスク解禁楽曲からセットリストを投稿'],
-    ['title' => 'みんなのセトリを見る', 'path' => '/setlists', 'desc' => '投稿されたセットリストを閲覧・いいね'],
-    ['title' => '（ページ名確認中）', 'path' => '/schedule', 'desc' => 'ツアーの日程を選んで、披露される曲に投票'],
-    ['title' => '会場スタンプカード', 'path' => '/stamps', 'desc' => 'ツアーの現地でQRコードを読むとスタンプがもらえる'],
-    ['title' => '実績解除リスト（攻略本）', 'path' => '/achievements', 'desc' => '攻略本付きの実績を解除すると称号がもらえる'],
-    ['title' => '冒険者の書 / 引き継ぎ', 'path' => '/adventurer-book', 'desc' => '環境が変わったときに、引き継ぎ用の12桁のコードを入力'],
-    ['title' => 'バグ報告・修正依頼', 'path' => '/report', 'desc' => 'サイトのバグ報告・修正依頼'],
-    ['title' => '利用ポリシー・免責事項', 'path' => '/policy', 'desc' => null],
-    ['title' => '称号を管理', 'path' => '/title', 'desc' => '自分で選んだ称号と、実績で解除された称号が見られる'],
-    ['title' => '衣装・ペットランキング', 'path' => '/equipment/ranking', 'desc' => '選ばれた衣装とペットのランキング'],
   ];
 
   // 登壇。古い順。概要は各イベントページの紹介文。'blogs' => [[リンク名, アメブロの記事URL], ...] でボタンが出る
@@ -122,7 +94,6 @@
       'desc' => null,
       'links' => [
         ['イベントページ', 'https://workers-tech.connpass.com/event/400818/'],
-        ['Web Archive', 'https://web.archive.org/web/20261027124609/https://workers-tech.connpass.com/event/400818/'],
       ],
       'blogs' => [
         ['感想ブログ', 'https://ameblo.jp/miyamotokarin-official/entry-12976962844.html'],
@@ -143,7 +114,6 @@
         . "このシステムで誰がどれだけ幸せになってくれるのか。\n技術ではなく、そこが全部を決めていました。",
       'links' => [
         ['イベントページ', 'https://qiita.com/conference/2026-autumn'],
-        ['Web Archive', 'https://web.archive.org/web/20260908041615/https://qiita.com/conference/2026-autumn'],
       ],
     ],
     [
@@ -156,7 +126,6 @@
       'desc' => 'コード知識ゼロから、生成AIの指示だけでファン参加型サイトやアンケート、生配信システムなどを自作。「こんなことができたらいいな」を最短で形にした実体験をもとに、AIを活用したものづくりの可能性と、専門人材不足に悩む地方中小企業へのヒントを語る。',
       'links' => [
         ['イベントページ', 'https://niigata-ai.jp/expo/stageevent'],
-        ['Web Archive', 'https://web.archive.org/web/20261027125445/https://niigata-ai.jp/expo/stageevent'],
       ],
     ],
     [
@@ -174,9 +143,7 @@
         . "「つくること」そのものがAIによって大きく変わりつつある今、求められるのは単にコードを書くスキルだけではありません。2つの事例を通じて、AIに代替されにくい本質的なスキルとは何か、そしてこれからのエンジニア像や開発プロセスはどう変わっていくのかを、一緒に考える場を目指します。",
       'links' => [
         ['イベントページ（connpass）', 'https://findy.connpass.com/event/406424/'],
-        ['Web Archive（connpass）', 'https://web.archive.org/web/20261027125835/https://findy.connpass.com/event/406424/'],
         ['イベントページ（Findy）', 'https://findy-code.io/events/3J6COy3ogFL4x'],
-        ['Web Archive（Findy）', 'https://web.archive.org/web/20261027130807/https://findy-code.io/events/3J6COy3ogFL4x'],
       ],
     ],
   ];
@@ -187,8 +154,7 @@
     ['title' => 'ツアーサイトまでの流れ', 'url' => 'https://ameblo.jp/miyamotokarin-official/entry-12980415652.html'],
   ];
 
-  // インタビュー。古い順。hello-articles にも同じ記事がある。Web Archive が取れなかった記事は archive を null にする。
-  // 'label' はリンクの文言(既定は「記事を読む」。動画なら「YouTubeで見る」)
+  // インタビュー。古い順。hello-articles にも同じ記事がある
   $interviews = [
     [
       'date' => '2026/08/06',
@@ -196,7 +162,6 @@
       'url' => 'https://realsound.jp/tech/2026/08/post-2481666.html',
       'media' => 'リアルサウンド テック',
       'media_url' => 'https://realsound.jp/tech',
-      'archive' => 'https://web.archive.org/web/20260806061739/https://realsound.jp/tech/2026/08/post-2481666.html',
     ],
     [
       'date' => '2026/08/27',
@@ -204,7 +169,6 @@
       'url' => 'https://natalie.mu/music/column/686866',
       'media' => '音楽ナタリー',
       'media_url' => 'https://natalie.mu/music',
-      'archive' => null,
     ],
     [
       'date' => '2026/09/06',
@@ -212,7 +176,6 @@
       'url' => 'https://encount.press/archives/1060593/',
       'media' => 'ENCOUNT',
       'media_url' => 'https://encount.press/',
-      'archive' => 'https://web.archive.org/web/20260919055143/https://encount.press/archives/1060593/',
     ],
     [
       'date' => '2026/09/10',
@@ -220,7 +183,6 @@
       'url' => 'https://toyokeizai.net/articles/-/956929?display=b',
       'media' => '東洋経済オンライン',
       'media_url' => 'https://toyokeizai.net/',
-      'archive' => 'https://web.archive.org/web/20260919061409/https://toyokeizai.net/articles/-/956929?display=b',
     ],
     [
       'date' => '2026/09/10',
@@ -228,16 +190,13 @@
       'url' => 'https://toyokeizai.net/articles/-/956932?display=b',
       'media' => '東洋経済オンライン',
       'media_url' => 'https://toyokeizai.net/',
-      'archive' => 'https://web.archive.org/web/20260919061455/https://toyokeizai.net/articles/-/956932?display=b',
     ],
     [
       'date' => '2026/09/25',
       'title' => '【業界騒然】アイドルがAIでシステム開発 / アイドルサイボーグのプロフェッショナル哲学 / 独学で学ぶ最短学習法 / ファンを巻き込む最強のPM思考 / 失敗を物語に変えるフェイルセーフ設計の全貌',
       'url' => 'https://www.youtube.com/watch?v=CqmalArD2Hg',
-      'label' => 'YouTubeで見る',
       'media' => 'テクノロジーメディア「Newbee」',
       'media_url' => 'https://newbee.co.jp/',
-      'archive' => null,
     ],
   ];
 ?>
@@ -245,7 +204,7 @@
 <main>
   <h1>宮本佳林 テック仕事まとめ</h1>
 <div class="kt-lead">
-  <p>宮本佳林さんが作ったサイトや配信の仕組みを、公開されたものだけ年代順に並べています。それぞれの簡単な構成と、本人がくわしく書いたブログへのリンクも付けました。</p>
+  <p>宮本佳林さんが作ったサイトや配信、登壇、インタビューを、公開されたものだけ年代順に並べています。技術のくわしい話は、本人のブログへのリンクからどうぞ。</p>
   <p>技術の話はちょっと…という人は、作ったきっかけや開発の流れを書いたブログを<a href="#reading">「読み物」</a>にまとめています。</p>
 </div>
 
@@ -255,19 +214,12 @@
   <li>
     <span class="kt-date"><?= htmlspecialchars($item['date'] ?? '日付未定') ?></span>
 <?php if (!empty($item['url'])): ?>
-    <a class="kt-title" href="<?= htmlspecialchars($item['url']) ?>" target="_blank" rel="noopener noreferrer"><?= htmlspecialchars($item['title']) ?></a>
+    <a class="kt-title" href="<?= htmlspecialchars($item['url']) ?>" target="_blank" rel="noopener noreferrer"><?= htmlspecialchars($item['title']) ?><span class="kt-kind">（<?= kt_kind($item['url'], 'サイト') ?>）</span></a>
 <?php else: ?>
     <span class="kt-title"><?= htmlspecialchars($item['title']) ?></span>
 <?php endif; ?>
 <?php if (!empty($item['desc'])): ?>
     <span class="kt-desc"><?= htmlspecialchars($item['desc']) ?></span>
-<?php endif; ?>
-<?php if (!empty($item['stack'])): ?>
-    <dl class="kt-stack">
-<?php foreach ($item['stack'] as [$k, $v]): ?>
-      <dt><?= htmlspecialchars($k) ?></dt><dd><?= htmlspecialchars($v) ?></dd>
-<?php endforeach; ?>
-    </dl>
 <?php endif; ?>
 <?php if (!empty($item['blogs'])): ?>
     <span class="kt-sub kt-blogs"><?php foreach ($item['blogs'] as [$label, $url]): ?><a href="<?= htmlspecialchars($url) ?>" target="_blank" rel="noopener noreferrer"><?= htmlspecialchars($label) ?></a><?php endforeach; ?></span>
@@ -310,29 +262,12 @@
 <?php foreach ($interviews as $iv): ?>
   <li>
     <span class="kt-date"><?= htmlspecialchars($iv['date']) ?></span>
-    <a class="kt-title" href="<?= htmlspecialchars($iv['url']) ?>" target="_blank" rel="noopener noreferrer"><?= htmlspecialchars($iv['title']) ?></a>
-    <span class="kt-sub"><a href="<?= htmlspecialchars($iv['media_url']) ?>" target="_blank" rel="noopener noreferrer"><?= htmlspecialchars($iv['media']) ?></a><?php if (!empty($iv['label'])): ?><a href="<?= htmlspecialchars($iv['url']) ?>" target="_blank" rel="noopener noreferrer"><?= htmlspecialchars($iv['label']) ?></a><?php endif; ?><?php if (!empty($iv['archive'])): ?><a href="<?= htmlspecialchars($iv['archive']) ?>" target="_blank" rel="noopener noreferrer">Web Archive</a><?php endif; ?></span>
+    <a class="kt-title" href="<?= htmlspecialchars($iv['url']) ?>" target="_blank" rel="noopener noreferrer"><?= htmlspecialchars($iv['title']) ?><span class="kt-kind">（<?= kt_kind($iv['url'], '記事') ?>）</span></a>
+    <span class="kt-sub"><a href="<?= htmlspecialchars($iv['media_url']) ?>" target="_blank" rel="noopener noreferrer"><?= htmlspecialchars($iv['media']) ?></a></span>
   </li>
 <?php endforeach; ?>
 </ul>
 <p>テック以外も含めたインタビューは「<a href="/hello-articles">ハロプロメンバーが語るインタビュー・Web記事まとめ</a>」にまとめています。</p>
-
-<h2>ログインして使うサイト：ツアーサイト</h2>
-<div class="kt-lead">
-  <p><a href="<?= htmlspecialchars($tour_site) ?>/" target="_blank" rel="noopener noreferrer">宮本佳林5周年記念LIVE TOUR 2026 ～ぼくのかんがえたさいきょうのセトリ</a>の機能です。</p>
-  <p>アカウントは5桁の数字・衣装・ペットを選んで作ります。別の環境に引き継ぐための12桁のコードが配られます。</p>
-  <p>どうやって作ったのかは<a href="https://ameblo.jp/miyamotokarin-official/entry-12980414977.html" target="_blank" rel="noopener noreferrer">サイトの裏側を書いたブログ</a>に、ここまでの流れは<a href="#reading">「読み物」</a>にあります。</p>
-</div>
-<ul class="kt-list">
-<?php foreach ($tour_pages as $page): ?>
-  <li>
-    <a class="kt-title" href="<?= htmlspecialchars($tour_site . $page['path']) ?>" target="_blank" rel="noopener noreferrer"><?= htmlspecialchars($page['title']) ?></a>
-<?php if (!empty($page['desc'])): ?>
-    <span class="kt-desc"><?= htmlspecialchars($page['desc']) ?></span>
-<?php endif; ?>
-  </li>
-<?php endforeach; ?>
-</ul>
 
 <h2 id="reading">読み物：作ったきっかけと開発の流れ</h2>
 <div class="kt-lead">
