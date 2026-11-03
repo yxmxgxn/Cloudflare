@@ -397,7 +397,7 @@
     <tr>
       <td rowspan="2" class="dc-group">19th</td>
       <td rowspan="2" class="dc-group">2025/2/26</td>
-      <td rowspan="2" class="dc-group"><a href="https://helloproject.com/release/7376/" target="_blank" rel="noopener noreferrer">初恋の亡霊/今夜はHearty Party/a></td>
+      <td rowspan="2" class="dc-group"><a href="https://helloproject.com/release/7376/" target="_blank" rel="noopener noreferrer">初恋の亡霊/今夜はHearty Party</a></td>
       <td><a href="https://www.youtube.com/watch?v=DquBd86wOYw" target="_blank" rel="noopener noreferrer">初恋の亡霊▶️</a>・<a href="https://www.youtube.com/watch?v=GkUijMTyJE0" target="_blank" rel="noopener noreferrer">🎥</a>・<a href="https://www.youtube.com/watch?v=g9EXEuk5sxo" target="_blank" rel="noopener noreferrer">💃</a></td>
       <td>西野蒟蒻</td>
       <td>KOUGA</td>
@@ -412,7 +412,7 @@
     <tr>
       <td rowspan="2" class="dc-group">20th</td>
       <td rowspan="2" class="dc-group">2025/10/8</td>
-      <td rowspan="2" class="dc-group"><a href="https://helloproject.com/release/7506/" target="_blank" rel="noopener noreferrer">四の五の言わず颯と別れてあげた/盛れ！ミ・アモーレ/a></td>
+      <td rowspan="2" class="dc-group"><a href="https://helloproject.com/release/7506/" target="_blank" rel="noopener noreferrer">四の五の言わず颯と別れてあげた/盛れ！ミ・アモーレ</a></td>
       <td><a href="https://www.youtube.com/watch?v=cnlS-vuMg40" target="_blank" rel="noopener noreferrer">四の五の言わず颯と別れてあげた▶️</a>・<a href="https://www.youtube.com/watch?v=jWz3Sc4n-Zw" target="_blank" rel="noopener noreferrer">🎥</a></td>
       <td>大森祥子</td>
       <td>KOUGA</td>
@@ -487,7 +487,7 @@
     <tr>
       <td>-</td>
       <td>2025/12/23</td>
-      <td><a href="https://www.youtube.com/watch?v=KGePThef8rc" target="_blank" rel="noopener noreferrer">盛れ！ミ・アモーレ（BAND Live Ver.）▶️🎥</a></td>
+      <td><a href="https://www.youtube.com/watch?v=KGePThef8rc" target="_blank" rel="noopener noreferrer">盛れ！ミ・アモーレ（BAND Live Ver.）▶️</a></td>
       <td>山崎あおい</td>
       <td>山崎あおい</td>
       <td>炭竃智弘</td>
@@ -495,7 +495,7 @@
     <tr>
       <td>-</td>
       <td>2025/12/23</td>
-      <td><a href="https://www.youtube.com/watch?v=G36amiUCkXU" target="_blank" rel="noopener noreferrer">盛れ！ミ・アモーレ（Concert 2025 Queen of Hearts Special Flush）▶️🎥</a></td>
+      <td><a href="https://www.youtube.com/watch?v=G36amiUCkXU" target="_blank" rel="noopener noreferrer">盛れ！ミ・アモーレ（Concert 2025 Queen of Hearts Special Flush）▶️</a></td>
       <td>山崎あおい</td>
       <td>山崎あおい</td>
       <td>炭竃智弘</td>
