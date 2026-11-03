@@ -260,8 +260,8 @@
 <?php foreach ($talks as $talk): ?>
   <article class="card ks-card">
     <p class="ks-meta"><span class="ks-date"><?= htmlspecialchars($talk['date'] . ' ' . $talk['time']) ?></span></p>
-    <h3 class="ks-title"><?= htmlspecialchars($talk['title']) ?></h3>
-    <p class="ks-by"><?= htmlspecialchars($talk['conference']) ?></p>
+    <h3 class="ks-title"><?= htmlspecialchars($talk['conference']) ?></h3>
+    <p class="ks-by"><?= htmlspecialchars($talk['title']) ?></p>
 <?php if (!empty($talk['place'])): ?>
     <p class="ks-note">会場：<?= htmlspecialchars($talk['place']) ?></p>
 <?php endif; ?>
