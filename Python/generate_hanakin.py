@@ -10,7 +10,7 @@
                    特殊な回は、相手IGシートに無い名前としてMember1にそのまま書く(リンク・グループなしで出る)
   相手IGシート   : ID,Member,Instagram,Group
                    ID+Memberでコラボ相手を公式Instagram・所属グループに紐づける(1IDに複数行)
-                   コラボ相手列は名前のみ(IGにリンク)、グループは一番右の列にまとめる
+                   コラボ相手列は「名前（グループ）」を1つにまとめる(名前部分がIGにリンク)
 
 両企画は同じイベント/相手IGシートを共有し、接頭辞で別テーブルに出力する。
 出力: Spreadsheet/hanakin_table.php, Spreadsheet/shanikama_table.php
@@ -108,10 +108,13 @@ def icon_link(url: str, icon: str, label: str) -> str:
     )
 
 
-def build_member_cells(ev: dict, profiles: dict[tuple, dict]) -> tuple[str, str]:
-    """(コラボ相手セル=名前のみ, グループセル) を返す。
-    グループ列は 1人 or 全員同じグループ→グループ名だけ、
-    違うグループが混ざる→「名前（グループ）・…」で並べる。"""
+def build_member_cell(ev: dict, profiles: dict[tuple, dict]) -> str:
+    """コラボ相手セル(名前+グループを1つにまとめる)を返す。
+    名前は相手IGへのリンク。グループは名前の後ろに（）で付ける。
+      1人                    : 名前（グループ）
+      複数人で全員同じグループ : 名前・名前（グループ）
+      複数人でグループが違う  : 名前（グループ）・名前（グループ）
+    グループが空、または名前と同じ(例: ロージークロニクル)なら（）は付けない。"""
     eid = val(ev, "ID")
     infos = []  # (name, ig, group)
     for key in ("Member1", "Member2"):
@@ -119,23 +122,20 @@ def build_member_cells(ev: dict, profiles: dict[tuple, dict]) -> tuple[str, str]
         if not name:
             continue
         p = profiles.get((eid, name)) or {}
-        infos.append((name, p.get("ig", ""), p.get("group", "")))
+        group = p.get("group", "")
+        infos.append((name, p.get("ig", ""), "" if group == name else group))
 
-    names_cell = "・".join(
-        link(ig, esc(name)) if ig else esc(name) for name, ig, _ in infos
-    )
+    def name_html(name: str, ig: str) -> str:
+        return link(ig, esc(name)) if ig else esc(name)
 
     groups = [g for _, _, g in infos]
     distinct = {g for g in groups if g}
-    if len(infos) <= 1:
-        group_cell = esc(groups[0]) if groups and groups[0] else ""
-    elif len(distinct) == 1 and all(groups):
-        group_cell = esc(next(iter(distinct)))
-    else:
-        group_cell = "・".join(
-            f"{esc(name)}（{esc(g)}）" if g else esc(name) for name, _, g in infos
-        )
-    return names_cell, group_cell
+    if len(infos) > 1 and len(distinct) == 1 and all(groups):
+        names = "・".join(name_html(n, ig) for n, ig, _ in infos)
+        return f"{names}（{esc(next(iter(distinct)))}）"
+    return "・".join(
+        name_html(n, ig) + (f"（{esc(g)}）" if g else "") for n, ig, g in infos
+    )
 
 
 def build_rows(events: list[dict], profiles: dict[tuple, dict]) -> str:
@@ -144,14 +144,12 @@ def build_rows(events: list[dict], profiles: dict[tuple, dict]) -> str:
     lines = []
     for i, ev in enumerate(valid):
         row_class = ' class="row-even"' if i % 2 else ""
-        names_cell, group_cell = build_member_cells(ev, profiles)
         lines.append(
             f"<tr{row_class}>"
             f"<td>{format_date(val(ev, 'Date'))}</td>"
             f'<td>{icon_link(val(ev, "Instagram"), ICON_INSTAGRAM, "Instagram")}</td>'
             f'<td>{icon_link(val(ev, "TikTok"), ICON_TIKTOK, "TikTok")}</td>'
-            f"<td>{names_cell}</td>"
-            f"<td>{group_cell}</td>"
+            f"<td>{build_member_cell(ev, profiles)}</td>"
             "</tr>"
         )
     return "\n".join(lines)
