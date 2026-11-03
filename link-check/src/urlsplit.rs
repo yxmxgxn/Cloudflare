@@ -1,8 +1,8 @@
 //! Python の urllib.parse (urlsplit / urlunsplit / urljoin) と同じ分け方をする小さな実装。
 //!
 //! url クレートは WHATWG 準拠でURLを正規化する(末尾に / を足す、エスケープを直す等)ため、
-//! 集めたURLの文字列がPython版と変わってしまう。レポートの突き合わせができるよう、
-//! ここではPythonと同じく「切り分けるだけで書き換えない」。
+//! レポートに出るURLがページやスプレッドシートに書いたものと変わり、検索して探せなくなる。
+//! ここでは Python と同じく「切り分けるだけで書き換えない」。
 
 /// urlsplit の結果。scheme は小文字化済み
 #[derive(Debug, Clone, Default, PartialEq, Eq)]

@@ -1,4 +1,4 @@
-//! ビルド済みHTMLからリンクを集める。check_links.py の「収集」と同じ判断をする。
+//! ビルド済みHTMLからリンクを集める。
 
 use std::collections::{BTreeMap, BTreeSet};
 use std::fs;
