@@ -1,7 +1,6 @@
 //! 検査結果を report.md(Issue と Actions のサマリーに貼る)と stats.json(件数)にする。
-//! check_links.py の build_report と同じ見た目で出す。
 
-use std::collections::BTreeSet;
+use std::collections::{BTreeMap, BTreeSet};
 use std::time::Duration;
 
 use chrono::{FixedOffset, Utc};
@@ -9,6 +8,7 @@ use serde::Serialize;
 
 use crate::check::Outcome;
 use crate::collect::LinkMap;
+use crate::pattern::group_moved;
 use crate::redirect::Verdict;
 
 /// 要確認は件数が多くなりがちなので、max_items とは別にこの件数で打ち切る
@@ -97,6 +97,7 @@ pub fn build_report(
     let warn = pick(results, Verdict::Warn);
     let moved = pick(results, Verdict::Moved);
     let upgrade = pick(results, Verdict::Https);
+    let (patterns, moved_rest) = group_moved(&moved);
 
     // そのURLが載っているページへのリンク(最大10件)
     let sources = |url: &str| -> String {
@@ -146,6 +147,14 @@ pub fn build_report(
             "- 🟡 別のページへ転送 {} 件（引っ越しなら新しいURLに貼り替えると安心）",
             comma(moved.len())
         ));
+        if !patterns.is_empty() {
+            let grouped: usize = patterns.iter().map(|p| p.items.len()).sum();
+            l.push(format!(
+                "  - うち {} 件は {} 通りの書き換えでまとめて直せます",
+                comma(grouped),
+                patterns.len()
+            ));
+        }
     }
     if !warn.is_empty() {
         l.push(format!(
@@ -215,20 +224,68 @@ pub fn build_report(
         l.push("".into());
     }
 
-    if !moved.is_empty() {
+    if !patterns.is_empty() {
+        l.push(format!(
+            "### 🟡 まとめて直せる転送（{}通り・{}件）",
+            patterns.len(),
+            patterns.iter().map(|p| p.items.len()).sum::<usize>()
+        ));
+        l.push("".into());
+        l.push(
+            "同じ書き換えで転送されているリンク。左を右に置き換えれば、まとめて転送されなくなります。"
+                .into(),
+        );
+        l.push("".into());
+        for p in &patterns {
+            l.push(format!(
+                "- **{}** {}件: `{}` → `{}`",
+                p.host,
+                comma(p.items.len()),
+                p.from,
+                p.to
+            ));
+            let (url, o) = p.items[0];
+            l.push(format!("  - 例: {url} → {}", o.last));
+            // どのページに多いか(直す場所の目安)
+            let mut per_page: BTreeMap<&str, usize> = BTreeMap::new();
+            for (url, _) in &p.items {
+                for page in external.get(url).into_iter().flatten() {
+                    *per_page.entry(page.as_str()).or_default() += 1;
+                }
+            }
+            let mut per_page: Vec<_> = per_page.into_iter().collect();
+            per_page.sort_by_key(|(_, n)| std::cmp::Reverse(*n));
+            let shown: Vec<String> = per_page
+                .iter()
+                .take(10)
+                .map(|(page, n)| format!("[{page}]({base_url}{page})（{n}件）"))
+                .collect();
+            l.push(format!(
+                "  - 掲載元: {}{}",
+                shown.join(", "),
+                ellipsis(per_page.len())
+            ));
+        }
+        l.push("".into());
+    }
+
+    if !moved_rest.is_empty() {
         l.push(format!(
             "<details><summary>🟡 別のページへ転送 {}件\
              （ページは開けるが、元と違う場所に着いた。引っ越しか、別の記事に差し替わったか）</summary>",
-            moved.len()
+            moved_rest.len()
         ));
         l.push("".into());
-        for (url, o) in moved.iter().take(max_items) {
+        for (url, o) in moved_rest.iter().take(max_items) {
             l.push(format!("- {url}"));
             l.push(format!("  - 転送先: {}", o.last));
             l.push(sources(url));
         }
-        if moved.len() > max_items {
-            l.push(format!("- …ほか {} 件", moved.len() - max_items));
+        if moved_rest.len() > max_items {
+            l.push(format!(
+                "- …ほか {} 件（全件は Actions の成果物 report.md を参照）",
+                moved_rest.len() - max_items
+            ));
         }
         l.push("".into());
         l.push("</details>".into());

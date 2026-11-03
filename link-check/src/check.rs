@@ -1,7 +1,7 @@
-//! 外部リンクのHTTP検査。check_links.py の check_url 以下と同じ判断をする。
+//! 外部リンクのHTTP検査。
 //!
 //! 同一ドメインへは1本ずつ・間隔をあけて送り、ドメインが違えば並列に走らせる。
-//! 何を「リンク切れ」と呼ぶかの方針は check_links.py 冒頭のコメントを参照。
+//! 何を「リンク切れ」と呼ぶかの方針は main.rs 冒頭のコメントを参照。
 
 use std::collections::BTreeMap;
 use std::error::Error as _;
@@ -110,7 +110,7 @@ fn classify_status(code: u16) -> Outcome {
     Outcome::new(verdict, detail, Kind::Http)
 }
 
-/// 接続エラーを振り分ける。詳細はレポートの見た目を揃えるため Python 版の例外名に寄せる
+/// 接続エラーを振り分ける。詳細の名前は以前の Python 版(requests の例外名)に合わせてある
 fn classify_error(e: &reqwest::Error) -> Outcome {
     // reqwest のエラーは「送信失敗 ← 接続失敗 ← DNS失敗」のように原因が連なっているので、全部つなげて見る
     let mut chain = e.to_string();
