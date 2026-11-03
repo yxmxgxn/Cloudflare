@@ -30,8 +30,8 @@
       'desc' => 'リリースイベント会場でQRコードを読み込んでアンケートに答えると、その日だけ聴けるボイスメッセージが流れる',
       'url' => null,  // 期間限定(会場ごと)のサイトなのでリンクしない
       'blogs' => [
-        ['アンケートシステムの技術ブログ①', 'https://ameblo.jp/miyamotokarin-official/entry-12974691151.html'],
-        ['アンケートシステムの技術ブログ②', 'https://ameblo.jp/miyamotokarin-official/entry-12974750978.html'],
+        ['アンケートシステムの全体像', 'https://ameblo.jp/miyamotokarin-official/entry-12974691151.html'],
+        ['アンケートシステムの技術構成', 'https://ameblo.jp/miyamotokarin-official/entry-12974750978.html'],
       ],
     ],
     [
@@ -46,8 +46,8 @@
       'desc' => null,
       'url' => 'https://www.youtube.com/watch?v=ZnhFXyFOjto',
       'blogs' => [
-        ['配信システムの技術ブログ①', 'https://ameblo.jp/miyamotokarin-official/entry-12974432505.html'],
-        ['配信システムの技術ブログ②', 'https://ameblo.jp/miyamotokarin-official/entry-12974440752.html'],
+        ['配信システムの全体像', 'https://ameblo.jp/miyamotokarin-official/entry-12974432505.html'],
+        ['配信システムの技術構成', 'https://ameblo.jp/miyamotokarin-official/entry-12974440752.html'],
       ],
     ],
     [
@@ -150,9 +150,12 @@
 
   // 読み物。非エンジニアにも読める、作ったきっかけや開発の流れのブログ。上から順に通しで読む
   $reading = [
-    ['title' => 'バズを受けて書いた、開発の経緯', 'url' => 'https://ameblo.jp/miyamotokarin-official/entry-12974640519.html'],
-    ['title' => 'ツアーサイトまでの流れ', 'url' => 'https://ameblo.jp/miyamotokarin-official/entry-12980415652.html'],
+    ['title' => '10時間配信がバズったあとに書いた、作ることになった経緯', 'url' => 'https://ameblo.jp/miyamotokarin-official/entry-12974640519.html'],
+    ['title' => 'ツアーサイトにたどり着くまでの流れ（デバッグ配信の記事の続き）', 'url' => 'https://ameblo.jp/miyamotokarin-official/entry-12980415652.html'],
   ];
+
+  // アメブロのテック記事のテーマ一覧
+  $tech_theme = 'https://ameblo.jp/miyamotokarin-official/theme-10113896044.html';
 
   // インタビュー。古い順。hello-articles にも同じ記事がある
   $interviews = [
@@ -204,7 +207,7 @@
 <main>
   <h1>宮本佳林 テック仕事まとめ</h1>
 <div class="kt-lead">
-  <p>宮本佳林さんが作ったサイトや配信、登壇、インタビューを、公開されたものだけ年代順に並べています。技術のくわしい話は、本人のブログへのリンクからどうぞ。</p>
+  <p>宮本佳林さんが作ったサイトや配信、登壇、インタビューを、公開されたものだけ年代順に並べています。技術のくわしい話は、本人のブログへのリンクからどうぞ。テックの記事は<a href="<?= htmlspecialchars($tech_theme) ?>" target="_blank" rel="noopener noreferrer">アメブロのテーマ一覧</a>にもまとまっています。</p>
   <p>技術の話はちょっと…という人は、作ったきっかけや開発の流れを書いたブログを<a href="#reading">「読み物」</a>にまとめています。</p>
 </div>
 
@@ -278,6 +281,7 @@
   <li><a class="kt-title" href="<?= htmlspecialchars($r['url']) ?>" target="_blank" rel="noopener noreferrer"><?= htmlspecialchars($r['title']) ?></a></li>
 <?php endforeach; ?>
 </ol>
+<p>ほかのテックの記事は<a href="<?= htmlspecialchars($tech_theme) ?>" target="_blank" rel="noopener noreferrer">アメブロのテーマ一覧</a>から読めます。</p>
 
 </main>
 <?php include $_SERVER['DOCUMENT_ROOT'] . '/common/footer.php'; ?>
