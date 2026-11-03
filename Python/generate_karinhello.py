@@ -110,7 +110,8 @@ def build_table(rows: list[dict]) -> str:
         yt_id        = row.get("YouTube Music", "")
         yt_url       = f"https://music.youtube.com/watch?v={yt_id}" if yt_id else ""
         spotify_id   = row.get("Spotify", "")
-        spotify_url  = f"https://open.spotify.com/track/{spotify_id}" if spotify_id else ""
+        # 日本語環境では open.spotify.com/track/ が /intl-ja/track/ へ転送されるので、最初からそちらを指す
+        spotify_url  = f"https://open.spotify.com/intl-ja/track/{spotify_id}" if spotify_id else ""
         amazon_id    = row.get("Amazon Music", "")
         amazon_url   = f"https://music.amazon.co.jp/tracks/{amazon_id}" if amazon_id else ""
         lyricist     = escape_html(row.get("作詞", ""))
