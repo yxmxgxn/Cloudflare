@@ -53,7 +53,7 @@
     [
       'date' => '2026/09/18',
       'title' => 'あなたが選ぶ宮本佳林が最強になれるハロプロカバー曲',
-      'desc' => '2026/12/01 KT Zepp Yokohama「宮本佳林 5周年記念LIVE TOUR 2026 〜ぼくのかんがえたさいきょうの「宮本佳林MAX」〜」のハロプロサブスク解禁楽曲からリクエストを選ぶアンケートサイト',
+      'desc' => '宮本佳林 5周年記念LIVE TOUR 2026 最終日のKT Zepp Yokohama公演の曲を、サブスク解禁曲から選べるサイト',
       'url' => 'https://zepp-vote.karindayodayooooon.workers.dev/',
     ],
     [
