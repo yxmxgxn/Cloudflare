@@ -57,15 +57,6 @@
       'url' => 'https://zepp-vote.karindayodayooooon.workers.dev/',
     ],
     [
-      'date' => '2026/10/02',
-      'title' => 'ツアーサイトファンのみんなとデバッグ配信💻',
-      'desc' => null,
-      'url' => 'https://www.youtube.com/watch?v=wDl3w--ev3s',
-      'blogs' => [
-        ['デバッグ配信とサイトの裏側', 'https://ameblo.jp/miyamotokarin-official/entry-12980414977.html'],
-      ],
-    ],
-    [
       'date' => '2026/10/09',
       'title' => '宮本佳林5周年記念LIVE TOUR 2026 ～ぼくのかんがえたさいきょうのセトリ',
       'desc' => null,
@@ -74,10 +65,29 @@
         ['デバッグ配信とサイトの裏側', 'https://ameblo.jp/miyamotokarin-official/entry-12980414977.html'],
       ],
     ],
+  ];
+
+  // YouTubeの配信。古い順。タイトルは動画タイトルのまま。ヒストリーの10時間配信とは重複してよい
+  $streams = [
+    [
+      'date' => '2026/07/31',
+      'title' => 'みんなと協力して家でMV再現配信✨',
+      'desc' => '家にあるものを使って、みんなと協力しながらMVを再現する10時間の生配信。配信を支える仕組みも自分で作った。',
+      'url' => 'https://www.youtube.com/watch?v=ZnhFXyFOjto',
+    ],
+    [
+      'date' => '2026/10/02',
+      'title' => 'ツアーサイトファンのみんなとデバッグ配信💻',
+      'desc' => '公開前のツアーサイトを、ファンのみんなと触りながらバグを探した配信。',
+      'url' => 'https://www.youtube.com/watch?v=wDl3w--ev3s',
+      'blogs' => [
+        ['デバッグ配信とサイトの裏側', 'https://ameblo.jp/miyamotokarin-official/entry-12980414977.html'],
+      ],
+    ],
     [
       'date' => '2026/10/09',
       'title' => 'ツアーサイトリリース配信💻',
-      'desc' => null,
+      'desc' => 'ツアーサイトの公開に合わせた配信。',
       'url' => 'https://www.youtube.com/watch?v=YBG2dSOsFmA',
     ],
   ];
@@ -207,7 +217,7 @@
 <main>
   <h1>宮本佳林 テック仕事まとめ</h1>
 <div class="kt-lead">
-  <p>宮本佳林さんが作ったサイトや配信、登壇、インタビューを、公開されたものだけ年代順に並べています。技術のくわしい話は、本人のブログへのリンクからどうぞ。テックの記事は<a href="<?= htmlspecialchars($tech_theme) ?>" target="_blank" rel="noopener noreferrer">アメブロのテーマ一覧</a>にもまとまっています。</p>
+  <p>宮本佳林さんが作ったサイトや配信の仕組み、YouTube配信、登壇、インタビューを、公開されたものだけ年代順に並べています。技術のくわしい話は、本人のブログへのリンクからどうぞ。テックの記事は<a href="<?= htmlspecialchars($tech_theme) ?>" target="_blank" rel="noopener noreferrer">アメブロのテーマ一覧</a>にもまとまっています。</p>
   <p>技術の話はちょっと…という人は、作ったきっかけや開発の流れを書いたブログを<a href="#reading">「読み物」</a>にまとめています。</p>
 </div>
 
@@ -226,6 +236,20 @@
 <?php endif; ?>
 <?php if (!empty($item['blogs'])): ?>
     <span class="kt-sub kt-blogs"><?php foreach ($item['blogs'] as [$label, $url]): ?><a href="<?= htmlspecialchars($url) ?>" target="_blank" rel="noopener noreferrer"><?= htmlspecialchars($label) ?></a><?php endforeach; ?></span>
+<?php endif; ?>
+  </li>
+<?php endforeach; ?>
+</ul>
+
+<h2>YouTube配信</h2>
+<ul class="kt-list">
+<?php foreach ($streams as $st): ?>
+  <li>
+    <span class="kt-date"><?= htmlspecialchars($st['date']) ?></span>
+    <a class="kt-title" href="<?= htmlspecialchars($st['url']) ?>" target="_blank" rel="noopener noreferrer"><?= htmlspecialchars($st['title']) ?><span class="kt-kind">（YouTube）</span></a>
+    <span class="kt-desc"><?= htmlspecialchars($st['desc']) ?></span>
+<?php if (!empty($st['blogs'])): ?>
+    <span class="kt-sub kt-blogs"><?php foreach ($st['blogs'] as [$label, $url]): ?><a href="<?= htmlspecialchars($url) ?>" target="_blank" rel="noopener noreferrer"><?= htmlspecialchars($label) ?></a><?php endforeach; ?></span>
 <?php endif; ?>
   </li>
 <?php endforeach; ?>
