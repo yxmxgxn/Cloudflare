@@ -534,7 +534,7 @@
     <tr>
       <td rowspan="29" class="dc-group">1st</td>
       <td rowspan="29" class="dc-group">2015/7/15</td>
-      <td rowspan="29" class="dc-group">First Squeeze!</td>
+      <td rowspan="29" class="dc-group"><a href="https://helloproject.com/release/4204/" target="_blank" rel="noopener noreferrer"></a></td>
       <td rowspan="12" class="dc-group">Disc.1 The Best Juice</td>
       <td>1</td>
       <td>天まで登れ!</td>
@@ -743,7 +743,7 @@
     <tr>
       <td rowspan="22" class="dc-group">2nd</td>
       <td rowspan="22" class="dc-group">2018/8/1</td>
-      <td rowspan="22" class="dc-group">Juice=Juice#2 -!Una mas!-</td>
+      <td rowspan="22" class="dc-group"><<a href="https://helloproject.com/release/5684/" t"arget="_blank" rel="noopener noreferrer">Juice=Juice#2 -!Una mas!-</a></td>
       <td rowspan="11" class="dc-group">Disc.1</td>
       <td>1</td>
       <td>Fiesta! Fiesta!</td>
@@ -902,7 +902,7 @@
     <tr>
       <td rowspan="24" class="dc-group">3rd</td>
       <td rowspan="24" class="dc-group">2022/4/20</td>
-      <td rowspan="24" class="dc-group">terzo</td>
+      <td rowspan="24" class="dc-group"><<a href="https://helloproject.com/release/6692/" target="_blank" rel="noopener noreferrer">terzo</a>/td>
       <td rowspan="16" class="dc-group">Disc.1 The Best Juice 2019-2022</td>
       <td>1</td>
       <td>微炭酸</td>
@@ -1089,7 +1089,7 @@
     <tr>
       <td rowspan="14" class="dc-group">1st</td>
       <td rowspan="14" class="dc-group">2023/10/11</td>
-      <td rowspan="14" class="dc-group">Juicetory</td>
+      <td rowspan="14" class="dc-group"><a href="https://helloproject.com/release/7056/" target="_blank" rel="noopener noreferrer">Juicetory</a><</td>
       <td>1</td>
       <td>ロマンスの途中（2023 10th Juice Ver.）</td>
       <td>つんく</td>
@@ -1204,9 +1204,9 @@
     <tr>
       <td rowspan="14" class="dc-group">1st</td>
       <td rowspan="14" class="dc-group">2026/6/21</td>
-      <td rowspan="14" class="dc-group">MORE! MORE! EP</td>
+      <td rowspan="14" class="dc-group"><a href="https://helloproject.com/release/7674/" target="_blank" rel="noopener noreferrer">MORE! MORE! EP</a></td>
       <td>1</td>
-      <td><a href="https://www.youtube.com/watch?v=66T4PgpJDn8" target="_blank" rel="noopener noreferrer">>クラクラ☆クライマックス🎥</a></td>
+      <td><a href="https://www.youtube.com/watch?v=66T4PgpJDn8" target="_blank" rel="noopener noreferrer">クラクラ☆クライマックス🎥</a></td>
       <td>広瀬香美/Maria Okada</td>
       <td>広瀬香美</td>
       <td>h-wonder</td>
