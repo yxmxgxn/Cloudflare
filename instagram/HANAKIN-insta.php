@@ -25,7 +25,6 @@
 <th>日付</th>
 <th><?php echo $icon_ig; ?></th>
 <th><?php echo $icon_tt; ?></th>
-<th>場所</th>
 <th>コラボ相手</th>
 <th>グループ</th>
 </tr>

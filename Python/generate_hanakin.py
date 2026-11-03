@@ -4,9 +4,10 @@
 (イベント+コラボ相手IG)を読み取り、PHPインクルード用のテーブル(tbody)
 フラグメントを企画ごとに生成する
 
-  イベントシート : ID,Date,Instagram,TikTok,Member1,Member2,Place
+  イベントシート : ID,Date,Instagram,TikTok,Member1,Member2
                     IDの接頭辞で企画を振り分ける(HK=HANAKIN / SK=シャニカマー45°)。
-                   Instagram/TikTokは投稿URL。Member1/2はコラボ相手(0人もあり)。Placeは特別な会場
+                   Instagram/TikTokは投稿URL。Member1/2はコラボ相手(0人もあり)。場所だけの回や「織田信長@岐阜駅」のような
+                   特殊な回は、相手IGシートに無い名前としてMember1にそのまま書く(リンク・グループなしで出る)
   相手IGシート   : ID,Member,Instagram,Group
                    ID+Memberでコラボ相手を公式Instagram・所属グループに紐づける(1IDに複数行)
                    コラボ相手列は名前のみ(IGにリンク)、グループは一番右の列にまとめる
@@ -43,8 +44,8 @@ OUTPUT_GENERATED = REPO_ROOT / "Generated" / "hanakin_generated.php"
 
 # IDの接頭辞ごとに別テーブルへ振り分ける(同じイベント/相手IGシートを共有)
 CHALLENGES = [
-    {"prefix": "HK", "table": REPO_ROOT / "Spreadsheet" / "hanakin_table.php", "place": True},
-    {"prefix": "SK", "table": REPO_ROOT / "Spreadsheet" / "shanikama_table.php", "place": False},
+    {"prefix": "HK", "table": REPO_ROOT / "Spreadsheet" / "hanakin_table.php"},
+    {"prefix": "SK", "table": REPO_ROOT / "Spreadsheet" / "shanikama_table.php"},
 ]
 
 
@@ -137,23 +138,18 @@ def build_member_cells(ev: dict, profiles: dict[tuple, dict]) -> tuple[str, str]
     return names_cell, group_cell
 
 
-def build_rows(events: list[dict], profiles: dict[tuple, dict], with_place: bool = True) -> str:
+def build_rows(events: list[dict], profiles: dict[tuple, dict]) -> str:
     valid = [e for e in events if val(e, "ID")]
     valid.sort(key=lambda e: sort_key(val(e, "Date")))
     lines = []
     for i, ev in enumerate(valid):
         row_class = ' class="row-even"' if i % 2 else ""
         names_cell, group_cell = build_member_cells(ev, profiles)
-        place_cell = ""
-        if with_place:
-            place = val(ev, "Place")
-            place_cell = f'<td>{"@" + esc(place) if place else ""}</td>'
         lines.append(
             f"<tr{row_class}>"
             f"<td>{format_date(val(ev, 'Date'))}</td>"
             f'<td>{icon_link(val(ev, "Instagram"), ICON_INSTAGRAM, "Instagram")}</td>'
             f'<td>{icon_link(val(ev, "TikTok"), ICON_TIKTOK, "TikTok")}</td>'
-            f"{place_cell}"
             f"<td>{names_cell}</td>"
             f"<td>{group_cell}</td>"
             "</tr>"
@@ -187,7 +183,7 @@ def main():
         subset = [e for e in events if val(e, "ID").startswith(ch["prefix"])]
         ch["table"].parent.mkdir(parents=True, exist_ok=True)
         with open(ch["table"], "w", encoding="utf-8") as f:
-            f.write(stamp + build_rows(subset, profiles, ch["place"]) + "\n")
+            f.write(stamp + build_rows(subset, profiles) + "\n")
         summary.append(f"{ch['prefix']} {len(subset)}回")
     with open(OUTPUT_GENERATED, "w", encoding="utf-8") as f:
         f.write(f'<div class="last-update">最終更新日：{generated}</div>\n')
