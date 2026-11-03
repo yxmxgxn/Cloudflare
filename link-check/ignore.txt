@@ -16,6 +16,7 @@ archive.org
 www.w3.org              # SVG/XMLの名前空間URL。リンクではない
 social-plugins.line.me  # 各ページ下のLINEシェアボタン。投稿画面を開くだけで、ログイン画面へ転送される
 https://www.threads.com/intent/   # 各ページ下のThreadsシェアボタン。同上
+maps.app.goo.gl         # Googleマップの短縮URL。必ず地図の長いURLへ転送されるので、毎回「転送」に出るだけ
 
 # --- botを弾くので誤検知にしかならない ---
 x.com
