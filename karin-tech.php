@@ -35,6 +35,12 @@
       ],
     ],
     [
+      'date' => '2026/07',  // 最後の回が7/30ごろ。日付は決めず、月まで
+      'title' => 'WithLIVE 全通特典サイト',
+      'desc' => 'WithLIVEで参加後にもらえるキーワードを全部集めると、特典動画が閲覧できる',
+      'url' => null,  // 期間限定のサイトなのでリンクしない
+    ],
+    [
       'date' => '2026/07/31',
       'title' => 'みんなと協力して家にあるものでMV再現10時間配信',
       'desc' => null,
@@ -43,12 +49,6 @@
         ['配信システムの技術ブログ①', 'https://ameblo.jp/miyamotokarin-official/entry-12974432505.html'],
         ['配信システムの技術ブログ②', 'https://ameblo.jp/miyamotokarin-official/entry-12974440752.html'],
       ],
-    ],
-    [
-      'date' => null,
-      'title' => 'WithLIVE 全通特典サイト',
-      'desc' => 'WithLIVEで参加後にもらえるキーワードを全部集めると、特典動画が閲覧できる',
-      'url' => null,  // 期間限定のサイトなのでリンクしない
     ],
     [
       'date' => '2026/09/18',
