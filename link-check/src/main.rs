@@ -23,6 +23,7 @@
 //! - 接続エラーは並列実行中の一時的な詰まりでよく起きるので、最後に直列でもう一度確かめる。
 //! - YouTube は削除済み動画でも watch ページが 200 を返すので oEmbed で生死を判定する。
 //! - 除外したいドメイン・URLは link-check/ignore.txt に書く(理由もそこにコメントで残す)。
+//!   botを弾くサイトは manual: を付けて書くと、アクセスせずにレポートへ「自分で確認するリンク」として載る。
 //!
 //! 2026年11月までは Python/check_links.py が同じことをしていた(判定・レポートの見た目はそれと同じ)。
 
@@ -43,9 +44,9 @@ use std::time::Instant;
 use clap::Parser;
 
 use crate::check::{Options, check_all};
-use crate::collect::{collect_links, is_ignored, load_ignore_rules};
+use crate::collect::{collect_links, load_rules, matches};
 use crate::internal::{load_redirects, resolve_internal};
-use crate::report::{Counts, build_report, stats};
+use crate::report::{Collected, Counts, build_report, stats};
 use crate::urlsplit::urlsplit;
 
 #[derive(Parser)]
@@ -107,7 +108,7 @@ async fn main() -> ExitCode {
         return ExitCode::from(2);
     }
 
-    let rules = match load_ignore_rules(&args.ignore) {
+    let rules = match load_rules(&args.ignore) {
         Ok(r) => r,
         Err(e) => {
             eprintln!("エラー: {} を読めません: {e}", args.ignore.display());
@@ -130,8 +131,18 @@ async fn main() -> ExitCode {
         .collect();
 
     // BTreeMap なのでキーは既にソート済み
-    let mut targets: Vec<&String> = external.keys().filter(|u| !is_ignored(u, &rules)).collect();
-    let ignored = external.len() - targets.len();
+    let mut targets: Vec<&String> = Vec::new();
+    let mut manual: Vec<&String> = Vec::new();
+    let mut ignored = 0;
+    for url in external.keys() {
+        if matches(url, &rules.ignore) {
+            ignored += 1;
+        } else if matches(url, &rules.manual) {
+            manual.push(url);
+        } else {
+            targets.push(url);
+        }
+    }
     if args.limit > 0 {
         targets.truncate(args.limit);
     }
@@ -142,10 +153,11 @@ async fn main() -> ExitCode {
         internal_broken.len()
     );
     eprintln!(
-        "外部リンク {} 件中 {} 件を検査（除外 {} 件）",
+        "外部リンク {} 件中 {} 件を検査（除外 {} 件・自分で確認 {} 件）",
         external.len(),
         targets.len(),
-        ignored
+        ignored,
+        manual.len()
     );
 
     let mut by_host: BTreeMap<String, Vec<String>> = BTreeMap::new();
@@ -178,6 +190,7 @@ async fn main() -> ExitCode {
     let counts = Counts {
         checked: targets.len(),
         ignored,
+        manual: manual.len(),
         internal: internal.len(),
     };
     let opts = Options {
@@ -195,11 +208,15 @@ async fn main() -> ExitCode {
     };
     let elapsed = started.elapsed();
 
+    let links = Collected {
+        external: &external,
+        internal_broken: &internal_broken,
+        manual: &manual,
+    };
     let report = |max_items| {
         build_report(
             &args.base_url,
-            &external,
-            &internal_broken,
+            &links,
             &results,
             &counts,
             elapsed,
