@@ -10,6 +10,7 @@ use crate::check::Outcome;
 use crate::collect::LinkMap;
 use crate::pattern::group_moved;
 use crate::redirect::Verdict;
+use crate::urlsplit::urlsplit;
 
 /// 要確認は件数が多くなりがちなので、max_items とは別にこの件数で打ち切る
 const MAX_WARN_ITEMS: usize = 200;
@@ -18,10 +19,20 @@ const MAX_WARN_ITEMS: usize = 200;
 pub struct Counts {
     pub checked: usize,
     pub ignored: usize,
+    pub manual: usize,
     pub internal: usize,
 }
 
-/// stats.json の中身。ワークフローが broken_total と https を見てIssueを立てるか決める
+/// 検査の前に振り分けたリンク
+pub struct Collected<'a> {
+    /// 外部URL → 載っているページ
+    pub external: &'a LinkMap,
+    pub internal_broken: &'a [(&'a String, &'a BTreeSet<String>)],
+    /// 検査せず、自分で確認してもらうリンク(ignore.txt の manual:)
+    pub manual: &'a [&'a String],
+}
+
+/// stats.json の中身。ワークフローが broken_total・https・manual を見てIssueを立てるか決める
 #[derive(Serialize)]
 pub struct Stats {
     pub broken_external: usize,
@@ -32,6 +43,7 @@ pub struct Stats {
     pub https: usize,
     pub checked: usize,
     pub ignored: usize,
+    pub manual: usize,
     pub elapsed_sec: u64,
 }
 
@@ -76,14 +88,14 @@ pub fn stats(
         https: pick(results, Verdict::Https).len(),
         checked: counts.checked,
         ignored: counts.ignored,
+        manual: counts.manual,
         elapsed_sec: elapsed.as_secs_f64().round() as u64,
     }
 }
 
 pub fn build_report(
     base_url: &str,
-    external: &LinkMap,
-    internal_broken: &[(&String, &BTreeSet<String>)],
+    links: &Collected,
     results: &[(String, Outcome)],
     counts: &Counts,
     elapsed: Duration,
@@ -92,6 +104,7 @@ pub fn build_report(
     let jst = FixedOffset::east_opt(9 * 3600).unwrap();
     let now = Utc::now().with_timezone(&jst).format("%Y-%m-%d %H:%M JST");
     let secs = elapsed.as_secs_f64();
+    let (external, internal_broken) = (links.external, links.internal_broken);
     // results は URL 順に並んでいるので、振り分けても URL 順のまま
     let broken = pick(results, Verdict::Broken);
     let warn = pick(results, Verdict::Warn);
@@ -126,6 +139,12 @@ pub fn build_report(
         comma(counts.checked),
         comma(counts.ignored)
     ));
+    if !links.manual.is_empty() {
+        l.push(format!(
+            "- 👀 **自分で確認するリンク {} 件**（botを弾くサイトなので自動では確かめていない）",
+            comma(links.manual.len())
+        ));
+    }
     l.push(format!(
         "- 検査した内部リンク: **{}** 件",
         comma(counts.internal)
@@ -220,6 +239,44 @@ pub fn build_report(
             l.push(format!("- [{}] {url}", o.detail));
             l.push(format!("  - 貼り替え先: {}", o.last));
             l.push(sources(url));
+        }
+        l.push("".into());
+    }
+
+    if !links.manual.is_empty() {
+        l.push(format!(
+            "### 👀 自分で確認するリンク（{}件）",
+            links.manual.len()
+        ));
+        l.push("".into());
+        l.push(
+            "botを弾くので自動では確かめていないサイト（`ignore.txt` の `manual:`）。\
+             クリックしてページが開ければOKです。"
+                .into(),
+        );
+        // サイトごとにまとめる(同じサイトは同じ理由で弾かれているので、まとめて見れば済む)
+        let mut by_host: BTreeMap<String, Vec<&String>> = BTreeMap::new();
+        for url in links.manual.iter().take(max_items) {
+            by_host
+                .entry(urlsplit(url).hostname())
+                .or_default()
+                .push(url);
+        }
+        for (host, urls) in &by_host {
+            l.push("".into());
+            l.push(format!("**{host}**（{}件）", urls.len()));
+            l.push("".into());
+            for url in urls {
+                l.push(format!("- {url}"));
+                l.push(sources(url));
+            }
+        }
+        if links.manual.len() > max_items {
+            l.push("".into());
+            l.push(format!(
+                "…ほか {} 件（全件は Actions の成果物 report.md を参照）",
+                links.manual.len() - max_items
+            ));
         }
         l.push("".into());
     }

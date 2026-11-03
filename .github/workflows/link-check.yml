@@ -71,14 +71,16 @@ jobs:
         if: always()
         run: cat report-issue.md >> "$GITHUB_STEP_SUMMARY" || true
 
-      # 壊れたリンクか https に貼り替えられるリンクがあればIssueを1本だけ立てる
-      # (既にあれば本文を差し替える)。全部直ってチェックが通ったら自動でクローズする。
+      # 壊れたリンク・https に貼り替えられるリンク・自分で確認するリンク(ignore.txt の manual:)の
+      # どれかがあればIssueを1本だけ立てる(既にあれば本文を差し替える)。どれも無ければ自動でクローズする。
+      # manual: があるうちは毎月Issueが立つので、クリックして確かめたら手で閉じる。
       - name: Create or update issue
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
           BROKEN=$(jq '.broken_total' stats.json)
           HTTPS=$(jq '.https // 0' stats.json)
+          MANUAL=$(jq '.manual // 0' stats.json)
           TITLE="🔗 リンク切れレポート ($(TZ=Asia/Tokyo date +%Y-%m-%d))"
           gh label create link-check --color 8C6BB8 --description "リンクチェックの自動レポート" 2>/dev/null || true
           ISSUE=$(gh issue list --label link-check --state open --limit 1 --json number --jq '.[0].number // empty')
@@ -89,11 +91,11 @@ jobs:
             cat report-issue.md
           } > issue-body.md
 
-          if [ "$BROKEN" -gt 0 ] || [ "$HTTPS" -gt 0 ]; then
+          if [ "$BROKEN" -gt 0 ] || [ "$HTTPS" -gt 0 ] || [ "$MANUAL" -gt 0 ]; then
             if [ -n "$ISSUE" ]; then
               # タイトルの日付も差し替えて、いつ時点の結果か一覧から分かるようにする
               gh issue edit "$ISSUE" --title "$TITLE" --body-file issue-body.md
-              gh issue comment "$ISSUE" --body "🔁 最新のチェック結果に更新しました（リンク切れ ${BROKEN} 件・https化 ${HTTPS} 件）。"
+              gh issue comment "$ISSUE" --body "🔁 最新のチェック結果に更新しました（リンク切れ ${BROKEN} 件・https化 ${HTTPS} 件・自分で確認 ${MANUAL} 件）。"
               echo "Issue #$ISSUE を更新しました"
             else
               gh issue create \
@@ -102,9 +104,9 @@ jobs:
                 --body-file issue-body.md
             fi
           else
-            echo "リンク切れ・https化なし"
+            echo "リンク切れ・https化・自分で確認するリンクなし"
             if [ -n "$ISSUE" ]; then
-              gh issue comment "$ISSUE" --body "✅ 今回のチェックではリンク切れ・https化ともにゼロだったのでクローズします。"
+              gh issue comment "$ISSUE" --body "✅ 今回のチェックではリンク切れ・https化・自分で確認するリンクがゼロだったのでクローズします。"
               gh issue close "$ISSUE"
             fi
           fi
