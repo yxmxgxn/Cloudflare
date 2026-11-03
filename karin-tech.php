@@ -25,7 +25,7 @@
       'url' => 'https://nameless-lake-b1b6.karindayodayooooon.workers.dev/hanakin-game',
     ],
     [
-      'date' => '2026/06/28',
+      'date' => '2026/06',  // 会場ごとに使ったので日付は決めず、月まで
       'title' => 'アンケート&ボイス配布サイト',
       'desc' => 'リリースイベント会場でQRコードを読み込んでアンケートに答えると、その日だけ聴けるボイスメッセージが流れる',
       'url' => null,  // 期間限定(会場ごと)のサイトなのでリンクしない
