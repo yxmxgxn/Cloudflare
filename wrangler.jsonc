@@ -13,8 +13,9 @@
     // 全体を true にすると静的ページも毎回Worker経由になるので範囲を限定する。
     "run_worker_first": ["/api/*", "/_feedback", "/_feedback/*"]
   },
-  // 宮本佳林のブログに残した自分のコメントを拾う(worker/index.js の scheduled)。3時間おき
-  "triggers": { "crons": ["0 */3 * * *"] },
+  // Cron は使わない。以前ブログコメント保存で登録していたものを外すため空にしておく
+  // (triggers を書かないだけだと、登録済みの Cron がそのまま残る)
+  "triggers": { "crons": [] },
   "d1_databases": [
     {
       "binding": "DB",
@@ -26,12 +27,6 @@
       "binding": "HELLO_DB",
       "database_name": "karin-hello",
       "database_id": "9cbb8446-a16b-4051-ac67-5767774d0a19"
-    },
-    {
-      // 宮本佳林のブログに残した自分のコメント(Cron が書き込む)
-      "binding": "COMMENT_DB",
-      "database_name": "karin-blog-comment",
-      "database_id": "9fe65bf5-bd1d-4aeb-87bf-2ccb8918d5b1"
     }
   ]
 }
