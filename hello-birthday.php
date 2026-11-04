@@ -9,9 +9,25 @@
   <h1>ハロプロバースデーイベント会場まとめ</h1>
   ハロプロメンバーのバースデーイベントがどこで行われてきたのかメンバーごとにまとめました。<br>
   非公式サイトのハロプロセトリ検索システム「ToMoKo」にてセットリストが公開されていたものはリンクを貼っています。<br>
-  表記ゆれはなくしていますが、タイトルもそのままにしています。過去のことなので細かい違いがあると思います。ご指摘ください。<br>
-  <h2>モーニング娘。</h2>
-  <ul>
+  表記ゆれはなくしていますが、タイトルもそのままにしています。日付場所等違いがあればご指摘ください。<br>
+  <nav class="group-jump">
+    <ul>
+      <li><a href="#g-morning">モーニング娘。</a></li>
+      <li><a href="#g-melon">メロン記念日</a></li>
+      <li><a href="#g-berryz">Berryz工房</a></li>
+      <li><a href="#g-cute">℃-ute</a></li>
+      <li><a href="#g-angerme">アンジュルム / スマイレージ</a></li>
+      <li><a href="#g-juice">Juice=Juice</a></li>
+      <li><a href="#g-country">カントリー・ガールズ</a></li>
+      <li><a href="#g-kobushi">こぶしファクトリー</a></li>
+      <li><a href="#g-tsubaki">つばきファクトリー</a></li>
+      <li><a href="#g-beyooooonds">BEYOOOOONDS</a></li>
+      <li><a href="#g-ocha">OCHA NORMA</a></li>
+      <li><a href="#g-rosy">ロージークロニクル</a></li>
+    </ul>
+  </nav>
+  <h2 id="g-morning">モーニング娘。</h2>
+  <ul class="member-list">
     <li><a href="/Birthday/yuko_nakazawa-birth">中澤裕子</a></li>
     <li><a href="/Birthday/natsumi_abe-birth">安倍なつみ</a></li>
     <li><a href="/Birthday/kei_yasuda-birth">保田圭</a></li>
@@ -47,13 +63,14 @@
     <li><a href="/Birthday/rio_sakurai-birth">櫻井梨央</a></li>
     <li><a href="/Birthday/haruka_inoue-birth">井上春華</a></li>
     <li><a href="/Birthday/ako_yumigeta-birth">弓桁朱琴</a></li>
+    <li><a href="/Birthday/meisa_sugihara">杉原明紗</a></li>
   </ul>
-  <h2>メロン記念日</h2>
-  <ul>
+  <h2 id="g-melon">メロン記念日</h2>
+  <ul class="member-list">
     <li><a href="/Birthday/masae_otani-birth">大谷雅恵</a></li>
   </ul>
-  <h2>Berryz工房</h2>
-  <ul>
+  <h2 id="g-berryz">Berryz工房</h2>
+  <ul class="member-list">
     <li><a href="/Birthday/saki_shimizu-birth">清水佐紀</a></li>
     <li><a href="/Birthday/momoko_tugunaga-birth">嗣永桃子</a></li>
     <li><a href="/Birthday/chinami_tokunaga-birth">徳永千奈美</a></li>
@@ -62,16 +79,16 @@
     <li><a href="/Birthday/yurina_kumai-birth">熊井友理奈</a></li>
     <li><a href="/Birthday/risako_sugaya-birth">菅谷梨沙子</a></li>
   </ul>
-  <h2>℃-ute</h2>
-  <ul>
+  <h2 id="g-cute">℃-ute</h2>
+  <ul class="member-list">
     <li><a href="/Birthday/maimi_yajima-birth">矢島舞美</a></li>
     <li><a href="/Birthday/saki_nakajima-birth">中島早貴</a></li>
     <li><a href="/Birthday/airi_suzuki-birth">鈴木愛理</a></li>
     <li><a href="/Birthday/chisato_okai-birth">岡井千聖</a></li>
     <li><a href="/Birthday/mai_hagiwara-birth">萩原舞</a></li>
   </ul>
-  <h2>アンジュルム / スマイレージ</h2>
-  <ul>
+  <h2 id="g-angerme">アンジュルム / スマイレージ</h2>
+  <ul class="member-list">
     <li><a href="/Birthday/ayaka_wada-birth">和田彩花</a></li>
     <li><a href="/Birthday/kanon_fukuda-birth">福田花音</a></li>
     <li><a href="/Birthday/kana_nakanishi-birth">中西香菜</a></li>
@@ -95,8 +112,8 @@
     <li><a href="/Birthday/hana_goto-birth">後藤花</a></li>
     <li><a href="/Birthday/momoha_nagano-birth">長野桃羽</a></li>
   </ul>
-  <h2>Juice=Juice</h2>
-  <ul>
+  <h2 id="g-juice">Juice=Juice</h2>
+  <ul class="member-list">
     <li><a href="/Birthday/yuka_miyazaki-birth">宮崎由加</a></li>
     <li><a href="/Birthday/tomoko_kanazawa-birth">金澤朋子</a></li>
     <li><a href="/Birthday/sayuki_takagi-birth">高木紗友希</a></li>
@@ -115,8 +132,8 @@
     <li><a href="/Birthday/akari_endo-birth">遠藤彩加里</a></li>
     <li><a href="/Birthday/mifu_kawashima-birth">川嶋美楓</a></li>
   </ul>
-  <h2>カントリー・ガールズ</h2>
-  <ul>
+  <h2 id="g-country">カントリー・ガールズ</h2>
+  <ul class="member-list">
     <li><a href="/Birthday/momoko_tugunaga-birth">嗣永桃子</a></li>
     <li><a href="/Birthday/risa_yamaki-birth">山木梨沙</a></li>
     <li><a href="/Birthday/manaka_inaba-birth">稲場愛香</a></li>
@@ -125,8 +142,8 @@
     <li><a href="/Birthday/musubu_funaki-birth">船木結</a></li>
     <li><a href="/Birthday/nanami_yanagawa-birth">梁川奈々美</a></li>
   </ul>
-  <h2>こぶしファクトリー</h2>
-  <ul>
+  <h2 id="g-kobushi">こぶしファクトリー</h2>
+  <ul class="member-list">
     <li><a href="/Birthday/rio_fujii-birth">藤井梨央</a></li>
     <li><a href="/Birthday/ayaka_hirose-birth">広瀬彩海</a></li>
     <li><a href="/Birthday/minami_nomura-birth">野村みな美</a></li>
@@ -136,8 +153,8 @@
     <li><a href="/Birthday/natsumi_taguchi-birth">田口夏実</a></li>
     <li><a href="/Birthday/rei_inoue-birth">井上玲音</a></li>
   </ul>
-  <h2>つばきファクトリー</h2>
-  <ul>
+  <h2 id="g-tsubaki">つばきファクトリー</h2>
+  <ul class="member-list">
     <li><a href="/Birthday/risa_ogata-birth">小片リサ</a></li>
     <li><a href="/Birthday/ami_tanimoto-birth">谷本安美</a></li>
     <li><a href="/Birthday/kiki_asakura-birth">浅倉樹々</a></li>
@@ -156,8 +173,8 @@
     <li><a href="/Birthday/fuka_doi-birth">土居楓奏</a></li>
     <li><a href="/Birthday/itsuki_nishimura-birth">西村乙輝</a></li>
   </ul>
-  <h2>BEYOOOOONDS</h2>
-  <ul>
+  <h2 id="g-beyooooonds">BEYOOOOONDS</h2>
+  <ul class="member-list">
     <li><a href="/Birthday/kurumi_takase-birth">高瀬くるみ</a></li>
     <li><a href="/Birthday/reina_ichioka-birth">一岡伶奈</a></li>
     <li><a href="/Birthday/momohime_kiyono-birth">清野桃々姫</a></li>
@@ -171,8 +188,8 @@
     <li><a href="/Birthday/honoka_kobayashi-birth">小林萌花</a></li>
     <li><a href="/Birthday/utano_satoyoshi-birth">里吉うたの</a></li>
   </ul>
-  <h2>OCHA NORMA</h2>
-  <ul>
+  <h2 id="g-ocha">OCHA NORMA</h2>
+  <ul class="member-list">
     <li><a href="/Birthday/madoka_saito-birth">斉藤円香</a></li>
     <li><a href="/Birthday/ruli_hiromoto-birth">広本瑠璃</a></li>
     <li><a href="/Birthday/kanami_ishiguri-birth">石栗奏美</a></li>
@@ -184,8 +201,8 @@
     <li><a href="/Birthday/momo_kitahara-birth">北原もも</a></li>
     <li><a href="/Birthday/roko_tsutsui-birth">筒井澪心</a></li>
   </ul>
-  <h2>ロージークロニクル</h2>
-  <ul>
+  <h2 id="g-rosy">ロージークロニクル</h2>
+  <ul class="member-list">
     <li><a href="/Birthday/honoka_hashida-birth">橋田歩果</a></li>
     <li><a href="/Birthday/hinoha_yoshida-birth">吉田姫杷</a></li>
     <li><a href="/Birthday/karin_onoda-birth">小野田華凜</a></li>

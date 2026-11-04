@@ -17,7 +17,7 @@
 <main>
   <h1>Juice=Juice結成時 公式チャンネルの密着映像 まとめ</h1>
   <a href="https://www.youtube.com/@juicejuice" target="_blank">Juice=Juiceの公式チャンネル</a>のメジャーデビュー前後の密着映像をまとめました。
-  <ul>
+  <ul class="multi-col">
     <li><a href="https://www.youtube.com/watch?v=umZqsCLug3M"  target="_blank">Juice=Juice 密着映像 #1</a></li>
     <li><a href="https://www.youtube.com/watch?v=bq3A40hcsH4"  target="_blank">Juice=Juice 密着映像 #2</a></li>
     <li><a href="https://www.youtube.com/watch?v=kxkyBRr1SAY"  target="_blank">Juice=Juice 密着映像 #3</a></li>

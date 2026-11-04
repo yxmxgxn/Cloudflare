@@ -57,12 +57,12 @@ def val(row: dict, key: str) -> str:
 
 
 def format_date(date_str: str) -> str:
-    """2026年08月20日 / 2026-08-20 / 2026/8/20 → 2026年8月20日"""
+    """2026年08月20日 / 2026-08-20 / 2026/8/20 → 2026/08/20"""
     s = (date_str or "").strip()
     for fmt in ("%Y年%m月%d日", "%Y/%m/%d", "%Y-%m-%d"):
         try:
             dt = datetime.strptime(s, fmt)
-            return f"{dt.year}年{dt.month}月{dt.day}日"
+            return f"{dt.year}/{dt.month:02d}/{dt.day:02d}"
         except ValueError:
             continue
     return s
@@ -90,17 +90,22 @@ def build_title(vol: str, row: dict) -> str:
     return f"{head} ～{esc(pair)}～" if pair else head
 
 
-def build_meta(row: dict) -> str:
-    """2026年8月20日(木)LANDMARK HALL(神奈川)"""
-    date = format_date(val(row, "Date"))
-    day = val(row, "Day")
-    place = val(row, "Place")
-    pref = val(row, "Prefecture")
+def build_meta(rows: list[dict]) -> str:
+    """2026年8月20日 17:30開演 LANDMARK HALL(神奈川)
+    開演時刻は同じ日の公演から集める(昼夜公演なら 14:00 / 18:00開演 のように並ぶ)"""
+    head = rows[0]
+    date = format_date(val(head, "Date"))
+    times = list(dict.fromkeys(
+        val(r, "Time") for r in rows
+        if val(r, "Time") and val(r, "Date") in ("", val(head, "Date"))
+    ))
+    place = val(head, "Place")
+    pref = val(head, "Prefecture")
     text = esc(date)
-    if day:
-        text += f"({esc(day)})"
+    if times:
+        text += f" {esc(' / '.join(times))}開演"
     if place:
-        text += esc(place)
+        text += f" {esc(place)}"
     if pref:
         text += f"({esc(pref)})"
     return text
@@ -180,7 +185,7 @@ def build_cards(events: list[dict], videos_by_id: dict[str, list[dict]]) -> str:
         cards.append(
             f'<div class="card mh-card" id="mh-{esc(eid)}">'
             f'<p class="mh-title">{build_title(eid, head)}</p>'
-            f'<p class="mh-meta">{build_meta(head)}</p>'
+            f'<p class="mh-meta">{build_meta(rows)}</p>'
             f"{build_stages(rows, card_date)}"
             f"{build_videos(videos_by_id.get(eid, []))}"
             "</div>"
