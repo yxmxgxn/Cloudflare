@@ -1,4 +1,4 @@
-<!-- generated: 2026-11-04T06:19:52.182180+00:00 -->
+<!-- generated: 2026-11-04T06:48:49.627068+00:00 -->
 <option value="モーニング娘。">モーニング娘。</option>
 <option value="アンジュルム">アンジュルム</option>
 <option value="Juice=Juice">Juice=Juice</option>

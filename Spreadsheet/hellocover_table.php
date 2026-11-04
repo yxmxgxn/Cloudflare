@@ -1,4 +1,4 @@
-<!-- generated: 2026-11-04T06:30:08.314894+00:00 -->
+<!-- generated: 2026-11-04T06:48:18.041746+00:00 -->
 <tr class="hc-date-start" data-song="真夏の光線" data-member="亀井絵里" data-dan="第1弾"><td>真夏の光線</td><td>モーニング娘。</td><td>亀井絵里</td><td><a href="https://recochoku.jp/song/S20817760/single" target="_blank">レコチョク</a></td><td><a href="https://mora.jp/package/43000030/UFDL-1078/" target="_blank">mora</a></td><td></td><td>第1弾（2010/12/8）</td></tr>
 <tr data-song="ふるさと" data-member="亀井絵里" data-dan="第1弾"><td>ふるさと</td><td>モーニング娘。</td><td>亀井絵里</td><td><a href="https://recochoku.jp/song/S20817761/single" target="_blank">レコチョク</a></td><td><a href="https://mora.jp/package/43000030/UFDL-1078/" target="_blank">mora</a></td><td></td><td>第1弾（2010/12/8）</td></tr>
 <tr data-song="恋をしちゃいました!" data-member="亀井絵里" data-dan="第1弾"><td>恋をしちゃいました!</td><td>タンポポ</td><td>亀井絵里</td><td><a href="https://recochoku.jp/song/S20817762/single" target="_blank">レコチョク</a></td><td><a href="https://mora.jp/package/43000030/UFDL-1078/" target="_blank">mora</a></td><td></td><td>第1弾（2010/12/8）</td></tr>
