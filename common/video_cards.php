@@ -101,8 +101,9 @@ function video_cards(array $videos, array $opts = []): string
     $embed = $opts['embed'] ?? true;   // false ならその場で再生せずYouTubeを開く
     $out = '<div class="card-grid vc-grid">';
     foreach ($videos as $v) {
+        // embed => false のときは下の「YouTubeで見る」だけにする(時間付きの再生ボタンと中身が同じため)
         $out .= '<div class="card vc-card">'
-              . vc_thumb($v, $v['title'], $embed)
+              . ($embed ? vc_thumb($v, $v['title']) : '')
               . (empty($v['date']) ? '' : '<p class="vc-date">' . vc_h($v['date']) . '</p>')
               . '<p class="vc-title">' . vc_h($v['title']) . '</p>'
               . vc_subs($v['sub'] ?? null)
