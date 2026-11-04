@@ -142,8 +142,8 @@
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td>2026年9月15日</td><td>17:10</td><td>BEYOOOOONDS/SeasoningS 里吉うたのバースデーイベント2026</td><td>飛行船シアター</td><td></td><td></td></tr>
-<tr><td>2026年9月15日</td><td>19:30</td><td>BEYOOOOONDS/SeasoningS 里吉うたのバースデーイベント2026</td><td>飛行船シアター</td><td></td><td></td></tr>
+<tr class="row-even"><td>2026年9月15日</td><td>17:10</td><td>BEYOOOOONDS/SeasoningS 里吉うたのバースデーイベント2026</td><td>飛行船シアター</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/26178" target="_blank">Tomoko（セットリスト）</a></td></tr>
+<tr><td>2026年9月15日</td><td>19:30</td><td>BEYOOOOONDS/SeasoningS 里吉うたのバースデーイベント2026</td><td>飛行船シアター</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/26179" target="_blank">Tomoko（セットリスト）</a></td></tr>
 </tbody>
 </table>
 

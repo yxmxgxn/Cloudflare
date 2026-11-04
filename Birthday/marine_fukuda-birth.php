@@ -91,10 +91,10 @@
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td>2026年10月5日</td><td>16:50</td><td>つばきファクトリー 福田真琳バースデーイベント2026</td><td>荒川区民会館 大ホール</td><td></td><td><a href="https://hp-setlist.com/stage/27056" target="_blank">Tomoko（セットリスト）</a></td></tr>
-<tr><td>2026年10月5日</td><td>19:20</td><td>つばきファクトリー 福田真琳バースデーイベント2026</td><td>荒川区民会館 大ホール</td><td></td><td><a href="https://hp-setlist.com/stage/27057" target="_blank">Tomoko（セットリスト）</a></td></tr>
-<tr class="row-even"><td>2026年11月20日</td><td>18:00</td><td>つばきファクトリー 福田真琳バースデーイベント2026 in 名古屋</td><td>ミッドランドスクエア シネマ2</td><td></td><td></td></tr>
-<tr><td>2026年11月20日</td><td>19:45</td><td>つばきファクトリー 福田真琳バースデーイベント2026 in 名古屋</td><td>ミッドランドスクエア シネマ2</td><td></td><td></td></tr>
+<tr class="row-even"><td>2026年10月5日</td><td>16:50</td><td>つばきファクトリー 福田真琳バースデーイベント2026</td><td>荒川区民会館 大ホール</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/27056" target="_blank">Tomoko（セットリスト）</a></td></tr>
+<tr><td>2026年10月5日</td><td>19:20</td><td>つばきファクトリー 福田真琳バースデーイベント2026</td><td>荒川区民会館 大ホール</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/27057" target="_blank">Tomoko（セットリスト）</a></td></tr>
+<tr class="row-even"><td>2026年11月20日</td><td>18:00</td><td>つばきファクトリー 福田真琳バースデーイベント2026 in 名古屋</td><td>ミッドランドスクエア シネマ2</td><td>愛知県</td><td></td></tr>
+<tr><td>2026年11月20日</td><td>19:45</td><td>つばきファクトリー 福田真琳バースデーイベント2026 in 名古屋</td><td>ミッドランドスクエア シネマ2</td><td>愛知県</td><td></td></tr>
 </tbody>
 </table>
 

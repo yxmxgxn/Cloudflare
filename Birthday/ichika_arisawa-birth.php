@@ -93,8 +93,8 @@
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td>2027年1月20日</td><td>16:40</td><td>Juice=Juice 有澤一華バースデーイベント2027</td><td>有楽町朝日ホール</td><td></td><td></td></tr>
-<tr><td>2027年1月20日</td><td>19:00</td><td>Juice=Juice 有澤一華バースデーイベント2027</td><td>有楽町朝日ホール</td><td></td><td></td></tr>
+<tr class="row-even"><td>2027年1月20日</td><td>16:40</td><td>Juice=Juice 有澤一華バースデーイベント2027</td><td>有楽町朝日ホール</td><td>東京都</td><td></td></tr>
+<tr><td>2027年1月20日</td><td>19:00</td><td>Juice=Juice 有澤一華バースデーイベント2027</td><td>有楽町朝日ホール</td><td>東京都</td><td></td></tr>
 </tbody>
 </table>
 

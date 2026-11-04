@@ -165,8 +165,8 @@
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td>2026年11月23日</td><td>13:40</td><td>つばきファクトリー 山岸理子バースデーイベント2026</td><td>イベントスペース渋谷DAIA</td><td></td><td></td></tr>
-<tr><td>2026年11月23日</td><td>16:00</td><td>つばきファクトリー 山岸理子バースデーイベント2026</td><td>イベントスペース渋谷DAIA</td><td></td><td></td></tr>
+<tr class="row-even"><td>2026年11月23日</td><td>13:40</td><td>つばきファクトリー 山岸理子バースデーイベント2026</td><td>イベントスペース 渋谷DAIA</td><td>東京都</td><td></td></tr>
+<tr><td>2026年11月23日</td><td>16:00</td><td>つばきファクトリー 山岸理子バースデーイベント2026</td><td>イベントスペース 渋谷DAIA</td><td>東京都</td><td></td></tr>
 </tbody>
 </table>
 

@@ -1,4 +1,4 @@
-<!-- generated: 2026-11-04T06:48:52.474053+00:00 -->
+<!-- generated: 2026-11-04T08:31:52.704433+00:00 -->
 <article class="card bt-card" id="FC167">
 <p class="bt-meta"><span class="bt-date">2026/09/27</span><span class="bt-pref">三重県</span></p>
 <h2 class="bt-title">JR東海 おいないさ、伊勢キャンペーンプレゼンツ 伊勢鈴蘭がご案内！聖地巡礼 伊勢満喫ツアー</h2>

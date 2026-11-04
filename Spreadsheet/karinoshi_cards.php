@@ -1,4 +1,4 @@
-<!-- generated: 2026-11-04T06:48:22.446327+00:00 -->
+<!-- generated: 2026-11-04T08:31:22.972273+00:00 -->
 <div class="karin-card" data-pref="長崎県">
 <p class="karin-header">長崎県 長崎 カステララングドシャ</p>
 

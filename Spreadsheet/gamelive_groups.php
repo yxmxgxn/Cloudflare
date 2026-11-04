@@ -1,4 +1,4 @@
-<!-- generated: 2026-11-04T06:48:43.742559+00:00 -->
+<!-- generated: 2026-11-04T08:31:43.322257+00:00 -->
 <option value="アンジュルム">アンジュルム</option>
 <option value="つばきファクトリー">つばきファクトリー</option>
 <option value="モーニング娘。">モーニング娘。</option>

@@ -1,4 +1,4 @@
-<!-- generated: 2026-11-04T07:58:24.226514+00:00 -->
+<!-- generated: 2026-11-04T08:31:48.400472+00:00 -->
 <tbody class="hs-row" data-date="2026-11-14" data-year="2026" data-series="OF" data-place="大阪店" data-names="井上玲音|松永里愛" data-groups="こぶしファクトリー|Juice=Juice" data-search="ハロショ大阪二人会 大阪二人会 第四十八席 48 大阪店 ハロー！プロジェクトオフィシャルショップ 大阪店 会場 2026/11/14 2026-11-14 井上玲音と松永里愛が語るjuice=juice 井上玲音と松永里愛があなたの質問にお答えします！ 井上玲音 松永里愛 いのうえれい まつながりあい こぶしファクトリー juice=juice">
 <tr><td class="hs-date" rowspan="2">2026/11/14</td><td class="hs-event" rowspan="2"><span class="hs-series">大阪二人会</span><span class="hs-no">第四十八席</span></td><td class="hs-slot">#1 14:15</td><td class="hs-title">井上玲音と松永里愛が語るJuice=Juice</td><td class="hs-cast" rowspan="2"><span class="hs-cast-list" data-n="2"><span class="hs-cast-one"><span class="hs-name">井上玲音</span></span><span class="hs-cast-one"><span class="hs-name">松永里愛</span></span></span></td><td class="hs-place" rowspan="2" title="ハロー！プロジェクトオフィシャルショップ 大阪店">大阪店</td></tr>
 <tr><td class="hs-slot">#2 15:45</td><td class="hs-title">井上玲音と松永里愛があなたの質問にお答えします！</td></tr>
