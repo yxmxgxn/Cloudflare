@@ -9,7 +9,7 @@
   <h1>ハロプロバースデーイベント会場まとめ</h1>
   ハロプロメンバーのバースデーイベントがどこで行われてきたのかメンバーごとにまとめました。<br>
   非公式サイトのハロプロセトリ検索システム「ToMoKo」にてセットリストが公開されていたものはリンクを貼っています。<br>
-  表記ゆれはなくしていますが、タイトルもそのままにしています。過去のことなので細かい違いがあると思います。ご指摘ください。<br>
+  表記ゆれはなくしていますが、タイトルもそのままにしています。日付場所等違いがあればご指摘ください。<br>
   <nav class="group-jump">
     <ul>
       <li><a href="#g-morning">モーニング娘。</a></li>
@@ -63,6 +63,7 @@
     <li><a href="/Birthday/rio_sakurai-birth">櫻井梨央</a></li>
     <li><a href="/Birthday/haruka_inoue-birth">井上春華</a></li>
     <li><a href="/Birthday/ako_yumigeta-birth">弓桁朱琴</a></li>
+    <li><a href="/Birthday/meisa_sugihara">杉原明紗</a></li>
   </ul>
   <h2 id="g-melon">メロン記念日</h2>
   <ul class="member-list">
