@@ -1,6 +1,8 @@
+<div class="birthday-note">
 バースデーイベントのまとめはハロプロ公式・M-line公式ファンクラブのお知らせだけではなく、非公式サイト、各ファンのブログ・Xなど様々なソースからまとめたです<br>
 他のページに比べ当時の記録が残っていない人が多いために、特にデータの抜けがあると思います。<br>
 間違い・追加情報等あれば、<a href="https://x.com/yxmxgxn" target="_blank">Xでリプライ</a>を送っていただけるとありがたいです。
+</div>
 <footer>
 <div class="share-area">
 <?php

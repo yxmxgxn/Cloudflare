@@ -199,6 +199,11 @@ header {
     padding: 0 16px 0 0;
 }
 
+/* 誕生日ページの注意書き(common/birthday_footer.php)。本文と同じ左右の余白 */
+.birthday-note {
+  margin: 0 16px 16px;
+}
+
 /*メインコンテンツ
 -------------------------------------*/
 main {
@@ -810,6 +815,7 @@ header h1 {
 header,
 main,
 .last-update,
+.birthday-note,
 footer {
   margin-left: max(16px, calc((100% - 960px) / 2));
   margin-right: max(16px, calc((100% - 960px) / 2));
