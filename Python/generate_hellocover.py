@@ -5,7 +5,7 @@
 スプレッドシート(1行=1録音)を読み取り、PHPインクルード用のテーブル(tbody)フラグメントを出力する。
 列: 曲名,原曲アーティスト,カバーアーティスト,レコチョク,mora,iTunes,弾（配信日）
   レコチョク/mora/iTunes は各サービスの URL(空欄=配信なし・リンク切れ)。
-  並びはシートの並びのまま(曲ごと→弾の順→同じ弾ならWikipediaの掲載順)。
+  並びは配信日順(同じ日はシートの並びのまま)。曲ごとに見たいときは曲の絞り込みを使う。
 
 出力: Spreadsheet/hellocover_table.php
       Spreadsheet/hellocover_filter.php(メンバー・弾の絞り込み。ラジオボタン+CSSだけでJSなし)
@@ -74,6 +74,12 @@ def read_rows(source: str) -> list[dict]:
     return [r for r in reader if val(r, "曲名")]
 
 
+def delivery_key(r: dict) -> tuple:
+    """「第3弾（2011/1/26）」→ (2011, 1, 26)。並びは配信日順(同じ日はシートの並びのまま)。"""
+    m = re.search(r"(\d{4})/(\d{1,2})/(\d{1,2})", val(r, "弾（配信日）"))
+    return tuple(int(x) for x in m.groups()) if m else (9999, 0, 0)
+
+
 def dan_of(r: dict) -> str:
     """「第3弾（2011/1/26）」→「第3弾」。第3弾は配信日が2つあるので、弾の絞り込みは日付を外して見る。"""
     m = re.match(r"\s*(第\d+弾)", val(r, "弾（配信日）"))
@@ -104,7 +110,7 @@ def build_filter(rows: list[dict], yomi: dict[str, str]) -> str:
     """JSなしの絞り込み。ラジオボタン(メンバー・弾)と、選ばれたときに他の行を隠すCSSを出す。
 
     選択肢ごとに「.hc-wrap:has(#id:checked) 表の行のうち data-xxx が違うもの → 非表示」を書く。
-    メンバーと弾を両方選べばAND(両方に合う行だけ残る)になる。
+    弾・メンバー・曲を組み合わせて選べばAND(全部に合う行だけ残る)になる。
     """
     names = {val(r, "カバーアーティスト") for r in rows}
     names.discard("")
@@ -115,8 +121,14 @@ def build_filter(rows: list[dict], yomi: dict[str, str]) -> str:
     dans = {dan_of(r) for r in rows}
     dans.discard("")
     dans = sorted(dans, key=lambda d: int(re.search(r"\d+", d).group()))
+    # 曲は配信順(rows は配信順に並べ替え済み)に最初に出てきた順
+    songs = list(dict.fromkeys(val(r, "曲名") for r in rows))
 
-    groups = [("m", "メンバー", "member", members), ("d", "弾", "dan", dans)]
+    groups = [
+        ("d", "弾", "dan", dans),
+        ("m", "メンバー", "member", members),
+        ("s", "曲", "song", songs),
+    ]
     html_parts = []
     css = []
     for key, label, attr, values in groups:
@@ -151,13 +163,13 @@ def service_cell(url: str, label: str) -> str:
 
 def build_rows(rows: list[dict]) -> str:
     lines = []
-    prev_song = None
+    prev_date = None
     for r in rows:
         song = val(r, "曲名")
         classes = []
-        if song != prev_song:
-            classes.append("hc-song-start")  # 曲が変わる行は上に区切り線
-        prev_song = song
+        if val(r, "弾（配信日）") != prev_date:
+            classes.append("hc-date-start")  # 配信日が変わる行は上に区切り線
+        prev_date = val(r, "弾（配信日）")
         cls = f' class="{" ".join(classes)}"' if classes else ""
         cells = [
             f"<td>{esc(song)}</td>",
@@ -183,6 +195,7 @@ def main():
     rows = read_rows(args.csv)
     if not rows:
         raise SystemExit("シートに行がありません")
+    rows.sort(key=delivery_key)  # sort は安定なので、同じ配信日の中はシートの並びが残る
 
     jst = timezone(timedelta(hours=9))
     generated = datetime.now(jst).strftime("%Y/%m/%d")
