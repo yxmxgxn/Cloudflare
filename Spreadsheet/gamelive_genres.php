@@ -1,4 +1,4 @@
-<!-- generated: 2026-10-17T12:21:54.845425+00:00 -->
+<!-- generated: 2026-11-04T06:19:47.860485+00:00 -->
 <option value="FPS">FPS</option>
 <option value="RPG">RPG</option>
 <option value="アクション">アクション</option>

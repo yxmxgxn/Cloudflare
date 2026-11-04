@@ -1,4 +1,4 @@
-<!-- generated: 2026-11-03T16:06:04.190473+00:00 -->
+<!-- generated: 2026-11-04T06:19:43.024916+00:00 -->
 <optgroup label="まとめて">
 <option value="__synth">合成音声のみ</option>
 <option value="__human">人間ボーカルを含む</option>

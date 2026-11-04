@@ -1,4 +1,4 @@
-<!-- generated: 2026-10-27T05:20:12.385418+00:00 -->
+<!-- generated: 2026-11-04T06:19:52.181174+00:00 -->
 <option value="SI">ハロショ千夜一夜（108回）</option>
 <option value="SO">ハロショ千夜一夜 in 大阪（8回）</option>
 <option value="SA">ハロショ千夜一夜アネックス（15回）</option>
