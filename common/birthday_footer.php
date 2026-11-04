@@ -46,5 +46,23 @@ async function sharePage() {
   <li><a href="https://x.com/yxmxgxn" target="_blank">&copy; 2026 @yxmxgxn</a></li>
 </ul>
 </footer>
+
+<!-- 表をスマホで横スクロールできるよう、全<table>を.table-scrollで自動ラップ(footer.php と同じ) -->
+<script>
+(function () {
+  document.querySelectorAll('table').forEach(function (t) {
+    if (t.closest('.table-scroll')) return;                 // すでにラップ済み
+    var p = t.parentElement;
+    if (p) {
+      var ox = getComputedStyle(p).overflowX;
+      if (ox === 'auto' || ox === 'scroll') return;         // 親が既にスクロール対応
+    }
+    var w = document.createElement('div');
+    w.className = 'table-scroll';
+    t.parentNode.insertBefore(w, t);
+    w.appendChild(t);
+  });
+})();
+</script>
 </body>
 </html>
