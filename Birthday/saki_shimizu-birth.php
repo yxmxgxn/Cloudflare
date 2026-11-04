@@ -23,8 +23,8 @@
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td>2013年11月21日</td><td>18:30</td><td>清水佐紀バースデーイベント〜22nd Anniversary〜</td><td>TOKYO FM HALL</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/3665" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
-<tr><td>2013年11月21日</td><td>20:10</td><td>清水佐紀バースデーイベント〜22nd Anniversary〜</td><td>TOKYO FM HALL</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/3666" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
+<tr class="row-even"><td>2013年11月21日</td><td>18:30</td><td>清水佐紀バースデーイベント〜22nd Anniversary〜</td><td>TOKYO FM HALL</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/3665" target="_blank">Tomoko（セットリスト）</a></td></tr>
+<tr><td>2013年11月21日</td><td>20:10</td><td>清水佐紀バースデーイベント〜22nd Anniversary〜</td><td>TOKYO FM HALL</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/3666" target="_blank">Tomoko（セットリスト）</a></td></tr>
 </tbody>
 </table>
 23歳（2014年）
@@ -40,8 +40,8 @@
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td>2014年11月21日</td><td>18:30</td><td>Berryz工房 清水佐紀バースデーイベント2014</td><td>TOKYO FM HALL</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/4193" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
-<tr><td>2014年11月21日</td><td>20:10</td><td>Berryz工房 清水佐紀バースデーイベント2014</td><td>TOKYO FM HALL</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/4194" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
+<tr class="row-even"><td>2014年11月21日</td><td>18:30</td><td>Berryz工房 清水佐紀バースデーイベント2014</td><td>TOKYO FM HALL</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/4193" target="_blank">Tomoko（セットリスト）</a></td></tr>
+<tr><td>2014年11月21日</td><td>20:10</td><td>Berryz工房 清水佐紀バースデーイベント2014</td><td>TOKYO FM HALL</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/4194" target="_blank">Tomoko（セットリスト）</a></td></tr>
 </tbody>
 </table>
 29歳（2020年）

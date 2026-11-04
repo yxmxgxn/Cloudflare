@@ -30,7 +30,7 @@
     <tr>
       <td>1st</td>
       <td>2013/4/3</td>
-      <td><a href="https://helloproject.com/release/2210/" target="_blank" rel="noopener noreferrer">私が言う前に抱きしめなきゃね</a><a href="https://www.youtube.com/watch?v=cchjirF7zM4" target="_blank" rel="noopener noreferrer">▶️</a>・<a href="https://www.youtube.com/watch?v=RGDQLmLIsCY" target="_blank" rel="noopener noreferrer">🎥</a>・<a href="https://www.youtube.com/watch?v=Sb6keJJznGI" target="_blank" rel="noopener noreferrer">💃</a></td>
+      <td><a href="https://helloproject.com/release/2210/" target="_blank">私が言う前に抱きしめなきゃね</a><a href="https://www.youtube.com/watch?v=cchjirF7zM4" target="_blank">▶️</a>・<a href="https://www.youtube.com/watch?v=RGDQLmLIsCY" target="_blank">🎥</a>・<a href="https://www.youtube.com/watch?v=Sb6keJJznGI" target="_blank">💃</a></td>
       <td>つんく</td>
       <td>つんく</td>
       <td>平田祥一郎</td>
@@ -38,7 +38,7 @@
     <tr>
       <td>2nd</td>
       <td>2013/5/8</td>
-      <td><a href="https://helloproject.com/release/2211/" target="_blank" rel="noopener noreferrer">五月雨美女がさ乱れる</a><a href="https://www.youtube.com/watch?v=YHrpszUthUM" target="_blank" rel="noopener noreferrer">▶️</a>・<a href="https://www.youtube.com/watch?v=F-i07le2wo0" target="_blank" rel="noopener noreferrer">🎥</a>・<a href="https://www.youtube.com/watch?v=TBxjslahT-0" target="_blank" rel="noopener noreferrer">▶️（Close up Ver.）</a>・<a href="https://www.youtube.com/watch?v=buyWu8aPgss" target="_blank" rel="noopener noreferrer">💃</td>
+      <td><a href="https://helloproject.com/release/2211/" target="_blank">五月雨美女がさ乱れる</a><a href="https://www.youtube.com/watch?v=YHrpszUthUM" target="_blank">▶️</a>・<a href="https://www.youtube.com/watch?v=F-i07le2wo0" target="_blank">🎥</a>・<a href="https://www.youtube.com/watch?v=TBxjslahT-0" target="_blank">▶️（Close up Ver.）</a>・<a href="https://www.youtube.com/watch?v=buyWu8aPgss" target="_blank">💃</td>
       <td>つんく</td>
       <td>つんく</td>
       <td>板垣祐介<br>ブラスアレンジ：鈴木俊介</td>
@@ -46,7 +46,7 @@
     <tr>
       <td>3rd</td>
       <td>2013/6/12</td>
-      <td><a href="https://helloproject.com/release/2212/" target="_blank" rel="noopener noreferrer">天まで登れ！</a><a href="https://www.youtube.com/watch?v=behGDIRH_8A" target="_blank" rel="noopener noreferrer">▶️</a>・<a href="https://www.youtube.com/watch?v=F-i07le2wo0" target="_blank" rel="noopener noreferrer">🎥</a></td>
+      <td><a href="https://helloproject.com/release/2212/" target="_blank">天まで登れ！</a><a href="https://www.youtube.com/watch?v=behGDIRH_8A" target="_blank">▶️</a>・<a href="https://www.youtube.com/watch?v=F-i07le2wo0" target="_blank">🎥</a></td>
       <td>つんく</td>
       <td>つんく</td>
       <td>平田祥一郎<br>ブラスアレンジ：鈴木俊介</td>
@@ -67,20 +67,20 @@
     <tr>
       <td rowspan="3">1st</td>
       <td rowspan="3">2013/9/11</td>
-      <td rowspan="3"><a href="https://helloproject.com/release/1656/" target="_blank" rel="noopener noreferrer">私が言う前に抱きしめなきゃね（MEMORIAL EDIT）/五月雨美女がさ乱れる（MEMORIAL EDIT）</a></td>
-      <td><a href="https://www.youtube.com/watch?v=rh8eeteWbHc" target="_blank" rel="noopener noreferrer">ロマンスの途中▶️</a>・<a href="https://www.youtube.com/watch?v=1lgANEF7cbE" target="_blank" rel="noopener noreferrer">💃</a></td>
+      <td rowspan="3"><a href="https://helloproject.com/release/1656/" target="_blank">私が言う前に抱きしめなきゃね（MEMORIAL EDIT）/五月雨美女がさ乱れる（MEMORIAL EDIT）</a></td>
+      <td><a href="https://www.youtube.com/watch?v=rh8eeteWbHc" target="_blank">ロマンスの途中▶️</a>・<a href="https://www.youtube.com/watch?v=1lgANEF7cbE" target="_blank">💃</a></td>
       <td>つんく</td>
       <td>つんく</td>
       <td>鈴木俊介</td>
     </tr>
     <tr>
-      <td><a href="https://www.youtube.com/watch?v=VEK4N5qatIk" target="_blank" rel="noopener noreferrer">私が言う前に抱きしめなきゃね （MEMORIAL EDIT）▶️</a></td>
+      <td><a href="https://www.youtube.com/watch?v=VEK4N5qatIk" target="_blank">私が言う前に抱きしめなきゃね （MEMORIAL EDIT）▶️</a></td>
       <td>つんく</td>
       <td>つんく</td>
       <td>平田祥一郎</td>
     </tr>
     <tr>
-      <td><a href="https://www.youtube.com/watch?v=SCPzO2c-lMI" target="_blank" rel="noopener noreferrer">五月雨美女がさ乱れる （MEMORIAL EDIT）▶️</a></td>
+      <td><a href="https://www.youtube.com/watch?v=SCPzO2c-lMI" target="_blank">五月雨美女がさ乱れる （MEMORIAL EDIT）▶️</a></td>
       <td>つんく</td>
       <td>つんく</td>
       <td>板垣祐介</td>
@@ -88,14 +88,14 @@
     <tr>
       <td rowspan="2" class="dc-group">2nd</td>
       <td rowspan="2" class="dc-group">2013/12/4</td>
-      <td rowspan="2" class="dc-group"><a href="https://helloproject.com/release/1667/" target="_blank" rel="noopener noreferrer">イジワルしないで 抱きしめてよ/初めてを経験中</a></td>
-      <td><a href="https://www.youtube.com/watch?v=wCNV_wAx82Y" target="_blank" rel="noopener noreferrer">イジワルしないで 抱きしめてよ▶️</a>・<a href="https://www.youtube.com/watch?v=0ySylUquWs4" target="_blank" rel="noopener noreferrer">🎥</a>・<a href="https://www.youtube.com/watch?v=LNPHQ0yrkW8" target="_blank" rel="noopener noreferrer">💃</a></td>
+      <td rowspan="2" class="dc-group"><a href="https://helloproject.com/release/1667/" target="_blank">イジワルしないで 抱きしめてよ/初めてを経験中</a></td>
+      <td><a href="https://www.youtube.com/watch?v=wCNV_wAx82Y" target="_blank">イジワルしないで 抱きしめてよ▶️</a>・<a href="https://www.youtube.com/watch?v=0ySylUquWs4" target="_blank">🎥</a>・<a href="https://www.youtube.com/watch?v=LNPHQ0yrkW8" target="_blank">💃</a></td>
       <td>つんく</td>
       <td>つんく</td>
       <td>大久保薫</td>
     </tr>
     <tr>
-      <td><a href="https://www.youtube.com/watch?v=NzxMVYTRg2Q" target="_blank" rel="noopener noreferrer">初めてを経験中▶️</a>・<a href="https://www.youtube.com/watch?v=pXft-OIBw9I" target="_blank" rel="noopener noreferrer">🎥</a>・<a href="https://www.youtube.com/watch?v=GDE1sB-Uz4s" target="_blank" rel="noopener noreferrer">💃</a></td>
+      <td><a href="https://www.youtube.com/watch?v=NzxMVYTRg2Q" target="_blank">初めてを経験中▶️</a>・<a href="https://www.youtube.com/watch?v=pXft-OIBw9I" target="_blank">🎥</a>・<a href="https://www.youtube.com/watch?v=GDE1sB-Uz4s" target="_blank">💃</a></td>
       <td>つんく</td>
       <td>つんく</td>
       <td>AKIRA</td>
@@ -104,13 +104,13 @@
       <td rowspan="2" class="dc-group">3rd</td>
       <td rowspan="2" class="dc-group">2014/3/19</td>
       <td rowspan="2" class="dc-group">裸の裸の裸のKISS/アレコレしたい!</td>
-      <td><a href="https://www.youtube.com/watch?v=XusWMlJH178" target="_blank" rel="noopener noreferrer">裸の裸の裸のKISS▶️</a>・<a href="https://www.youtube.com/watch?v=Egmjjt3j3us&t=189s" target="_blank" rel="noopener noreferrer">🎥</a>・<a href="https://www.youtube.com/watch?v=AopkbcS_hlc" target="_blank" rel="noopener noreferrer">💃</a></td>
+      <td><a href="https://www.youtube.com/watch?v=XusWMlJH178" target="_blank">裸の裸の裸のKISS▶️</a>・<a href="https://www.youtube.com/watch?v=Egmjjt3j3us&t=189s" target="_blank">🎥</a>・<a href="https://www.youtube.com/watch?v=AopkbcS_hlc" target="_blank">💃</a></td>
       <td>つんく</td>
       <td>つんく</td>
       <td>平田祥一郎</td>
     </tr>
     <tr>
-      <td><a href="https://www.youtube.com/watch?v=Fqm6smULwxs" target="_blank" rel="noopener noreferrer">アレコレしたい！▶️</a>・<a href="https://www.youtube.com/watch?v=x1qMU843aZk" target="_blank" rel="noopener noreferrer">💃</a></td>
+      <td><a href="https://www.youtube.com/watch?v=Fqm6smULwxs" target="_blank">アレコレしたい！▶️</a>・<a href="https://www.youtube.com/watch?v=x1qMU843aZk" target="_blank">💃</a></td>
       <td>つんく</td>
       <td>つんく</td>
       <td>近藤圭一</td>
@@ -118,14 +118,14 @@
     <tr>
       <td rowspan="2" class="dc-group">4th</td>
       <td rowspan="2" class="dc-group">2014/7/30</td>
-      <td rowspan="2" class="dc-group"><a href="https://helloproject.com/release/2277/" target="_blank" rel="noopener noreferrer">ブラックバタフライ/風に吹かれて</a></td>
-      <td><a href="https://www.youtube.com/watch?v=ROeoeYQ33hM" target="_blank" rel="noopener noreferrer">ブラックバタフライ▶️</a>・<a href="https://www.youtube.com/watch?v=8iLP7hz-UxY" target="_blank" rel="noopener noreferrer">💃</a></td>
+      <td rowspan="2" class="dc-group"><a href="https://helloproject.com/release/2277/" target="_blank">ブラックバタフライ/風に吹かれて</a></td>
+      <td><a href="https://www.youtube.com/watch?v=ROeoeYQ33hM" target="_blank">ブラックバタフライ▶️</a>・<a href="https://www.youtube.com/watch?v=8iLP7hz-UxY" target="_blank">💃</a></td>
       <td>つんく</td>
       <td>つんく</td>
       <td>平田祥一郎</td>
     </tr>
     <tr>
-      <td><a href="https://www.youtube.com/watch?v=pem60iEtcGQ" target="_blank" rel="noopener noreferrer">風に吹かれて▶️</a>・<a href="https://www.youtube.com/watch?v=Vln2vJ57LVk&t=278s" target="_blank" rel="noopener noreferrer">🎥</a>・<a href="https://www.youtube.com/watch?v=iDNexQ6aWCk" target="_blank" rel="noopener noreferrer">💃</a></td>
+      <td><a href="https://www.youtube.com/watch?v=pem60iEtcGQ" target="_blank">風に吹かれて▶️</a>・<a href="https://www.youtube.com/watch?v=Vln2vJ57LVk&t=278s" target="_blank">🎥</a>・<a href="https://www.youtube.com/watch?v=iDNexQ6aWCk" target="_blank">💃</a></td>
       <td>つんく</td>
       <td>つんく</td>
       <td>平田祥一郎</td>
@@ -133,14 +133,14 @@
     <tr>
       <td rowspan="2" class="dc-group">5th</td>
       <td rowspan="2" class="dc-group">2014/10/1</td>
-      <td rowspan="2" class="dc-group"><a href="https://helloproject.com/release/2371/" target="_blank" rel="noopener noreferrer">背伸び/伊達じゃないよ うちの人生は</a></td>  
-      <td><a href="https://www.youtube.com/watch?v=_so9w95wzVI" target="_blank" rel="noopener noreferrer">背伸び▶️</a>・<a href="https://www.youtube.com/watch?v=QX1FgV2cJdU&t=1168s" target="_blank" rel="noopener noreferrer">🎥</a>・<a href="https://www.youtube.com/watch?v=6Pwx3tdZFN8" target="_blank" rel="noopener noreferrer">💃</a></td>
+      <td rowspan="2" class="dc-group"><a href="https://helloproject.com/release/2371/" target="_blank">背伸び/伊達じゃないよ うちの人生は</a></td>  
+      <td><a href="https://www.youtube.com/watch?v=_so9w95wzVI" target="_blank">背伸び▶️</a>・<a href="https://www.youtube.com/watch?v=QX1FgV2cJdU&t=1168s" target="_blank">🎥</a>・<a href="https://www.youtube.com/watch?v=6Pwx3tdZFN8" target="_blank">💃</a></td>
       <td>つんく</td>
       <td>つんく</td>
       <td>平田祥一郎</td>
     </tr>
     <tr>
-      <td><a href="https://www.youtube.com/watch?v=38c5UbdpfLw" target="_blank" rel="noopener noreferrer">伊達じゃないよ うちの人生は▶️</a>・<a href="https://www.youtube.com/watch?v=IWph3hNX_m0&t=842s" target="_blank" rel="noopener noreferrer">🎥</a>・<a href="https://www.youtube.com/watch?v=fS11KZTCmgg" target="_blank" rel="noopener noreferrer">💃</td>
+      <td><a href="https://www.youtube.com/watch?v=38c5UbdpfLw" target="_blank">伊達じゃないよ うちの人生は▶️</a>・<a href="https://www.youtube.com/watch?v=IWph3hNX_m0&t=842s" target="_blank">🎥</a>・<a href="https://www.youtube.com/watch?v=fS11KZTCmgg" target="_blank">💃</td>
       <td>つんく</td>
       <td>つんく</td>
       <td>平田祥一郎</td>
@@ -148,14 +148,14 @@
     <tr>
       <td rowspan="2" class="dc-group">6th</td>
       <td rowspan="2" class="dc-group">2015/4/8</td>
-      <td rowspan="2" class="dc-group"><a href="https://helloproject.com/release/4094/" target="_blank" rel="noopener noreferrer">Wonderful World/Ça va ? Ça va ?</a></td>
-      <td><a href="https://www.youtube.com/watch?v=YlkOq6dXBEc" target="_blank" rel="noopener noreferrer">Wonderful World▶️</a>・<a href="https://www.youtube.com/watch?v=cyFB7sB6CYs" target="_blank" rel="noopener noreferrer">🎥</a>・<a href="https://www.youtube.com/watch?v=wTZ5cbaDGgI" target="_blank" rel="noopener noreferrer">💃</td>
+      <td rowspan="2" class="dc-group"><a href="https://helloproject.com/release/4094/" target="_blank">Wonderful World/Ça va ? Ça va ?</a></td>
+      <td><a href="https://www.youtube.com/watch?v=YlkOq6dXBEc" target="_blank">Wonderful World▶️</a>・<a href="https://www.youtube.com/watch?v=cyFB7sB6CYs" target="_blank">🎥</a>・<a href="https://www.youtube.com/watch?v=wTZ5cbaDGgI" target="_blank">💃</td>
       <td>イイジマケン</td>
       <td>イイジマケン</td>
       <td>gaokalab</td>
     </tr>
     <tr>
-      <td><a href="https://www.youtube.com/watch?v=XsnxU8QwJwI" target="_blank" rel="noopener noreferrer">Ça va？ Ça va？▶️</a>・<a href="https://www.youtube.com/watch?v=9APF0fLxCSQ&t=247s" target="_blank" rel="noopener noreferrer">🎥</a>・<a href="https://www.youtube.com/watch?v=Aqdmz2qDSk8" target="_blank" rel="noopener noreferrer">▶️（Juice=Juice in PARIS Ver.）</a>・<a href="https://www.youtube.com/watch?v=xwSTKrvxfLU" target="_blank" rel="noopener noreferrer">💃</td>
+      <td><a href="https://www.youtube.com/watch?v=XsnxU8QwJwI" target="_blank">Ça va？ Ça va？▶️</a>・<a href="https://www.youtube.com/watch?v=9APF0fLxCSQ&t=247s" target="_blank">🎥</a>・<a href="https://www.youtube.com/watch?v=Aqdmz2qDSk8" target="_blank">▶️（Juice=Juice in PARIS Ver.）</a>・<a href="https://www.youtube.com/watch?v=xwSTKrvxfLU" target="_blank">💃</td>
       <td>三浦徳子</td>
       <td>川辺ヒロシ・上田禎</td>
       <td>CMJK</td>
@@ -163,14 +163,14 @@
     <tr>
       <td rowspan="2" class="dc-group">7th</td>
       <td rowspan="2" class="dc-group">2016/2/3</td>
-      <td rowspan="2" class="dc-group"><a href="https://helloproject.com/release/4548/" target="_blank" rel="noopener noreferrer">Next is you!/カラダだけが大人になったんじゃない</a></td>
-      <td><a href="https://www.youtube.com/watch?v=7sJTyrHGK1k" target="_blank" rel="noopener noreferrer">Next is you!▶️</a></td>
+      <td rowspan="2" class="dc-group"><a href="https://helloproject.com/release/4548/" target="_blank">Next is you!/カラダだけが大人になったんじゃない</a></td>
+      <td><a href="https://www.youtube.com/watch?v=7sJTyrHGK1k" target="_blank">Next is you!▶️</a></td>
       <td>つんく</td>
       <td>つんく</td>
       <td>大久保薫</td>
     </tr>
     <tr>
-      <td><a href="https://www.youtube.com/watch?v=kEkIMr3nmXk" target="_blank" rel="noopener noreferrer">カラダだけが大人になったんじゃない▶️</a>・<a href="https://www.youtube.com/watch?v=DLd9NzNd9zw&t=1468s" target="_blank" rel="noopener noreferrer">🎥</a></td>
+      <td><a href="https://www.youtube.com/watch?v=kEkIMr3nmXk" target="_blank">カラダだけが大人になったんじゃない▶️</a>・<a href="https://www.youtube.com/watch?v=DLd9NzNd9zw&t=1468s" target="_blank">🎥</a></td>
       <td>つんく</td>
       <td>つんく</td>
       <td>平田祥一郎</td>
@@ -178,20 +178,20 @@
     <tr>
       <td rowspan="3" class="dc-group">8th</td>
       <td rowspan="3" class="dc-group">2016/10/26</td>
-      <td rowspan="3" class="dc-group"><a href="https://helloproject.com/release/4548/" target="_blank" rel="noopener noreferrer">Dream Road〜心が躍り出してる〜/KEEP ON 上昇志向!!/明日やろうはバカやろう</a></td>
-      <td><a href="https://www.youtube.com/watch?v=EC19AV19rEg" target="_blank" rel="noopener noreferrer">Dream Road～心が躍り出してる～▶️</a>・<a href="https://www.youtube.com/watch?v=FgecS6FityI&t=42s" target="_blank" rel="noopener noreferrer">🎥</a></td>
+      <td rowspan="3" class="dc-group"><a href="https://helloproject.com/release/4548/" target="_blank">Dream Road〜心が躍り出してる〜/KEEP ON 上昇志向!!/明日やろうはバカやろう</a></td>
+      <td><a href="https://www.youtube.com/watch?v=EC19AV19rEg" target="_blank">Dream Road～心が躍り出してる～▶️</a>・<a href="https://www.youtube.com/watch?v=FgecS6FityI&t=42s" target="_blank">🎥</a></td>
       <td>つんく</td>
       <td>つんく</td>
       <td>江上浩太郎</td>
     </tr>
     <tr>
-      <td><a href="https://www.youtube.com/watch?v=JzDQj4X17gI" target="_blank" rel="noopener noreferrer">KEEP ON 上昇志向!!▶️</a>・<a href="https://www.youtube.com/watch?v=kYnQxjC3dtk&t=1594s" target="_blank" rel="noopener noreferrer">🎥</a></td>
+      <td><a href="https://www.youtube.com/watch?v=JzDQj4X17gI" target="_blank">KEEP ON 上昇志向!!▶️</a>・<a href="https://www.youtube.com/watch?v=kYnQxjC3dtk&t=1594s" target="_blank">🎥</a></td>
       <td>前山田健一</td>
       <td>前山田健一</td>
       <td>ダンス☆マン</td>
     </tr>
     <tr>
-      <td><a href="https://www.youtube.com/watch?v=SgEl8y1hxHU" target="_blank" rel="noopener noreferrer">明日やろうはバカやろう▶️</a>・<a href="https://www.youtube.com/watch?v=C3_6b8Wlwsk" target="_blank" rel="noopener noreferrer">🎥</a></td>
+      <td><a href="https://www.youtube.com/watch?v=SgEl8y1hxHU" target="_blank">明日やろうはバカやろう▶️</a>・<a href="https://www.youtube.com/watch?v=C3_6b8Wlwsk" target="_blank">🎥</a></td>
       <td>福田花音</td>
       <td>板垣祐介</td>
       <td>板垣祐介</td>
@@ -199,14 +199,14 @@
     <tr>
       <td rowspan="2" class="dc-group">9th</td>
       <td rowspan="2" class="dc-group">2017/4/26</td>
-      <td rowspan="2" class="dc-group"><a href="https://helloproject.com/release/5152/" target="_blank" rel="noopener noreferrer">地団駄ダンス/Feel!感じるよ</a></td>
-      <td><a href="https://www.youtube.com/watch?v=HBFvJZR7yKQ" target="_blank" rel="noopener noreferrer">地団駄ダンス▶️</a>・<a href="https://www.youtube.com/watch?v=Jt50XbJbDq8&t=2079s" target="_blank" rel="noopener noreferrer">🎥</a></td>
+      <td rowspan="2" class="dc-group"><a href="https://helloproject.com/release/5152/" target="_blank">地団駄ダンス/Feel!感じるよ</a></td>
+      <td><a href="https://www.youtube.com/watch?v=HBFvJZR7yKQ" target="_blank">地団駄ダンス▶️</a>・<a href="https://www.youtube.com/watch?v=Jt50XbJbDq8&t=2079s" target="_blank">🎥</a></td>
       <td>児玉雨子</td>
       <td>BLACC HOLE &amp; NOBB-D</td>
       <td>BLACC HOLE &amp; NOBB-D with T</td>
     </tr>
     <tr>
-      <td><a href="https://www.youtube.com/watch?v=GScVBPWGYBc" target="_blank" rel="noopener noreferrer">Feel!感じるよ▶️</a></td>
+      <td><a href="https://www.youtube.com/watch?v=GScVBPWGYBc" target="_blank">Feel!感じるよ▶️</a></td>
       <td>三浦徳子</td>
       <td>中村瑛彦</td>
       <td>中村瑛彦</td>
@@ -214,20 +214,20 @@
     <tr>
       <td rowspan="3" class="dc-group">10th</td>
       <td rowspan="3" class="dc-group">2018/4/18</td>
-      <td rowspan="3" class="dc-group"><a href="https://helloproject.com/release/5586/" target="_blank" rel="noopener noreferrer">SEXY SEXY/泣いていいよ/Vivid Midnight</a></td>
-      <td><a href="https://www.youtube.com/watch?v=AgxdaRvQL5Q" target="_blank" rel="noopener noreferrer">SEXY SEXY▶️</a></td>
+      <td rowspan="3" class="dc-group"><a href="https://helloproject.com/release/5586/" target="_blank">SEXY SEXY/泣いていいよ/Vivid Midnight</a></td>
+      <td><a href="https://www.youtube.com/watch?v=AgxdaRvQL5Q" target="_blank">SEXY SEXY▶️</a></td>
       <td>つんく</td>
       <td>つんく</td>
       <td>平田祥一郎</td>
     </tr>
     <tr>
-      <td><a href="https://www.youtube.com/watch?v=2I1hkkD9s6s" target="_blank" rel="noopener noreferrer">泣いていいよ▶️</a>・<a href="https://www.youtube.com/watch?v=5VofGX2mB2w&t=220s" target="_blank" rel="noopener noreferrer">🎥</a></td>
+      <td><a href="https://www.youtube.com/watch?v=2I1hkkD9s6s" target="_blank">泣いていいよ▶️</a>・<a href="https://www.youtube.com/watch?v=5VofGX2mB2w&t=220s" target="_blank">🎥</a></td>
       <td>大森祥子</td>
       <td>中村瑛彦</td>
       <td>中村瑛彦</td>
     </tr>
     <tr>
-      <td><a href="https://www.youtube.com/watch?v=tj8EFzQZuIk" target="_blank" rel="noopener noreferrer">Vivid Midnight▶️</a>・<a href="https://www.youtube.com/watch?v=QZeB1vyGomE&t=1214s" target="_blank" rel="noopener noreferrer">🎥</a></td>
+      <td><a href="https://www.youtube.com/watch?v=tj8EFzQZuIk" target="_blank">Vivid Midnight▶️</a>・<a href="https://www.youtube.com/watch?v=QZeB1vyGomE&t=1214s" target="_blank">🎥</a></td>
       <td>児玉雨子</td>
       <td>SSEION, Tasco, Tenzo</td>
       <td>Tasco, Tenzo</td>
@@ -235,20 +235,20 @@
     <tr>
       <td rowspan="3" class="dc-group">11th</td>
       <td rowspan="3" class="dc-group">2019/2/13</td>
-      <td rowspan="3" class="dc-group"><a href="https://helloproject.com/release/5872/" target="_blank" rel="noopener noreferrer">微炭酸/ポツリと/Good bye & Good luck!</a></td>
-      <td><a href="https://www.youtube.com/watch?v=NtBZEHyB_jo" target="_blank" rel="noopener noreferrer">微炭酸▶️</a>・<a href="https://www.youtube.com/watch?v=v4JVTZ3kK-Y" target="_blank" rel="noopener noreferrer">🎥</a></td>
+      <td rowspan="3" class="dc-group"><a href="https://helloproject.com/release/5872/" target="_blank">微炭酸/ポツリと/Good bye & Good luck!</a></td>
+      <td><a href="https://www.youtube.com/watch?v=NtBZEHyB_jo" target="_blank">微炭酸▶️</a>・<a href="https://www.youtube.com/watch?v=v4JVTZ3kK-Y" target="_blank">🎥</a></td>
       <td>山崎あおい</td>
       <td>KOUGA</td>
       <td>KOUGA</td>
     </tr>
     <tr>
-      <td><a href="https://www.youtube.com/watch?v=QOMUp7ODrO8" target="_blank" rel="noopener noreferrer">ポツリと▶️</a></td>
+      <td><a href="https://www.youtube.com/watch?v=QOMUp7ODrO8" target="_blank">ポツリと▶️</a></td>
       <td>中島卓偉</td>
       <td>中島卓偉</td>
       <td>浜田ピエール裕介</td>
     </tr>
     <tr>
-      <td><a href="https://www.youtube.com/watch?v=pn3Djtkk66k" target="_blank" rel="noopener noreferrer">Good bye & Good luck!▶️</a></td>
+      <td><a href="https://www.youtube.com/watch?v=pn3Djtkk66k" target="_blank">Good bye & Good luck!▶️</a></td>
       <td>三浦徳子</td>
       <td>KOUGA</td>
       <td>炭竃智弘</td>
@@ -256,14 +256,14 @@
     <tr>
       <td rowspan="3" class="dc-group">12th</td>
       <td rowspan="3" class="dc-group">2019/6/5</td>
-      <td rowspan="3" class="dc-group"><a href="https://helloproject.com/release/6156/" target="_blank" rel="noopener noreferrer">「ひとりで生きられそう」って それってねえ、褒めているの?/25歳永遠説</a></td>
-      <td><a href="https://www.youtube.com/watch?v=yiYr2-6LtcU" target="_blank" rel="noopener noreferrer">「ひとりで生きられそう」って それってねえ、褒めているの？▶️</a>・<a href="https://www.youtube.com/watch?v=8vxfT-NNV1E" target="_blank" rel="noopener noreferrer">🎥</a>・<a href="https://www.youtube.com/watch?v=GOBwXucqSEo" target="_blank" rel="noopener noreferrer">▶️（リリック・ビデオ）</a></td>
+      <td rowspan="3" class="dc-group"><a href="https://helloproject.com/release/6156/" target="_blank">「ひとりで生きられそう」って それってねえ、褒めているの?/25歳永遠説</a></td>
+      <td><a href="https://www.youtube.com/watch?v=yiYr2-6LtcU" target="_blank">「ひとりで生きられそう」って それってねえ、褒めているの？▶️</a>・<a href="https://www.youtube.com/watch?v=8vxfT-NNV1E" target="_blank">🎥</a>・<a href="https://www.youtube.com/watch?v=GOBwXucqSEo" target="_blank">▶️（リリック・ビデオ）</a></td>
       <td>山崎あおい</td>
       <td>山崎あおい</td>
       <td>鈴木俊介</td>
     </tr>
     <tr>
-      <td><a href="https://www.youtube.com/watch?v=88fRO8entRc" target="_blank" rel="noopener noreferrer">25歳永遠説▶️</a>・<a href="https://www.youtube.com/watch?v=J7i9s17-WHw&t=698s" target="_blank" rel="noopener noreferrer">🎥</a></td>
+      <td><a href="https://www.youtube.com/watch?v=88fRO8entRc" target="_blank">25歳永遠説▶️</a>・<a href="https://www.youtube.com/watch?v=J7i9s17-WHw&t=698s" target="_blank">🎥</a></td>
       <td>児玉雨子</td>
       <td>KOUGA</td>
       <td>KOUGA</td>
@@ -277,26 +277,26 @@
     <tr>
       <td rowspan="4" class="dc-group">13th</td>
       <td rowspan="4" class="dc-group">2020/4/1</td>
-      <td rowspan="4" class="dc-group"><a href="https://helloproject.com/release/6261/" target="_blank" rel="noopener noreferrer">ポップミュージック/好きって言ってよ</a></td>
-      <td><a href="https://www.youtube.com/watch?v=IrggLg_hGE0" target="_blank" rel="noopener noreferrer">ポップミュージック▶️</a>・<a href="https://www.youtube.com/watch?v=7Z3LUlOQ9uc&t=129s" target="_blank" rel="noopener noreferrer">🎥</a></td>
+      <td rowspan="4" class="dc-group"><a href="https://helloproject.com/release/6261/" target="_blank">ポップミュージック/好きって言ってよ</a></td>
+      <td><a href="https://www.youtube.com/watch?v=IrggLg_hGE0" target="_blank">ポップミュージック▶️</a>・<a href="https://www.youtube.com/watch?v=7Z3LUlOQ9uc&t=129s" target="_blank">🎥</a></td>
       <td>KAN</td>
       <td>KAN</td>
       <td>炭竃智弘</td>
     </tr>
     <tr>
-      <td><a href="https://www.youtube.com/watch?v=gYAFijpPSws" target="_blank" rel="noopener noreferrer">好きって言ってよ▶️</a>・<a href="https://www.youtube.com/watch?v=J7i9s17-WHw&t=698s" target="_blank" rel="noopener noreferrer">🎥</a></td>
+      <td><a href="https://www.youtube.com/watch?v=gYAFijpPSws" target="_blank">好きって言ってよ▶️</a>・<a href="https://www.youtube.com/watch?v=J7i9s17-WHw&t=698s" target="_blank">🎥</a></td>
       <td>山崎あおい</td>
       <td>山崎あおい</td>
       <td>鈴木俊介</td>
     </tr>
     <tr>
-      <td><a href="https://www.youtube.com/watch?v=NbBkOY4CqZU&t=1559s" target="_blank" rel="noopener noreferrer">続いていくSTORY（Symphonic Version feat. Karin）🎥</a></td>
+      <td><a href="https://www.youtube.com/watch?v=NbBkOY4CqZU&t=1559s" target="_blank">続いていくSTORY（Symphonic Version feat. Karin）🎥</a></td>
       <td>近藤薫</td>
       <td>近藤薫</td>
       <td>上杉洋史</td>
     </tr>
     <tr>
-      <td>Va-Va-Voom<a href="https://www.youtube.com/watch?v=R4c7o1QG7mc&t=262s" target="_blank" rel="noopener noreferrer">🎥</a></td>
+      <td>Va-Va-Voom<a href="https://www.youtube.com/watch?v=R4c7o1QG7mc&t=262s" target="_blank">🎥</a></td>
       <td>児玉雨子</td>
       <td>Shusui/Josef Melin</td>
       <td>Josef Melin</td>
@@ -304,14 +304,14 @@
     <tr>
       <td rowspan="2" class="dc-group">14th</td>
       <td rowspan="2" class="dc-group">2021/4/28</td>
-      <td rowspan="2" class="dc-group"><a href="https://helloproject.com/release/6436/" target="_blank" rel="noopener noreferrer">DOWN TOWN/がんばれないよ</a></td>
-      <td><a href="https://www.youtube.com/watch?v=7xD8ORNRtDI" target="_blank" rel="noopener noreferrer">DOWN TOWN▶️</a>・<a href="https://www.youtube.com/watch?v=RTfq20Dl2Eg&t=378s" target="_blank" rel="noopener noreferrer">🎥</a></td>
+      <td rowspan="2" class="dc-group"><a href="https://helloproject.com/release/6436/" target="_blank">DOWN TOWN/がんばれないよ</a></td>
+      <td><a href="https://www.youtube.com/watch?v=7xD8ORNRtDI" target="_blank">DOWN TOWN▶️</a>・<a href="https://www.youtube.com/watch?v=RTfq20Dl2Eg&t=378s" target="_blank">🎥</a></td>
       <td>伊藤銀次</td>
       <td>山下達郎</td>
       <td>Anders Dannvik</td>
     </tr>
     <tr>
-      <td><a href="https://www.youtube.com/watch?v=lfg5k3LyEKo" target="_blank" rel="noopener noreferrer">がんばれないよ▶️</a>・<a href="https://www.youtube.com/watch?v=n47fYbqeUMM&t=265s" target="_blank" rel="noopener noreferrer">🎥</a>・<a href="https://www.youtube.com/watch?v=bFHWI6-4jqw" target="_blank" rel="noopener noreferrer">▶️（Juice=Juice Solo mix Ver.）</a></td>
+      <td><a href="https://www.youtube.com/watch?v=lfg5k3LyEKo" target="_blank">がんばれないよ▶️</a>・<a href="https://www.youtube.com/watch?v=n47fYbqeUMM&t=265s" target="_blank">🎥</a>・<a href="https://www.youtube.com/watch?v=bFHWI6-4jqw" target="_blank">▶️（Juice=Juice Solo mix Ver.）</a></td>
       <td>山崎あおい</td>
       <td>KOUGA</td>
       <td>KOUGA</td>
@@ -319,20 +319,20 @@
     <tr>
       <td rowspan="3" class="dc-group">15th</td>
       <td rowspan="3" class="dc-group">2021/12/22</td>
-      <td rowspan="3" class="dc-group"><a href="https://helloproject.com/release/6613/" target="_blank" rel="noopener noreferrer">プラスティック・ラブ/Familia/Future Smile</a></td>
-      <td><a href="https://www.youtube.com/watch?v=f6Nuvg3RuEw" target="_blank" rel="noopener noreferrer">プラスティック・ラブ▶️</a></td>
+      <td rowspan="3" class="dc-group"><a href="https://helloproject.com/release/6613/" target="_blank">プラスティック・ラブ/Familia/Future Smile</a></td>
+      <td><a href="https://www.youtube.com/watch?v=f6Nuvg3RuEw" target="_blank">プラスティック・ラブ▶️</a></td>
       <td>竹内まりや</td>
       <td>竹内まりや</td>
       <td>Anders Dannvik</td>
     </tr>
     <tr>
-      <td><a href="https://www.youtube.com/watch?v=6iu4E-ql5Dg" target="_blank" rel="noopener noreferrer">Familia▶️</a>・<a href="https://www.youtube.com/watch?v=5KviSHTl33U&t=665s" target="_blank" rel="noopener noreferrer">🎥</a></td>
+      <td><a href="https://www.youtube.com/watch?v=6iu4E-ql5Dg" target="_blank">Familia▶️</a>・<a href="https://www.youtube.com/watch?v=5KviSHTl33U&t=665s" target="_blank">🎥</a></td>
       <td>イイジマケン</td>
       <td>Shusui / Shim Zeyun / tsubomi</td>
       <td>鈴木俊介</td>
     </tr>
     <tr>
-      <td><a href="https://www.youtube.com/watch?v=IvyAieDrM1c" target="_blank" rel="noopener noreferrer">Future Smile▶️</a>・<a href="https://www.youtube.com/watch?v=1BLHrjzq1vA&t=93s" target="_blank" rel="noopener noreferrer">🎥</a></td>
+      <td><a href="https://www.youtube.com/watch?v=IvyAieDrM1c" target="_blank">Future Smile▶️</a>・<a href="https://www.youtube.com/watch?v=1BLHrjzq1vA&t=93s" target="_blank">🎥</a></td>
       <td>大森祥子</td>
       <td>Shusui / Josef Melin</td>
       <td>Josef Melin</td>
@@ -340,14 +340,14 @@
     <tr>
       <td rowspan="2" class="dc-group">16th</td>
       <td rowspan="2" class="dc-group">2022/11/23</td>
-      <td rowspan="2" class="dc-group"><a href="https://helloproject.com/release/6853/" target="_blank" rel="noopener noreferrer">全部賭けてGO!!/イニミニマニモ〜恋のライバル宣言〜</a></td>
-      <td><a href="https://www.youtube.com/watch?v=4sO4_dLLeGM" target="_blank" rel="noopener noreferrer">全部賭けてGO!!▶️</a>・<a href="https://www.youtube.com/watch?v=tBQlipoKzKU&t=179s" target="_blank" rel="noopener noreferrer">🎥</a></td>
+      <td rowspan="2" class="dc-group"><a href="https://helloproject.com/release/6853/" target="_blank">全部賭けてGO!!/イニミニマニモ〜恋のライバル宣言〜</a></td>
+      <td><a href="https://www.youtube.com/watch?v=4sO4_dLLeGM" target="_blank">全部賭けてGO!!▶️</a>・<a href="https://www.youtube.com/watch?v=tBQlipoKzKU&t=179s" target="_blank">🎥</a></td>
       <td>大森祥子</td>
       <td>徳田光希</td>
       <td>徳田光希</td>
     </tr>
     <tr>
-      <td><a href="https://www.youtube.com/watch?v=xgoVNqwh1wY" target="_blank" rel="noopener noreferrer">イニミニマニモ～恋のライバル宣言～▶️</a>・<a href="https://www.youtube.com/watch?v=IlLJXH5LQaY&t=138s" target="_blank" rel="noopener noreferrer">🎥</a></td>
+      <td><a href="https://www.youtube.com/watch?v=xgoVNqwh1wY" target="_blank">イニミニマニモ～恋のライバル宣言～▶️</a>・<a href="https://www.youtube.com/watch?v=IlLJXH5LQaY&t=138s" target="_blank">🎥</a></td>
       <td>山崎あおい</td>
       <td>Johan Alkenas/Joacim Persson/Lisa Desmond</td>
       <td>Joacim Persson/Johan Alkenas</td>
@@ -355,14 +355,14 @@
     <tr>
       <td rowspan="2" class="dc-group">17th</td>
       <td rowspan="2" class="dc-group">2023/7/12</td>
-      <td rowspan="2" class="dc-group"><a href="https://helloproject.com/release/6991/" target="_blank" rel="noopener noreferrer">プライド・ブライト/FUNKY FLUSHIN'</a></td>
-      <td><a href="https://www.youtube.com/watch?v=wrucm-6MqgE" target="_blank" rel="noopener noreferrer">プライド・ブライト▶️</a>・<a href="https://www.youtube.com/watch?v=vyiXRsx0gJI" target="_blank" rel="noopener noreferrer">🎥</a></td>
+      <td rowspan="2" class="dc-group"><a href="https://helloproject.com/release/6991/" target="_blank">プライド・ブライト/FUNKY FLUSHIN'</a></td>
+      <td><a href="https://www.youtube.com/watch?v=wrucm-6MqgE" target="_blank">プライド・ブライト▶️</a>・<a href="https://www.youtube.com/watch?v=vyiXRsx0gJI" target="_blank">🎥</a></td>
       <td>山崎あおい</td>
       <td>山崎あおい</td>
       <td>鈴木俊介</td>
     </tr>
     <tr>
-      <td><a href="https://www.youtube.com/watch?v=Uks7Dyn8DAM" target="_blank" rel="noopener noreferrer">FUNKY FLUSHIN'▶️</a>・<a href="https://www.youtube.com/watch?v=pLOVDW-8SNw&t=188s" target="_blank" rel="noopener noreferrer">🎥</a></td>
+      <td><a href="https://www.youtube.com/watch?v=Uks7Dyn8DAM" target="_blank">FUNKY FLUSHIN'▶️</a>・<a href="https://www.youtube.com/watch?v=pLOVDW-8SNw&t=188s" target="_blank">🎥</a></td>
       <td>吉田美奈子</td>
       <td>山下達郎</td>
       <td>Aksel Odenbalk</td>
@@ -370,26 +370,26 @@
     <tr>
       <td rowspan="4" class="dc-group">18th</td>
       <td rowspan="4" class="dc-group">2024/5/15</td>
-      <td rowspan="4" class="dc-group"><a href="https://helloproject.com/release/7195/" target="_blank" rel="noopener noreferrer">トウキョウ・ブラー/ナイモノラブ/おあいこ</a></td>
-      <td><a href="https://www.youtube.com/watch?v=DPImRhSUtR0" target="_blank" rel="noopener noreferrer">トウキョウ・ブラー▶️</a>・<a href="https://www.youtube.com/watch?v=1blvz_OhPSI&t=545s" target="_blank" rel="noopener noreferrer">🎥</a></td>
+      <td rowspan="4" class="dc-group"><a href="https://helloproject.com/release/7195/" target="_blank">トウキョウ・ブラー/ナイモノラブ/おあいこ</a></td>
+      <td><a href="https://www.youtube.com/watch?v=DPImRhSUtR0" target="_blank">トウキョウ・ブラー▶️</a>・<a href="https://www.youtube.com/watch?v=1blvz_OhPSI&t=545s" target="_blank">🎥</a></td>
       <td>山崎あおい</td>
       <td>Erik Lidbom</td>
       <td>Erik Lidbom</td>
     </tr>
     <tr>
-      <td><a href="https://www.youtube.com/watch?v=wMy_mIgy6hM" target="_blank" rel="noopener noreferrer">ナイモノラブ▶️</a>・<a href="https://www.youtube.com/watch?v=Q7Au7tT_mwY&t=1391s" target="_blank" rel="noopener noreferrer">🎥</a></td>
+      <td><a href="https://www.youtube.com/watch?v=wMy_mIgy6hM" target="_blank">ナイモノラブ▶️</a>・<a href="https://www.youtube.com/watch?v=Q7Au7tT_mwY&t=1391s" target="_blank">🎥</a></td>
       <td>SUIMI</td>
       <td>渡辺泰司</td>
       <td>渡辺泰司</td>
     </tr>
     <tr>
-      <td><a href="https://www.youtube.com/watch?v=B8Zsip26P3g" target="_blank" rel="noopener noreferrer">おあいこ▶️</a>・<a href="https://www.youtube.com/watch?v=74N5axt32OI&t=235s" target="_blank" rel="noopener noreferrer">🎥</a></td>
+      <td><a href="https://www.youtube.com/watch?v=B8Zsip26P3g" target="_blank">おあいこ▶️</a>・<a href="https://www.youtube.com/watch?v=74N5axt32OI&t=235s" target="_blank">🎥</a></td>
       <td>つんく</td>
       <td>つんく</td>
       <td>平田祥一郎</td>
     </tr>
     <tr>
-      <td><a href="https://www.youtube.com/watch?v=CTqHcX-dg-I" target="_blank" rel="noopener noreferrer">Brilliance of memories▶️</a>・<a href="https://www.youtube.com/watch?v=PiTPL5d5kSw&t=1143s" target="_blank" rel="noopener noreferrer">🎥</a></td>
+      <td><a href="https://www.youtube.com/watch?v=CTqHcX-dg-I" target="_blank">Brilliance of memories▶️</a>・<a href="https://www.youtube.com/watch?v=PiTPL5d5kSw&t=1143s" target="_blank">🎥</a></td>
       <td>山崎あおい</td>
       <td>山崎あおい</td>
       <td>浜田ピエール裕介</td>
@@ -397,14 +397,14 @@
     <tr>
       <td rowspan="2" class="dc-group">19th</td>
       <td rowspan="2" class="dc-group">2025/2/26</td>
-      <td rowspan="2" class="dc-group"><a href="https://helloproject.com/release/7376/" target="_blank" rel="noopener noreferrer">初恋の亡霊/今夜はHearty Party</a></td>
-      <td><a href="https://www.youtube.com/watch?v=DquBd86wOYw" target="_blank" rel="noopener noreferrer">初恋の亡霊▶️</a>・<a href="https://www.youtube.com/watch?v=GkUijMTyJE0" target="_blank" rel="noopener noreferrer">🎥</a>・<a href="https://www.youtube.com/watch?v=g9EXEuk5sxo" target="_blank" rel="noopener noreferrer">💃</a></td>
+      <td rowspan="2" class="dc-group"><a href="https://helloproject.com/release/7376/" target="_blank">初恋の亡霊/今夜はHearty Party</a></td>
+      <td><a href="https://www.youtube.com/watch?v=DquBd86wOYw" target="_blank">初恋の亡霊▶️</a>・<a href="https://www.youtube.com/watch?v=GkUijMTyJE0" target="_blank">🎥</a>・<a href="https://www.youtube.com/watch?v=g9EXEuk5sxo" target="_blank">💃</a></td>
       <td>西野蒟蒻</td>
       <td>KOUGA</td>
       <td>平田祥一郎</td>
     </tr>
     <tr>
-      <td><a href="https://www.youtube.com/watch?v=DquBd86wOYw" target="_blank" rel="noopener noreferrer">今夜はHearty Party▶️</a>・<a href="https://www.youtube.com/watch?v=FxFGv8kvk8M&t=174s" target="_blank" rel="noopener noreferrer">🎥</a></td>
+      <td><a href="https://www.youtube.com/watch?v=DquBd86wOYw" target="_blank">今夜はHearty Party▶️</a>・<a href="https://www.youtube.com/watch?v=FxFGv8kvk8M&t=174s" target="_blank">🎥</a></td>
       <td>竹内まりや</td>
       <td>竹内まりや</td>
       <td>Aksel Odenbalk/Albin Hillborg</td>
@@ -412,14 +412,14 @@
     <tr>
       <td rowspan="2" class="dc-group">20th</td>
       <td rowspan="2" class="dc-group">2025/10/8</td>
-      <td rowspan="2" class="dc-group"><a href="https://helloproject.com/release/7506/" target="_blank" rel="noopener noreferrer">四の五の言わず颯と別れてあげた/盛れ！ミ・アモーレ</a></td>
-      <td><a href="https://www.youtube.com/watch?v=cnlS-vuMg40" target="_blank" rel="noopener noreferrer">四の五の言わず颯と別れてあげた▶️</a>・<a href="https://www.youtube.com/watch?v=jWz3Sc4n-Zw" target="_blank" rel="noopener noreferrer">🎥</a></td>
+      <td rowspan="2" class="dc-group"><a href="https://helloproject.com/release/7506/" target="_blank">四の五の言わず颯と別れてあげた/盛れ！ミ・アモーレ</a></td>
+      <td><a href="https://www.youtube.com/watch?v=cnlS-vuMg40" target="_blank">四の五の言わず颯と別れてあげた▶️</a>・<a href="https://www.youtube.com/watch?v=jWz3Sc4n-Zw" target="_blank">🎥</a></td>
       <td>大森祥子</td>
       <td>KOUGA</td>
       <td>荒幡亮平</td>
     </tr>
     <tr>
-      <td><a href="https://www.youtube.com/watch?v=3RtbnP1onaM" target="_blank" rel="noopener noreferrer">盛れ！ミ・アモーレ▶️</a>・<a href="https://www.youtube.com/watch?v=mj2pkIIQboo" target="_blank" rel="noopener noreferrer">🎥</a>・<a href="https://www.youtube.com/watch?v=MlG9hptTvgQ" target="_blank" rel="noopener noreferrer">💃</a></td>
+      <td><a href="https://www.youtube.com/watch?v=3RtbnP1onaM" target="_blank">盛れ！ミ・アモーレ▶️</a>・<a href="https://www.youtube.com/watch?v=mj2pkIIQboo" target="_blank">🎥</a>・<a href="https://www.youtube.com/watch?v=MlG9hptTvgQ" target="_blank">💃</a></td>
       <td>山崎あおい</td>
       <td>山崎あおい</td>
       <td>炭竃智弘</td>
@@ -437,7 +437,7 @@
     </tr>
     <tr>
       <td rowspan="2">2017/8/23</td>
-      <td><a href="https://helloproject.com/release/5371/" target="_blank" rel="noopener noreferrer">Fiesta! Fiesta!</a><a href="https://www.youtube.com/watch?v=0SMjNmSwFic" target="_blank" rel="noopener noreferrer">▶️</a>・<a href="https://www.youtube.com/watch?v=8MK4ef2W-sg" target="_blank" rel="noopener noreferrer">🎥</a></td>
+      <td><a href="https://helloproject.com/release/5371/" target="_blank">Fiesta! Fiesta!</a><a href="https://www.youtube.com/watch?v=0SMjNmSwFic" target="_blank">▶️</a>・<a href="https://www.youtube.com/watch?v=8MK4ef2W-sg" target="_blank">🎥</a></td>
       <td>井筒日美</td>
       <td>エリック・フクサキ</td>
       <td>大久保薫</td>
@@ -471,7 +471,7 @@
     <tr>
       <td>2nd</td>
       <td>2017/5/19</td>
-      <td><a href="https://www.youtube.com/watch?v=vXjymScSxM0&t=313s" target="_blank" rel="noopener noreferrer">Goal〜明日はあっちだよ〜🎥</a></td>
+      <td><a href="https://www.youtube.com/watch?v=vXjymScSxM0&t=313s" target="_blank">Goal〜明日はあっちだよ〜🎥</a></td>
       <td>近藤薫</td>
       <td>近藤薫</td>
       <td>近藤薫&沢頭たかし</td>
@@ -479,7 +479,7 @@
     <tr>
       <td>3rd</td>
       <td>2017/6/16</td>
-      <td><a href="https://www.youtube.com/watch?v=8L2yxOeE330" target="_blank" rel="noopener noreferrer">如雨露🎥</a></td>
+      <td><a href="https://www.youtube.com/watch?v=8L2yxOeE330" target="_blank">如雨露🎥</a></td>
       <td>児玉雨子</td>
       <td>YUKO</td>
       <td>大久保薫</td>
@@ -487,7 +487,7 @@
     <tr>
       <td>-</td>
       <td>2025/12/23</td>
-      <td><a href="https://www.youtube.com/watch?v=KGePThef8rc" target="_blank" rel="noopener noreferrer">盛れ！ミ・アモーレ（BAND Live Ver.）▶️</a></td>
+      <td><a href="https://www.youtube.com/watch?v=KGePThef8rc" target="_blank">盛れ！ミ・アモーレ（BAND Live Ver.）▶️</a></td>
       <td>山崎あおい</td>
       <td>山崎あおい</td>
       <td>炭竃智弘</td>
@@ -495,7 +495,7 @@
     <tr>
       <td>-</td>
       <td>2025/12/23</td>
-      <td><a href="https://www.youtube.com/watch?v=G36amiUCkXU" target="_blank" rel="noopener noreferrer">盛れ！ミ・アモーレ（Concert 2025 Queen of Hearts Special Flush）▶️</a></td>
+      <td><a href="https://www.youtube.com/watch?v=G36amiUCkXU" target="_blank">盛れ！ミ・アモーレ（Concert 2025 Queen of Hearts Special Flush）▶️</a></td>
       <td>山崎あおい</td>
       <td>山崎あおい</td>
       <td>炭竃智弘</td>
@@ -503,7 +503,7 @@
     <tr>
       <td>-</td>
       <td>2025/12/23</td>
-      <td><a href="https://www.youtube.com/watch?v=swn7_j3qusY" target="_blank" rel="noopener noreferrer">盛れ！ミ・アモーレ - From THE FIRST TAKE▶️</a></td>
+      <td><a href="https://www.youtube.com/watch?v=swn7_j3qusY" target="_blank">盛れ！ミ・アモーレ - From THE FIRST TAKE▶️</a></td>
       <td>山崎あおい</td>
       <td>山崎あおい</td>
       <td>炭竃智弘</td>
@@ -511,7 +511,7 @@
     <tr>
       <td>-</td>
       <td>2026/2/13</td>
-      <td><a href="https://www.youtube.com/watch?v=UCacRPyEV9A" target="_blank" rel="noopener noreferrer">「ひとりで生きられそう」って それってねえ、褒めているの?- From THE FIRST TAKE▶️</a></td>
+      <td><a href="https://www.youtube.com/watch?v=UCacRPyEV9A" target="_blank">「ひとりで生きられそう」って それってねえ、褒めているの?- From THE FIRST TAKE▶️</a></td>
       <td>山崎あおい</td>
       <td>山崎あおい</td>
       <td>鈴木俊介</td>
@@ -534,7 +534,7 @@
     <tr>
       <td rowspan="29" class="dc-group">1st</td>
       <td rowspan="29" class="dc-group">2015/7/15</td>
-      <td rowspan="29" class="dc-group"><a href="https://helloproject.com/release/4204/" target="_blank" rel="noopener noreferrer"></a></td>
+      <td rowspan="29" class="dc-group"><a href="https://helloproject.com/release/4204/" target="_blank"></a></td>
       <td rowspan="12" class="dc-group">Disc.1 The Best Juice</td>
       <td>1</td>
       <td>天まで登れ!</td>
@@ -629,28 +629,28 @@
     </tr>
     <tr>
       <td>2</td>
-      <td><a href="https://www.youtube.com/watch?v=XBQ0v95I9RE" target="_blank" rel="noopener noreferrer">CHOICE & CHANCE▶️</a>・<a href="https://www.youtube.com/watch?v=a1MDCj0T0c4" target="_blank" rel="noopener noreferrer">🎥</a></td>
+      <td><a href="https://www.youtube.com/watch?v=XBQ0v95I9RE" target="_blank">CHOICE & CHANCE▶️</a>・<a href="https://www.youtube.com/watch?v=a1MDCj0T0c4" target="_blank">🎥</a></td>
       <td>星部ショウ</td>
       <td>星部ショウ</td>
       <td>平田祥一郎</td>
     </tr>
     <tr>
       <td>3</td>
-      <td><a href="https://www.youtube.com/watch?v=1SiDmKHHLro&t=2592s" target="_blank" rel="noopener noreferrer">愛・愛・傘🎥</a></td>
+      <td><a href="https://www.youtube.com/watch?v=1SiDmKHHLro&t=2592s" target="_blank">愛・愛・傘🎥</a></td>
       <td>中島卓偉</td>
       <td>中島卓偉</td>
       <td>大久保薫</td>
     </tr>
     <tr>
       <td>4</td>
-      <td><a href="https://www.youtube.com/watch?v=UfwpclOArhc&t=259s" target="_blank" rel="noopener noreferrer">生まれたてのBaby Love🎥</a></td>
+      <td><a href="https://www.youtube.com/watch?v=UfwpclOArhc&t=259s" target="_blank">生まれたてのBaby Love🎥</a></td>
       <td>星部ショウ</td>
       <td>masaaki asada</td>
       <td>松井寛</td>
     </tr>
     <tr>
       <td>5</td>
-      <td><a href="https://www.youtube.com/watch?v=8uLpUM-XFkQ&t=1873s" target="_blank" rel="noopener noreferrer">選ばれし私達🎥</a></td>
+      <td><a href="https://www.youtube.com/watch?v=8uLpUM-XFkQ&t=1873s" target="_blank">選ばれし私達🎥</a></td>
       <td>つんく</td>
       <td>つんく</td>
       <td>山崎淳</td>
@@ -664,35 +664,35 @@
     </tr>
     <tr>
       <td>7</td>
-      <td><a href="https://www.youtube.com/watch?v=zBrio8u91Ek&t=410s" target="_blank" rel="noopener noreferrer">GIRLS BE AMBITIOUS🎥</a></td>
+      <td><a href="https://www.youtube.com/watch?v=zBrio8u91Ek&t=410s" target="_blank">GIRLS BE AMBITIOUS🎥</a></td>
       <td>中島卓偉</td>
       <td>中島卓偉</td>
       <td>中島卓偉・宮永治郎</td>
     </tr>
     <tr>
       <td>8</td>
-      <td><a href="https://www.youtube.com/watch?v=hfrALgcKlgc&t=845s" target="_blank" rel="noopener noreferrer">愛のダイビング🎥</a></td>
+      <td><a href="https://www.youtube.com/watch?v=hfrALgcKlgc&t=845s" target="_blank">愛のダイビング🎥</a></td>
       <td>星部ショウ</td>
       <td>星部ショウ</td>
       <td>土肥真生</td>
     </tr>
     <tr>
       <td>9</td>
-      <td><a href="https://www.youtube.com/watch?v=BUU99oZPrZ8&t=1287s" target="_blank" rel="noopener noreferrer">チクタク 私の旬🎥</a></td>
+      <td><a href="https://www.youtube.com/watch?v=BUU99oZPrZ8&t=1287s" target="_blank">チクタク 私の旬🎥</a></td>
       <td>児玉雨子</td>
       <td>星部ショウ</td>
       <td>CMJK</td>
     </tr>
     <tr>
       <td>10</td>
-      <td><a href="https://www.youtube.com/watch?v=Ln9JjDnqyIA&t=1968s" target="_blank" rel="noopener noreferrer">未来へ、さあ走り出せ!🎥</a></td>
+      <td><a href="https://www.youtube.com/watch?v=Ln9JjDnqyIA&t=1968s" target="_blank">未来へ、さあ走り出せ!🎥</a></td>
       <td>角田崇徳</td>
       <td>KOJI oba</td>
       <td>KOJI oba</td>
     </tr>
     <tr>
       <td>11</td>
-      <td><a href="https://www.youtube.com/watch?v=E2AKITM9uA0" target="_blank" rel="noopener noreferrer">続いていくSTORY▶️</a>・<a href="https://www.youtube.com/watch?v=Ln9JjDnqyIA&t=1968s" target="_blank" rel="noopener noreferrer">🎥</a></td>
+      <td><a href="https://www.youtube.com/watch?v=E2AKITM9uA0" target="_blank">続いていくSTORY▶️</a>・<a href="https://www.youtube.com/watch?v=Ln9JjDnqyIA&t=1968s" target="_blank">🎥</a></td>
       <td>近藤薫</td>
       <td>近藤薫</td>
       <td>近藤薫・HASSE</td>
@@ -700,7 +700,7 @@
     <tr>
       <td rowspan="6" class="dc-group">The Cover Juice</td>
       <td>1</td>
-      <td><a href="https://www.youtube.com/watch?v=5ktnsWyJOa4&t=1394s" target="_blank" rel="noopener noreferrer">Magic of Love（J=J 2015Ver.）🎥</a></td>
+      <td><a href="https://www.youtube.com/watch?v=5ktnsWyJOa4&t=1394s" target="_blank">Magic of Love（J=J 2015Ver.）🎥</a></td>
       <td>つんく</td>
       <td>つんく</td>
       <td>村山晋一郎</td>
@@ -721,7 +721,7 @@
     </tr>
     <tr>
       <td>4</td>
-      <td><a href="https://www.youtube.com/watch?v=INFWNZCYoVU&t=2006s" target="_blank" rel="noopener noreferrer">スクランブル🎥</a></td>
+      <td><a href="https://www.youtube.com/watch?v=INFWNZCYoVU&t=2006s" target="_blank">スクランブル🎥</a></td>
       <td>つんく</td>
       <td>つんく</td>
       <td>鈴木Daichi秀行</td>
@@ -743,7 +743,7 @@
     <tr>
       <td rowspan="22" class="dc-group">2nd</td>
       <td rowspan="22" class="dc-group">2018/8/1</td>
-      <td rowspan="22" class="dc-group"><<a href="https://helloproject.com/release/5684/" t"arget="_blank" rel="noopener noreferrer">Juice=Juice#2 -!Una mas!-</a></td>
+      <td rowspan="22" class="dc-group"><<a href="https://helloproject.com/release/5684/" t"arget="_blank">Juice=Juice#2 -!Una mas!-</a></td>
       <td rowspan="11" class="dc-group">Disc.1</td>
       <td>1</td>
       <td>Fiesta! Fiesta!</td>
@@ -824,7 +824,7 @@
     <tr>
       <td rowspan="11" class="dc-group">Disc.2</td>
       <td>1</td>
-      <td><a href="https://www.youtube.com/watch?v=rgUER272LsA&t=1562s" target="_blank" rel="noopener noreferrer">Never Never Surrender🎥</a></td>
+      <td><a href="https://www.youtube.com/watch?v=rgUER272LsA&t=1562s" target="_blank">Never Never Surrender🎥</a></td>
       <td>児玉雨子</td>
       <td>星部ショウ</td>
       <td>大久保薫</td>
@@ -852,14 +852,14 @@
     </tr>
     <tr>
       <td>5</td>
-      <td><a href="https://www.youtube.com/watch?v=5Pt4FTzjaFo&t=3275s" target="_blank" rel="noopener noreferrer">あばれてっか?! ハヴアグッタイ🎥</a></td>
+      <td><a href="https://www.youtube.com/watch?v=5Pt4FTzjaFo&t=3275s" target="_blank">あばれてっか?! ハヴアグッタイ🎥</a></td>
       <td>児玉雨子</td>
       <td>ダンス☆マン</td>
       <td>ダンス☆マン</td>
     </tr>
     <tr>
       <td>6</td>
-      <td><a href="https://www.youtube.com/watch?v=pwPWvwn5wH8&t=20s" target="_blank" rel="noopener noreferrer">素直に甘えて🎥</a></td>
+      <td><a href="https://www.youtube.com/watch?v=pwPWvwn5wH8&t=20s" target="_blank">素直に甘えて🎥</a></td>
       <td>NOBE</td>
       <td>星部ショウ</td>
       <td>星部ショウ</td>
@@ -873,21 +873,21 @@
     </tr>
     <tr>
       <td>8</td>
-      <td><a href="https://www.youtube.com/watch?v=_6ug8Bh3Zwo&t=1573s" target="_blank" rel="noopener noreferrer">銀色のテレパシー🎥</a></td>
+      <td><a href="https://www.youtube.com/watch?v=_6ug8Bh3Zwo&t=1573s" target="_blank">銀色のテレパシー🎥</a></td>
       <td>児玉雨子</td>
       <td>星部ショウ</td>
       <td>高橋諭一</td>
     </tr>
     <tr>
       <td>9</td>
-      <td><a href="https://www.youtube.com/watch?v=lXB1gMTP-ew" target="_blank" rel="noopener noreferrer">この世界は捨てたもんじゃない🎥</a></td>
+      <td><a href="https://www.youtube.com/watch?v=lXB1gMTP-ew" target="_blank">この世界は捨てたもんじゃない🎥</a></td>
       <td>井筒日美</td>
       <td>中村瑛彦</td>
       <td>中村瑛彦</td>
     </tr>
     <tr>
       <td>10</td>
-      <td><a href="https://www.youtube.com/watch?v=2_toons5ciE&t=130s" target="_blank" rel="noopener noreferrer">禁断少女🎥</a></td>
+      <td><a href="https://www.youtube.com/watch?v=2_toons5ciE&t=130s" target="_blank">禁断少女🎥</a></td>
       <td>大橋莉子</td>
       <td>大橋莉子</td>
       <td>平田祥一郎</td>
@@ -902,7 +902,7 @@
     <tr>
       <td rowspan="24" class="dc-group">3rd</td>
       <td rowspan="24" class="dc-group">2022/4/20</td>
-      <td rowspan="24" class="dc-group"><<a href="https://helloproject.com/release/6692/" target="_blank" rel="noopener noreferrer">terzo</a>/td>
+      <td rowspan="24" class="dc-group"><<a href="https://helloproject.com/release/6692/" target="_blank">terzo</a>/td>
       <td rowspan="16" class="dc-group">Disc.1 The Best Juice 2019-2022</td>
       <td>1</td>
       <td>微炭酸</td>
@@ -940,7 +940,7 @@
     </tr>
     <tr>
       <td>6</td>
-      <td><a href="https://www.youtube.com/watch?v=ykotlrfr6oI&t=5s" target="_blank" rel="noopener noreferrer">「ひとりで生きられそう」って それってねえ、褒めているの？ （New Vocal Ver.）💃</a></td>
+      <td><a href="https://www.youtube.com/watch?v=ykotlrfr6oI&t=5s" target="_blank">「ひとりで生きられそう」って それってねえ、褒めているの？ （New Vocal Ver.）💃</a></td>
       <td>山崎あおい</td>
       <td>鈴木俊介</td>
       <td>鈴木俊介</td>
@@ -1018,56 +1018,56 @@
     <tr>
       <td rowspan="8" class="dc-group">Disc.2 The Brand-New Juice 2022</td>
       <td>1</td>
-      <td><a href="https://www.youtube.com/watch?v=5Ztjq7P88Rs&t=186s" target="_blank" rel="noopener noreferrer">GIRLS BE AMBITIOUS! 2022🎥</a></td>
+      <td><a href="https://www.youtube.com/watch?v=5Ztjq7P88Rs&t=186s" target="_blank">GIRLS BE AMBITIOUS! 2022🎥</a></td>
       <td>中島卓偉</td>
       <td>中島卓偉</td>
       <td>中島卓偉 / 宮永治郎</td>
     </tr>
     <tr>
       <td>2</td>
-      <td><a href="https://www.youtube.com/watch?v=62eLutOvbr8&t=140s" target="_blank" rel="noopener noreferrer">POPPIN' LOVE🎥</a></td>
+      <td><a href="https://www.youtube.com/watch?v=62eLutOvbr8&t=140s" target="_blank">POPPIN' LOVE🎥</a></td>
       <td>山崎あおい</td>
       <td>Erik Lidbom / Julie Yu / Andreas Carlsson</td>
       <td>Erik Lidbom</td>
     </tr>
     <tr>
       <td>3</td>
-      <td><a href="https://www.youtube.com/watch?v=rgUER272LsA&t=150s" target="_blank" rel="noopener noreferrer">STAGE～アガってみな～🎥</a></td>
+      <td><a href="https://www.youtube.com/watch?v=rgUER272LsA&t=150s" target="_blank">STAGE～アガってみな～🎥</a></td>
       <td>徳田光希</td>
       <td>徳田光希</td>
       <td>平田祥一郎</td>
     </tr>
     <tr>
       <td>4</td>
-      <td><a href="https://www.youtube.com/watch?v=iCP07zOEjFI&t=1648s" target="_blank" rel="noopener noreferrer">Mon Amour🎥</a></td>
+      <td><a href="https://www.youtube.com/watch?v=iCP07zOEjFI&t=1648s" target="_blank">Mon Amour🎥</a></td>
       <td>オオヤギヒロオ / 井筒日美</td>
       <td>オオヤギヒロオ</td>
       <td>浜田ピエール裕介</td>
     </tr>
     <tr>
       <td>5</td>
-      <td><a href="https://www.youtube.com/watch?v=fAjwjHgDD6c&t=2548s" target="_blank" rel="noopener noreferrer">ノクチルカ🎥</a></td>
+      <td><a href="https://www.youtube.com/watch?v=fAjwjHgDD6c&t=2548s" target="_blank">ノクチルカ🎥</a></td>
       <td>唐沢美帆</td>
       <td>松井寛</td>
       <td>松井寛</td>
     </tr>
     <tr>
       <td>6</td>
-      <td><a href="https://www.youtube.com/watch?v=TI6oxfA67_4&t=3375s" target="_blank" rel="noopener noreferrer">G.O.A.T🎥</a></td>
+      <td><a href="https://www.youtube.com/watch?v=TI6oxfA67_4&t=3375s" target="_blank">G.O.A.T🎥</a></td>
       <td>井筒日美</td>
       <td>Shusui / Andreas Ohrm / Henrik Smith</td>
       <td>Henrik Smith</td>
     </tr>
     <tr>
       <td>7</td>
-      <td><a href="https://www.youtube.com/watch?v=38vZdC-Ws1w&t=1497s" target="_blank" rel="noopener noreferrer">雨の中の口笛🎥</a></td>
+      <td><a href="https://www.youtube.com/watch?v=38vZdC-Ws1w&t=1497s" target="_blank">雨の中の口笛🎥</a></td>
       <td>Shusui / Zeyun / tsubomi</td>
       <td>Shusui / Zeyun / tsubomi</td>
       <td>Zeyun</td>
     </tr>
     <tr>
       <td>8</td>
-      <td><a href="https://www.youtube.com/watch?v=1w7e-OAlQWE" target="_blank" rel="noopener noreferrer">プラトニック・プラネット（Ultimate Juice Ver.）🎥</a></td>
+      <td><a href="https://www.youtube.com/watch?v=1w7e-OAlQWE" target="_blank">プラトニック・プラネット（Ultimate Juice Ver.）🎥</a></td>
       <td>児玉雨子</td>
       <td>炭竃智弘</td>
       <td>炭竃智弘</td>
@@ -1089,7 +1089,7 @@
     <tr>
       <td rowspan="14" class="dc-group">1st</td>
       <td rowspan="14" class="dc-group">2023/10/11</td>
-      <td rowspan="14" class="dc-group"><a href="https://helloproject.com/release/7056/" target="_blank" rel="noopener noreferrer">Juicetory</a><</td>
+      <td rowspan="14" class="dc-group"><a href="https://helloproject.com/release/7056/" target="_blank">Juicetory</a><</td>
       <td>1</td>
       <td>ロマンスの途中（2023 10th Juice Ver.）</td>
       <td>つんく</td>
@@ -1204,9 +1204,9 @@
     <tr>
       <td rowspan="14" class="dc-group">1st</td>
       <td rowspan="14" class="dc-group">2026/6/21</td>
-      <td rowspan="14" class="dc-group"><a href="https://helloproject.com/release/7674/" target="_blank" rel="noopener noreferrer">MORE! MORE! EP</a></td>
+      <td rowspan="14" class="dc-group"><a href="https://helloproject.com/release/7674/" target="_blank">MORE! MORE! EP</a></td>
       <td>1</td>
-      <td><a href="https://www.youtube.com/watch?v=66T4PgpJDn8" target="_blank" rel="noopener noreferrer">クラクラ☆クライマックス🎥</a></td>
+      <td><a href="https://www.youtube.com/watch?v=66T4PgpJDn8" target="_blank">クラクラ☆クライマックス🎥</a></td>
       <td>広瀬香美/Maria Okada</td>
       <td>広瀬香美</td>
       <td>h-wonder</td>
@@ -1227,14 +1227,14 @@
     </tr>
     <tr>
       <td>4</td>
-      <td><a href="https://www.youtube.com/watch?v=WvdT3_XHYIk" target="_blank" rel="noopener noreferrer">甘えんな🎥</a></td>
+      <td><a href="https://www.youtube.com/watch?v=WvdT3_XHYIk" target="_blank">甘えんな🎥</a></td>
       <td>大森祥子</td>
       <td>炭竃智弘</td>
       <td>炭竃智弘</td>
     </tr>
     <tr>
       <td>5</td>
-      <td><a href="https://www.youtube.com/watch?v=nrGLxAWIUJo" target="_blank" rel="noopener noreferrer">BLOODY BULLET▶️</a>・<a href="https://www.youtube.com/watch?v=xW3p6ZmX5CA" target="_blank" rel="noopener noreferrer">🎥</a></td>
+      <td><a href="https://www.youtube.com/watch?v=nrGLxAWIUJo" target="_blank">BLOODY BULLET▶️</a>・<a href="https://www.youtube.com/watch?v=xW3p6ZmX5CA" target="_blank">🎥</a></td>
       <td>西野蒟蒻</td>
       <td>星部ショウ</td>
       <td>平田祥一郎</td>
@@ -1248,7 +1248,7 @@
     </tr>
     <tr>
       <td>7</td>
-      <td><a href="https://www.youtube.com/watch?v=SfPe376KI9I" target="_blank" rel="noopener noreferrer">GIRLS BE AMBITIOUS! 2026🎥</a> (Live at Zepp DiverCity(TOKYO)2026.05.06</td>
+      <td><a href="https://www.youtube.com/watch?v=SfPe376KI9I" target="_blank">GIRLS BE AMBITIOUS! 2026🎥</a> (Live at Zepp DiverCity(TOKYO)2026.05.06</td>
       <td>中島卓偉</td>
       <td>中島卓偉</td>
       <td>中島卓偉/宮永治郎</td>

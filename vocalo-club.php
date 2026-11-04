@@ -9,7 +9,7 @@
 <main>
   <h1>宮本佳林のボカロ部 紹介曲データベース</h1>
 <div class="vc-lead">
-  <p>ニコニコのチャンネル番組<a href="https://ch.nicovideo.jp/miyamoto-vocalo" target="_blank" rel="noopener noreferrer">宮本佳林のボカロ部</a>で紹介された曲をまとめました。<br>
+  <p>ニコニコのチャンネル番組<a href="https://ch.nicovideo.jp/miyamoto-vocalo" target="_blank">宮本佳林のボカロ部</a>で紹介された曲をまとめました。<br>
   番組で宮本佳林さんやゲストが歌った曲・TikTokで踊った曲も、各回の最後に入れています。</p>
 
   <p>曲名から原曲、P名からボカロPのユーザーページにリンクしています。<br>

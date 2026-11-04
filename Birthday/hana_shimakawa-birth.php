@@ -23,8 +23,8 @@
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td>2026年4月10日</td><td>17:10</td><td>ロージークロニクル 島川波菜バースデーイベント2026</td><td>飛行船シアター</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/23489" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
-<tr><td>2026年4月10日</td><td>19:30</td><td>ロージークロニクル 島川波菜バースデーイベント2026</td><td>飛行船シアター</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/23490" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
+<tr class="row-even"><td>2026年4月10日</td><td>17:10</td><td>ロージークロニクル 島川波菜バースデーイベント2026</td><td>飛行船シアター</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/23489" target="_blank">Tomoko（セットリスト）</a></td></tr>
+<tr><td>2026年4月10日</td><td>19:30</td><td>ロージークロニクル 島川波菜バースデーイベント2026</td><td>飛行船シアター</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/23490" target="_blank">Tomoko（セットリスト）</a></td></tr>
 </tbody>
 </table>
 

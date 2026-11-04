@@ -7,6 +7,9 @@
 <meta name="robots" content="noindex,nofollow">
 <?php endif; ?>
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<?php // 外部へのリンクには Referer を送らない(各リンクの rel="noreferrer" の代わり)。
+      // YouTube などの埋め込みは Referer がないと動かないので、iframe 側で referrerpolicy を上書きする ?>
+<meta name="referrer" content="same-origin">
 <?php
   $p_title = isset($title) ? $title : "宮本佳林・M-line・ハロプロ Archive";
   // タブに使う完全なタイトル。JSON-LD の name はページ名だけでよいので $p_title を使う

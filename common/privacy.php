@@ -10,7 +10,7 @@
 <p>当サイト（karin-archive.com / 宮本佳林・M-line・ハロプロ Archive）における情報の取扱いについて定めます。</p>
 
 <h3>1. アクセス解析について</h3>
-<p>当サイトでは、利用状況の把握のためにGoogleアナリティクス（Google Analytics）を利用しています。Googleアナリティクスはデータ収集のためにCookieを使用します。収集される情報は匿名であり、個人を特定するものではありません。収集を希望されない場合は、お使いのブラウザの設定、またはGoogleが提供するオプトアウトアドオン（<a href="https://tools.google.com/dlpage/gaoptout" target="_blank" rel="noopener">https://tools.google.com/dlpage/gaoptout</a>）により無効化できます。</p>
+<p>当サイトでは、利用状況の把握のためにGoogleアナリティクス（Google Analytics）を利用しています。Googleアナリティクスはデータ収集のためにCookieを使用します。収集される情報は匿名であり、個人を特定するものではありません。収集を希望されない場合は、お使いのブラウザの設定、またはGoogleが提供するオプトアウトアドオン（<a href="https://tools.google.com/dlpage/gaoptout" target="_blank">https://tools.google.com/dlpage/gaoptout</a>）により無効化できます。</p>
 
 <h3>2. アクセスログについて</h3>
 <p>当サイトはレンタルサーバー上で運用されており、サーバーの仕様により、アクセス日時・IPアドレス・ブラウザ種別等のログが自動的に記録される場合があります。これらはサイトの保守・セキュリティの目的で利用します。</p>

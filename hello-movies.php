@@ -135,7 +135,7 @@
     wrap.innerHTML = '<iframe src="https://www.youtube-nocookie.com/embed/' + yt +
       '?autoplay=1" title="予告編" frameborder="0" ' +
       'allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" ' +
-      'allowfullscreen></iframe>';
+      'referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>';
     btn.replaceWith(wrap);
   }
 

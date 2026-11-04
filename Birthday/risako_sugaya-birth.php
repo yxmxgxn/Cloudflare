@@ -23,8 +23,8 @@
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td>2013年4月4日</td><td>18:30</td><td>Berryz工房 菅谷梨沙子バースデーイベント～ with thanks！～</td><td>TOKYO FM HALL</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/3468" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
-<tr><td>2013年4月4日</td><td>20:10</td><td>Berryz工房 菅谷梨沙子バースデーイベント～ with thanks！～</td><td>TOKYO FM HALL</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/3469" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
+<tr class="row-even"><td>2013年4月4日</td><td>18:30</td><td>Berryz工房 菅谷梨沙子バースデーイベント～ with thanks！～</td><td>TOKYO FM HALL</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/3468" target="_blank">Tomoko（セットリスト）</a></td></tr>
+<tr><td>2013年4月4日</td><td>20:10</td><td>Berryz工房 菅谷梨沙子バースデーイベント～ with thanks！～</td><td>TOKYO FM HALL</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/3469" target="_blank">Tomoko（セットリスト）</a></td></tr>
 </tbody>
 </table>
 20歳（2014年）
@@ -40,8 +40,8 @@
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td>2014年4月4日</td><td>18:30</td><td>Berryz工房 菅谷梨沙子バースデーイベント2014</td><td>TOKYO FM HALL</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/3852" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
-<tr><td>2014年4月4日</td><td>20:10</td><td>Berryz工房 菅谷梨沙子バースデーイベント2014</td><td>TOKYO FM HALL</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/3853" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
+<tr class="row-even"><td>2014年4月4日</td><td>18:30</td><td>Berryz工房 菅谷梨沙子バースデーイベント2014</td><td>TOKYO FM HALL</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/3852" target="_blank">Tomoko（セットリスト）</a></td></tr>
+<tr><td>2014年4月4日</td><td>20:10</td><td>Berryz工房 菅谷梨沙子バースデーイベント2014</td><td>TOKYO FM HALL</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/3853" target="_blank">Tomoko（セットリスト）</a></td></tr>
 </tbody>
 </table>
 31歳（2025年）

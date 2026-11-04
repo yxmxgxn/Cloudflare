@@ -34,3 +34,11 @@ from icons import icon, icon_for_url
 ```
 
 新しいアイコンは `common/icons.json` に `"名前": {"vb": "...", "svg": "..."}` を足す（`<svg>` タグ自体は書かず中身だけ）。
+
+## 外部リンクと埋め込み
+
+Referer は `common/header.php` の `<meta name="referrer" content="same-origin">` でサイト全体に指定している。
+
+- 外部リンクは `target="_blank"` だけ書く。`rel="noopener noreferrer"` は付けない（noopener はブラウザが自動で付け、Referer は meta で止まる）
+- `<iframe>` には必ず `referrerpolicy="strict-origin-when-cross-origin"` を付ける（JSで作るなら `f.referrerPolicy = '...'`）。YouTube などは Referer がないと再生できない
+- 例外: `worker/index.js` の管理画面は `header.php` を通らないので `rel` を残している

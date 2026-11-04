@@ -6,9 +6,9 @@
 
 <h1>カリンオシ お菓子マップ</h1>
 <p>TBSラジオ Music Palette♪のカリンオシのコーナーで宮本佳林さんが紹介したご当地お菓子の都道府県で日本地図を塗っています。<br>
-  リンクで<a href="https://www.tbsradio.jp/mp/" target="_blank" rel="noopener noreferrer">TBSラジオ Music Palette♪</a>のページと紹介ポストに飛びます。<br>
+  リンクで<a href="https://www.tbsradio.jp/mp/" target="_blank">TBSラジオ Music Palette♪</a>のページと紹介ポストに飛びます。<br>
   紹介回数で色を深くしています。</p>
-<p>Xのポストのまとめは<a href="/Radio/karinoshi" target="_blank" rel="noopener noreferrer">こちら</a></p>
+<p>Xのポストのまとめは<a href="/Radio/karinoshi" target="_blank">こちら</a></p>
 <p>追記<br>
 宮本佳林さんのMusic Palette♪は2026/09/27が最終回なので、このページの更新は終わります。</p>
 <div class="karinoshi-map">
@@ -320,8 +320,8 @@ const PREF = {"北海道":1,"青森県":2,"岩手県":3,"宮城県":4,"秋田県
 
 const linkHtml = d => {
   let s = "";
-  if (d.post)    s += ` <a href="https://x.com/karin__miyamoto/status/${d.post}" target="_blank" rel="noopener">𝕏</a>`;
-  if (d.article) s += ` <a href="https://www.tbsradio.jp/articles/${d.article}/" target="_blank" rel="noopener">TBS</a>`;
+  if (d.post)    s += ` <a href="https://x.com/karin__miyamoto/status/${d.post}" target="_blank">𝕏</a>`;
+  if (d.article) s += ` <a href="https://www.tbsradio.jp/articles/${d.article}/" target="_blank">TBS</a>`;
   return s;
 };
 

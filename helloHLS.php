@@ -22,7 +22,7 @@
 Lは無視して・HS円環上にプロットしました。<br>
 各グループをクリックするとそのグループだけがフィルタされます。<br>
 #$記述は一般的なものではなく、私が別の文脈で提案したもので以下を読んでください。<br>
-<a href="https://note.com/yxmxgxn/n/n5b084dc0d700" target="_blank" rel="noopener noreferrer">Note（ハロプロメンバーカラーの公式によるCSS指定への感謝の表明）</a></div>
+<a href="https://note.com/yxmxgxn/n/n5b084dc0d700" target="_blank">Note（ハロプロメンバーカラーの公式によるCSS指定への感謝の表明）</a></div>
 
 <script>
 const members = [
