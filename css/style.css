@@ -1949,6 +1949,12 @@ a.iv-stats-row:hover {
   vertical-align: -4px;
 }
 
+/*ハロカバ（hanakin-table と共用。曲が変わる行の区切り線）
+-------------------------------------*/
+.hc-table tr.hc-song-start td {
+  border-top: 2px solid #999;
+}
+
 /* ===== 匿名フィードバック(フッター) ===== */
 .fb-area {
   max-width: 640px;

@@ -14,6 +14,7 @@ on:
           - "mhello (エムハロイベント)"
           - "cooking (クッキングコーナー)"
           - "hanakin (宮本佳林のIGチャレンジ)"
+          - "hellocover (ハロカバ)"
           - "karinhello (佳林の1日1ハロ)"
           - "karinoshi (カリンオシ)"
           - "members (メンバー一覧)"
@@ -69,6 +70,7 @@ jobs:
           run_if mhello     generate_mhello.py
           run_if cooking    generate_hello_cooking.py
           run_if hanakin    generate_hanakin.py
+          run_if hellocover generate_hellocover.py
           run_if karinhello generate_karinhello.py
           run_if karinoshi  generate_karinoshi.py
           run_if members    generate_members.py
