@@ -118,6 +118,31 @@ ul li:last-child {
   margin-bottom: 0;
 }
 
+/* 誕生日ページのメンバー一覧(hello-birthday.php)。グループごとの名前を複数列に並べて縦の長さを詰める */
+.member-list {
+  column-count: 2;
+  column-gap: 24px;
+}
+.member-list li {
+  break-inside: avoid;
+}
+@media screen and (min-width: 769px) {
+  .member-list {
+    column-count: 4;
+  }
+}
+
+/* 誕生日ページ上部のグループへのジャンプリンク */
+.group-jump ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 14px;
+  font-size: 15px;
+}
+.group-jump li {
+  margin-bottom: 0;
+}
+
 .indent ul {
   list-style: none;
   margin-left: 16px;
