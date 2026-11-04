@@ -7,7 +7,7 @@
 
 <main>
   <h1>ハロプロ ファミ通ゲーム実況ch 配信アーカイブまとめ</h1>
-  ハロプロメンバー・OGがYouTubeの<a href="https://www.youtube.com/@famitsugamelive" target="_blank" rel="noopener noreferrer">ファミ通ゲーム実況ch</a>・<a href="https://www.youtube.com/@famitsutube" target="_blank" rel="noopener noreferrer">ファミ通TUBE</a>で配信されたアーカイブを一覧でまとめました。番組名は「ハロ通LIVE」から「ハロ通GAMES」に変わっていますが、同じ配信です。ダイジェスト版・ショート版は含みません。<br>
+  ハロプロメンバー・OGがYouTubeの<a href="https://www.youtube.com/@famitsugamelive" target="_blank">ファミ通ゲーム実況ch</a>・<a href="https://www.youtube.com/@famitsutube" target="_blank">ファミ通TUBE</a>で配信されたアーカイブを一覧でまとめました。番組名は「ハロ通LIVE」から「ハロ通GAMES」に変わっていますが、同じ配信です。ダイジェスト版・ショート版は含みません。<br>
   また月刊あみ通で平山遊季さんがゲスト出演したものも含みました。<br>
   各カードは、配信日とタイトル（動画リンク）、メンバー、ゲーム（ジャンル）で構成されています。<br>
   グループ・メンバー・ジャンルでの絞り込み、配信日の並び替え、フリーワード検索（メンバー・グループ・ゲーム・ジャンル）ができます。<br>

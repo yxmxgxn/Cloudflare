@@ -12,7 +12,7 @@
 <main>
   <h1>Juice=Juice 松永里愛のMIX=Juice 選曲まとめ</h1>
   TBSラジオ 宮本佳林 Music Palette♪のJuice=Juice 松永里愛のMIX=Juiceのコーナーで選曲された曲をまとめています<br>
-  放送日をクリックすると<a href="https://www.tbsradio.jp/mp/" target="_blank" rel="noopener noreferrer">TBSラジオ Music Palette♪</a>の各回のページに<br>
+  放送日をクリックすると<a href="https://www.tbsradio.jp/mp/" target="_blank">TBSラジオ Music Palette♪</a>の各回のページに<br>
   Xのアイコンを飛ぶとポストに飛びます<br>
   <div id="mixjuice-filter">
     <select id="mixjuice-select-selector">

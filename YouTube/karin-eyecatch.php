@@ -17,7 +17,7 @@
 
 <main>
   <h1>宮本佳林 ハロ！ステ アプカミ アイキャッチまとめ</h1>
-  <p>宮本佳林さんが<a href="https://www.youtube.com/helloprojectstation" target="_blank" rel="noopener noreferrer">ハロ！ステ</a>・<a href="https://www.youtube.com/upcomi" target="_blank" rel="noopener noreferrer">アプカミ</a>・<a href="https://www.youtube.com/girlsnightoutch" target="_blank" rel="noopener noreferrer">GREEN ROOM</a>で一言セリフを言うアイキャッチ映像をまとめました。<br>
+  <p>宮本佳林さんが<a href="https://www.youtube.com/helloprojectstation" target="_blank">ハロ！ステ</a>・<a href="https://www.youtube.com/upcomi" target="_blank">アプカミ</a>・<a href="https://www.youtube.com/girlsnightoutch" target="_blank">GREEN ROOM</a>で一言セリフを言うアイキャッチ映像をまとめました。<br>
   このページは本数が多いので、サムネイルを押すとYouTubeが新しいタブで開きます（アイキャッチの場面から始まります）。</p>
 
   <?php // 本数が多いページなので、その場で再生せずYouTubeを開く ?>

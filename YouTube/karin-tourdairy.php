@@ -90,7 +90,7 @@ $tour_diaries = [
 
 <main>
   <h1>宮本佳林 ツアー日記 まとめ</h1>
-  <p>宮本佳林さんが出ている<a href="https://www.youtube.com/@mlinemusic" target="_blank" rel="noopener noreferrer">M-line Music</a>のツアー日記をまとめました。<br>
+  <p>宮本佳林さんが出ている<a href="https://www.youtube.com/@mlinemusic" target="_blank">M-line Music</a>のツアー日記をまとめました。<br>
   ツアーごとに、日記の日付・会場・一緒に出演しているメンバーを並べています。<br>
   押すとYouTubeが新しいタブで開き、ツアー日記の場面から始まります。</p>
 

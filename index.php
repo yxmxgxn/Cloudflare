@@ -9,7 +9,7 @@
   <p class="index-lead">宮本佳林さん・M-line・ハロープロジェクトの様々な情報をまとめています</p>
 
   <section class="index-section">
-    <h2><a href="https://www.jp-r.co.jp/release/?filterType=member&viewType=member&members=40" target="_blank" rel="noopener noreferrer">宮本佳林 楽曲</a></h2>
+    <h2><a href="https://www.jp-r.co.jp/release/?filterType=member&viewType=member&members=40" target="_blank">宮本佳林 楽曲</a></h2>
     <div class="card-grid index-items">
       <div class="card index-card">
         <a class="index-link" href="/YouTube/karin-song"><?= icon('disc', 'ic ic-20') ?>宮本佳林ソロ曲まとめ</a>
@@ -18,7 +18,7 @@
   </section>
 
   <section class="index-section">
-    <h2><a href="https://www.youtube.com/@miyamotokarin" target="_blank" rel="noopener noreferrer">宮本佳林 YouTube</a></h2>
+    <h2><a href="https://www.youtube.com/@miyamotokarin" target="_blank">宮本佳林 YouTube</a></h2>
     <div class="card-grid index-items">
       <div class="card index-card">
         <a class="index-link" href="/YouTube/karin-solo"><?= icon('youtube-brand', 'ic ic-20') ?>宮本佳林ソロ公式ライブ映像まとめ</a>
@@ -72,7 +72,7 @@
   </section>
 
   <section class="index-section">
-    <h2><a href="https://www.tbsradio.jp/mp/" target="_blank" rel="noopener noreferrer">宮本佳林 ラジオ</a></h2>
+    <h2><a href="https://www.tbsradio.jp/mp/" target="_blank">宮本佳林 ラジオ</a></h2>
     <div class="card-grid index-items">
       <div class="card index-card">
         <a class="index-link" href="/Radio/karinoshi"><?= icon('radio', 'ic ic-20') ?>宮本佳林 Music Palette♪ カリンオシまとめ</a>
@@ -90,7 +90,7 @@
   </section>
 
   <section class="index-section">
-    <h2><a href="https://x.com/karin__miyamoto" target="_blank" rel="noopener noreferrer">宮本佳林 X</a></h2>
+    <h2><a href="https://x.com/karin__miyamoto" target="_blank">宮本佳林 X</a></h2>
     <div class="card-grid index-items">
       <div class="card index-card">
         <a class="index-link" href="/X/karin-hello"><?= icon('x-box', 'ic ic-20') ?>宮本佳林 X #佳林の１日１ハロまとめ</a>
@@ -104,7 +104,7 @@
   </section>
 
   <section class="index-section">
-    <h2><a href="https://www.instagram.com/karin_miyamoto.official/" target="_blank" rel="noopener noreferrer">宮本佳林 Instagram</a> / <a href="https://www.tiktok.com/@karin_miyamoto" target="_blank" rel="noopener noreferrer">TikTok</a></h2>
+    <h2><a href="https://www.instagram.com/karin_miyamoto.official/" target="_blank">宮本佳林 Instagram</a> / <a href="https://www.tiktok.com/@karin_miyamoto" target="_blank">TikTok</a></h2>
     <div class="card-grid index-items">
       <div class="card index-card">
         <a class="index-link" href="/instagram/karin-insta"><?= icon('instagram', 'ic ic-20') ?>宮本佳林 インスタライブまとめ</a>
@@ -118,7 +118,7 @@
   </section>
 
   <section class="index-section">
-    <h2><a href="https://ch.nicovideo.jp/miyamoto-vocalo" target="_blank" rel="noopener noreferrer">宮本佳林 ニコニコ</a></h2>
+    <h2><a href="https://ch.nicovideo.jp/miyamoto-vocalo" target="_blank">宮本佳林 ニコニコ</a></h2>
     <div class="card-grid index-items">
       <div class="card index-card">
         <a class="index-link" href="/vocalo-club"><?= icon('monitor', 'ic ic-20') ?>宮本佳林のボカロ部 紹介曲データベース</a>
@@ -142,7 +142,7 @@
   </section>
 
   <section class="index-section">
-    <h2><a href="https://helloproject.com/" target="_blank" rel="noopener noreferrer">ハロー！プロジェクト</a></h2>
+    <h2><a href="https://helloproject.com/" target="_blank">ハロー！プロジェクト</a></h2>
     <div class="card-grid index-items">
       <div class="card index-card">
         <a class="index-link" href="/sns"><?= icon('link-brand', 'ic ic-20') ?>ハロプロ SNS一覧</a>
@@ -224,7 +224,7 @@
   </section>
 
   <section class="index-section">
-    <h2><a href="https://helloproject.com/juicejuice/" target="_blank" rel="noopener noreferrer">Juice=Juice</a></h2>
+    <h2><a href="https://helloproject.com/juicejuice/" target="_blank">Juice=Juice</a></h2>
     <div class="card-grid index-items">
       <div class="card index-card">
         <a class="index-link" href="/JuiceJuice/juicejuice-song"><?= icon('disc', 'ic ic-20') ?>Juice=Juice 楽曲まとめ</a>

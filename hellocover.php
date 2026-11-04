@@ -12,6 +12,8 @@
   2010年12月から2011年3月まで、第1弾〜第6弾で全50録音が配信されました。<br>
   配信サービスごとのリンクは、今開けるものだけ載せています。空欄は、そのサービスで見つからなかったものです。
 
+<div class="hc-wrap">
+<?php include $_SERVER['DOCUMENT_ROOT'] . '/Spreadsheet/hellocover_filter.php'; ?>
 <div class="hanakin-wrap">
 <table class="hanakin-table hc-table">
 <thead>
@@ -29,6 +31,7 @@
   <?php include $_SERVER['DOCUMENT_ROOT'] . '/Spreadsheet/hellocover_table.php'; ?>
 </tbody>
 </table>
+</div>
 </div>
 
 <?php include $_SERVER['DOCUMENT_ROOT'] . '/Generated/hellocover_generated.php'; ?>

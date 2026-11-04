@@ -107,8 +107,8 @@
   <h1>島倉りか りかワニ紅白歌合戦 選曲まとめ</h1>
   <p>WANI BOOKS Newsクランチ！（ニュースクランチ）で連載されていた「りかワニ紅白歌合戦」の選曲まとめです。<br>
   昭和歌謡好きのBEYOOOOONDS 島倉りかさんが毎回テーマを決めて紅組・白組から1曲ずつ選び、どちらが勝ちかを決めていました。<br>
-  記事は現在読めなくなっているため、リンクは<a href="https://web.archive.org/" target="_blank" rel="noopener noreferrer">Wayback Machine</a>の魚拓に飛びます。<br>
-  <a href="https://web.archive.org/web/20220307091302/https://wanibooks-newscrunch.com/category/series-031" target="_blank" rel="noopener noreferrer">連載の記事一覧ページ（魚拓）</a></p>
+  記事は現在読めなくなっているため、リンクは<a href="https://web.archive.org/" target="_blank">Wayback Machine</a>の魚拓に飛びます。<br>
+  <a href="https://web.archive.org/web/20220307091302/https://wanibooks-newscrunch.com/category/series-031" target="_blank">連載の記事一覧ページ（魚拓）</a></p>
 
   <p class="rw-score">
     <span class="rw-score-red">紅組 <?= $red_wins ?>勝</span>
@@ -132,7 +132,7 @@
         <td class="rw-theme"><?= $h($r['theme']) ?></td>
         <?= rw_side($r['red'], $r['win'] === 'red', $h) ?>
         <?= rw_side($r['white'], $r['win'] === 'white', $h) ?>
-        <td class="rw-links"><?php foreach ($r['links'] as [$label, $ts, $id]): ?><a href="<?= $WB . $ts . $NC . $id ?>" target="_blank" rel="noopener noreferrer"><?= $h($label) ?></a><?php endforeach; ?></td>
+        <td class="rw-links"><?php foreach ($r['links'] as [$label, $ts, $id]): ?><a href="<?= $WB . $ts . $NC . $id ?>" target="_blank"><?= $h($label) ?></a><?php endforeach; ?></td>
       </tr>
 <?php if (isset($r['note'])): ?>
       <tr class="rw-note-row">

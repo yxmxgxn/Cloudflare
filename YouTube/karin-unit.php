@@ -415,7 +415,7 @@ arsort($member_count);
 
 <main>
   <h1>宮本佳林 M-Line Music・公式YouTube ユニット ライブYouTubeまとめ</h1>
-  <p>宮本佳林さんが<a href="https://www.youtube.com/c/mlinemusic" target="_blank" rel="noopener noreferrer">M-Line Music</a>・<a href="https://www.youtube.com/c/miyamotokarin" target="_blank" rel="noopener noreferrer">公式YouTube</a>でユニットで歌っている公式ライブ映像をまとめました。<br>
+  <p>宮本佳林さんが<a href="https://www.youtube.com/c/mlinemusic" target="_blank">M-Line Music</a>・<a href="https://www.youtube.com/c/miyamotokarin" target="_blank">公式YouTube</a>でユニットで歌っている公式ライブ映像をまとめました。<br>
   1曲ごとのカードに、歌っているメンバーと公演を並べています。一覧を押すと、カードの上でその映像が再生されます。</p>
   <p class="sc-section-desc">公演名・日付・会場は、各動画の概要欄や動画タイトルを参考に表記をそろえています。概要欄に書かれていないものは同じ公演の別の動画から補っているため、誤りが含まれている可能性があります。</p>
 

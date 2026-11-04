@@ -1,6 +1,6 @@
 バースデーイベントのまとめはハロプロ公式・M-line公式ファンクラブのお知らせだけではなく、非公式サイト、各ファンのブログ・Xなど様々なソースからまとめたです<br>
 他のページに比べ当時の記録が残っていない人が多いために、特にデータの抜けがあると思います。<br>
-間違い・追加情報等あれば、<a href="https://x.com/yxmxgxn" target="_blank" rel="noopener noreferrer">Xでリプライ</a>を送っていただけるとありがたいです。
+間違い・追加情報等あれば、<a href="https://x.com/yxmxgxn" target="_blank">Xでリプライ</a>を送っていただけるとありがたいです。
 <footer>
 <div class="share-area">
 <?php
@@ -13,9 +13,9 @@
   $s_txt = rawurlencode($share_ttl);
 ?>
 <p>Share:
-  <a href="https://x.com/intent/post?text=<?php echo $s_txt; ?>%0A<?php echo $s_url; ?>" target="_blank" rel="noopener" class="btn-x">X</a>
-  <a href="https://www.threads.com/intent/post?text=<?php echo $s_txt; ?>&amp;url=<?php echo $s_url; ?>" target="_blank" rel="noopener" class="btn-threads">Threads</a>
-  <a href="https://social-plugins.line.me/lineit/share?url=<?php echo $s_url; ?>" target="_blank" rel="noopener" class="btn-line">LINE</a>
+  <a href="https://x.com/intent/post?text=<?php echo $s_txt; ?>%0A<?php echo $s_url; ?>" target="_blank" class="btn-x">X</a>
+  <a href="https://www.threads.com/intent/post?text=<?php echo $s_txt; ?>&amp;url=<?php echo $s_url; ?>" target="_blank" class="btn-threads">Threads</a>
+  <a href="https://social-plugins.line.me/lineit/share?url=<?php echo $s_url; ?>" target="_blank" class="btn-line">LINE</a>
   <button type="button" onclick="sharePage()" class="btn-copy">その他で送る/保存</button></p>
 </div>
 
@@ -41,9 +41,9 @@ async function sharePage() {
 }
 </script>
 <ul class="footer-links">
-  <li><a href="/common/privacy" target="_blank" rel="noopener">プライバシーポリシー</a></li>
-  <li><a href="/common/disclaimer" target="_blank" rel="noopener">免責事項</a></li>
-  <li><a href="https://x.com/yxmxgxn" target="_blank" rel="noopener">&copy; 2026 @yxmxgxn</a></li>
+  <li><a href="/common/privacy" target="_blank">プライバシーポリシー</a></li>
+  <li><a href="/common/disclaimer" target="_blank">免責事項</a></li>
+  <li><a href="https://x.com/yxmxgxn" target="_blank">&copy; 2026 @yxmxgxn</a></li>
 </ul>
 </footer>
 </body>

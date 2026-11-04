@@ -25,7 +25,7 @@
 <p>当サイトの利用または利用できないことによって生じたいかなる損害についても、当サイトは責任を負いかねます。</p>
 
 <h3>6. お問い合わせ</h3>
-<p>当サイトに関するお問い合わせ・ご指摘は、運営者のX（<a href="https://x.com/yxmxgxn" target="_blank" rel="noopener">@yxmxgxn</a>）までお願いします。</p>
+<p>当サイトに関するお問い合わせ・ご指摘は、運営者のX（<a href="https://x.com/yxmxgxn" target="_blank">@yxmxgxn</a>）までお願いします。</p>
 </main>
 <div class="last-update">最終更新日：2026/06/16</div>
 <?php include $_SERVER['DOCUMENT_ROOT'] . '/common/footer.php'; ?>

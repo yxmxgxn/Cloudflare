@@ -23,10 +23,10 @@
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td>2026年2月18日</td><td>17:20</td><td>ロージークロニクル 村越彩菜・植村葉純・松原ユリヤバースデーイベント2026</td><td>LANDMARK HALL</td><td>神奈川県</td><td><a href="https://hp-setlist.com/stage/23294" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
-<tr><td>2026年2月18日</td><td>19:40</td><td>ロージークロニクル 村越彩菜・植村葉純・松原ユリヤバースデーイベント2026</td><td>LANDMARK HALL</td><td>神奈川県</td><td><a href="https://hp-setlist.com/stage/23296" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
-<tr class="row-even"><td>2026年3月27日</td><td>18:00</td><td>ロージークロニクル 村越彩菜・植村葉純・松原ユリヤバースデーイベント2026 in 名古屋</td><td>ミッドランドスクエア シネマ2</td><td>愛知県</td><td><a href="https://hp-setlist.com/stage/23379" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
-<tr><td>2026年3月27日</td><td>19:45</td><td>ロージークロニクル 村越彩菜・植村葉純・松原ユリヤバースデーイベント2026 in 名古屋</td><td>ミッドランドスクエア シネマ2</td><td>愛知県</td><td><a href="https://hp-setlist.com/stage/23380" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
+<tr class="row-even"><td>2026年2月18日</td><td>17:20</td><td>ロージークロニクル 村越彩菜・植村葉純・松原ユリヤバースデーイベント2026</td><td>LANDMARK HALL</td><td>神奈川県</td><td><a href="https://hp-setlist.com/stage/23294" target="_blank">Tomoko（セットリスト）</a></td></tr>
+<tr><td>2026年2月18日</td><td>19:40</td><td>ロージークロニクル 村越彩菜・植村葉純・松原ユリヤバースデーイベント2026</td><td>LANDMARK HALL</td><td>神奈川県</td><td><a href="https://hp-setlist.com/stage/23296" target="_blank">Tomoko（セットリスト）</a></td></tr>
+<tr class="row-even"><td>2026年3月27日</td><td>18:00</td><td>ロージークロニクル 村越彩菜・植村葉純・松原ユリヤバースデーイベント2026 in 名古屋</td><td>ミッドランドスクエア シネマ2</td><td>愛知県</td><td><a href="https://hp-setlist.com/stage/23379" target="_blank">Tomoko（セットリスト）</a></td></tr>
+<tr><td>2026年3月27日</td><td>19:45</td><td>ロージークロニクル 村越彩菜・植村葉純・松原ユリヤバースデーイベント2026 in 名古屋</td><td>ミッドランドスクエア シネマ2</td><td>愛知県</td><td><a href="https://hp-setlist.com/stage/23380" target="_blank">Tomoko（セットリスト）</a></td></tr>
 </tbody>
 </table>
 

@@ -434,7 +434,7 @@ function dc_embed(string $type, string $label, string $id, string $url, string $
          . ($embed === '' ? '' : ' data-embed="' . dc_h($embed) . '"')
          . ' role="tabpanel" aria-label="' . dc_h($label) . '" hidden>'
          . '<div class="dc-slot">' . $slot . '</div>'
-         . '<p class="dc-embed-link"><a href="' . dc_h($url) . '" target="_blank" rel="noopener noreferrer">'
+         . '<p class="dc-embed-link"><a href="' . dc_h($url) . '" target="_blank">'
          . dc_h($linktext) . '</a></p>'
          . $extra
          . '</div>';
@@ -460,7 +460,7 @@ function dc_x_embed(string $label, array $tw): string {
     <summary>DECA!BEATとは（公式プロフィールより）</summary>
     <blockquote cite="https://co.earth-hacks.jp/decabeat/">
       <p>地球の未来を歌い続けてきたハロー！プロジェクトと「無理なく楽しく」脱炭素の選択肢を広げるEarth hacksがコラボレーション！ハロー！プロジェクトの7つのグループから未来の地球を担うメンバーが集まって新ユニット「デカビート」としてみんなの「デカボ」を応援します。</p>
-      <p class="dc-cite"><a href="https://co.earth-hacks.jp/decabeat/" target="_blank" rel="noopener noreferrer"><?= icon('link-brand', 'ic ic-20') ?>DECA!BEAT 公式プロフィール</a></p>
+      <p class="dc-cite"><a href="https://co.earth-hacks.jp/decabeat/" target="_blank"><?= icon('link-brand', 'ic ic-20') ?>DECA!BEAT 公式プロフィール</a></p>
     </blockquote>
   </details>
 
@@ -481,14 +481,14 @@ function dc_x_embed(string $label, array $tw): string {
     <?php foreach ($dc_members as $m): ?>
     <div class="dc-panel" id="dc-panel-<?= dc_h($m['slug']) ?>" hidden>
       <?php // 名前はハロー！プロジェクト公式プロフィールへのリンクを兼ねる ?>
-      <h3 class="dc-name"><span class="dc-no"><?= dc_h($m['no']) ?></span><a href="<?= dc_h($m['official']) ?>" target="_blank" rel="noopener noreferrer" title="ハロー！プロジェクト公式プロフィール"><?= dc_h($m['name']) ?></a><span class="dc-yomi"><?= dc_h($m['yomi']) ?></span><?php if (!empty($m['leader'])): ?><span class="dc-leader">リーダー</span><?php endif; ?>
+      <h3 class="dc-name"><span class="dc-no"><?= dc_h($m['no']) ?></span><a href="<?= dc_h($m['official']) ?>" target="_blank" title="ハロー！プロジェクト公式プロフィール"><?= dc_h($m['name']) ?></a><span class="dc-yomi"><?= dc_h($m['yomi']) ?></span><?php if (!empty($m['leader'])): ?><span class="dc-leader">リーダー</span><?php endif; ?>
         <?php // シェア先URLは表示中のメンバーに合わせてJSが入れる ?>
-        <a class="dc-share" target="_blank" rel="noopener noreferrer"
+        <a class="dc-share" target="_blank"
            data-text="<?= dc_h($m['name'] . '（' . $m['friend'] . '）｜DECA!BEAT 非公式まとめ #Earthhacks #デカビート') ?>"><?= icon('x', 'ic ic-20') ?>シェア</a></h3>
       <p class="dc-catch"><?= dc_h($m['catch'][0]) ?><br><?= dc_h($m['catch'][1]) ?></p>
       <p class="dc-meta"><span><?= dc_h($m['group']) ?></span><span>デカビートフレンズ：<?= dc_h($m['friend']) ?></span><span>誕生日：<?= dc_h(dc_jdate($m['birthday'])) ?>（<?= dc_age($m['birthday']) ?>歳）</span></p>
       <p class="dc-action">MY「デカボ」アクション：<?= dc_h($m['action']) ?></p>
-      <p class="dc-mission"><a href="<?= dc_h(DC_MISSION_URL . '?culture=ja&spot=' . $m['spot']) ?>" target="_blank" rel="noopener noreferrer"><?= dc_h($m['mission']) ?>（デカボスコア<?= dc_h($m['score']) ?>％）</a></p>
+      <p class="dc-mission"><a href="<?= dc_h(DC_MISSION_URL . '?culture=ja&spot=' . $m['spot']) ?>" target="_blank"><?= dc_h($m['mission']) ?>（デカボスコア<?= dc_h($m['score']) ?>％）</a></p>
       <?php // 埋め込み4枚は一度に並べず、1枚ずつめくって見せる(表示した1枚だけ読み込む) ?>
       <div class="dc-deck">
         <div class="dc-deck-tabs" role="tablist">
@@ -503,7 +503,7 @@ function dc_x_embed(string $label, array $tw): string {
         <?php // TikTokの埋め込みは表示するといきなり再生が始まるので、押されるまで読み込まない ?>
         <?= dc_embed('tiktok', '紹介動画（TikTok）', $m['tiktok'],
               'https://www.tiktok.com/@' . DC_TIKTOK_ACCOUNT . '/video/' . $m['tiktok'], 'TikTokで見る',
-              '<p class="dc-embed-link"><a href="' . dc_h($m['instagram']) . '" target="_blank" rel="noopener noreferrer">Instagram（同じ動画）</a></p>',
+              '<p class="dc-embed-link"><a href="' . dc_h($m['instagram']) . '" target="_blank">Instagram（同じ動画）</a></p>',
               '',
               '<button type="button" class="dc-tiktok-play">' . icon('tiktok-brand', 'ic dc-tiktok-icon')
               . '<span>▶ 紹介動画を再生</span></button>') ?>
@@ -533,7 +533,7 @@ function dc_x_embed(string $label, array $tw): string {
     <noscript>
       <ul class="dc-video-list">
         <?php foreach ($dc_videos as $v): ?>
-        <li><a href="<?= dc_h($v['url']) ?>" target="_blank" rel="noopener noreferrer"><?= icon('youtube-brand', 'ic ic-20') ?><?= dc_h($v['title']) ?></a>（<?= dc_h($v['date']) ?>）</li>
+        <li><a href="<?= dc_h($v['url']) ?>" target="_blank"><?= icon('youtube-brand', 'ic ic-20') ?><?= dc_h($v['title']) ?></a>（<?= dc_h($v['date']) ?>）</li>
         <?php endforeach; ?>
       </ul>
     </noscript>
@@ -544,18 +544,18 @@ function dc_x_embed(string $label, array $tw): string {
     <h2>どっちっちchannel</h2>
     <p>DECA!BEATのYouTubeチャンネルで毎週更新中です。</p>
     <ul class="dc-sns">
-      <li><a href="<?= dc_h(DC_YT_CHANNEL_URL) ?>" target="_blank" rel="noopener noreferrer"><?= icon('youtube-brand', 'ic ic-20') ?>どっちっちchannel（YouTube）</a></li>
+      <li><a href="<?= dc_h(DC_YT_CHANNEL_URL) ?>" target="_blank"><?= icon('youtube-brand', 'ic ic-20') ?>どっちっちchannel（YouTube）</a></li>
     </ul>
     <ul class="dc-video-list">
       <?php foreach ($dc_dotchicchi as $v): ?>
-      <li><a href="<?= dc_h($v['url']) ?>" target="_blank" rel="noopener noreferrer"><?= icon('youtube-brand', 'ic ic-20') ?><?= dc_h($v['title']) ?></a><?php if (!empty($v['place'])): ?>（<?= dc_h($v['credit']) ?>：<a href="<?= dc_h($v['place_url']) ?>" target="_blank" rel="noopener noreferrer"><?= dc_h($v['place']) ?></a>）<?php endif; ?></li>
+      <li><a href="<?= dc_h($v['url']) ?>" target="_blank"><?= icon('youtube-brand', 'ic ic-20') ?><?= dc_h($v['title']) ?></a><?php if (!empty($v['place'])): ?>（<?= dc_h($v['credit']) ?>：<a href="<?= dc_h($v['place_url']) ?>" target="_blank"><?= dc_h($v['place']) ?></a>）<?php endif; ?></li>
       <?php endforeach; ?>
     </ul>
 
     <h3>Podcast「offの日、どっちっち？」（J-WAVE）</h3>
     <ul class="dc-video-list">
       <?php foreach ($dc_podcasts as $v): ?>
-      <li><a href="<?= dc_h($v['url']) ?>" target="_blank" rel="noopener noreferrer"><?= icon('spotify-brand', 'ic ic-20') ?><?= dc_h($v['title']) ?></a>（<?= dc_h($v['date']) ?>・<a href="<?= dc_h($v['article']) ?>" target="_blank" rel="noopener noreferrer">J-WAVEの記事</a>）</li>
+      <li><a href="<?= dc_h($v['url']) ?>" target="_blank"><?= icon('spotify-brand', 'ic ic-20') ?><?= dc_h($v['title']) ?></a>（<?= dc_h($v['date']) ?>・<a href="<?= dc_h($v['article']) ?>" target="_blank">J-WAVEの記事</a>）</li>
       <?php endforeach; ?>
     </ul>
   </section>
@@ -570,7 +570,7 @@ function dc_x_embed(string $label, array $tw): string {
         <?php if (!str_starts_with($p['title'], $p['cat'])): // タイトルと同じ分類は出さない ?>
         <span class="dc-post-cat"><?= dc_h($p['cat']) ?></span>
         <?php endif; ?>
-        <a class="dc-post-link" href="<?= dc_h($p['url']) ?>" target="_blank" rel="noopener noreferrer"><?= icon('x', 'ic ic-20') ?><?= dc_h($p['title']) ?></a>
+        <a class="dc-post-link" href="<?= dc_h($p['url']) ?>" target="_blank"><?= icon('x', 'ic ic-20') ?><?= dc_h($p['title']) ?></a>
         <p class="dc-post-date"><?= dc_h($p['date']) ?></p>
       </div>
       <?php endforeach; ?>
@@ -582,7 +582,7 @@ function dc_x_embed(string $label, array $tw): string {
     <h2>公式リンク</h2>
     <ul class="dc-sns">
       <?php foreach ($dc_sns as $s): ?>
-      <li><a href="<?= dc_h($s['url']) ?>" target="_blank" rel="noopener noreferrer"><?= dc_sns_icon($s['url']) ?><?= dc_h($s['title']) ?></a></li>
+      <li><a href="<?= dc_h($s['url']) ?>" target="_blank"><?= dc_sns_icon($s['url']) ?><?= dc_h($s['title']) ?></a></li>
       <?php endforeach; ?>
     </ul>
   </section>
@@ -727,6 +727,7 @@ function dc_x_embed(string $label, array $tw): string {
     f.src = 'https://www.tiktok.com/embed/v2/' + btn.closest('.dc-embed').dataset.id;
     f.title = 'TikTokの紹介動画';
     f.allow = 'encrypted-media; fullscreen; picture-in-picture';
+    f.referrerPolicy = 'strict-origin-when-cross-origin';
     btn.replaceWith(f);
   });
 
@@ -768,6 +769,7 @@ function dc_x_embed(string $label, array $tw): string {
       f.title = v.title;
       f.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture';
       f.allowFullscreen = true;
+      f.referrerPolicy = 'strict-origin-when-cross-origin';
       player.appendChild(f);
     } else {
       // 押されるまでYouTubeのiframeは読み込まない

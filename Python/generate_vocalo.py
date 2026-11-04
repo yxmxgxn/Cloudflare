@@ -84,15 +84,15 @@ def build_rows(data: list[list[str]]) -> str:
         name_vocal = f"{name}【{vocal}】"
 
         post_cell = (
-            f'<a href="{escape_html(post_url)}" target="_blank" rel="noopener noreferrer">{post_date}</a>'
+            f'<a href="{escape_html(post_url)}" target="_blank">{post_date}</a>'
             if post_url else post_date
         )
         name_cell = (
-            f'<a href="{escape_html(nico_url)}" target="_blank" rel="noopener noreferrer">{name_vocal}</a>'
+            f'<a href="{escape_html(nico_url)}" target="_blank">{name_vocal}</a>'
             if nico_url else name_vocal
         )
         composer_cell = (
-            f'<a href="{escape_html(composer_page)}" target="_blank" rel="noopener noreferrer">{composer}</a>'
+            f'<a href="{escape_html(composer_page)}" target="_blank">{composer}</a>'
             if composer_page else composer
         )
 

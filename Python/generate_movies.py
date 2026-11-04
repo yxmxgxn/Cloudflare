@@ -72,7 +72,7 @@ def sort_date(s: str) -> str:
 
 
 def _link(label: str, url: str) -> str:
-    return f'<a href="{esc(url)}" target="_blank" rel="noopener noreferrer">{label}</a>'
+    return f'<a href="{esc(url)}" target="_blank">{label}</a>'
 
 
 def build_info_links(m: dict) -> str:

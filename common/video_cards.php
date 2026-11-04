@@ -80,7 +80,7 @@ function vc_thumb(array $v, string $title, bool $embed = true): string
     // サムネイルは出さない(長い動画の途中から始まるので、画像と場面が合わないため)
     $inner = '<span class="vc-play">▶ ' . ($time === '' ? ($embed ? '再生' : 'YouTubeで見る') : $time . ($embed ? '再生' : '見る')) . '</span>';
     if (!$embed) {
-        return '<a class="vc-thumb" href="' . vc_h(vc_url($v)) . '" target="_blank" rel="noopener noreferrer"'
+        return '<a class="vc-thumb" href="' . vc_h(vc_url($v)) . '" target="_blank"'
              . ' aria-label="' . vc_h($title) . ' をYouTubeで見る">' . $inner . '</a>';
     }
     return '<button type="button" class="vc-thumb"' . vc_play_attrs($v, $title)
@@ -107,7 +107,7 @@ function video_cards(array $videos, array $opts = []): string
               . (empty($v['date']) ? '' : '<p class="vc-date">' . vc_h($v['date']) . '</p>')
               . '<p class="vc-title">' . vc_h($v['title']) . '</p>'
               . vc_subs($v['sub'] ?? null)
-              . '<p class="vc-link"><a href="' . vc_h(vc_url($v)) . '" target="_blank" rel="noopener noreferrer">'
+              . '<p class="vc-link"><a href="' . vc_h(vc_url($v)) . '" target="_blank">'
               . icon('youtube-brand', 'ic ic-20') . 'YouTubeで見る</a></p>'
               . '</div>';
     }
@@ -133,13 +133,13 @@ function song_cards(array $songs, array $opts = []): string
             $out .= '<li class="sc-item' . ($i === 0 ? ' is-current' : '') . '">'
                   . ($embed
                         ? '<button type="button" class="sc-pick"' . vc_play_attrs($v, $s['title']) . '>'
-                        : '<a class="sc-pick" href="' . vc_h(vc_url($v)) . '" target="_blank" rel="noopener noreferrer">')
+                        : '<a class="sc-pick" href="' . vc_h(vc_url($v)) . '" target="_blank">')
                   . '<span class="sc-label">' . vc_h($v['label']) . '</span>'
                   . implode('', array_map(
                         fn($n) => '<span class="sc-note">' . vc_h($n) . '</span>',
                         array_filter((array)($v['note'] ?? []), 'strlen')))
                   . ($embed ? '</button>' : '</a>')
-                  . '<a class="sc-yt" href="' . vc_h(vc_url($v)) . '" target="_blank" rel="noopener noreferrer"'
+                  . '<a class="sc-yt" href="' . vc_h(vc_url($v)) . '" target="_blank"'
                   . ' title="YouTubeで開く' . ($start ? '（' . vc_hms($start) . 'から）' : '') . '">'
                   . icon('youtube-brand', 'ic ic-20', 'YouTubeで開く') . '</a>'
                   . '</li>';
@@ -168,6 +168,7 @@ function vc_script(): string
     f.title = d.title;
     f.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture';
     f.allowFullscreen = true;
+    f.referrerPolicy = 'strict-origin-when-cross-origin';
     wrap.appendChild(f);
     return wrap;
   }

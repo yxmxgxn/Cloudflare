@@ -119,23 +119,23 @@ def build_table(rows: list[dict]) -> str:
         arranger     = escape_html(row.get("編曲", ""))
 
         date_cell = (
-            f'<a href="{escape_html(post_url)}" target="_blank" rel="noopener noreferrer">{post_date}</a>'
+            f'<a href="{escape_html(post_url)}" target="_blank">{post_date}</a>'
             if post_url else post_date
         )
         album_cell = (
-            f'<a href="{escape_html(official_url)}" target="_blank" rel="noopener noreferrer">{album}</a>'
+            f'<a href="{escape_html(official_url)}" target="_blank">{album}</a>'
             if official_url else album
         )
         yt_cell = (
-            f'<a href="{escape_html(yt_url)}" target="_blank" rel="noopener noreferrer" title="YouTube Music">{icon("youtube-brand", "ic ic-20")}</a>'
+            f'<a href="{escape_html(yt_url)}" target="_blank" title="YouTube Music">{icon("youtube-brand", "ic ic-20")}</a>'
             if yt_url else ""
         )
         spotify_cell = (
-            f'<a href="{escape_html(spotify_url)}" target="_blank" rel="noopener noreferrer" title="Spotify">{icon("spotify-brand", "ic ic-20")}</a>'
+            f'<a href="{escape_html(spotify_url)}" target="_blank" title="Spotify">{icon("spotify-brand", "ic ic-20")}</a>'
             if spotify_url else ""
         )
         amazon_cell = (
-            f'<a href="{escape_html(amazon_url)}" target="_blank" rel="noopener noreferrer" title="Amazon Music">{icon("amazon-music-brand", "ic ic-20")}</a>'
+            f'<a href="{escape_html(amazon_url)}" target="_blank" title="Amazon Music">{icon("amazon-music-brand", "ic ic-20")}</a>'
             if amazon_url else ""
         )
 

@@ -1955,6 +1955,61 @@ a.iv-stats-row:hover {
   border-top: 2px solid #999;
 }
 
+/* 絞り込み(JSなし。ラジオボタン+生成したCSSで行を隠す) */
+.hc-controls {
+  margin: 12px 0;
+}
+
+.hc-group {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px;
+  border: 0;
+  margin: 0 0 8px;
+  padding: 0;
+}
+
+.hc-group legend {
+  float: left;
+  margin-right: 8px;
+  padding: 0;
+  font-size: 13px;
+  color: #666;
+}
+
+/* ラジオ本体は隠して、ラベルをボタンに見せる(キーボード操作は残す) */
+.hc-group input {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.hc-group label {
+  padding: 4px 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background: #fff;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.hc-group input:checked + label {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #fff;
+}
+
+.hc-group input:focus-visible + label {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+/* 絞り込み中は曲のまとまりが崩れるので、太い区切り線をやめる */
+.hc-wrap:has(.hc-group input:not([id$="-all"]):checked) .hc-table tr.hc-song-start td {
+  border-top: 1px solid #ddd;
+}
+
 /* ===== 匿名フィードバック(フッター) ===== */
 .fb-area {
   max-width: 640px;

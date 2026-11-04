@@ -89,7 +89,7 @@ def sort_key(s: str) -> str:
 def link(url: str, label: str) -> str:
     if not url:
         return ""
-    return f'<a href="{esc(url)}" target="_blank" rel="noopener noreferrer">{label}</a>'
+    return f'<a href="{esc(url)}" target="_blank">{label}</a>'
 
 
 # アイコンは common/icons.json が定義元(Python/icons.py 経由)。
@@ -102,7 +102,7 @@ def icon_link(url: str, icon: str, label: str) -> str:
     if not url:
         return ""
     return (
-        f'<a href="{esc(url)}" target="_blank" rel="noopener noreferrer" '
+        f'<a href="{esc(url)}" target="_blank" '
         f'aria-label="{label}">{icon}</a>'
     )
 

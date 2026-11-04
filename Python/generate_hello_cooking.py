@@ -179,7 +179,7 @@ def build_videos(videos: list[dict]) -> str:
             continue
         label = " ".join(x for x in [val(v, "Channel"), val(v, "Episode"), val(v, "Status")] if x)
         lines.append(
-            f'<li>{icon("youtube-brand", "ic")}<a href="{esc(url)}" target="_blank" rel="noopener noreferrer">'
+            f'<li>{icon("youtube-brand", "ic")}<a href="{esc(url)}" target="_blank">'
             f'{esc(label) or esc(url)}</a></li>'
         )
     if not lines:

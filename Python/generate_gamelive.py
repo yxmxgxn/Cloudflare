@@ -168,7 +168,7 @@ def build_cards(
         # 1段目: Date + Title(URLがあれば埋め込む)
         if url:
             title_html = (
-                f'<a href="{esc(url)}" target="_blank" rel="noopener noreferrer">{title}</a>'
+                f'<a href="{esc(url)}" target="_blank">{title}</a>'
             )
         else:
             title_html = title
