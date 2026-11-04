@@ -119,15 +119,18 @@ ul li:last-child {
 }
 
 /* 誕生日ページのメンバー一覧(hello-birthday.php)。グループごとの名前を複数列に並べて縦の長さを詰める */
-.member-list {
+.member-list,
+.multi-col {
   column-count: 2;
   column-gap: 24px;
 }
-.member-list li {
+.member-list li,
+.multi-col li {
   break-inside: avoid;
 }
 @media screen and (min-width: 769px) {
-  .member-list {
+  .member-list,
+  .multi-col {
     column-count: 4;
   }
 }
@@ -153,6 +156,18 @@ table {
   margin-top: 16px;    /* 上側のスペース */
   margin-bottom: 16px; /* 下側のスペース */
   font-size: 13px;     /* 表の文字はサイト全体でここに揃える(表ごとに font-size を書かない)。スマホは下の .table-scroll table で 16px */
+}
+
+/* 枠線つきの一覧表（放送回など）。class="list-table" を付けた表だけ */
+.list-table th,
+.list-table td {
+  border: 1px solid #ccc;
+  padding: 6px 10px;
+  text-align: left;
+}
+
+.list-table th {
+  background: #f5f5f5;
 }
 
 /* 表の横スクロール（common/footer.php が全<table>を.table-scrollで自動ラップ）
@@ -2530,6 +2545,13 @@ a.iv-stats-row:hover {
   margin-top: 1em;
 }
 
+/* PC は本文の幅(960px)に収める。1000px の最低幅はスマホで横スクロールさせるためのもの */
+@media screen and (min-width: 769px) {
+  #hs-table {
+    min-width: 0;
+  }
+}
+
 .hs-col-date  { width: 15%; }
 .hs-col-event { width: 13%; }
 .hs-col-slot  { width:  8%; }
@@ -2559,10 +2581,6 @@ a.iv-stats-row:hover {
 
 .hs-date {
   white-space: nowrap;
-}
-
-.hs-dow {
-  color: #888;
 }
 
 /* まだ開催されていない回。判定は表示時にJSがやる */
