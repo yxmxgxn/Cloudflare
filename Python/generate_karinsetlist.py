@@ -109,12 +109,12 @@ def card_html(s: dict) -> str:
         f'<span class="ks-tag"><span class="ks-tag-k">{k}</span>{esc(v)}</span>' for k, v in tags if v
     ) + "</p>")
 
-    links = [f'<a class="ks-link" href="{esc(s["URL"])}" target="_blank" rel="noopener noreferrer">'
+    links = [f'<a class="ks-link" href="{esc(s["URL"])}" target="_blank">'
              '元のセトリ（要ログイン）</a>']
     if ids:
         links.append(
             f'<a class="ks-link" href="{esc(s["YouTubeIDids"])}" target="_blank"'
-            f' rel="noopener noreferrer">{icon("youtube-brand")}YouTubeで聴く</a>')
+            f'>{icon("youtube-brand")}YouTubeで聴く</a>')
     lines.append(f'<p class="ks-links">{"".join(links)}</p>')
 
     n = s["曲数"]

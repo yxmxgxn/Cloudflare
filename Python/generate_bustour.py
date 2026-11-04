@@ -90,7 +90,7 @@ def ymd(d: date) -> str:
 
 def link(url: str, label: str, cls: str = "bt-link") -> str:
     return (f'<a class="{cls}" href="{esc(url)}" target="_blank"'
-            f' rel="noopener noreferrer">{label}</a>')
+            f'>{label}</a>')
 
 
 # ---------------------------------------------------------------- 各タブ

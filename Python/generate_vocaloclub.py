@@ -143,7 +143,7 @@ def link(url: str, text: str, cls: str = "") -> str:
     if not url:
         return text
     c = f' class="{cls}"' if cls else ""
-    return f'<a href="{esc(url)}"{c} target="_blank" rel="noopener noreferrer">{text}</a>'
+    return f'<a href="{esc(url)}"{c} target="_blank">{text}</a>'
 
 
 # ---------------------------------------------------------------- 検証
@@ -504,7 +504,7 @@ def build_guests(guests, mentions, perfs) -> str:
             if handle:
                 icons.append(
                     f'<a href="{esc(tmpl.format(h=handle))}" target="_blank"'
-                    f' rel="noopener noreferrer" aria-label="{name} の{label}">{icon}</a>'
+                    f' aria-label="{name} の{label}">{icon}</a>'
                 )
         note = get(g, "Note")
         cards.append(

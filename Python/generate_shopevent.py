@@ -331,14 +331,14 @@ def cast_list(names: list[str], date_key: str, blogs: dict) -> str:
         title = esc(b["title"] or "ブログ") if b else ""
         if entry:
             cell += (f'<a class="hs-blog" href="{esc(entry)}" target="_blank"'
-                     f' rel="noopener noreferrer" title="{title}">ブログ</a>')
+                     f' title="{title}">ブログ</a>')
             if arc:
                 cell += (f'<a class="hs-arc" href="{esc(arc)}" target="_blank"'
-                         f' rel="noopener noreferrer" title="{title}（ウェブアーカイブ）"'
+                         f' title="{title}（ウェブアーカイブ）"'
                          f' hidden>{esc(arc_label(arc))}</a>')
         elif arc:
             cell += (f'<a class="hs-blog hs-blog-dead" href="{esc(arc)}" target="_blank"'
-                     f' rel="noopener noreferrer" title="{title}（ウェブアーカイブ）">'
+                     f' title="{title}（ウェブアーカイブ）">'
                      f'アーカイブ</a>')
         out.append(f'<span class="hs-cast-one">{cell}</span>')
     return f'<span class="hs-cast-list" data-n="{len(out)}">{"".join(out)}</span>'

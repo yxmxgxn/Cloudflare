@@ -103,7 +103,7 @@ def build_cards(data: list[list[str]]) -> str:
 
         # TBSラジオリンク
         if tbs_url:
-            tbs_html = f'<p class="karin-tbs"><a href="{escape_html(tbs_url)}" target="_blank" rel="noopener noreferrer">放送日{escape_html(broadcast)}ページ</a></p>'
+            tbs_html = f'<p class="karin-tbs"><a href="{escape_html(tbs_url)}" target="_blank">放送日{escape_html(broadcast)}ページ</a></p>'
         else:
             tbs_html = ""
 

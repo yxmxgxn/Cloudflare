@@ -80,7 +80,7 @@ def wiki_link(name_html: str, wiki_id: str) -> str:
     path = urllib.parse.quote(wiki_id.replace(" ", "_"), safe="_-.~()!*'")
     url = escape_html(f"https://ja.wikipedia.org/wiki/{path}")
     return (
-        f'<a href="{url}" target="_blank" rel="noopener noreferrer">{name_html}</a>'
+        f'<a href="{url}" target="_blank">{name_html}</a>'
     )
 
 def build_rows(data: list[list[str]], today: datetime) -> str:

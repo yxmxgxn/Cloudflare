@@ -65,7 +65,7 @@ def service_cell(url: str, label: str) -> str:
     # https:// 以外(入力ミスや javascript: など)はリンクにしない
     if not url.startswith("https://"):
         return "<td></td>"
-    return f'<td><a href="{esc(url)}" target="_blank" rel="noopener noreferrer">{esc(label)}</a></td>'
+    return f'<td><a href="{esc(url)}" target="_blank">{esc(label)}</a></td>'
 
 
 def build_rows(rows: list[dict]) -> str:

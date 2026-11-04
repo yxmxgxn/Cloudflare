@@ -119,7 +119,7 @@ def build_stages(rows: list[dict], card_date: str) -> str:
         if val(r, "Date") and val(r, "Date") != card_date:
             label = f"{esc(format_date(val(r, 'Date')))} {label}".strip()
         link = (
-            f'<a href="{esc(tomoko)}" target="_blank" rel="noopener noreferrer">ToMoKo（セットリスト）</a>'
+            f'<a href="{esc(tomoko)}" target="_blank">ToMoKo（セットリスト）</a>'
             if tomoko else '<span class="mh-nolink">セットリスト未掲載</span>'
         )
         lines.append(f"<li>{label} {link}</li>")
@@ -149,7 +149,7 @@ def build_videos(videos: list[dict]) -> str:
         if not url:
             continue
         lines.append(
-            f'<li>{icon_for_url(url, "ic")}<a href="{esc(url)}" target="_blank" rel="noopener noreferrer">'
+            f'<li>{icon_for_url(url, "ic")}<a href="{esc(url)}" target="_blank">'
             f'{esc(title) or esc(url)}</a>{build_source(v)}</li>'
         )
     if not lines:
