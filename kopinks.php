@@ -7,12 +7,12 @@
 <main>
   <h1>コピンク* コピンクス！一言集</h1>
   <p>コピンク*名義で<a href="https://helloproject.com/release/2208/" target="_blank">アルバムコピンクス！メロディーズ〜star chart〜</a>に収録されたコピンクス！一言集の書き起こしです。</p>
-  <iframe data-testid="embed-iframe" referrerpolicy="strict-origin-when-cross-origin" style="border-radius:12px" src="https://open.spotify.com/embed/track/1h5yw3FQSWuKeUl4dauWLI?utm_source=generator&si=9c2b8dc71c614d4a" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+  <iframe data-testid="embed-iframe" referrerpolicy="strict-origin-when-cross-origin" style="border-radius:12px" src="https://open.spotify.com/embed/track/1h5yw3FQSWuKeUl4dauWLI?utm_source=generator&si=9c2b8dc71c614d4a" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
   <p>
-    https://helloproject.com/release/2208/<br>
     登場人物：コピンク（声：宮本佳林）、ゴロー（声：さわやか五郎）<br>
     漢字の変換、語尾等は主観です
   </p>
+  <div class="serifu-list">
   <p>
     コピンク「バンガローって10回言います！バンガロー、バンガロー、バンガロー、バンガロー、バングガッ、ガンバロー！」<br>
     </p>
@@ -103,6 +103,7 @@
     <p>
       コピンク「星が消えていくのは終わりじゃなくて始まりだと思うの、また会えるといいなっ、よろしくね！」<br>
     </p>
+  </div>
 </main>
 <div class="last-update">最終更新日：2026/05/11</div>
 <?php include $_SERVER['DOCUMENT_ROOT'] . '/common/footer.php'; ?>

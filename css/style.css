@@ -146,6 +146,17 @@ ul li:last-child {
   margin-bottom: 0;
 }
 
+/* セリフ集(kopinks.php)。ひとまとまり(<p>)ごとに薄い線を引く */
+.serifu-list p {
+  margin: 0;
+  padding: 0.9em 0;
+  border-top: 1px solid #e0e0e0;
+}
+.serifu-list p:first-child {
+  padding-top: 0;
+  border-top: none;
+}
+
 .indent ul {
   list-style: none;
   margin-left: 16px;
