@@ -1,7 +1,7 @@
 <?php
 /**
  * YouTube動画のカード一覧(YouTube/ 以下の手書きリンク集をカード型にするための共通部品)。
- * 既定ではYouTubeを新しいタブで開くだけ。その場再生(embed)は ['embed' => true] のときだけ。
+ * サムネイルを押すまでiframeは読み込まない(lite embed)。
  *
  * ■ video_cards … 1動画 = 1カード
  *
@@ -31,11 +31,10 @@
  *   videos : 映像の一覧(必須)。id・start は video_cards と同じ
  *            label : 一覧に出す名前(ライブ名・歌っているメンバーなど)
  *            note  : label の下に小さく出す補足(日付・会場など)。配列なら複数行、空文字の行は出さない(省略可)
- *   カード上部は1本目の「▶ ◯分◯秒から見る」ボタン。一覧の映像と合わせて、押すとYouTubeが新しいタブで開く。
+ *   カード上部は1本目のサムネイル。一覧の映像を押すと、その映像がカード上部で再生される。
  *
- * ■ カードの中では再生しない
- *   小さいカードの中で再生しても見づらいので、既定ではYouTubeを新しいタブで開くだけにしている。
- *   第2引数に ['embed' => true] を渡すと、押した場所でその場再生する(lite embed。今はどのページも使っていない)。
+ * ■ その場で再生させたくないとき(動画が多いページなど)
+ *   第2引数に ['embed' => false] を渡すと、サムネイルも一覧もYouTubeを新しいタブで開くだけになる。
  *   ページの中では統一すること(同じページで混ぜない)。
  */
 
@@ -99,7 +98,7 @@ function vc_subs($sub): string
 
 function video_cards(array $videos, array $opts = []): string
 {
-    $embed = $opts['embed'] ?? false;   // true ならその場で再生する。既定はYouTubeを新しいタブで開く
+    $embed = $opts['embed'] ?? true;   // false ならその場で再生せずYouTubeを開く
     $out = '<div class="card-grid vc-grid">';
     foreach ($videos as $v) {
         // embed => false のときは下の「YouTubeで見る」だけにする(時間付きの再生ボタンと中身が同じため)
@@ -117,7 +116,7 @@ function video_cards(array $videos, array $opts = []): string
 
 function song_cards(array $songs, array $opts = []): string
 {
-    $embed = $opts['embed'] ?? false;   // true ならその場で再生する。既定はYouTubeを新しいタブで開く
+    $embed = $opts['embed'] ?? true;   // false ならその場で再生せずYouTubeを開く
     $out = '<div class="card-grid vc-grid">';
     foreach ($songs as $s) {
         $attrs = '';
