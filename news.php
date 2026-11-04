@@ -9,9 +9,7 @@
   このHPの更新履歴です。更新日時と内部リンク、また修正内容を掲載しています。※軽微な修正やデータ追加は省略しています。
   <dl>
   <dt>2026/10/14</dt>
-  <dd><a href="https://ameblo.karin-archive.com/ target="_blank">ハロプロ アメブロ検索</a>のページを追加</dd>
-  <dt>2026/10/09</dt>
-  <dd><a href="/hello-fanclubtour">ファンクラブツアー</a>のページを追加</dd>
+  <dd><a href="https://ameblo.karin-archive.com/" target="_blank">ハロプロ アメブロ検索</a>のページを追加</dd>
   <dt>2026/10/09</dt>
   <dd><a href="/hello-fanclubtour">ファンクラブツアー</a>のページを追加</dd>
   <dt>2026/10/01</dt>
