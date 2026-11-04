@@ -2090,6 +2090,17 @@ a.iv-stats-row:hover {
   outline-offset: 2px;
 }
 
+/* ページ下の補足(亀井・新垣・岡井)。サイトの h3 は太字でないので、ここだけ見出しに見えるようにする */
+.hc-notes h3 {
+  font-weight: bold;
+  margin: 1.4em 0 0.3em;
+}
+
+.hc-notes ul {
+  list-style: disc;
+  padding-left: 1.4em;
+}
+
 /* 絞り込み中は配信日のまとまりが崩れるので、太い区切り線をやめる */
 .hc-wrap:has(.hc-group input:not([id$="-all"]):checked) .hc-table tr.hc-date-start td {
   border-top: 1px solid #ddd;
