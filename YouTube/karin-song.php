@@ -18,7 +18,7 @@
   <h1>宮本佳林ソロ曲まとめ</h1>
   発売されている宮本佳林さんソロ曲・コラボレーションなどJuice=Juice以外の曲をまとめました。公式のリンク、作詞作曲編曲、Music Videoに▶️、歌唱動画に🎤、一番新しいライブ映像に🎥・Dance Practiceに💃を付けました
   <h2>シングル</h2>
-   <table id="karin-disco">
+   <table id="karin-disco" class="table-fit">
     <tr>
       <th class="dc-wide">
         タイトル・発売日
@@ -368,7 +368,7 @@
   </table>
 
   <h2>アルバム</h2>
-  <table id="karin-disco">
+  <table id="karin-disco" class="table-fit">
       <th>
         
       </th>
@@ -888,7 +888,7 @@
   </table>
 
   <h2>配信シングル</h2>
-  <table id="karin-disco">
+  <table id="karin-disco" class="table-fit">
     <tr>
       <th>
         発売日
@@ -943,7 +943,7 @@
   </table>
 
   <h2>コラボレーション</h2>
-  <table id="karin-disco">
+  <table id="karin-disco" class="table-fit">
     <tr>
       <th>
         発売日
@@ -1047,7 +1047,7 @@
   </table>
 
   <h2>サウンドトラック</h2>
-  <table id="karin-disco">
+  <table id="karin-disco" class="table-fit">
       <th>
         発売日
       </th>
@@ -1229,7 +1229,7 @@
   </table>
 
   <h2>コピンクス</h2>
-  <table id="karin-disco">
+  <table id="karin-disco" class="table-fit">
     <tr>
       <th>
         発売日
