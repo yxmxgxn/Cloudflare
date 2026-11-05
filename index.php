@@ -177,6 +177,10 @@
         <p class="index-desc">ハロー！プロジェクトとEarth hacksのコラボで結成された特別ユニット「DECA!BEAT」のメンバー紹介ポスト・紹介動画・YouTube・グッズ紹介ポストのまとめです</p>
       </div>
       <div class="card index-card">
+        <a class="index-link" href="/hellocover"><?= icon('disc', 'ic ic-20') ?>ハロカバまとめ（ハロプロ配信限定カバー）</a>
+        <p class="index-desc">2010年12月〜2011年3月に配信された、ハロプロメンバーのカバー企画「ハロカバ」全50録音を、曲・メンバー・配信日ごとにまとめ、レコチョク・mora・iTunesへのリンクを一覧にしています</p>
+      </div>
+      <div class="card index-card">
         <a class="index-link" href="/rikawani-kohaku"><?= icon('article', 'ic ic-20') ?>島倉りか りかワニ紅白歌合戦 選曲まとめ</a>
         <p class="index-desc">ワニブックス NewsCrunchの連載「りかワニ紅白歌合戦」で島倉りかさんが紅組・白組に選んだ昭和歌謡と勝敗のまとめです</p>
       </div>
