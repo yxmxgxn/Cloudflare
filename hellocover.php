@@ -44,10 +44,12 @@
 <p>レコチョク・mora・iTunesのどれにも、この曲単体のリンクがないので、表は空欄です。レコチョクではアルバム単位でしか買えません。</p>
 <p>サブスクでは、次の3作品に入っています。</p>
 <ul>
-  <li>恋愛ハンター（<a href="https://helloproject.com/release/892/" target="_blank">ハロプロ公式</a>・<a href="https://nex-tone.link/A00028024" target="_blank">Nextone</a>）</li>
+  <li>恋愛ハンター / 新垣里沙卒業記念盤（<a href="https://helloproject.com/release/892/" target="_blank">ハロプロ公式</a>・<a href="https://nex-tone.link/A00028024" target="_blank">Nextone</a>）</li>
   <li>プッチベスト 13（<a href="https://helloproject.com/release/955/" target="_blank">ハロプロ公式</a>・<a href="https://nex-tone.link/A00215851" target="_blank">Nextone</a>）</li>
   <li>モーニング娘。'14 カップリングコレクション2（<a href="https://helloproject.com/release/1030/" target="_blank">ハロプロ公式</a>・<a href="https://nex-tone.link/A00028292" target="_blank">Nextone</a>）</li>
 </ul>
+<p>恋愛ハンター / 新垣里沙卒業記念盤の「笑顔に涙」：
+<a href="https://music.apple.com/jp/album/514296802?i=514296806" target="_blank">Apple Music</a>・<a href="https://open.spotify.com/track/07tiaHFHnoECePaquTPMqS" target="_blank">Spotify</a>・<a href="https://music.amazon.co.jp/tracks/B00EPC1LAC" target="_blank">Amazon Music</a>・<a href="https://s.awa.fm/track/21c4c99c661dd9e69595" target="_blank">AWA</a>・<a href="https://music.line.me/webapp/track/mt0000000024955022" target="_blank">LINE MUSIC</a></p>
 <p>新垣里沙のカバー8曲に3曲を加えて、CD『ハロカバ』（UFCW-1029、2012/6/27、<a href="https://helloproject.com/release/2848/" target="_blank">ハロー!プロジェクト</a>）になっています。「笑顔に涙」は入っていません。</p>
 
 <h3>岡井千聖「ロマンティック 浮かれモード」（第3弾）</h3>
