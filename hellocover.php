@@ -42,11 +42,14 @@
 
 <h3>新垣里沙「笑顔に涙〜THANK YOU! DEAR MY FRIENDS〜」（第3弾）</h3>
 <p>レコチョク・mora・iTunesのどれにも、この曲単体のリンクがないので、表は空欄です。レコチョクではアルバム単位でしか買えません。</p>
-<p>iTunes（Apple Music）には、次の3作品に入っています。</p>
+<p>サブスクでは、次の3作品に入っています。リンクは「笑顔に涙」の曲のページです。</p>
 <ul>
-  <li><a href="https://music.apple.com/jp/album/514296802" target="_blank">『恋愛ハンター / 新垣里沙卒業記念盤』EP</a>（2012/4/11）</li>
-  <li><a href="https://music.apple.com/jp/album/576698522" target="_blank">『プッチベスト 13』</a>（2012/12/5）</li>
-  <li><a href="https://music.apple.com/jp/album/828941879" target="_blank">『モーニング娘。'14 カップリングコレクション2』</a>（2014/3/12）</li>
+  <li>『恋愛ハンター / 新垣里沙卒業記念盤』EP（2012/4/11）：
+    <a href="https://music.apple.com/jp/album/514296802?i=514296806" target="_blank">Apple Music</a>・<a href="https://open.spotify.com/track/07tiaHFHnoECePaquTPMqS" target="_blank">Spotify</a>・<a href="https://music.amazon.co.jp/tracks/B00EPC1LAC" target="_blank">Amazon Music</a>・<a href="https://s.awa.fm/track/21c4c99c661dd9e69595" target="_blank">AWA</a>・<a href="https://music.line.me/webapp/track/mt0000000024955022" target="_blank">LINE MUSIC</a></li>
+  <li>『プッチベスト 13』（2012/12/5）：
+    <a href="https://music.apple.com/jp/album/576698522?i=576698624" target="_blank">Apple Music</a>・<a href="https://open.spotify.com/track/4v3cSWzcX0B0vZOoy7Pkma" target="_blank">Spotify</a>・<a href="https://music.amazon.co.jp/tracks/B0GVJLLGPN" target="_blank">Amazon Music</a>・<a href="https://s.awa.fm/track/2f5f6b3616525041be25" target="_blank">AWA</a>・<a href="https://music.line.me/webapp/track/mt0000000025557705" target="_blank">LINE MUSIC</a></li>
+  <li>『モーニング娘。'14 カップリングコレクション2』（2014/3/12）：
+    <a href="https://music.apple.com/jp/album/828941879?i=828944925" target="_blank">Apple Music</a>・<a href="https://open.spotify.com/track/5g2oxBNY3QtzBz8EbpDRr9" target="_blank">Spotify</a>・<a href="https://music.amazon.co.jp/tracks/B00IUEBKTI" target="_blank">Amazon Music</a>・<a href="https://s.awa.fm/track/bdba25bb43ffe5db2700" target="_blank">AWA</a>・<a href="https://music.line.me/webapp/track/mt00000000249557c4" target="_blank">LINE MUSIC</a></li>
 </ul>
 <p>新垣里沙のカバー8曲に3曲を加えて、CD『ハロカバ』（UFCW-1029、2012/6/27）になっています。「笑顔に涙」は入っていません。</p>
 
