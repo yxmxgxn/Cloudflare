@@ -217,7 +217,6 @@
       'url' => 'https://webdesigning.book.mynavi.jp/article/36644/',
       'media' => 'Web Designing',
       'media_url' => 'https://webdesigning.book.mynavi.jp/',
-      'desc' => 'Web制作会社のちょっと株式会社と組んで、本人のように話すAIと会話できる特設サイトをつくる全3回の企画。第1回は、ブログをもとに口調を真似るAIのデモを囲んで、写真・ボイス・クイズ・診断などのアイデアを出し合う作戦会議。',
     ],
   ];
 ?>
@@ -298,9 +297,6 @@
   <li>
     <span class="kt-date"><?= htmlspecialchars($iv['date']) ?></span>
     <a class="kt-title" href="<?= htmlspecialchars($iv['url']) ?>" target="_blank" rel="noopener noreferrer"><?= htmlspecialchars($iv['title']) ?><span class="kt-kind">（<?= kt_kind($iv['url'], '記事') ?>）</span></a>
-<?php if (!empty($iv['desc'])): ?>
-    <span class="kt-desc"><?= htmlspecialchars($iv['desc']) ?></span>
-<?php endif; ?>
     <span class="kt-sub"><a href="<?= htmlspecialchars($iv['media_url']) ?>" target="_blank" rel="noopener noreferrer"><?= htmlspecialchars($iv['media']) ?></a></span>
   </li>
 <?php endforeach; ?>
