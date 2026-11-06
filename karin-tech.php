@@ -211,6 +211,13 @@
       'media' => 'テクノロジーメディア「Newbee」',
       'media_url' => 'https://newbee.co.jp/',
     ],
+    [
+      'date' => '2026/11/06',
+      'title' => '【宮本佳林AIサイト制作プロジェクト】第1回：どんなサイトなら、ファンに楽しんでもらえる？',
+      'url' => 'https://webdesigning.book.mynavi.jp/article/36644/',
+      'media' => 'Web Designing',
+      'media_url' => 'https://webdesigning.book.mynavi.jp/',
+    ],
   ];
 ?>
 
