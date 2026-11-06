@@ -1,1 +1,1 @@
-<p class="last-update">更新日：2026/11/06</p>
+<p class="last-update">更新日：2026/11/07</p>
