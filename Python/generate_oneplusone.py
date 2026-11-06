@@ -259,7 +259,7 @@ def build_videos(rows: list[dict], card_date: str) -> str:
         label = feature_label(r)
         lines.append(
             f'<li>{icon_for_url(url, "ic")}'
-            f'<a href="{esc(url)}" target="_blank" rel="noopener noreferrer">'
+            f'<a href="{esc(url)}" target="_blank">'
             f"{esc(label)}</a>"
             f"{note}</li>"
         )

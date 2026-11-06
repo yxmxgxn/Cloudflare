@@ -88,7 +88,7 @@ def build_rows(events: list[dict]) -> str:
         venue_cell   = f"{venue}" if venue else ""
         prefecture_cell   = f"{prefecture}" if prefecture else ""
         setlist_cell = (
-            f'<a href="{escape_html(tomoko_url)}" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a>'
+            f'<a href="{escape_html(tomoko_url)}" target="_blank">Tomoko（セットリスト）</a>'
             if tomoko_url else ""
         )
 

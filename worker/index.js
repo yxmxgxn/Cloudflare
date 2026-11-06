@@ -9,7 +9,6 @@
  *   - POST /api/feedback : フッターの匿名フィードバックを受け、D1 に保存して Discord へ通知。
  *   - /_feedback?t=… : 受け取ったフィードバックの管理ページ(トークン一致時のみ。不一致は404)。
  *   - それ以外の全リクエスト : 静的アセット(env.ASSETS)へ委譲。既存ページの挙動は不変。
- *   - Cron : 宮本佳林のブログの最近の記事から自分のコメントを拾って D1 (COMMENT_DB) に保存し、新しく入ったら Discord へ通知。
  *
  * 索引側(Python)と同じ normalize / bigram を使うこと(下の実装と一致させる)。
  */
@@ -271,140 +270,9 @@ async function handleFeedbackAdmin(url, request, env) {
   });
 }
 
-/* ===================== ブログコメントの保存(Cron) ===================== */
-
-// コメントは承認されてから API に出るので、最近の記事を毎回見直す。
-// 保存は comment_id で重複を弾くだけなので、何度拾っても同じ。
-// 最初は1回ごとに記事を遡り、BACKFILL_FROM より前の記事に届いたら以降は最新分だけ見る。
-const AMEBLO_BLOG_ID = 10063665039;      // ameblo.jp/miyamotokarin-official
-const MY_AMEBA_ID = "yxmxgxn";
-const MY_NAME = "よみがな";              // ログインせず名前だけで書いた回もある(他に同名はいない)
-const BACKFILL_FROM = "2026-04-01";      // 最初のコメントは 4/25(4/23 の記事)。少し古い記事まで見る
-const ENTRIES_PER_RUN = 15;              // 無料プランのサブリクエスト上限(50)に収める
-const AMEBLO_API = "https://ameblo.jp/_api";
-
-const BLOG_COMMENT_SCHEMA = [
-  `CREATE TABLE IF NOT EXISTS blog_comment (
-     comment_id       INTEGER PRIMARY KEY,   -- アメブロのコメントID
-     entry_id         INTEGER NOT NULL,
-     entry_title      TEXT,
-     entry_created_at TEXT,                  -- 記事の投稿日時
-     comment_name     TEXT,
-     comment_url      TEXT,                  -- 名前に付けたURL(付けずに書いた回は空)
-     body             TEXT NOT NULL,         -- <br /> を改行に戻したプレーンテキスト
-     posted_at        TEXT NOT NULL,         -- 書いた日時(アメブロの値そのまま, +09:00)
-     updated_at       TEXT,                  -- アメブロ側の更新日時(だいたい承認された日時)
-     saved_at         TEXT NOT NULL          -- この表に入った日時(UTC)
-   )`,
-  // 遡りの進み具合。backfill_offset が無ければ完了
-  `CREATE TABLE IF NOT EXISTS blog_comment_state (key TEXT PRIMARY KEY, value TEXT)`,
-  `INSERT OR IGNORE INTO blog_comment_state (key, value) VALUES ('backfill_offset', '0')`,
-];
-
-async function amebloJson(path) {
-  const r = await fetch(`${AMEBLO_API}/${path}`, { headers: { "user-agent": "Mozilla/5.0 (karin-archive)" } });
-  if (!r.ok) throw new Error(`ameblo ${r.status}: ${path}`);
-  return r.json();
-}
-
-function isMine(c) {
-  return c.comment_author?.ameba_id === MY_AMEBA_ID
-    || (c.comment_url || "").includes(`ameblo.jp/${MY_AMEBA_ID}/`)
-    || c.comment_name === MY_NAME;
-}
-
-// コメント本文は <br /> と実体参照だけのHTML
-function commentText(html) {
-  return (html || "")
-    .replace(/<br\s*\/?>/gi, "\n")
-    .replace(/&#(\d+);/g, (_, n) => String.fromCodePoint(Number(n)))
-    .replace(/&(lt|gt|quot|#39|amp);/g, (_, e) => ({ lt: "<", gt: ">", quot: '"', "#39": "'", amp: "&" }[e]));
-}
-
-async function collectBlogComments(env) {
-  // 最初の1回で表を作る。以降は IF NOT EXISTS / OR IGNORE で何もしない
-  await env.COMMENT_DB.batch(BLOG_COMMENT_SCHEMA.map((s) => env.COMMENT_DB.prepare(s)));
-  const state = await env.COMMENT_DB.prepare("SELECT value FROM blog_comment_state WHERE key = 'backfill_offset'").first();
-  const backfilling = state !== null;
-  const offset = backfilling ? Number(state.value) : 0;
-
-  const d = await amebloJson(`blogEntries;blogId=${AMEBLO_BLOG_ID};limit=${ENTRIES_PER_RUN};offset=${offset}`);
-  const entries = Object.values(d.entities?.entryMap || {});
-  const rows = [];
-  for (const e of entries) {
-    for (let off = 0; ; off += 100) {
-      const c = await amebloJson(`blogComments;blogId=${AMEBLO_BLOG_ID};entryId=${e.entry_id};limit=100;offset=${off}`);
-      for (const x of Object.values(c.commentMap || {})) {
-        if (isMine(x)) rows.push({ e, x });
-      }
-      if ((c.commentIds || []).length < 100) break;
-    }
-  }
-
-  const savedAt = new Date().toISOString();
-  const stmt = env.COMMENT_DB.prepare(
-    `INSERT OR IGNORE INTO blog_comment
-       (comment_id, entry_id, entry_title, entry_created_at, comment_name, comment_url, body, posted_at, updated_at, saved_at)
-     VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`
-  );
-  const res = rows.length ? await env.COMMENT_DB.batch(rows.map(({ e, x }) => stmt.bind(
-    x.comment_id, e.entry_id, e.entry_title, e.entry_created_datetime, x.comment_name, x.comment_url || "",
-    commentText(x.comment_text), x.ins_datetime, x.upd_datetime || null, savedAt,
-  ))) : [];
-  const added = rows.filter((_, i) => res[i].meta.changes > 0);
-
-  if (backfilling) {
-    const oldest = entries.map((e) => e.entry_created_datetime).sort()[0] || "";
-    if (!entries.length || oldest < BACKFILL_FROM) {
-      await env.COMMENT_DB.prepare("DELETE FROM blog_comment_state WHERE key = 'backfill_offset'").run();
-      const { n } = await env.COMMENT_DB.prepare("SELECT COUNT(*) AS n FROM blog_comment").first();
-      await discordSafe(env, { content: `ブログコメントの過去分を取り込みました(${n}件)` });
-    } else {
-      // 遡る間に新しい記事が出ると後ろへずれるので、少し重ねて進める
-      await env.COMMENT_DB.prepare("UPDATE blog_comment_state SET value = ? WHERE key = 'backfill_offset'")
-        .bind(String(offset + ENTRIES_PER_RUN - 3)).run();
-    }
-    return;
-  }
-
-  added.sort((a, b) => a.x.ins_datetime.localeCompare(b.x.ins_datetime));
-  // Discord は1メッセージにつき embed 10個まで
-  for (let i = 0; i < added.length; i += 10) {
-    await discordSafe(env, {
-      content: i === 0 ? `ブログコメントが反映されました(${added.length}件)` : undefined,
-      embeds: added.slice(i, i + 10).map(({ e, x }) => {
-        const body = commentText(x.comment_text);
-        return {
-          title: e.entry_title,
-          url: `https://ameblo.jp/miyamotokarin-official/entry-${e.entry_id}.html`,
-          description: body.length > 1500 ? body.slice(0, 1500) + "…" : body,
-          color: 0xe5739a,
-          timestamp: new Date(x.ins_datetime).toISOString(),
-        };
-      }),
-    });
-  }
-}
-
-// 通知に失敗しても D1 には入っている
-async function discordSafe(env, payload) {
-  if (!env.DISCORD_WEBHOOK) return;
-  try {
-    await fetch(env.DISCORD_WEBHOOK, {
-      method: "POST",
-      headers: { "content-type": "application/json" },
-      body: JSON.stringify(payload),
-    });
-  } catch (e) {}
-}
-
 /* =========================================================================== */
 
 export default {
-  async scheduled(controller, env, ctx) {
-    ctx.waitUntil(collectBlogComments(env));
-  },
-
   async fetch(request, env, ctx) {
     const url = new URL(request.url);
 

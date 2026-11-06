@@ -23,8 +23,8 @@
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td>2013年12月17日</td><td>18:20</td><td>Juice=Juice 宮本佳林・植村あかりバースデーイベント2013</td><td>TOKYO FM HALL</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/3686" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
-<tr><td>2013年12月17日</td><td>20:00</td><td>Juice=Juice 宮本佳林・植村あかりバースデーイベント2013</td><td>TOKYO FM HALL</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/3687" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
+<tr class="row-even"><td>2013年12月17日</td><td>18:20</td><td>Juice=Juice 宮本佳林・植村あかりバースデーイベント2013</td><td>TOKYO FM HALL</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/3686" target="_blank">Tomoko（セットリスト）</a></td></tr>
+<tr><td>2013年12月17日</td><td>20:00</td><td>Juice=Juice 宮本佳林・植村あかりバースデーイベント2013</td><td>TOKYO FM HALL</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/3687" target="_blank">Tomoko（セットリスト）</a></td></tr>
 </tbody>
 </table>
 16歳（2014年）
@@ -40,7 +40,7 @@
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td>2014年12月11日</td><td>19:00</td><td>Juice=Juice 宮本佳林・植村あかりバースデーイベント2014</td><td>ディファ有明</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/4205" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
+<tr class="row-even"><td>2014年12月11日</td><td>19:00</td><td>Juice=Juice 宮本佳林・植村あかりバースデーイベント2014</td><td>ディファ有明</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/4205" target="_blank">Tomoko（セットリスト）</a></td></tr>
 </tbody>
 </table>
 17歳（2015年）
@@ -56,8 +56,8 @@
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td>2015年12月28日</td><td>17:00</td><td>Juice=Juice 植村あかりバースデーイベント2015</td><td>山野ホール</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/4744" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
-<tr><td>2015年12月28日</td><td>19:30</td><td>Juice=Juice 植村あかりバースデーイベント2015</td><td>山野ホール</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/4745" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
+<tr class="row-even"><td>2015年12月28日</td><td>17:00</td><td>Juice=Juice 植村あかりバースデーイベント2015</td><td>山野ホール</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/4744" target="_blank">Tomoko（セットリスト）</a></td></tr>
+<tr><td>2015年12月28日</td><td>19:30</td><td>Juice=Juice 植村あかりバースデーイベント2015</td><td>山野ホール</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/4745" target="_blank">Tomoko（セットリスト）</a></td></tr>
 </tbody>
 </table>
 18歳（2016年）
@@ -73,9 +73,9 @@
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td>2016年12月30日</td><td>15:45</td><td>Juice=Juice 植村あかりバースデーイベント2016</td><td>品川インターシティホール</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/5350" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
-<tr><td>2016年12月30日</td><td>18:15</td><td>Juice=Juice 植村あかりバースデーイベント2016</td><td>品川インターシティホール</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/5351" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
-<tr class="row-even"><td>2017年1月10日</td><td>19:30</td><td>Juice=Juice 植村あかりバースデーイベント2016 in 名古屋</td><td>ミッドランドスクエア シネマ2</td><td>愛知県</td><td><a href="https://hp-setlist.com/stage/10026" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
+<tr class="row-even"><td>2016年12月30日</td><td>15:45</td><td>Juice=Juice 植村あかりバースデーイベント2016</td><td>品川インターシティホール</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/5350" target="_blank">Tomoko（セットリスト）</a></td></tr>
+<tr><td>2016年12月30日</td><td>18:15</td><td>Juice=Juice 植村あかりバースデーイベント2016</td><td>品川インターシティホール</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/5351" target="_blank">Tomoko（セットリスト）</a></td></tr>
+<tr class="row-even"><td>2017年1月10日</td><td>19:30</td><td>Juice=Juice 植村あかりバースデーイベント2016 in 名古屋</td><td>ミッドランドスクエア シネマ2</td><td>愛知県</td><td><a href="https://hp-setlist.com/stage/10026" target="_blank">Tomoko（セットリスト）</a></td></tr>
 </tbody>
 </table>
 19歳（2017年）
@@ -91,9 +91,9 @@
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td>2017年12月7日</td><td>17:45</td><td>Juice=Juice 植村あかりバースデーイベント2017</td><td>CLUB CITTA'</td><td>神奈川県</td><td><a href="https://hp-setlist.com/stage/5882" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
-<tr><td>2017年12月7日</td><td>19:45</td><td>Juice=Juice 植村あかりバースデーイベント2017</td><td>CLUB CITTA'</td><td>神奈川県</td><td><a href="https://hp-setlist.com/stage/5883" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
-<tr class="row-even"><td>2018年1月9日</td><td>19:30</td><td>Juice=Juice 植村あかりバースデーイベント in 名古屋</td><td>ミッドランドスクエア シネマ2</td><td>愛知県</td><td><a href="https://hp-setlist.com/stage/10074" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
+<tr class="row-even"><td>2017年12月7日</td><td>17:45</td><td>Juice=Juice 植村あかりバースデーイベント2017</td><td>CLUB CITTA'</td><td>神奈川県</td><td><a href="https://hp-setlist.com/stage/5882" target="_blank">Tomoko（セットリスト）</a></td></tr>
+<tr><td>2017年12月7日</td><td>19:45</td><td>Juice=Juice 植村あかりバースデーイベント2017</td><td>CLUB CITTA'</td><td>神奈川県</td><td><a href="https://hp-setlist.com/stage/5883" target="_blank">Tomoko（セットリスト）</a></td></tr>
+<tr class="row-even"><td>2018年1月9日</td><td>19:30</td><td>Juice=Juice 植村あかりバースデーイベント in 名古屋</td><td>ミッドランドスクエア シネマ2</td><td>愛知県</td><td><a href="https://hp-setlist.com/stage/10074" target="_blank">Tomoko（セットリスト）</a></td></tr>
 </tbody>
 </table>
 20歳（2018年）
@@ -109,8 +109,8 @@
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td>2018年12月8日</td><td>19:15</td><td>Juice=Juice 植村あかりバースデーイベント2018</td><td>山野ホール</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/6365" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
-<tr><td>2018年12月11日</td><td>19:30</td><td>Juice=Juice 植村あかりバースデーイベント2018 in 名古屋</td><td>ミッドランドスクエア シネマ2</td><td>愛知県</td><td><a href="https://hp-setlist.com/stage/10120" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
+<tr class="row-even"><td>2018年12月8日</td><td>19:15</td><td>Juice=Juice 植村あかりバースデーイベント2018</td><td>山野ホール</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/6365" target="_blank">Tomoko（セットリスト）</a></td></tr>
+<tr><td>2018年12月11日</td><td>19:30</td><td>Juice=Juice 植村あかりバースデーイベント2018 in 名古屋</td><td>ミッドランドスクエア シネマ2</td><td>愛知県</td><td><a href="https://hp-setlist.com/stage/10120" target="_blank">Tomoko（セットリスト）</a></td></tr>
 </tbody>
 </table>
 21歳（2019年）
@@ -126,10 +126,10 @@
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td>2019年12月19日</td><td>17:15</td><td>Juice=Juice 植村あかりバースデーイベント2019</td><td>山野ホール</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/6930" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
-<tr><td>2019年12月19日</td><td>19:45</td><td>Juice=Juice 植村あかりバースデーイベント2019</td><td>山野ホール</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/6931" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
-<tr class="row-even"><td>2020年1月24日</td><td>17:15</td><td>Juice=Juice 植村あかりバースデーイベント in 大阪</td><td>YES THEATER</td><td>大阪府</td><td><a href="https://hp-setlist.com/stage/6977" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
-<tr><td>2020年1月24日</td><td>19:15</td><td>Juice=Juice 植村あかりバースデーイベント in 大阪</td><td>YES THEATER</td><td>大阪府</td><td><a href="https://hp-setlist.com/stage/6978" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
+<tr class="row-even"><td>2019年12月19日</td><td>17:15</td><td>Juice=Juice 植村あかりバースデーイベント2019</td><td>山野ホール</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/6930" target="_blank">Tomoko（セットリスト）</a></td></tr>
+<tr><td>2019年12月19日</td><td>19:45</td><td>Juice=Juice 植村あかりバースデーイベント2019</td><td>山野ホール</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/6931" target="_blank">Tomoko（セットリスト）</a></td></tr>
+<tr class="row-even"><td>2020年1月24日</td><td>17:15</td><td>Juice=Juice 植村あかりバースデーイベント in 大阪</td><td>YES THEATER</td><td>大阪府</td><td><a href="https://hp-setlist.com/stage/6977" target="_blank">Tomoko（セットリスト）</a></td></tr>
+<tr><td>2020年1月24日</td><td>19:15</td><td>Juice=Juice 植村あかりバースデーイベント in 大阪</td><td>YES THEATER</td><td>大阪府</td><td><a href="https://hp-setlist.com/stage/6978" target="_blank">Tomoko（セットリスト）</a></td></tr>
 </tbody>
 </table>
 22歳（2020年）
@@ -145,10 +145,10 @@
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td>2020年12月21日</td><td>17:15</td><td>Juice=Juice 植村あかりバースデーイベント2020</td><td>LANDMARK HALL</td><td>神奈川県</td><td><a href="https://hp-setlist.com/stage/7161" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
-<tr><td>2020年12月21日</td><td>19:45</td><td>Juice=Juice 植村あかりバースデーイベント2020</td><td>LANDMARK HALL</td><td>神奈川県</td><td><a href="https://hp-setlist.com/stage/7162" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
-<tr class="row-even"><td>2021年1月19日</td><td>17:30</td><td>Juice=Juice 植村あかり・稲場愛香バースデーイベント in 名古屋</td><td>ミッドランドスクエア シネマ2</td><td>愛知県</td><td><a href="https://hp-setlist.com/stage/10188" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
-<tr><td>2021年1月19日</td><td>19:00</td><td>Juice=Juice 植村あかり・稲場愛香バースデーイベント in 名古屋</td><td>ミッドランドスクエア シネマ2</td><td>愛知県</td><td><a href="https://hp-setlist.com/stage/10189" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
+<tr class="row-even"><td>2020年12月21日</td><td>17:15</td><td>Juice=Juice 植村あかりバースデーイベント2020</td><td>LANDMARK HALL</td><td>神奈川県</td><td><a href="https://hp-setlist.com/stage/7161" target="_blank">Tomoko（セットリスト）</a></td></tr>
+<tr><td>2020年12月21日</td><td>19:45</td><td>Juice=Juice 植村あかりバースデーイベント2020</td><td>LANDMARK HALL</td><td>神奈川県</td><td><a href="https://hp-setlist.com/stage/7162" target="_blank">Tomoko（セットリスト）</a></td></tr>
+<tr class="row-even"><td>2021年1月19日</td><td>17:30</td><td>Juice=Juice 植村あかり・稲場愛香バースデーイベント in 名古屋</td><td>ミッドランドスクエア シネマ2</td><td>愛知県</td><td><a href="https://hp-setlist.com/stage/10188" target="_blank">Tomoko（セットリスト）</a></td></tr>
+<tr><td>2021年1月19日</td><td>19:00</td><td>Juice=Juice 植村あかり・稲場愛香バースデーイベント in 名古屋</td><td>ミッドランドスクエア シネマ2</td><td>愛知県</td><td><a href="https://hp-setlist.com/stage/10189" target="_blank">Tomoko（セットリスト）</a></td></tr>
 </tbody>
 </table>
 23歳（2021年）
@@ -164,8 +164,8 @@
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td>2021年12月16日</td><td>16:30</td><td>Juice=Juice 植村あかりバースデーイベント2021</td><td>荒川区民会館 大ホール</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/7565" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
-<tr><td>2021年12月16日</td><td>18:50</td><td>Juice=Juice 植村あかりバースデーイベント2021</td><td>荒川区民会館 大ホール</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/7566" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
+<tr class="row-even"><td>2021年12月16日</td><td>16:30</td><td>Juice=Juice 植村あかりバースデーイベント2021</td><td>荒川区民会館 大ホール</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/7565" target="_blank">Tomoko（セットリスト）</a></td></tr>
+<tr><td>2021年12月16日</td><td>18:50</td><td>Juice=Juice 植村あかりバースデーイベント2021</td><td>荒川区民会館 大ホール</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/7566" target="_blank">Tomoko（セットリスト）</a></td></tr>
 </tbody>
 </table>
 24歳（2022年）
@@ -181,10 +181,10 @@
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td>2023年1月18日</td><td>16:30</td><td>Juice=Juice 植村あかりバースデーイベント2022～2023 明けちゃいました おめでとう！</td><td>荒川区民会館 大ホール</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/10540" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
-<tr><td>2023年1月18日</td><td>18:50</td><td>Juice=Juice 植村あかりバースデーイベント2022～2023 明けちゃいました おめでとう！</td><td>荒川区民会館 大ホール</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/10541" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
-<tr class="row-even"><td>2023年1月23日</td><td>16:30</td><td>Juice=Juice 植村あかりバースデーイベント2022～2023 明けちゃいました おめでとう！</td><td>YES THEATER</td><td>大阪府</td><td><a href="https://hp-setlist.com/stage/10542" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
-<tr><td>2023年1月23日</td><td>18:50</td><td>Juice=Juice 植村あかりバースデーイベント2022～2023 明けちゃいました おめでとう！</td><td>YES THEATER</td><td>大阪府</td><td><a href="https://hp-setlist.com/stage/10543" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
+<tr class="row-even"><td>2023年1月18日</td><td>16:30</td><td>Juice=Juice 植村あかりバースデーイベント2022～2023 明けちゃいました おめでとう！</td><td>荒川区民会館 大ホール</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/10540" target="_blank">Tomoko（セットリスト）</a></td></tr>
+<tr><td>2023年1月18日</td><td>18:50</td><td>Juice=Juice 植村あかりバースデーイベント2022～2023 明けちゃいました おめでとう！</td><td>荒川区民会館 大ホール</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/10541" target="_blank">Tomoko（セットリスト）</a></td></tr>
+<tr class="row-even"><td>2023年1月23日</td><td>16:30</td><td>Juice=Juice 植村あかりバースデーイベント2022～2023 明けちゃいました おめでとう！</td><td>YES THEATER</td><td>大阪府</td><td><a href="https://hp-setlist.com/stage/10542" target="_blank">Tomoko（セットリスト）</a></td></tr>
+<tr><td>2023年1月23日</td><td>18:50</td><td>Juice=Juice 植村あかりバースデーイベント2022～2023 明けちゃいました おめでとう！</td><td>YES THEATER</td><td>大阪府</td><td><a href="https://hp-setlist.com/stage/10543" target="_blank">Tomoko（セットリスト）</a></td></tr>
 </tbody>
 </table>
 25歳（2023年）
@@ -200,10 +200,29 @@
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td>2024年1月23日</td><td>17:00</td><td>Juice=Juice 植村あかりバースデーイベント2024 ～うえむランドへようこそ！～</td><td>タワーホール船堀 大ホール</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/20903" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
-<tr><td>2024年1月23日</td><td>19:10</td><td>Juice=Juice 植村あかりバースデーイベント2024 ～うえむランドへようこそ！～</td><td>タワーホール船堀 大ホール</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/20904" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
-<tr class="row-even"><td>2024年1月26日</td><td>16:40</td><td>Juice=Juice 植村あかりバースデーイベント2024 ～うえむランドへようこそ！～</td><td>YES THEATER</td><td>大阪府</td><td><a href="https://hp-setlist.com/stage/20906" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
-<tr><td>2024年1月26日</td><td>18:50</td><td>Juice=Juice 植村あかりバースデーイベント2024 ～うえむランドへようこそ！～</td><td>YES THEATER</td><td>大阪府</td><td><a href="https://hp-setlist.com/stage/20907" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
+<tr class="row-even"><td>2024年1月23日</td><td>17:00</td><td>Juice=Juice 植村あかりバースデーイベント2024 ～うえむランドへようこそ！～</td><td>タワーホール船堀 大ホール</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/20903" target="_blank">Tomoko（セットリスト）</a></td></tr>
+<tr><td>2024年1月23日</td><td>19:10</td><td>Juice=Juice 植村あかりバースデーイベント2024 ～うえむランドへようこそ！～</td><td>タワーホール船堀 大ホール</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/20904" target="_blank">Tomoko（セットリスト）</a></td></tr>
+<tr class="row-even"><td>2024年1月26日</td><td>16:40</td><td>Juice=Juice 植村あかりバースデーイベント2024 ～うえむランドへようこそ！～</td><td>YES THEATER</td><td>大阪府</td><td><a href="https://hp-setlist.com/stage/20906" target="_blank">Tomoko（セットリスト）</a></td></tr>
+<tr><td>2024年1月26日</td><td>18:50</td><td>Juice=Juice 植村あかりバースデーイベント2024 ～うえむランドへようこそ！～</td><td>YES THEATER</td><td>大阪府</td><td><a href="https://hp-setlist.com/stage/20907" target="_blank">Tomoko（セットリスト）</a></td></tr>
+</tbody>
+</table>
+28歳（2026年）
+<table class="birthday-table">
+<thead>
+<tr>
+<th>日付</th>
+<th>開演</th>
+<th>イベント名</th>
+<th>会場</th>
+<th>都道府県</th>
+<th>セットリスト</th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td>2026年12月24日</td><td>16:30</td><td>植村あかりバースデーイベント2026</td><td>YES THEATER</td><td>大阪府</td><td></td></tr>
+<tr><td>2026年12月24日</td><td>18:30</td><td>植村あかりバースデーイベント2026</td><td>YES THEATER</td><td>大阪府</td><td></td></tr>
+<tr class="row-even"><td>2027年1月14日</td><td>17:40</td><td>植村あかりバースデーイベント2026</td><td>I'M A SHOW</td><td>東京都</td><td></td></tr>
+<tr><td>2027年1月14日</td><td>19:50</td><td>植村あかりバースデーイベント2026</td><td>I'M A SHOW</td><td>東京都</td><td></td></tr>
 </tbody>
 </table>
 

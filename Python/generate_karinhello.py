@@ -110,7 +110,8 @@ def build_table(rows: list[dict]) -> str:
         yt_id        = row.get("YouTube Music", "")
         yt_url       = f"https://music.youtube.com/watch?v={yt_id}" if yt_id else ""
         spotify_id   = row.get("Spotify", "")
-        spotify_url  = f"https://open.spotify.com/track/{spotify_id}" if spotify_id else ""
+        # 日本語環境では open.spotify.com/track/ が /intl-ja/track/ へ転送されるので、最初からそちらを指す
+        spotify_url  = f"https://open.spotify.com/intl-ja/track/{spotify_id}" if spotify_id else ""
         amazon_id    = row.get("Amazon Music", "")
         amazon_url   = f"https://music.amazon.co.jp/tracks/{amazon_id}" if amazon_id else ""
         lyricist     = escape_html(row.get("作詞", ""))
@@ -118,23 +119,23 @@ def build_table(rows: list[dict]) -> str:
         arranger     = escape_html(row.get("編曲", ""))
 
         date_cell = (
-            f'<a href="{escape_html(post_url)}" target="_blank" rel="noopener noreferrer">{post_date}</a>'
+            f'<a href="{escape_html(post_url)}" target="_blank">{post_date}</a>'
             if post_url else post_date
         )
         album_cell = (
-            f'<a href="{escape_html(official_url)}" target="_blank" rel="noopener noreferrer">{album}</a>'
+            f'<a href="{escape_html(official_url)}" target="_blank">{album}</a>'
             if official_url else album
         )
         yt_cell = (
-            f'<a href="{escape_html(yt_url)}" target="_blank" rel="noopener noreferrer" title="YouTube Music">{icon("youtube-brand", "ic ic-20")}</a>'
+            f'<a href="{escape_html(yt_url)}" target="_blank" title="YouTube Music">{icon("youtube-brand", "ic ic-20")}</a>'
             if yt_url else ""
         )
         spotify_cell = (
-            f'<a href="{escape_html(spotify_url)}" target="_blank" rel="noopener noreferrer" title="Spotify">{icon("spotify-brand", "ic ic-20")}</a>'
+            f'<a href="{escape_html(spotify_url)}" target="_blank" title="Spotify">{icon("spotify-brand", "ic ic-20")}</a>'
             if spotify_url else ""
         )
         amazon_cell = (
-            f'<a href="{escape_html(amazon_url)}" target="_blank" rel="noopener noreferrer" title="Amazon Music">{icon("amazon-music-brand", "ic ic-20")}</a>'
+            f'<a href="{escape_html(amazon_url)}" target="_blank" title="Amazon Music">{icon("amazon-music-brand", "ic ic-20")}</a>'
             if amazon_url else ""
         )
 

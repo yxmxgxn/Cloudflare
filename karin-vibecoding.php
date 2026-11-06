@@ -224,7 +224,7 @@
 <main>
   <h1>宮本佳林 バイブコーディングまとめ</h1>
 <div class="kt-lead">
-  <p>宮本佳林さんが作ったサイトや配信の仕組み、YouTube配信、登壇、インタビューを、公開されたものだけ年代順に並べています。技術のくわしい話は、本人のブログへのリンクからどうぞ。開発について書いた記事は<a href="<?= htmlspecialchars($tech_theme) ?>" target="_blank" rel="noopener noreferrer">アメブロのテーマ一覧</a>にもまとまっています。</p>
+  <p>宮本佳林さんが作ったサイトや配信の仕組み、YouTube配信、登壇、インタビューを、公開されたものだけ年代順に並べています。技術のくわしい話は、本人のブログへのリンクからどうぞ。開発について書いた記事は<a href="<?= htmlspecialchars($tech_theme) ?>" target="_blank">アメブロのテーマ一覧</a>にもまとまっています。</p>
   <p>技術の話はちょっと…という人は、作ったきっかけや開発の流れを書いたブログを<a href="#reading">「読み物」</a>にまとめています。</p>
 </div>
 
@@ -234,7 +234,7 @@
   <li>
     <span class="kt-date"><?= htmlspecialchars($item['date'] ?? '日付未定') ?></span>
 <?php if (!empty($item['url'])): ?>
-    <a class="kt-title" href="<?= htmlspecialchars($item['url']) ?>" target="_blank" rel="noopener noreferrer"><?= htmlspecialchars($item['title']) ?><span class="kt-kind">（<?= kt_kind($item['url'], 'サイト') ?>）</span></a>
+    <a class="kt-title" href="<?= htmlspecialchars($item['url']) ?>" target="_blank"><?= htmlspecialchars($item['title']) ?><span class="kt-kind">（<?= kt_kind($item['url'], 'サイト') ?>）</span></a>
 <?php else: ?>
     <span class="kt-title"><?= htmlspecialchars($item['title']) ?></span>
 <?php endif; ?>
@@ -242,7 +242,7 @@
     <span class="kt-desc"><?= htmlspecialchars($item['desc']) ?></span>
 <?php endif; ?>
 <?php if (!empty($item['blogs'])): ?>
-    <span class="kt-sub kt-blogs"><?php foreach ($item['blogs'] as [$label, $url]): ?><a href="<?= htmlspecialchars($url) ?>" target="_blank" rel="noopener noreferrer"><?= htmlspecialchars($label) ?></a><?php endforeach; ?></span>
+    <span class="kt-sub kt-blogs"><?php foreach ($item['blogs'] as [$label, $url]): ?><a href="<?= htmlspecialchars($url) ?>" target="_blank"><?= htmlspecialchars($label) ?></a><?php endforeach; ?></span>
 <?php endif; ?>
   </li>
 <?php endforeach; ?>
@@ -253,10 +253,10 @@
 <?php foreach ($streams as $st): ?>
   <li>
     <span class="kt-date"><?= htmlspecialchars($st['date']) ?></span>
-    <a class="kt-title" href="<?= htmlspecialchars($st['url']) ?>" target="_blank" rel="noopener noreferrer"><?= htmlspecialchars($st['title']) ?><span class="kt-kind">（YouTube）</span></a>
+    <a class="kt-title" href="<?= htmlspecialchars($st['url']) ?>" target="_blank"><?= htmlspecialchars($st['title']) ?><span class="kt-kind">（YouTube）</span></a>
     <span class="kt-desc"><?= htmlspecialchars($st['desc']) ?></span>
 <?php if (!empty($st['blogs'])): ?>
-    <span class="kt-sub kt-blogs"><?php foreach ($st['blogs'] as [$label, $url]): ?><a href="<?= htmlspecialchars($url) ?>" target="_blank" rel="noopener noreferrer"><?= htmlspecialchars($label) ?></a><?php endforeach; ?></span>
+    <span class="kt-sub kt-blogs"><?php foreach ($st['blogs'] as [$label, $url]): ?><a href="<?= htmlspecialchars($url) ?>" target="_blank"><?= htmlspecialchars($label) ?></a><?php endforeach; ?></span>
 <?php endif; ?>
   </li>
 <?php endforeach; ?>
@@ -281,10 +281,10 @@
 <?php endif; ?>
     <p class="ks-links">
 <?php foreach ($talk['links'] as [$label, $url]): ?>
-      <a class="ks-link" href="<?= htmlspecialchars($url) ?>" target="_blank" rel="noopener noreferrer"><?= htmlspecialchars($label) ?></a>
+      <a class="ks-link" href="<?= htmlspecialchars($url) ?>" target="_blank"><?= htmlspecialchars($label) ?></a>
 <?php endforeach; ?>
 <?php foreach ($talk['blogs'] ?? [] as [$label, $url]): ?>
-      <a class="ks-link" href="<?= htmlspecialchars($url) ?>" target="_blank" rel="noopener noreferrer"><?= htmlspecialchars($label) ?></a>
+      <a class="ks-link" href="<?= htmlspecialchars($url) ?>" target="_blank"><?= htmlspecialchars($label) ?></a>
 <?php endforeach; ?>
     </p>
   </article>
@@ -296,8 +296,8 @@
 <?php foreach ($interviews as $iv): ?>
   <li>
     <span class="kt-date"><?= htmlspecialchars($iv['date']) ?></span>
-    <a class="kt-title" href="<?= htmlspecialchars($iv['url']) ?>" target="_blank" rel="noopener noreferrer"><?= htmlspecialchars($iv['title']) ?><span class="kt-kind">（<?= kt_kind($iv['url'], '記事') ?>）</span></a>
-    <span class="kt-sub"><a href="<?= htmlspecialchars($iv['media_url']) ?>" target="_blank" rel="noopener noreferrer"><?= htmlspecialchars($iv['media']) ?></a></span>
+    <a class="kt-title" href="<?= htmlspecialchars($iv['url']) ?>" target="_blank"><?= htmlspecialchars($iv['title']) ?><span class="kt-kind">（<?= kt_kind($iv['url'], '記事') ?>）</span></a>
+    <span class="kt-sub"><a href="<?= htmlspecialchars($iv['media_url']) ?>" target="_blank"><?= htmlspecialchars($iv['media']) ?></a></span>
   </li>
 <?php endforeach; ?>
 </ul>
@@ -309,10 +309,10 @@
 </div>
 <ol class="kt-list kt-reading">
 <?php foreach ($reading as $r): ?>
-  <li><a class="kt-title" href="<?= htmlspecialchars($r['url']) ?>" target="_blank" rel="noopener noreferrer"><?= htmlspecialchars($r['title']) ?></a></li>
+  <li><a class="kt-title" href="<?= htmlspecialchars($r['url']) ?>" target="_blank"><?= htmlspecialchars($r['title']) ?></a></li>
 <?php endforeach; ?>
 </ol>
-<p>開発について書いたほかの記事は<a href="<?= htmlspecialchars($tech_theme) ?>" target="_blank" rel="noopener noreferrer">アメブロのテーマ一覧</a>から読めます。</p>
+<p>開発について書いたほかの記事は<a href="<?= htmlspecialchars($tech_theme) ?>" target="_blank">アメブロのテーマ一覧</a>から読めます。</p>
 
 </main>
 <?php include $_SERVER['DOCUMENT_ROOT'] . '/common/footer.php'; ?>

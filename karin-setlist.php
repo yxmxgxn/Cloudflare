@@ -10,7 +10,7 @@
   <h1>宮本佳林 最強のセトリ プレイリストまとめ</h1>
 <div class="ks-lead">
   <p>宮本佳林さんのツアーのセトリサイトで公開された「最強のセトリ」を、古い順に並べています。元のセトリはログインしないと見られません。</p>
-  <p>プレイリストは <a href="https://hello-music.yxmxgxn.workers.dev/" target="_blank" rel="noopener noreferrer">hello-music</a> で変換しました。</p>
+  <p>プレイリストは <a href="https://hello-music.yxmxgxn.workers.dev/" target="_blank">hello-music</a> で変換しました。</p>
 </div>
 
 <div class="card-grid ks-grid">

@@ -308,10 +308,10 @@ def render_chip(platform: str, url: str, label: str, archive: bool = False) -> s
     if icon:
         return (
             f'<a class="sns-icon-link {cls}" href="{esc(url)}" target="_blank"'
-            f' rel="noopener noreferrer" aria-label="{esc(title)}" title="{esc(title)}">{icon}</a>'
+            f' aria-label="{esc(title)}" title="{esc(title)}">{icon}</a>'
         )
     return (
-        f'<a class="{cls}" href="{esc(url)}" target="_blank" rel="noopener noreferrer"'
+        f'<a class="{cls}" href="{esc(url)}" target="_blank"'
         f'{" title=" + chr(34) + esc(title) + chr(34) if archive else ""}>{esc(label)}</a>'
     )
 

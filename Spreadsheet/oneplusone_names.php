@@ -1,4 +1,4 @@
-<!-- generated: 2026-09-06T22:00:16.787159+00:00 -->
+<!-- generated: 2026-11-04T08:31:24.813563+00:00 -->
 <option value="一岡伶奈" data-group="BEYOOOOONDS">一岡伶奈（1）</option>
 <option value="上國料萌衣" data-group="アンジュルム">上國料萌衣（2）</option>
 <option value="上村麗菜" data-group="ハロプロ研修生">上村麗菜（1）</option>

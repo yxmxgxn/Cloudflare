@@ -23,8 +23,8 @@
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td>2023年6月19日</td><td>17:10</td><td>OCHA NORMA 田代すみれバースデーイベント2023</td><td>LANDMARK HALL</td><td>神奈川県</td><td><a href="https://hp-setlist.com/stage/10757" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
-<tr><td>2023年6月19日</td><td>19:20</td><td>OCHA NORMA 田代すみれバースデーイベント2023</td><td>LANDMARK HALL</td><td>神奈川県</td><td><a href="https://hp-setlist.com/stage/10758" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
+<tr class="row-even"><td>2023年6月19日</td><td>17:10</td><td>OCHA NORMA 田代すみれバースデーイベント2023</td><td>LANDMARK HALL</td><td>神奈川県</td><td><a href="https://hp-setlist.com/stage/10757" target="_blank">Tomoko（セットリスト）</a></td></tr>
+<tr><td>2023年6月19日</td><td>19:20</td><td>OCHA NORMA 田代すみれバースデーイベント2023</td><td>LANDMARK HALL</td><td>神奈川県</td><td><a href="https://hp-setlist.com/stage/10758" target="_blank">Tomoko（セットリスト）</a></td></tr>
 </tbody>
 </table>
 19歳（2024年）
@@ -40,8 +40,8 @@
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td>2024年6月13日</td><td>17:20</td><td>OCHA NORMA 田代すみれバースデーイベント2024</td><td>墨田区曳舟文化センター 劇場ホール</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/21404" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
-<tr><td>2024年6月13日</td><td>19:40</td><td>OCHA NORMA 田代すみれバースデーイベント2024</td><td>墨田区曳舟文化センター 劇場ホール</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/21405" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
+<tr class="row-even"><td>2024年6月13日</td><td>17:20</td><td>OCHA NORMA 田代すみれバースデーイベント2024</td><td>墨田区曳舟文化センター 劇場ホール</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/21404" target="_blank">Tomoko（セットリスト）</a></td></tr>
+<tr><td>2024年6月13日</td><td>19:40</td><td>OCHA NORMA 田代すみれバースデーイベント2024</td><td>墨田区曳舟文化センター 劇場ホール</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/21405" target="_blank">Tomoko（セットリスト）</a></td></tr>
 </tbody>
 </table>
 

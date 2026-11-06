@@ -13,13 +13,13 @@
 <div class="opo-lead">
   <p>ハロー！プロジェクトのメンバーが二人でパフォーマンスするデュオ企画をまとめました。<br>
   
-  <p><strong>ONE PLUS ONE</strong>はテレビ番組「ハロドリ。」のデュオ企画で、各グループの公式YouTubeチャンネルで特別編集版・<a href="https://www.youtube.com/@TVTOKYO" target="_blank" rel="noopener noreferrer">テレ東公式チャンネル</a>で1アングルバージョンが公開されています。<br>
-  <strong>COVERS -One on One-</strong>はメンバー二人のデュオ企画で<a href="https://www.youtube.com/@upfrontchannel" target="_blank" rel="noopener noreferrer">アップフロントチャンネル</a>に公開されています。<br>
-  COVERS -One on One-は<a href="https://helloproject.com/release/6817/" target="_blank" rel="noopener noreferrer">Blu-ray Disc + CD</a>が発売されています。</p>
+  <p><strong>ONE PLUS ONE</strong>はテレビ番組「ハロドリ。」のデュオ企画で、各グループの公式YouTubeチャンネルで特別編集版・<a href="https://www.youtube.com/@TVTOKYO" target="_blank">テレ東公式チャンネル</a>で1アングルバージョンが公開されています。<br>
+  <strong>COVERS -One on One-</strong>はメンバー二人のデュオ企画で<a href="https://www.youtube.com/@upfrontchannel" target="_blank">アップフロントチャンネル</a>に公開されています。<br>
+  COVERS -One on One-は<a href="https://helloproject.com/release/6817/" target="_blank">Blu-ray Disc + CD</a>が発売されています。</p>
   
   <p>動画リンクは公式の再生リストに繋いであるので、そのまま次の動画へ続きます。並びも再生リストに準拠しています。<br>
-  ONE PLUS ONE・1アングルバージョンは<a href="https://www.youtube.com/@helloprokenshusei" target="_blank" rel="noopener noreferrer">ハロプロ研修生</a>の<a href="https://www.youtube.com/playlist?list=PLUjhiQzhlwqLcsAgVAJRHYAbP0dEQ1xGJ" target="_blank" rel="noopener noreferrer">ONE PLUS ONE</a>、
-  COVERS -One on One-は<a href="https://www.youtube.com/@upfrontchannel" target="_blank" rel="noopener noreferrer">アップフロントチャンネル</a>の<a href="https://www.youtube.com/playlist?list=PLFMni9aeqKTw_nNHBiGWfPLT-VMdMez97" target="_blank" rel="noopener noreferrer">COVERS - One on One -</a>です。<br>
+  ONE PLUS ONE・1アングルバージョンは<a href="https://www.youtube.com/@helloprokenshusei" target="_blank">ハロプロ研修生</a>の<a href="https://www.youtube.com/playlist?list=PLUjhiQzhlwqLcsAgVAJRHYAbP0dEQ1xGJ" target="_blank">ONE PLUS ONE</a>、
+  COVERS -One on One-は<a href="https://www.youtube.com/@upfrontchannel" target="_blank">アップフロントチャンネル</a>の<a href="https://www.youtube.com/playlist?list=PLFMni9aeqKTw_nNHBiGWfPLT-VMdMez97" target="_blank">COVERS - One on One -</a>です。<br>
   再生リストに入っていない動画だけ、その動画単体へのリンクになっています。</p>
 
   <p>グループ名はその動画が公開された当時の所属で、ハロー！プロジェクトを卒業しているメンバーは「OG」としています。<br>

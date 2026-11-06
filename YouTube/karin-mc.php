@@ -153,6 +153,7 @@ $mc_shows = [
     ['id' => 'JpO8c8YyMQk', 'no' => '#223', 'date' => '2025/12/5'],
   ]],
   ['channel' => 'M-line Music', 'title' => 'M-line Music#239', 'mc' => '宮本佳林・豫風瑠乃', 'videos' => [
+    ['id' => 'N3lSmAuD8-k', 'no' => '#238', 'date' => '2026/3/27'],   
     ['id' => 'yePXvMbtjO0', 'no' => '#239', 'date' => '2026/4/2'],
   ]],
   ['channel' => 'M-line Music', 'title' => 'M-line Music#254・#255', 'mc' => '宮本佳林・島川波菜', 'videos' => [
@@ -242,7 +243,7 @@ $mc_cards = array_map(fn($s) => [
 
 <main>
   <h1>宮本佳林 YouTube MCまとめ</h1>
-  <p>宮本佳林さんが<a href="https://www.youtube.com/mlinemusic" target="_blank" rel="noopener noreferrer">M-line Music</a>・<a href="https://www.youtube.com/helloprojectstation" target="_blank" rel="noopener noreferrer">ハロ！ステ</a>・<a href="https://www.youtube.com/girlsnightoutch" target="_blank" rel="noopener noreferrer">Girls Night Out</a>・<a href="https://www.youtube.com/upcomi" target="_blank" rel="noopener noreferrer">アプカミ</a>・<a href="https://www.youtube.com/tinytinytiny" target="_blank" rel="noopener noreferrer">tiny tiny</a>でMCをやっている回をまとめました。<br>
+  <p>宮本佳林さんが<a href="https://www.youtube.com/mlinemusic" target="_blank">M-line Music</a>・<a href="https://www.youtube.com/helloprojectstation" target="_blank">ハロ！ステ</a>・<a href="https://www.youtube.com/girlsnightoutch" target="_blank">Girls Night Out</a>・<a href="https://www.youtube.com/upcomi" target="_blank">アプカミ</a>・<a href="https://www.youtube.com/tinytinytiny" target="_blank">tiny tiny</a>でMCをやっている回をまとめました。<br>
   M-line Musicは同じMCで2回ずつなので、2回を1枚にまとめています。日付は動画の公開日です。<br>
   本数が多いので、押すとYouTubeが新しいタブで開きます。</p>
 
@@ -284,5 +285,5 @@ $mc_cards = array_map(fn($s) => [
   filter();
 })();
 </script>
-<div class="last-update">最終更新日：2026/08/14</div>
+<div class="last-update">最終更新日：2026/11/01</div>
 <?php include $_SERVER['DOCUMENT_ROOT'] . '/common/footer.php'; ?>

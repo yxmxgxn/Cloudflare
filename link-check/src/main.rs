@@ -1,16 +1,36 @@
-//! ビルド済み public/ のリンクを検査する。Python/check_links.py の Rust 版(移植中)。
+//! ビルド済み public/ の全リンクを検査し、壊れているものをレポートする。
 //!
 //! 使い方:
 //!     cargo run --release --manifest-path link-check/Cargo.toml -- \
 //!         --root public --out report.md --stats stats.json
 //!
-//! 出力は Python 版と同じ report.md / stats.json。
 //! --list を付けるとHTTPは送らず、検査対象の一覧だけを出す。
-//! 判断の方針は check_links.py 冒頭のコメントを参照。
+//!
+//! 方針(コードから読み取れない判断):
+//! - 相手サーバーに優しくするため、同一ドメインへのリクエストは必ず1本ずつ・間隔をあけて送る。
+//!   ドメインが違えば並列で走るので、全体の所要時間は「最多件数のドメイン × 間隔」でほぼ決まる。
+//! - **「リンク切れ」と呼ぶのは 404 / 410 / DNS解決不能だけ**にする。403・405・429・5xx・
+//!   タイムアウトは「相手がbotを弾いた」のか「本当に消えた」のか区別がつかず、報告すると
+//!   誤検知だらけになって誰も読まなくなるため、別枠の「要確認」に落とす。
+//! - ただし消えたページを 404 にせずトップや上の階層へ転送するサイトも多い。200 で返ってきても
+//!   転送先がトップ・上の階層なら「実質リンク切れ」としてリンク切れに数える。
+//!   それ以外の場所へ転送されたものは、引っ越しかもしれないので別枠の「転送」に元と先を並べる。
+//!   www の有無、末尾スラッシュ、index.html だけの違いは転送とみなさない。
+//! - 同じ書き換え(例: open.spotify.com/ → open.spotify.com/intl-ja/)で転送されるものが多いと
+//!   1件ずつ並べても読めないので、レポートでは書き換えのパターンごとにまとめる。
+//! - http のリンクは、相手が https に対応したら貼り替えたい。http→https の転送に加えて、
+//!   転送しないサイトも https で開けるか1回だけ試し、開ければ「https化」として知らせる。
+//! - 接続エラーは並列実行中の一時的な詰まりでよく起きるので、最後に直列でもう一度確かめる。
+//! - YouTube は削除済み動画でも watch ページが 200 を返すので oEmbed で生死を判定する。
+//! - 除外したいドメイン・URLは link-check/ignore.txt に書く(理由もそこにコメントで残す)。
+//!   botを弾くサイトは manual: を付けて書くと、アクセスせずにレポートへ「自分で確認するリンク」として載る。
+//!
+//! 2026年11月までは Python/check_links.py が同じことをしていた(判定・レポートの見た目はそれと同じ)。
 
 mod check;
 mod collect;
 mod internal;
+mod pattern;
 mod redirect;
 mod report;
 mod urlsplit;
@@ -24,9 +44,9 @@ use std::time::Instant;
 use clap::Parser;
 
 use crate::check::{Options, check_all};
-use crate::collect::{collect_links, is_ignored, load_ignore_rules};
+use crate::collect::{collect_links, load_rules, matches};
 use crate::internal::{load_redirects, resolve_internal};
-use crate::report::{Counts, build_report, stats};
+use crate::report::{Collected, Counts, build_report, stats};
 use crate::urlsplit::urlsplit;
 
 #[derive(Parser)]
@@ -43,9 +63,9 @@ struct Args {
     out: PathBuf,
     #[arg(long, default_value = "link-check-stats.json")]
     stats: PathBuf,
-    /// レポートに載せる最大件数
-    #[arg(long, default_value_t = 150)]
-    max_items: usize,
+    /// Issue に貼る用のレポート。Issue 本文の文字数制限に収まるよう、一覧を必要なだけ削って出す
+    #[arg(long)]
+    issue_out: Option<PathBuf>,
     /// 動作確認用: 検査するURL数の上限
     #[arg(long, default_value_t = 0)]
     limit: usize,
@@ -63,6 +83,20 @@ struct Args {
     list: bool,
 }
 
+// GitHub の Issue 本文は 65,536 文字まで。ワークフローが前置きの1行を足すので余裕を見る
+const ISSUE_BODY_LIMIT: usize = 60_000;
+
+/// 全件で収まればそのまま、収まらなければ一覧の件数を減らしながら Issue の制限に収める
+fn issue_report(report: impl Fn(usize) -> String) -> String {
+    for max_items in [usize::MAX, 300, 150, 80, 40, 20] {
+        let text = report(max_items);
+        if text.chars().count() <= ISSUE_BODY_LIMIT {
+            return text;
+        }
+    }
+    report(10)
+}
+
 #[tokio::main]
 async fn main() -> ExitCode {
     let args = Args::parse();
@@ -74,7 +108,7 @@ async fn main() -> ExitCode {
         return ExitCode::from(2);
     }
 
-    let rules = match load_ignore_rules(&args.ignore) {
+    let rules = match load_rules(&args.ignore) {
         Ok(r) => r,
         Err(e) => {
             eprintln!("エラー: {} を読めません: {e}", args.ignore.display());
@@ -97,8 +131,18 @@ async fn main() -> ExitCode {
         .collect();
 
     // BTreeMap なのでキーは既にソート済み
-    let mut targets: Vec<&String> = external.keys().filter(|u| !is_ignored(u, &rules)).collect();
-    let ignored = external.len() - targets.len();
+    let mut targets: Vec<&String> = Vec::new();
+    let mut manual: Vec<&String> = Vec::new();
+    let mut ignored = 0;
+    for url in external.keys() {
+        if matches(url, &rules.ignore) {
+            ignored += 1;
+        } else if matches(url, &rules.manual) {
+            manual.push(url);
+        } else {
+            targets.push(url);
+        }
+    }
     if args.limit > 0 {
         targets.truncate(args.limit);
     }
@@ -109,10 +153,11 @@ async fn main() -> ExitCode {
         internal_broken.len()
     );
     eprintln!(
-        "外部リンク {} 件中 {} 件を検査（除外 {} 件）",
+        "外部リンク {} 件中 {} 件を検査（除外 {} 件・自分で確認 {} 件）",
         external.len(),
         targets.len(),
-        ignored
+        ignored,
+        manual.len()
     );
 
     let mut by_host: BTreeMap<String, Vec<String>> = BTreeMap::new();
@@ -145,6 +190,7 @@ async fn main() -> ExitCode {
     let counts = Counts {
         checked: targets.len(),
         ignored,
+        manual: manual.len(),
         internal: internal.len(),
     };
     let opts = Options {
@@ -162,20 +208,31 @@ async fn main() -> ExitCode {
     };
     let elapsed = started.elapsed();
 
-    let report = build_report(
-        &args.base_url,
-        &external,
-        &internal_broken,
-        &results,
-        &counts,
-        elapsed,
-        args.max_items,
-    );
+    let links = Collected {
+        external: &external,
+        internal_broken: &internal_broken,
+        manual: &manual,
+    };
+    let report = |max_items| {
+        build_report(
+            &args.base_url,
+            &links,
+            &results,
+            &counts,
+            elapsed,
+            max_items,
+        )
+    };
     let stats = stats(&results, internal_broken.len(), &counts, elapsed);
-    let written = fs::write(&args.out, report).and_then(|()| {
-        let json = serde_json::to_string_pretty(&stats).expect("Stats は必ずJSONにできる");
-        fs::write(&args.stats, json)
-    });
+    let written = fs::write(&args.out, report(usize::MAX))
+        .and_then(|()| {
+            let json = serde_json::to_string_pretty(&stats).expect("Stats は必ずJSONにできる");
+            fs::write(&args.stats, json)
+        })
+        .and_then(|()| match &args.issue_out {
+            Some(path) => fs::write(path, issue_report(report)),
+            None => Ok(()),
+        });
     if let Err(e) = written {
         eprintln!("エラー: レポートを書き出せません: {e}");
         return ExitCode::from(2);

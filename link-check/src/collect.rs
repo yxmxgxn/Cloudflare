@@ -1,4 +1,4 @@
-//! ビルド済みHTMLからリンクを集める。check_links.py の「収集」と同じ判断をする。
+//! ビルド済みHTMLからリンクを集める。
 
 use std::collections::{BTreeMap, BTreeSet};
 use std::fs;
@@ -39,21 +39,37 @@ static REL_RE: LazyLock<Regex> =
     LazyLock::new(|| Regex::new(r#"(?i)\brel\s*=\s*["']([^"']*)["']"#).unwrap());
 
 // ---------------------------------------------------------------- 除外リスト
-pub fn load_ignore_rules(file: &Path) -> io::Result<Vec<String>> {
-    let text = match fs::read_to_string(file) {
-        Ok(t) => t,
-        Err(e) if e.kind() == io::ErrorKind::NotFound => return Ok(Vec::new()),
-        Err(e) => return Err(e),
-    };
-    Ok(text
-        .lines()
-        .map(|line| line.split('#').next().unwrap_or("").trim())
-        .filter(|line| !line.is_empty())
-        .map(String::from)
-        .collect())
+/// ignore.txt の中身
+#[derive(Default)]
+pub struct Rules {
+    /// 検査もレポートもしない
+    pub ignore: Vec<String>,
+    /// 検査はしないが、レポートに「自分で確認するリンク」として載せる(行頭に manual: を付けたもの)
+    pub manual: Vec<String>,
 }
 
-pub fn is_ignored(url: &str, rules: &[String]) -> bool {
+pub fn load_rules(file: &Path) -> io::Result<Rules> {
+    let text = match fs::read_to_string(file) {
+        Ok(t) => t,
+        Err(e) if e.kind() == io::ErrorKind::NotFound => return Ok(Rules::default()),
+        Err(e) => return Err(e),
+    };
+    let mut rules = Rules::default();
+    for line in text.lines() {
+        let line = line.split('#').next().unwrap_or("").trim();
+        if line.is_empty() {
+            continue;
+        }
+        match line.strip_prefix("manual:") {
+            Some(rule) => rules.manual.push(rule.trim().to_string()),
+            None => rules.ignore.push(line.to_string()),
+        }
+    }
+    Ok(rules)
+}
+
+/// URL がどれかの指定に当てはまるか
+pub fn matches(url: &str, rules: &[String]) -> bool {
     let host = urlsplit(url).hostname();
     rules.iter().any(|rule| {
         if rule.contains('/') {
@@ -183,11 +199,27 @@ mod tests {
     #[test]
     fn ignore_rules() {
         let rules = vec!["x.com".to_string(), "https://example.jp/old/".to_string()];
-        assert!(is_ignored("https://x.com/karin", &rules));
-        assert!(is_ignored("https://mobile.x.com/karin", &rules));
-        assert!(!is_ignored("https://box.com/", &rules));
-        assert!(is_ignored("https://example.jp/old/page", &rules));
-        assert!(!is_ignored("https://example.jp/new/page", &rules));
+        assert!(matches("https://x.com/karin", &rules));
+        assert!(matches("https://mobile.x.com/karin", &rules));
+        assert!(!matches("https://box.com/", &rules));
+        assert!(matches("https://example.jp/old/page", &rules));
+        assert!(!matches("https://example.jp/new/page", &rules));
+    }
+
+    #[test]
+    fn manual_rules_are_separated() {
+        let dir = std::env::temp_dir().join(format!("link-check-test-{}", std::process::id()));
+        fs::create_dir_all(&dir).unwrap();
+        let file = dir.join("ignore.txt");
+        fs::write(
+            &file,
+            "x.com   # bot\nmanual:natalie.mu  # 自分で見る\nmanual: https://example.jp/a/\n",
+        )
+        .unwrap();
+        let rules = load_rules(&file).unwrap();
+        fs::remove_dir_all(&dir).unwrap();
+        assert_eq!(rules.ignore, vec!["x.com"]);
+        assert_eq!(rules.manual, vec!["natalie.mu", "https://example.jp/a/"]);
     }
 
     #[test]

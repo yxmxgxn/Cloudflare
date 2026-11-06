@@ -3,7 +3,7 @@ name = "link-check"
 version = "0.1.0"
 edition = "2024"
 publish = false
-description = "Python/check_links.py の Rust 版(移植中)"
+description = "ビルド済みサイトのリンクチェッカー"
 
 [dependencies]
 chrono = { version = "0.4", default-features = false, features = ["clock"] }

@@ -23,7 +23,7 @@
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td>2012年11月12日</td><td>19:00</td><td>田中れいなバースデーイベント ～おつかれいな会。みんな集合せよ～</td><td>横浜BLITZ</td><td>神奈川県</td><td><a href="https://hp-setlist.com/stage/3338" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
+<tr class="row-even"><td>2012年11月12日</td><td>19:00</td><td>田中れいなバースデーイベント ～おつかれいな会。みんな集合せよ～</td><td>横浜BLITZ</td><td>神奈川県</td><td><a href="https://hp-setlist.com/stage/3338" target="_blank">Tomoko（セットリスト）</a></td></tr>
 </tbody>
 </table>
 24歳（2013年）
@@ -39,8 +39,8 @@
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td>2013年11月11日</td><td>18:30</td><td>田中れいなバースデーイベント おつかれいな会2～みんな久しぶり～！</td><td>TOKYO FM HALL</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/26661" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
-<tr><td>2013年11月11日</td><td>20:10</td><td>田中れいなバースデーイベント おつかれいな会2～みんな久しぶり～！</td><td>TOKYO FM HALL</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/26662" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
+<tr class="row-even"><td>2013年11月11日</td><td>18:30</td><td>田中れいなバースデーイベント おつかれいな会2～みんな久しぶり～！</td><td>TOKYO FM HALL</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/26661" target="_blank">Tomoko（セットリスト）</a></td></tr>
+<tr><td>2013年11月11日</td><td>20:10</td><td>田中れいなバースデーイベント おつかれいな会2～みんな久しぶり～！</td><td>TOKYO FM HALL</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/26662" target="_blank">Tomoko（セットリスト）</a></td></tr>
 </tbody>
 </table>
 25歳（2014年）
@@ -56,7 +56,7 @@
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td>2014年11月11日</td><td>18:30</td><td>田中れいなバースデーイベント おつかれいな会3～らぶらぶ♡HAPPY NIGHT～</td><td>TOKYO FM HALL</td><td>東京都</td><td><a href="https://hp-setlist.com/event/13287" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
+<tr class="row-even"><td>2014年11月11日</td><td>18:30</td><td>田中れいなバースデーイベント おつかれいな会3～らぶらぶ♡HAPPY NIGHT～</td><td>TOKYO FM HALL</td><td>東京都</td><td><a href="https://hp-setlist.com/event/13287" target="_blank">Tomoko（セットリスト）</a></td></tr>
 <tr><td>2014年11月11日</td><td>20:10</td><td>田中れいなバースデーイベント おつかれいな会3～らぶらぶ♡HAPPY NIGHT～</td><td>TOKYO FM HALL</td><td>東京都</td><td></td></tr>
 </tbody>
 </table>
@@ -73,8 +73,8 @@
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td>2015年11月11日</td><td>18:30</td><td>田中れいなバースデーイベント おつかれいな会4～26歳になちゃったよ！！～</td><td>TOKYO FM HALL</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/26666" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
-<tr><td>2015年11月11日</td><td>20:20</td><td>田中れいなバースデーイベント おつかれいな会4～26歳になちゃったよ！！～</td><td>TOKYO FM HALL</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/26667" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
+<tr class="row-even"><td>2015年11月11日</td><td>18:30</td><td>田中れいなバースデーイベント おつかれいな会4～26歳になちゃったよ！！～</td><td>TOKYO FM HALL</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/26666" target="_blank">Tomoko（セットリスト）</a></td></tr>
+<tr><td>2015年11月11日</td><td>20:20</td><td>田中れいなバースデーイベント おつかれいな会4～26歳になちゃったよ！！～</td><td>TOKYO FM HALL</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/26667" target="_blank">Tomoko（セットリスト）</a></td></tr>
 </tbody>
 </table>
 27歳（2016年）
@@ -90,8 +90,8 @@
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td>2016年11月11日</td><td>18:30</td><td>田中れいなバースデーイベント おつかれいな会5～27さいかぁっっ。～</td><td>新宿ReNY</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/26371" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
-<tr><td>2016年11月11日</td><td>20:40</td><td>田中れいなバースデーイベント おつかれいな会5～27さいかぁっっ。～</td><td>新宿ReNY</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/26372" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
+<tr class="row-even"><td>2016年11月11日</td><td>18:30</td><td>田中れいなバースデーイベント おつかれいな会5～27さいかぁっっ。～</td><td>新宿ReNY</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/26371" target="_blank">Tomoko（セットリスト）</a></td></tr>
+<tr><td>2016年11月11日</td><td>20:40</td><td>田中れいなバースデーイベント おつかれいな会5～27さいかぁっっ。～</td><td>新宿ReNY</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/26372" target="_blank">Tomoko（セットリスト）</a></td></tr>
 </tbody>
 </table>
 28歳（2017年）
@@ -107,8 +107,8 @@
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td>2017年11月11日</td><td>15:00</td><td>田中れいなバースデーイベント おつかれいな会6～28歳♡今日までありがとっ。これからもよろしくね！～</td><td>新宿ReNY</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/26373" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
-<tr><td>2017年11月11日</td><td>17:40</td><td>田中れいなバースデーイベント おつかれいな会6～28歳♡今日までありがとっ。これからもよろしくね！～</td><td>新宿ReNY</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/26374" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
+<tr class="row-even"><td>2017年11月11日</td><td>15:00</td><td>田中れいなバースデーイベント おつかれいな会6～28歳♡今日までありがとっ。これからもよろしくね！～</td><td>新宿ReNY</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/26373" target="_blank">Tomoko（セットリスト）</a></td></tr>
+<tr><td>2017年11月11日</td><td>17:40</td><td>田中れいなバースデーイベント おつかれいな会6～28歳♡今日までありがとっ。これからもよろしくね！～</td><td>新宿ReNY</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/26374" target="_blank">Tomoko（セットリスト）</a></td></tr>
 </tbody>
 </table>
 29歳（2018年）
@@ -124,8 +124,8 @@
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td>2018年11月29日</td><td>18:00</td><td>田中れいなバースデーイベント おつかれいな会7！～7ってなんかよくない？～</td><td>TOKYO FM HALL</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/26401" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
-<tr><td>2018年11月29日</td><td>20:30</td><td>田中れいなバースデーイベント おつかれいな会7！～7ってなんかよくない？～</td><td>TOKYO FM HALL</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/26402" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
+<tr class="row-even"><td>2018年11月29日</td><td>18:00</td><td>田中れいなバースデーイベント おつかれいな会7！～7ってなんかよくない？～</td><td>TOKYO FM HALL</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/26401" target="_blank">Tomoko（セットリスト）</a></td></tr>
+<tr><td>2018年11月29日</td><td>20:30</td><td>田中れいなバースデーイベント おつかれいな会7！～7ってなんかよくない？～</td><td>TOKYO FM HALL</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/26402" target="_blank">Tomoko（セットリスト）</a></td></tr>
 </tbody>
 </table>
 30歳（2019年）
@@ -141,8 +141,8 @@
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td>2019年12月6日</td><td>18:00</td><td>田中れいなバースデーイベント おつかれいな会8</td><td>新宿ReNY</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/26690" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
-<tr><td>2019年12月6日</td><td>20:30</td><td>田中れいなバースデーイベント おつかれいな会8</td><td>新宿ReNY</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/26691" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
+<tr class="row-even"><td>2019年12月6日</td><td>18:00</td><td>田中れいなバースデーイベント おつかれいな会8</td><td>新宿ReNY</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/26690" target="_blank">Tomoko（セットリスト）</a></td></tr>
+<tr><td>2019年12月6日</td><td>20:30</td><td>田中れいなバースデーイベント おつかれいな会8</td><td>新宿ReNY</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/26691" target="_blank">Tomoko（セットリスト）</a></td></tr>
 </tbody>
 </table>
 31歳（2020年）
@@ -158,8 +158,8 @@
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td>2020年11月14日</td><td>15:30</td><td>田中れいなバースデーイベント おつかれいな会9～会えてよかったねーっ♪～</td><td>LANDMARK HALL</td><td>神奈川県</td><td><a href="https://hp-setlist.com/stage/26712" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
-<tr><td>2020年11月14日</td><td>18:30</td><td>田中れいなバースデーイベント おつかれいな会9～会えてよかったねーっ♪～</td><td>LANDMARK HALL</td><td>神奈川県</td><td><a href="https://hp-setlist.com/stage/26713" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
+<tr class="row-even"><td>2020年11月14日</td><td>15:30</td><td>田中れいなバースデーイベント おつかれいな会9～会えてよかったねーっ♪～</td><td>LANDMARK HALL</td><td>神奈川県</td><td><a href="https://hp-setlist.com/stage/26712" target="_blank">Tomoko（セットリスト）</a></td></tr>
+<tr><td>2020年11月14日</td><td>18:30</td><td>田中れいなバースデーイベント おつかれいな会9～会えてよかったねーっ♪～</td><td>LANDMARK HALL</td><td>神奈川県</td><td><a href="https://hp-setlist.com/stage/26713" target="_blank">Tomoko（セットリスト）</a></td></tr>
 </tbody>
 </table>
 32歳（2021年）
@@ -175,8 +175,8 @@
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td>2021年11月13日</td><td>15:30</td><td>田中れいなバースデーイベント おつかれいな会10！～厄年なんか吹きとばせ！～</td><td>LANDMARK HALL</td><td>神奈川県</td><td><a href="https://hp-setlist.com/stage/26727" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
-<tr><td>2021年11月13日</td><td>18:15</td><td>田中れいなバースデーイベント おつかれいな会10！～厄年なんか吹きとばせ！～</td><td>LANDMARK HALL</td><td>神奈川県</td><td><a href="https://hp-setlist.com/stage/26728" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
+<tr class="row-even"><td>2021年11月13日</td><td>15:30</td><td>田中れいなバースデーイベント おつかれいな会10！～厄年なんか吹きとばせ！～</td><td>LANDMARK HALL</td><td>神奈川県</td><td><a href="https://hp-setlist.com/stage/26727" target="_blank">Tomoko（セットリスト）</a></td></tr>
+<tr><td>2021年11月13日</td><td>18:15</td><td>田中れいなバースデーイベント おつかれいな会10！～厄年なんか吹きとばせ！～</td><td>LANDMARK HALL</td><td>神奈川県</td><td><a href="https://hp-setlist.com/stage/26728" target="_blank">Tomoko（セットリスト）</a></td></tr>
 </tbody>
 </table>
 33歳（2022年）
@@ -192,8 +192,8 @@
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td>2022年10月30日</td><td>15:30</td><td>田中れいなバースデーイベント おつかれいな会11！～2022やし33歳やし誕生日11月やしゾロ目魔閃光やん！ピッコロさーんTrick or Treat～</td><td>一ツ橋ホール</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/26745" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
-<tr><td>2022年10月30日</td><td>18:15</td><td>田中れいなバースデーイベント おつかれいな会11！～2022やし33歳やし誕生日11月やしゾロ目魔閃光やん！ピッコロさーんTrick or Treat～</td><td>一ツ橋ホール</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/26746" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
+<tr class="row-even"><td>2022年10月30日</td><td>15:30</td><td>田中れいなバースデーイベント おつかれいな会11！～2022やし33歳やし誕生日11月やしゾロ目魔閃光やん！ピッコロさーんTrick or Treat～</td><td>一ツ橋ホール</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/26745" target="_blank">Tomoko（セットリスト）</a></td></tr>
+<tr><td>2022年10月30日</td><td>18:15</td><td>田中れいなバースデーイベント おつかれいな会11！～2022やし33歳やし誕生日11月やしゾロ目魔閃光やん！ピッコロさーんTrick or Treat～</td><td>一ツ橋ホール</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/26746" target="_blank">Tomoko（セットリスト）</a></td></tr>
 </tbody>
 </table>
 34歳（2023年）
@@ -209,8 +209,8 @@
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td>2023年11月5日</td><td>15:30</td><td>田中れいなバースデーイベント おつかれいな会12！ ～アルティメットれいな誕生！またドラゴンボール入れてきたなって思ったやろ？だって好きっちゃもん！れいなの幸せ魔閃光受け取れる人、集合Z！～</td><td>飛行船シアター</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/26765" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
-<tr><td>2023年11月5日</td><td>18:15</td><td>田中れいなバースデーイベント おつかれいな会12！ ～アルティメットれいな誕生！またドラゴンボール入れてきたなって思ったやろ？だって好きっちゃもん！れいなの幸せ魔閃光受け取れる人、集合Z！～</td><td>飛行船シアター</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/26766" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
+<tr class="row-even"><td>2023年11月5日</td><td>15:30</td><td>田中れいなバースデーイベント おつかれいな会12！ ～アルティメットれいな誕生！またドラゴンボール入れてきたなって思ったやろ？だって好きっちゃもん！れいなの幸せ魔閃光受け取れる人、集合Z！～</td><td>飛行船シアター</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/26765" target="_blank">Tomoko（セットリスト）</a></td></tr>
+<tr><td>2023年11月5日</td><td>18:15</td><td>田中れいなバースデーイベント おつかれいな会12！ ～アルティメットれいな誕生！またドラゴンボール入れてきたなって思ったやろ？だって好きっちゃもん！れいなの幸せ魔閃光受け取れる人、集合Z！～</td><td>飛行船シアター</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/26766" target="_blank">Tomoko（セットリスト）</a></td></tr>
 </tbody>
 </table>
 36歳（2025年）
@@ -226,8 +226,8 @@
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td>2025年11月11日</td><td>16:50</td><td>田中れいなバースデーイベント おつかれいな会13～OMCJ～</td><td>飛行船シアター</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/26807" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
-<tr><td>2025年11月11日</td><td>19:20</td><td>田中れいなバースデーイベント おつかれいな会13～OMCJ～</td><td>飛行船シアター</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/26808" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
+<tr class="row-even"><td>2025年11月11日</td><td>16:50</td><td>田中れいなバースデーイベント おつかれいな会13～OMCJ～</td><td>飛行船シアター</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/26807" target="_blank">Tomoko（セットリスト）</a></td></tr>
+<tr><td>2025年11月11日</td><td>19:20</td><td>田中れいなバースデーイベント おつかれいな会13～OMCJ～</td><td>飛行船シアター</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/26808" target="_blank">Tomoko（セットリスト）</a></td></tr>
 </tbody>
 </table>
 37歳（2026年）

@@ -81,8 +81,6 @@ PLACE_SHORT = {
 # 会場プルダウンの並び(ここに無いものは後ろに五十音順で付く)
 PLACE_ORDER = ["秋葉原店", "大阪店", "配信のみ"]
 
-WEEKDAYS = "月火水木金土日"
-
 REPO_ROOT = Path(__file__).resolve().parent.parent  # Python/ の親
 
 OUTPUT_ROWS = REPO_ROOT / "Spreadsheet" / "shopevent_rows.php"
@@ -331,14 +329,14 @@ def cast_list(names: list[str], date_key: str, blogs: dict) -> str:
         title = esc(b["title"] or "ブログ") if b else ""
         if entry:
             cell += (f'<a class="hs-blog" href="{esc(entry)}" target="_blank"'
-                     f' rel="noopener noreferrer" title="{title}">ブログ</a>')
+                     f' title="{title}">ブログ</a>')
             if arc:
                 cell += (f'<a class="hs-arc" href="{esc(arc)}" target="_blank"'
-                         f' rel="noopener noreferrer" title="{title}（ウェブアーカイブ）"'
+                         f' title="{title}（ウェブアーカイブ）"'
                          f' hidden>{esc(arc_label(arc))}</a>')
         elif arc:
             cell += (f'<a class="hs-blog hs-blog-dead" href="{esc(arc)}" target="_blank"'
-                     f' rel="noopener noreferrer" title="{title}（ウェブアーカイブ）">'
+                     f' title="{title}（ウェブアーカイブ）">'
                      f'アーカイブ</a>')
         out.append(f'<span class="hs-cast-one">{cell}</span>')
     return f'<span class="hs-cast-list" data-n="{len(out)}">{"".join(out)}</span>'
@@ -353,8 +351,7 @@ def build_rows_html(groups: list[dict], master: dict[str, dict], blogs: dict) ->
     lines = []
     for g in groups:
         d = g["date"]
-        date_disp = (f'{d.year}/{d.month:02d}/{d.day:02d}'
-                     f'<span class="hs-dow">（{WEEKDAYS[d.weekday()]}）</span>') if d else esc(g["date_str"])
+        date_disp = f'{d.year}/{d.month:02d}/{d.day:02d}' if d else esc(g["date_str"])
         date_key = d.isoformat() if d else ""
         year = str(d.year) if d else ""
 

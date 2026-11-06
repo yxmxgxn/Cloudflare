@@ -1,8 +1,10 @@
-# リンクチェックの除外リスト（Python/check_links.py が読む）
+# リンクチェックの除外リスト（link-check/ の Rust 版チェッカーが読む）
 #
 # 書き方:
 #   ドメインだけの行  → そのドメインとサブドメイン全部を除外
 #   / を含む行        → その文字列で始まるURLを除外（前方一致）
+#   行頭に manual:    → アクセスはせず、Issue に「自分で確認するリンク」として毎回載せる
+#                       （botを弾くサイト用。月1でクリックして開ければOK）
 #   # 以降はコメント
 #
 # 除外したら「壊れていても気づけない」ので、理由を必ず添えること。
@@ -14,6 +16,10 @@ hp-setlist.com          # 非公式セトリ検索「ToMoKo」。個人運営な
 web.archive.org         # 魚拓。元記事が消えたときの保険なので切れ判定は不要
 archive.org
 www.w3.org              # SVG/XMLの名前空間URL。リンクではない
+social-plugins.line.me  # 各ページ下のLINEシェアボタン。投稿画面を開くだけで、ログイン画面へ転送される
+https://www.threads.com/intent/   # 各ページ下のThreadsシェアボタン。同上
+maps.app.goo.gl         # Googleマップの短縮URL。必ず地図の長いURLへ転送されるので、毎回「転送」に出るだけ
+https://www.youtube.com/watch_videos   # セトリの動画をIDの列挙で並べたもの(わざと)。YouTubeが自動生成のプレイリストへ転送するので毎回「転送」に出る
 
 # --- botを弾くので誤検知にしかならない ---
 x.com
@@ -24,6 +30,13 @@ tiktok.com
 amazon.co.jp
 amzn.to
 amzn.asia
+
+# --- 自分で管理していて、閲覧のみで共有しているもの ---
+https://docs.google.com/spreadsheets/   # 元データのスプレッドシート。ログインなしで見に行くとログイン画面へ転送されるだけ
+
+# --- botを弾くので自動では確かめられない（自分で開いて確認する） ---
+manual:natalie.mu       # 音楽ナタリー。HEAD も GET も 405 で返される
+manual:scawaiiweb.com   # S Cawaii!。毎回 403 で返される
 
 # --- 自分のサイト（内部リンクとしてファイルの有無で検査済み） ---
 karin.heavy.jp          # 旧ドメイン。全ページ301で新ドメインへ転送中

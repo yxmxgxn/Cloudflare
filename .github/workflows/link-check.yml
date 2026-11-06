@@ -30,12 +30,13 @@ jobs:
         with:
           php-version: '8.3'
 
-      - uses: actions/setup-python@v6
-        with:
-          python-version: '3.12'
+      - name: Setup Rust
+        run: rustup toolchain install stable --profile minimal && rustup default stable
 
-      - name: Install dependencies
-        run: pip install requests
+      # ビルド済みのチェッカーを main ブランチ用に保存しておき、毎月コンパイルし直さない
+      - uses: Swatinem/rust-cache@v2
+        with:
+          workspaces: link-check
 
       # 公開されるHTMLそのものを検査したいので、デプロイと同じ手順でビルドする
       - name: Build static site
@@ -43,12 +44,14 @@ jobs:
           BASE_URL: ${{ vars.BASE_URL }}
         run: bash build/build.sh
 
+      # report.md は全件(成果物に残す)、report-issue.md は Issue 本文の文字数制限に収めたもの
       - name: Check links
         run: |
-          python Python/check_links.py \
+          cargo run --release --locked --manifest-path link-check/Cargo.toml -- \
             --root public \
             --base-url "${BASE_URL:-https://karin-archive.com}" \
             --out report.md \
+            --issue-out report-issue.md \
             --stats stats.json \
             --delay-scale "${{ github.event.inputs.delay_scale || '1.0' }}"
         env:
@@ -66,79 +69,18 @@ jobs:
 
       - name: Summary
         if: always()
-        run: cat report.md >> "$GITHUB_STEP_SUMMARY" || true
+        run: cat report-issue.md >> "$GITHUB_STEP_SUMMARY" || true
 
-      # ---- Rust版(link-check/)の試走 ----
-      # Python版と結果を見比べるため、しばらく両方を走らせる。Issueは引き続きPython版の結果で立て、
-      # Rust版は成果物とサマリーに残すだけ。失敗してもジョブ全体は落とさない。
-      - name: Setup Rust
-        if: always()
-        continue-on-error: true
-        run: rustup toolchain install stable --profile minimal && rustup default stable
-
-      - uses: Swatinem/rust-cache@v2
-        if: always()
-        continue-on-error: true
-        with:
-          workspaces: link-check
-
-      - name: Check links (Rust)
-        if: always()
-        continue-on-error: true
-        run: |
-          cargo run --release --locked --manifest-path link-check/Cargo.toml -- \
-            --root public \
-            --base-url "${BASE_URL:-https://karin-archive.com}" \
-            --out report-rust.md \
-            --stats stats-rust.json \
-            --delay-scale "${{ github.event.inputs.delay_scale || '1.0' }}"
-        env:
-          BASE_URL: ${{ vars.BASE_URL }}
-
-      - name: Upload report (Rust)
-        if: always()
-        continue-on-error: true
-        uses: actions/upload-artifact@v6
-        with:
-          name: link-check-report-rust
-          path: |
-            report-rust.md
-            stats-rust.json
-          retention-days: 90
-
-      - name: Compare with Rust
-        if: always()
-        continue-on-error: true
-        run: |
-          {
-            echo
-            echo "## Rust版との比較"
-            echo
-            echo "| | Python | Rust |"
-            echo "|---|---:|---:|"
-            for key in broken_external broken_internal warn moved https checked elapsed_sec; do
-              py=$(python -c "import json;print(json.load(open('stats.json')).get('$key', '-'))" 2>/dev/null || echo -)
-              rs=$(python -c "import json;print(json.load(open('stats-rust.json')).get('$key', '-'))" 2>/dev/null || echo -)
-              echo "| $key | $py | $rs |"
-            done
-            echo
-            echo "<details><summary>レポートの差分（チェック日時の行を除く）</summary>"
-            echo
-            echo '```diff'
-            diff <(grep -v チェック日時 report.md) <(grep -v チェック日時 report-rust.md) || true
-            echo '```'
-            echo
-            echo "</details>"
-          } >> "$GITHUB_STEP_SUMMARY"
-
-      # 壊れたリンクか https に貼り替えられるリンクがあればIssueを1本だけ立てる
-      # (既にあれば本文を差し替える)。全部直ってチェックが通ったら自動でクローズする。
+      # 壊れたリンク・https に貼り替えられるリンク・自分で確認するリンク(ignore.txt の manual:)の
+      # どれかがあればIssueを1本だけ立てる(既にあれば本文を差し替える)。どれも無ければ自動でクローズする。
+      # manual: があるうちは毎月Issueが立つので、クリックして確かめたら手で閉じる。
       - name: Create or update issue
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
-          BROKEN=$(python -c "import json;print(json.load(open('stats.json'))['broken_total'])")
-          HTTPS=$(python -c "import json;print(json.load(open('stats.json')).get('https', 0))")
+          BROKEN=$(jq '.broken_total' stats.json)
+          HTTPS=$(jq '.https // 0' stats.json)
+          MANUAL=$(jq '.manual // 0' stats.json)
           TITLE="🔗 リンク切れレポート ($(TZ=Asia/Tokyo date +%Y-%m-%d))"
           gh label create link-check --color 8C6BB8 --description "リンクチェックの自動レポート" 2>/dev/null || true
           ISSUE=$(gh issue list --label link-check --state open --limit 1 --json number --jq '.[0].number // empty')
@@ -146,14 +88,14 @@ jobs:
           {
             echo "🔗 サイト内の全リンクを自動チェックした結果です（[実行ログ](${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }})）。"
             echo
-            cat report.md
+            cat report-issue.md
           } > issue-body.md
 
-          if [ "$BROKEN" -gt 0 ] || [ "$HTTPS" -gt 0 ]; then
+          if [ "$BROKEN" -gt 0 ] || [ "$HTTPS" -gt 0 ] || [ "$MANUAL" -gt 0 ]; then
             if [ -n "$ISSUE" ]; then
               # タイトルの日付も差し替えて、いつ時点の結果か一覧から分かるようにする
               gh issue edit "$ISSUE" --title "$TITLE" --body-file issue-body.md
-              gh issue comment "$ISSUE" --body "🔁 最新のチェック結果に更新しました（リンク切れ ${BROKEN} 件・https化 ${HTTPS} 件）。"
+              gh issue comment "$ISSUE" --body "🔁 最新のチェック結果に更新しました（リンク切れ ${BROKEN} 件・https化 ${HTTPS} 件・自分で確認 ${MANUAL} 件）。"
               echo "Issue #$ISSUE を更新しました"
             else
               gh issue create \
@@ -162,9 +104,9 @@ jobs:
                 --body-file issue-body.md
             fi
           else
-            echo "リンク切れ・https化なし"
+            echo "リンク切れ・https化・自分で確認するリンクなし"
             if [ -n "$ISSUE" ]; then
-              gh issue comment "$ISSUE" --body "✅ 今回のチェックではリンク切れ・https化ともにゼロだったのでクローズします。"
+              gh issue comment "$ISSUE" --body "✅ 今回のチェックではリンク切れ・https化・自分で確認するリンクがゼロだったのでクローズします。"
               gh issue close "$ISSUE"
             fi
           fi

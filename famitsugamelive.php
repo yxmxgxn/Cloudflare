@@ -17,7 +17,7 @@
 
 <main>
   <h1>宮本佳林 ファミ通ゲーム実況chまとめ</h1>
-  <p>宮本佳林さんが<a href="https://www.youtube.com/@famitsugamelive" target="_blank" rel="noopener noreferrer">ファミ通ゲーム実況ch</a>でゲーム配信したアーカイブをまとめました。<br>
+  <p>宮本佳林さんが<a href="https://www.youtube.com/@famitsugamelive" target="_blank">ファミ通ゲーム実況ch</a>でゲーム配信したアーカイブをまとめました。<br>
   サムネイルを押すとその場で再生されます。<br>
   <a href="/HelloYouTube/hello-gamelive">ハロプロ ファミ通ゲーム実況ch 配信アーカイブまとめ</a>では他のメンバーの配信もまとめています。</p>
 

@@ -277,7 +277,7 @@ def build_cards(articles: list[dict], members_by_id: dict, master: dict,
         # 1段目: Date + Title(URLがあれば埋め込む)
         if url:
             title_html = (
-                f'<a href="{esc(url)}" target="_blank" rel="noopener noreferrer">{title}</a>'
+                f'<a href="{esc(url)}" target="_blank">{title}</a>'
             )
         else:
             title_html = title
@@ -332,7 +332,7 @@ def build_cards(articles: list[dict], members_by_id: dict, master: dict,
                     label += f"（{md.group(1)}/{md.group(2)}/{md.group(3)}）"
             arc = (
                 '<p class="iv-arc"><a href="' + esc(archive) + '"'
-                ' target="_blank" rel="noopener noreferrer">' + label + '</a></p>'
+                ' target="_blank">' + label + '</a></p>'
             )
 
         search = " ".join([a.get("Title") or "", media_raw,

@@ -23,8 +23,8 @@
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td>2026年10月9日</td><td>17:10</td><td>つばきファクトリー 西村乙輝バースデーイベント2026</td><td>スタァライト劇場</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/27559" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
-<tr><td>2026年10月9日</td><td>19:30</td><td>つばきファクトリー 西村乙輝バースデーイベント2026</td><td>スタァライト劇場</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/27560" target="_blank" rel="noopener noreferrer">Tomoko（セットリスト）</a></td></tr>
+<tr class="row-even"><td>2026年10月9日</td><td>17:10</td><td>つばきファクトリー 西村乙輝バースデーイベント2026</td><td>スタァライト劇場</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/27559" target="_blank">Tomoko（セットリスト）</a></td></tr>
+<tr><td>2026年10月9日</td><td>19:30</td><td>つばきファクトリー 西村乙輝バースデーイベント2026</td><td>スタァライト劇場</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/27560" target="_blank">Tomoko（セットリスト）</a></td></tr>
 </tbody>
 </table>
 

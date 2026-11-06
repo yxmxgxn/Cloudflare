@@ -8,10 +8,10 @@
 <main>
   <h1>ハロショ イベントまとめ</h1>
 <div class="hs-lead">
-  <p>ハロー！プロジェクトオフィシャルショップ（ハロショ）の東京秋葉原店・<a href="https://www.helloshop.info/" target="_blank" rel="noopener noreferrer">大阪店</a>で行われた、メンバーのトークイベントをまとめました。<br>
+  <p>ハロー！プロジェクトオフィシャルショップ（ハロショ）の東京秋葉原店・<a href="https://www.helloshop.info/" target="_blank">大阪店</a>で行われた、メンバーのトークイベントをまとめました。<br>
   1つのブロックが1回の公演で、その中の各部（#1・#2…）を開演時刻順に1行ずつ並べています。</p>
 
-  <p>会場が「配信のみ」の回は、コロナ禍に<a href="https://helloproject-stream.com/" target="_blank" rel="noopener noreferrer">HELLO! PROJECT STREAM</a>で無観客配信されたものです。<br>
+  <p>会場が「配信のみ」の回は、コロナ禍に<a href="https://helloproject-stream.com/" target="_blank">HELLO! PROJECT STREAM</a>で無観客配信されたものです。<br>
   加賀温泉郷・東京ベイ東急ホテルの回は、ハロショの外で行われた特別編です。</p>
 
   <p>イベント・グループ・出演メンバー・会場・年での絞り込みと、タイトルや出演者（読み仮名も可）でのキーワード検索ができます。</p>
@@ -72,11 +72,11 @@
     <p class="hs-venue-addr">〒101-0021 東京都千代田区外神田6-14-2 サカイ末広ビル 6階</p>
     <p class="hs-venue-note">銀座線 末広町駅前。2013年3月オープン、2025年10月31日20時をもって閉店。<br>
       千夜一夜・アネックス・秋葉原 感謝祭の会場でした。</p>
-    <iframe class="hs-map" loading="lazy" title="東京秋葉原店（サカイ末広ビル）の地図"
+    <iframe class="hs-map" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" title="東京秋葉原店（サカイ末広ビル）の地図"
       src="https://www.openstreetmap.org/export/embed.html?bbox=139.767970,35.701417,139.774970,35.705017&amp;layer=mapnik&amp;marker=35.7032171,139.7714697"></iframe>
     <p class="hs-venue-links">
-      <a href="https://www.openstreetmap.org/?mlat=35.7032171&amp;mlon=139.7714697#map=18/35.7032171/139.7714697" target="_blank" rel="noopener noreferrer">大きな地図</a>
-      <a href="https://www.google.com/maps/search/?api=1&amp;query=%E6%9D%B1%E4%BA%AC%E9%83%BD%E5%8D%83%E4%BB%A3%E7%94%B0%E5%8C%BA%E5%A4%96%E7%A5%9E%E7%94%B06-14-2%20%E3%82%B5%E3%82%AB%E3%82%A4%E6%9C%AB%E5%BA%83%E3%83%93%E3%83%AB" target="_blank" rel="noopener noreferrer">Googleマップ</a>
+      <a href="https://www.openstreetmap.org/?mlat=35.7032171&amp;mlon=139.7714697#map=18/35.7032171/139.7714697" target="_blank">大きな地図</a>
+      <a href="https://www.google.com/maps/search/?api=1&amp;query=%E6%9D%B1%E4%BA%AC%E9%83%BD%E5%8D%83%E4%BB%A3%E7%94%B0%E5%8C%BA%E5%A4%96%E7%A5%9E%E7%94%B06-14-2%20%E3%82%B5%E3%82%AB%E3%82%A4%E6%9C%AB%E5%BA%83%E3%83%93%E3%83%AB" target="_blank">Googleマップ</a>
     </p>
   </section>
 
@@ -85,12 +85,12 @@
     <p class="hs-venue-addr">〒556-0005 大阪府大阪市浪速区日本橋5-7-19 KMビル</p>
     <p class="hs-venue-note">堺筋線 恵美須町駅 1-A出入口より徒歩0分。<br>
       千夜一夜 in 大阪・大阪独演会・大阪二人会・Lovelysの部屋の会場です。</p>
-    <iframe class="hs-map" loading="lazy" title="大阪店の地図"
+    <iframe class="hs-map" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" title="大阪店の地図"
       src="https://www.openstreetmap.org/export/embed.html?bbox=135.502314,34.655152,135.509314,34.658752&amp;layer=mapnik&amp;marker=34.656952,135.505814"></iframe>
     <p class="hs-venue-links">
-      <a href="https://www.openstreetmap.org/?mlat=34.656952&amp;mlon=135.505814#map=18/34.656952/135.505814" target="_blank" rel="noopener noreferrer">大きな地図</a>
-      <a href="https://www.google.com/maps/search/?api=1&amp;query=%E5%A4%A7%E9%98%AA%E5%BA%9C%E5%A4%A7%E9%98%AA%E5%B8%82%E6%B5%AA%E9%80%9F%E5%8C%BA%E6%97%A5%E6%9C%AC%E6%A9%8B5-7-19%20KM%E3%83%93%E3%83%AB" target="_blank" rel="noopener noreferrer">Googleマップ</a>
-      <a href="https://www.helloshop.info/shop/20160108_59017.html" target="_blank" rel="noopener noreferrer">店舗ページ</a>
+      <a href="https://www.openstreetmap.org/?mlat=34.656952&amp;mlon=135.505814#map=18/34.656952/135.505814" target="_blank">大きな地図</a>
+      <a href="https://www.google.com/maps/search/?api=1&amp;query=%E5%A4%A7%E9%98%AA%E5%BA%9C%E5%A4%A7%E9%98%AA%E5%B8%82%E6%B5%AA%E9%80%9F%E5%8C%BA%E6%97%A5%E6%9C%AC%E6%A9%8B5-7-19%20KM%E3%83%93%E3%83%AB" target="_blank">Googleマップ</a>
+      <a href="https://www.helloshop.info/shop/20160108_59017.html" target="_blank">店舗ページ</a>
     </p>
   </section>
 </div>

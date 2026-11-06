@@ -10,9 +10,9 @@
   $s_txt = rawurlencode($share_ttl);
 ?>
 <p>Share:
-  <a href="https://x.com/intent/post?text=<?php echo $s_txt; ?>%0A<?php echo $s_url; ?>" target="_blank" rel="noopener" class="btn-x">X</a>
-  <a href="https://www.threads.com/intent/post?text=<?php echo $s_txt; ?>&amp;url=<?php echo $s_url; ?>" target="_blank" rel="noopener" class="btn-threads">Threads</a>
-  <a href="https://social-plugins.line.me/lineit/share?url=<?php echo $s_url; ?>" target="_blank" rel="noopener" class="btn-line">LINE</a>
+  <a href="https://x.com/intent/post?text=<?php echo $s_txt; ?>%0A<?php echo $s_url; ?>" target="_blank" class="btn-x">X</a>
+  <a href="https://www.threads.com/intent/post?text=<?php echo $s_txt; ?>&amp;url=<?php echo $s_url; ?>" target="_blank" class="btn-threads">Threads</a>
+  <a href="https://social-plugins.line.me/lineit/share?url=<?php echo $s_url; ?>" target="_blank" class="btn-line">LINE</a>
   <button type="button" onclick="sharePage()" class="btn-copy">その他で送る/保存</button></p>
 </div>
 
@@ -145,11 +145,11 @@ async function sharePage() {
 </script>
 
 <ul class="footer-links">
-  <li><a href="/common/privacy" target="_blank" rel="noopener">プライバシーポリシー</a></li>
-  <li><a href="/common/disclaimer" target="_blank" rel="noopener">免責事項</a></li>
+  <li><a href="/common/privacy" target="_blank">プライバシーポリシー</a></li>
+  <li><a href="/common/disclaimer" target="_blank">免責事項</a></li>
   <li class="footer-break"></li>
-  <li><a href="https://tools.yxmxgxn.workers.dev/sns-links/" target="_blank" rel="noopener">SNS Link</a></li>
-  <li><a href="https://x.com/yxmxgxn" target="_blank" rel="noopener">X @yxmxgxn</a></li>
+  <li><a href="https://tools.yxmxgxn.workers.dev/sns-links/" target="_blank">SNS Link</a></li>
+  <li><a href="https://x.com/yxmxgxn" target="_blank">X @yxmxgxn</a></li>
   <li>&copy; 2026 @yxmxgxn</li>
 </ul>
 </footer>

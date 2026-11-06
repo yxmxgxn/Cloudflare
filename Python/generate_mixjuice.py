@@ -85,12 +85,12 @@ def build_table(data: list[list[str]]) -> str:
         class_attr = f' class="{row_class}"' if row_class else ""
 
         date_cell = (
-            f'<a href="{escape_html(url)}" target="_blank" rel="noopener noreferrer">{escape_html(broadcast_date)}</a>'
+            f'<a href="{escape_html(url)}" target="_blank">{escape_html(broadcast_date)}</a>'
             if url else escape_html(broadcast_date)
         )
         if x_url:
             date_cell += (
-                f' / <a href="{escape_html(x_url)}" target="_blank" rel="noopener noreferrer">'
+                f' / <a href="{escape_html(x_url)}" target="_blank">'
                 f'{X_ICON}</a>'
             )
         song_cell = f"{song} / {artist}" if artist else song
