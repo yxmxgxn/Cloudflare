@@ -1,6 +1,6 @@
 <?php
-  $title = "宮本佳林 テック仕事まとめ";
-  $description = "宮本佳林さんのテック仕事（公開されたサイトや企画）を年代順にまとめています。";
+  $title = "宮本佳林 バイブコーディングまとめ";
+  $description = "宮本佳林さんがバイブコーディングで作ったサイトや配信、登壇、インタビューを年代順にまとめています。";
   include $_SERVER['DOCUMENT_ROOT'] . '/common/header.php';
 
   // リンクの後ろに付ける種類の表示(（YouTube）など)
@@ -164,7 +164,7 @@
     ['title' => 'ツアーサイトにたどり着くまでの流れ（デバッグ配信の記事の続き）', 'url' => 'https://ameblo.jp/miyamotokarin-official/entry-12980415652.html'],
   ];
 
-  // アメブロのテック記事のテーマ一覧
+  // アメブロの、開発について書いた記事のテーマ一覧
   $tech_theme = 'https://ameblo.jp/miyamotokarin-official/theme-10113896044.html';
 
   // インタビュー。古い順。hello-articles にも同じ記事がある
@@ -222,9 +222,9 @@
 ?>
 
 <main>
-  <h1>宮本佳林 テック仕事まとめ</h1>
+  <h1>宮本佳林 バイブコーディングまとめ</h1>
 <div class="kt-lead">
-  <p>宮本佳林さんが作ったサイトや配信の仕組み、YouTube配信、登壇、インタビューを、公開されたものだけ年代順に並べています。技術のくわしい話は、本人のブログへのリンクからどうぞ。テックの記事は<a href="<?= htmlspecialchars($tech_theme) ?>" target="_blank" rel="noopener noreferrer">アメブロのテーマ一覧</a>にもまとまっています。</p>
+  <p>宮本佳林さんが作ったサイトや配信の仕組み、YouTube配信、登壇、インタビューを、公開されたものだけ年代順に並べています。技術のくわしい話は、本人のブログへのリンクからどうぞ。開発について書いた記事は<a href="<?= htmlspecialchars($tech_theme) ?>" target="_blank" rel="noopener noreferrer">アメブロのテーマ一覧</a>にもまとまっています。</p>
   <p>技術の話はちょっと…という人は、作ったきっかけや開発の流れを書いたブログを<a href="#reading">「読み物」</a>にまとめています。</p>
 </div>
 
@@ -301,7 +301,7 @@
   </li>
 <?php endforeach; ?>
 </ul>
-<p>テック以外も含めたインタビューは「<a href="/hello-articles">ハロプロメンバーが語るインタビュー・Web記事まとめ</a>」にまとめています。</p>
+<p>開発以外も含めたインタビューは「<a href="/hello-articles">ハロプロメンバーが語るインタビュー・Web記事まとめ</a>」にまとめています。</p>
 
 <h2 id="reading">読み物：作ったきっかけと開発の流れ</h2>
 <div class="kt-lead">
@@ -312,7 +312,7 @@
   <li><a class="kt-title" href="<?= htmlspecialchars($r['url']) ?>" target="_blank" rel="noopener noreferrer"><?= htmlspecialchars($r['title']) ?></a></li>
 <?php endforeach; ?>
 </ol>
-<p>ほかのテックの記事は<a href="<?= htmlspecialchars($tech_theme) ?>" target="_blank" rel="noopener noreferrer">アメブロのテーマ一覧</a>から読めます。</p>
+<p>開発について書いたほかの記事は<a href="<?= htmlspecialchars($tech_theme) ?>" target="_blank" rel="noopener noreferrer">アメブロのテーマ一覧</a>から読めます。</p>
 
 </main>
 <?php include $_SERVER['DOCUMENT_ROOT'] . '/common/footer.php'; ?>
