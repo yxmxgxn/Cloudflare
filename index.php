@@ -135,6 +135,10 @@
           <p class="index-desc">宮本佳林さんのツアーのセトリサイトで公開された「最強のセトリ」をYouTubeのプレイリストにしてまとめました</p>
       </div>
       <div class="card index-card">
+        <a class="index-link" href="/karin-vibecoding">宮本佳林 バイブコーディングまとめ</a>
+        <p class="index-desc">宮本佳林さんがバイブコーディングで作ったサイトや配信、登壇、インタビューを年代順にまとめています</p>
+      </div>
+      <div class="card index-card">
         <a class="index-link" href="/kopinks"><?= icon('disc', 'ic ic-20') ?>コピンク* コピンクス！一言集</a>
         <p class="index-desc">コピンク*名義でアルバムコピンクス！メロディーズ〜star chart〜に収録されたコピンクス！一言集の書き起こしです</p>
       </div>
