@@ -36,6 +36,7 @@
   </select>
   <span id="karinhello-count"></span>
 </div>
+<div id="kh-queue" hidden></div>
 <div id="karinhello-table">
   <table id="karinhello">
     <thead>
@@ -108,6 +109,36 @@
     });
 
     document.getElementById('karinhello-count').textContent = filtered.length + ' 件 / 全' + allRows.length + ' 件';
+    renderQueue(filtered);
+  }
+
+  // 絞り込み結果のYouTube動画IDを、表示順にそのまま並べた連続再生リンクを作る。
+  // watch_videos?video_ids= はID列から一時プレイリストを作って再生する。IDは50件までなので50曲ずつに分ける。
+  var QUEUE_MAX = 50;
+  function renderQueue(rows) {
+    var box = document.getElementById('kh-queue');
+    var ids = [];
+    rows.forEach(function(r) {
+      var a = r.el.cells[4] && r.el.cells[4].querySelector('a');
+      var m = a && /[?&]v=([\w-]{11})/.exec(a.href);
+      if (m && ids.indexOf(m[1]) === -1) ids.push(m[1]);
+    });
+
+    box.textContent = '';
+    if (!ids.length) { box.hidden = true; return; }
+
+    box.appendChild(document.createTextNode('この絞り込みを連続再生（YouTube）：'));
+    for (var i = 0; i < ids.length; i += QUEUE_MAX) {
+      var chunk = ids.slice(i, i + QUEUE_MAX);
+      var a = document.createElement('a');
+      a.href = 'https://www.youtube.com/watch_videos?video_ids=' + chunk.join(',');
+      a.target = '_blank';
+      a.textContent = ids.length > QUEUE_MAX
+        ? (i + 1) + '〜' + (i + chunk.length) + '曲目'
+        : ids.length + '曲を再生';
+      box.appendChild(a);
+    }
+    box.hidden = false;
   }
 
   function khSort(key) {
