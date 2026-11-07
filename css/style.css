@@ -450,6 +450,16 @@ main {
   white-space: nowrap;
 }
   
+#kh-queue {
+  margin: 0 0 12px;
+  font-size: 14px;
+}
+
+#kh-queue a {
+  margin-right: 12px;
+  color: #4a7cc7;
+}
+
 #karinhello {
   border-collapse: collapse;
   width: 100%;
