@@ -160,6 +160,9 @@ $mc_shows = [
     ['id' => 'RZkv4troQaI', 'no' => '#254', 'date' => '2026/7/16'],
     ['id' => 'uEt_hyCxm0Q', 'no' => '#255', 'date' => '2026/7/23'],
   ]],
+  ['channel' => 'M-line Music', 'title' => 'M-line Music#2・#3', 'mc' => '宮本佳林・松本わかな', 'videos' => [
+    ['id' => 'ERsVuoKZON0', 'no' => '#270', 'date' => '2026/11/5'],
+  ]],
   ['channel' => 'ハロ！ステ', 'title' => 'ハロ！ステ#59', 'mc' => '宮本佳林', 'videos' => [
     ['id' => '5hNnroAPYjA', 'no' => '#59', 'date' => '2014/3/19'],
   ]],
