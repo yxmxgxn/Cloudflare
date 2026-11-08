@@ -178,6 +178,89 @@
   });
 })();
 
+// ポスト日のリンクを押したら、その場にXの埋め込みをポップアップで出す。
+// 168件ぶんを最初から埋め込むと重く、Xにも弾かれる(デカビートのページで経験済み)ので、押された1件だけiframeで読む。
+// 埋め込みの下には元ポストへのリンクを置く。Ctrl/Shift/中クリックは今までどおりそのままXへ飛ぶ。
+(function() {
+  var LINK_SEL = '#kh-tbody td:first-child a, #kh-post-results .kh-post a';
+  var pop = null;
+  var openLink = null;
+
+  function close() {
+    if (pop) { pop.remove(); pop = null; }
+    openLink = null;
+  }
+
+  function place(a) {
+    var r = a.getBoundingClientRect();
+    var w = Math.min(400, window.innerWidth - 24);
+    var left = Math.max(12, Math.min(r.left, window.innerWidth - w - 12));
+    pop.style.width = w + 'px';
+    pop.style.left = (left + window.scrollX) + 'px';
+    pop.style.top = (r.bottom + window.scrollY + 6) + 'px';
+  }
+
+  function keepInView() {
+    var r = pop.getBoundingClientRect();
+    if (r.bottom > window.innerHeight - 8) {
+      window.scrollBy({ top: Math.min(r.bottom - window.innerHeight + 16, r.top - 8), behavior: 'smooth' });
+    }
+  }
+
+  function open(a, id) {
+    close();
+    openLink = a;
+
+    pop = document.createElement('div');
+    pop.className = 'kh-embed';
+    pop.setAttribute('role', 'dialog');
+    pop.setAttribute('aria-label', 'ポストの埋め込み');
+
+    var x = document.createElement('button');
+    x.type = 'button';
+    x.className = 'kh-embed-close';
+    x.setAttribute('aria-label', '閉じる');
+    x.textContent = '×';
+    x.addEventListener('click', close);
+
+    // 埋め込みはポストIDのURLだけで出せる。押された1件ぶんだけiframeを作る
+    var f = document.createElement('iframe');
+    f.className = 'kh-embed-frame';
+    f.src = 'https://platform.twitter.com/embed/Tweet.html?id=' + id + '&lang=ja&dnt=true&theme=light';
+    f.title = 'ポストの埋め込み';
+    f.loading = 'lazy';
+    f.referrerPolicy = 'strict-origin-when-cross-origin';
+
+    var link = document.createElement('p');
+    link.className = 'kh-embed-link';
+    var go = document.createElement('a');
+    go.href = a.href;
+    go.target = '_blank';
+    go.textContent = 'Xで見る →';
+    link.appendChild(go);
+
+    pop.appendChild(x);
+    pop.appendChild(f);
+    pop.appendChild(link);
+    document.body.appendChild(pop);
+    place(a);
+    keepInView();
+  }
+
+  document.addEventListener('click', function(e) {
+    var a = e.target.closest ? e.target.closest(LINK_SEL) : null;
+    if (a) {
+      var m = /\/status\/(\d+)/.exec(a.href);
+      if (!m || e.ctrlKey || e.metaKey || e.shiftKey || e.altKey || e.button !== 0) return;
+      e.preventDefault();
+      if (openLink === a) close(); else open(a, m[1]);
+      return;
+    }
+    if (pop && !pop.contains(e.target)) close();
+  });
+  document.addEventListener('keydown', function(e) { if (e.key === 'Escape') close(); });
+})();
+
 // ポスト本文の検索。本文はページに持たず、Worker が一致したポストIDだけ返す
 (function() {
   var input = document.getElementById('kh-post-q');
