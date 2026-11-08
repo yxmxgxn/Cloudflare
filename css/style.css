@@ -521,11 +521,18 @@ main {
   min-width: 5em;
 }
 
-#karinhello td.kh-yt,
-#karinhello td.kh-spotify,
-#karinhello td.kh-amazon {
-  text-align: center;
-  min-width: 2em;
+#karinhello td.kh-links {
+  text-align: left;
+}
+
+#karinhello td.kh-links a {
+  display: inline-block;
+  margin-right: 4px;
+  vertical-align: middle;
+}
+
+#karinhello td.kh-links a:last-child {
+  margin-right: 0;
 }
 
 #kh-playlist-embed {
