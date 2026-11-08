@@ -98,6 +98,18 @@ def build_index_sql(rows: list[dict]) -> str:
             stmts.append(f"INSERT INTO post_fts(id,bigram) VALUES({sql_str(post_id)},{sql_str(grams)});")
     return "\n".join(stmts) + "\n"
 
+# (シートの列名, URLの書式, aタグのclass, title, アイコン名)。表に並ぶ順
+PLATFORMS = (
+    ("YouTube Music", "https://music.youtube.com/watch?v={id}", "kh-yt", "YouTube Music", "youtube-brand"),
+    # 日本語環境では open.spotify.com/track/ が /intl-ja/track/ へ転送されるので、最初からそちらを指す
+    ("Spotify", "https://open.spotify.com/intl-ja/track/{id}", "kh-spotify", "Spotify", "spotify-brand"),
+    ("Amazon Music", "https://music.amazon.co.jp/tracks/{id}", "kh-amazon", "Amazon Music", "amazon-music-brand"),
+    ("Apple Music", "https://music.apple.com/jp/song/{id}", "kh-apple", "Apple Music", "apple-music-brand"),
+    ("AWA", "https://s.awa.fm/track/{id}", "kh-awa", "AWA", "awa-brand"),
+    ("LINE MUSIC", "https://music.line.me/webapp/track/{id}", "kh-line", "LINE MUSIC", "line-music-brand"),
+    ("Nextone", "https://nex-tone.link/{id}", "kh-nextone", "NexTone.Link", "nextone-brand"),
+)
+
 def build_table(rows: list[dict]) -> str:
     lines = []
     for row in rows:
@@ -107,14 +119,7 @@ def build_table(rows: list[dict]) -> str:
         artist       = escape_html(row.get("アーティスト名", ""))
         official_url = row.get("公式URL", "")
         album        = escape_html(row.get("アルバム名", ""))
-        yt_id        = row.get("YouTube Music", "")
-        yt_url       = f"https://music.youtube.com/watch?v={yt_id}" if yt_id else ""
-        spotify_id   = row.get("Spotify", "")
-        # 日本語環境では open.spotify.com/track/ が /intl-ja/track/ へ転送されるので、最初からそちらを指す
-        spotify_url  = f"https://open.spotify.com/intl-ja/track/{spotify_id}" if spotify_id else ""
-        amazon_id    = row.get("Amazon Music", "")
-        amazon_url   = f"https://music.amazon.co.jp/tracks/{amazon_id}" if amazon_id else ""
-        lyricist     = escape_html(row.get("作詞", ""))
+        lyricist    = escape_html(row.get("作詞", ""))
         composer     = escape_html(row.get("作曲", ""))
         arranger     = escape_html(row.get("編曲", ""))
 
@@ -126,17 +131,11 @@ def build_table(rows: list[dict]) -> str:
             f'<a href="{escape_html(official_url)}" target="_blank">{album}</a>'
             if official_url else album
         )
-        yt_cell = (
-            f'<a href="{escape_html(yt_url)}" target="_blank" title="YouTube Music">{icon("youtube-brand", "ic ic-20")}</a>'
-            if yt_url else ""
-        )
-        spotify_cell = (
-            f'<a href="{escape_html(spotify_url)}" target="_blank" title="Spotify">{icon("spotify-brand", "ic ic-20")}</a>'
-            if spotify_url else ""
-        )
-        amazon_cell = (
-            f'<a href="{escape_html(amazon_url)}" target="_blank" title="Amazon Music">{icon("amazon-music-brand", "ic ic-20")}</a>'
-            if amazon_url else ""
+        # 配信サービスのアイコンは1列に横並びで出す。IDが空のサービスは出さない
+        links_cell = "".join(
+            f'<a href="{escape_html(url_fmt.format(id=sid))}" target="_blank" class="{cls}" title="{title}">{icon(icon_name, "ic ic-20")}</a>'
+            for column, url_fmt, cls, title, icon_name in PLATFORMS
+            if (sid := row.get(column, ""))
         )
 
         lines.append(
@@ -145,12 +144,10 @@ def build_table(rows: list[dict]) -> str:
             f'<td class="kh-song">{song}</td>'
             f'<td class="kh-artist">{artist}</td>'
             f'<td class="kh-album">{album_cell}</td>'
-            f'<td class="kh-yt">{yt_cell}</td>'
-            f'<td class="kh-spotify">{spotify_cell}</td>'
-            f'<td class="kh-amazon">{amazon_cell}</td>'
             f'<td class="kh-lyricist">{lyricist}</td>'
             f'<td class="kh-composer">{composer}</td>'
             f'<td class="kh-arranger">{arranger}</td>'
+            f'<td class="kh-links">{links_cell}</td>'
             "</tr>"
         )
     return "\n".join(lines)

@@ -1,6 +1,6 @@
 <?php
   $title = "#佳林の１日１ハロまとめ"; 
-  $description = "宮本佳林さんがハロープロジェクトサブスク解禁にともない毎日ハロプロの曲を1曲紹介する企画をまとめました。日付に元ポスト・アルバム名に公式のリンク・YouTube Music／Spotify／Amazon MusicのURLや作詞作曲編曲などをいれています。";
+  $description = "宮本佳林さんがハロープロジェクトサブスク解禁にともない毎日ハロプロの曲を1曲紹介する企画をまとめました。日付に元ポスト・アルバム名に公式のリンク・作詞作曲編曲や、YouTube Music／Spotify／Amazon Music／Apple Music／AWA／LINE MUSIC／NexTone.LinkのURLなどをいれています。";
   $jsonld_type = "Dataset";
   $about = "宮本佳林";
   // グループ単体
@@ -17,7 +17,7 @@
 <main>
   <h1>#佳林の１日１ハロまとめ</h1>
   宮本佳林さんがXでハロープロジェクトサブスク解禁にともない毎日ハロプロの曲を<a href="https://x.com/search?q=%23%E4%BD%B3%E6%9E%97%E3%81%AE1%E6%97%A51%E3%83%8F%E3%83%AD%20from%3A%40karin__miyamoto&src=typed_query&f=live" target="_blank">#佳林の１日１ハロ</a>で1曲紹介する企画をまとめました。<br>
-  日付に元ポスト・アルバム名に公式のリンク・YouTube Music／Spotify／Amazon MusicのURLや作詞作曲編曲などをいれています。<br>
+  日付に元ポスト・アルバム名に公式のリンク・作詞作曲編曲・YouTube Music／Spotify／Amazon Music／Apple Music／AWA／LINE MUSIC／NexTone.LinkのURLをいれています。<br>
   アーティスト名・作詞作曲編曲でフィルタをかけられます。<br>
   プレイリストを作りました：<a href="https://music.youtube.com/playlist?list=PLAbxdMpUP3BU" target="_blank" class="kh-playlist" data-embed="https://www.youtube.com/embed/videoseries?list=PLAbxdMpUP3BU">YouTube Music</a>・<a href="https://open.spotify.com/playlist/5YVrEQ0hb7LTOviTXum8zi" target="_blank" class="kh-playlist" data-embed="https://open.spotify.com/embed/playlist/5YVrEQ0hb7LTOviTXum8zi">Spotify</a>・<a href="https://music.amazon.co.jp/user-playlists/46349edb307f4bda8ab48d0f060a0c69jajp" target="_blank" class="kh-playlist" data-embed="https://music.amazon.co.jp/embed/46349edb307f4bda8ab48d0f060a0c69jajp/?id=EpScUMtmV8&amp;marketplaceId=A1VC38T7YXB528&amp;musicTerritory=JP">Amazon Music</a><br>
   <div id="kh-playlist-embed" hidden></div>
@@ -45,12 +45,10 @@
         <th onclick="khSort('song')" id="kh-th-song">曲名</th>
         <th onclick="khSort('artist')" id="kh-th-artist">アーティスト</th>
         <th>アルバム</th>
-        <th>YT</th>
-        <th>Spotify</th>
-        <th>Amazon Music</th>
         <th>作詞</th>
         <th>作曲</th>
         <th>編曲</th>
+        <th>配信</th>
       </tr>
     </thead>
     <tbody id="kh-tbody">
@@ -73,9 +71,9 @@
       date:     tr.cells[0] ? tr.cells[0].textContent.trim() : '',
       song:     tr.cells[1] ? tr.cells[1].textContent.trim() : '',
       artist:   tr.getAttribute('data-artist') || '',
-      lyricist: tr.cells[7] ? tr.cells[7].textContent.trim() : '',
-      composer: tr.cells[8] ? tr.cells[8].textContent.trim() : '',
-      arranger: tr.cells[9] ? tr.cells[9].textContent.trim() : '',
+      lyricist: tr.cells[4] ? tr.cells[4].textContent.trim() : '',
+      composer: tr.cells[5] ? tr.cells[5].textContent.trim() : '',
+      arranger: tr.cells[6] ? tr.cells[6].textContent.trim() : '',
     };
   });
 
@@ -119,7 +117,7 @@
     var box = document.getElementById('kh-queue');
     var ids = [];
     rows.forEach(function(r) {
-      var a = r.el.cells[4] && r.el.cells[4].querySelector('a');
+      var a = r.el.querySelector('td.kh-links a.kh-yt');
       var m = a && /[?&]v=([\w-]{11})/.exec(a.href);
       if (m && ids.indexOf(m[1]) === -1) ids.push(m[1]);
     });
@@ -178,6 +176,89 @@
       box.hidden = false;
     });
   });
+})();
+
+// ポスト日のリンクを押したら、その場にXの埋め込みをポップアップで出す。
+// 168件ぶんを最初から埋め込むと重く、Xにも弾かれる(デカビートのページで経験済み)ので、押された1件だけiframeで読む。
+// 埋め込みの下には元ポストへのリンクを置く。Ctrl/Shift/中クリックは今までどおりそのままXへ飛ぶ。
+(function() {
+  var LINK_SEL = '#kh-tbody td:first-child a, #kh-post-results .kh-post a';
+  var pop = null;
+  var openLink = null;
+
+  function close() {
+    if (pop) { pop.remove(); pop = null; }
+    openLink = null;
+  }
+
+  function place(a) {
+    var r = a.getBoundingClientRect();
+    var w = Math.min(400, window.innerWidth - 24);
+    var left = Math.max(12, Math.min(r.left, window.innerWidth - w - 12));
+    pop.style.width = w + 'px';
+    pop.style.left = (left + window.scrollX) + 'px';
+    pop.style.top = (r.bottom + window.scrollY + 6) + 'px';
+  }
+
+  function keepInView() {
+    var r = pop.getBoundingClientRect();
+    if (r.bottom > window.innerHeight - 8) {
+      window.scrollBy({ top: Math.min(r.bottom - window.innerHeight + 16, r.top - 8), behavior: 'smooth' });
+    }
+  }
+
+  function open(a, id) {
+    close();
+    openLink = a;
+
+    pop = document.createElement('div');
+    pop.className = 'kh-embed';
+    pop.setAttribute('role', 'dialog');
+    pop.setAttribute('aria-label', 'ポストの埋め込み');
+
+    var x = document.createElement('button');
+    x.type = 'button';
+    x.className = 'kh-embed-close';
+    x.setAttribute('aria-label', '閉じる');
+    x.textContent = '×';
+    x.addEventListener('click', close);
+
+    // 埋め込みはポストIDのURLだけで出せる。押された1件ぶんだけiframeを作る
+    var f = document.createElement('iframe');
+    f.className = 'kh-embed-frame';
+    f.src = 'https://platform.twitter.com/embed/Tweet.html?id=' + id + '&lang=ja&dnt=true&theme=light';
+    f.title = 'ポストの埋め込み';
+    f.loading = 'lazy';
+    f.referrerPolicy = 'strict-origin-when-cross-origin';
+
+    var link = document.createElement('p');
+    link.className = 'kh-embed-link';
+    var go = document.createElement('a');
+    go.href = a.href;
+    go.target = '_blank';
+    go.textContent = 'Xで見る →';
+    link.appendChild(go);
+
+    pop.appendChild(x);
+    pop.appendChild(f);
+    pop.appendChild(link);
+    document.body.appendChild(pop);
+    place(a);
+    keepInView();
+  }
+
+  document.addEventListener('click', function(e) {
+    var a = e.target.closest ? e.target.closest(LINK_SEL) : null;
+    if (a) {
+      var m = /\/status\/(\d+)/.exec(a.href);
+      if (!m || e.ctrlKey || e.metaKey || e.shiftKey || e.altKey || e.button !== 0) return;
+      e.preventDefault();
+      if (openLink === a) close(); else open(a, m[1]);
+      return;
+    }
+    if (pop && !pop.contains(e.target)) close();
+  });
+  document.addEventListener('keydown', function(e) { if (e.key === 'Escape') close(); });
 })();
 
 // ポスト本文の検索。本文はページに持たず、Worker が一致したポストIDだけ返す
