@@ -114,6 +114,10 @@
         <a class="index-link" href="/instagram/HANAKIN-insta"><?= icon('instagram', 'ic ic-20') ?>宮本佳林 HANAKINコラボまとめ</a>
         <p class="index-desc">宮本佳林さんがInstagram・TikTokで投稿しているHANAKINコラボ・シャニカマー45°チャレンジ（コラボ相手）のまとめです</p>
       </div>
+      <div class="card index-card">
+        <a class="index-link" href="/instagram/karin-mesinging"><?= icon('instagram', 'ic ic-20') ?>宮本佳林 歌ってみた・踊ってみたまとめ</a>
+        <p class="index-desc">宮本佳林さんがInstagram・TikTok・ボカロ部で披露した、一人での歌ってみた・踊ってみたのまとめです。その場で再生できます</p>
+      </div>
     </div>
   </section>
 

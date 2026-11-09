@@ -16,6 +16,7 @@ on:
           - "hanakin (宮本佳林のIGチャレンジ)"
           - "hellocover (ハロカバ)"
           - "karinhello (佳林の1日1ハロ)"
+          - "karinmesinging (佳林の歌ってみた・踊ってみた)"
           - "karinoshi (カリンオシ)"
           - "members (メンバー一覧)"
           - "mixjuice (MIX=Juice)"
@@ -72,6 +73,7 @@ jobs:
           run_if hanakin    generate_hanakin.py
           run_if hellocover generate_hellocover.py
           run_if karinhello generate_karinhello.py
+          run_if karinmesinging generate_karinmesinging.py
           run_if karinoshi  generate_karinoshi.py
           run_if members    generate_members.py
           run_if mixjuice   generate_mixjuice.py
