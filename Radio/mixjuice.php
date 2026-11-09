@@ -26,6 +26,10 @@
       }
       ?>
     </select>
+    <label>
+      <input type="checkbox" id="mixjuice-show-pair">
+      二人で選んだJuice=Juiceの曲(各回の3曲目)も表示
+    </label>
   </div>
   <div id="mixjuice-wrap">
     <table id="mixjuice-table">
@@ -47,15 +51,20 @@
 
 <script>
 (function () {
-  document.getElementById('mixjuice-select-selector').addEventListener('change', function () {
-    const selector = this.value;
-    const rows = document.querySelectorAll('#mixjuice-tbody tr');
+  const select = document.getElementById('mixjuice-select-selector');
+  const showPair = document.getElementById('mixjuice-show-pair');
+  const rows = document.querySelectorAll('#mixjuice-tbody tr');
+  function apply() {
     rows.forEach(tr => {
-      const s = tr.dataset.selector || '';
-      const show = !selector || s === selector;
+      const members = (tr.dataset.selector || '').split('&');
+      const isPair = members.length > 1;
+      const show = (!isPair || showPair.checked) && (!select.value || members.includes(select.value));
       tr.style.display = show ? '' : 'none';
     });
-  });
+  }
+  select.addEventListener('change', apply);
+  showPair.addEventListener('change', apply);
+  apply();
 })();
 </script>
 
