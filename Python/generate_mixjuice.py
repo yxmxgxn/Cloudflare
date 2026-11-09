@@ -6,6 +6,7 @@ PHPインクルード用のtr/tdフラグメント・更新日を生成する
 
 import csv
 import io
+import re
 from datetime import datetime, timezone, timedelta
 
 PUB_BASE = (
@@ -25,6 +26,7 @@ OUTPUT_PATH = REPO_ROOT / "Spreadsheet" / "mixjuice_table.php"
 OUTPUT_GENERATED = REPO_ROOT / "Generated" / "mixjuice_generated.php"
 
 X_ICON = icon("x", label="Xのポスト")
+YT_ICON = icon("youtube-brand", label="YouTubeで聴く")
 
 def fetch_csv(gid: str) -> list[list[str]]:
     url = f"{PUB_BASE}?gid={gid}&single=true&output=csv"
@@ -72,6 +74,11 @@ def build_table(data: list[list[str]]) -> str:
             print(f"警告: X列がポストIDではありません ({broadcast_date}): {x_id}")
             x_id = ""
         x_url = f"https://x.com/PaletteTbs/status/{x_id}" if x_id else ""
+        # YouTube列は動画IDのみ(11文字)。URLが貼られていたら弾いて気づけるようにする
+        yt_id = row.get("YouTube", "")
+        if yt_id and not re.fullmatch(r"[A-Za-z0-9_-]{11}", yt_id):
+            print(f"警告: YouTube列が動画IDではありません ({broadcast_date}): {yt_id}")
+            yt_id = ""
         song          = escape_html(row.get("曲名", ""))
         artist         = escape_html(row.get("アーティスト", ""))
         selector       = escape_html(row.get("選曲者", ""))
@@ -94,6 +101,11 @@ def build_table(data: list[list[str]]) -> str:
                 f'{X_ICON}</a>'
             )
         song_cell = f"{song} / {artist}" if artist else song
+        if yt_id:
+            song_cell += (
+                f' <a href="https://www.youtube.com/watch?v={yt_id}" target="_blank">'
+                f'{YT_ICON}</a>'
+            )
 
         lines.append(
             f'<tr data-selector="{selector}"{class_attr}>'
