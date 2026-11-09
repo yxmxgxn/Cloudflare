@@ -44,7 +44,7 @@ PERFORMANCE_COL = 7  # 見出しが空のときに使う列(0始まり)
 # 高さは400px幅のポップアップ内でそのまま収まる値(JSが画面に収まるよう縮める)
 SOURCES = [
     ("Instagram", "https://www.instagram.com/p/{id}/",
-     "https://www.instagram.com/p/{id}/embed/", r"[A-Za-z0-9_-]{11}", "instagram", "Instagram", 620),
+     "https://www.instagram.com/p/{id}/embed/captioned/", r"[A-Za-z0-9_-]{11}", "instagram", "Instagram", 780),
     ("TikTok", "https://www.tiktok.com/@karin_miyamoto/video/{id}",
      "https://www.tiktok.com/embed/v2/{id}", r"\d{19}", "tiktok", "TikTok", 740),
 ]
