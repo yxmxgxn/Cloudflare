@@ -136,8 +136,9 @@ def build_table(rows: list[dict]) -> str:
             f"<tr{cls}>"
             f"<td>{date_label}</td>"
             f"<td>{title_cell}</td>"
-            f"<td>{esc(row.get('Performance', ''))}</td>"
             f'<td class="pf-links">{link_cell}</td>'
+            # 「歌って踊ってみた」はスマホで「歌って / 踊ってみた」の2行に折り返す
+            f"<td>{esc(row.get('Performance', '')).replace('歌って踊ってみた', '歌って<wbr>踊ってみた')}</td>"
             "</tr>"
         )
     return "\n".join(lines)

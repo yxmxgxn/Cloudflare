@@ -22,8 +22,8 @@
         <tr>
           <th>日付</th>
           <th>曲名 / アーティスト</th>
-          <th>種別</th>
           <th>投稿</th>
+          <th>種別</th>
         </tr>
       </thead>
       <tbody id="pf-tbody">
