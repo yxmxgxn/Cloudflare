@@ -14,6 +14,8 @@
   TBSラジオ 宮本佳林 Music Palette♪のJuice=Juice 松永里愛のMIX=Juiceのコーナーで選曲された曲をまとめています<br>
   放送日をクリックすると<a href="https://www.tbsradio.jp/mp/" target="_blank">TBSラジオ Music Palette♪</a>の各回のページに<br>
   Xのアイコンを飛ぶとポストに飛びます<br>
+  曲名の横のYouTubeアイコンから、その曲を聴けます<br>
+  <small>※ YouTubeのリンクは、公式のものだけを載せています。できるだけ音源（Topic）を、なければMVを選んでいますが、公式であっても、放送で流れたのと同じ音源・バージョンとは限りません。YouTube Premium会員でないと再生できない曲も含まれます。</small><br>
   <div id="mixjuice-filter">
     <select id="mixjuice-select-selector">
       <option value="">すべての選曲者</option>
