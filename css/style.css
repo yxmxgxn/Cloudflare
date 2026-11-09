@@ -3699,6 +3699,13 @@ a.iv-stats-row:hover {
   white-space: nowrap;
 }
 
+/* 曲名だけは折り返す(長いタイトルが表を横に広げてスマホで見づらくなるため) */
+.pf-table td:nth-child(2) {
+  white-space: normal;
+  min-width: 11em;
+}
+
+
 .pf-table td.pf-links a {
   margin-right: 6px;
 }
@@ -3711,4 +3718,39 @@ a.iv-stats-row:hover {
   border-radius: 8px;
   font-size: 12px;
   color: #555;
+  white-space: nowrap;
+}
+
+/* スマホ: 余白と文字を詰め、リンク・種別も折り返して、横スクロールなしで4列が収まるようにする */
+@media (max-width: 600px) {
+  .pf-table th,
+  .pf-table td {
+    padding: 5px 4px;
+    font-size: 12px;
+  }
+
+  .pf-table td:nth-child(2) {
+    min-width: 0;
+  }
+
+  .pf-table td.pf-links,
+  .pf-table td:last-child {
+    white-space: normal;
+  }
+
+  .pf-table td:last-child {
+    min-width: 5.5em;
+  }
+
+  .pf-table td.pf-links a {
+    margin-right: 2px;
+  }
+
+  .pf-vocalo {
+    display: block;
+    width: fit-content;
+    margin: 0 0 2px;
+    padding: 0 3px;
+    font-size: 10px;
+  }
 }
