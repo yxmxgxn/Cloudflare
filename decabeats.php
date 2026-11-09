@@ -221,8 +221,8 @@ $dc_dotchicchi = [
    'credit' => '撮影地協力', 'place' => 'EMPORIO cafe&dining', 'place_url' => 'https://www.emporio.tv/'],
   ['title' => '#3 岡村美波×米村姫良々', 'url' => 'https://www.youtube.com/watch?v=mZF7dc_mEf8',
    'credit' => '撮影協力', 'place' => 'EMPORIO cafe&dining', 'place_url' => 'https://www.emporio.tv/'],
-　['title' => '#4 後藤花×米村姫良々', 'url' => 'https://www.youtube.com/watch?v=lkZEs-Wom5s',
-   'credit' => '撮影協力', 'place' => 'EMPORIO cafe&dining', 'place_url' => 'http://kaisendon-koroku.com/'],
+  ['title' => '#4 後藤花×米村姫良々', 'url' => 'https://www.youtube.com/watch?v=lkZEs-Wom5s',
+   'credit' => '撮影協力', 'place' => 'ころ丸', 'place_url' => 'http://kaisendon-koroku.com/'],
 ];
 
 // J-WAVEのPodcast「offの日、どっちっち？」(2回で終了)
