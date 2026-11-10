@@ -126,13 +126,26 @@
         chips.appendChild(all);
       }
       group.forEach(function (m) {
-        var b = el('button', { type: 'button', class: 'kb-chip' + (name === m.name ? ' is-on' : '') }, m.name);
+        // 検索エンジンがたどれるよう、slug のある人はリンクにする(押したときはページを読み直さない)
+        var b = el(m.slug ? 'a' : 'button', m.slug ? { href: '?m=' + m.slug, class: 'kb-chip' + (name === m.name ? ' is-on' : '') }
+          : { type: 'button', class: 'kb-chip' + (name === m.name ? ' is-on' : '') }, m.name);
         b.appendChild(el('span', { class: 'kb-n' }, String(r.count[m.name])));
-        b.addEventListener('click', function () { setName(name === m.name ? '' : m.name); });
+        b.addEventListener('click', function (ev) { ev.preventDefault(); setName(name === m.name ? '' : m.name); });
         chips.appendChild(b);
       });
       box.appendChild(chips);
     });
+  }
+
+  // 見出しの説明文とタブのタイトルを、選んだ人に合わせる(?m= で開いたときに Worker が書くのと同じ形)
+  var LEAD = 'ハロプロ研修生のブログを、メンバーと月で探せます。記事は upfc.jp で読めます。';
+  var TITLE = 'ハロプロ研修生ブログ 目次';
+  function drawLead() {
+    var lead = document.querySelector('.kb-lead');
+    if (!name) { lead.textContent = LEAD; document.title = TITLE; return; }
+    var m = byName[name] || {}, mine = picked(), who = m.kana ? name + '（' + m.kana + '）' : name;
+    lead.textContent = who + 'のブログ ' + mine.length + '件（' + label(mine[mine.length - 1].date) + '〜' + label(mine[0].date) + '）。記事は upfc.jp で読めます。';
+    document.title = who + 'のブログ一覧｜' + TITLE;
   }
 
   // 選んだ人の名前・よみ・公式プロフィールへのリンク(趣味などは公式で)
@@ -200,6 +213,7 @@
     drawMonths();
     drawMembers();
     drawProfile();
+    drawLead();
     sync();
   }
 

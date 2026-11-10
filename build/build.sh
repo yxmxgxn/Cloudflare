@@ -74,6 +74,11 @@ cp robot.txt "$OUT/robots.txt"   # 正しいファイル名に直して配置
     esac
     printf '  <url>\n    <loc>%s/%s</loc>\n    <lastmod>%s</lastmod>\n  </url>\n' "$BASE_URL" "$p" "$today"
   done <<< "$pages"
+  # 研修生ブログ目次のメンバー別(?m=slug。worker/index.js がタイトルと canonical をその人のものにする)
+  php -r '$m = json_decode(file_get_contents("data/kenshusei-members.json"), true)["members"];
+    foreach ($m as $x) if ($x["slug"] !== "") echo $x["slug"], "\n";' | while IFS= read -r s; do
+    printf '  <url>\n    <loc>%s/hello-kenshusei-blog?m=%s</loc>\n    <lastmod>%s</lastmod>\n  </url>\n' "$BASE_URL" "$s" "$today"
+  done
   echo '</urlset>'
 } > "$OUT/sitemap.xml"
 

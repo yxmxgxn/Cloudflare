@@ -270,6 +270,41 @@ async function handleFeedbackAdmin(url, request, env) {
   });
 }
 
+/* ===================== 研修生ブログ目次のメンバー別ページ ===================== */
+// /hello-kenshusei-blog?m=<slug> を「その人のブログ一覧」として検索エンジンに見せる。ページは1枚のまま、
+// タイトル・説明・canonical・見出しの説明文だけをその人のものに書き換える(一覧は今までどおり JS で出す)。
+// 名簿にない slug や m なしは、そのまま返す(canonical はパラメーターなしの本体)。
+const KB_BASE = "https://karin-archive.com/hello-kenshusei-blog";
+
+async function kenshuseiMember(request, env, url) {
+  const page = await env.ASSETS.fetch(request);
+  const slug = url.searchParams.get("m") || "";
+  if (!slug || !page.ok) return page;
+  try {
+    const get = (p) => env.ASSETS.fetch(new URL(p, url).toString()).then((r) => r.json());
+    const [ms, blog] = await Promise.all([get("/data/kenshusei-members.json"), get("/data/kenshusei-blog.json")]);
+    const m = (ms.members || []).find((x) => x.slug === slug);
+    if (!m) return page;
+    const mine = (blog.entries || []).filter((e) => e.name === m.name);
+    if (!mine.length) return page;
+    const ym = (d) => `${d.slice(0, 4)}年${Number(d.slice(5, 7))}月`;
+    const span = `${ym(mine[mine.length - 1].date)}〜${ym(mine[0].date)}`;
+    const who = m.kana ? `${m.name}（${m.kana}）` : m.name;
+    const title = `${who}のブログ一覧｜ハロプロ研修生ブログ 目次`;
+    const desc = `ハロプロ研修生 ${m.name}のブログ${mine.length}件（${span}）の目次。日付から upfc.jp の記事へ。非公式。`;
+    const canonical = `${KB_BASE}?m=${encodeURIComponent(slug)}`;
+    const set = (attr, v) => ({ element(e) { e.setAttribute(attr, v); } });
+    return new HTMLRewriter()
+      .on("title", { element(e) { e.setInnerContent(title); } })
+      .on('meta[name="description"]', set("content", desc))
+      .on('link[rel="canonical"]', set("href", canonical))
+      .on(".kb-lead", { element(e) { e.setInnerContent(`${who}のブログ ${mine.length}件（${span}）。記事は upfc.jp で読めます。`); } })
+      .transform(page);
+  } catch (e) {
+    return page;
+  }
+}
+
 /* =========================================================================== */
 
 export default {
@@ -309,6 +344,10 @@ export default {
       } catch (e) {
         return new Response("error", { status: 500 });
       }
+    }
+
+    if (url.pathname === "/hello-kenshusei-blog" && request.method === "GET") {
+      return kenshuseiMember(request, env, url);
     }
 
     // その他は静的アセットへ(既存ページはここを通る=挙動不変)
