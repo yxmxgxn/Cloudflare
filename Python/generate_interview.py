@@ -143,6 +143,25 @@ def fetch_domain() -> dict[str, str]:
     return result
 
 
+_NIEW_PAGED = re.compile(r"^(/specials/[^/]+)/\d+/?$")
+
+
+def link_url(url: str) -> str:
+    """読者が開くリンク用のURL。シートのURL(本文の吸い上げ用)はそのまま残す。
+
+    NiEWの特集は、末尾が /N/ のURLを開くと全ページ分が読み込まれて N ページ目まで
+    自動でスクロールされる。吸い上げには全文が入る /6/ が正解だが、読者が開くと
+    冒頭ではなく末尾に飛ぶので、リンクは先頭ページのURL(末尾の /N/ を外したもの)にする。
+    残りのページはサイト側のスクロールで読み込まれる。"""
+    pr = urllib.parse.urlparse(url)
+    if pr.netloc.lower().removeprefix("www.") != "niewmedia.com":
+        return url
+    m = _NIEW_PAGED.match(pr.path)
+    if not m:
+        return url
+    return urllib.parse.urlunparse(pr._replace(path=m.group(1) + "/", query=""))
+
+
 def media_for(url: str, domain: dict[str, str]) -> str:
     """記事URLの媒体名をDomain辞書から最長前方一致で引く。
     host+第1パス(例 realsound.jp/tech) を優先し、無ければ host(例 realsound.jp)。
@@ -277,7 +296,7 @@ def build_cards(articles: list[dict], members_by_id: dict, master: dict,
         # 1段目: Date + Title(URLがあれば埋め込む)
         if url:
             title_html = (
-                f'<a href="{esc(url)}" target="_blank">{title}</a>'
+                f'<a href="{esc(link_url(url))}" target="_blank">{title}</a>'
             )
         else:
             title_html = title
