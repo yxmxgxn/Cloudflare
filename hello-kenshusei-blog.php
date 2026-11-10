@@ -201,9 +201,13 @@
     var d = res[0];
     entries = d.entries || [];
     members = res[1].members || [];
-    members.forEach(function (m) {
-      byName[m.name] = m;
-      $('kb-names').appendChild(el('option', { value: m.name }));   // 予測変換の候補
+    members.forEach(function (m) { byName[m.name] = m; });
+    // 予測変換の候補: 研修生(名簿) → ハロプロの現役メンバー・グループ(d.suggest)
+    var seen = {};
+    members.map(function (m) { return m.name; }).concat(d.suggest || []).forEach(function (n) {
+      if (seen[n]) return;
+      seen[n] = 1;
+      $('kb-names').appendChild(el('option', { value: n }));
     });
     var p = new URLSearchParams(location.search), slug = p.get('m') || '';
     var hit = slug && members.filter(function (m) { return m.slug === slug; })[0];

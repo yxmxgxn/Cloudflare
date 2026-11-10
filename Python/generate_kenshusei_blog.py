@@ -38,7 +38,23 @@ ITEM = re.compile(
     re.S,
 )
 
+# Google で探す欄の予測変換に足す、ハロプロの現役メンバーとグループ(ハロプロ アメブロ検索の名簿から)
+AMEBLO_MEMBERS = "https://ameblo.karin-archive.com/api/members"
+
 _last = 0.0
+
+
+def suggest(old: list[str]) -> list[str]:
+    try:
+        req = urllib.request.Request(AMEBLO_MEMBERS, headers={"User-Agent": UA})
+        with urllib.request.urlopen(req, timeout=30) as r:
+            d = json.load(r)
+    except Exception as e:  # noqa: BLE001 取れなければ前回のまま
+        print(f"  ! アメブロ検索の名簿が読めない {type(e).__name__}: {e}")
+        return old
+    act = [m for m in d.get("members", []) if m.get("active")]
+    used = {g for m in act for g in m.get("groups", [])}   # 現役のいるグループだけ
+    return [m["name"] for m in act] + [g["name"] for g in d.get("groups", []) if g["no"] in used]
 
 
 def fetch(page: int) -> str:
@@ -75,9 +91,10 @@ def main() -> int:
     ap.add_argument("--full", action="store_true", help="最後のページまで読み直し、消えた記事を落とす")
     a = ap.parse_args()
 
-    old = []
+    old, prev = [], {}
     if OUTPUT.exists():
-        old = json.loads(OUTPUT.read_text(encoding="utf-8")).get("entries", [])
+        prev = json.loads(OUTPUT.read_text(encoding="utf-8"))
+        old = prev.get("entries", [])
     known = {e["id"] for e in old}
     full = a.full or not old   # 初回は全部読む
 
@@ -111,11 +128,12 @@ def main() -> int:
 
     data = {
         "updated": datetime.now(JST).strftime("%Y-%m-%d %H:%M"),
+        "suggest": suggest(prev.get("suggest", [])),
         "entries": entries,
     }
     OUTPUT.parent.mkdir(parents=True, exist_ok=True)
     text = json.dumps(data, ensure_ascii=False, separators=(",", ":"))
-    if old and json.loads(OUTPUT.read_text(encoding="utf-8")).get("entries") == entries:
+    if old and prev.get("entries") == entries and prev.get("suggest") == data["suggest"]:
         print(f"変更なし({len(entries)}件)")
         return 0
     OUTPUT.write_text(text + "\n", encoding="utf-8")
