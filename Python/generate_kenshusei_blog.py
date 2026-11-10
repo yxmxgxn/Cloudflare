@@ -8,7 +8,9 @@ upfc.jp は「当サイトに掲載されているすべてのコンテンツ」
 記事ページも開かない(一覧だけで ID・日付・書いた人が取れる)。
 
 ふだんは新しい方から読み、全部が取り込み済みのページに当たったら止める。
---full のときは最後のページまで読み直し、一覧から消えた記事を落とす(週1回)。
+--full のときは最後のページまで読み直し、一覧から消えた記事を落とす(毎日)。
+upfc.jp から消えた記事はこちらからもすぐ消す(URL が残っていると、消えた記事を探す手がかりになるため)。
+ただし読めた件数が前回より大きく減ったときは、相手の不調とみて何も消さない。
 """
 
 import argparse
@@ -30,6 +32,7 @@ LIST_URL = "https://www.upfc.jp/helloproject/artist/trcontents_list.php?@pg={}&@
 UA = "karin-archive (+https://karin-archive.com/hello-kenshusei-blog)"
 DELAY = 1.0          # リクエストの間隔(秒)。並列にはしない
 MAX_PAGES = 200      # 念のための上限(2026-11 時点で78ページ)
+SHRINK = 0.9         # 全部読み直して前回の9割未満しか取れなければ、消さずに止める
 JST = timezone(timedelta(hours=9))
 
 ITEM = re.compile(
@@ -110,10 +113,16 @@ def main() -> int:
         warn(f"{MAX_PAGES}ページを超えた。上限を見直す", title="研修生ブログ")
 
     if full:
+        if old and len(fresh) < len(old) * SHRINK:
+            warn(f"全部読み直したのに {len(fresh)}件しか取れなかった(前回 {len(old)}件)。何も消さずに止める",
+                 title="研修生ブログ")
+            return 1
         entries = fresh
-        gone = known - {e["id"] for e in fresh}
+        gone = [e for e in old if e["id"] not in {x["id"] for x in fresh}]
         if gone:
-            print(f"一覧から消えた記事: {len(gone)}件")
+            # 消えた記事は毎回知らせる(Actions の画面に出る)
+            warn(f"upfc.jp から消えた記事を {len(gone)}件 落とした: " +
+                 ", ".join(f'{e["date"]} {e["name"]} ({e["id"]})' for e in gone[:20]), title="研修生ブログ")
     else:
         seen = {e["id"] for e in fresh}
         entries = fresh + [e for e in old if e["id"] not in seen]

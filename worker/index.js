@@ -282,16 +282,18 @@ async function kenshuseiMember(request, env, url) {
   if (!slug || !page.ok) return page;
   try {
     const get = (p) => env.ASSETS.fetch(new URL(p, url).toString()).then((r) => r.json());
-    const [ms, blog] = await Promise.all([get("/data/kenshusei-members.json"), get("/data/kenshusei-blog.json")]);
+    const [ms, blog, site] = await Promise.all(
+      ["/data/kenshusei-members.json", "/data/kenshusei-blog.json", "/data/kenshusei-site.json"].map(get));
     const m = (ms.members || []).find((x) => x.slug === slug);
     if (!m) return page;
     const mine = (blog.entries || []).filter((e) => e.name === m.name);
     if (!mine.length) return page;
     const ym = (d) => `${d.slice(0, 4)}年${Number(d.slice(5, 7))}月`;
     const span = `${ym(mine[mine.length - 1].date)}〜${ym(mine[0].date)}`;
-    const who = m.kana ? `${m.name}（${m.kana}）` : m.name;
-    const title = `${who}のブログ一覧｜ハロプロ研修生ブログ 目次`;
-    const desc = `ハロプロ研修生 ${m.name}のブログ${mine.length}件（${span}）の目次。日付から upfc.jp の記事へ。非公式。`;
+    // 文言は data/kenshusei-site.json(ページ・画面の JS と共通)
+    const v = { who: m.kana ? `${m.name}（${m.kana}）` : m.name, name: m.name, n: mine.length, span };
+    const fill = (t) => t.replace(/\{(\w+)\}/g, (_, k) => String(v[k]));
+    const title = fill(site.member_title), desc = fill(site.member_description);
     const canonical = `${KB_BASE}?m=${encodeURIComponent(slug)}`;
     const set = (attr, v) => ({ element(e) { e.setAttribute(attr, v); } });
     return new HTMLRewriter()
@@ -301,10 +303,10 @@ async function kenshuseiMember(request, env, url) {
       .on("#kb-crumbs", { element(e) { e.setInnerContent(JSON.stringify({
         "@context": "https://schema.org", "@type": "BreadcrumbList", itemListElement: [
           { "@type": "ListItem", position: 1, name: "宮本佳林・M-line・ハロプロ Archive", item: "https://karin-archive.com/" },
-          { "@type": "ListItem", position: 2, name: "ハロプロ研修生ブログ 目次", item: KB_BASE },
+          { "@type": "ListItem", position: 2, name: site.site, item: KB_BASE },
           { "@type": "ListItem", position: 3, name: m.name, item: canonical },
         ] }), { html: true }); } })
-      .on(".kb-lead", { element(e) { e.setInnerContent(`${who}のブログ ${mine.length}件（${span}）。記事は upfc.jp で読めます。`); } })
+      .on(".kb-lead", { element(e) { e.setInnerContent(fill(site.member_lead)); } })
       .transform(page);
   } catch (e) {
     return page;

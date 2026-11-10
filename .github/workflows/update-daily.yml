@@ -39,17 +39,12 @@ jobs:
       - name: Generate timeline images
         run: python Python/timeline.py
 
-      # ハロプロ研修生ブログの目次(upfc.jp の一覧から 記事ID・日付・書いた人 だけ)。
-      # ふだんは新しいページだけ読み、日曜は全ページ読み直して消えた記事を落とす。
-      # 失敗しても表やタイムラインの更新は止めない
+      # ハロプロ研修生ブログ インデックス(upfc.jp の一覧から 記事ID・日付・書いた人 だけ)。
+      # 毎日全ページ(約80ページ・1秒に1回)を読み直し、upfc.jp から消えた記事はこちらからも消す。
+      # 失敗しても表やタイムラインの更新は止めない(失敗・消えた記事は Actions の警告に出る)
       - name: Update kenshusei blog index
         continue-on-error: true
-        run: |
-          if [ "$(TZ=Asia/Tokyo date +%u)" = "7" ]; then
-            python Python/generate_kenshusei_blog.py --full
-          else
-            python Python/generate_kenshusei_blog.py
-          fi
+        run: python Python/generate_kenshusei_blog.py --full
 
       - name: Commit & push if changed
         run: |
