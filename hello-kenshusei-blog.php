@@ -234,11 +234,12 @@
     if (v === '' || /^\d{4}$/.test(v)) { year = v; drawMonths(); }
   });
 
-  // 打った語に site: を足して Google を別タブで開く(結果は Google のもの)
+  // 打った語に site: を足して Google を別タブで開く(結果は Google のもの)。inurl: だと当たらないので
+  // 記事のあるディレクトリまでを site: に書く。メンバーを選んでいたら名前も足す
   $('kb-google').addEventListener('submit', function (ev) {
     var q = $('kb-q').value.trim();
     if (!q) { ev.preventDefault(); return; }
-    $('kb-gq').value = 'site:upfc.jp inurl:trcontents_detail ' + q;
+    $('kb-gq').value = 'site:www.upfc.jp/helloproject/artist/ ' + (name ? name + ' ' : '') + q;
   });
 
   var get = function (u) { return fetch(u).then(function (r) { return r.json(); }); };
