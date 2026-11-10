@@ -55,23 +55,18 @@ input, textarea, button, select { font-family: inherit; }
 .kb-profile a { margin-left: auto; color: var(--accent); font-size: .85rem; }
 
 /* 月 */
-.kb-month { display: flex; align-items: center; gap: 8px; margin: 18px 0 4px; }
-.kb-month button {
-  width: 36px; height: 36px;
-  border: 1px solid var(--line);
-  background: var(--surface);
-  border-radius: 8px;
-  font-size: 1.1rem;
-  cursor: pointer;
-}
-.kb-month button:disabled { opacity: .35; cursor: default; }
-.kb-month select {
-  font-size: 1rem;
-  padding: 6px 10px;
-  border: 1px solid var(--line);
-  border-radius: 8px;
-  background: var(--surface);
-}
+.kb-month { margin: 18px 0 4px; display: flex; flex-wrap: wrap; align-items: center; gap: 8px 12px; }
+.kb-year { font-size: .9rem; color: var(--muted); }
+.kb-year input { width: 5.5em; font-size: 1rem; padding: 5px 8px; margin-left: 4px; border: 1px solid var(--line); border-radius: 8px; background: var(--surface); }
+.kb-months { display: grid; grid-template-columns: repeat(6, 1fr); gap: 4px; flex: 1; min-width: 240px; }
+.kb-mbtn { padding: 5px 0; border: 1px solid var(--line); background: var(--surface); border-radius: 6px; font-size: .82rem; cursor: pointer; }
+.kb-mbtn:hover:not(:disabled) { border-color: var(--accent); }
+.kb-mbtn:disabled { opacity: .35; cursor: default; }
+.kb-mbtn.is-on { background: var(--accent); border-color: var(--accent); color: #fff; font-weight: 700; }
+.kb-ynote { flex-basis: 100%; margin: 0; font-size: .82rem; color: #b3261e; }
+.kb-ynote:empty { display: none; }
+.kb-more { display: block; margin: 12px auto 0; padding: 8px 24px; border: 1px solid var(--accent); color: var(--accent); background: transparent; border-radius: 8px; cursor: pointer; }
+.kb-more[hidden] { display: none; }
 
 .kb-status { margin: 10px 2px; font-size: .88rem; color: var(--muted); min-height: 1.6em; }
 
