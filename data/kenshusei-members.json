@@ -18,6 +18,7 @@
 {"slug": "ayane_sato", "name": "佐藤絢音", "kana": "サトウ アヤネ", "active": true, "url": "https://helloproject.com/helloprokenshusei/ayane_sato/"},
 {"slug": "sara_karibe", "name": "苅部咲良", "kana": "カリベ サラ", "active": true, "url": "https://helloproject.com/helloprokenshusei/sara_karibe/"},
 {"slug": "shiharu_saeki", "name": "佐伯詩春", "kana": "サエキ シハル", "active": true, "url": "https://helloproject.com/helloprokenshusei/shiharu_saeki/"},
+{"slug": "makino_toa", "name": "牧野永愛", "kana": "マキノ トア", "active": false, "url": ""},
 {"slug": "niina_hayashi", "name": "林仁愛", "kana": "ハヤシ ニイナ", "active": false, "url": "https://helloproject.com/juicejuice/niina_hayashi/"},
 {"slug": "yurika_asano", "name": "浅野優莉花", "kana": "アサノ ユリカ", "active": false, "url": ""},
 {"slug": "chihiro_miyakoshi", "name": "宮越千尋", "kana": "ミヤコシ チヒロ", "active": false, "url": ""},
@@ -26,6 +27,5 @@
 {"slug": "meisa_sugihara", "name": "杉原明紗", "kana": "スギハラ メイサ", "active": false, "url": "https://helloproject.com/morningmusume/meisa_sugihara/"},
 {"slug": "momoha_nagano", "name": "長野桃羽", "kana": "ナガノ モモハ", "active": false, "url": "https://helloproject.com/angerme/momoha_nagano/"},
 {"slug": "moa_suzuki", "name": "鈴木もあ", "kana": "スズキ モア", "active": false, "url": "https://helloproject.com/morningmusume/moa_suzuki/"},
-{"slug": "hanano_ishikawa", "name": "石川華望", "kana": "イシカワ ハナノ", "active": false, "url": "https://helloproject.com/morningmusume/hanano_ishikawa/"},
-{"slug": "", "name": "牧野永愛", "kana": "", "active": false, "url": ""}
+{"slug": "hanano_ishikawa", "name": "石川華望", "kana": "イシカワ ハナノ", "active": false, "url": "https://helloproject.com/morningmusume/hanano_ishikawa/"}
 ]}
