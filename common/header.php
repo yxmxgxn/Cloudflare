@@ -47,6 +47,7 @@
 <!-- CSS -->
 
 <link rel="stylesheet" media="all" href="/css/style.css">
+<link rel="stylesheet" media="all" href="/css/feedback.css">
 
 <!-- Favicon -->
 

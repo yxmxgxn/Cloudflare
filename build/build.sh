@@ -35,6 +35,7 @@ pages=$(find . -name '*.php' \
   ! -path './common/header.php' \
   ! -path './common/icons.php' \
   ! -path './common/footer.php' \
+  ! -path './common/feedback.php' \
   ! -path './common/video_cards.php' \
   ! -path './common/birthday_footer.php' \
   ! -path './Birthday/birthday_generated.php' \
@@ -88,8 +89,8 @@ fi
 
 # ---- CSSキャッシュバスティング(コミットIDをバージョンとして付与) ----
 VER=$(git rev-parse --short HEAD 2>/dev/null || date +%s)
-grep -rl --include='*.html' -F '/css/style.css' "$OUT" \
-  | xargs -r sed -i "s|/css/style.css|/css/style.css?v=$VER|g"
+grep -rl --include='*.html' -F '/css/' "$OUT" \
+  | xargs -r sed -i -E "s#(/css/[a-z-]+[.]css)\"#\1?v=$VER\"#g"   # style.css と feedback.css
 
 # ---- ベースURL差し替え ----
 grep -rl --include='*.html' --include='*.xml' --include='*.txt' -F "$OLD_URL" "$OUT" \
