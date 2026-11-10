@@ -51,14 +51,16 @@
   </section>
   <div id="kb-profile" class="kb-profile" hidden></div>
 
-  <nav class="kb-month" aria-label="月でさかのぼる">
-    <button type="button" id="kb-prev" aria-label="前の月">‹</button>
-    <select id="kb-ym" aria-label="月"></select>
-    <button type="button" id="kb-next" aria-label="次の月">›</button>
+  <!-- 月で絞る。年は打てる(空なら一番新しい年)。書いていない月は押せない。押した月をもう一度押すと外れる -->
+  <nav class="kb-month" aria-label="月で絞る">
+    <label class="kb-year">年 <input type="number" id="kb-year" inputmode="numeric" aria-label="年"></label>
+    <div id="kb-months" class="kb-months"></div>
+    <p id="kb-ynote" class="kb-ynote" aria-live="polite"></p>
   </nav>
 
   <p id="kb-status" class="kb-status" aria-live="polite">読み込み中…</p>
   <ol id="kb-list" class="kb-list"></ol>
+  <button type="button" id="kb-more" class="kb-more" hidden>もっと見る</button>
 </main>
 
 <footer class="kb-foot">
@@ -80,7 +82,8 @@
 (function () {
   var $ = function (id) { return document.getElementById(id); };
   var DETAIL = 'https://www.upfc.jp/helloproject/artist/trcontents_detail.php?@uid=';
-  var entries = [], members = [], byName = {}, name = '', ym = '';
+  var entries = [], members = [], byName = {}, name = '', ym = '', year = '', shown = 0;
+  var PAGE = 50;   // 月を選んでいないときに一度に出す件数
 
   function el(tag, attrs, text) {
     var e = document.createElement(tag);
@@ -145,49 +148,77 @@
     }
   }
 
-  function draw() {
-    var ms = months();
-    if (ms.indexOf(ym) < 0) ym = ms[0] || '';
-    var sel = $('kb-ym');
-    sel.textContent = '';
-    ms.forEach(function (m) { sel.appendChild(el('option', { value: m }, label(m))); });
-    sel.value = ym;
-    var i = ms.indexOf(ym);
-    $('kb-prev').disabled = i < 0 || i >= ms.length - 1;   // 前の月 = 古い方
-    $('kb-next').disabled = i <= 0;
+  function row(e) {
+    var li = el('li');
+    var a = el('a', { href: DETAIL + encodeURIComponent(e.id), target: '_blank' });
+    a.appendChild(el('time', { datetime: e.date }, e.date.replace(/-/g, '.')));
+    a.appendChild(el('span', { class: 'kb-name' }, e.name));
+    li.appendChild(a);
+    return li;
+  }
 
+  // 年の欄と月のボタン。年が空なら、選んでいる人が書いた一番新しい年
+  function drawMonths() {
+    var ms = months(), box = $('kb-months'), note = $('kb-ynote'), yin = $('kb-year');
+    var last = ms.length ? ms[0].slice(0, 4) : '', first = ms.length ? ms[ms.length - 1] : '';
+    yin.placeholder = last;
+    yin.min = first.slice(0, 4);
+    yin.max = last;
+    var y = year || last;
+    note.textContent = '';
+    if (year && first && (year < first.slice(0, 4) || year > last)) {
+      note.textContent = year < first.slice(0, 4)
+        ? (name ? name + 'の' : '') + '最初のブログは' + label(first) + 'です。' + first.slice(0, 4) + '年から' + last + '年の間で入れてください'
+        : last + '年より後のブログはまだありません';
+    }
+    box.textContent = '';
+    for (var i = 1; i <= 12; i++) {
+      var m = y + '-' + (i < 10 ? '0' : '') + i;
+      var b = el('button', { type: 'button', class: 'kb-mbtn' + (m === ym ? ' is-on' : '') }, i + '月');
+      if (ms.indexOf(m) < 0) b.disabled = true;   // その月は書いていない
+      (function (m) { b.addEventListener('click', function () { ym = ym === m ? '' : m; draw(); }); })(m);
+      box.appendChild(b);
+    }
+  }
+
+  function draw() {
+    if (ym && months().indexOf(ym) < 0) ym = '';   // 人を変えて、その月に書いていなければ外す
+    if (ym) year = ym.slice(0, 4);
     var list = $('kb-list');
     list.textContent = '';
-    var rows = picked().filter(function (e) { return e.date.slice(0, 7) === ym; });
-    rows.forEach(function (e) {
-      var li = el('li');
-      var a = el('a', { href: DETAIL + encodeURIComponent(e.id), target: '_blank' });
-      a.appendChild(el('time', { datetime: e.date }, e.date.replace(/-/g, '.')));
-      a.appendChild(el('span', { class: 'kb-name' }, e.name));
-      li.appendChild(a);
-      list.appendChild(li);
-    });
+    var all = picked();
+    var rows = ym ? all.filter(function (e) { return e.date.slice(0, 7) === ym; }) : all;
+    shown = ym ? rows.length : Math.min(PAGE, rows.length);
+    rows.slice(0, shown).forEach(function (e) { list.appendChild(row(e)); });
+    $('kb-more').hidden = shown >= rows.length;
+    $('kb-more').onclick = function () {
+      rows.slice(shown, shown + PAGE).forEach(function (e) { list.appendChild(row(e)); });
+      shown += PAGE;
+      $('kb-more').hidden = shown >= rows.length;
+    };
     $('kb-status').textContent = (name ? name + ' ／ ' : '') + (ym ? label(ym) + ' ／ ' : '') + rows.length + '件';
+    drawMonths();
     drawMembers();
     drawProfile();
     sync();
   }
 
-  function setName(n) { name = n; draw(); }
+  function setName(n) { name = n; year = ''; $('kb-year').value = ''; draw(); }
 
   // URL に絞り込みを残す(共有・ブックマーク用)。何も選んでいなければ書かない
   function sync() {
     var p = new URLSearchParams();
     if (name) { var m = byName[name]; if (m && m.slug) p.set('m', m.slug); }
-    var ms = months();
-    if (ym && ym !== ms[0]) p.set('ym', ym);
+    if (ym) p.set('ym', ym);
     var q = p.toString();
     history.replaceState(null, '', location.pathname + (q ? '?' + q : ''));
   }
 
-  $('kb-ym').addEventListener('change', function (e) { ym = e.target.value; draw(); });
-  $('kb-prev').addEventListener('click', function () { var ms = months(); ym = ms[ms.indexOf(ym) + 1] || ym; draw(); });
-  $('kb-next').addEventListener('click', function () { var ms = months(); ym = ms[ms.indexOf(ym) - 1] || ym; draw(); });
+  // 4桁そろったら月のボタンを描き直す(年を変えても、選んだ月はそのまま)
+  $('kb-year').addEventListener('input', function (e) {
+    var v = e.target.value.trim();
+    if (v === '' || /^\d{4}$/.test(v)) { year = v; drawMonths(); }
+  });
 
   // 打った語に site: を足して Google を別タブで開く(結果は Google のもの)
   $('kb-google').addEventListener('submit', function (ev) {
