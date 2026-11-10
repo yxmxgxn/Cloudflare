@@ -26,6 +26,8 @@ input, textarea, button, select { font-family: inherit; }
 
 /* メンバー */
 .kb-members { margin-top: 16px; }
+.kb-group { margin: 14px 0 6px; font-size: .8rem; color: var(--muted); font-weight: 700; }
+.kb-group:first-child { margin-top: 0; }
 .kb-chips { display: flex; flex-wrap: wrap; gap: 6px; }
 .kb-chip {
   border: 1px solid var(--line);
@@ -39,6 +41,12 @@ input, textarea, button, select { font-family: inherit; }
 .kb-chip:hover { border-color: var(--accent); }
 .kb-chip.is-on { background: var(--accent); border-color: var(--accent); color: #fff; font-weight: 700; }
 .kb-n { margin-left: 4px; font-size: .75em; opacity: .7; font-variant-numeric: tabular-nums; }
+
+/* 選んだ人 */
+.kb-profile { display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 12px; margin-top: 14px; padding: 10px 14px; background: var(--surface); border: 1px solid var(--line); border-left: 4px solid var(--accent); border-radius: 8px; }
+.kb-pname { font-size: 1.05rem; }
+.kb-kana { color: var(--muted); font-size: .85rem; }
+.kb-profile a { margin-left: auto; color: var(--accent); font-size: .85rem; }
 
 /* 月 */
 .kb-month { display: flex; align-items: center; gap: 8px; margin: 18px 0 4px; }

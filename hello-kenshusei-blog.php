@@ -40,8 +40,9 @@
 
 <main class="kb-main">
   <section class="kb-members" aria-label="メンバーで絞る">
-    <div id="kb-members" class="kb-chips"></div>
+    <div id="kb-members"></div>
   </section>
+  <div id="kb-profile" class="kb-profile" hidden></div>
 
   <nav class="kb-month" aria-label="月でさかのぼる">
     <button type="button" id="kb-prev" aria-label="前の月">‹</button>
@@ -72,7 +73,8 @@
 (function () {
   var $ = function (id) { return document.getElementById(id); };
   var DETAIL = 'https://www.upfc.jp/helloproject/artist/trcontents_detail.php?@uid=';
-  var entries = [], name = '', ym = '';
+  var PROFILE = 'https://helloproject.com/helloprokenshusei/';
+  var entries = [], members = [], byName = {}, name = '', ym = '';
 
   function el(tag, attrs, text) {
     var e = document.createElement(tag);
@@ -90,24 +92,51 @@
     return out;
   }
 
+  // 名簿(data/kenshusei-members.json)の順。いまの研修生は公式サイトの並び、そのあと卒業・移籍した人。
+  // 名簿にない名前は、いまの研修生の最後に仮で足す
+  function roster() {
+    var count = {}, seen = {};
+    entries.forEach(function (e) { count[e.name] = (count[e.name] || 0) + 1; });
+    var list = members.filter(function (m) { seen[m.name] = 1; return count[m.name]; });
+    Object.keys(count).forEach(function (n) { if (!seen[n]) list.push({ slug: '', name: n, kana: '', active: true }); });
+    return { list: list, count: count };
+  }
+
   function drawMembers() {
     var box = $('kb-members');
     box.textContent = '';
-    // 最近書いた人から並べる(いまの研修生が先に来る)
-    var order = [], count = {};
-    entries.forEach(function (e) {
-      if (!(e.name in count)) { count[e.name] = 0; order.push(e.name); }
-      count[e.name]++;
+    var r = roster();
+    [['いまの研修生', true], ['卒業・移籍', false]].forEach(function (g, gi) {
+      var group = r.list.filter(function (m) { return !!m.active === g[1]; });
+      if (!group.length) return;
+      box.appendChild(el('h2', { class: 'kb-group' }, g[0]));
+      var chips = el('div', { class: 'kb-chips' });
+      if (gi === 0) {
+        var all = el('button', { type: 'button', class: 'kb-chip' + (name ? '' : ' is-on') }, 'すべて');
+        all.addEventListener('click', function () { setName(''); });
+        chips.appendChild(all);
+      }
+      group.forEach(function (m) {
+        var b = el('button', { type: 'button', class: 'kb-chip' + (name === m.name ? ' is-on' : '') }, m.name);
+        b.appendChild(el('span', { class: 'kb-n' }, String(r.count[m.name])));
+        b.addEventListener('click', function () { setName(name === m.name ? '' : m.name); });
+        chips.appendChild(b);
+      });
+      box.appendChild(chips);
     });
-    var all = el('button', { type: 'button', class: 'kb-chip' + (name ? '' : ' is-on') }, 'すべて');
-    all.addEventListener('click', function () { setName(''); });
-    box.appendChild(all);
-    order.forEach(function (n) {
-      var b = el('button', { type: 'button', class: 'kb-chip' + (name === n ? ' is-on' : '') }, n);
-      b.appendChild(el('span', { class: 'kb-n' }, String(count[n])));
-      b.addEventListener('click', function () { setName(name === n ? '' : n); });
-      box.appendChild(b);
-    });
+  }
+
+  // 選んだ人の名前・よみ・公式プロフィールへのリンク(趣味などは公式で)
+  function drawProfile() {
+    var box = $('kb-profile'), m = byName[name];
+    box.textContent = '';
+    box.hidden = !name;
+    if (!name) return;
+    box.appendChild(el('strong', { class: 'kb-pname' }, name));
+    if (m && m.kana) box.appendChild(el('span', { class: 'kb-kana' }, m.kana));
+    if (m && m.slug && m.active) {
+      box.appendChild(el('a', { href: PROFILE + m.slug + '/', target: '_blank' }, '公式プロフィール'));
+    }
   }
 
   function draw() {
@@ -134,6 +163,7 @@
     });
     $('kb-status').textContent = (name ? name + ' ／ ' : '') + (ym ? label(ym) + ' ／ ' : '') + rows.length + '件';
     drawMembers();
+    drawProfile();
     sync();
   }
 
@@ -142,7 +172,7 @@
   // URL に絞り込みを残す(共有・ブックマーク用)。何も選んでいなければ書かない
   function sync() {
     var p = new URLSearchParams();
-    if (name) p.set('m', name);
+    if (name) { var m = byName[name]; if (m && m.slug) p.set('m', m.slug); }
     var ms = months();
     if (ym && ym !== ms[0]) p.set('ym', ym);
     var q = p.toString();
@@ -153,11 +183,15 @@
   $('kb-prev').addEventListener('click', function () { var ms = months(); ym = ms[ms.indexOf(ym) + 1] || ym; draw(); });
   $('kb-next').addEventListener('click', function () { var ms = months(); ym = ms[ms.indexOf(ym) - 1] || ym; draw(); });
 
-  fetch('/data/kenshusei-blog.json').then(function (r) { return r.json(); }).then(function (d) {
+  var get = function (u) { return fetch(u).then(function (r) { return r.json(); }); };
+  Promise.all([get('/data/kenshusei-blog.json'), get('/data/kenshusei-members.json').catch(function () { return {}; })]).then(function (res) {
+    var d = res[0];
     entries = d.entries || [];
-    var p = new URLSearchParams(location.search);
-    name = p.get('m') || '';
-    if (name && !entries.some(function (e) { return e.name === name; })) name = '';
+    members = res[1].members || [];
+    members.forEach(function (m) { byName[m.name] = m; });
+    var p = new URLSearchParams(location.search), slug = p.get('m') || '';
+    var hit = slug && members.filter(function (m) { return m.slug === slug; })[0];
+    name = hit ? hit.name : '';
     ym = p.get('ym') || '';
     if (d.updated) $('kb-updated').textContent = '更新: ' + d.updated + '（毎日）';
     draw();
