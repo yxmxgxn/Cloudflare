@@ -1,6 +1,10 @@
 /* ハロプロ研修生ブログ 目次(hello-kenshusei-blog.php)専用。karin-archive の style.css は読まない */
 :root {
-  --accent: #2a6fb0;
+  /* 研修生の色 #92C75B。明るいので、塗りの上の文字は濃い色(--accent-ink)、
+     白地の文字やリンクは濃くした緑(--accent-text)にする(白地に #92C75B の文字は読みにくい) */
+  --accent: #92C75B;
+  --accent-ink: #1d3110;
+  --accent-text: #4a7d2a;
   --text: #222;
   --muted: #6b6f76;
   --line: #e3e6ea;
@@ -27,7 +31,7 @@ input, textarea, button, select { font-family: inherit; }
 /* Google で探す */
 .kb-google { display: flex; gap: 6px; margin-top: 16px; }
 .kb-google input[type=search] { flex: 1; min-width: 0; font-size: 1rem; padding: 7px 12px; border: 1px solid var(--line); border-radius: 8px; background: var(--surface); }
-.kb-google button { flex: none; padding: 0 14px; border: 1px solid var(--accent); background: var(--accent); color: #fff; border-radius: 8px; font-size: .85rem; font-weight: 700; cursor: pointer; }
+.kb-google button { flex: none; padding: 0 14px; border: 1px solid var(--accent); background: var(--accent); color: var(--accent-ink); border-radius: 8px; font-size: .85rem; font-weight: 700; cursor: pointer; }
 
 /* メンバー */
 .kb-members { margin-top: 16px; }
@@ -46,7 +50,7 @@ input, textarea, button, select { font-family: inherit; }
   display: inline-block;
 }
 .kb-chip:hover { border-color: var(--accent); }
-.kb-chip.is-on { background: var(--accent); border-color: var(--accent); color: #fff; font-weight: 700; }
+.kb-chip.is-on { background: var(--accent); border-color: var(--accent); color: var(--accent-ink); font-weight: 700; }
 .kb-n { margin-left: 4px; font-size: .75em; opacity: .7; font-variant-numeric: tabular-nums; }
 
 /* 選んだ人 */
@@ -54,7 +58,7 @@ input, textarea, button, select { font-family: inherit; }
 .kb-profile[hidden] { display: none; }
 .kb-pname { font-size: 1.05rem; }
 .kb-kana { color: var(--muted); font-size: .85rem; }
-.kb-profile a { margin-left: auto; color: var(--accent); font-size: .85rem; }
+.kb-profile a { margin-left: auto; color: var(--accent-text); font-size: .85rem; }
 
 /* 月 */
 .kb-month { margin: 18px 0 4px; display: flex; flex-wrap: wrap; align-items: center; gap: 8px 12px; }
@@ -64,10 +68,10 @@ input, textarea, button, select { font-family: inherit; }
 .kb-mbtn { padding: 5px 0; border: 1px solid var(--line); background: var(--surface); border-radius: 6px; font-size: .82rem; cursor: pointer; }
 .kb-mbtn:hover:not(:disabled) { border-color: var(--accent); }
 .kb-mbtn:disabled { opacity: .35; cursor: default; }
-.kb-mbtn.is-on { background: var(--accent); border-color: var(--accent); color: #fff; font-weight: 700; }
+.kb-mbtn.is-on { background: var(--accent); border-color: var(--accent); color: var(--accent-ink); font-weight: 700; }
 .kb-ynote { flex-basis: 100%; margin: 0; font-size: .82rem; color: #b3261e; }
 .kb-ynote:empty { display: none; }
-.kb-more { display: block; margin: 12px auto 0; padding: 8px 24px; border: 1px solid var(--accent); color: var(--accent); background: transparent; border-radius: 8px; cursor: pointer; }
+.kb-more { display: block; margin: 12px auto 0; padding: 8px 24px; border: 1px solid var(--accent); color: var(--accent-text); background: transparent; border-radius: 8px; cursor: pointer; }
 .kb-more[hidden] { display: none; }
 
 .kb-status { margin: 10px 2px; font-size: .88rem; color: var(--muted); min-height: 1.6em; }
@@ -84,7 +88,7 @@ input, textarea, button, select { font-family: inherit; }
   text-decoration: none;
 }
 .kb-list a:hover { background: var(--surface); }
-.kb-list a:hover .kb-name { color: var(--accent); text-decoration: underline; }
+.kb-list a:hover .kb-name { color: var(--accent-text); text-decoration: underline; }
 .kb-list time { color: var(--muted); font-size: .85rem; font-variant-numeric: tabular-nums; }
 .kb-name { font-weight: 700; }
 
@@ -99,5 +103,7 @@ input, textarea, button, select { font-family: inherit; }
 }
 .kb-foot p { margin: 6px 0; }
 .kb-foot a { color: inherit; }
+/* 誤りの報告フォーム(css/feedback.css)は --accent を文字色にも白文字の下地にも使うので、濃い方を渡す */
+.kb-foot .fb-area { --accent: var(--accent-text); }
 .kb-home { margin-top: 16px !important; }
 .kb-links { list-style: none; padding: 0; margin: 8px 0 0; display: flex; flex-wrap: wrap; gap: 4px 14px; }
