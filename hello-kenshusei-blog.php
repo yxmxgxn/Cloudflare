@@ -73,7 +73,6 @@
 (function () {
   var $ = function (id) { return document.getElementById(id); };
   var DETAIL = 'https://www.upfc.jp/helloproject/artist/trcontents_detail.php?@uid=';
-  var PROFILE = 'https://helloproject.com/helloprokenshusei/';
   var entries = [], members = [], byName = {}, name = '', ym = '';
 
   function el(tag, attrs, text) {
@@ -92,7 +91,7 @@
     return out;
   }
 
-  // 名簿(data/kenshusei-members.json)の順。いまの研修生は公式サイトの並び、そのあと卒業・移籍した人。
+  // 名簿(data/kenshusei-members.json)の順。いまの研修生は公式サイトの並び、そのあと研修を終えた人(終えた順)。
   // 名簿にない名前は、いまの研修生の最後に仮で足す
   function roster() {
     var count = {}, seen = {};
@@ -106,7 +105,7 @@
     var box = $('kb-members');
     box.textContent = '';
     var r = roster();
-    [['いまの研修生', true], ['卒業・移籍', false]].forEach(function (g, gi) {
+    [['いまの研修生', true], ['研修終了', false]].forEach(function (g, gi) {
       var group = r.list.filter(function (m) { return !!m.active === g[1]; });
       if (!group.length) return;
       box.appendChild(el('h2', { class: 'kb-group' }, g[0]));
@@ -134,8 +133,8 @@
     if (!name) return;
     box.appendChild(el('strong', { class: 'kb-pname' }, name));
     if (m && m.kana) box.appendChild(el('span', { class: 'kb-kana' }, m.kana));
-    if (m && m.slug && m.active) {
-      box.appendChild(el('a', { href: PROFILE + m.slug + '/', target: '_blank' }, '公式プロフィール'));
+    if (m && m.url) {
+      box.appendChild(el('a', { href: m.url, target: '_blank' }, '公式プロフィール'));
     }
   }
 
