@@ -298,6 +298,12 @@ async function kenshuseiMember(request, env, url) {
       .on("title", { element(e) { e.setInnerContent(title); } })
       .on('meta[name="description"]', set("content", desc))
       .on('link[rel="canonical"]', set("href", canonical))
+      .on("#kb-crumbs", { element(e) { e.setInnerContent(JSON.stringify({
+        "@context": "https://schema.org", "@type": "BreadcrumbList", itemListElement: [
+          { "@type": "ListItem", position: 1, name: "宮本佳林・M-line・ハロプロ Archive", item: "https://karin-archive.com/" },
+          { "@type": "ListItem", position: 2, name: "ハロプロ研修生ブログ 目次", item: KB_BASE },
+          { "@type": "ListItem", position: 3, name: m.name, item: canonical },
+        ] }), { html: true }); } })
       .on(".kb-lead", { element(e) { e.setInnerContent(`${who}のブログ ${mine.length}件（${span}）。記事は upfc.jp で読めます。`); } })
       .transform(page);
   } catch (e) {

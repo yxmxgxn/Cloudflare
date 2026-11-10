@@ -21,6 +21,8 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap">
 <link rel="stylesheet" media="all" href="/css/kenshusei-blog.css">
 <link rel="stylesheet" media="all" href="/css/feedback.css">
+<!-- パンくず。?m= で開いたときは worker/index.js がその人を3段目に足す -->
+<script type="application/ld+json" id="kb-crumbs">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"宮本佳林・M-line・ハロプロ Archive","item":"https://karin-archive.com/"},{"@type":"ListItem","position":2,"name":"ハロプロ研修生ブログ 目次","item":"https://karin-archive.com/hello-kenshusei-blog"}]}</script>
 
 <!-- Google Analytics(karin-archive と同じ) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-MCL3G6E983"></script>
