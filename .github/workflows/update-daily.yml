@@ -39,11 +39,23 @@ jobs:
       - name: Generate timeline images
         run: python Python/timeline.py
 
+      # ハロプロ研修生ブログの目次(upfc.jp の一覧から 記事ID・日付・書いた人 だけ)。
+      # ふだんは新しいページだけ読み、日曜は全ページ読み直して消えた記事を落とす。
+      # 失敗しても表やタイムラインの更新は止めない
+      - name: Update kenshusei blog index
+        continue-on-error: true
+        run: |
+          if [ "$(TZ=Asia/Tokyo date +%u)" = "7" ]; then
+            python Python/generate_kenshusei_blog.py --full
+          else
+            python Python/generate_kenshusei_blog.py
+          fi
+
       - name: Commit & push if changed
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add Spreadsheet Generated Timeline
+          git add Spreadsheet Generated Timeline data/kenshusei-blog.json
           if git diff --cached --quiet; then
             echo "変更なし"
           else
