@@ -21,6 +21,8 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap">
 <link rel="stylesheet" media="all" href="/css/kenshusei-blog.css">
 <link rel="stylesheet" media="all" href="/css/feedback.css">
+<!-- パンくず。?m= で開いたときは worker/index.js がその人を3段目に足す -->
+<script type="application/ld+json" id="kb-crumbs">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"宮本佳林・M-line・ハロプロ Archive","item":"https://karin-archive.com/"},{"@type":"ListItem","position":2,"name":"ハロプロ研修生ブログ 目次","item":"https://karin-archive.com/hello-kenshusei-blog"}]}</script>
 
 <!-- Google Analytics(karin-archive と同じ) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-MCL3G6E983"></script>
@@ -126,13 +128,26 @@
         chips.appendChild(all);
       }
       group.forEach(function (m) {
-        var b = el('button', { type: 'button', class: 'kb-chip' + (name === m.name ? ' is-on' : '') }, m.name);
+        // 検索エンジンがたどれるよう、slug のある人はリンクにする(押したときはページを読み直さない)
+        var b = el(m.slug ? 'a' : 'button', m.slug ? { href: '?m=' + m.slug, class: 'kb-chip' + (name === m.name ? ' is-on' : '') }
+          : { type: 'button', class: 'kb-chip' + (name === m.name ? ' is-on' : '') }, m.name);
         b.appendChild(el('span', { class: 'kb-n' }, String(r.count[m.name])));
-        b.addEventListener('click', function () { setName(name === m.name ? '' : m.name); });
+        b.addEventListener('click', function (ev) { ev.preventDefault(); setName(name === m.name ? '' : m.name); });
         chips.appendChild(b);
       });
       box.appendChild(chips);
     });
+  }
+
+  // 見出しの説明文とタブのタイトルを、選んだ人に合わせる(?m= で開いたときに Worker が書くのと同じ形)
+  var LEAD = 'ハロプロ研修生のブログを、メンバーと月で探せます。記事は upfc.jp で読めます。';
+  var TITLE = 'ハロプロ研修生ブログ 目次';
+  function drawLead() {
+    var lead = document.querySelector('.kb-lead');
+    if (!name) { lead.textContent = LEAD; document.title = TITLE; return; }
+    var m = byName[name] || {}, mine = picked(), who = m.kana ? name + '（' + m.kana + '）' : name;
+    lead.textContent = who + 'のブログ ' + mine.length + '件（' + label(mine[mine.length - 1].date) + '〜' + label(mine[0].date) + '）。記事は upfc.jp で読めます。';
+    document.title = who + 'のブログ一覧｜' + TITLE;
   }
 
   // 選んだ人の名前・よみ・公式プロフィールへのリンク(趣味などは公式で)
@@ -200,6 +215,7 @@
     drawMonths();
     drawMembers();
     drawProfile();
+    drawLead();
     sync();
   }
 
@@ -220,11 +236,12 @@
     if (v === '' || /^\d{4}$/.test(v)) { year = v; drawMonths(); }
   });
 
-  // 打った語に site: を足して Google を別タブで開く(結果は Google のもの)
+  // 打った語に site: を足して Google を別タブで開く(結果は Google のもの)。inurl: だと当たらないので
+  // 記事のあるディレクトリまでを site: に書く。メンバーを選んでいたら名前も足す
   $('kb-google').addEventListener('submit', function (ev) {
     var q = $('kb-q').value.trim();
     if (!q) { ev.preventDefault(); return; }
-    $('kb-gq').value = 'site:upfc.jp inurl:trcontents_detail ' + q;
+    $('kb-gq').value = 'site:www.upfc.jp/helloproject/artist/ ' + (name ? name + ' ' : '') + q;
   });
 
   var get = function (u) { return fetch(u).then(function (r) { return r.json(); }); };

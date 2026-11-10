@@ -11,7 +11,8 @@
     // not_found_handling の404ページが返りWorkerが起動しない。APIと管理ページは
     // アセットを持たないため、この2つだけ先にWorkerへ渡す。
     // 全体を true にすると静的ページも毎回Worker経由になるので範囲を限定する。
-    "run_worker_first": ["/api/*", "/_feedback", "/_feedback/*"]
+    // /hello-kenshusei-blog は ?m=(メンバー) のときにタイトルと canonical を書き換えるため(worker/index.js)
+    "run_worker_first": ["/api/*", "/_feedback", "/_feedback/*", "/hello-kenshusei-blog"]
   },
   // Cron は使わない。以前ブログコメント保存で登録していたものを外すため空にしておく
   // (triggers を書かないだけだと、登録済みの Cron がそのまま残る)

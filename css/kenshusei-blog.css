@@ -42,6 +42,8 @@ input, textarea, button, select { font-family: inherit; }
   padding: 4px 12px;
   font-size: .85rem;
   cursor: pointer;
+  text-decoration: none;
+  display: inline-block;
 }
 .kb-chip:hover { border-color: var(--accent); }
 .kb-chip.is-on { background: var(--accent); border-color: var(--accent); color: #fff; font-weight: 700; }
