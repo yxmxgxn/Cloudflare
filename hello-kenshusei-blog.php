@@ -2,8 +2,10 @@
   // ハロプロ研修生ブログの目次。karin-archive の中の1ページだが、ヘッダー・フッター・見た目は専用にして
   // 別のサイトとして見せる(共通の header.php / footer.php は使わない)。誤りの報告フォームだけ共通。
   // 中身は data/kenshusei-blog.json(Python/generate_kenshusei_blog.py が毎日更新)。本文は持たない。
-  $title = "ハロプロ研修生ブログ 目次";
-  $description = "ハロプロ研修生ブログ(upfc.jp)を、メンバーと月で探せる目次です。記事は upfc.jp で読めます。非公式。";
+  // 名前と説明文は data/kenshusei-site.json にまとめてある(Worker と画面の JS も同じものを使う)
+  $kb_site = json_decode(file_get_contents(__DIR__ . '/data/kenshusei-site.json'), true);
+  $title = $kb_site['title'];
+  $description = $kb_site['description'];
   $canonical_url = "https://karin-archive.com/hello-kenshusei-blog";
 ?>
 <!Doctype html>
@@ -12,8 +14,8 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="referrer" content="same-origin">
-<title><?php echo $title; ?></title>
-<meta name="description" content="<?php echo $description; ?>">
+<title><?= htmlspecialchars($title) ?></title>
+<meta name="description" content="<?= htmlspecialchars($description) ?>">
 <link rel="canonical" href="<?php echo $canonical_url; ?>">
 <link rel="icon" href="/img/favicon.ico" type="image/x-icon" sizes="any">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -22,7 +24,7 @@
 <link rel="stylesheet" media="all" href="/css/kenshusei-blog.css">
 <link rel="stylesheet" media="all" href="/css/feedback.css">
 <!-- パンくず。?m= で開いたときは worker/index.js がその人を3段目に足す -->
-<script type="application/ld+json" id="kb-crumbs">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"宮本佳林・M-line・ハロプロ Archive","item":"https://karin-archive.com/"},{"@type":"ListItem","position":2,"name":"ハロプロ研修生ブログ 目次","item":"https://karin-archive.com/hello-kenshusei-blog"}]}</script>
+<script type="application/ld+json" id="kb-crumbs">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"宮本佳林・M-line・ハロプロ Archive","item":"https://karin-archive.com/"},{"@type":"ListItem","position":2,"name":"<?= htmlspecialchars($kb_site['site']) ?>","item":"https://karin-archive.com/hello-kenshusei-blog"}]}</script>
 
 <!-- Google Analytics(karin-archive と同じ) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-MCL3G6E983"></script>
@@ -36,8 +38,8 @@
 
 <body class="kb">
 <header class="kb-head">
-  <h1><a href="/hello-kenshusei-blog">ハロプロ研修生ブログ 目次</a></h1>
-  <p class="kb-lead">ハロプロ研修生のブログを、メンバーと月で探せます。記事は upfc.jp で読めます。</p>
+  <h1><a href="/hello-kenshusei-blog">ハロプロ研修生ブログ インデックス</a></h1>
+  <p class="kb-lead"><?= htmlspecialchars($kb_site['lead']) ?></p>
 </header>
 
 <main class="kb-main">
@@ -67,7 +69,7 @@
 
 <footer class="kb-foot">
   <p>
-    upfc.jp の「ハロプロ研修生 無料コンテンツ」の一覧から、記事の日付と書いた人だけを集めた非公式の目次です。
+    upfc.jp の「ハロプロ研修生 無料コンテンツ」の一覧から、記事の日付と書いた人だけを集めた非公式のインデックスです。
     本文や写真はこのページには載せていません。記事は upfc.jp でお読みください。
   </p>
   <p id="kb-updated"></p>
@@ -140,14 +142,16 @@
   }
 
   // 見出しの説明文とタブのタイトルを、選んだ人に合わせる(?m= で開いたときに Worker が書くのと同じ形)
-  var LEAD = 'ハロプロ研修生のブログを、メンバーと月で探せます。記事は upfc.jp で読めます。';
-  var TITLE = 'ハロプロ研修生ブログ 目次';
+  var SITE = <?= json_encode($kb_site, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES | JSON_HEX_TAG) ?>;
+  var fill = function (t, v) { return t.replace(/\{(\w+)\}/g, function (_, k) { return v[k]; }); };
   function drawLead() {
     var lead = document.querySelector('.kb-lead');
-    if (!name) { lead.textContent = LEAD; document.title = TITLE; return; }
-    var m = byName[name] || {}, mine = picked(), who = m.kana ? name + '（' + m.kana + '）' : name;
-    lead.textContent = who + 'のブログ ' + mine.length + '件（' + label(mine[mine.length - 1].date) + '〜' + label(mine[0].date) + '）。記事は upfc.jp で読めます。';
-    document.title = who + 'のブログ一覧｜' + TITLE;
+    if (!name) { lead.textContent = SITE.lead; document.title = SITE.title; return; }
+    var m = byName[name] || {}, mine = picked();
+    var v = { who: m.kana ? name + '（' + m.kana + '）' : name, name: name, n: mine.length,
+      span: label(mine[mine.length - 1].date) + '〜' + label(mine[0].date) };
+    lead.textContent = fill(SITE.member_lead, v);
+    document.title = fill(SITE.member_title, v);
   }
 
   // 選んだ人の名前・よみ・公式プロフィールへのリンク(趣味などは公式で)

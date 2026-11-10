@@ -161,8 +161,8 @@
         <p class="index-desc">ハロー！プロジェクトの現役メンバー・OGのアメブロを、本文と日付から探せる検索サイトです。メンバーで絞り込み、一致した箇所の前後を見て元記事へ飛べます</p>
       </div>
       <div class="card index-card">
-        <a class="index-link" href="/hello-kenshusei-blog"><?= icon('article', 'ic ic-20') ?>ハロプロ研修生ブログ 目次</a>
-        <p class="index-desc">upfc.jp のハロプロ研修生ブログを、メンバーと月で探せる目次です。記事は upfc.jp で読めます</p>
+        <a class="index-link" href="/hello-kenshusei-blog"><?= icon('article', 'ic ic-20') ?>ハロプロ研修生ブログ インデックス</a>
+        <p class="index-desc">upfc.jp のハロプロ研修生ブログを、メンバーと月で探せるインデックスです。記事は upfc.jp で読めます</p>
       </div>
       <div class="card index-card">
         <a class="index-link" href="/members_table"><?= icon('flower', 'ic ic-20') ?>ハロプロ卒業公演・デビュー・卒業日・在籍日数</a>
