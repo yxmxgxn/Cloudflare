@@ -24,6 +24,11 @@ input, textarea, button, select { font-family: inherit; }
 .kb-head h1 a { color: inherit; text-decoration: none; }
 .kb-lead { margin: 4px 0 0; color: var(--muted); font-size: .9rem; }
 
+/* Google で探す */
+.kb-google { display: flex; gap: 6px; margin-top: 16px; }
+.kb-google input[type=search] { flex: 1; min-width: 0; font-size: 1rem; padding: 7px 12px; border: 1px solid var(--line); border-radius: 8px; background: var(--surface); }
+.kb-google button { flex: none; padding: 0 14px; border: 1px solid var(--accent); background: var(--accent); color: #fff; border-radius: 8px; font-size: .85rem; font-weight: 700; cursor: pointer; }
+
 /* メンバー */
 .kb-members { margin-top: 16px; }
 .kb-group { margin: 14px 0 6px; font-size: .8rem; color: var(--muted); font-weight: 700; }
@@ -44,6 +49,7 @@ input, textarea, button, select { font-family: inherit; }
 
 /* 選んだ人 */
 .kb-profile { display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 12px; margin-top: 14px; padding: 10px 14px; background: var(--surface); border: 1px solid var(--line); border-left: 4px solid var(--accent); border-radius: 8px; }
+.kb-profile[hidden] { display: none; }
 .kb-pname { font-size: 1.05rem; }
 .kb-kana { color: var(--muted); font-size: .85rem; }
 .kb-profile a { margin-left: auto; color: var(--accent); font-size: .85rem; }

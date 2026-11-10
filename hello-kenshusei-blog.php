@@ -39,6 +39,13 @@
 </header>
 
 <main class="kb-main">
+  <form id="kb-google" class="kb-google" action="https://www.google.com/search" target="_blank" role="search">
+    <input type="search" id="kb-q" list="kb-names" placeholder="ブログの本文を Google で探す" aria-label="Google で探す語" autocomplete="off">
+    <input type="hidden" name="q" id="kb-gq">
+    <button type="submit">Google で探す</button>
+    <datalist id="kb-names"></datalist>
+  </form>
+
   <section class="kb-members" aria-label="メンバーで絞る">
     <div id="kb-members"></div>
   </section>
@@ -182,12 +189,22 @@
   $('kb-prev').addEventListener('click', function () { var ms = months(); ym = ms[ms.indexOf(ym) + 1] || ym; draw(); });
   $('kb-next').addEventListener('click', function () { var ms = months(); ym = ms[ms.indexOf(ym) - 1] || ym; draw(); });
 
+  // 打った語に site: を足して Google を別タブで開く(結果は Google のもの)
+  $('kb-google').addEventListener('submit', function (ev) {
+    var q = $('kb-q').value.trim();
+    if (!q) { ev.preventDefault(); return; }
+    $('kb-gq').value = 'site:upfc.jp inurl:trcontents_detail ' + q;
+  });
+
   var get = function (u) { return fetch(u).then(function (r) { return r.json(); }); };
   Promise.all([get('/data/kenshusei-blog.json'), get('/data/kenshusei-members.json').catch(function () { return {}; })]).then(function (res) {
     var d = res[0];
     entries = d.entries || [];
     members = res[1].members || [];
-    members.forEach(function (m) { byName[m.name] = m; });
+    members.forEach(function (m) {
+      byName[m.name] = m;
+      $('kb-names').appendChild(el('option', { value: m.name }));   // 予測変換の候補
+    });
     var p = new URLSearchParams(location.search), slug = p.get('m') || '';
     var hit = slug && members.filter(function (m) { return m.slug === slug; })[0];
     name = hit ? hit.name : '';
