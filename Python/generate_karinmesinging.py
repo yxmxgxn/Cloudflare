@@ -3,11 +3,13 @@
 宮本佳林の「歌ってみた・踊ってみた」投稿のスプレッドシートを読み取り、
 PHPインクルード用のtr/tdフラグメント・更新日を生成する
 
-  列: Date, Song, Artist, Instagram, TikTok, ボカロ部TikTok, ボカロ部YouTube, Performance
-      Instagram / TikTok / ボカロ部TikTok / ボカロ部YouTube は投稿のIDだけを入れる
+  列: Date, Song, Artist, Instagram, TikTokUser, TikTok, YouTube, Performance
+      Instagram / TikTok / YouTube は投稿のIDだけを入れる
       (Instagramは /p/ の後ろ、TikTokは /video/ の後ろ、YouTubeは v= の後ろ)。
+      TikTokUser は @付きのユーザー名(@karin_miyamoto / @miyavocal など。コラボ相手のアカウントもありうる)。
+      @miyavocal のTikTokと YouTube は「ボカロ部」の印の後ろに並べる。
       Performance は 歌ってみた / 踊ってみた / 歌って踊ってみた。見出しが空でも8列目なら読む。
-      右側の https://… が入った列は、スプシ側でリンクを作る補助なので読まない。
+      右側の「… Link」列は、スプシ側でリンクを作る補助なので読まない。
 
 出力: Spreadsheet/karin_mesinging_table.php(新しい順)
       Generated/karin_mesinging_generated.php(最終更新日)
@@ -42,18 +44,18 @@ PERFORMANCE_COL = 7  # 見出しが空のときに使う列(0始まり)
 
 # 列名 → (リンク先, 埋め込みURL, IDの形式, アイコン名, ラベル, 埋め込みの高さpx)
 # 高さは400px幅のポップアップ内でそのまま収まる値(JSが画面に収まるよう縮める)
-SOURCES = [
-    ("Instagram", "https://www.instagram.com/p/{id}/",
-     "https://www.instagram.com/p/{id}/embed/captioned/", r"[A-Za-z0-9_-]{11}", "instagram", "Instagram", 780),
-    ("TikTok", "https://www.tiktok.com/@karin_miyamoto/video/{id}",
-     "https://www.tiktok.com/embed/v2/{id}", r"\d{19}", "tiktok", "TikTok", 740),
-]
-VOCALO_SOURCES = [
-    ("ボカロ部TikTok", "https://www.tiktok.com/@miyavocal/video/{id}",
-     "https://www.tiktok.com/embed/v2/{id}", r"\d{19}", "tiktok", "ボカロ部 TikTok", 740),
-    ("ボカロ部YouTube", "https://www.youtube.com/watch?v={id}",
-     "https://www.youtube.com/embed/{id}", r"[A-Za-z0-9_-]{11}", "youtube", "ボカロ部 YouTube", 260),
-]
+# TikTok のリンク先は {user} (TikTokUser列の @ユーザー名) を差し込む
+INSTAGRAM = ("Instagram", "https://www.instagram.com/p/{id}/",
+             "https://www.instagram.com/p/{id}/embed/captioned/", r"[A-Za-z0-9_-]{11}", "instagram", "Instagram", 780)
+TIKTOK = ("TikTok", "https://www.tiktok.com/{user}/video/{id}",
+          "https://www.tiktok.com/embed/v2/{id}", r"\d{19}", "tiktok", "TikTok", 740)
+VOCALO_TIKTOK_LABEL = "ボカロ部 TikTok"
+YOUTUBE = ("YouTube", "https://www.youtube.com/watch?v={id}",
+           "https://www.youtube.com/embed/{id}", r"[A-Za-z0-9_-]{11}", "youtube", "ボカロ部 YouTube", 260)
+
+DEFAULT_TIKTOK_USER = "@karin_miyamoto"
+VOCALO_TIKTOK_USER = "@miyavocal"
+TIKTOK_USER_PATTERN = r"@[A-Za-z0-9_.]+"
 
 
 def esc(s: str) -> str:
@@ -87,8 +89,9 @@ def read_rows(text: str) -> list[dict]:
     return out
 
 
-def build_link(row: dict, src, date_label: str) -> str:
+def build_link(row: dict, src, date_label: str, user: str = "", label_override: str = "") -> str:
     col, href_t, embed_t, pattern, icon_name, label, height = src
+    label = label_override or label
     vid = row.get(col, "")
     if not vid:
         return ""
@@ -96,7 +99,7 @@ def build_link(row: dict, src, date_label: str) -> str:
         warn(f"{date_label} の {col} 列がIDの形式ではありません: {vid}", title="投稿IDの形式")
         return ""
     return (
-        f'<a href="{esc(href_t.format(id=vid))}" target="_blank" class="pf-link" '
+        f'<a href="{esc(href_t.format(id=vid, user=user))}" target="_blank" class="pf-link" '
         f'data-embed="{esc(embed_t.format(id=vid))}" data-h="{height}" '
         f'data-label="{esc(label)}で見る" aria-label="{esc(label)}">'
         f'{icon(icon_name, "ic sns-icon")}</a>'
@@ -123,8 +126,22 @@ def build_table(rows: list[dict]) -> str:
         else:
             title_cell = song or artist or "—"
 
-        links = [build_link(row, s, date_label) for s in SOURCES]
-        vocalo = [build_link(row, s, date_label) for s in VOCALO_SOURCES]
+        tt_user = row.get("TikTokUser", "")
+        if row.get("TikTok", ""):
+            if not tt_user:
+                warn(f"{date_label} {row.get('Song', '')} のTikTokUserが空です。{DEFAULT_TIKTOK_USER} として扱います", title="TikTokUser")
+                tt_user = DEFAULT_TIKTOK_USER
+            elif not re.fullmatch(TIKTOK_USER_PATTERN, tt_user):
+                warn(f"{date_label} のTikTokUser列が@ユーザー名の形式ではありません: {tt_user}", title="TikTokUser")
+                tt_user = ""
+        is_vocalo_tt = tt_user.lower() == VOCALO_TIKTOK_USER
+        tiktok = build_link(row, TIKTOK, date_label, tt_user) if tt_user else ""
+        links = [build_link(row, INSTAGRAM, date_label)]
+        vocalo = [build_link(row, YOUTUBE, date_label)]
+        if is_vocalo_tt:
+            vocalo.insert(0, build_link(row, TIKTOK, date_label, tt_user, VOCALO_TIKTOK_LABEL))
+        else:
+            links.append(tiktok)
         link_cell = "".join(x for x in links if x)
         if any(vocalo):
             link_cell += '<span class="pf-vocalo">ボカロ部</span>' + "".join(x for x in vocalo if x)
