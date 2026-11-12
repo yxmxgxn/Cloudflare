@@ -22,7 +22,8 @@ body.kb {
 }
 input, textarea, button, select { font-family: inherit; }
 
-.kb-head, .kb-main, .kb-foot { max-width: 720px; margin: 0 auto; padding: 0 16px; }
+/* 横幅は karin-archive の本文(PC で 960px、css/style.css の min-width: 769px)と同じ。左右16pxの余白を足して 992px */
+.kb-head, .kb-main, .kb-foot { max-width: 992px; margin: 0 auto; padding: 0 16px; }
 .kb-head { padding-top: 28px; padding-bottom: 8px; }
 .kb-head h1 { margin: 0; font-size: 1.45rem; letter-spacing: .02em; }
 .kb-head h1 a { color: inherit; text-decoration: none; }
