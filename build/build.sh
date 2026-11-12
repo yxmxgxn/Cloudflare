@@ -70,6 +70,7 @@ cp robot.txt "$OUT/robots.txt"   # 正しいファイル名に直して配置
   printf '  <url>\n    <loc>%s/</loc>\n    <lastmod>%s</lastmod>\n  </url>\n' "$BASE_URL" "$today"
   while IFS= read -r p; do
     case "$p" in
+      common/about) ;;   # 「このサイトについて」だけは検索に載せる(robot.txt も Allow)
       news|common/*) continue ;;
     esac
     printf '  <url>\n    <loc>%s/%s</loc>\n    <lastmod>%s</lastmod>\n  </url>\n' "$BASE_URL" "$p" "$today"

@@ -1,5 +1,4 @@
 <?php
-  $noindex = true;
   $title = "このサイトについて";
   $description = "宮本佳林・M-line・ハロプロ Archive が何を載せていて、何を載せていないかの説明です。";
   include $_SERVER['DOCUMENT_ROOT'] . '/common/header.php';
