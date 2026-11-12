@@ -87,6 +87,10 @@ input, textarea, button, select { font-family: inherit; }
   color: var(--text);
   text-decoration: none;
 }
+/* 読んだ記事(ブラウザの閲覧履歴で開いたことのあるリンク)は薄くする。
+   :visited は色しか変えられないので、日付と名前の色だけ変える。保存は何もしていない */
+.kb-list a:visited .kb-name { color: #a3a8af; }
+.kb-list a:visited time { color: #b8bcc2; }
 .kb-list a:hover { background: var(--surface); }
 .kb-list a:hover .kb-name { color: var(--accent-text); text-decoration: underline; }
 .kb-list time { color: var(--muted); font-size: .85rem; font-variant-numeric: tabular-nums; }
