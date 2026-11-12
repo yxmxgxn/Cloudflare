@@ -44,10 +44,9 @@
 
 <main class="kb-main">
   <form id="kb-google" class="kb-google" action="https://www.google.com/search" target="_blank" role="search">
-    <input type="search" id="kb-q" list="kb-names" placeholder="ブログの本文を Google で探す" aria-label="Google で探す語" autocomplete="off">
+    <input type="search" id="kb-q" placeholder="ブログの本文を Google で探す" aria-label="Google で探す語" autocomplete="off">
     <input type="hidden" name="q" id="kb-gq">
     <button type="submit">Google で探す</button>
-    <datalist id="kb-names"></datalist>
   </form>
 
   <section class="kb-members" aria-label="メンバーで絞る">
@@ -246,7 +245,7 @@
   $('kb-google').addEventListener('submit', function (ev) {
     var q = $('kb-q').value.trim();
     if (!q) { ev.preventDefault(); return; }
-    $('kb-gq').value = 'site:www.upfc.jp/helloproject/artist/ ' + (name ? name + ' ' : '') + q;
+    $('kb-gq').value = (name ? name + ' ' : '') + q + ' site:www.upfc.jp/helloproject/artist/';
   });
 
   var get = function (u) { return fetch(u).then(function (r) { return r.json(); }); };
@@ -255,13 +254,6 @@
     entries = d.entries || [];
     members = res[1].members || [];
     members.forEach(function (m) { byName[m.name] = m; });
-    // 予測変換の候補: 研修生(名簿) → ハロプロの現役メンバー・グループ(d.suggest)
-    var seen = {};
-    members.map(function (m) { return m.name; }).concat(d.suggest || []).forEach(function (n) {
-      if (seen[n]) return;
-      seen[n] = 1;
-      $('kb-names').appendChild(el('option', { value: n }));
-    });
     var p = new URLSearchParams(location.search), slug = p.get('m') || '';
     var hit = slug && members.filter(function (m) { return m.slug === slug; })[0];
     name = hit ? hit.name : '';
