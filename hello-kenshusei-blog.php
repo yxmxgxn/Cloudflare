@@ -76,6 +76,7 @@
   <?php include __DIR__ . '/common/feedback.php'; ?>
   <p class="kb-home"><a href="/">宮本佳林・M-line・ハロプロ Archive</a> の1ページです</p>
   <ul class="kb-links">
+    <li><a href="/common/about" target="_blank">このサイトについて</a></li>
     <li><a href="/common/privacy" target="_blank">プライバシーポリシー</a></li>
     <li><a href="/common/disclaimer" target="_blank">免責事項</a></li>
     <li><a href="https://x.com/yxmxgxn" target="_blank">X @yxmxgxn</a></li>
