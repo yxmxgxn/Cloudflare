@@ -23,7 +23,7 @@
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td>2010年4月12日</td><td></td><td>吉澤ひとみスペシャルライブ～25回目の『ありがとう』～</td><td>Shibuya O-WEST</td><td>東京都</td><td></td></tr>
+<tr class="row-even"><td>2010年4月12日</td><td></td><td>吉澤ひとみスペシャルライブ～25回目の『ありがとう』～</td><td>Shibuya O-WEST（<a href="https://www.google.com/maps/search/?api=1&amp;query=Shibuya%20O-WEST%20%E6%9D%B1%E4%BA%AC%E9%83%BD" target="_blank">地図</a>）</td><td>東京都</td><td></td></tr>
 </tbody>
 </table>
 27歳（2012年）
@@ -39,8 +39,8 @@
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td>2012年4月15日</td><td>14:30</td><td>吉澤ひとみバースデーイベント2012</td><td>TOKYO FM HALL</td><td>東京都</td><td></td></tr>
-<tr><td>2012年4月15日</td><td>17:00</td><td>吉澤ひとみバースデーイベント2012</td><td>TOKYO FM HALL</td><td>東京都</td><td></td></tr>
+<tr class="row-even"><td>2012年4月15日</td><td>14:30</td><td>吉澤ひとみバースデーイベント2012</td><td>TOKYO FM HALL（<a href="https://www.google.com/maps/search/?api=1&amp;query=TOKYO%20FM%20HALL%20%E6%9D%B1%E4%BA%AC%E9%83%BD" target="_blank">地図</a>）</td><td>東京都</td><td></td></tr>
+<tr><td>2012年4月15日</td><td>17:00</td><td>吉澤ひとみバースデーイベント2012</td><td>TOKYO FM HALL（<a href="https://www.google.com/maps/search/?api=1&amp;query=TOKYO%20FM%20HALL%20%E6%9D%B1%E4%BA%AC%E9%83%BD" target="_blank">地図</a>）</td><td>東京都</td><td></td></tr>
 </tbody>
 </table>
 

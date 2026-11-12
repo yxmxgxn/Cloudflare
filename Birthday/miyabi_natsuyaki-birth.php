@@ -23,8 +23,8 @@
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td>2013年8月26日</td><td>18:30</td><td>Miyabi Natsuyaki Birthday Event …Sweetest♡time…</td><td>TOKYO FM HALL</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/3561" target="_blank">Tomoko（セットリスト）</a></td></tr>
-<tr><td>2013年8月26日</td><td>20:10</td><td>Miyabi Natsuyaki Birthday Event …Sweetest♡time…</td><td>TOKYO FM HALL</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/3562" target="_blank">Tomoko（セットリスト）</a></td></tr>
+<tr class="row-even"><td>2013年8月26日</td><td>18:30</td><td>Miyabi Natsuyaki Birthday Event …Sweetest♡time…</td><td>TOKYO FM HALL（<a href="https://www.google.com/maps/search/?api=1&amp;query=TOKYO%20FM%20HALL%20%E6%9D%B1%E4%BA%AC%E9%83%BD" target="_blank">地図</a>）</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/3561" target="_blank">Tomoko（セットリスト）</a></td></tr>
+<tr><td>2013年8月26日</td><td>20:10</td><td>Miyabi Natsuyaki Birthday Event …Sweetest♡time…</td><td>TOKYO FM HALL（<a href="https://www.google.com/maps/search/?api=1&amp;query=TOKYO%20FM%20HALL%20%E6%9D%B1%E4%BA%AC%E9%83%BD" target="_blank">地図</a>）</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/3562" target="_blank">Tomoko（セットリスト）</a></td></tr>
 </tbody>
 </table>
 22歳（2014年）
@@ -40,8 +40,8 @@
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td>2014年8月25日</td><td>18:30</td><td>Berryz工房 夏焼雅バースデーイベント2014</td><td>TOKYO FM HALL</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/4064" target="_blank">Tomoko（セットリスト）</a></td></tr>
-<tr><td>2014年8月25日</td><td>20:10</td><td>Berryz工房 夏焼雅バースデーイベント2014</td><td>TOKYO FM HALL</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/4065" target="_blank">Tomoko（セットリスト）</a></td></tr>
+<tr class="row-even"><td>2014年8月25日</td><td>18:30</td><td>Berryz工房 夏焼雅バースデーイベント2014</td><td>TOKYO FM HALL（<a href="https://www.google.com/maps/search/?api=1&amp;query=TOKYO%20FM%20HALL%20%E6%9D%B1%E4%BA%AC%E9%83%BD" target="_blank">地図</a>）</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/4064" target="_blank">Tomoko（セットリスト）</a></td></tr>
+<tr><td>2014年8月25日</td><td>20:10</td><td>Berryz工房 夏焼雅バースデーイベント2014</td><td>TOKYO FM HALL（<a href="https://www.google.com/maps/search/?api=1&amp;query=TOKYO%20FM%20HALL%20%E6%9D%B1%E4%BA%AC%E9%83%BD" target="_blank">地図</a>）</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/4065" target="_blank">Tomoko（セットリスト）</a></td></tr>
 </tbody>
 </table>
 25歳（2017年）
@@ -57,8 +57,8 @@
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td>2017年8月24日</td><td>18:30</td><td>Pink Cres. Party!～ピンク1周年＆夏焼雅バースデースペシャル～</td><td>TOKYO FM HALL</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/26991" target="_blank">Tomoko（セットリスト）</a></td></tr>
-<tr><td>2017年8月24日</td><td>20:30</td><td>Pink Cres. Party!～ピンク1周年＆夏焼雅バースデースペシャル～</td><td>TOKYO FM HALL</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/26992" target="_blank">Tomoko（セットリスト）</a></td></tr>
+<tr class="row-even"><td>2017年8月24日</td><td>18:30</td><td>Pink Cres. Party!～ピンク1周年＆夏焼雅バースデースペシャル～</td><td>TOKYO FM HALL（<a href="https://www.google.com/maps/search/?api=1&amp;query=TOKYO%20FM%20HALL%20%E6%9D%B1%E4%BA%AC%E9%83%BD" target="_blank">地図</a>）</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/26991" target="_blank">Tomoko（セットリスト）</a></td></tr>
+<tr><td>2017年8月24日</td><td>20:30</td><td>Pink Cres. Party!～ピンク1周年＆夏焼雅バースデースペシャル～</td><td>TOKYO FM HALL（<a href="https://www.google.com/maps/search/?api=1&amp;query=TOKYO%20FM%20HALL%20%E6%9D%B1%E4%BA%AC%E9%83%BD" target="_blank">地図</a>）</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/26992" target="_blank">Tomoko（セットリスト）</a></td></tr>
 </tbody>
 </table>
 26歳（2018年）
@@ -74,9 +74,9 @@
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td>2018年8月25日</td><td>15:30</td><td>Pink Cres. HBD Party! ～PINK&amp; Miyabi SP～</td><td>渋谷シダックスカルチャーホール</td><td>東京都</td><td></td></tr>
-<tr><td>2018年8月25日</td><td>18:00</td><td>Pink Cres. HBD Party! ～PINK&amp; Miyabi SP～</td><td>渋谷シダックスカルチャーホール</td><td>東京都</td><td></td></tr>
-<tr class="row-even"><td>2018年8月25日</td><td>20:30</td><td>Pink Cres. HBD Party! ～PINK&amp; Miyabi SP～</td><td>渋谷シダックスカルチャーホール</td><td>東京都</td><td></td></tr>
+<tr class="row-even"><td>2018年8月25日</td><td>15:30</td><td>Pink Cres. HBD Party! ～PINK&amp; Miyabi SP～</td><td>渋谷シダックスカルチャーホール（<a href="https://www.google.com/maps/search/?api=1&amp;query=%E6%B8%8B%E8%B0%B7%E3%82%B7%E3%83%80%E3%83%83%E3%82%AF%E3%82%B9%E3%82%AB%E3%83%AB%E3%83%81%E3%83%A3%E3%83%BC%E3%83%9B%E3%83%BC%E3%83%AB%20%E6%9D%B1%E4%BA%AC%E9%83%BD" target="_blank">地図</a>）</td><td>東京都</td><td></td></tr>
+<tr><td>2018年8月25日</td><td>18:00</td><td>Pink Cres. HBD Party! ～PINK&amp; Miyabi SP～</td><td>渋谷シダックスカルチャーホール（<a href="https://www.google.com/maps/search/?api=1&amp;query=%E6%B8%8B%E8%B0%B7%E3%82%B7%E3%83%80%E3%83%83%E3%82%AF%E3%82%B9%E3%82%AB%E3%83%AB%E3%83%81%E3%83%A3%E3%83%BC%E3%83%9B%E3%83%BC%E3%83%AB%20%E6%9D%B1%E4%BA%AC%E9%83%BD" target="_blank">地図</a>）</td><td>東京都</td><td></td></tr>
+<tr class="row-even"><td>2018年8月25日</td><td>20:30</td><td>Pink Cres. HBD Party! ～PINK&amp; Miyabi SP～</td><td>渋谷シダックスカルチャーホール（<a href="https://www.google.com/maps/search/?api=1&amp;query=%E6%B8%8B%E8%B0%B7%E3%82%B7%E3%83%80%E3%83%83%E3%82%AF%E3%82%B9%E3%82%AB%E3%83%AB%E3%83%81%E3%83%A3%E3%83%BC%E3%83%9B%E3%83%BC%E3%83%AB%20%E6%9D%B1%E4%BA%AC%E9%83%BD" target="_blank">地図</a>）</td><td>東京都</td><td></td></tr>
 </tbody>
 </table>
 27歳（2019年）
@@ -92,9 +92,9 @@
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td>2019年8月18日</td><td>13:30</td><td>PINK CRES. HBDParty!～M.Y.B. LV.27～</td><td>渋谷シダックスカルチャーホール</td><td>東京都</td><td></td></tr>
-<tr><td>2019年8月18日</td><td>16:00</td><td>PINK CRES. HBDParty!～M.Y.B. LV.27～</td><td>渋谷シダックスカルチャーホール</td><td>東京都</td><td></td></tr>
-<tr class="row-even"><td>2019年8月18日</td><td>18:30</td><td>PINK CRES. HBDParty!～M.Y.B. LV.27～</td><td>渋谷シダックスカルチャーホール</td><td>東京都</td><td></td></tr>
+<tr class="row-even"><td>2019年8月18日</td><td>13:30</td><td>PINK CRES. HBDParty!～M.Y.B. LV.27～</td><td>渋谷シダックスカルチャーホール（<a href="https://www.google.com/maps/search/?api=1&amp;query=%E6%B8%8B%E8%B0%B7%E3%82%B7%E3%83%80%E3%83%83%E3%82%AF%E3%82%B9%E3%82%AB%E3%83%AB%E3%83%81%E3%83%A3%E3%83%BC%E3%83%9B%E3%83%BC%E3%83%AB%20%E6%9D%B1%E4%BA%AC%E9%83%BD" target="_blank">地図</a>）</td><td>東京都</td><td></td></tr>
+<tr><td>2019年8月18日</td><td>16:00</td><td>PINK CRES. HBDParty!～M.Y.B. LV.27～</td><td>渋谷シダックスカルチャーホール（<a href="https://www.google.com/maps/search/?api=1&amp;query=%E6%B8%8B%E8%B0%B7%E3%82%B7%E3%83%80%E3%83%83%E3%82%AF%E3%82%B9%E3%82%AB%E3%83%AB%E3%83%81%E3%83%A3%E3%83%BC%E3%83%9B%E3%83%BC%E3%83%AB%20%E6%9D%B1%E4%BA%AC%E9%83%BD" target="_blank">地図</a>）</td><td>東京都</td><td></td></tr>
+<tr class="row-even"><td>2019年8月18日</td><td>18:30</td><td>PINK CRES. HBDParty!～M.Y.B. LV.27～</td><td>渋谷シダックスカルチャーホール（<a href="https://www.google.com/maps/search/?api=1&amp;query=%E6%B8%8B%E8%B0%B7%E3%82%B7%E3%83%80%E3%83%83%E3%82%AF%E3%82%B9%E3%82%AB%E3%83%AB%E3%83%81%E3%83%A3%E3%83%BC%E3%83%9B%E3%83%BC%E3%83%AB%20%E6%9D%B1%E4%BA%AC%E9%83%BD" target="_blank">地図</a>）</td><td>東京都</td><td></td></tr>
 </tbody>
 </table>
 28歳（2020年）
@@ -110,9 +110,9 @@
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td>2020年8月25日</td><td>15:00</td><td>PINK CRES. HBD Party! ～PINKみやちゃん 私も忘れないでbyひかる～</td><td>渋谷シダックスカルチャーホール</td><td>東京都</td><td></td></tr>
-<tr><td>2020年8月25日</td><td>17:45</td><td>PINK CRES. HBD Party! ～PINKみやちゃん 私も忘れないでbyひかる～</td><td>渋谷シダックスカルチャーホール</td><td>東京都</td><td></td></tr>
-<tr class="row-even"><td>2020年8月25日</td><td>20:30</td><td>PINK CRES. HBD Party! ～PINKみやちゃん 私も忘れないでbyひかる～</td><td>渋谷シダックスカルチャーホール</td><td>東京都</td><td></td></tr>
+<tr class="row-even"><td>2020年8月25日</td><td>15:00</td><td>PINK CRES. HBD Party! ～PINKみやちゃん 私も忘れないでbyひかる～</td><td>渋谷シダックスカルチャーホール（<a href="https://www.google.com/maps/search/?api=1&amp;query=%E6%B8%8B%E8%B0%B7%E3%82%B7%E3%83%80%E3%83%83%E3%82%AF%E3%82%B9%E3%82%AB%E3%83%AB%E3%83%81%E3%83%A3%E3%83%BC%E3%83%9B%E3%83%BC%E3%83%AB%20%E6%9D%B1%E4%BA%AC%E9%83%BD" target="_blank">地図</a>）</td><td>東京都</td><td></td></tr>
+<tr><td>2020年8月25日</td><td>17:45</td><td>PINK CRES. HBD Party! ～PINKみやちゃん 私も忘れないでbyひかる～</td><td>渋谷シダックスカルチャーホール（<a href="https://www.google.com/maps/search/?api=1&amp;query=%E6%B8%8B%E8%B0%B7%E3%82%B7%E3%83%80%E3%83%83%E3%82%AF%E3%82%B9%E3%82%AB%E3%83%AB%E3%83%81%E3%83%A3%E3%83%BC%E3%83%9B%E3%83%BC%E3%83%AB%20%E6%9D%B1%E4%BA%AC%E9%83%BD" target="_blank">地図</a>）</td><td>東京都</td><td></td></tr>
+<tr class="row-even"><td>2020年8月25日</td><td>20:30</td><td>PINK CRES. HBD Party! ～PINKみやちゃん 私も忘れないでbyひかる～</td><td>渋谷シダックスカルチャーホール（<a href="https://www.google.com/maps/search/?api=1&amp;query=%E6%B8%8B%E8%B0%B7%E3%82%B7%E3%83%80%E3%83%83%E3%82%AF%E3%82%B9%E3%82%AB%E3%83%AB%E3%83%81%E3%83%A3%E3%83%BC%E3%83%9B%E3%83%BC%E3%83%AB%20%E6%9D%B1%E4%BA%AC%E9%83%BD" target="_blank">地図</a>）</td><td>東京都</td><td></td></tr>
 </tbody>
 </table>
 29歳（2021年）
@@ -128,9 +128,9 @@
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td>2021年8月28日</td><td>13:00</td><td>夏焼雅バースデーイベント2021～みやちゃん20代ラストだよ！！全員集合♡～</td><td>渋谷シダックスカルチャーホール</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/27011" target="_blank">Tomoko（セットリスト）</a></td></tr>
-<tr><td>2021年8月28日</td><td>15:30</td><td>夏焼雅バースデーイベント2021～みやちゃん20代ラストだよ！！全員集合♡～</td><td>渋谷シダックスカルチャーホール</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/27012" target="_blank">Tomoko（セットリスト）</a></td></tr>
-<tr class="row-even"><td>2021年8月28日</td><td>18:00</td><td>夏焼雅バースデーイベント2021～みやちゃん20代ラストだよ！！全員集合♡～</td><td>渋谷シダックスカルチャーホール</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/27013" target="_blank">Tomoko（セットリスト）</a></td></tr>
+<tr class="row-even"><td>2021年8月28日</td><td>13:00</td><td>夏焼雅バースデーイベント2021～みやちゃん20代ラストだよ！！全員集合♡～</td><td>渋谷シダックスカルチャーホール（<a href="https://www.google.com/maps/search/?api=1&amp;query=%E6%B8%8B%E8%B0%B7%E3%82%B7%E3%83%80%E3%83%83%E3%82%AF%E3%82%B9%E3%82%AB%E3%83%AB%E3%83%81%E3%83%A3%E3%83%BC%E3%83%9B%E3%83%BC%E3%83%AB%20%E6%9D%B1%E4%BA%AC%E9%83%BD" target="_blank">地図</a>）</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/27011" target="_blank">Tomoko（セットリスト）</a></td></tr>
+<tr><td>2021年8月28日</td><td>15:30</td><td>夏焼雅バースデーイベント2021～みやちゃん20代ラストだよ！！全員集合♡～</td><td>渋谷シダックスカルチャーホール（<a href="https://www.google.com/maps/search/?api=1&amp;query=%E6%B8%8B%E8%B0%B7%E3%82%B7%E3%83%80%E3%83%83%E3%82%AF%E3%82%B9%E3%82%AB%E3%83%AB%E3%83%81%E3%83%A3%E3%83%BC%E3%83%9B%E3%83%BC%E3%83%AB%20%E6%9D%B1%E4%BA%AC%E9%83%BD" target="_blank">地図</a>）</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/27012" target="_blank">Tomoko（セットリスト）</a></td></tr>
+<tr class="row-even"><td>2021年8月28日</td><td>18:00</td><td>夏焼雅バースデーイベント2021～みやちゃん20代ラストだよ！！全員集合♡～</td><td>渋谷シダックスカルチャーホール（<a href="https://www.google.com/maps/search/?api=1&amp;query=%E6%B8%8B%E8%B0%B7%E3%82%B7%E3%83%80%E3%83%83%E3%82%AF%E3%82%B9%E3%82%AB%E3%83%AB%E3%83%81%E3%83%A3%E3%83%BC%E3%83%9B%E3%83%BC%E3%83%AB%20%E6%9D%B1%E4%BA%AC%E9%83%BD" target="_blank">地図</a>）</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/27013" target="_blank">Tomoko（セットリスト）</a></td></tr>
 </tbody>
 </table>
 30歳（2022年）
@@ -146,9 +146,9 @@
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td>2022年8月27日</td><td>13:00</td><td>夏焼雅バースデーイベント2022 ～えっ！気づいたら３０歳だって！～</td><td>渋谷シダックスカルチャーホール</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/27018" target="_blank">Tomoko（セットリスト）</a></td></tr>
-<tr><td>2022年8月27日</td><td>15:30</td><td>夏焼雅バースデーイベント2022 ～えっ！気づいたら３０歳だって！～</td><td>渋谷シダックスカルチャーホール</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/27019" target="_blank">Tomoko（セットリスト）</a></td></tr>
-<tr class="row-even"><td>2022年8月27日</td><td>18:00</td><td>夏焼雅バースデーイベント2022 ～えっ！気づいたら３０歳だって！～</td><td>渋谷シダックスカルチャーホール</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/27020" target="_blank">Tomoko（セットリスト）</a></td></tr>
+<tr class="row-even"><td>2022年8月27日</td><td>13:00</td><td>夏焼雅バースデーイベント2022 ～えっ！気づいたら３０歳だって！～</td><td>渋谷シダックスカルチャーホール（<a href="https://www.google.com/maps/search/?api=1&amp;query=%E6%B8%8B%E8%B0%B7%E3%82%B7%E3%83%80%E3%83%83%E3%82%AF%E3%82%B9%E3%82%AB%E3%83%AB%E3%83%81%E3%83%A3%E3%83%BC%E3%83%9B%E3%83%BC%E3%83%AB%20%E6%9D%B1%E4%BA%AC%E9%83%BD" target="_blank">地図</a>）</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/27018" target="_blank">Tomoko（セットリスト）</a></td></tr>
+<tr><td>2022年8月27日</td><td>15:30</td><td>夏焼雅バースデーイベント2022 ～えっ！気づいたら３０歳だって！～</td><td>渋谷シダックスカルチャーホール（<a href="https://www.google.com/maps/search/?api=1&amp;query=%E6%B8%8B%E8%B0%B7%E3%82%B7%E3%83%80%E3%83%83%E3%82%AF%E3%82%B9%E3%82%AB%E3%83%AB%E3%83%81%E3%83%A3%E3%83%BC%E3%83%9B%E3%83%BC%E3%83%AB%20%E6%9D%B1%E4%BA%AC%E9%83%BD" target="_blank">地図</a>）</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/27019" target="_blank">Tomoko（セットリスト）</a></td></tr>
+<tr class="row-even"><td>2022年8月27日</td><td>18:00</td><td>夏焼雅バースデーイベント2022 ～えっ！気づいたら３０歳だって！～</td><td>渋谷シダックスカルチャーホール（<a href="https://www.google.com/maps/search/?api=1&amp;query=%E6%B8%8B%E8%B0%B7%E3%82%B7%E3%83%80%E3%83%83%E3%82%AF%E3%82%B9%E3%82%AB%E3%83%AB%E3%83%81%E3%83%A3%E3%83%BC%E3%83%9B%E3%83%BC%E3%83%AB%20%E6%9D%B1%E4%BA%AC%E9%83%BD" target="_blank">地図</a>）</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/27020" target="_blank">Tomoko（セットリスト）</a></td></tr>
 </tbody>
 </table>
 31歳（2023年）
@@ -164,9 +164,9 @@
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td>2023年8月26日</td><td>12:30</td><td>夏焼雅 BIRTHDAY PARTY!</td><td>渋谷シダックスカルチャーホール</td><td>東京都</td><td><a href="https://hp-setlist.com/event/13367" target="_blank">Tomoko（セットリスト）</a></td></tr>
-<tr><td>2023年8月26日</td><td>15:45</td><td>夏焼雅 BIRTHDAY PARTY!</td><td>渋谷シダックスカルチャーホール</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/27026" target="_blank">Tomoko（セットリスト）</a></td></tr>
-<tr class="row-even"><td>2023年8月26日</td><td>18:15</td><td>夏焼雅 BIRTHDAY PARTY!</td><td>渋谷シダックスカルチャーホール</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/27027" target="_blank">Tomoko（セットリスト）</a></td></tr>
+<tr class="row-even"><td>2023年8月26日</td><td>12:30</td><td>夏焼雅 BIRTHDAY PARTY!</td><td>渋谷シダックスカルチャーホール（<a href="https://www.google.com/maps/search/?api=1&amp;query=%E6%B8%8B%E8%B0%B7%E3%82%B7%E3%83%80%E3%83%83%E3%82%AF%E3%82%B9%E3%82%AB%E3%83%AB%E3%83%81%E3%83%A3%E3%83%BC%E3%83%9B%E3%83%BC%E3%83%AB%20%E6%9D%B1%E4%BA%AC%E9%83%BD" target="_blank">地図</a>）</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/27025" target="_blank">Tomoko（セットリスト）</a></td></tr>
+<tr><td>2023年8月26日</td><td>15:45</td><td>夏焼雅 BIRTHDAY PARTY!</td><td>渋谷シダックスカルチャーホール（<a href="https://www.google.com/maps/search/?api=1&amp;query=%E6%B8%8B%E8%B0%B7%E3%82%B7%E3%83%80%E3%83%83%E3%82%AF%E3%82%B9%E3%82%AB%E3%83%AB%E3%83%81%E3%83%A3%E3%83%BC%E3%83%9B%E3%83%BC%E3%83%AB%20%E6%9D%B1%E4%BA%AC%E9%83%BD" target="_blank">地図</a>）</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/27026" target="_blank">Tomoko（セットリスト）</a></td></tr>
+<tr class="row-even"><td>2023年8月26日</td><td>18:15</td><td>夏焼雅 BIRTHDAY PARTY!</td><td>渋谷シダックスカルチャーホール（<a href="https://www.google.com/maps/search/?api=1&amp;query=%E6%B8%8B%E8%B0%B7%E3%82%B7%E3%83%80%E3%83%83%E3%82%AF%E3%82%B9%E3%82%AB%E3%83%AB%E3%83%81%E3%83%A3%E3%83%BC%E3%83%9B%E3%83%BC%E3%83%AB%20%E6%9D%B1%E4%BA%AC%E9%83%BD" target="_blank">地図</a>）</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/27027" target="_blank">Tomoko（セットリスト）</a></td></tr>
 </tbody>
 </table>
 32歳（2024年）
@@ -182,9 +182,9 @@
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td>2024年8月25日</td><td>13:00</td><td>夏焼雅 BIRTHDAY PARTY!～VIPルームにようこそ～</td><td>渋谷シダックスカルチャーホール</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/27028" target="_blank">Tomoko（セットリスト）</a></td></tr>
-<tr><td>2024年8月25日</td><td>15:30</td><td>夏焼雅 BIRTHDAY PARTY!～VIPルームにようこそ～</td><td>渋谷シダックスカルチャーホール</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/27029" target="_blank">Tomoko（セットリスト）</a></td></tr>
-<tr class="row-even"><td>2024年8月25日</td><td>18:00</td><td>夏焼雅 BIRTHDAY PARTY!～VIPルームにようこそ～</td><td>渋谷シダックスカルチャーホール</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/27030" target="_blank">Tomoko（セットリスト）</a></td></tr>
+<tr class="row-even"><td>2024年8月25日</td><td>13:00</td><td>夏焼雅 BIRTHDAY PARTY!～VIPルームにようこそ～</td><td>渋谷シダックスカルチャーホール（<a href="https://www.google.com/maps/search/?api=1&amp;query=%E6%B8%8B%E8%B0%B7%E3%82%B7%E3%83%80%E3%83%83%E3%82%AF%E3%82%B9%E3%82%AB%E3%83%AB%E3%83%81%E3%83%A3%E3%83%BC%E3%83%9B%E3%83%BC%E3%83%AB%20%E6%9D%B1%E4%BA%AC%E9%83%BD" target="_blank">地図</a>）</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/27028" target="_blank">Tomoko（セットリスト）</a></td></tr>
+<tr><td>2024年8月25日</td><td>15:30</td><td>夏焼雅 BIRTHDAY PARTY!～VIPルームにようこそ～</td><td>渋谷シダックスカルチャーホール（<a href="https://www.google.com/maps/search/?api=1&amp;query=%E6%B8%8B%E8%B0%B7%E3%82%B7%E3%83%80%E3%83%83%E3%82%AF%E3%82%B9%E3%82%AB%E3%83%AB%E3%83%81%E3%83%A3%E3%83%BC%E3%83%9B%E3%83%BC%E3%83%AB%20%E6%9D%B1%E4%BA%AC%E9%83%BD" target="_blank">地図</a>）</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/27029" target="_blank">Tomoko（セットリスト）</a></td></tr>
+<tr class="row-even"><td>2024年8月25日</td><td>18:00</td><td>夏焼雅 BIRTHDAY PARTY!～VIPルームにようこそ～</td><td>渋谷シダックスカルチャーホール（<a href="https://www.google.com/maps/search/?api=1&amp;query=%E6%B8%8B%E8%B0%B7%E3%82%B7%E3%83%80%E3%83%83%E3%82%AF%E3%82%B9%E3%82%AB%E3%83%AB%E3%83%81%E3%83%A3%E3%83%BC%E3%83%9B%E3%83%BC%E3%83%AB%20%E6%9D%B1%E4%BA%AC%E9%83%BD" target="_blank">地図</a>）</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/27030" target="_blank">Tomoko（セットリスト）</a></td></tr>
 </tbody>
 </table>
 33歳（2025年）
@@ -200,9 +200,9 @@
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td>2025年8月24日</td><td>13:00</td><td>夏焼雅 BIRTHDAY PARTY!</td><td>渋谷シダックスカルチャーホール</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/27033" target="_blank">Tomoko（セットリスト）</a></td></tr>
-<tr><td>2025年8月24日</td><td>15:50</td><td>夏焼雅 BIRTHDAY PARTY!</td><td>渋谷シダックスカルチャーホール</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/27034" target="_blank">Tomoko（セットリスト）</a></td></tr>
-<tr class="row-even"><td>2025年8月24日</td><td>18:00</td><td>夏焼雅 BIRTHDAY PARTY!</td><td>渋谷シダックスカルチャーホール</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/27035" target="_blank">Tomoko（セットリスト）</a></td></tr>
+<tr class="row-even"><td>2025年8月24日</td><td>13:00</td><td>夏焼雅 BIRTHDAY PARTY!</td><td>渋谷シダックスカルチャーホール（<a href="https://www.google.com/maps/search/?api=1&amp;query=%E6%B8%8B%E8%B0%B7%E3%82%B7%E3%83%80%E3%83%83%E3%82%AF%E3%82%B9%E3%82%AB%E3%83%AB%E3%83%81%E3%83%A3%E3%83%BC%E3%83%9B%E3%83%BC%E3%83%AB%20%E6%9D%B1%E4%BA%AC%E9%83%BD" target="_blank">地図</a>）</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/27033" target="_blank">Tomoko（セットリスト）</a></td></tr>
+<tr><td>2025年8月24日</td><td>15:50</td><td>夏焼雅 BIRTHDAY PARTY!</td><td>渋谷シダックスカルチャーホール（<a href="https://www.google.com/maps/search/?api=1&amp;query=%E6%B8%8B%E8%B0%B7%E3%82%B7%E3%83%80%E3%83%83%E3%82%AF%E3%82%B9%E3%82%AB%E3%83%AB%E3%83%81%E3%83%A3%E3%83%BC%E3%83%9B%E3%83%BC%E3%83%AB%20%E6%9D%B1%E4%BA%AC%E9%83%BD" target="_blank">地図</a>）</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/27034" target="_blank">Tomoko（セットリスト）</a></td></tr>
+<tr class="row-even"><td>2025年8月24日</td><td>18:00</td><td>夏焼雅 BIRTHDAY PARTY!</td><td>渋谷シダックスカルチャーホール（<a href="https://www.google.com/maps/search/?api=1&amp;query=%E6%B8%8B%E8%B0%B7%E3%82%B7%E3%83%80%E3%83%83%E3%82%AF%E3%82%B9%E3%82%AB%E3%83%AB%E3%83%81%E3%83%A3%E3%83%BC%E3%83%9B%E3%83%BC%E3%83%AB%20%E6%9D%B1%E4%BA%AC%E9%83%BD" target="_blank">地図</a>）</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/27035" target="_blank">Tomoko（セットリスト）</a></td></tr>
 </tbody>
 </table>
 34歳（2026年）
@@ -218,9 +218,9 @@
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td>2026年8月11日</td><td>13:00</td><td>夏焼雅バースデートークショー</td><td>東京都渋谷区神宮前2-34-17 住友不動産原宿ビル9階</td><td>東京都</td><td></td></tr>
-<tr><td>2026年8月11日</td><td>14:45</td><td>夏焼雅バースデートークショー</td><td>東京都渋谷区神宮前2-34-17 住友不動産原宿ビル9階</td><td>東京都</td><td></td></tr>
-<tr class="row-even"><td>2026年8月11日</td><td>16:30</td><td>夏焼雅バースデートークショー</td><td>東京都渋谷区神宮前2-34-17 住友不動産原宿ビル9階</td><td>東京都</td><td></td></tr>
+<tr class="row-even"><td>2026年8月11日</td><td>13:00</td><td>夏焼雅バースデートークショー</td><td>東京都渋谷区神宮前2-34-17 住友不動産原宿ビル9階（<a href="https://www.google.com/maps/search/?api=1&amp;query=%E6%9D%B1%E4%BA%AC%E9%83%BD%E6%B8%8B%E8%B0%B7%E5%8C%BA%E7%A5%9E%E5%AE%AE%E5%89%8D2-34-17%20%E4%BD%8F%E5%8F%8B%E4%B8%8D%E5%8B%95%E7%94%A3%E5%8E%9F%E5%AE%BF%E3%83%93%E3%83%AB9%E9%9A%8E%20%E6%9D%B1%E4%BA%AC%E9%83%BD" target="_blank">地図</a>）</td><td>東京都</td><td></td></tr>
+<tr><td>2026年8月11日</td><td>14:45</td><td>夏焼雅バースデートークショー</td><td>東京都渋谷区神宮前2-34-17 住友不動産原宿ビル9階（<a href="https://www.google.com/maps/search/?api=1&amp;query=%E6%9D%B1%E4%BA%AC%E9%83%BD%E6%B8%8B%E8%B0%B7%E5%8C%BA%E7%A5%9E%E5%AE%AE%E5%89%8D2-34-17%20%E4%BD%8F%E5%8F%8B%E4%B8%8D%E5%8B%95%E7%94%A3%E5%8E%9F%E5%AE%BF%E3%83%93%E3%83%AB9%E9%9A%8E%20%E6%9D%B1%E4%BA%AC%E9%83%BD" target="_blank">地図</a>）</td><td>東京都</td><td></td></tr>
+<tr class="row-even"><td>2026年8月11日</td><td>16:30</td><td>夏焼雅バースデートークショー</td><td>東京都渋谷区神宮前2-34-17 住友不動産原宿ビル9階（<a href="https://www.google.com/maps/search/?api=1&amp;query=%E6%9D%B1%E4%BA%AC%E9%83%BD%E6%B8%8B%E8%B0%B7%E5%8C%BA%E7%A5%9E%E5%AE%AE%E5%89%8D2-34-17%20%E4%BD%8F%E5%8F%8B%E4%B8%8D%E5%8B%95%E7%94%A3%E5%8E%9F%E5%AE%BF%E3%83%93%E3%83%AB9%E9%9A%8E%20%E6%9D%B1%E4%BA%AC%E9%83%BD" target="_blank">地図</a>）</td><td>東京都</td><td></td></tr>
 </tbody>
 </table>
 

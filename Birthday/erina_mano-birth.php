@@ -23,8 +23,8 @@
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td>2011年4月16日</td><td></td><td>真野 Friends Party vol.5～from19910411 未の女 20TH DREAM BIRTHDAY～</td><td>横浜BLITZ</td><td>神奈川県</td><td></td></tr>
-<tr><td>2011年4月16日</td><td></td><td>真野 Friends Party vol.5～from19910411 未の女 20TH DREAM BIRTHDAY～</td><td>横浜BLITZ</td><td>神奈川県</td><td></td></tr>
+<tr class="row-even"><td>2011年4月16日</td><td></td><td>真野 Friends Party vol.5～from19910411 未の女 20TH DREAM BIRTHDAY～</td><td>横浜BLITZ（<a href="https://www.google.com/maps/search/?api=1&amp;query=%E6%A8%AA%E6%B5%9CBLITZ%20%E7%A5%9E%E5%A5%88%E5%B7%9D%E7%9C%8C" target="_blank">地図</a>）</td><td>神奈川県</td><td></td></tr>
+<tr><td>2011年4月16日</td><td></td><td>真野 Friends Party vol.5～from19910411 未の女 20TH DREAM BIRTHDAY～</td><td>横浜BLITZ（<a href="https://www.google.com/maps/search/?api=1&amp;query=%E6%A8%AA%E6%B5%9CBLITZ%20%E7%A5%9E%E5%A5%88%E5%B7%9D%E7%9C%8C" target="_blank">地図</a>）</td><td>神奈川県</td><td></td></tr>
 </tbody>
 </table>
 21歳（2012年）
@@ -40,8 +40,8 @@
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td>2012年4月11日</td><td>18:15</td><td>真野恵里菜 PLATINUM ANNEXイベント〜別冊“マノマニア”豪華版 生誕祭〜</td><td>TOKYO FM HALL</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/3167" target="_blank">Tomoko（セットリスト）</a></td></tr>
-<tr><td>2012年4月11日</td><td>20:00</td><td>真野恵里菜 PLATINUM ANNEXイベント〜別冊“マノマニア”豪華版 生誕祭〜</td><td>TOKYO FM HALL</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/3168" target="_blank">Tomoko（セットリスト）</a></td></tr>
+<tr class="row-even"><td>2012年4月11日</td><td>18:15</td><td>真野恵里菜 PLATINUM ANNEXイベント〜別冊“マノマニア”豪華版 生誕祭〜</td><td>TOKYO FM HALL（<a href="https://www.google.com/maps/search/?api=1&amp;query=TOKYO%20FM%20HALL%20%E6%9D%B1%E4%BA%AC%E9%83%BD" target="_blank">地図</a>）</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/3167" target="_blank">Tomoko（セットリスト）</a></td></tr>
+<tr><td>2012年4月11日</td><td>20:00</td><td>真野恵里菜 PLATINUM ANNEXイベント〜別冊“マノマニア”豪華版 生誕祭〜</td><td>TOKYO FM HALL（<a href="https://www.google.com/maps/search/?api=1&amp;query=TOKYO%20FM%20HALL%20%E6%9D%B1%E4%BA%AC%E9%83%BD" target="_blank">地図</a>）</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/3168" target="_blank">Tomoko（セットリスト）</a></td></tr>
 </tbody>
 </table>
 

@@ -23,7 +23,7 @@
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td>2013年7月13日</td><td>0:00</td><td>Morning Days Happy Holiday 道重さゆみバースデーファンクラブツアー in 茨城</td><td>行方市文化会館</td><td>茨城県</td><td><a href="https://hp-setlist.com/stage/3528" target="_blank">Tomoko（セットリスト）</a></td></tr>
+<tr class="row-even"><td>2013年7月13日</td><td>0:00</td><td>Morning Days Happy Holiday 道重さゆみバースデーファンクラブツアー in 茨城</td><td>行方市文化会館（<a href="https://www.google.com/maps/search/?api=1&amp;query=%E8%A1%8C%E6%96%B9%E5%B8%82%E6%96%87%E5%8C%96%E4%BC%9A%E9%A4%A8%20%E8%8C%A8%E5%9F%8E%E7%9C%8C" target="_blank">地図</a>）</td><td>茨城県</td><td><a href="https://hp-setlist.com/stage/3528" target="_blank">Tomoko（セットリスト）</a></td></tr>
 </tbody>
 </table>
 25歳（2014年）
@@ -39,7 +39,7 @@
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td>2014年7月13日</td><td>0:00</td><td>Morning Days Happy Holiday 道重さゆみバースデーファンクラブツアー in 山口！！</td><td>徳地文化ホール</td><td>山口県</td><td><a href="https://hp-setlist.com/stage/4003" target="_blank">Tomoko（セットリスト）</a></td></tr>
+<tr class="row-even"><td>2014年7月13日</td><td>0:00</td><td>Morning Days Happy Holiday 道重さゆみバースデーファンクラブツアー in 山口！！</td><td>徳地文化ホール（<a href="https://www.google.com/maps/search/?api=1&amp;query=%E5%BE%B3%E5%9C%B0%E6%96%87%E5%8C%96%E3%83%9B%E3%83%BC%E3%83%AB%20%E5%B1%B1%E5%8F%A3%E7%9C%8C" target="_blank">地図</a>）</td><td>山口県</td><td><a href="https://hp-setlist.com/stage/4003" target="_blank">Tomoko（セットリスト）</a></td></tr>
 </tbody>
 </table>
 28歳（2017年）
@@ -55,8 +55,8 @@
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td>2017年7月13日</td><td>17:45</td><td>道重さゆみバースデーイベント カワイイバースデー パーティー</td><td>山野ホール</td><td>東京都</td><td></td></tr>
-<tr><td>2017年7月13日</td><td>20:25</td><td>道重さゆみバースデーイベント カワイイバースデー パーティー</td><td>山野ホール</td><td>東京都</td><td></td></tr>
+<tr class="row-even"><td>2017年7月13日</td><td>17:45</td><td>道重さゆみバースデーイベント カワイイバースデー パーティー</td><td>山野ホール（<a href="https://www.google.com/maps/search/?api=1&amp;query=%E5%B1%B1%E9%87%8E%E3%83%9B%E3%83%BC%E3%83%AB%20%E6%9D%B1%E4%BA%AC%E9%83%BD" target="_blank">地図</a>）</td><td>東京都</td><td></td></tr>
+<tr><td>2017年7月13日</td><td>20:25</td><td>道重さゆみバースデーイベント カワイイバースデー パーティー</td><td>山野ホール（<a href="https://www.google.com/maps/search/?api=1&amp;query=%E5%B1%B1%E9%87%8E%E3%83%9B%E3%83%BC%E3%83%AB%20%E6%9D%B1%E4%BA%AC%E9%83%BD" target="_blank">地図</a>）</td><td>東京都</td><td></td></tr>
 </tbody>
 </table>
 29歳（2018年）
@@ -72,8 +72,8 @@
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td>2018年7月13日</td><td>17:45</td><td>道重さゆみバースデーイベント2018</td><td>山野ホール</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/26995" target="_blank">Tomoko（セットリスト）</a></td></tr>
-<tr><td>2018年7月13日</td><td>20:15</td><td>道重さゆみバースデーイベント2018</td><td>山野ホール</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/26996" target="_blank">Tomoko（セットリスト）</a></td></tr>
+<tr class="row-even"><td>2018年7月13日</td><td>17:45</td><td>道重さゆみバースデーイベント2018</td><td>山野ホール（<a href="https://www.google.com/maps/search/?api=1&amp;query=%E5%B1%B1%E9%87%8E%E3%83%9B%E3%83%BC%E3%83%AB%20%E6%9D%B1%E4%BA%AC%E9%83%BD" target="_blank">地図</a>）</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/26995" target="_blank">Tomoko（セットリスト）</a></td></tr>
+<tr><td>2018年7月13日</td><td>20:15</td><td>道重さゆみバースデーイベント2018</td><td>山野ホール（<a href="https://www.google.com/maps/search/?api=1&amp;query=%E5%B1%B1%E9%87%8E%E3%83%9B%E3%83%BC%E3%83%AB%20%E6%9D%B1%E4%BA%AC%E9%83%BD" target="_blank">地図</a>）</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/26996" target="_blank">Tomoko（セットリスト）</a></td></tr>
 </tbody>
 </table>
 30歳（2019年）
@@ -89,8 +89,8 @@
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td>2019年7月15日</td><td>15:00</td><td>道重さゆみバースデーイベント2019</td><td>山野ホール</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/26997" target="_blank">Tomoko（セットリスト）</a></td></tr>
-<tr><td>2019年7月15日</td><td>17:45</td><td>道重さゆみバースデーイベント2019</td><td>山野ホール</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/26998" target="_blank">Tomoko（セットリスト）</a></td></tr>
+<tr class="row-even"><td>2019年7月15日</td><td>15:00</td><td>道重さゆみバースデーイベント2019</td><td>山野ホール（<a href="https://www.google.com/maps/search/?api=1&amp;query=%E5%B1%B1%E9%87%8E%E3%83%9B%E3%83%BC%E3%83%AB%20%E6%9D%B1%E4%BA%AC%E9%83%BD" target="_blank">地図</a>）</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/26997" target="_blank">Tomoko（セットリスト）</a></td></tr>
+<tr><td>2019年7月15日</td><td>17:45</td><td>道重さゆみバースデーイベント2019</td><td>山野ホール（<a href="https://www.google.com/maps/search/?api=1&amp;query=%E5%B1%B1%E9%87%8E%E3%83%9B%E3%83%BC%E3%83%AB%20%E6%9D%B1%E4%BA%AC%E9%83%BD" target="_blank">地図</a>）</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/26998" target="_blank">Tomoko（セットリスト）</a></td></tr>
 </tbody>
 </table>
 31歳（2020年）
@@ -106,8 +106,8 @@
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td>2020年7月12日</td><td>14:30</td><td>道重さゆみバースデーイベント2020～今年は前夜祭～</td><td>品川インターシティホール</td><td>東京都</td><td></td></tr>
-<tr><td>2020年7月12日</td><td>18:00</td><td>道重さゆみバースデーイベント2020～今年は前夜祭～</td><td>品川インターシティホール</td><td>東京都</td><td></td></tr>
+<tr class="row-even"><td>2020年7月12日</td><td>14:30</td><td>道重さゆみバースデーイベント2020～今年は前夜祭～</td><td>品川インターシティホール（<a href="https://www.google.com/maps/search/?api=1&amp;query=%E5%93%81%E5%B7%9D%E3%82%A4%E3%83%B3%E3%82%BF%E3%83%BC%E3%82%B7%E3%83%86%E3%82%A3%E3%83%9B%E3%83%BC%E3%83%AB%20%E6%9D%B1%E4%BA%AC%E9%83%BD" target="_blank">地図</a>）</td><td>東京都</td><td></td></tr>
+<tr><td>2020年7月12日</td><td>18:00</td><td>道重さゆみバースデーイベント2020～今年は前夜祭～</td><td>品川インターシティホール（<a href="https://www.google.com/maps/search/?api=1&amp;query=%E5%93%81%E5%B7%9D%E3%82%A4%E3%83%B3%E3%82%BF%E3%83%BC%E3%82%B7%E3%83%86%E3%82%A3%E3%83%9B%E3%83%BC%E3%83%AB%20%E6%9D%B1%E4%BA%AC%E9%83%BD" target="_blank">地図</a>）</td><td>東京都</td><td></td></tr>
 </tbody>
 </table>
 32歳（2021年）
@@ -123,8 +123,8 @@
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td>2021年7月13日</td><td>16:15</td><td>道重さゆみバースデーイベント2021</td><td>Zepp DiverCity</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/27009" target="_blank">Tomoko（セットリスト）</a></td></tr>
-<tr><td>2021年7月13日</td><td>18:40</td><td>道重さゆみバースデーイベント2021</td><td>Zepp DiverCity</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/27010" target="_blank">Tomoko（セットリスト）</a></td></tr>
+<tr class="row-even"><td>2021年7月13日</td><td>16:15</td><td>道重さゆみバースデーイベント2021</td><td>Zepp DiverCity（<a href="https://www.google.com/maps/search/?api=1&amp;query=Zepp%20DiverCity%20%E6%9D%B1%E4%BA%AC%E9%83%BD" target="_blank">地図</a>）</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/27009" target="_blank">Tomoko（セットリスト）</a></td></tr>
+<tr><td>2021年7月13日</td><td>18:40</td><td>道重さゆみバースデーイベント2021</td><td>Zepp DiverCity（<a href="https://www.google.com/maps/search/?api=1&amp;query=Zepp%20DiverCity%20%E6%9D%B1%E4%BA%AC%E9%83%BD" target="_blank">地図</a>）</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/27010" target="_blank">Tomoko（セットリスト）</a></td></tr>
 </tbody>
 </table>
 33歳（2022年）
@@ -140,8 +140,8 @@
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td>2022年7月16日</td><td>15:30</td><td>道重さゆみバースデーイベント2022</td><td>Zepp Haneda</td><td>東京都</td><td></td></tr>
-<tr><td>2022年7月16日</td><td>18:00</td><td>道重さゆみバースデーイベント2022</td><td>Zepp Haneda</td><td>東京都</td><td></td></tr>
+<tr class="row-even"><td>2022年7月16日</td><td>15:30</td><td>道重さゆみバースデーイベント2022</td><td>Zepp Haneda（<a href="https://www.google.com/maps/search/?api=1&amp;query=Zepp%20Haneda%20%E6%9D%B1%E4%BA%AC%E9%83%BD" target="_blank">地図</a>）</td><td>東京都</td><td></td></tr>
+<tr><td>2022年7月16日</td><td>18:00</td><td>道重さゆみバースデーイベント2022</td><td>Zepp Haneda（<a href="https://www.google.com/maps/search/?api=1&amp;query=Zepp%20Haneda%20%E6%9D%B1%E4%BA%AC%E9%83%BD" target="_blank">地図</a>）</td><td>東京都</td><td></td></tr>
 </tbody>
 </table>
 34歳（2023年）
@@ -157,8 +157,8 @@
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td>2023年7月13日</td><td>16:50</td><td>道重さゆみバースデーイベント2023</td><td>I'M A SHOW</td><td>東京都</td><td></td></tr>
-<tr><td>2023年7月13日</td><td>19:30</td><td>道重さゆみバースデーイベント2023</td><td>I'M A SHOW</td><td>東京都</td><td></td></tr>
+<tr class="row-even"><td>2023年7月13日</td><td>16:50</td><td>道重さゆみバースデーイベント2023</td><td>I'M A SHOW（<a href="https://www.google.com/maps/search/?api=1&amp;query=I%27M%20A%20SHOW%20%E6%9D%B1%E4%BA%AC%E9%83%BD" target="_blank">地図</a>）</td><td>東京都</td><td></td></tr>
+<tr><td>2023年7月13日</td><td>19:30</td><td>道重さゆみバースデーイベント2023</td><td>I'M A SHOW（<a href="https://www.google.com/maps/search/?api=1&amp;query=I%27M%20A%20SHOW%20%E6%9D%B1%E4%BA%AC%E9%83%BD" target="_blank">地図</a>）</td><td>東京都</td><td></td></tr>
 </tbody>
 </table>
 35歳（2024年）
@@ -174,8 +174,8 @@
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td>2024年7月13日</td><td>15:45</td><td>道重さゆみファンクラブ会員限定バースデーライブ★「SAYUMINGLANDOLL～さゆとファンと夏～」</td><td>横浜Bay Hall</td><td>神奈川県</td><td></td></tr>
-<tr><td>2024年7月13日</td><td>19:00</td><td>道重さゆみファンクラブ会員限定バースデーライブ★「SAYUMINGLANDOLL～さゆとファンと夏～」</td><td>横浜Bay Hall</td><td>神奈川県</td><td></td></tr>
+<tr class="row-even"><td>2024年7月13日</td><td>15:45</td><td>道重さゆみファンクラブ会員限定バースデーライブ★「SAYUMINGLANDOLL～さゆとファンと夏～」</td><td>横浜Bay Hall（<a href="https://www.google.com/maps/search/?api=1&amp;query=%E6%A8%AA%E6%B5%9CBay%20Hall%20%E7%A5%9E%E5%A5%88%E5%B7%9D%E7%9C%8C" target="_blank">地図</a>）</td><td>神奈川県</td><td></td></tr>
+<tr><td>2024年7月13日</td><td>19:00</td><td>道重さゆみファンクラブ会員限定バースデーライブ★「SAYUMINGLANDOLL～さゆとファンと夏～」</td><td>横浜Bay Hall（<a href="https://www.google.com/maps/search/?api=1&amp;query=%E6%A8%AA%E6%B5%9CBay%20Hall%20%E7%A5%9E%E5%A5%88%E5%B7%9D%E7%9C%8C" target="_blank">地図</a>）</td><td>神奈川県</td><td></td></tr>
 </tbody>
 </table>
 36歳（2025年）
@@ -191,8 +191,8 @@
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td>2025年6月28日</td><td>15:00</td><td>道重さゆみファンクラブ会員限定バースデーライブ★「SAYUMING&quot;F&quot;ANDOLL」</td><td>横浜Bay Hall</td><td>神奈川県</td><td><a href="https://hp-setlist.com/stage/27031" target="_blank">Tomoko（セットリスト）</a></td></tr>
-<tr><td>2025年6月28日</td><td>19:00</td><td>道重さゆみファンクラブ会員限定バースデーライブ★「SAYUMING&quot;F&quot;ANDOLL」</td><td>横浜Bay Hall</td><td>神奈川県</td><td><a href="https://hp-setlist.com/stage/27032" target="_blank">Tomoko（セットリスト）</a></td></tr>
+<tr class="row-even"><td>2025年6月28日</td><td>15:00</td><td>道重さゆみファンクラブ会員限定バースデーライブ★「SAYUMING&quot;F&quot;ANDOLL」</td><td>横浜Bay Hall（<a href="https://www.google.com/maps/search/?api=1&amp;query=%E6%A8%AA%E6%B5%9CBay%20Hall%20%E7%A5%9E%E5%A5%88%E5%B7%9D%E7%9C%8C" target="_blank">地図</a>）</td><td>神奈川県</td><td><a href="https://hp-setlist.com/stage/27031" target="_blank">Tomoko（セットリスト）</a></td></tr>
+<tr><td>2025年6月28日</td><td>19:00</td><td>道重さゆみファンクラブ会員限定バースデーライブ★「SAYUMING&quot;F&quot;ANDOLL」</td><td>横浜Bay Hall（<a href="https://www.google.com/maps/search/?api=1&amp;query=%E6%A8%AA%E6%B5%9CBay%20Hall%20%E7%A5%9E%E5%A5%88%E5%B7%9D%E7%9C%8C" target="_blank">地図</a>）</td><td>神奈川県</td><td><a href="https://hp-setlist.com/stage/27032" target="_blank">Tomoko（セットリスト）</a></td></tr>
 </tbody>
 </table>
 

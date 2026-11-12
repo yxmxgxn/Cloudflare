@@ -23,9 +23,9 @@
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td>2017年10月20日</td><td>18:00</td><td>つばきファクトリー 新沼希空バースデーイベント2017</td><td>スクエア荏原ひらつかホール</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/5834" target="_blank">Tomoko（セットリスト）</a></td></tr>
-<tr><td>2017年10月20日</td><td>19:45</td><td>つばきファクトリー 新沼希空バースデーイベント2017</td><td>スクエア荏原ひらつかホール</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/5835" target="_blank">Tomoko（セットリスト）</a></td></tr>
-<tr class="row-even"><td>2017年10月31日</td><td>19:30</td><td>つばきファクトリー 新沼希空バースデーイベント2017 in 名古屋</td><td>ミッドランドスクエア シネマ2</td><td>愛知県</td><td><a href="https://hp-setlist.com/stage/10067" target="_blank">Tomoko（セットリスト）</a></td></tr>
+<tr class="row-even"><td>2017年10月20日</td><td>18:00</td><td>つばきファクトリー 新沼希空バースデーイベント2017</td><td>スクエア荏原ひらつかホール（<a href="https://www.google.com/maps/search/?api=1&amp;query=%E3%82%B9%E3%82%AF%E3%82%A8%E3%82%A2%E8%8D%8F%E5%8E%9F%E3%81%B2%E3%82%89%E3%81%A4%E3%81%8B%E3%83%9B%E3%83%BC%E3%83%AB%20%E6%9D%B1%E4%BA%AC%E9%83%BD" target="_blank">地図</a>）</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/5834" target="_blank">Tomoko（セットリスト）</a></td></tr>
+<tr><td>2017年10月20日</td><td>19:45</td><td>つばきファクトリー 新沼希空バースデーイベント2017</td><td>スクエア荏原ひらつかホール（<a href="https://www.google.com/maps/search/?api=1&amp;query=%E3%82%B9%E3%82%AF%E3%82%A8%E3%82%A2%E8%8D%8F%E5%8E%9F%E3%81%B2%E3%82%89%E3%81%A4%E3%81%8B%E3%83%9B%E3%83%BC%E3%83%AB%20%E6%9D%B1%E4%BA%AC%E9%83%BD" target="_blank">地図</a>）</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/5835" target="_blank">Tomoko（セットリスト）</a></td></tr>
+<tr class="row-even"><td>2017年10月31日</td><td>19:30</td><td>つばきファクトリー 新沼希空バースデーイベント2017 in 名古屋</td><td>ミッドランドスクエア シネマ2（<a href="https://www.google.com/maps/search/?api=1&amp;query=%E3%83%9F%E3%83%83%E3%83%89%E3%83%A9%E3%83%B3%E3%83%89%E3%82%B9%E3%82%AF%E3%82%A8%E3%82%A2%20%E3%82%B7%E3%83%8D%E3%83%9E2%20%E6%84%9B%E7%9F%A5%E7%9C%8C" target="_blank">地図</a>）</td><td>愛知県</td><td><a href="https://hp-setlist.com/stage/10067" target="_blank">Tomoko（セットリスト）</a></td></tr>
 </tbody>
 </table>
 19歳（2018年）
@@ -41,9 +41,9 @@
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td>2018年10月23日</td><td>18:00</td><td>つばきファクトリー 新沼希空バースデーイベント2018</td><td>TOKYO FM HALL</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/6312" target="_blank">Tomoko（セットリスト）</a></td></tr>
-<tr><td>2018年10月23日</td><td>19:45</td><td>つばきファクトリー 新沼希空バースデーイベント2018</td><td>TOKYO FM HALL</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/6313" target="_blank">Tomoko（セットリスト）</a></td></tr>
-<tr class="row-even"><td>2018年10月30日</td><td>19:30</td><td>つばきファクトリー 新沼希空バースデーイベント2018 in 名古屋</td><td>ミッドランドスクエア シネマ2</td><td>愛知県</td><td><a href="https://hp-setlist.com/stage/10114" target="_blank">Tomoko（セットリスト）</a></td></tr>
+<tr class="row-even"><td>2018年10月23日</td><td>18:00</td><td>つばきファクトリー 新沼希空バースデーイベント2018</td><td>TOKYO FM HALL（<a href="https://www.google.com/maps/search/?api=1&amp;query=TOKYO%20FM%20HALL%20%E6%9D%B1%E4%BA%AC%E9%83%BD" target="_blank">地図</a>）</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/6312" target="_blank">Tomoko（セットリスト）</a></td></tr>
+<tr><td>2018年10月23日</td><td>19:45</td><td>つばきファクトリー 新沼希空バースデーイベント2018</td><td>TOKYO FM HALL（<a href="https://www.google.com/maps/search/?api=1&amp;query=TOKYO%20FM%20HALL%20%E6%9D%B1%E4%BA%AC%E9%83%BD" target="_blank">地図</a>）</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/6313" target="_blank">Tomoko（セットリスト）</a></td></tr>
+<tr class="row-even"><td>2018年10月30日</td><td>19:30</td><td>つばきファクトリー 新沼希空バースデーイベント2018 in 名古屋</td><td>ミッドランドスクエア シネマ2（<a href="https://www.google.com/maps/search/?api=1&amp;query=%E3%83%9F%E3%83%83%E3%83%89%E3%83%A9%E3%83%B3%E3%83%89%E3%82%B9%E3%82%AF%E3%82%A8%E3%82%A2%20%E3%82%B7%E3%83%8D%E3%83%9E2%20%E6%84%9B%E7%9F%A5%E7%9C%8C" target="_blank">地図</a>）</td><td>愛知県</td><td><a href="https://hp-setlist.com/stage/10114" target="_blank">Tomoko（セットリスト）</a></td></tr>
 </tbody>
 </table>
 20歳（2019年）
@@ -59,9 +59,9 @@
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td>2019年10月23日</td><td>18:00</td><td>つばきファクトリー 新沼希空バースデーイベント2019</td><td>新宿ReNY</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/6876" target="_blank">Tomoko（セットリスト）</a></td></tr>
-<tr><td>2019年10月23日</td><td>19:45</td><td>つばきファクトリー 新沼希空バースデーイベント2019</td><td>新宿ReNY</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/6877" target="_blank">Tomoko（セットリスト）</a></td></tr>
-<tr class="row-even"><td>2019年11月5日</td><td>19:30</td><td>つばきファクトリー 新沼希空バースデーイベント2019 in 名古屋</td><td>ミッドランドスクエア シネマ2</td><td>愛知県</td><td><a href="https://hp-setlist.com/stage/10164" target="_blank">Tomoko（セットリスト）</a></td></tr>
+<tr class="row-even"><td>2019年10月23日</td><td>18:00</td><td>つばきファクトリー 新沼希空バースデーイベント2019</td><td>新宿ReNY（<a href="https://www.google.com/maps/search/?api=1&amp;query=%E6%96%B0%E5%AE%BFReNY%20%E6%9D%B1%E4%BA%AC%E9%83%BD" target="_blank">地図</a>）</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/6876" target="_blank">Tomoko（セットリスト）</a></td></tr>
+<tr><td>2019年10月23日</td><td>19:45</td><td>つばきファクトリー 新沼希空バースデーイベント2019</td><td>新宿ReNY（<a href="https://www.google.com/maps/search/?api=1&amp;query=%E6%96%B0%E5%AE%BFReNY%20%E6%9D%B1%E4%BA%AC%E9%83%BD" target="_blank">地図</a>）</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/6877" target="_blank">Tomoko（セットリスト）</a></td></tr>
+<tr class="row-even"><td>2019年11月5日</td><td>19:30</td><td>つばきファクトリー 新沼希空バースデーイベント2019 in 名古屋</td><td>ミッドランドスクエア シネマ2（<a href="https://www.google.com/maps/search/?api=1&amp;query=%E3%83%9F%E3%83%83%E3%83%89%E3%83%A9%E3%83%B3%E3%83%89%E3%82%B9%E3%82%AF%E3%82%A8%E3%82%A2%20%E3%82%B7%E3%83%8D%E3%83%9E2%20%E6%84%9B%E7%9F%A5%E7%9C%8C" target="_blank">地図</a>）</td><td>愛知県</td><td><a href="https://hp-setlist.com/stage/10164" target="_blank">Tomoko（セットリスト）</a></td></tr>
 </tbody>
 </table>
 21歳（2020年）
@@ -77,8 +77,8 @@
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td>2020年10月20日</td><td>17:15</td><td>つばきファクトリー 新沼希空バースデーイベント2020</td><td>LANDMARK HALL</td><td>神奈川県</td><td><a href="https://hp-setlist.com/stage/7108" target="_blank">Tomoko（セットリスト）</a></td></tr>
-<tr><td>2020年10月20日</td><td>19:45</td><td>つばきファクトリー 新沼希空バースデーイベント2020</td><td>LANDMARK HALL</td><td>神奈川県</td><td><a href="https://hp-setlist.com/stage/7109" target="_blank">Tomoko（セットリスト）</a></td></tr>
+<tr class="row-even"><td>2020年10月20日</td><td>17:15</td><td>つばきファクトリー 新沼希空バースデーイベント2020</td><td>LANDMARK HALL（<a href="https://www.google.com/maps/search/?api=1&amp;query=LANDMARK%20HALL%20%E7%A5%9E%E5%A5%88%E5%B7%9D%E7%9C%8C" target="_blank">地図</a>）</td><td>神奈川県</td><td><a href="https://hp-setlist.com/stage/7108" target="_blank">Tomoko（セットリスト）</a></td></tr>
+<tr><td>2020年10月20日</td><td>19:45</td><td>つばきファクトリー 新沼希空バースデーイベント2020</td><td>LANDMARK HALL（<a href="https://www.google.com/maps/search/?api=1&amp;query=LANDMARK%20HALL%20%E7%A5%9E%E5%A5%88%E5%B7%9D%E7%9C%8C" target="_blank">地図</a>）</td><td>神奈川県</td><td><a href="https://hp-setlist.com/stage/7109" target="_blank">Tomoko（セットリスト）</a></td></tr>
 </tbody>
 </table>
 22歳（2021年）
@@ -94,8 +94,8 @@
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td>2021年11月19日</td><td>16:45</td><td>つばきファクトリー 新沼希空バースデーイベント2021</td><td>LANDMARK HALL</td><td>神奈川県</td><td><a href="https://hp-setlist.com/stage/7531" target="_blank">Tomoko（セットリスト）</a></td></tr>
-<tr><td>2021年11月19日</td><td>18:50</td><td>つばきファクトリー 新沼希空バースデーイベント2021</td><td>LANDMARK HALL</td><td>神奈川県</td><td><a href="https://hp-setlist.com/stage/7532" target="_blank">Tomoko（セットリスト）</a></td></tr>
+<tr class="row-even"><td>2021年11月19日</td><td>16:45</td><td>つばきファクトリー 新沼希空バースデーイベント2021</td><td>LANDMARK HALL（<a href="https://www.google.com/maps/search/?api=1&amp;query=LANDMARK%20HALL%20%E7%A5%9E%E5%A5%88%E5%B7%9D%E7%9C%8C" target="_blank">地図</a>）</td><td>神奈川県</td><td><a href="https://hp-setlist.com/stage/7531" target="_blank">Tomoko（セットリスト）</a></td></tr>
+<tr><td>2021年11月19日</td><td>18:50</td><td>つばきファクトリー 新沼希空バースデーイベント2021</td><td>LANDMARK HALL（<a href="https://www.google.com/maps/search/?api=1&amp;query=LANDMARK%20HALL%20%E7%A5%9E%E5%A5%88%E5%B7%9D%E7%9C%8C" target="_blank">地図</a>）</td><td>神奈川県</td><td><a href="https://hp-setlist.com/stage/7532" target="_blank">Tomoko（セットリスト）</a></td></tr>
 </tbody>
 </table>
 23歳（2022年）
@@ -111,8 +111,8 @@
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td>2022年10月20日</td><td>16:45</td><td>つばきファクトリー 新沼希空バースデーイベント2022</td><td>LANDMARK HALL</td><td>神奈川県</td><td><a href="https://hp-setlist.com/stage/9848" target="_blank">Tomoko（セットリスト）</a></td></tr>
-<tr><td>2022年10月20日</td><td>19:00</td><td>つばきファクトリー 新沼希空バースデーイベント2022</td><td>LANDMARK HALL</td><td>神奈川県</td><td><a href="https://hp-setlist.com/stage/9849" target="_blank">Tomoko（セットリスト）</a></td></tr>
+<tr class="row-even"><td>2022年10月20日</td><td>16:45</td><td>つばきファクトリー 新沼希空バースデーイベント2022</td><td>LANDMARK HALL（<a href="https://www.google.com/maps/search/?api=1&amp;query=LANDMARK%20HALL%20%E7%A5%9E%E5%A5%88%E5%B7%9D%E7%9C%8C" target="_blank">地図</a>）</td><td>神奈川県</td><td><a href="https://hp-setlist.com/stage/9848" target="_blank">Tomoko（セットリスト）</a></td></tr>
+<tr><td>2022年10月20日</td><td>19:00</td><td>つばきファクトリー 新沼希空バースデーイベント2022</td><td>LANDMARK HALL（<a href="https://www.google.com/maps/search/?api=1&amp;query=LANDMARK%20HALL%20%E7%A5%9E%E5%A5%88%E5%B7%9D%E7%9C%8C" target="_blank">地図</a>）</td><td>神奈川県</td><td><a href="https://hp-setlist.com/stage/9849" target="_blank">Tomoko（セットリスト）</a></td></tr>
 </tbody>
 </table>
 24歳（2023年）
@@ -128,8 +128,8 @@
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td>2023年10月20日</td><td>17:20</td><td>つばきファクトリー 新沼希空バースデーイベント2023</td><td>飛行船シアター</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/20604" target="_blank">Tomoko（セットリスト）</a></td></tr>
-<tr><td>2023年10月20日</td><td>19:40</td><td>つばきファクトリー 新沼希空バースデーイベント2023</td><td>飛行船シアター</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/20606" target="_blank">Tomoko（セットリスト）</a></td></tr>
+<tr class="row-even"><td>2023年10月20日</td><td>17:20</td><td>つばきファクトリー 新沼希空バースデーイベント2023</td><td>飛行船シアター（<a href="https://www.google.com/maps/search/?api=1&amp;query=%E9%A3%9B%E8%A1%8C%E8%88%B9%E3%82%B7%E3%82%A2%E3%82%BF%E3%83%BC%20%E6%9D%B1%E4%BA%AC%E9%83%BD" target="_blank">地図</a>）</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/20604" target="_blank">Tomoko（セットリスト）</a></td></tr>
+<tr><td>2023年10月20日</td><td>19:40</td><td>つばきファクトリー 新沼希空バースデーイベント2023</td><td>飛行船シアター（<a href="https://www.google.com/maps/search/?api=1&amp;query=%E9%A3%9B%E8%A1%8C%E8%88%B9%E3%82%B7%E3%82%A2%E3%82%BF%E3%83%BC%20%E6%9D%B1%E4%BA%AC%E9%83%BD" target="_blank">地図</a>）</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/20606" target="_blank">Tomoko（セットリスト）</a></td></tr>
 </tbody>
 </table>
 25歳（2024年）
@@ -145,7 +145,7 @@
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td>2024年11月6日</td><td>20:00</td><td>新沼希空バースデートークイベント ～きそ、みんなと作戦会議～</td><td>ロフトプラスワン</td><td>東京都</td><td></td></tr>
+<tr class="row-even"><td>2024年11月6日</td><td>20:00</td><td>新沼希空バースデートークイベント ～きそ、みんなと作戦会議～</td><td>ロフトプラスワン（<a href="https://www.google.com/maps/search/?api=1&amp;query=%E3%83%AD%E3%83%95%E3%83%88%E3%83%97%E3%83%A9%E3%82%B9%E3%83%AF%E3%83%B3%20%E6%9D%B1%E4%BA%AC%E9%83%BD" target="_blank">地図</a>）</td><td>東京都</td><td></td></tr>
 </tbody>
 </table>
 

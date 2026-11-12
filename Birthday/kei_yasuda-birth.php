@@ -23,8 +23,8 @@
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td>2013年12月8日</td><td>13:30</td><td>保田圭バースデーLIVE～ケメ子さん、ゾロ目だよ！！～</td><td>ミュージックレストラン La Donna</td><td>東京都</td><td></td></tr>
-<tr><td>2013年12月8日</td><td>18:00</td><td>保田圭バースデーLIVE～ケメ子さん、ゾロ目だよ！！～</td><td>ミュージックレストラン La Donna</td><td>東京都</td><td></td></tr>
+<tr class="row-even"><td>2013年12月8日</td><td>13:30</td><td>保田圭バースデーLIVE～ケメ子さん、ゾロ目だよ！！～</td><td>ミュージックレストラン La Donna（<a href="https://www.google.com/maps/search/?api=1&amp;query=%E3%83%9F%E3%83%A5%E3%83%BC%E3%82%B8%E3%83%83%E3%82%AF%E3%83%AC%E3%82%B9%E3%83%88%E3%83%A9%E3%83%B3%20La%20Donna%20%E6%9D%B1%E4%BA%AC%E9%83%BD" target="_blank">地図</a>）</td><td>東京都</td><td></td></tr>
+<tr><td>2013年12月8日</td><td>18:00</td><td>保田圭バースデーLIVE～ケメ子さん、ゾロ目だよ！！～</td><td>ミュージックレストラン La Donna（<a href="https://www.google.com/maps/search/?api=1&amp;query=%E3%83%9F%E3%83%A5%E3%83%BC%E3%82%B8%E3%83%83%E3%82%AF%E3%83%AC%E3%82%B9%E3%83%88%E3%83%A9%E3%83%B3%20La%20Donna%20%E6%9D%B1%E4%BA%AC%E9%83%BD" target="_blank">地図</a>）</td><td>東京都</td><td></td></tr>
 </tbody>
 </table>
 

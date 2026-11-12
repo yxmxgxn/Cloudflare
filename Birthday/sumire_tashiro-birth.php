@@ -23,8 +23,8 @@
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td>2023年6月19日</td><td>17:10</td><td>OCHA NORMA 田代すみれバースデーイベント2023</td><td>LANDMARK HALL</td><td>神奈川県</td><td><a href="https://hp-setlist.com/stage/10757" target="_blank">Tomoko（セットリスト）</a></td></tr>
-<tr><td>2023年6月19日</td><td>19:20</td><td>OCHA NORMA 田代すみれバースデーイベント2023</td><td>LANDMARK HALL</td><td>神奈川県</td><td><a href="https://hp-setlist.com/stage/10758" target="_blank">Tomoko（セットリスト）</a></td></tr>
+<tr class="row-even"><td>2023年6月19日</td><td>17:10</td><td>OCHA NORMA 田代すみれバースデーイベント2023</td><td>LANDMARK HALL（<a href="https://www.google.com/maps/search/?api=1&amp;query=LANDMARK%20HALL%20%E7%A5%9E%E5%A5%88%E5%B7%9D%E7%9C%8C" target="_blank">地図</a>）</td><td>神奈川県</td><td><a href="https://hp-setlist.com/stage/10757" target="_blank">Tomoko（セットリスト）</a></td></tr>
+<tr><td>2023年6月19日</td><td>19:20</td><td>OCHA NORMA 田代すみれバースデーイベント2023</td><td>LANDMARK HALL（<a href="https://www.google.com/maps/search/?api=1&amp;query=LANDMARK%20HALL%20%E7%A5%9E%E5%A5%88%E5%B7%9D%E7%9C%8C" target="_blank">地図</a>）</td><td>神奈川県</td><td><a href="https://hp-setlist.com/stage/10758" target="_blank">Tomoko（セットリスト）</a></td></tr>
 </tbody>
 </table>
 19歳（2024年）
@@ -40,8 +40,8 @@
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td>2024年6月13日</td><td>17:20</td><td>OCHA NORMA 田代すみれバースデーイベント2024</td><td>墨田区曳舟文化センター 劇場ホール</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/21404" target="_blank">Tomoko（セットリスト）</a></td></tr>
-<tr><td>2024年6月13日</td><td>19:40</td><td>OCHA NORMA 田代すみれバースデーイベント2024</td><td>墨田区曳舟文化センター 劇場ホール</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/21405" target="_blank">Tomoko（セットリスト）</a></td></tr>
+<tr class="row-even"><td>2024年6月13日</td><td>17:20</td><td>OCHA NORMA 田代すみれバースデーイベント2024</td><td>墨田区曳舟文化センター 劇場ホール（<a href="https://www.google.com/maps/search/?api=1&amp;query=%E5%A2%A8%E7%94%B0%E5%8C%BA%E6%9B%B3%E8%88%9F%E6%96%87%E5%8C%96%E3%82%BB%E3%83%B3%E3%82%BF%E3%83%BC%20%E5%8A%87%E5%A0%B4%E3%83%9B%E3%83%BC%E3%83%AB%20%E6%9D%B1%E4%BA%AC%E9%83%BD" target="_blank">地図</a>）</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/21404" target="_blank">Tomoko（セットリスト）</a></td></tr>
+<tr><td>2024年6月13日</td><td>19:40</td><td>OCHA NORMA 田代すみれバースデーイベント2024</td><td>墨田区曳舟文化センター 劇場ホール（<a href="https://www.google.com/maps/search/?api=1&amp;query=%E5%A2%A8%E7%94%B0%E5%8C%BA%E6%9B%B3%E8%88%9F%E6%96%87%E5%8C%96%E3%82%BB%E3%83%B3%E3%82%BF%E3%83%BC%20%E5%8A%87%E5%A0%B4%E3%83%9B%E3%83%BC%E3%83%AB%20%E6%9D%B1%E4%BA%AC%E9%83%BD" target="_blank">地図</a>）</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/21405" target="_blank">Tomoko（セットリスト）</a></td></tr>
 </tbody>
 </table>
 

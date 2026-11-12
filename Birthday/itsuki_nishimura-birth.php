@@ -23,8 +23,8 @@
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td>2026年10月9日</td><td>17:10</td><td>つばきファクトリー 西村乙輝バースデーイベント2026</td><td>スタァライト劇場</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/27559" target="_blank">Tomoko（セットリスト）</a></td></tr>
-<tr><td>2026年10月9日</td><td>19:30</td><td>つばきファクトリー 西村乙輝バースデーイベント2026</td><td>スタァライト劇場</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/27560" target="_blank">Tomoko（セットリスト）</a></td></tr>
+<tr class="row-even"><td>2026年10月9日</td><td>17:10</td><td>つばきファクトリー 西村乙輝バースデーイベント2026</td><td>スタァライト劇場（<a href="https://www.google.com/maps/search/?api=1&amp;query=%E3%82%B9%E3%82%BF%E3%82%A1%E3%83%A9%E3%82%A4%E3%83%88%E5%8A%87%E5%A0%B4%20%E6%9D%B1%E4%BA%AC%E9%83%BD" target="_blank">地図</a>）</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/27559" target="_blank">Tomoko（セットリスト）</a></td></tr>
+<tr><td>2026年10月9日</td><td>19:30</td><td>つばきファクトリー 西村乙輝バースデーイベント2026</td><td>スタァライト劇場（<a href="https://www.google.com/maps/search/?api=1&amp;query=%E3%82%B9%E3%82%BF%E3%82%A1%E3%83%A9%E3%82%A4%E3%83%88%E5%8A%87%E5%A0%B4%20%E6%9D%B1%E4%BA%AC%E9%83%BD" target="_blank">地図</a>）</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/27560" target="_blank">Tomoko（セットリスト）</a></td></tr>
 </tbody>
 </table>
 

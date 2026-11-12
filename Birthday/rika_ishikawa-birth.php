@@ -91,9 +91,9 @@
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td>2022年1月23日</td><td>13:30</td><td>石川梨華バースデーイベント2022</td><td>イベントスペース 渋谷DAIA</td><td>東京都</td><td></td></tr>
-<tr><td>2022年1月23日</td><td>15:40</td><td>石川梨華バースデーイベント2022</td><td>イベントスペース 渋谷DAIA</td><td>東京都</td><td></td></tr>
-<tr class="row-even"><td>2022年1月23日</td><td>17:50</td><td>石川梨華バースデーイベント2022</td><td>イベントスペース 渋谷DAIA</td><td>東京都</td><td></td></tr>
+<tr class="row-even"><td>2022年1月23日</td><td>13:30</td><td>石川梨華バースデーイベント2022</td><td>イベントスペース 渋谷DAIA（<a href="https://www.google.com/maps/search/?api=1&amp;query=%E3%82%A4%E3%83%99%E3%83%B3%E3%83%88%E3%82%B9%E3%83%9A%E3%83%BC%E3%82%B9%20%E6%B8%8B%E8%B0%B7DAIA%20%E6%9D%B1%E4%BA%AC%E9%83%BD" target="_blank">地図</a>）</td><td>東京都</td><td></td></tr>
+<tr><td>2022年1月23日</td><td>15:40</td><td>石川梨華バースデーイベント2022</td><td>イベントスペース 渋谷DAIA（<a href="https://www.google.com/maps/search/?api=1&amp;query=%E3%82%A4%E3%83%99%E3%83%B3%E3%83%88%E3%82%B9%E3%83%9A%E3%83%BC%E3%82%B9%20%E6%B8%8B%E8%B0%B7DAIA%20%E6%9D%B1%E4%BA%AC%E9%83%BD" target="_blank">地図</a>）</td><td>東京都</td><td></td></tr>
+<tr class="row-even"><td>2022年1月23日</td><td>17:50</td><td>石川梨華バースデーイベント2022</td><td>イベントスペース 渋谷DAIA（<a href="https://www.google.com/maps/search/?api=1&amp;query=%E3%82%A4%E3%83%99%E3%83%B3%E3%83%88%E3%82%B9%E3%83%9A%E3%83%BC%E3%82%B9%20%E6%B8%8B%E8%B0%B7DAIA%20%E6%9D%B1%E4%BA%AC%E9%83%BD" target="_blank">地図</a>）</td><td>東京都</td><td></td></tr>
 </tbody>
 </table>
 38歳（2023年）
@@ -109,8 +109,8 @@
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td>2023年1月21日</td><td>15:30</td><td>石川梨華バースデーイベント2023～ただいま♡～</td><td>TOKYO FM HALL</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/26752" target="_blank">Tomoko（セットリスト）</a></td></tr>
-<tr><td>2023年1月21日</td><td>18:00</td><td>石川梨華バースデーイベント2023～ただいま♡～</td><td>TOKYO FM HALL</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/26753" target="_blank">Tomoko（セットリスト）</a></td></tr>
+<tr class="row-even"><td>2023年1月21日</td><td>15:30</td><td>石川梨華バースデーイベント2023～ただいま♡～</td><td>TOKYO FM HALL（<a href="https://www.google.com/maps/search/?api=1&amp;query=TOKYO%20FM%20HALL%20%E6%9D%B1%E4%BA%AC%E9%83%BD" target="_blank">地図</a>）</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/26752" target="_blank">Tomoko（セットリスト）</a></td></tr>
+<tr><td>2023年1月21日</td><td>18:00</td><td>石川梨華バースデーイベント2023～ただいま♡～</td><td>TOKYO FM HALL（<a href="https://www.google.com/maps/search/?api=1&amp;query=TOKYO%20FM%20HALL%20%E6%9D%B1%E4%BA%AC%E9%83%BD" target="_blank">地図</a>）</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/26753" target="_blank">Tomoko（セットリスト）</a></td></tr>
 </tbody>
 </table>
 39歳（2024年）
@@ -126,9 +126,9 @@
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td>2024年1月20日</td><td>13:40</td><td>石川梨華バースデーイベント39～サンキューです♡～【追加公演】</td><td>イベントスペース 渋谷DAIA</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/26770" target="_blank">Tomoko（セットリスト）</a></td></tr>
-<tr><td>2024年1月20日</td><td>15:40</td><td>石川梨華バースデーイベント39～サンキューです♡～</td><td>イベントスペース 渋谷DAIA</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/26771" target="_blank">Tomoko（セットリスト）</a></td></tr>
-<tr class="row-even"><td>2024年1月20日</td><td>17:50</td><td>石川梨華バースデーイベント39～サンキューです♡～</td><td>イベントスペース 渋谷DAIA</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/26772" target="_blank">Tomoko（セットリスト）</a></td></tr>
+<tr class="row-even"><td>2024年1月20日</td><td>13:40</td><td>石川梨華バースデーイベント39～サンキューです♡～【追加公演】</td><td>イベントスペース 渋谷DAIA（<a href="https://www.google.com/maps/search/?api=1&amp;query=%E3%82%A4%E3%83%99%E3%83%B3%E3%83%88%E3%82%B9%E3%83%9A%E3%83%BC%E3%82%B9%20%E6%B8%8B%E8%B0%B7DAIA%20%E6%9D%B1%E4%BA%AC%E9%83%BD" target="_blank">地図</a>）</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/26770" target="_blank">Tomoko（セットリスト）</a></td></tr>
+<tr><td>2024年1月20日</td><td>15:40</td><td>石川梨華バースデーイベント39～サンキューです♡～</td><td>イベントスペース 渋谷DAIA（<a href="https://www.google.com/maps/search/?api=1&amp;query=%E3%82%A4%E3%83%99%E3%83%B3%E3%83%88%E3%82%B9%E3%83%9A%E3%83%BC%E3%82%B9%20%E6%B8%8B%E8%B0%B7DAIA%20%E6%9D%B1%E4%BA%AC%E9%83%BD" target="_blank">地図</a>）</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/26771" target="_blank">Tomoko（セットリスト）</a></td></tr>
+<tr class="row-even"><td>2024年1月20日</td><td>17:50</td><td>石川梨華バースデーイベント39～サンキューです♡～</td><td>イベントスペース 渋谷DAIA（<a href="https://www.google.com/maps/search/?api=1&amp;query=%E3%82%A4%E3%83%99%E3%83%B3%E3%83%88%E3%82%B9%E3%83%9A%E3%83%BC%E3%82%B9%20%E6%B8%8B%E8%B0%B7DAIA%20%E6%9D%B1%E4%BA%AC%E9%83%BD" target="_blank">地図</a>）</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/26772" target="_blank">Tomoko（セットリスト）</a></td></tr>
 </tbody>
 </table>
 40歳（2025年）
@@ -144,8 +144,8 @@
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td>2025年1月13日</td><td>14:00</td><td>石川梨華バースデーイベント2025～ダブル成人式です♡いぇい！いぇい！～</td><td>渋谷シダックスカルチャーホール</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/26790" target="_blank">Tomoko（セットリスト）</a></td></tr>
-<tr><td>2025年1月13日</td><td>16:30</td><td>石川梨華バースデーイベント2025～ダブル成人式です♡いぇい！いぇい！～</td><td>渋谷シダックスカルチャーホール</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/26791" target="_blank">Tomoko（セットリスト）</a></td></tr>
+<tr class="row-even"><td>2025年1月13日</td><td>14:00</td><td>石川梨華バースデーイベント2025～ダブル成人式です♡いぇい！いぇい！～</td><td>渋谷シダックスカルチャーホール（<a href="https://www.google.com/maps/search/?api=1&amp;query=%E6%B8%8B%E8%B0%B7%E3%82%B7%E3%83%80%E3%83%83%E3%82%AF%E3%82%B9%E3%82%AB%E3%83%AB%E3%83%81%E3%83%A3%E3%83%BC%E3%83%9B%E3%83%BC%E3%83%AB%20%E6%9D%B1%E4%BA%AC%E9%83%BD" target="_blank">地図</a>）</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/26790" target="_blank">Tomoko（セットリスト）</a></td></tr>
+<tr><td>2025年1月13日</td><td>16:30</td><td>石川梨華バースデーイベント2025～ダブル成人式です♡いぇい！いぇい！～</td><td>渋谷シダックスカルチャーホール（<a href="https://www.google.com/maps/search/?api=1&amp;query=%E6%B8%8B%E8%B0%B7%E3%82%B7%E3%83%80%E3%83%83%E3%82%AF%E3%82%B9%E3%82%AB%E3%83%AB%E3%83%81%E3%83%A3%E3%83%BC%E3%83%9B%E3%83%BC%E3%83%AB%20%E6%9D%B1%E4%BA%AC%E9%83%BD" target="_blank">地図</a>）</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/26791" target="_blank">Tomoko（セットリスト）</a></td></tr>
 </tbody>
 </table>
 41歳（2026年）
@@ -161,8 +161,8 @@
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td>2026年1月17日</td><td>14:00</td><td>石川梨華バースデーイベント2026～Love Revolution 41♡</td><td>渋谷シダックスカルチャーホール</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/26812" target="_blank">Tomoko（セットリスト）</a></td></tr>
-<tr><td>2026年1月17日</td><td>16:30</td><td>石川梨華バースデーイベント2026～Love Revolution 41♡</td><td>渋谷シダックスカルチャーホール</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/26813" target="_blank">Tomoko（セットリスト）</a></td></tr>
+<tr class="row-even"><td>2026年1月17日</td><td>14:00</td><td>石川梨華バースデーイベント2026～Love Revolution 41♡</td><td>渋谷シダックスカルチャーホール（<a href="https://www.google.com/maps/search/?api=1&amp;query=%E6%B8%8B%E8%B0%B7%E3%82%B7%E3%83%80%E3%83%83%E3%82%AF%E3%82%B9%E3%82%AB%E3%83%AB%E3%83%81%E3%83%A3%E3%83%BC%E3%83%9B%E3%83%BC%E3%83%AB%20%E6%9D%B1%E4%BA%AC%E9%83%BD" target="_blank">地図</a>）</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/26812" target="_blank">Tomoko（セットリスト）</a></td></tr>
+<tr><td>2026年1月17日</td><td>16:30</td><td>石川梨華バースデーイベント2026～Love Revolution 41♡</td><td>渋谷シダックスカルチャーホール（<a href="https://www.google.com/maps/search/?api=1&amp;query=%E6%B8%8B%E8%B0%B7%E3%82%B7%E3%83%80%E3%83%83%E3%82%AF%E3%82%B9%E3%82%AB%E3%83%AB%E3%83%81%E3%83%A3%E3%83%BC%E3%83%9B%E3%83%BC%E3%83%AB%20%E6%9D%B1%E4%BA%AC%E9%83%BD" target="_blank">地図</a>）</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/26813" target="_blank">Tomoko（セットリスト）</a></td></tr>
 </tbody>
 </table>
 
