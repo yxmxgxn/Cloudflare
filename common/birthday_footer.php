@@ -43,6 +43,7 @@ async function sharePage() {
 }
 </script>
 <ul class="footer-links">
+  <li><a href="/common/about" target="_blank">このサイトについて</a></li>
   <li><a href="/common/privacy" target="_blank">プライバシーポリシー</a></li>
   <li><a href="/common/disclaimer" target="_blank">免責事項</a></li>
   <li><a href="https://x.com/yxmxgxn" target="_blank">&copy; 2026 @yxmxgxn</a></li>

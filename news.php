@@ -8,6 +8,14 @@
 <main>
   このHPの更新履歴です。更新日時と内部リンク、また修正内容を掲載しています。※軽微な修正やデータ追加は省略しています。
   <dl>
+  <dt>2026/11/12</dt>
+  <dd><a href="/common/about">このサイトについて</a>のページを追加</dd>
+  <dt>2026/11/12</dt>
+  <dd><a href="/common/privacy">プライバシーポリシー</a>・<a href="/common/disclaimer">免責事項</a>を修正（フォームの扱いや外部サービスの記載、リンク・加工・再配布は自由であることなど）</dd>
+  <dt>2026/11/10</dt>
+  <dd><a href="/hello-kenshusei-blog">ハロプロ研修生ブログ</a>の目次のページを追加</dd>
+  <dt>2026/11/10</dt>
+  <dd><a href="/instagram/karin-mesinging">宮本佳林 歌ってみた・踊ってみた</a>のまとめを追加</dd>
   <dt>2026/10/14</dt>
   <dd><a href="https://ameblo.karin-archive.com/" target="_blank">ハロプロ アメブロ検索</a>のページを追加</dd>
   <dt>2026/10/09</dt>

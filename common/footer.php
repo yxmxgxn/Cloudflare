@@ -41,6 +41,7 @@ async function sharePage() {
 <?php include __DIR__ . '/feedback.php'; ?>
 
 <ul class="footer-links">
+  <li><a href="/common/about" target="_blank">このサイトについて</a></li>
   <li><a href="/common/privacy" target="_blank">プライバシーポリシー</a></li>
   <li><a href="/common/disclaimer" target="_blank">免責事項</a></li>
   <li class="footer-break"></li>
