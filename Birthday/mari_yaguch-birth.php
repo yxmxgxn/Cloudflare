@@ -23,8 +23,8 @@
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td>2023年1月13日</td><td>18:30</td><td>矢口真里 40thバースデーイベント2023～数億年ぶりのBDイベントやっちゃうよ!!～</td><td>GRIT at shibuya</td><td>東京都</td><td></td></tr>
-<tr><td>2023年1月13日</td><td>20:30</td><td>矢口真里 40thバースデーイベント2023～数億年ぶりのBDイベントやっちゃうよ!!～</td><td>GRIT at shibuya</td><td>東京都</td><td></td></tr>
+<tr class="row-even"><td>2023年1月13日</td><td>18:30</td><td>矢口真里 40thバースデーイベント2023～数億年ぶりのBDイベントやっちゃうよ!!～</td><td>GRIT at shibuya（<a href="https://www.google.com/maps/search/?api=1&amp;query=GRIT%20at%20Shibuya%20%E6%9D%B1%E4%BA%AC%E9%83%BD" target="_blank">地図</a>）</td><td>東京都</td><td></td></tr>
+<tr><td>2023年1月13日</td><td>20:30</td><td>矢口真里 40thバースデーイベント2023～数億年ぶりのBDイベントやっちゃうよ!!～</td><td>GRIT at shibuya（<a href="https://www.google.com/maps/search/?api=1&amp;query=GRIT%20at%20Shibuya%20%E6%9D%B1%E4%BA%AC%E9%83%BD" target="_blank">地図</a>）</td><td>東京都</td><td></td></tr>
 </tbody>
 </table>
 42歳（2025年）
@@ -40,8 +40,8 @@
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td>2025年1月19日</td><td>15:30</td><td>矢口真里バースデーリサイタル2025～珍しく本気で歌を届けます～</td><td>GRIT at shibuya</td><td>東京都</td><td></td></tr>
-<tr><td>2025年1月19日</td><td>18:30</td><td>矢口真里バースデーリサイタルの打ち上げ～飲みながら楽しく喋りたい～</td><td>GRIT at shibuya</td><td>東京都</td><td></td></tr>
+<tr class="row-even"><td>2025年1月19日</td><td>15:30</td><td>矢口真里バースデーリサイタル2025～珍しく本気で歌を届けます～</td><td>GRIT at shibuya（<a href="https://www.google.com/maps/search/?api=1&amp;query=GRIT%20at%20Shibuya%20%E6%9D%B1%E4%BA%AC%E9%83%BD" target="_blank">地図</a>）</td><td>東京都</td><td></td></tr>
+<tr><td>2025年1月19日</td><td>18:30</td><td>矢口真里バースデーリサイタルの打ち上げ～飲みながら楽しく喋りたい～</td><td>GRIT at shibuya（<a href="https://www.google.com/maps/search/?api=1&amp;query=GRIT%20at%20Shibuya%20%E6%9D%B1%E4%BA%AC%E9%83%BD" target="_blank">地図</a>）</td><td>東京都</td><td></td></tr>
 </tbody>
 </table>
 

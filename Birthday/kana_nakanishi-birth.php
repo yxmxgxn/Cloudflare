@@ -57,8 +57,8 @@
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td>2014年6月2日</td><td>18:20</td><td>スマイレージ 中西香菜バースデーイベント2014</td><td>TOKYO FM HALL</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/3911" target="_blank">Tomoko（セットリスト）</a></td></tr>
-<tr><td>2014年6月2日</td><td>20:00</td><td>スマイレージ 中西香菜バースデーイベント2014</td><td>TOKYO FM HALL</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/3912" target="_blank">Tomoko（セットリスト）</a></td></tr>
+<tr class="row-even"><td>2014年6月2日</td><td>18:20</td><td>スマイレージ 中西香菜バースデーイベント2014</td><td>TOKYO FM HALL（<a href="https://www.google.com/maps/search/?api=1&amp;query=TOKYO%20FM%20HALL%20%E6%9D%B1%E4%BA%AC%E9%83%BD" target="_blank">地図</a>）</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/3911" target="_blank">Tomoko（セットリスト）</a></td></tr>
+<tr><td>2014年6月2日</td><td>20:00</td><td>スマイレージ 中西香菜バースデーイベント2014</td><td>TOKYO FM HALL（<a href="https://www.google.com/maps/search/?api=1&amp;query=TOKYO%20FM%20HALL%20%E6%9D%B1%E4%BA%AC%E9%83%BD" target="_blank">地図</a>）</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/3912" target="_blank">Tomoko（セットリスト）</a></td></tr>
 </tbody>
 </table>
 18歳（2015年）
@@ -74,8 +74,8 @@
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td>2015年6月4日</td><td>18:20</td><td>アンジュルム 中西香菜バースデーイベント2015</td><td>TOKYO FM HALL</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/4395" target="_blank">Tomoko（セットリスト）</a></td></tr>
-<tr><td>2015年6月4日</td><td>20:00</td><td>アンジュルム 中西香菜バースデーイベント2015</td><td>TOKYO FM HALL</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/4396" target="_blank">Tomoko（セットリスト）</a></td></tr>
+<tr class="row-even"><td>2015年6月4日</td><td>18:20</td><td>アンジュルム 中西香菜バースデーイベント2015</td><td>TOKYO FM HALL（<a href="https://www.google.com/maps/search/?api=1&amp;query=TOKYO%20FM%20HALL%20%E6%9D%B1%E4%BA%AC%E9%83%BD" target="_blank">地図</a>）</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/4395" target="_blank">Tomoko（セットリスト）</a></td></tr>
+<tr><td>2015年6月4日</td><td>20:00</td><td>アンジュルム 中西香菜バースデーイベント2015</td><td>TOKYO FM HALL（<a href="https://www.google.com/maps/search/?api=1&amp;query=TOKYO%20FM%20HALL%20%E6%9D%B1%E4%BA%AC%E9%83%BD" target="_blank">地図</a>）</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/4396" target="_blank">Tomoko（セットリスト）</a></td></tr>
 </tbody>
 </table>
 19歳（2016年）
@@ -91,8 +91,8 @@
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td>2016年6月6日</td><td>18:30</td><td>アンジュルム 中西香菜バースデーイベント2016</td><td>TOKYO FM HALL</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/5064" target="_blank">Tomoko（セットリスト）</a></td></tr>
-<tr><td>2016年6月6日</td><td>20:15</td><td>アンジュルム 中西香菜バースデーイベント2016</td><td>TOKYO FM HALL</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/5065" target="_blank">Tomoko（セットリスト）</a></td></tr>
+<tr class="row-even"><td>2016年6月6日</td><td>18:30</td><td>アンジュルム 中西香菜バースデーイベント2016</td><td>TOKYO FM HALL（<a href="https://www.google.com/maps/search/?api=1&amp;query=TOKYO%20FM%20HALL%20%E6%9D%B1%E4%BA%AC%E9%83%BD" target="_blank">地図</a>）</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/5064" target="_blank">Tomoko（セットリスト）</a></td></tr>
+<tr><td>2016年6月6日</td><td>20:15</td><td>アンジュルム 中西香菜バースデーイベント2016</td><td>TOKYO FM HALL（<a href="https://www.google.com/maps/search/?api=1&amp;query=TOKYO%20FM%20HALL%20%E6%9D%B1%E4%BA%AC%E9%83%BD" target="_blank">地図</a>）</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/5065" target="_blank">Tomoko（セットリスト）</a></td></tr>
 </tbody>
 </table>
 20歳（2017年）
@@ -108,9 +108,9 @@
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td>2017年6月5日</td><td>18:30</td><td>アンジュルム 中西香菜バースデーイベント2017</td><td>TOKYO FM HALL</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/5646" target="_blank">Tomoko（セットリスト）</a></td></tr>
-<tr><td>2017年6月5日</td><td>20:15</td><td>アンジュルム 中西香菜バースデーイベント2017</td><td>TOKYO FM HALL</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/5647" target="_blank">Tomoko（セットリスト）</a></td></tr>
-<tr class="row-even"><td>2017年6月6日</td><td>19:30</td><td>アンジュルム 中西香菜・室田瑞希・佐々木莉佳子バースデーイベント2017 in 名古屋</td><td>ミッドランドスクエア シネマ2</td><td>愛知県</td><td><a href="https://hp-setlist.com/stage/10049" target="_blank">Tomoko（セットリスト）</a></td></tr>
+<tr class="row-even"><td>2017年6月5日</td><td>18:30</td><td>アンジュルム 中西香菜バースデーイベント2017</td><td>TOKYO FM HALL（<a href="https://www.google.com/maps/search/?api=1&amp;query=TOKYO%20FM%20HALL%20%E6%9D%B1%E4%BA%AC%E9%83%BD" target="_blank">地図</a>）</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/5646" target="_blank">Tomoko（セットリスト）</a></td></tr>
+<tr><td>2017年6月5日</td><td>20:15</td><td>アンジュルム 中西香菜バースデーイベント2017</td><td>TOKYO FM HALL（<a href="https://www.google.com/maps/search/?api=1&amp;query=TOKYO%20FM%20HALL%20%E6%9D%B1%E4%BA%AC%E9%83%BD" target="_blank">地図</a>）</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/5647" target="_blank">Tomoko（セットリスト）</a></td></tr>
+<tr class="row-even"><td>2017年6月6日</td><td>19:30</td><td>アンジュルム 中西香菜・室田瑞希・佐々木莉佳子バースデーイベント2017 in 名古屋</td><td>ミッドランドスクエア シネマ2（<a href="https://www.google.com/maps/search/?api=1&amp;query=%E3%83%9F%E3%83%83%E3%83%89%E3%83%A9%E3%83%B3%E3%83%89%E3%82%B9%E3%82%AF%E3%82%A8%E3%82%A2%20%E3%82%B7%E3%83%8D%E3%83%9E2%20%E6%84%9B%E7%9F%A5%E7%9C%8C" target="_blank">地図</a>）</td><td>愛知県</td><td><a href="https://hp-setlist.com/stage/10049" target="_blank">Tomoko（セットリスト）</a></td></tr>
 </tbody>
 </table>
 21歳（2018年）
@@ -126,9 +126,9 @@
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td>2018年6月8日</td><td>17:45</td><td>アンジュルム 中西香菜バースデーイベント2018</td><td>スクエア荏原ひらつかホール</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/6133" target="_blank">Tomoko（セットリスト）</a></td></tr>
-<tr><td>2018年6月8日</td><td>19:30</td><td>アンジュルム 中西香菜バースデーイベント2018</td><td>スクエア荏原ひらつかホール</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/6134" target="_blank">Tomoko（セットリスト）</a></td></tr>
-<tr class="row-even"><td>2018年7月24日</td><td>19:30</td><td>アンジュルム 中西香菜バースデーイベント2018 in 名古屋</td><td>ミッドランドスクエア シネマ2</td><td>愛知県</td><td><a href="https://hp-setlist.com/stage/10103" target="_blank">Tomoko（セットリスト）</a></td></tr>
+<tr class="row-even"><td>2018年6月8日</td><td>17:45</td><td>アンジュルム 中西香菜バースデーイベント2018</td><td>スクエア荏原ひらつかホール（<a href="https://www.google.com/maps/search/?api=1&amp;query=%E3%82%B9%E3%82%AF%E3%82%A8%E3%82%A2%E8%8D%8F%E5%8E%9F%E3%81%B2%E3%82%89%E3%81%A4%E3%81%8B%E3%83%9B%E3%83%BC%E3%83%AB%20%E6%9D%B1%E4%BA%AC%E9%83%BD" target="_blank">地図</a>）</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/6133" target="_blank">Tomoko（セットリスト）</a></td></tr>
+<tr><td>2018年6月8日</td><td>19:30</td><td>アンジュルム 中西香菜バースデーイベント2018</td><td>スクエア荏原ひらつかホール（<a href="https://www.google.com/maps/search/?api=1&amp;query=%E3%82%B9%E3%82%AF%E3%82%A8%E3%82%A2%E8%8D%8F%E5%8E%9F%E3%81%B2%E3%82%89%E3%81%A4%E3%81%8B%E3%83%9B%E3%83%BC%E3%83%AB%20%E6%9D%B1%E4%BA%AC%E9%83%BD" target="_blank">地図</a>）</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/6134" target="_blank">Tomoko（セットリスト）</a></td></tr>
+<tr class="row-even"><td>2018年7月24日</td><td>19:30</td><td>アンジュルム 中西香菜バースデーイベント2018 in 名古屋</td><td>ミッドランドスクエア シネマ2（<a href="https://www.google.com/maps/search/?api=1&amp;query=%E3%83%9F%E3%83%83%E3%83%89%E3%83%A9%E3%83%B3%E3%83%89%E3%82%B9%E3%82%AF%E3%82%A8%E3%82%A2%20%E3%82%B7%E3%83%8D%E3%83%9E2%20%E6%84%9B%E7%9F%A5%E7%9C%8C" target="_blank">地図</a>）</td><td>愛知県</td><td><a href="https://hp-setlist.com/stage/10103" target="_blank">Tomoko（セットリスト）</a></td></tr>
 </tbody>
 </table>
 22歳（2019年）
@@ -144,8 +144,8 @@
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td>2019年6月3日</td><td>18:00</td><td>アンジュルム 中西香菜バースデーイベント2019</td><td>TOKYO FM HALL</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/6629" target="_blank">Tomoko（セットリスト）</a></td></tr>
-<tr><td>2019年6月3日</td><td>19:45</td><td>アンジュルム 中西香菜バースデーイベント2019</td><td>TOKYO FM HALL</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/6630" target="_blank">Tomoko（セットリスト）</a></td></tr>
+<tr class="row-even"><td>2019年6月3日</td><td>18:00</td><td>アンジュルム 中西香菜バースデーイベント2019</td><td>TOKYO FM HALL（<a href="https://www.google.com/maps/search/?api=1&amp;query=TOKYO%20FM%20HALL%20%E6%9D%B1%E4%BA%AC%E9%83%BD" target="_blank">地図</a>）</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/6629" target="_blank">Tomoko（セットリスト）</a></td></tr>
+<tr><td>2019年6月3日</td><td>19:45</td><td>アンジュルム 中西香菜バースデーイベント2019</td><td>TOKYO FM HALL（<a href="https://www.google.com/maps/search/?api=1&amp;query=TOKYO%20FM%20HALL%20%E6%9D%B1%E4%BA%AC%E9%83%BD" target="_blank">地図</a>）</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/6630" target="_blank">Tomoko（セットリスト）</a></td></tr>
 </tbody>
 </table>
 25歳（2022年）
@@ -161,8 +161,8 @@
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td>2022年6月3日</td><td>18:00</td><td>中西香菜 Birthday Special Event 2022</td><td>表参道 WALL&amp;WALL</td><td>東京都</td><td></td></tr>
-<tr><td>2022年6月3日</td><td>20:00</td><td>中西香菜 Birthday Special Event 2022</td><td>表参道 WALL&amp;WALL</td><td>東京都</td><td></td></tr>
+<tr class="row-even"><td>2022年6月3日</td><td>18:00</td><td>中西香菜 Birthday Special Event 2022</td><td>表参道 WALL&amp;WALL（<a href="https://www.google.com/maps/search/?api=1&amp;query=%E8%A1%A8%E5%8F%82%E9%81%93%20WALL%26WALL%20%E6%9D%B1%E4%BA%AC%E9%83%BD" target="_blank">地図</a>）</td><td>東京都</td><td></td></tr>
+<tr><td>2022年6月3日</td><td>20:00</td><td>中西香菜 Birthday Special Event 2022</td><td>表参道 WALL&amp;WALL（<a href="https://www.google.com/maps/search/?api=1&amp;query=%E8%A1%A8%E5%8F%82%E9%81%93%20WALL%26WALL%20%E6%9D%B1%E4%BA%AC%E9%83%BD" target="_blank">地図</a>）</td><td>東京都</td><td></td></tr>
 </tbody>
 </table>
 26歳（2023年）
@@ -179,7 +179,7 @@
 </thead>
 <tbody>
 <tr class="row-even"><td>2023年6月3日</td><td></td><td>かななん誕生日会2023 〜大阪編〜</td><td>GaraGe</td><td>大阪府</td><td></td></tr>
-<tr><td>2023年6月4日</td><td></td><td>かななん誕生日会2023 〜東京編〜</td><td>PLUSWINHALL 六本木</td><td>東京都</td><td></td></tr>
+<tr><td>2023年6月4日</td><td></td><td>かななん誕生日会2023 〜東京編〜</td><td>PLUSWINHALL 六本木（<a href="https://www.google.com/maps/search/?api=1&amp;query=PLUSWINHALL%20%E5%85%AD%E6%9C%AC%E6%9C%A8%20%E6%9D%B1%E4%BA%AC%E9%83%BD" target="_blank">地図</a>）</td><td>東京都</td><td></td></tr>
 </tbody>
 </table>
 27歳（2024年）
@@ -195,27 +195,10 @@
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td>2024年6月4日</td><td>16:00</td><td>中西香菜バースデーイベント2024</td><td>渋谷REX</td><td>東京都</td><td></td></tr>
-<tr><td>2024年6月4日</td><td>19:00</td><td>中西香菜バースデーイベント2024</td><td>渋谷REX</td><td>東京都</td><td></td></tr>
-<tr class="row-even"><td>2024年6月30日</td><td>16:00</td><td>中西香菜バースデーイベント2024</td><td>BAR PAIN 大阪</td><td>東京都</td><td></td></tr>
-<tr><td>2024年6月30日</td><td>19:00</td><td>中西香菜バースデーイベント2024</td><td>BAR PAIN 大阪</td><td>東京都</td><td></td></tr>
-</tbody>
-</table>
-29歳（2026年）
-<table class="birthday-table">
-<thead>
-<tr>
-<th>日付</th>
-<th>開演</th>
-<th>イベント名</th>
-<th>会場</th>
-<th>都道府県</th>
-<th>セットリスト</th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td>2026年7月22日</td><td>22:00</td><td>中西香菜バースデーイベント2026</td><td>オンライン（ZOOM）</td><td></td><td></td></tr>
-<tr><td>2026年7月25日</td><td>22:00</td><td>中西香菜バースデーイベント2026</td><td>オンライン（ZOOM）</td><td></td><td></td></tr>
+<tr class="row-even"><td>2024年6月4日</td><td>16:00</td><td>中西香菜バースデーイベント2024</td><td>渋谷REX（<a href="https://www.google.com/maps/search/?api=1&amp;query=%E6%B8%8B%E8%B0%B7REX%20%E6%9D%B1%E4%BA%AC%E9%83%BD" target="_blank">地図</a>）</td><td>東京都</td><td></td></tr>
+<tr><td>2024年6月4日</td><td>19:00</td><td>中西香菜バースデーイベント2024</td><td>渋谷REX（<a href="https://www.google.com/maps/search/?api=1&amp;query=%E6%B8%8B%E8%B0%B7REX%20%E6%9D%B1%E4%BA%AC%E9%83%BD" target="_blank">地図</a>）</td><td>東京都</td><td></td></tr>
+<tr class="row-even"><td>2024年6月30日</td><td>16:00</td><td>中西香菜バースデーイベント2024</td><td>BAR PAIN 大阪（<a href="https://www.google.com/maps/search/?api=1&amp;query=BAR%20PAIN%20%E5%A4%A7%E9%98%AA%20%E5%A4%A7%E9%98%AA%E5%BA%9C" target="_blank">地図</a>）</td><td>大阪府</td><td></td></tr>
+<tr><td>2024年6月30日</td><td>19:00</td><td>中西香菜バースデーイベント2024</td><td>BAR PAIN 大阪（<a href="https://www.google.com/maps/search/?api=1&amp;query=BAR%20PAIN%20%E5%A4%A7%E9%98%AA%20%E5%A4%A7%E9%98%AA%E5%BA%9C" target="_blank">地図</a>）</td><td>大阪府</td><td></td></tr>
 </tbody>
 </table>
 

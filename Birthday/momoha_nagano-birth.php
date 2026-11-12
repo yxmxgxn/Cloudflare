@@ -23,8 +23,8 @@
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td>2026年5月25日</td><td>16:45</td><td>アンジュルム 長野桃羽バースデーイベント2026</td><td>有楽町朝日ホール</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/23803" target="_blank">Tomoko（セットリスト）</a></td></tr>
-<tr><td>2026年5月25日</td><td>19:00</td><td>アンジュルム 長野桃羽バースデーイベント2026</td><td>有楽町朝日ホール</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/23804" target="_blank">Tomoko（セットリスト）</a></td></tr>
+<tr class="row-even"><td>2026年5月25日</td><td>16:45</td><td>アンジュルム 長野桃羽バースデーイベント2026</td><td>有楽町朝日ホール（<a href="https://www.google.com/maps/search/?api=1&amp;query=%E6%9C%89%E6%A5%BD%E7%94%BA%E6%9C%9D%E6%97%A5%E3%83%9B%E3%83%BC%E3%83%AB%20%E6%9D%B1%E4%BA%AC%E9%83%BD" target="_blank">地図</a>）</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/23803" target="_blank">Tomoko（セットリスト）</a></td></tr>
+<tr><td>2026年5月25日</td><td>19:00</td><td>アンジュルム 長野桃羽バースデーイベント2026</td><td>有楽町朝日ホール（<a href="https://www.google.com/maps/search/?api=1&amp;query=%E6%9C%89%E6%A5%BD%E7%94%BA%E6%9C%9D%E6%97%A5%E3%83%9B%E3%83%BC%E3%83%AB%20%E6%9D%B1%E4%BA%AC%E9%83%BD" target="_blank">地図</a>）</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/23804" target="_blank">Tomoko（セットリスト）</a></td></tr>
 </tbody>
 </table>
 

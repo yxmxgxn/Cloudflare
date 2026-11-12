@@ -23,8 +23,8 @@
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td>2013年11月21日</td><td>18:30</td><td>清水佐紀バースデーイベント〜22nd Anniversary〜</td><td>TOKYO FM HALL</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/3665" target="_blank">Tomoko（セットリスト）</a></td></tr>
-<tr><td>2013年11月21日</td><td>20:10</td><td>清水佐紀バースデーイベント〜22nd Anniversary〜</td><td>TOKYO FM HALL</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/3666" target="_blank">Tomoko（セットリスト）</a></td></tr>
+<tr class="row-even"><td>2013年11月21日</td><td>18:30</td><td>清水佐紀バースデーイベント〜22nd Anniversary〜</td><td>TOKYO FM HALL（<a href="https://www.google.com/maps/search/?api=1&amp;query=TOKYO%20FM%20HALL%20%E6%9D%B1%E4%BA%AC%E9%83%BD" target="_blank">地図</a>）</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/3665" target="_blank">Tomoko（セットリスト）</a></td></tr>
+<tr><td>2013年11月21日</td><td>20:10</td><td>清水佐紀バースデーイベント〜22nd Anniversary〜</td><td>TOKYO FM HALL（<a href="https://www.google.com/maps/search/?api=1&amp;query=TOKYO%20FM%20HALL%20%E6%9D%B1%E4%BA%AC%E9%83%BD" target="_blank">地図</a>）</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/3666" target="_blank">Tomoko（セットリスト）</a></td></tr>
 </tbody>
 </table>
 23歳（2014年）
@@ -40,8 +40,8 @@
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td>2014年11月21日</td><td>18:30</td><td>Berryz工房 清水佐紀バースデーイベント2014</td><td>TOKYO FM HALL</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/4193" target="_blank">Tomoko（セットリスト）</a></td></tr>
-<tr><td>2014年11月21日</td><td>20:10</td><td>Berryz工房 清水佐紀バースデーイベント2014</td><td>TOKYO FM HALL</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/4194" target="_blank">Tomoko（セットリスト）</a></td></tr>
+<tr class="row-even"><td>2014年11月21日</td><td>18:30</td><td>Berryz工房 清水佐紀バースデーイベント2014</td><td>TOKYO FM HALL（<a href="https://www.google.com/maps/search/?api=1&amp;query=TOKYO%20FM%20HALL%20%E6%9D%B1%E4%BA%AC%E9%83%BD" target="_blank">地図</a>）</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/4193" target="_blank">Tomoko（セットリスト）</a></td></tr>
+<tr><td>2014年11月21日</td><td>20:10</td><td>Berryz工房 清水佐紀バースデーイベント2014</td><td>TOKYO FM HALL（<a href="https://www.google.com/maps/search/?api=1&amp;query=TOKYO%20FM%20HALL%20%E6%9D%B1%E4%BA%AC%E9%83%BD" target="_blank">地図</a>）</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/4194" target="_blank">Tomoko（セットリスト）</a></td></tr>
 </tbody>
 </table>
 29歳（2020年）
@@ -57,9 +57,9 @@
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td>2020年11月3日</td><td>13:20</td><td>清水佐紀・須藤茉麻・熊井友理奈 ファンクラブイベント～しみしみにバースデーサプライズ～</td><td>LANDMARK HALL</td><td>神奈川県</td><td></td></tr>
-<tr><td>2020年11月3日</td><td>16:10</td><td>清水佐紀・須藤茉麻・熊井友理奈 ファンクラブイベント～しみしみにバースデーサプライズ～</td><td>LANDMARK HALL</td><td>神奈川県</td><td></td></tr>
-<tr class="row-even"><td>2020年11月3日</td><td>19:00</td><td>清水佐紀・須藤茉麻・熊井友理奈 ファンクラブイベント～しみしみにバースデーサプライズ～</td><td>LANDMARK HALL</td><td>神奈川県</td><td></td></tr>
+<tr class="row-even"><td>2020年11月3日</td><td>13:20</td><td>清水佐紀・須藤茉麻・熊井友理奈 ファンクラブイベント～しみしみにバースデーサプライズ～</td><td>LANDMARK HALL（<a href="https://www.google.com/maps/search/?api=1&amp;query=LANDMARK%20HALL%20%E7%A5%9E%E5%A5%88%E5%B7%9D%E7%9C%8C" target="_blank">地図</a>）</td><td>神奈川県</td><td></td></tr>
+<tr><td>2020年11月3日</td><td>16:10</td><td>清水佐紀・須藤茉麻・熊井友理奈 ファンクラブイベント～しみしみにバースデーサプライズ～</td><td>LANDMARK HALL（<a href="https://www.google.com/maps/search/?api=1&amp;query=LANDMARK%20HALL%20%E7%A5%9E%E5%A5%88%E5%B7%9D%E7%9C%8C" target="_blank">地図</a>）</td><td>神奈川県</td><td></td></tr>
+<tr class="row-even"><td>2020年11月3日</td><td>19:00</td><td>清水佐紀・須藤茉麻・熊井友理奈 ファンクラブイベント～しみしみにバースデーサプライズ～</td><td>LANDMARK HALL（<a href="https://www.google.com/maps/search/?api=1&amp;query=LANDMARK%20HALL%20%E7%A5%9E%E5%A5%88%E5%B7%9D%E7%9C%8C" target="_blank">地図</a>）</td><td>神奈川県</td><td></td></tr>
 </tbody>
 </table>
 30歳（2021年）
@@ -75,10 +75,10 @@
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td>2021年11月23日</td><td>12:15</td><td>清水佐紀バースデーイベント2021～Bye Byeまたね～</td><td>渋谷シダックスカルチャーホール</td><td>東京都</td><td></td></tr>
-<tr><td>2021年11月23日</td><td>14:30</td><td>清水佐紀バースデーイベント2021～Bye Byeまたね～</td><td>渋谷シダックスカルチャーホール</td><td>東京都</td><td></td></tr>
-<tr class="row-even"><td>2021年11月23日</td><td>16:40</td><td>清水佐紀バースデーイベント2021～Bye Byeまたね～</td><td>渋谷シダックスカルチャーホール</td><td>東京都</td><td></td></tr>
-<tr><td>2021年11月23日</td><td>18:55</td><td>清水佐紀バースデーイベント2021～Bye Byeまたね～</td><td>渋谷シダックスカルチャーホール</td><td>東京都</td><td></td></tr>
+<tr class="row-even"><td>2021年11月23日</td><td>12:15</td><td>清水佐紀バースデーイベント2021～Bye Byeまたね～</td><td>渋谷シダックスカルチャーホール（<a href="https://www.google.com/maps/search/?api=1&amp;query=%E6%B8%8B%E8%B0%B7%E3%82%B7%E3%83%80%E3%83%83%E3%82%AF%E3%82%B9%E3%82%AB%E3%83%AB%E3%83%81%E3%83%A3%E3%83%BC%E3%83%9B%E3%83%BC%E3%83%AB%20%E6%9D%B1%E4%BA%AC%E9%83%BD" target="_blank">地図</a>）</td><td>東京都</td><td></td></tr>
+<tr><td>2021年11月23日</td><td>14:30</td><td>清水佐紀バースデーイベント2021～Bye Byeまたね～</td><td>渋谷シダックスカルチャーホール（<a href="https://www.google.com/maps/search/?api=1&amp;query=%E6%B8%8B%E8%B0%B7%E3%82%B7%E3%83%80%E3%83%83%E3%82%AF%E3%82%B9%E3%82%AB%E3%83%AB%E3%83%81%E3%83%A3%E3%83%BC%E3%83%9B%E3%83%BC%E3%83%AB%20%E6%9D%B1%E4%BA%AC%E9%83%BD" target="_blank">地図</a>）</td><td>東京都</td><td></td></tr>
+<tr class="row-even"><td>2021年11月23日</td><td>16:40</td><td>清水佐紀バースデーイベント2021～Bye Byeまたね～</td><td>渋谷シダックスカルチャーホール（<a href="https://www.google.com/maps/search/?api=1&amp;query=%E6%B8%8B%E8%B0%B7%E3%82%B7%E3%83%80%E3%83%83%E3%82%AF%E3%82%B9%E3%82%AB%E3%83%AB%E3%83%81%E3%83%A3%E3%83%BC%E3%83%9B%E3%83%BC%E3%83%AB%20%E6%9D%B1%E4%BA%AC%E9%83%BD" target="_blank">地図</a>）</td><td>東京都</td><td></td></tr>
+<tr><td>2021年11月23日</td><td>18:55</td><td>清水佐紀バースデーイベント2021～Bye Byeまたね～</td><td>渋谷シダックスカルチャーホール（<a href="https://www.google.com/maps/search/?api=1&amp;query=%E6%B8%8B%E8%B0%B7%E3%82%B7%E3%83%80%E3%83%83%E3%82%AF%E3%82%B9%E3%82%AB%E3%83%AB%E3%83%81%E3%83%A3%E3%83%BC%E3%83%9B%E3%83%BC%E3%83%AB%20%E6%9D%B1%E4%BA%AC%E9%83%BD" target="_blank">地図</a>）</td><td>東京都</td><td></td></tr>
 </tbody>
 </table>
 

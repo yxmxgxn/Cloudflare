@@ -23,8 +23,8 @@
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td>2011年10月23日</td><td>14:30</td><td>モーニング娘。新垣里沙&amp;譜久村聖バースデーイベント</td><td>かつしかシンフォニーヒルズ モーツァルトホール</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/3030" target="_blank">Tomoko（セットリスト）</a></td></tr>
-<tr><td>2011年10月23日</td><td>18:00</td><td>モーニング娘。新垣里沙&amp;譜久村聖バースデーイベント</td><td>かつしかシンフォニーヒルズ モーツァルトホール</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/3031" target="_blank">Tomoko（セットリスト）</a></td></tr>
+<tr class="row-even"><td>2011年10月23日</td><td>14:30</td><td>モーニング娘。新垣里沙&amp;譜久村聖バースデーイベント</td><td>かつしかシンフォニーヒルズ モーツァルトホール（<a href="https://www.google.com/maps/search/?api=1&amp;query=%E3%81%8B%E3%81%A4%E3%81%97%E3%81%8B%E3%82%B7%E3%83%B3%E3%83%95%E3%82%A9%E3%83%8B%E3%83%BC%E3%83%92%E3%83%AB%E3%82%BA%20%E3%83%A2%E3%83%BC%E3%83%84%E3%82%A1%E3%83%AB%E3%83%88%E3%83%9B%E3%83%BC%E3%83%AB%20%E6%9D%B1%E4%BA%AC%E9%83%BD" target="_blank">地図</a>）</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/3030" target="_blank">Tomoko（セットリスト）</a></td></tr>
+<tr><td>2011年10月23日</td><td>18:00</td><td>モーニング娘。新垣里沙&amp;譜久村聖バースデーイベント</td><td>かつしかシンフォニーヒルズ モーツァルトホール（<a href="https://www.google.com/maps/search/?api=1&amp;query=%E3%81%8B%E3%81%A4%E3%81%97%E3%81%8B%E3%82%B7%E3%83%B3%E3%83%95%E3%82%A9%E3%83%8B%E3%83%BC%E3%83%92%E3%83%AB%E3%82%BA%20%E3%83%A2%E3%83%BC%E3%83%84%E3%82%A1%E3%83%AB%E3%83%88%E3%83%9B%E3%83%BC%E3%83%AB%20%E6%9D%B1%E4%BA%AC%E9%83%BD" target="_blank">地図</a>）</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/3031" target="_blank">Tomoko（セットリスト）</a></td></tr>
 </tbody>
 </table>
 16歳（2012年）
@@ -40,7 +40,7 @@
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td>2012年11月9日</td><td>19:00</td><td>モーニング娘。 譜久村聖&amp;飯窪春菜バースデーイベント～高校生NIGHT!!～</td><td>横浜BLITZ</td><td>神奈川県</td><td><a href="https://hp-setlist.com/stage/3337" target="_blank">Tomoko（セットリスト）</a></td></tr>
+<tr class="row-even"><td>2012年11月9日</td><td>19:00</td><td>モーニング娘。 譜久村聖&amp;飯窪春菜バースデーイベント～高校生NIGHT!!～</td><td>横浜BLITZ（<a href="https://www.google.com/maps/search/?api=1&amp;query=%E6%A8%AA%E6%B5%9CBLITZ%20%E7%A5%9E%E5%A5%88%E5%B7%9D%E7%9C%8C" target="_blank">地図</a>）</td><td>神奈川県</td><td><a href="https://hp-setlist.com/stage/3337" target="_blank">Tomoko（セットリスト）</a></td></tr>
 </tbody>
 </table>
 17歳（2013年）
@@ -56,7 +56,7 @@
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td>2013年10月30日</td><td>19:00</td><td>モーニング娘。 譜久村聖&amp;工藤遥バースデーイベント2013</td><td>かつしかシンフォニーヒルズ モーツァルトホール</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/3653" target="_blank">Tomoko（セットリスト）</a></td></tr>
+<tr class="row-even"><td>2013年10月30日</td><td>19:00</td><td>モーニング娘。 譜久村聖&amp;工藤遥バースデーイベント2013</td><td>かつしかシンフォニーヒルズ モーツァルトホール（<a href="https://www.google.com/maps/search/?api=1&amp;query=%E3%81%8B%E3%81%A4%E3%81%97%E3%81%8B%E3%82%B7%E3%83%B3%E3%83%95%E3%82%A9%E3%83%8B%E3%83%BC%E3%83%92%E3%83%AB%E3%82%BA%20%E3%83%A2%E3%83%BC%E3%83%84%E3%82%A1%E3%83%AB%E3%83%88%E3%83%9B%E3%83%BC%E3%83%AB%20%E6%9D%B1%E4%BA%AC%E9%83%BD" target="_blank">地図</a>）</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/3653" target="_blank">Tomoko（セットリスト）</a></td></tr>
 </tbody>
 </table>
 18歳（2014年）
@@ -72,7 +72,7 @@
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td>2014年10月30日</td><td>19:00</td><td>モーニング娘。'14 譜久村聖バースデーイベント2014</td><td>山野ホール</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/4186" target="_blank">Tomoko（セットリスト）</a></td></tr>
+<tr class="row-even"><td>2014年10月30日</td><td>19:00</td><td>モーニング娘。'14 譜久村聖バースデーイベント2014</td><td>山野ホール（<a href="https://www.google.com/maps/search/?api=1&amp;query=%E5%B1%B1%E9%87%8E%E3%83%9B%E3%83%BC%E3%83%AB%20%E6%9D%B1%E4%BA%AC%E9%83%BD" target="_blank">地図</a>）</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/4186" target="_blank">Tomoko（セットリスト）</a></td></tr>
 </tbody>
 </table>
 19歳（2015年）
@@ -88,7 +88,7 @@
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td>2015年10月27日</td><td>19:00</td><td>モーニング娘。'15 譜久村聖&amp;工藤遥バースデーイベント～ふくどぅーBirthday Party!～</td><td>山野ホール</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/4684" target="_blank">Tomoko（セットリスト）</a></td></tr>
+<tr class="row-even"><td>2015年10月27日</td><td>19:00</td><td>モーニング娘。'15 譜久村聖&amp;工藤遥バースデーイベント～ふくどぅーBirthday Party!～</td><td>山野ホール（<a href="https://www.google.com/maps/search/?api=1&amp;query=%E5%B1%B1%E9%87%8E%E3%83%9B%E3%83%BC%E3%83%AB%20%E6%9D%B1%E4%BA%AC%E9%83%BD" target="_blank">地図</a>）</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/4684" target="_blank">Tomoko（セットリスト）</a></td></tr>
 <tr><td>2015年10月30日</td><td>19:00</td><td>モーニング娘。'15 譜久村聖&amp;工藤遥バースデーイベント～ふくどぅーBirthday Party!～</td><td>ディファ有明</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/4685" target="_blank">Tomoko（セットリスト）</a></td></tr>
 </tbody>
 </table>
@@ -106,7 +106,7 @@
 </thead>
 <tbody>
 <tr class="row-even"><td>2016年11月2日</td><td>19:00</td><td>モーニング娘。'16 譜久村聖バースデーイベント</td><td>ディファ有明</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/5308" target="_blank">Tomoko（セットリスト）</a></td></tr>
-<tr><td>2016年11月22日</td><td>19:30</td><td>モーニング娘。'16 譜久村聖・飯窪春菜・工藤遥バースデーイベント2016 in 名古屋</td><td>ミッドランドスクエア シネマ2</td><td>愛知県</td><td><a href="https://hp-setlist.com/stage/10022" target="_blank">Tomoko（セットリスト）</a></td></tr>
+<tr><td>2016年11月22日</td><td>19:30</td><td>モーニング娘。'16 譜久村聖・飯窪春菜・工藤遥バースデーイベント2016 in 名古屋</td><td>ミッドランドスクエア シネマ2（<a href="https://www.google.com/maps/search/?api=1&amp;query=%E3%83%9F%E3%83%83%E3%83%89%E3%83%A9%E3%83%B3%E3%83%89%E3%82%B9%E3%82%AF%E3%82%A8%E3%82%A2%20%E3%82%B7%E3%83%8D%E3%83%9E2%20%E6%84%9B%E7%9F%A5%E7%9C%8C" target="_blank">地図</a>）</td><td>愛知県</td><td><a href="https://hp-setlist.com/stage/10022" target="_blank">Tomoko（セットリスト）</a></td></tr>
 </tbody>
 </table>
 21歳（2017年）
@@ -139,7 +139,7 @@
 </thead>
 <tbody>
 <tr class="row-even"><td>2018年10月30日</td><td>19:00</td><td>モーニング娘。'18 譜久村聖バースデーイベント</td><td>Zepp Tokyo</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/6319" target="_blank">Tomoko（セットリスト）</a></td></tr>
-<tr><td>2018年12月18日</td><td>19:30</td><td>モーニング娘。'18 譜久村聖・野中美希・加賀楓バースデーイベント in 名古屋</td><td>ミッドランドスクエア シネマ2</td><td>愛知県</td><td><a href="https://hp-setlist.com/stage/10121" target="_blank">Tomoko（セットリスト）</a></td></tr>
+<tr><td>2018年12月18日</td><td>19:30</td><td>モーニング娘。'18 譜久村聖・野中美希・加賀楓バースデーイベント in 名古屋</td><td>ミッドランドスクエア シネマ2（<a href="https://www.google.com/maps/search/?api=1&amp;query=%E3%83%9F%E3%83%83%E3%83%89%E3%83%A9%E3%83%B3%E3%83%89%E3%82%B9%E3%82%AF%E3%82%A8%E3%82%A2%20%E3%82%B7%E3%83%8D%E3%83%9E2%20%E6%84%9B%E7%9F%A5%E7%9C%8C" target="_blank">地図</a>）</td><td>愛知県</td><td><a href="https://hp-setlist.com/stage/10121" target="_blank">Tomoko（セットリスト）</a></td></tr>
 </tbody>
 </table>
 23歳（2019年）
@@ -155,9 +155,9 @@
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td>2019年10月30日</td><td>17:15</td><td>モーニング娘。'19 譜久村聖バースデーイベント</td><td>山野ホール</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/6878" target="_blank">Tomoko（セットリスト）</a></td></tr>
-<tr><td>2019年10月30日</td><td>19:45</td><td>モーニング娘。'19 譜久村聖バースデーイベント</td><td>山野ホール</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/6879" target="_blank">Tomoko（セットリスト）</a></td></tr>
-<tr class="row-even"><td>2019年11月12日</td><td>19:30</td><td>モーニング娘。'19 譜久村聖バースデーイベント2019 in 名古屋</td><td>ミッドランドスクエア シネマ2</td><td>愛知県</td><td><a href="https://hp-setlist.com/stage/10165" target="_blank">Tomoko（セットリスト）</a></td></tr>
+<tr class="row-even"><td>2019年10月30日</td><td>17:15</td><td>モーニング娘。'19 譜久村聖バースデーイベント</td><td>山野ホール（<a href="https://www.google.com/maps/search/?api=1&amp;query=%E5%B1%B1%E9%87%8E%E3%83%9B%E3%83%BC%E3%83%AB%20%E6%9D%B1%E4%BA%AC%E9%83%BD" target="_blank">地図</a>）</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/6878" target="_blank">Tomoko（セットリスト）</a></td></tr>
+<tr><td>2019年10月30日</td><td>19:45</td><td>モーニング娘。'19 譜久村聖バースデーイベント</td><td>山野ホール（<a href="https://www.google.com/maps/search/?api=1&amp;query=%E5%B1%B1%E9%87%8E%E3%83%9B%E3%83%BC%E3%83%AB%20%E6%9D%B1%E4%BA%AC%E9%83%BD" target="_blank">地図</a>）</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/6879" target="_blank">Tomoko（セットリスト）</a></td></tr>
+<tr class="row-even"><td>2019年11月12日</td><td>19:30</td><td>モーニング娘。'19 譜久村聖バースデーイベント2019 in 名古屋</td><td>ミッドランドスクエア シネマ2（<a href="https://www.google.com/maps/search/?api=1&amp;query=%E3%83%9F%E3%83%83%E3%83%89%E3%83%A9%E3%83%B3%E3%83%89%E3%82%B9%E3%82%AF%E3%82%A8%E3%82%A2%20%E3%82%B7%E3%83%8D%E3%83%9E2%20%E6%84%9B%E7%9F%A5%E7%9C%8C" target="_blank">地図</a>）</td><td>愛知県</td><td><a href="https://hp-setlist.com/stage/10165" target="_blank">Tomoko（セットリスト）</a></td></tr>
 </tbody>
 </table>
 24歳（2020年）
@@ -173,10 +173,10 @@
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td>2020年10月30日</td><td>17:00</td><td>モーニング娘。'20 譜久村聖バースデーイベント</td><td>メルパルクホール</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/7116" target="_blank">Tomoko（セットリスト）</a></td></tr>
-<tr><td>2020年10月30日</td><td>19:45</td><td>モーニング娘。'20 譜久村聖バースデーイベント</td><td>メルパルクホール</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/7117" target="_blank">Tomoko（セットリスト）</a></td></tr>
-<tr class="row-even"><td>2020年11月18日</td><td>17:30</td><td>モーニング娘。'20 譜久村聖バースデーイベント アンコール公演</td><td>COTTON CLUB</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/7118" target="_blank">Tomoko（セットリスト）</a></td></tr>
-<tr><td>2020年11月18日</td><td>19:30</td><td>モーニング娘。'20 譜久村聖バースデーイベント アンコール公演</td><td>COTTON CLUB</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/7119" target="_blank">Tomoko（セットリスト）</a></td></tr>
+<tr class="row-even"><td>2020年10月30日</td><td>17:00</td><td>モーニング娘。'20 譜久村聖バースデーイベント</td><td>メルパルクホール（<a href="https://www.google.com/maps/search/?api=1&amp;query=%E3%83%A1%E3%83%AB%E3%83%91%E3%83%AB%E3%82%AF%E3%83%9B%E3%83%BC%E3%83%AB%20%E6%9D%B1%E4%BA%AC%E9%83%BD" target="_blank">地図</a>）</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/7116" target="_blank">Tomoko（セットリスト）</a></td></tr>
+<tr><td>2020年10月30日</td><td>19:45</td><td>モーニング娘。'20 譜久村聖バースデーイベント</td><td>メルパルクホール（<a href="https://www.google.com/maps/search/?api=1&amp;query=%E3%83%A1%E3%83%AB%E3%83%91%E3%83%AB%E3%82%AF%E3%83%9B%E3%83%BC%E3%83%AB%20%E6%9D%B1%E4%BA%AC%E9%83%BD" target="_blank">地図</a>）</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/7117" target="_blank">Tomoko（セットリスト）</a></td></tr>
+<tr class="row-even"><td>2020年11月18日</td><td>17:30</td><td>モーニング娘。'20 譜久村聖バースデーイベント アンコール公演</td><td>COTTON CLUB（<a href="https://www.google.com/maps/search/?api=1&amp;query=COTTON%20CLUB%20%E6%9D%B1%E4%BA%AC%E9%83%BD" target="_blank">地図</a>）</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/7118" target="_blank">Tomoko（セットリスト）</a></td></tr>
+<tr><td>2020年11月18日</td><td>19:30</td><td>モーニング娘。'20 譜久村聖バースデーイベント アンコール公演</td><td>COTTON CLUB（<a href="https://www.google.com/maps/search/?api=1&amp;query=COTTON%20CLUB%20%E6%9D%B1%E4%BA%AC%E9%83%BD" target="_blank">地図</a>）</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/7119" target="_blank">Tomoko（セットリスト）</a></td></tr>
 </tbody>
 </table>
 25歳（2021年）
@@ -192,8 +192,8 @@
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td>2021年11月1日</td><td>16:40</td><td>モーニング娘。'21 譜久村聖バースデーイベント</td><td>KT Zepp Yokohama</td><td>神奈川県</td><td><a href="https://hp-setlist.com/stage/7518" target="_blank">Tomoko（セットリスト）</a></td></tr>
-<tr><td>2021年11月1日</td><td>18:50</td><td>モーニング娘。'21 譜久村聖バースデーイベント</td><td>KT Zepp Yokohama</td><td>神奈川県</td><td><a href="https://hp-setlist.com/stage/7519" target="_blank">Tomoko（セットリスト）</a></td></tr>
+<tr class="row-even"><td>2021年11月1日</td><td>16:40</td><td>モーニング娘。'21 譜久村聖バースデーイベント</td><td>KT Zepp Yokohama（<a href="https://www.google.com/maps/search/?api=1&amp;query=KT%20Zepp%20Yokohama%20%E7%A5%9E%E5%A5%88%E5%B7%9D%E7%9C%8C" target="_blank">地図</a>）</td><td>神奈川県</td><td><a href="https://hp-setlist.com/stage/7518" target="_blank">Tomoko（セットリスト）</a></td></tr>
+<tr><td>2021年11月1日</td><td>18:50</td><td>モーニング娘。'21 譜久村聖バースデーイベント</td><td>KT Zepp Yokohama（<a href="https://www.google.com/maps/search/?api=1&amp;query=KT%20Zepp%20Yokohama%20%E7%A5%9E%E5%A5%88%E5%B7%9D%E7%9C%8C" target="_blank">地図</a>）</td><td>神奈川県</td><td><a href="https://hp-setlist.com/stage/7519" target="_blank">Tomoko（セットリスト）</a></td></tr>
 </tbody>
 </table>
 26歳（2022年）
@@ -209,8 +209,8 @@
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td>2022年11月2日</td><td>16:30</td><td>モーニング娘。'22 譜久村聖バースデーイベント</td><td>カルッツかわさき ホール</td><td>神奈川県</td><td><a href="https://hp-setlist.com/stage/9971" target="_blank">Tomoko（セットリスト）</a></td></tr>
-<tr><td>2022年11月2日</td><td>19:00</td><td>モーニング娘。'22 譜久村聖バースデーイベント</td><td>カルッツかわさき ホール</td><td>神奈川県</td><td><a href="https://hp-setlist.com/stage/9972" target="_blank">Tomoko（セットリスト）</a></td></tr>
+<tr class="row-even"><td>2022年11月2日</td><td>16:30</td><td>モーニング娘。'22 譜久村聖バースデーイベント</td><td>カルッツかわさき ホール（<a href="https://www.google.com/maps/search/?api=1&amp;query=%E3%82%AB%E3%83%AB%E3%83%83%E3%83%84%E3%81%8B%E3%82%8F%E3%81%95%E3%81%8D%20%E3%83%9B%E3%83%BC%E3%83%AB%20%E7%A5%9E%E5%A5%88%E5%B7%9D%E7%9C%8C" target="_blank">地図</a>）</td><td>神奈川県</td><td><a href="https://hp-setlist.com/stage/9971" target="_blank">Tomoko（セットリスト）</a></td></tr>
+<tr><td>2022年11月2日</td><td>19:00</td><td>モーニング娘。'22 譜久村聖バースデーイベント</td><td>カルッツかわさき ホール（<a href="https://www.google.com/maps/search/?api=1&amp;query=%E3%82%AB%E3%83%AB%E3%83%83%E3%83%84%E3%81%8B%E3%82%8F%E3%81%95%E3%81%8D%20%E3%83%9B%E3%83%BC%E3%83%AB%20%E7%A5%9E%E5%A5%88%E5%B7%9D%E7%9C%8C" target="_blank">地図</a>）</td><td>神奈川県</td><td><a href="https://hp-setlist.com/stage/9972" target="_blank">Tomoko（セットリスト）</a></td></tr>
 </tbody>
 </table>
 27歳（2023年）
@@ -226,8 +226,8 @@
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td>2023年10月30日</td><td>17:30</td><td>モーニング娘。'23 譜久村聖バースデーイベント ～MIZUKINGDOMでｷﾗｰﾝ✧～</td><td>江戸川区総合文化センター 大ホール</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/20655" target="_blank">Tomoko（セットリスト）</a></td></tr>
-<tr><td>2023年10月30日</td><td>19:45</td><td>モーニング娘。'23 譜久村聖バースデーイベント ～MIZUKINGDOMでｷﾗｰﾝ✧～</td><td>江戸川区総合文化センター 大ホール</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/20657" target="_blank">Tomoko（セットリスト）</a></td></tr>
+<tr class="row-even"><td>2023年10月30日</td><td>17:30</td><td>モーニング娘。'23 譜久村聖バースデーイベント ～MIZUKINGDOMでｷﾗｰﾝ✧～</td><td>江戸川区総合文化センター 大ホール（<a href="https://www.google.com/maps/search/?api=1&amp;query=%E6%B1%9F%E6%88%B8%E5%B7%9D%E5%8C%BA%E7%B7%8F%E5%90%88%E6%96%87%E5%8C%96%E3%82%BB%E3%83%B3%E3%82%BF%E3%83%BC%20%E5%A4%A7%E3%83%9B%E3%83%BC%E3%83%AB%20%E6%9D%B1%E4%BA%AC%E9%83%BD" target="_blank">地図</a>）</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/20655" target="_blank">Tomoko（セットリスト）</a></td></tr>
+<tr><td>2023年10月30日</td><td>19:45</td><td>モーニング娘。'23 譜久村聖バースデーイベント ～MIZUKINGDOMでｷﾗｰﾝ✧～</td><td>江戸川区総合文化センター 大ホール（<a href="https://www.google.com/maps/search/?api=1&amp;query=%E6%B1%9F%E6%88%B8%E5%B7%9D%E5%8C%BA%E7%B7%8F%E5%90%88%E6%96%87%E5%8C%96%E3%82%BB%E3%83%B3%E3%82%BF%E3%83%BC%20%E5%A4%A7%E3%83%9B%E3%83%BC%E3%83%AB%20%E6%9D%B1%E4%BA%AC%E9%83%BD" target="_blank">地図</a>）</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/20657" target="_blank">Tomoko（セットリスト）</a></td></tr>
 </tbody>
 </table>
 28歳（2024年）
@@ -243,8 +243,8 @@
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td>2024年11月23日</td><td>16:50</td><td>譜久村聖FCイベント2024～いいふくの日に乾杯!!～</td><td>江戸川区総合文化センター 大ホール</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/21921" target="_blank">Tomoko（セットリスト）</a></td></tr>
-<tr><td>2024年11月23日</td><td>19:40</td><td>譜久村聖FCイベント2024～いいふくの日に乾杯!!～</td><td>江戸川区総合文化センター 大ホール</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/21922" target="_blank">Tomoko（セットリスト）</a></td></tr>
+<tr class="row-even"><td>2024年11月29日</td><td>16:50</td><td>譜久村聖FCイベント2024～いいふくの日に乾杯!!～</td><td>江戸川区総合文化センター 大ホール（<a href="https://www.google.com/maps/search/?api=1&amp;query=%E6%B1%9F%E6%88%B8%E5%B7%9D%E5%8C%BA%E7%B7%8F%E5%90%88%E6%96%87%E5%8C%96%E3%82%BB%E3%83%B3%E3%82%BF%E3%83%BC%20%E5%A4%A7%E3%83%9B%E3%83%BC%E3%83%AB%20%E6%9D%B1%E4%BA%AC%E9%83%BD" target="_blank">地図</a>）</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/21921" target="_blank">Tomoko（セットリスト）</a></td></tr>
+<tr><td>2024年11月29日</td><td>19:40</td><td>譜久村聖FCイベント2024～いいふくの日に乾杯!!～</td><td>江戸川区総合文化センター 大ホール（<a href="https://www.google.com/maps/search/?api=1&amp;query=%E6%B1%9F%E6%88%B8%E5%B7%9D%E5%8C%BA%E7%B7%8F%E5%90%88%E6%96%87%E5%8C%96%E3%82%BB%E3%83%B3%E3%82%BF%E3%83%BC%20%E5%A4%A7%E3%83%9B%E3%83%BC%E3%83%AB%20%E6%9D%B1%E4%BA%AC%E9%83%BD" target="_blank">地図</a>）</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/21922" target="_blank">Tomoko（セットリスト）</a></td></tr>
 </tbody>
 </table>
 29歳（2025年）
@@ -260,8 +260,8 @@
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td>2025年10月31日</td><td>17:00</td><td>譜久村聖バースデーイベント'25～29th 幸&quot;ふく&quot;歓迎！～</td><td>タワーホール船堀 大ホール</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/22957" target="_blank">Tomoko（セットリスト）</a></td></tr>
-<tr><td>2025年10月31日</td><td>19:15</td><td>譜久村聖バースデーイベント'25～29th 幸&quot;ふく&quot;歓迎！～</td><td>タワーホール船堀 大ホール</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/22958" target="_blank">Tomoko（セットリスト）</a></td></tr>
+<tr class="row-even"><td>2025年10月31日</td><td>17:00</td><td>譜久村聖バースデーイベント'25～29th 幸&quot;ふく&quot;歓迎！～</td><td>タワーホール船堀 大ホール（<a href="https://www.google.com/maps/search/?api=1&amp;query=%E3%82%BF%E3%83%AF%E3%83%BC%E3%83%9B%E3%83%BC%E3%83%AB%E8%88%B9%E5%A0%80%20%E5%A4%A7%E3%83%9B%E3%83%BC%E3%83%AB%20%E6%9D%B1%E4%BA%AC%E9%83%BD" target="_blank">地図</a>）</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/22957" target="_blank">Tomoko（セットリスト）</a></td></tr>
+<tr><td>2025年10月31日</td><td>19:15</td><td>譜久村聖バースデーイベント'25～29th 幸&quot;ふく&quot;歓迎！～</td><td>タワーホール船堀 大ホール（<a href="https://www.google.com/maps/search/?api=1&amp;query=%E3%82%BF%E3%83%AF%E3%83%BC%E3%83%9B%E3%83%BC%E3%83%AB%E8%88%B9%E5%A0%80%20%E5%A4%A7%E3%83%9B%E3%83%BC%E3%83%AB%20%E6%9D%B1%E4%BA%AC%E9%83%BD" target="_blank">地図</a>）</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/22958" target="_blank">Tomoko（セットリスト）</a></td></tr>
 </tbody>
 </table>
 30歳（2026年）
@@ -277,8 +277,8 @@
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td>2026年10月28日</td><td>17:15</td><td>譜久村聖バースデーイベント2026</td><td>北とぴあ さくらホール</td><td>東京都</td><td></td></tr>
-<tr><td>2026年10月28日</td><td>19:30</td><td>譜久村聖バースデーイベント2026</td><td>北とぴあ さくらホール</td><td>東京都</td><td></td></tr>
+<tr class="row-even"><td>2026年10月28日</td><td>17:15</td><td>譜久村聖バースデーイベント2026</td><td>北とぴあ さくらホール（<a href="https://www.google.com/maps/search/?api=1&amp;query=%E5%8C%97%E3%81%A8%E3%81%B4%E3%81%82%20%E3%81%95%E3%81%8F%E3%82%89%E3%83%9B%E3%83%BC%E3%83%AB%20%E6%9D%B1%E4%BA%AC%E9%83%BD" target="_blank">地図</a>）</td><td>東京都</td><td></td></tr>
+<tr><td>2026年10月28日</td><td>19:30</td><td>譜久村聖バースデーイベント2026</td><td>北とぴあ さくらホール（<a href="https://www.google.com/maps/search/?api=1&amp;query=%E5%8C%97%E3%81%A8%E3%81%B4%E3%81%82%20%E3%81%95%E3%81%8F%E3%82%89%E3%83%9B%E3%83%BC%E3%83%AB%20%E6%9D%B1%E4%BA%AC%E9%83%BD" target="_blank">地図</a>）</td><td>東京都</td><td></td></tr>
 </tbody>
 </table>
 

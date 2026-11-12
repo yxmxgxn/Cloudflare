@@ -119,7 +119,7 @@
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td>2012年6月19日</td><td>19:00</td><td>Yuko Nakazawa♥Birthday Live♥ 2012 〜Thank You for Tuesday〜</td><td>Zepp DiverCity</td><td>東京都</td><td><a href="https://hp-setlist.com/event/12613" target="_blank">Tomoko（セットリスト）</a></td></tr>
+<tr class="row-even"><td>2012年6月19日</td><td>19:00</td><td>Yuko Nakazawa♥Birthday Live♥ 2012 〜Thank You for Tuesday〜</td><td>Zepp DiverCity（<a href="https://www.google.com/maps/search/?api=1&amp;query=Zepp%20DiverCity%20%E6%9D%B1%E4%BA%AC%E9%83%BD" target="_blank">地図</a>）</td><td>東京都</td><td><a href="https://hp-setlist.com/event/12613" target="_blank">Tomoko（セットリスト）</a></td></tr>
 </tbody>
 </table>
 40歳（2013年）
@@ -135,7 +135,7 @@
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td>2013年6月18日</td><td>19:00</td><td>Yuko Nakazawa♥Birthday Live♥ 2013〜四十路感謝祭</td><td>Shibuya O-EAST</td><td>東京都</td><td><a href="https://hp-setlist.com/event/12614" target="_blank">Tomoko（セットリスト）</a></td></tr>
+<tr class="row-even"><td>2013年6月18日</td><td>19:00</td><td>Yuko Nakazawa♥Birthday Live♥ 2013〜四十路感謝祭</td><td>Shibuya O-EAST（<a href="https://www.google.com/maps/search/?api=1&amp;query=Shibuya%20O-EAST%20%E6%9D%B1%E4%BA%AC%E9%83%BD" target="_blank">地図</a>）</td><td>東京都</td><td><a href="https://hp-setlist.com/event/12614" target="_blank">Tomoko（セットリスト）</a></td></tr>
 </tbody>
 </table>
 41歳（2014年）
@@ -151,8 +151,8 @@
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td>2014年6月22日</td><td>14:00</td><td>中澤裕子 BIRTHDAY☆LIVE 2014～40が節目かと思ったけど41もやっちゃいます！～</td><td>Mt.RAINIER HALL</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/26663" target="_blank">Tomoko（セットリスト）</a></td></tr>
-<tr><td>2014年6月22日</td><td>18:00</td><td>中澤裕子 BIRTHDAY☆LIVE 2014～40が節目かと思ったけど41もやっちゃいます！～</td><td>Mt.RAINIER HALL</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/26664" target="_blank">Tomoko（セットリスト）</a></td></tr>
+<tr class="row-even"><td>2014年6月22日</td><td>14:00</td><td>中澤裕子 BIRTHDAY☆LIVE 2014～40が節目かと思ったけど41もやっちゃいます！～</td><td>Mt.RAINIER HALL（<a href="https://www.google.com/maps/search/?api=1&amp;query=Mt.RAINIER%20HALL%20%E6%9D%B1%E4%BA%AC%E9%83%BD" target="_blank">地図</a>）</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/26663" target="_blank">Tomoko（セットリスト）</a></td></tr>
+<tr><td>2014年6月22日</td><td>18:00</td><td>中澤裕子 BIRTHDAY☆LIVE 2014～40が節目かと思ったけど41もやっちゃいます！～</td><td>Mt.RAINIER HALL（<a href="https://www.google.com/maps/search/?api=1&amp;query=Mt.RAINIER%20HALL%20%E6%9D%B1%E4%BA%AC%E9%83%BD" target="_blank">地図</a>）</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/26664" target="_blank">Tomoko（セットリスト）</a></td></tr>
 </tbody>
 </table>
 43歳（2016年）
@@ -168,8 +168,8 @@
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td>2016年6月18日</td><td>13:30</td><td>YUKO NAKAZAWA ☆ BIRTHDAY EVENT &quot;What’s up？&quot;～2016.6.18～</td><td>BLUE MOOD</td><td>東京都</td><td></td></tr>
-<tr><td>2016年6月18日</td><td>17:30</td><td>YUKO NAKAZAWA ☆ BIRTHDAY EVENT &quot;What’s up？&quot;～2016.6.18～</td><td>BLUE MOOD</td><td>東京都</td><td></td></tr>
+<tr class="row-even"><td>2016年6月18日</td><td>13:30</td><td>YUKO NAKAZAWA ☆ BIRTHDAY EVENT &quot;What’s up？&quot;～2016.6.18～</td><td>BLUE MOOD（<a href="https://www.google.com/maps/search/?api=1&amp;query=BLUE%20MOOD%09%20%E6%9D%B1%E4%BA%AC%E9%83%BD" target="_blank">地図</a>）</td><td>東京都</td><td></td></tr>
+<tr><td>2016年6月18日</td><td>17:30</td><td>YUKO NAKAZAWA ☆ BIRTHDAY EVENT &quot;What’s up？&quot;～2016.6.18～</td><td>BLUE MOOD（<a href="https://www.google.com/maps/search/?api=1&amp;query=BLUE%20MOOD%09%20%E6%9D%B1%E4%BA%AC%E9%83%BD" target="_blank">地図</a>）</td><td>東京都</td><td></td></tr>
 </tbody>
 </table>
 44歳（2017年）
@@ -185,8 +185,8 @@
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td>2017年6月18日</td><td>13:00</td><td>YUKO NAKAZAWA once a year★birthday event★44～I'm fine!～</td><td>ミュージックレストラン La Donna</td><td>東京都</td><td></td></tr>
-<tr><td>2017年6月18日</td><td>16:30</td><td>YUKO NAKAZAWA once a year★birthday event★44～I'm fine!～</td><td>ミュージックレストラン La Donna</td><td>東京都</td><td></td></tr>
+<tr class="row-even"><td>2017年6月18日</td><td>13:00</td><td>YUKO NAKAZAWA once a year★birthday event★44～I'm fine!～</td><td>ミュージックレストラン La Donna（<a href="https://www.google.com/maps/search/?api=1&amp;query=%E3%83%9F%E3%83%A5%E3%83%BC%E3%82%B8%E3%83%83%E3%82%AF%E3%83%AC%E3%82%B9%E3%83%88%E3%83%A9%E3%83%B3%20La%20Donna%20%E6%9D%B1%E4%BA%AC%E9%83%BD" target="_blank">地図</a>）</td><td>東京都</td><td></td></tr>
+<tr><td>2017年6月18日</td><td>16:30</td><td>YUKO NAKAZAWA once a year★birthday event★44～I'm fine!～</td><td>ミュージックレストラン La Donna（<a href="https://www.google.com/maps/search/?api=1&amp;query=%E3%83%9F%E3%83%A5%E3%83%BC%E3%82%B8%E3%83%83%E3%82%AF%E3%83%AC%E3%82%B9%E3%83%88%E3%83%A9%E3%83%B3%20La%20Donna%20%E6%9D%B1%E4%BA%AC%E9%83%BD" target="_blank">地図</a>）</td><td>東京都</td><td></td></tr>
 </tbody>
 </table>
 46歳（2019年）
@@ -202,8 +202,8 @@
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td>2019年6月9日</td><td>13:30</td><td>中澤裕子バースデーライブ2019～よーきんしゃったね！～</td><td>Gate's7</td><td>福岡県</td><td><a href="https://hp-setlist.com/stage/26678" target="_blank">Tomoko（セットリスト）</a></td></tr>
-<tr><td>2019年6月9日</td><td>17:30</td><td>中澤裕子バースデーライブ2019～よーきんしゃったね！～</td><td>Gate's7</td><td>福岡県</td><td><a href="https://hp-setlist.com/stage/26679" target="_blank">Tomoko（セットリスト）</a></td></tr>
+<tr class="row-even"><td>2019年6月9日</td><td>13:30</td><td>中澤裕子バースデーライブ2019～よーきんしゃったね！～</td><td>Gate's7（<a href="https://www.google.com/maps/search/?api=1&amp;query=Gate%27s7%20%E7%A6%8F%E5%B2%A1%E7%9C%8C" target="_blank">地図</a>）</td><td>福岡県</td><td><a href="https://hp-setlist.com/stage/26678" target="_blank">Tomoko（セットリスト）</a></td></tr>
+<tr><td>2019年6月9日</td><td>17:30</td><td>中澤裕子バースデーライブ2019～よーきんしゃったね！～</td><td>Gate's7（<a href="https://www.google.com/maps/search/?api=1&amp;query=Gate%27s7%20%E7%A6%8F%E5%B2%A1%E7%9C%8C" target="_blank">地図</a>）</td><td>福岡県</td><td><a href="https://hp-setlist.com/stage/26679" target="_blank">Tomoko（セットリスト）</a></td></tr>
 </tbody>
 </table>
 48歳（2021年）
@@ -219,8 +219,8 @@
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td>2021年6月20日</td><td>14:00</td><td>中澤裕子Birthday☆Casual Dinner Show 2021～Thanks to everyone～</td><td>ミュージックレストラン La Donna</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/26717" target="_blank">Tomoko（セットリスト）</a></td></tr>
-<tr><td>2021年6月20日</td><td>18:00</td><td>中澤裕子Birthday☆Casual Dinner Show 2021～Thanks to everyone～</td><td>ミュージックレストラン La Donna</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/26718" target="_blank">Tomoko（セットリスト）</a></td></tr>
+<tr class="row-even"><td>2021年6月20日</td><td>14:00</td><td>中澤裕子Birthday☆Casual Dinner Show 2021～Thanks to everyone～</td><td>ミュージックレストラン La Donna（<a href="https://www.google.com/maps/search/?api=1&amp;query=%E3%83%9F%E3%83%A5%E3%83%BC%E3%82%B8%E3%83%83%E3%82%AF%E3%83%AC%E3%82%B9%E3%83%88%E3%83%A9%E3%83%B3%20La%20Donna%20%E6%9D%B1%E4%BA%AC%E9%83%BD" target="_blank">地図</a>）</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/26717" target="_blank">Tomoko（セットリスト）</a></td></tr>
+<tr><td>2021年6月20日</td><td>18:00</td><td>中澤裕子Birthday☆Casual Dinner Show 2021～Thanks to everyone～</td><td>ミュージックレストラン La Donna（<a href="https://www.google.com/maps/search/?api=1&amp;query=%E3%83%9F%E3%83%A5%E3%83%BC%E3%82%B8%E3%83%83%E3%82%AF%E3%83%AC%E3%82%B9%E3%83%88%E3%83%A9%E3%83%B3%20La%20Donna%20%E6%9D%B1%E4%BA%AC%E9%83%BD" target="_blank">地図</a>）</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/26718" target="_blank">Tomoko（セットリスト）</a></td></tr>
 </tbody>
 </table>
 49歳（2022年）
@@ -236,9 +236,9 @@
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td>2022年6月26日</td><td>13:15</td><td>中澤裕子バースデートークイベント～ 49 years old me ～</td><td>品川区内イベントスペース</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/26737" target="_blank">Tomoko（セットリスト）</a></td></tr>
-<tr><td>2022年6月26日</td><td>15:30</td><td>中澤裕子バースデートークイベント～ 49 years old me ～</td><td>品川区内イベントスペース</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/26738" target="_blank">Tomoko（セットリスト）</a></td></tr>
-<tr class="row-even"><td>2022年6月26日</td><td>17:15</td><td>中澤裕子バースデートークイベント～ 49 years old me ～</td><td>品川区内イベントスペース</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/26739" target="_blank">Tomoko（セットリスト）</a></td></tr>
+<tr class="row-even"><td>2022年6月26日</td><td>13:15</td><td>中澤裕子バースデートークイベント～ 49 years old me ～</td><td>品川区内イベントスペース（<a href="https://www.google.com/maps/search/?api=1&amp;query=%E5%93%81%E5%B7%9D%E5%8C%BA%E5%86%85%E3%82%A4%E3%83%99%E3%83%B3%E3%83%88%E3%82%B9%E3%83%9A%E3%83%BC%E3%82%B9%20%E6%9D%B1%E4%BA%AC%E9%83%BD" target="_blank">地図</a>）</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/26737" target="_blank">Tomoko（セットリスト）</a></td></tr>
+<tr><td>2022年6月26日</td><td>15:30</td><td>中澤裕子バースデートークイベント～ 49 years old me ～</td><td>品川区内イベントスペース（<a href="https://www.google.com/maps/search/?api=1&amp;query=%E5%93%81%E5%B7%9D%E5%8C%BA%E5%86%85%E3%82%A4%E3%83%99%E3%83%B3%E3%83%88%E3%82%B9%E3%83%9A%E3%83%BC%E3%82%B9%20%E6%9D%B1%E4%BA%AC%E9%83%BD" target="_blank">地図</a>）</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/26738" target="_blank">Tomoko（セットリスト）</a></td></tr>
+<tr class="row-even"><td>2022年6月26日</td><td>17:15</td><td>中澤裕子バースデートークイベント～ 49 years old me ～</td><td>品川区内イベントスペース（<a href="https://www.google.com/maps/search/?api=1&amp;query=%E5%93%81%E5%B7%9D%E5%8C%BA%E5%86%85%E3%82%A4%E3%83%99%E3%83%B3%E3%83%88%E3%82%B9%E3%83%9A%E3%83%BC%E3%82%B9%20%E6%9D%B1%E4%BA%AC%E9%83%BD" target="_blank">地図</a>）</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/26739" target="_blank">Tomoko（セットリスト）</a></td></tr>
 </tbody>
 </table>
 51歳（2024年）
@@ -254,8 +254,8 @@
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td>2024年6月29日</td><td>14:30</td><td>中澤裕子 Birthday☆Casual Dinner Show 2024 ～5 + 1～</td><td>ミュージックレストラン La Donna</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/26781" target="_blank">Tomoko（セットリスト）</a></td></tr>
-<tr><td>2024年6月29日</td><td>18:45</td><td>中澤裕子 Birthday☆Casual Dinner Show 2024 ～5 + 1～</td><td>ミュージックレストラン La Donna</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/26782" target="_blank">Tomoko（セットリスト）</a></td></tr>
+<tr class="row-even"><td>2024年6月29日</td><td>14:30</td><td>中澤裕子 Birthday☆Casual Dinner Show 2024 ～5 + 1～</td><td>ミュージックレストラン La Donna（<a href="https://www.google.com/maps/search/?api=1&amp;query=%E3%83%9F%E3%83%A5%E3%83%BC%E3%82%B8%E3%83%83%E3%82%AF%E3%83%AC%E3%82%B9%E3%83%88%E3%83%A9%E3%83%B3%20La%20Donna%20%E6%9D%B1%E4%BA%AC%E9%83%BD" target="_blank">地図</a>）</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/26781" target="_blank">Tomoko（セットリスト）</a></td></tr>
+<tr><td>2024年6月29日</td><td>18:45</td><td>中澤裕子 Birthday☆Casual Dinner Show 2024 ～5 + 1～</td><td>ミュージックレストラン La Donna（<a href="https://www.google.com/maps/search/?api=1&amp;query=%E3%83%9F%E3%83%A5%E3%83%BC%E3%82%B8%E3%83%83%E3%82%AF%E3%83%AC%E3%82%B9%E3%83%88%E3%83%A9%E3%83%B3%20La%20Donna%20%E6%9D%B1%E4%BA%AC%E9%83%BD" target="_blank">地図</a>）</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/26782" target="_blank">Tomoko（セットリスト）</a></td></tr>
 </tbody>
 </table>
 52歳（2025年）
@@ -271,8 +271,8 @@
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td>2025年6月28日</td><td>15:00</td><td>中澤裕子 Birthday☆Live 2025 ～5 ＋ 2～</td><td>GRIT at Shibuya</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/26800" target="_blank">Tomoko（セットリスト）</a></td></tr>
-<tr><td>2025年6月28日</td><td>18:00</td><td>中澤裕子 Birthday☆Live 2025 ～5 ＋ 2～</td><td>GRIT at Shibuya</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/26801" target="_blank">Tomoko（セットリスト）</a></td></tr>
+<tr class="row-even"><td>2025年6月28日</td><td>15:00</td><td>中澤裕子 Birthday☆Live 2025 ～5 ＋ 2～</td><td>GRIT at Shibuya（<a href="https://www.google.com/maps/search/?api=1&amp;query=GRIT%20at%20Shibuya%20%E6%9D%B1%E4%BA%AC%E9%83%BD" target="_blank">地図</a>）</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/26800" target="_blank">Tomoko（セットリスト）</a></td></tr>
+<tr><td>2025年6月28日</td><td>18:00</td><td>中澤裕子 Birthday☆Live 2025 ～5 ＋ 2～</td><td>GRIT at Shibuya（<a href="https://www.google.com/maps/search/?api=1&amp;query=GRIT%20at%20Shibuya%20%E6%9D%B1%E4%BA%AC%E9%83%BD" target="_blank">地図</a>）</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/26801" target="_blank">Tomoko（セットリスト）</a></td></tr>
 </tbody>
 </table>
 53歳（2026年）
@@ -288,8 +288,8 @@
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td>2026年6月28日</td><td>13:15</td><td>​中澤裕子 Birthday☆Live 2026 ～5 ＋ 3～</td><td>GRIT at Shibuya</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/23912" target="_blank">Tomoko（セットリスト）</a></td></tr>
-<tr><td>2026年6月28日</td><td>16:15</td><td>​中澤裕子 Birthday☆Live 2026 ～5 ＋ 3～</td><td>GRIT at Shibuya</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/23914" target="_blank">Tomoko（セットリスト）</a></td></tr>
+<tr class="row-even"><td>2026年6月28日</td><td>13:15</td><td>​中澤裕子 Birthday☆Live 2026 ～5 ＋ 3～</td><td>GRIT at Shibuya（<a href="https://www.google.com/maps/search/?api=1&amp;query=GRIT%20at%20Shibuya%20%E6%9D%B1%E4%BA%AC%E9%83%BD" target="_blank">地図</a>）</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/23912" target="_blank">Tomoko（セットリスト）</a></td></tr>
+<tr><td>2026年6月28日</td><td>16:15</td><td>​中澤裕子 Birthday☆Live 2026 ～5 ＋ 3～</td><td>GRIT at Shibuya（<a href="https://www.google.com/maps/search/?api=1&amp;query=GRIT%20at%20Shibuya%20%E6%9D%B1%E4%BA%AC%E9%83%BD" target="_blank">地図</a>）</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/23914" target="_blank">Tomoko（セットリスト）</a></td></tr>
 </tbody>
 </table>
 

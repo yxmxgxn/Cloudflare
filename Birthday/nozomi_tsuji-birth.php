@@ -23,9 +23,9 @@
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td>2024年6月15日</td><td>12:50</td><td>辻希美バースデーイベント2024</td><td>イベントスペース 渋谷DAIA</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/26778" target="_blank">Tomoko（セットリスト）</a></td></tr>
-<tr><td>2024年6月15日</td><td>15:00</td><td>辻希美バースデーイベント2024</td><td>イベントスペース 渋谷DAIA</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/26779" target="_blank">Tomoko（セットリスト）</a></td></tr>
-<tr class="row-even"><td>2024年6月15日</td><td>17:00</td><td>辻希美バースデーイベント2024</td><td>イベントスペース 渋谷DAIA</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/26780" target="_blank">Tomoko（セットリスト）</a></td></tr>
+<tr class="row-even"><td>2024年6月15日</td><td>12:50</td><td>辻希美バースデーイベント2024</td><td>イベントスペース 渋谷DAIA（<a href="https://www.google.com/maps/search/?api=1&amp;query=%E3%82%A4%E3%83%99%E3%83%B3%E3%83%88%E3%82%B9%E3%83%9A%E3%83%BC%E3%82%B9%20%E6%B8%8B%E8%B0%B7DAIA%20%E6%9D%B1%E4%BA%AC%E9%83%BD" target="_blank">地図</a>）</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/26778" target="_blank">Tomoko（セットリスト）</a></td></tr>
+<tr><td>2024年6月15日</td><td>15:00</td><td>辻希美バースデーイベント2024</td><td>イベントスペース 渋谷DAIA（<a href="https://www.google.com/maps/search/?api=1&amp;query=%E3%82%A4%E3%83%99%E3%83%B3%E3%83%88%E3%82%B9%E3%83%9A%E3%83%BC%E3%82%B9%20%E6%B8%8B%E8%B0%B7DAIA%20%E6%9D%B1%E4%BA%AC%E9%83%BD" target="_blank">地図</a>）</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/26779" target="_blank">Tomoko（セットリスト）</a></td></tr>
+<tr class="row-even"><td>2024年6月15日</td><td>17:00</td><td>辻希美バースデーイベント2024</td><td>イベントスペース 渋谷DAIA（<a href="https://www.google.com/maps/search/?api=1&amp;query=%E3%82%A4%E3%83%99%E3%83%B3%E3%83%88%E3%82%B9%E3%83%9A%E3%83%BC%E3%82%B9%20%E6%B8%8B%E8%B0%B7DAIA%20%E6%9D%B1%E4%BA%AC%E9%83%BD" target="_blank">地図</a>）</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/26780" target="_blank">Tomoko（セットリスト）</a></td></tr>
 </tbody>
 </table>
 

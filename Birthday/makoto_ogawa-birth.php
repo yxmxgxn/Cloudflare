@@ -73,8 +73,8 @@
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td>2017年10月21日</td><td>14:00</td><td>小川麻琴 30th birth anniversary event</td><td>絵空箱</td><td>東京都</td><td></td></tr>
-<tr><td>2017年10月21日</td><td>18:00</td><td>小川麻琴 30th birth anniversary event</td><td>絵空箱</td><td>東京都</td><td></td></tr>
+<tr class="row-even"><td>2017年10月21日</td><td>14:00</td><td>小川麻琴 30th birth anniversary event</td><td>絵空箱（<a href="https://www.google.com/maps/search/?api=1&amp;query=%E7%B5%B5%E7%A9%BA%E7%AE%B1%20%E6%9D%B1%E4%BA%AC%E9%83%BD" target="_blank">地図</a>）</td><td>東京都</td><td></td></tr>
+<tr><td>2017年10月21日</td><td>18:00</td><td>小川麻琴 30th birth anniversary event</td><td>絵空箱（<a href="https://www.google.com/maps/search/?api=1&amp;query=%E7%B5%B5%E7%A9%BA%E7%AE%B1%20%E6%9D%B1%E4%BA%AC%E9%83%BD" target="_blank">地図</a>）</td><td>東京都</td><td></td></tr>
 </tbody>
 </table>
 33歳（2020年）
@@ -90,7 +90,7 @@
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td>2020年10月31日</td><td>13:00</td><td>小川麻琴 33rd birth anniversary</td><td>MKCAFE</td><td>東京都</td><td></td></tr>
+<tr class="row-even"><td>2020年10月31日</td><td>13:00</td><td>小川麻琴 33rd birth anniversary</td><td>MKCAFE（<a href="https://www.google.com/maps/search/?api=1&amp;query=MKCAFE%20%E6%9D%B1%E4%BA%AC%E9%83%BD" target="_blank">地図</a>）</td><td>東京都</td><td></td></tr>
 </tbody>
 </table>
 36歳（2023年）
@@ -106,7 +106,7 @@
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td>2023年10月29日</td><td>15:00</td><td>小川麻琴 36歳バースデー乾杯イベント！</td><td>東京音実劇場</td><td>東京都</td><td></td></tr>
+<tr class="row-even"><td>2023年10月29日</td><td>15:00</td><td>小川麻琴 36歳バースデー乾杯イベント！</td><td>東京音実劇場（<a href="https://www.google.com/maps/search/?api=1&amp;query=%E6%9D%B1%E4%BA%AC%E9%9F%B3%E5%AE%9F%E5%8A%87%E5%A0%B4%20%E6%9D%B1%E4%BA%AC%E9%83%BD" target="_blank">地図</a>）</td><td>東京都</td><td></td></tr>
 </tbody>
 </table>
 37歳（2024年）
@@ -122,7 +122,7 @@
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td>2024年10月27日</td><td>14:30</td><td>小川麻琴 37歳になりま～す！BIRTHDAY PARTY！！</td><td>東京音実劇場</td><td>東京都</td><td></td></tr>
+<tr class="row-even"><td>2024年10月27日</td><td>14:30</td><td>小川麻琴 37歳になりま～す！BIRTHDAY PARTY！！</td><td>東京音実劇場（<a href="https://www.google.com/maps/search/?api=1&amp;query=%E6%9D%B1%E4%BA%AC%E9%9F%B3%E5%AE%9F%E5%8A%87%E5%A0%B4%20%E6%9D%B1%E4%BA%AC%E9%83%BD" target="_blank">地図</a>）</td><td>東京都</td><td></td></tr>
 </tbody>
 </table>
 38歳（2025年）
@@ -138,7 +138,7 @@
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td>2025年11月1日</td><td>14:30</td><td>小川麻琴 38th Birthday Party！！</td><td>東京音実劇場</td><td>東京都</td><td></td></tr>
+<tr class="row-even"><td>2025年11月1日</td><td>14:30</td><td>小川麻琴 38th Birthday Party！！</td><td>東京音実劇場（<a href="https://www.google.com/maps/search/?api=1&amp;query=%E6%9D%B1%E4%BA%AC%E9%9F%B3%E5%AE%9F%E5%8A%87%E5%A0%B4%20%E6%9D%B1%E4%BA%AC%E9%83%BD" target="_blank">地図</a>）</td><td>東京都</td><td></td></tr>
 </tbody>
 </table>
 

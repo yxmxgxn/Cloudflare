@@ -23,8 +23,8 @@
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td>2026年3月11日</td><td>17:10</td><td>ロージークロニクル 小野田華凜・相馬優芽バースデーイベント2026</td><td>I'M A SHOW</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/23345" target="_blank">Tomoko（セットリスト）</a></td></tr>
-<tr><td>2026年3月11日</td><td>19:30</td><td>ロージークロニクル 小野田華凜・相馬優芽バースデーイベント2026</td><td>I'M A SHOW</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/23346" target="_blank">Tomoko（セットリスト）</a></td></tr>
+<tr class="row-even"><td>2026年3月11日</td><td>17:10</td><td>ロージークロニクル 小野田華凜・相馬優芽バースデーイベント2026</td><td>I'M A SHOW（<a href="https://www.google.com/maps/search/?api=1&amp;query=I%27M%20A%20SHOW%20%E6%9D%B1%E4%BA%AC%E9%83%BD" target="_blank">地図</a>）</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/23345" target="_blank">Tomoko（セットリスト）</a></td></tr>
+<tr><td>2026年3月11日</td><td>19:30</td><td>ロージークロニクル 小野田華凜・相馬優芽バースデーイベント2026</td><td>I'M A SHOW（<a href="https://www.google.com/maps/search/?api=1&amp;query=I%27M%20A%20SHOW%20%E6%9D%B1%E4%BA%AC%E9%83%BD" target="_blank">地図</a>）</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/23346" target="_blank">Tomoko（セットリスト）</a></td></tr>
 </tbody>
 </table>
 

@@ -23,8 +23,8 @@
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td>2026年4月10日</td><td>17:10</td><td>ロージークロニクル 島川波菜バースデーイベント2026</td><td>飛行船シアター</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/23489" target="_blank">Tomoko（セットリスト）</a></td></tr>
-<tr><td>2026年4月10日</td><td>19:30</td><td>ロージークロニクル 島川波菜バースデーイベント2026</td><td>飛行船シアター</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/23490" target="_blank">Tomoko（セットリスト）</a></td></tr>
+<tr class="row-even"><td>2026年4月10日</td><td>17:10</td><td>ロージークロニクル 島川波菜バースデーイベント2026</td><td>飛行船シアター（<a href="https://www.google.com/maps/search/?api=1&amp;query=%E9%A3%9B%E8%A1%8C%E8%88%B9%E3%82%B7%E3%82%A2%E3%82%BF%E3%83%BC%20%E6%9D%B1%E4%BA%AC%E9%83%BD" target="_blank">地図</a>）</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/23489" target="_blank">Tomoko（セットリスト）</a></td></tr>
+<tr><td>2026年4月10日</td><td>19:30</td><td>ロージークロニクル 島川波菜バースデーイベント2026</td><td>飛行船シアター（<a href="https://www.google.com/maps/search/?api=1&amp;query=%E9%A3%9B%E8%A1%8C%E8%88%B9%E3%82%B7%E3%82%A2%E3%82%BF%E3%83%BC%20%E6%9D%B1%E4%BA%AC%E9%83%BD" target="_blank">地図</a>）</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/23490" target="_blank">Tomoko（セットリスト）</a></td></tr>
 </tbody>
 </table>
 

@@ -23,8 +23,8 @@
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td>2024年8月7日</td><td>17:15</td><td>アンジュルム 下井谷幸穂バースデーイベント2024</td><td>TOKYO FM HALL</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/21534" target="_blank">Tomoko（セットリスト）</a></td></tr>
-<tr><td>2024年8月7日</td><td>19:20</td><td>アンジュルム 下井谷幸穂バースデーイベント2024</td><td>TOKYO FM HALL</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/21535" target="_blank">Tomoko（セットリスト）</a></td></tr>
+<tr class="row-even"><td>2024年8月7日</td><td>17:15</td><td>アンジュルム 下井谷幸穂バースデーイベント2024</td><td>TOKYO FM HALL（<a href="https://www.google.com/maps/search/?api=1&amp;query=TOKYO%20FM%20HALL%20%E6%9D%B1%E4%BA%AC%E9%83%BD" target="_blank">地図</a>）</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/21534" target="_blank">Tomoko（セットリスト）</a></td></tr>
+<tr><td>2024年8月7日</td><td>19:20</td><td>アンジュルム 下井谷幸穂バースデーイベント2024</td><td>TOKYO FM HALL（<a href="https://www.google.com/maps/search/?api=1&amp;query=TOKYO%20FM%20HALL%20%E6%9D%B1%E4%BA%AC%E9%83%BD" target="_blank">地図</a>）</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/21535" target="_blank">Tomoko（セットリスト）</a></td></tr>
 </tbody>
 </table>
 19歳（2025年）
@@ -40,8 +40,8 @@
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td>2025年8月21日</td><td>17:20</td><td>アンジュルム 下井谷幸穂バースデーイベント2025</td><td>飛行船シアター</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/22676" target="_blank">Tomoko（セットリスト）</a></td></tr>
-<tr><td>2025年8月21日</td><td>19:40</td><td>アンジュルム 下井谷幸穂バースデーイベント2025</td><td>飛行船シアター</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/22678" target="_blank">Tomoko（セットリスト）</a></td></tr>
+<tr class="row-even"><td>2025年8月21日</td><td>17:20</td><td>アンジュルム 下井谷幸穂バースデーイベント2025</td><td>飛行船シアター（<a href="https://www.google.com/maps/search/?api=1&amp;query=%E9%A3%9B%E8%A1%8C%E8%88%B9%E3%82%B7%E3%82%A2%E3%82%BF%E3%83%BC%20%E6%9D%B1%E4%BA%AC%E9%83%BD" target="_blank">地図</a>）</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/22676" target="_blank">Tomoko（セットリスト）</a></td></tr>
+<tr><td>2025年8月21日</td><td>19:40</td><td>アンジュルム 下井谷幸穂バースデーイベント2025</td><td>飛行船シアター（<a href="https://www.google.com/maps/search/?api=1&amp;query=%E9%A3%9B%E8%A1%8C%E8%88%B9%E3%82%B7%E3%82%A2%E3%82%BF%E3%83%BC%20%E6%9D%B1%E4%BA%AC%E9%83%BD" target="_blank">地図</a>）</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/22678" target="_blank">Tomoko（セットリスト）</a></td></tr>
 </tbody>
 </table>
 20歳（2026年）
@@ -57,8 +57,8 @@
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td>2026年8月13日</td><td>17:10</td><td>アンジュルム 下井谷幸穂バースデーイベント2026</td><td>飛行船シアター</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/24450" target="_blank">Tomoko（セットリスト）</a></td></tr>
-<tr><td>2026年8月13日</td><td>19:30</td><td>アンジュルム 下井谷幸穂バースデーイベント2026</td><td>飛行船シアター</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/24452" target="_blank">Tomoko（セットリスト）</a></td></tr>
+<tr class="row-even"><td>2026年8月13日</td><td>17:10</td><td>アンジュルム 下井谷幸穂バースデーイベント2026</td><td>飛行船シアター（<a href="https://www.google.com/maps/search/?api=1&amp;query=%E9%A3%9B%E8%A1%8C%E8%88%B9%E3%82%B7%E3%82%A2%E3%82%BF%E3%83%BC%20%E6%9D%B1%E4%BA%AC%E9%83%BD" target="_blank">地図</a>）</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/24450" target="_blank">Tomoko（セットリスト）</a></td></tr>
+<tr><td>2026年8月13日</td><td>19:30</td><td>アンジュルム 下井谷幸穂バースデーイベント2026</td><td>飛行船シアター（<a href="https://www.google.com/maps/search/?api=1&amp;query=%E9%A3%9B%E8%A1%8C%E8%88%B9%E3%82%B7%E3%82%A2%E3%82%BF%E3%83%BC%20%E6%9D%B1%E4%BA%AC%E9%83%BD" target="_blank">地図</a>）</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/24452" target="_blank">Tomoko（セットリスト）</a></td></tr>
 </tbody>
 </table>
 

@@ -23,9 +23,9 @@
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td>2017年1月12日</td><td>18:00</td><td>カントリー・ガールズ 梁川奈々美バースデーイベント2017</td><td>Mt.RAINIER HALL</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/5377" target="_blank">Tomoko（セットリスト）</a></td></tr>
-<tr><td>2017年1月12日</td><td>19:00</td><td>カントリー・ガールズ 梁川奈々美バースデーイベント2017</td><td>Mt.RAINIER HALL</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/5378" target="_blank">Tomoko（セットリスト）</a></td></tr>
-<tr class="row-even"><td>2017年1月17日</td><td>19:30</td><td>カントリー・ガールズ 梁川奈々美バースデーイベント2017 in 名古屋</td><td>ミッドランドスクエア シネマ2</td><td>愛知県</td><td><a href="https://hp-setlist.com/stage/10027" target="_blank">Tomoko（セットリスト）</a></td></tr>
+<tr class="row-even"><td>2017年1月12日</td><td>18:00</td><td>カントリー・ガールズ 梁川奈々美バースデーイベント2017</td><td>Mt.RAINIER HALL（<a href="https://www.google.com/maps/search/?api=1&amp;query=Mt.RAINIER%20HALL%20%E6%9D%B1%E4%BA%AC%E9%83%BD" target="_blank">地図</a>）</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/5377" target="_blank">Tomoko（セットリスト）</a></td></tr>
+<tr><td>2017年1月12日</td><td>19:00</td><td>カントリー・ガールズ 梁川奈々美バースデーイベント2017</td><td>Mt.RAINIER HALL（<a href="https://www.google.com/maps/search/?api=1&amp;query=Mt.RAINIER%20HALL%20%E6%9D%B1%E4%BA%AC%E9%83%BD" target="_blank">地図</a>）</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/5378" target="_blank">Tomoko（セットリスト）</a></td></tr>
+<tr class="row-even"><td>2017年1月17日</td><td>19:30</td><td>カントリー・ガールズ 梁川奈々美バースデーイベント2017 in 名古屋</td><td>ミッドランドスクエア シネマ2（<a href="https://www.google.com/maps/search/?api=1&amp;query=%E3%83%9F%E3%83%83%E3%83%89%E3%83%A9%E3%83%B3%E3%83%89%E3%82%B9%E3%82%AF%E3%82%A8%E3%82%A2%20%E3%82%B7%E3%83%8D%E3%83%9E2%20%E6%84%9B%E7%9F%A5%E7%9C%8C" target="_blank">地図</a>）</td><td>愛知県</td><td><a href="https://hp-setlist.com/stage/10027" target="_blank">Tomoko（セットリスト）</a></td></tr>
 </tbody>
 </table>
 16歳（2018年）
@@ -41,9 +41,9 @@
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td>2018年1月10日</td><td>18:00</td><td>カントリー・ガールズ／Juice=Juice 梁川奈々美バースデーイベント2018</td><td>新宿ReNY</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/5922" target="_blank">Tomoko（セットリスト）</a></td></tr>
-<tr><td>2018年1月10日</td><td>19:45</td><td>カントリー・ガールズ／Juice=Juice 梁川奈々美バースデーイベント2018</td><td>新宿ReNY</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/5923" target="_blank">Tomoko（セットリスト）</a></td></tr>
-<tr class="row-even"><td>2018年1月23日</td><td>19:30</td><td>Juice=Juice/カントリー・ガールズ 梁川奈々美バースデーイベント2018 in 名古屋</td><td>ミッドランドスクエア シネマ2</td><td>愛知県</td><td><a href="https://hp-setlist.com/stage/10076" target="_blank">Tomoko（セットリスト）</a></td></tr>
+<tr class="row-even"><td>2018年1月10日</td><td>18:00</td><td>カントリー・ガールズ／Juice=Juice 梁川奈々美バースデーイベント2018</td><td>新宿ReNY（<a href="https://www.google.com/maps/search/?api=1&amp;query=%E6%96%B0%E5%AE%BFReNY%20%E6%9D%B1%E4%BA%AC%E9%83%BD" target="_blank">地図</a>）</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/5922" target="_blank">Tomoko（セットリスト）</a></td></tr>
+<tr><td>2018年1月10日</td><td>19:45</td><td>カントリー・ガールズ／Juice=Juice 梁川奈々美バースデーイベント2018</td><td>新宿ReNY（<a href="https://www.google.com/maps/search/?api=1&amp;query=%E6%96%B0%E5%AE%BFReNY%20%E6%9D%B1%E4%BA%AC%E9%83%BD" target="_blank">地図</a>）</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/5923" target="_blank">Tomoko（セットリスト）</a></td></tr>
+<tr class="row-even"><td>2018年1月23日</td><td>19:30</td><td>Juice=Juice/カントリー・ガールズ 梁川奈々美バースデーイベント2018 in 名古屋</td><td>ミッドランドスクエア シネマ2（<a href="https://www.google.com/maps/search/?api=1&amp;query=%E3%83%9F%E3%83%83%E3%83%89%E3%83%A9%E3%83%B3%E3%83%89%E3%82%B9%E3%82%AF%E3%82%A8%E3%82%A2%20%E3%82%B7%E3%83%8D%E3%83%9E2%20%E6%84%9B%E7%9F%A5%E7%9C%8C" target="_blank">地図</a>）</td><td>愛知県</td><td><a href="https://hp-setlist.com/stage/10076" target="_blank">Tomoko（セットリスト）</a></td></tr>
 </tbody>
 </table>
 17歳（2019年）
@@ -59,8 +59,8 @@
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td>2019年1月8日</td><td>17:00</td><td>Juice=Juice／カントリー・ガールズ 梁川奈々美バースデーイベント2019</td><td>山野ホール</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/6411" target="_blank">Tomoko（セットリスト）</a></td></tr>
-<tr><td>2019年1月8日</td><td>19:30</td><td>Juice=Juice／カントリー・ガールズ 梁川奈々美バースデーイベント2019</td><td>山野ホール</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/6412" target="_blank">Tomoko（セットリスト）</a></td></tr>
+<tr class="row-even"><td>2019年1月8日</td><td>17:00</td><td>Juice=Juice／カントリー・ガールズ 梁川奈々美バースデーイベント2019</td><td>山野ホール（<a href="https://www.google.com/maps/search/?api=1&amp;query=%E5%B1%B1%E9%87%8E%E3%83%9B%E3%83%BC%E3%83%AB%20%E6%9D%B1%E4%BA%AC%E9%83%BD" target="_blank">地図</a>）</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/6411" target="_blank">Tomoko（セットリスト）</a></td></tr>
+<tr><td>2019年1月8日</td><td>19:30</td><td>Juice=Juice／カントリー・ガールズ 梁川奈々美バースデーイベント2019</td><td>山野ホール（<a href="https://www.google.com/maps/search/?api=1&amp;query=%E5%B1%B1%E9%87%8E%E3%83%9B%E3%83%BC%E3%83%AB%20%E6%9D%B1%E4%BA%AC%E9%83%BD" target="_blank">地図</a>）</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/6412" target="_blank">Tomoko（セットリスト）</a></td></tr>
 </tbody>
 </table>
 

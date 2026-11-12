@@ -23,9 +23,9 @@
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td>2017年11月16日</td><td>18:00</td><td>つばきファクトリー 谷本安美バースデーイベント2017</td><td>新宿ReNY</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/5864" target="_blank">Tomoko（セットリスト）</a></td></tr>
-<tr><td>2017年11月16日</td><td>19:45</td><td>つばきファクトリー 谷本安美バースデーイベント2017</td><td>新宿ReNY</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/5865" target="_blank">Tomoko（セットリスト）</a></td></tr>
-<tr class="row-even"><td>2017年11月21日</td><td>19:30</td><td>つばきファクトリー 小片リサ・谷本安美バースデーイベント2017 in 名古屋</td><td>ミッドランドスクエア シネマ2</td><td>愛知県</td><td><a href="https://hp-setlist.com/stage/10070" target="_blank">Tomoko（セットリスト）</a></td></tr>
+<tr class="row-even"><td>2017年11月16日</td><td>18:00</td><td>つばきファクトリー 谷本安美バースデーイベント2017</td><td>新宿ReNY（<a href="https://www.google.com/maps/search/?api=1&amp;query=%E6%96%B0%E5%AE%BFReNY%20%E6%9D%B1%E4%BA%AC%E9%83%BD" target="_blank">地図</a>）</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/5864" target="_blank">Tomoko（セットリスト）</a></td></tr>
+<tr><td>2017年11月16日</td><td>19:45</td><td>つばきファクトリー 谷本安美バースデーイベント2017</td><td>新宿ReNY（<a href="https://www.google.com/maps/search/?api=1&amp;query=%E6%96%B0%E5%AE%BFReNY%20%E6%9D%B1%E4%BA%AC%E9%83%BD" target="_blank">地図</a>）</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/5865" target="_blank">Tomoko（セットリスト）</a></td></tr>
+<tr class="row-even"><td>2017年11月21日</td><td>19:30</td><td>つばきファクトリー 小片リサ・谷本安美バースデーイベント2017 in 名古屋</td><td>ミッドランドスクエア シネマ2（<a href="https://www.google.com/maps/search/?api=1&amp;query=%E3%83%9F%E3%83%83%E3%83%89%E3%83%A9%E3%83%B3%E3%83%89%E3%82%B9%E3%82%AF%E3%82%A8%E3%82%A2%20%E3%82%B7%E3%83%8D%E3%83%9E2%20%E6%84%9B%E7%9F%A5%E7%9C%8C" target="_blank">地図</a>）</td><td>愛知県</td><td><a href="https://hp-setlist.com/stage/10070" target="_blank">Tomoko（セットリスト）</a></td></tr>
 </tbody>
 </table>
 19歳（2018年）
@@ -41,9 +41,9 @@
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td>2018年11月19日</td><td>18:00</td><td>つばきファクトリー 谷本安美バースデーイベント2018</td><td>TOKYO FM HALL</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/6342" target="_blank">Tomoko（セットリスト）</a></td></tr>
-<tr><td>2018年11月19日</td><td>19:45</td><td>つばきファクトリー 谷本安美バースデーイベント2018</td><td>TOKYO FM HALL</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/6343" target="_blank">Tomoko（セットリスト）</a></td></tr>
-<tr class="row-even"><td>2018年11月27日</td><td>19:30</td><td>つばきファクトリー 山岸理子・谷本安美バースデーイベント2018 in 名古屋</td><td>ミッドランドスクエア シネマ2</td><td>愛知県</td><td><a href="https://hp-setlist.com/stage/10118" target="_blank">Tomoko（セットリスト）</a></td></tr>
+<tr class="row-even"><td>2018年11月19日</td><td>18:00</td><td>つばきファクトリー 谷本安美バースデーイベント2018</td><td>TOKYO FM HALL（<a href="https://www.google.com/maps/search/?api=1&amp;query=TOKYO%20FM%20HALL%20%E6%9D%B1%E4%BA%AC%E9%83%BD" target="_blank">地図</a>）</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/6342" target="_blank">Tomoko（セットリスト）</a></td></tr>
+<tr><td>2018年11月19日</td><td>19:45</td><td>つばきファクトリー 谷本安美バースデーイベント2018</td><td>TOKYO FM HALL（<a href="https://www.google.com/maps/search/?api=1&amp;query=TOKYO%20FM%20HALL%20%E6%9D%B1%E4%BA%AC%E9%83%BD" target="_blank">地図</a>）</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/6343" target="_blank">Tomoko（セットリスト）</a></td></tr>
+<tr class="row-even"><td>2018年11月27日</td><td>19:30</td><td>つばきファクトリー 山岸理子・谷本安美バースデーイベント2018 in 名古屋</td><td>ミッドランドスクエア シネマ2（<a href="https://www.google.com/maps/search/?api=1&amp;query=%E3%83%9F%E3%83%83%E3%83%89%E3%83%A9%E3%83%B3%E3%83%89%E3%82%B9%E3%82%AF%E3%82%A8%E3%82%A2%20%E3%82%B7%E3%83%8D%E3%83%9E2%20%E6%84%9B%E7%9F%A5%E7%9C%8C" target="_blank">地図</a>）</td><td>愛知県</td><td><a href="https://hp-setlist.com/stage/10118" target="_blank">Tomoko（セットリスト）</a></td></tr>
 </tbody>
 </table>
 20歳（2019年）
@@ -59,9 +59,9 @@
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td>2019年11月18日</td><td>18:00</td><td>つばきファクトリー 谷本安美バースデーイベント2019</td><td>TOKYO FM HALL</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/6891" target="_blank">Tomoko（セットリスト）</a></td></tr>
-<tr><td>2019年11月18日</td><td>19:45</td><td>つばきファクトリー 谷本安美バースデーイベント2019</td><td>TOKYO FM HALL</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/6892" target="_blank">Tomoko（セットリスト）</a></td></tr>
-<tr class="row-even"><td>2019年11月19日</td><td>19:30</td><td>つばきファクトリー 小片リサ・谷本安美バースデーイベント2019 in 名古屋</td><td>ミッドランドスクエア シネマ2</td><td>愛知県</td><td><a href="https://hp-setlist.com/stage/10166" target="_blank">Tomoko（セットリスト）</a></td></tr>
+<tr class="row-even"><td>2019年11月18日</td><td>18:00</td><td>つばきファクトリー 谷本安美バースデーイベント2019</td><td>TOKYO FM HALL（<a href="https://www.google.com/maps/search/?api=1&amp;query=TOKYO%20FM%20HALL%20%E6%9D%B1%E4%BA%AC%E9%83%BD" target="_blank">地図</a>）</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/6891" target="_blank">Tomoko（セットリスト）</a></td></tr>
+<tr><td>2019年11月18日</td><td>19:45</td><td>つばきファクトリー 谷本安美バースデーイベント2019</td><td>TOKYO FM HALL（<a href="https://www.google.com/maps/search/?api=1&amp;query=TOKYO%20FM%20HALL%20%E6%9D%B1%E4%BA%AC%E9%83%BD" target="_blank">地図</a>）</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/6892" target="_blank">Tomoko（セットリスト）</a></td></tr>
+<tr class="row-even"><td>2019年11月19日</td><td>19:30</td><td>つばきファクトリー 小片リサ・谷本安美バースデーイベント2019 in 名古屋</td><td>ミッドランドスクエア シネマ2（<a href="https://www.google.com/maps/search/?api=1&amp;query=%E3%83%9F%E3%83%83%E3%83%89%E3%83%A9%E3%83%B3%E3%83%89%E3%82%B9%E3%82%AF%E3%82%A8%E3%82%A2%20%E3%82%B7%E3%83%8D%E3%83%9E2%20%E6%84%9B%E7%9F%A5%E7%9C%8C" target="_blank">地図</a>）</td><td>愛知県</td><td><a href="https://hp-setlist.com/stage/10166" target="_blank">Tomoko（セットリスト）</a></td></tr>
 </tbody>
 </table>
 21歳（2020年）
@@ -77,10 +77,10 @@
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td>2020年11月17日</td><td>16:45</td><td>つばきファクトリー 谷本安美バースデーイベント2020</td><td>スクエア荏原ひらつかホール</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/7124" target="_blank">Tomoko（セットリスト）</a></td></tr>
-<tr><td>2020年11月17日</td><td>19:15</td><td>つばきファクトリー 谷本安美バースデーイベント2020</td><td>スクエア荏原ひらつかホール</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/7125" target="_blank">Tomoko（セットリスト）</a></td></tr>
-<tr class="row-even"><td>2020年12月8日</td><td>18:15</td><td>つばきファクトリー 山岸理子・谷本安美バースデーイベント2020 in 名古屋</td><td>ミッドランドスクエア シネマ2</td><td>愛知県</td><td><a href="https://hp-setlist.com/stage/10184" target="_blank">Tomoko（セットリスト）</a></td></tr>
-<tr><td>2020年12月8日</td><td>20:00</td><td>つばきファクトリー 山岸理子・谷本安美バースデーイベント2020 in 名古屋</td><td>ミッドランドスクエア シネマ2</td><td>愛知県</td><td><a href="https://hp-setlist.com/stage/10185" target="_blank">Tomoko（セットリスト）</a></td></tr>
+<tr class="row-even"><td>2020年11月17日</td><td>16:45</td><td>つばきファクトリー 谷本安美バースデーイベント2020</td><td>スクエア荏原ひらつかホール（<a href="https://www.google.com/maps/search/?api=1&amp;query=%E3%82%B9%E3%82%AF%E3%82%A8%E3%82%A2%E8%8D%8F%E5%8E%9F%E3%81%B2%E3%82%89%E3%81%A4%E3%81%8B%E3%83%9B%E3%83%BC%E3%83%AB%20%E6%9D%B1%E4%BA%AC%E9%83%BD" target="_blank">地図</a>）</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/7124" target="_blank">Tomoko（セットリスト）</a></td></tr>
+<tr><td>2020年11月17日</td><td>19:15</td><td>つばきファクトリー 谷本安美バースデーイベント2020</td><td>スクエア荏原ひらつかホール（<a href="https://www.google.com/maps/search/?api=1&amp;query=%E3%82%B9%E3%82%AF%E3%82%A8%E3%82%A2%E8%8D%8F%E5%8E%9F%E3%81%B2%E3%82%89%E3%81%A4%E3%81%8B%E3%83%9B%E3%83%BC%E3%83%AB%20%E6%9D%B1%E4%BA%AC%E9%83%BD" target="_blank">地図</a>）</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/7125" target="_blank">Tomoko（セットリスト）</a></td></tr>
+<tr class="row-even"><td>2020年12月8日</td><td>18:15</td><td>つばきファクトリー 山岸理子・谷本安美バースデーイベント2020 in 名古屋</td><td>ミッドランドスクエア シネマ2（<a href="https://www.google.com/maps/search/?api=1&amp;query=%E3%83%9F%E3%83%83%E3%83%89%E3%83%A9%E3%83%B3%E3%83%89%E3%82%B9%E3%82%AF%E3%82%A8%E3%82%A2%20%E3%82%B7%E3%83%8D%E3%83%9E2%20%E6%84%9B%E7%9F%A5%E7%9C%8C" target="_blank">地図</a>）</td><td>愛知県</td><td><a href="https://hp-setlist.com/stage/10184" target="_blank">Tomoko（セットリスト）</a></td></tr>
+<tr><td>2020年12月8日</td><td>20:00</td><td>つばきファクトリー 山岸理子・谷本安美バースデーイベント2020 in 名古屋</td><td>ミッドランドスクエア シネマ2（<a href="https://www.google.com/maps/search/?api=1&amp;query=%E3%83%9F%E3%83%83%E3%83%89%E3%83%A9%E3%83%B3%E3%83%89%E3%82%B9%E3%82%AF%E3%82%A8%E3%82%A2%20%E3%82%B7%E3%83%8D%E3%83%9E2%20%E6%84%9B%E7%9F%A5%E7%9C%8C" target="_blank">地図</a>）</td><td>愛知県</td><td><a href="https://hp-setlist.com/stage/10185" target="_blank">Tomoko（セットリスト）</a></td></tr>
 </tbody>
 </table>
 22歳（2021年）
@@ -96,8 +96,8 @@
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td>2021年11月12日</td><td>16:45</td><td>つばきファクトリー 谷本安美バースデーイベント2021</td><td>LANDMARK HALL</td><td>神奈川県</td><td><a href="https://hp-setlist.com/stage/7526" target="_blank">Tomoko（セットリスト）</a></td></tr>
-<tr><td>2021年11月12日</td><td>18:50</td><td>つばきファクトリー 谷本安美バースデーイベント2021</td><td>LANDMARK HALL</td><td>神奈川県</td><td><a href="https://hp-setlist.com/stage/7527" target="_blank">Tomoko（セットリスト）</a></td></tr>
+<tr class="row-even"><td>2021年11月12日</td><td>16:45</td><td>つばきファクトリー 谷本安美バースデーイベント2021</td><td>LANDMARK HALL（<a href="https://www.google.com/maps/search/?api=1&amp;query=LANDMARK%20HALL%20%E7%A5%9E%E5%A5%88%E5%B7%9D%E7%9C%8C" target="_blank">地図</a>）</td><td>神奈川県</td><td><a href="https://hp-setlist.com/stage/7526" target="_blank">Tomoko（セットリスト）</a></td></tr>
+<tr><td>2021年11月12日</td><td>18:50</td><td>つばきファクトリー 谷本安美バースデーイベント2021</td><td>LANDMARK HALL（<a href="https://www.google.com/maps/search/?api=1&amp;query=LANDMARK%20HALL%20%E7%A5%9E%E5%A5%88%E5%B7%9D%E7%9C%8C" target="_blank">地図</a>）</td><td>神奈川県</td><td><a href="https://hp-setlist.com/stage/7527" target="_blank">Tomoko（セットリスト）</a></td></tr>
 </tbody>
 </table>
 23歳（2022年）
@@ -113,8 +113,8 @@
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td>2022年11月16日</td><td>16:45</td><td>つばきファクトリー 谷本安美バースデーイベント2022</td><td>LANDMARK HALL</td><td>神奈川県</td><td><a href="https://hp-setlist.com/stage/9975" target="_blank">Tomoko（セットリスト）</a></td></tr>
-<tr><td>2022年11月16日</td><td>19:00</td><td>つばきファクトリー 谷本安美バースデーイベント2022</td><td>LANDMARK HALL</td><td>神奈川県</td><td><a href="https://hp-setlist.com/stage/9976" target="_blank">Tomoko（セットリスト）</a></td></tr>
+<tr class="row-even"><td>2022年11月16日</td><td>16:45</td><td>つばきファクトリー 谷本安美バースデーイベント2022</td><td>LANDMARK HALL（<a href="https://www.google.com/maps/search/?api=1&amp;query=LANDMARK%20HALL%20%E7%A5%9E%E5%A5%88%E5%B7%9D%E7%9C%8C" target="_blank">地図</a>）</td><td>神奈川県</td><td><a href="https://hp-setlist.com/stage/9975" target="_blank">Tomoko（セットリスト）</a></td></tr>
+<tr><td>2022年11月16日</td><td>19:00</td><td>つばきファクトリー 谷本安美バースデーイベント2022</td><td>LANDMARK HALL（<a href="https://www.google.com/maps/search/?api=1&amp;query=LANDMARK%20HALL%20%E7%A5%9E%E5%A5%88%E5%B7%9D%E7%9C%8C" target="_blank">地図</a>）</td><td>神奈川県</td><td><a href="https://hp-setlist.com/stage/9976" target="_blank">Tomoko（セットリスト）</a></td></tr>
 </tbody>
 </table>
 24歳（2023年）
@@ -130,8 +130,8 @@
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td>2023年11月16日</td><td>17:30</td><td>つばきファクトリー 谷本安美バースデーイベント2023</td><td>LANDMARK HALL</td><td>神奈川県</td><td><a href="https://hp-setlist.com/stage/20725" target="_blank">Tomoko（セットリスト）</a></td></tr>
-<tr><td>2023年11月16日</td><td>19:45</td><td>つばきファクトリー 谷本安美バースデーイベント2023</td><td>LANDMARK HALL</td><td>神奈川県</td><td><a href="https://hp-setlist.com/stage/20726" target="_blank">Tomoko（セットリスト）</a></td></tr>
+<tr class="row-even"><td>2023年11月16日</td><td>17:30</td><td>つばきファクトリー 谷本安美バースデーイベント2023</td><td>LANDMARK HALL（<a href="https://www.google.com/maps/search/?api=1&amp;query=LANDMARK%20HALL%20%E7%A5%9E%E5%A5%88%E5%B7%9D%E7%9C%8C" target="_blank">地図</a>）</td><td>神奈川県</td><td><a href="https://hp-setlist.com/stage/20725" target="_blank">Tomoko（セットリスト）</a></td></tr>
+<tr><td>2023年11月16日</td><td>19:45</td><td>つばきファクトリー 谷本安美バースデーイベント2023</td><td>LANDMARK HALL（<a href="https://www.google.com/maps/search/?api=1&amp;query=LANDMARK%20HALL%20%E7%A5%9E%E5%A5%88%E5%B7%9D%E7%9C%8C" target="_blank">地図</a>）</td><td>神奈川県</td><td><a href="https://hp-setlist.com/stage/20726" target="_blank">Tomoko（セットリスト）</a></td></tr>
 </tbody>
 </table>
 25歳（2024年）
@@ -147,10 +147,10 @@
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td>2024年11月8日</td><td>17:15</td><td>つばきファクトリー 谷本安美バースデーイベント2024</td><td>TOKYO FM HALL</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/21862" target="_blank">Tomoko（セットリスト）</a></td></tr>
-<tr><td>2024年11月8日</td><td>19:20</td><td>つばきファクトリー 谷本安美バースデーイベント2024</td><td>TOKYO FM HALL</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/21864" target="_blank">Tomoko（セットリスト）</a></td></tr>
-<tr class="row-even"><td>2024年12月2日</td><td>18:00</td><td>つばきファクトリー 谷本安美バースデーイベント2024 in 名古屋</td><td>ミッドランドスクエア シネマ2</td><td>愛知県</td><td><a href="https://hp-setlist.com/stage/21933" target="_blank">Tomoko（セットリスト）</a></td></tr>
-<tr><td>2024年12月2日</td><td>19:45</td><td>つばきファクトリー 谷本安美バースデーイベント2024 in 名古屋</td><td>ミッドランドスクエア シネマ2</td><td>愛知県</td><td><a href="https://hp-setlist.com/stage/21935" target="_blank">Tomoko（セットリスト）</a></td></tr>
+<tr class="row-even"><td>2024年11月8日</td><td>17:15</td><td>つばきファクトリー 谷本安美バースデーイベント2024</td><td>TOKYO FM HALL（<a href="https://www.google.com/maps/search/?api=1&amp;query=TOKYO%20FM%20HALL%20%E6%9D%B1%E4%BA%AC%E9%83%BD" target="_blank">地図</a>）</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/21862" target="_blank">Tomoko（セットリスト）</a></td></tr>
+<tr><td>2024年11月8日</td><td>19:20</td><td>つばきファクトリー 谷本安美バースデーイベント2024</td><td>TOKYO FM HALL（<a href="https://www.google.com/maps/search/?api=1&amp;query=TOKYO%20FM%20HALL%20%E6%9D%B1%E4%BA%AC%E9%83%BD" target="_blank">地図</a>）</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/21864" target="_blank">Tomoko（セットリスト）</a></td></tr>
+<tr class="row-even"><td>2024年12月2日</td><td>18:00</td><td>つばきファクトリー 谷本安美バースデーイベント2024 in 名古屋</td><td>ミッドランドスクエア シネマ2（<a href="https://www.google.com/maps/search/?api=1&amp;query=%E3%83%9F%E3%83%83%E3%83%89%E3%83%A9%E3%83%B3%E3%83%89%E3%82%B9%E3%82%AF%E3%82%A8%E3%82%A2%20%E3%82%B7%E3%83%8D%E3%83%9E2%20%E6%84%9B%E7%9F%A5%E7%9C%8C" target="_blank">地図</a>）</td><td>愛知県</td><td><a href="https://hp-setlist.com/stage/21933" target="_blank">Tomoko（セットリスト）</a></td></tr>
+<tr><td>2024年12月2日</td><td>19:45</td><td>つばきファクトリー 谷本安美バースデーイベント2024 in 名古屋</td><td>ミッドランドスクエア シネマ2（<a href="https://www.google.com/maps/search/?api=1&amp;query=%E3%83%9F%E3%83%83%E3%83%89%E3%83%A9%E3%83%B3%E3%83%89%E3%82%B9%E3%82%AF%E3%82%A8%E3%82%A2%20%E3%82%B7%E3%83%8D%E3%83%9E2%20%E6%84%9B%E7%9F%A5%E7%9C%8C" target="_blank">地図</a>）</td><td>愛知県</td><td><a href="https://hp-setlist.com/stage/21935" target="_blank">Tomoko（セットリスト）</a></td></tr>
 </tbody>
 </table>
 26歳（2025年）
@@ -166,10 +166,10 @@
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td>2025年11月12日</td><td>17:20</td><td>つばきファクトリー 谷本安美バースデーイベント2025</td><td>飛行船シアター</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/23020" target="_blank">Tomoko（セットリスト）</a></td></tr>
-<tr><td>2025年11月12日</td><td>19:40</td><td>つばきファクトリー 谷本安美バースデーイベント2025</td><td>飛行船シアター</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/23023" target="_blank">Tomoko（セットリスト）</a></td></tr>
-<tr class="row-even"><td>2025年11月27日</td><td>18:00</td><td>つばきファクトリー 谷本安美バースデーイベント2025 in 名古屋</td><td>ミッドランドスクエア シネマ2</td><td>愛知県</td><td><a href="https://hp-setlist.com/stage/23074" target="_blank">Tomoko（セットリスト）</a></td></tr>
-<tr><td>2025年11月27日</td><td>19:45</td><td>つばきファクトリー 谷本安美バースデーイベント2025 in 名古屋</td><td>ミッドランドスクエア シネマ2</td><td>愛知県</td><td><a href="https://hp-setlist.com/stage/23077" target="_blank">Tomoko（セットリスト）</a></td></tr>
+<tr class="row-even"><td>2025年11月12日</td><td>17:20</td><td>つばきファクトリー 谷本安美バースデーイベント2025</td><td>飛行船シアター（<a href="https://www.google.com/maps/search/?api=1&amp;query=%E9%A3%9B%E8%A1%8C%E8%88%B9%E3%82%B7%E3%82%A2%E3%82%BF%E3%83%BC%20%E6%9D%B1%E4%BA%AC%E9%83%BD" target="_blank">地図</a>）</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/23020" target="_blank">Tomoko（セットリスト）</a></td></tr>
+<tr><td>2025年11月12日</td><td>19:40</td><td>つばきファクトリー 谷本安美バースデーイベント2025</td><td>飛行船シアター（<a href="https://www.google.com/maps/search/?api=1&amp;query=%E9%A3%9B%E8%A1%8C%E8%88%B9%E3%82%B7%E3%82%A2%E3%82%BF%E3%83%BC%20%E6%9D%B1%E4%BA%AC%E9%83%BD" target="_blank">地図</a>）</td><td>東京都</td><td><a href="https://hp-setlist.com/stage/23023" target="_blank">Tomoko（セットリスト）</a></td></tr>
+<tr class="row-even"><td>2025年11月27日</td><td>18:00</td><td>つばきファクトリー 谷本安美バースデーイベント2025 in 名古屋</td><td>ミッドランドスクエア シネマ2（<a href="https://www.google.com/maps/search/?api=1&amp;query=%E3%83%9F%E3%83%83%E3%83%89%E3%83%A9%E3%83%B3%E3%83%89%E3%82%B9%E3%82%AF%E3%82%A8%E3%82%A2%20%E3%82%B7%E3%83%8D%E3%83%9E2%20%E6%84%9B%E7%9F%A5%E7%9C%8C" target="_blank">地図</a>）</td><td>愛知県</td><td><a href="https://hp-setlist.com/stage/23074" target="_blank">Tomoko（セットリスト）</a></td></tr>
+<tr><td>2025年11月27日</td><td>19:45</td><td>つばきファクトリー 谷本安美バースデーイベント2025 in 名古屋</td><td>ミッドランドスクエア シネマ2（<a href="https://www.google.com/maps/search/?api=1&amp;query=%E3%83%9F%E3%83%83%E3%83%89%E3%83%A9%E3%83%B3%E3%83%89%E3%82%B9%E3%82%AF%E3%82%A8%E3%82%A2%20%E3%82%B7%E3%83%8D%E3%83%9E2%20%E6%84%9B%E7%9F%A5%E7%9C%8C" target="_blank">地図</a>）</td><td>愛知県</td><td><a href="https://hp-setlist.com/stage/23077" target="_blank">Tomoko（セットリスト）</a></td></tr>
 </tbody>
 </table>
 27歳（2026年）
@@ -185,10 +185,10 @@
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td>2026年11月13日</td><td>17:20</td><td>つばきファクトリー 谷本安美バースデーイベント2026</td><td>LANDMARK HALL</td><td>神奈川県</td><td></td></tr>
-<tr><td>2026年11月13日</td><td>19:40</td><td>つばきファクトリー 谷本安美バースデーイベント2026</td><td>LANDMARK HALL</td><td>神奈川県</td><td></td></tr>
-<tr class="row-even"><td>2026年12月8日</td><td>18:00</td><td>つばきファクトリー 谷本安美・石井泉羽バースデーイベント2026 in 名古屋</td><td>ミッドランドスクエア シネマ2</td><td>愛知県</td><td></td></tr>
-<tr><td>2026年12月8日</td><td>19:45</td><td>つばきファクトリー 谷本安美・石井泉羽バースデーイベント2026 in 名古屋</td><td>ミッドランドスクエア シネマ2</td><td>愛知県</td><td></td></tr>
+<tr class="row-even"><td>2026年11月13日</td><td>17:20</td><td>つばきファクトリー 谷本安美バースデーイベント2026</td><td>LANDMARK HALL（<a href="https://www.google.com/maps/search/?api=1&amp;query=LANDMARK%20HALL%20%E7%A5%9E%E5%A5%88%E5%B7%9D%E7%9C%8C" target="_blank">地図</a>）</td><td>神奈川県</td><td></td></tr>
+<tr><td>2026年11月13日</td><td>19:40</td><td>つばきファクトリー 谷本安美バースデーイベント2026</td><td>LANDMARK HALL（<a href="https://www.google.com/maps/search/?api=1&amp;query=LANDMARK%20HALL%20%E7%A5%9E%E5%A5%88%E5%B7%9D%E7%9C%8C" target="_blank">地図</a>）</td><td>神奈川県</td><td></td></tr>
+<tr class="row-even"><td>2026年12月8日</td><td>18:00</td><td>つばきファクトリー 谷本安美・石井泉羽バースデーイベント2026 in 名古屋</td><td>ミッドランドスクエア シネマ2（<a href="https://www.google.com/maps/search/?api=1&amp;query=%E3%83%9F%E3%83%83%E3%83%89%E3%83%A9%E3%83%B3%E3%83%89%E3%82%B9%E3%82%AF%E3%82%A8%E3%82%A2%20%E3%82%B7%E3%83%8D%E3%83%9E2%20%E6%84%9B%E7%9F%A5%E7%9C%8C" target="_blank">地図</a>）</td><td>愛知県</td><td></td></tr>
+<tr><td>2026年12月8日</td><td>19:45</td><td>つばきファクトリー 谷本安美・石井泉羽バースデーイベント2026 in 名古屋</td><td>ミッドランドスクエア シネマ2（<a href="https://www.google.com/maps/search/?api=1&amp;query=%E3%83%9F%E3%83%83%E3%83%89%E3%83%A9%E3%83%B3%E3%83%89%E3%82%B9%E3%82%AF%E3%82%A8%E3%82%A2%20%E3%82%B7%E3%83%8D%E3%83%9E2%20%E6%84%9B%E7%9F%A5%E7%9C%8C" target="_blank">地図</a>）</td><td>愛知県</td><td></td></tr>
 </tbody>
 </table>
 
