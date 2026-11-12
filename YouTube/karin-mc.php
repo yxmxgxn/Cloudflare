@@ -162,6 +162,7 @@ $mc_shows = [
   ]],
   ['channel' => 'M-line Music', 'title' => 'M-line Music#2・#3', 'mc' => '宮本佳林・松本わかな', 'videos' => [
     ['id' => 'ERsVuoKZON0', 'no' => '#270', 'date' => '2026/11/5'],
+    ['id' => 'xq9_EzHk6Vk', 'no' => '#271', 'date' => '2026/11/12'],
   ]],
   ['channel' => 'ハロ！ステ', 'title' => 'ハロ！ステ#59', 'mc' => '宮本佳林', 'videos' => [
     ['id' => '5hNnroAPYjA', 'no' => '#59', 'date' => '2014/3/19'],

@@ -15,6 +15,10 @@ CSV_URL = (
     "https://docs.google.com/spreadsheets/d/e/2PACX-1vQSRqxK38hOeau3jVUZ0faqKs7ce-iTi9EWo7Xx3U9gNe2J7rrWUJE2HDLwYouYF-6XrDSLU-cDpPMr/pub?gid=1771631512&single=true&output=csv"
 )
 
+VENUE_CSV_URL = (
+    "https://docs.google.com/spreadsheets/d/e/2PACX-1vQSRqxK38hOeau3jVUZ0faqKs7ce-iTi9EWo7Xx3U9gNe2J7rrWUJE2HDLwYouYF-6XrDSLU-cDpPMr/pub?gid=639197751&single=true&output=csv"
+)
+
 from pathlib import Path
 
 REPO_ROOT = Path(__file__).resolve().parent.parent  # Python/ の親 = リポジトリルート
@@ -27,6 +31,23 @@ def fetch_csv(url: str) -> list[list[str]]:
         content = res.read().decode("utf-8")
     reader = csv.reader(io.StringIO(content))
     return list(reader)
+
+def fetch_venue_maps(url: str) -> dict[str, str]:
+    """会場マスターシートから venueID -> 地図URL の対応表を作る。地図が空の会場は含めない。"""
+    rows = fetch_csv(url)
+    headers = [h.strip() for h in rows[0]]
+    for c in ("venueID", "map"):
+        if c not in headers:
+            raise SystemExit(f"会場シートに必要な列がありません: {c}（列: {headers}）")
+    i_id, i_map = headers.index("venueID"), headers.index("map")
+    table = {}
+    for r in rows[1:]:
+        if len(r) <= max(i_id, i_map):
+            continue
+        vid, url_map = r[i_id].strip(), r[i_map].strip()
+        if vid and url_map:
+            table[vid] = url_map
+    return table
 
 def escape_html(s: str) -> str:
     return (
@@ -85,7 +106,10 @@ def build_rows(events: list[dict]) -> str:
 
         date_cell    = format_date(date)
         time_cell    = escape_html(start_time)
+        map_url      = ev.get("_map", "")
         venue_cell   = f"{venue}" if venue else ""
+        if venue and map_url:
+            venue_cell += f'（<a href="{escape_html(map_url)}" target="_blank">地図</a>）'
         prefecture_cell   = f"{prefecture}" if prefecture else ""
         setlist_cell = (
             f'<a href="{escape_html(tomoko_url)}" target="_blank">Tomoko（セットリスト）</a>'
@@ -106,7 +130,7 @@ def build_rows(events: list[dict]) -> str:
 
 COLUMNS = [
     "member_id", "php_name", "birthday", "member_name", "eventName",
-    "date", "startTime", "venueName", "prefectureName", "tomoko_url",
+    "date", "startTime", "venueName", "prefectureName", "tomoko_url", "venueID",
 ]
 
 def get_birthday(events: list[dict]) -> str:
@@ -199,6 +223,8 @@ def main():
     if missing:
         raise SystemExit(f"CSVに必要な列がありません: {missing}（列: {headers}）")
 
+    venue_maps = fetch_venue_maps(VENUE_CSV_URL)
+
     # (php_name, member_name) でグループ化
     member_events: dict[tuple, list[dict]] = defaultdict(list)
     for raw in data[1:]:
@@ -210,6 +236,7 @@ def main():
         member_name = row.get("member_name", "").strip()
         if not php_name or not member_name:
             continue
+        row["_map"] = venue_maps.get(row.get("venueID", ""), "")
         member_events[(php_name, member_name)].append(row)
 
     os.makedirs(OUTPUT_DIR, exist_ok=True)

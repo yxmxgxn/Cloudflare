@@ -153,8 +153,8 @@
     <h2><a href="https://helloproject.com/" target="_blank">ハロー！プロジェクト</a></h2>
     <div class="card-grid index-items">
       <div class="card index-card">
-        <a class="index-link" href="/sns"><?= icon('link-brand', 'ic ic-20') ?>ハロプロ SNS一覧</a>
-        <p class="index-desc">ハロー！プロジェクトの現役メンバー・OGの公式SNS（X・Instagram・YouTube・TikTok・アメブロほか）をまとめた一覧です。名前での検索や、所属・SNSごとの絞り込みができます</p>
+        <a class="index-link" href="/hello-articles"><?= icon('article', 'ic ic-20') ?>ハロプロメンバーが語るインタビュー・Web記事まとめ</a>
+        <p class="index-desc">ハロー！プロジェクトのメンバー本人の言葉が読めるWeb記事（インタビュー・対談・連載・コラムなど）のまとめです</p>
       </div>
       <div class="card index-card">
         <a class="index-link" href="https://ameblo.karin-archive.com/"><?= icon('ameblo', 'ic ic-20') ?>ハロプロ アメブロ検索</a>
@@ -163,6 +163,10 @@
       <div class="card index-card">
         <a class="index-link" href="/hello-kenshusei-blog"><?= icon('article', 'ic ic-20') ?>ハロプロ研修生ブログ インデックス</a>
         <p class="index-desc">upfc.jp のハロプロ研修生ブログを、メンバーと月で探せるインデックスです。記事は upfc.jp で読めます</p>
+      </div>
+      <div class="card index-card">
+        <a class="index-link" href="/sns"><?= icon('link-brand', 'ic ic-20') ?>ハロプロ SNS一覧</a>
+        <p class="index-desc">ハロー！プロジェクトの現役メンバー・OGの公式SNS（X・Instagram・YouTube・TikTok・アメブロほか）をまとめた一覧です。名前での検索や、所属・SNSごとの絞り込みができます</p>
       </div>
       <div class="card index-card">
         <a class="index-link" href="/members_table"><?= icon('flower', 'ic ic-20') ?>ハロプロ卒業公演・デビュー・卒業日・在籍日数</a>
@@ -177,14 +181,6 @@
         <p class="index-desc">ハロープロジェクトのメンバーが出演している映画作品のまとめです</p>
       </div>
       <div class="card index-card">
-        <a class="index-link" href="/hello-articles"><?= icon('article', 'ic ic-20') ?>ハロプロメンバーが語るインタビュー・Web記事まとめ</a>
-        <p class="index-desc">ハロー！プロジェクトのメンバー本人の言葉が読めるWeb記事（インタビュー・対談・連載・コラムなど）のまとめです</p>
-      </div>
-      <div class="card index-card">
-        <a class="index-link" href="/helloHLS"><?= icon('palette', 'ic ic-20') ?>ハロプロメンバーカラーHLS色空間配置</a>
-        <p class="index-desc">ハロープロジェクトのメンバーのメンバーカラーをHLS色空間に配置したものです</p>
-      </div>
-      <div class="card index-card">
         <a class="index-link" href="/decabeats"><?= icon('flower', 'ic ic-20') ?>DECA!BEAT（デカビート）非公式まとめ</a>
         <p class="index-desc">ハロー！プロジェクトとEarth hacksのコラボで結成された特別ユニット「DECA!BEAT」のメンバー紹介ポスト・紹介動画・YouTube・グッズ紹介ポストのまとめです</p>
       </div>
@@ -195,6 +191,10 @@
       <div class="card index-card">
         <a class="index-link" href="/rikawani-kohaku"><?= icon('article', 'ic ic-20') ?>島倉りか りかワニ紅白歌合戦 選曲まとめ</a>
         <p class="index-desc">ワニブックス NewsCrunchの連載「りかワニ紅白歌合戦」で島倉りかさんが紅組・白組に選んだ昭和歌謡と勝敗のまとめです</p>
+      </div>
+      <div class="card index-card">
+        <a class="index-link" href="/helloHLS"><?= icon('palette', 'ic ic-20') ?>ハロプロメンバーカラーHLS色空間配置</a>
+        <p class="index-desc">ハロープロジェクトのメンバーのメンバーカラーをHLS色空間に配置したものです</p>
       </div>
     </div>
   </section>
