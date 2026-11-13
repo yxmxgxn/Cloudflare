@@ -31,7 +31,7 @@
  *   videos : 映像の一覧(必須)。id・start は video_cards と同じ
  *            label : 一覧に出す名前(ライブ名・歌っているメンバーなど)
  *            note  : label の下に小さく出す補足(日付・会場など)。配列なら複数行、空文字の行は出さない(省略可)
- *   カード上部は1本目の「▶ ◯分◯秒から見る」ボタン。一覧の映像と合わせて、押すとYouTubeが新しいタブで開く。
+ *   一覧の映像を押すと、YouTubeが新しいタブで開く(カード上部の再生ボタンは embed => true のときだけ)。
  *
  * ■ カードの中では再生しない
  *   小さいカードの中で再生しても見づらいので、既定ではYouTubeを新しいタブで開くだけにしている。
@@ -71,19 +71,15 @@ function vc_play_attrs(array $v, string $title): string
 }
 
 /**
- * サムネイル。$embed が true なら押した時にその場で再生(それまでiframeは読み込まない)、
- * false なら YouTube を新しいタブで開くだけ(動画が多いページはこちら)。
+ * その場再生(embed => true)用の再生ボタン。押すまでiframeは読み込まない。
+ * embed => false のときはボタンを出さず、YouTubeへのリンクだけにする。
  */
-function vc_thumb(array $v, string $title, bool $embed = true): string
+function vc_thumb(array $v, string $title): string
 {
     $start = (int)($v['start'] ?? 0);
     $time = $start ? vc_hms($start) . 'から' : '';
     // サムネイルは出さない(長い動画の途中から始まるので、画像と場面が合わないため)
-    $inner = '<span class="vc-play">▶ ' . ($time === '' ? ($embed ? '再生' : 'YouTubeで見る') : $time . ($embed ? '再生' : '見る')) . '</span>';
-    if (!$embed) {
-        return '<a class="vc-thumb" href="' . vc_h(vc_url($v)) . '" target="_blank"'
-             . ' aria-label="' . vc_h($title) . ' をYouTubeで見る">' . $inner . '</a>';
-    }
+    $inner = '<span class="vc-play">▶ ' . ($time === '' ? '再生' : $time . '再生') . '</span>';
     return '<button type="button" class="vc-thumb"' . vc_play_attrs($v, $title)
          . ' aria-label="' . vc_h($title) . ' を再生">' . $inner . '</button>';
 }
@@ -102,7 +98,7 @@ function video_cards(array $videos, array $opts = []): string
     $embed = $opts['embed'] ?? false;   // true ならその場で再生する。既定はYouTubeを新しいタブで開く
     $out = '<div class="card-grid vc-grid">';
     foreach ($videos as $v) {
-        // embed => false のときは下の「YouTubeで見る」だけにする(時間付きの再生ボタンと中身が同じため)
+        // embed => false のときは下の「YouTubeで見る」だけにする(再生ボタンと中身が同じため)
         $out .= '<div class="card vc-card">'
               . ($embed ? vc_thumb($v, $v['title']) : '')
               . (empty($v['date']) ? '' : '<p class="vc-date">' . vc_h($v['date']) . '</p>')
@@ -124,14 +120,15 @@ function song_cards(array $songs, array $opts = []): string
         foreach ($s['data'] ?? [] as $k => $val) {
             $attrs .= ' data-' . vc_h($k) . '="' . vc_h($val) . '"';
         }
+        // embed => false のときは上の再生ボタンを出さない(下の一覧の1本目と同じYouTubeを開くだけのため)
         $out .= '<div class="card vc-card sc-card"' . $attrs . '>'
-              . '<div class="vc-stage">' . vc_thumb($s['videos'][0], $s['title'], $embed) . '</div>'
+              . ($embed ? '<div class="vc-stage">' . vc_thumb($s['videos'][0], $s['title']) . '</div>' : '')
               . '<p class="vc-title">' . vc_h($s['title']) . '</p>'
               . vc_subs($s['sub'] ?? null)
               . '<ul class="sc-list">';
         foreach ($s['videos'] as $i => $v) {
             $start = (int)($v['start'] ?? 0);
-            $out .= '<li class="sc-item' . ($i === 0 ? ' is-current' : '') . '">'
+            $out .= '<li class="sc-item' . ($embed && $i === 0 ? ' is-current' : '') . '">'
                   . ($embed
                         ? '<button type="button" class="sc-pick"' . vc_play_attrs($v, $s['title']) . '>'
                         : '<a class="sc-pick" href="' . vc_h(vc_url($v)) . '" target="_blank">')
