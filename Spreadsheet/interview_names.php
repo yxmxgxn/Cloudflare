@@ -1,4 +1,5 @@
-<!-- generated: 2026-11-04T08:31:40.197919+00:00 -->
+<!-- generated: 2026-11-14T04:32:15.332283+00:00 -->
+<option value="c" data-group="">c</option>
 <option value="相川茉穂" data-group="アンジュルム">相川茉穂</option>
 <option value="秋山眞緒" data-group="つばきファクトリー">秋山眞緒</option>
 <option value="浅倉樹々" data-group="つばきファクトリー">浅倉樹々</option>
@@ -25,6 +26,7 @@
 <option value="江端妃咲" data-group="Juice=Juice">江端妃咲</option>
 <option value="遠藤彩加里" data-group="Juice=Juice">遠藤彩加里</option>
 <option value="太田遥香" data-group="アンジュルム">太田遥香</option>
+<option value="大坪茉乃" data-group="BEYOOOOONDS">大坪茉乃</option>
 <option value="岡井千聖" data-group="℃-ute">岡井千聖</option>
 <option value="岡村ほまれ" data-group="モーニング娘。">岡村ほまれ</option>
 <option value="岡村美波" data-group="BEYOOOOONDS">岡村美波</option>
@@ -56,6 +58,7 @@
 <option value="工藤遥" data-group="モーニング娘。">工藤遥</option>
 <option value="工藤由愛" data-group="Juice=Juice">工藤由愛</option>
 <option value="窪田七海" data-group="OCHA NORMA">窪田七海</option>
+<option value="小島はな" data-group="BEYOOOOONDS">小島はな</option>
 <option value="小林萌花" data-group="BEYOOOOONDS">小林萌花</option>
 <option value="小湊美和" data-group="太陽とシスコムーン">小湊美和</option>
 <option value="紺野あさ美" data-group="モーニング娘。">紺野あさ美</option>
@@ -74,6 +77,7 @@
 <option value="島村嬉唄" data-group="カントリー・ガールズ">島村嬉唄</option>
 <option value="清水佐紀" data-group="Berryz工房">清水佐紀</option>
 <option value="下井谷幸穂" data-group="アンジュルム">下井谷幸穂</option>
+<option value="杉山結菜" data-group="BEYOOOOONDS">杉山結菜</option>
 <option value="鈴木愛理" data-group="℃-ute">鈴木愛理</option>
 <option value="鈴木香音" data-group="モーニング娘。">鈴木香音</option>
 <option value="須藤茉麻" data-group="Berryz工房">須藤茉麻</option>
