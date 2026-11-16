@@ -227,16 +227,21 @@ $dc_videos = [
   ],
 ];
 
-// どっちっちchannel(毎週更新)。新しい回はここに足す
+// どっちっちchannel(毎週更新)。新しい回はここに足す(表示は新しい回が左)
+// offshots は「offメシ、どっちっち？」のオフショットポスト [日付, ツイートID]
 $dc_dotchicchi = [
   ['title' => '#1 豫風瑠乃×米村姫良々', 'url' => 'https://www.youtube.com/watch?v=acQZk0gb8SA',
-   'credit' => 'ロケ協力', 'place' => '原宿さくら亭', 'place_url' => 'https://www.sakuratei.co.jp/'],
+   'credit' => 'ロケ協力', 'place' => '原宿さくら亭', 'place_url' => 'https://www.sakuratei.co.jp/',
+   'offshots' => [['2026-09-24', '2103046787472994670'], ['2026-10-01', '2105582019711586579']]],
   ['title' => '#2 上村麗菜×米村姫良々', 'url' => 'https://www.youtube.com/watch?v=P6bgjmfNP1Y',
-   'credit' => '撮影地協力', 'place' => 'EMPORIO cafe&dining', 'place_url' => 'https://www.emporio.tv/'],
+   'credit' => '撮影地協力', 'place' => 'EMPORIO cafe&dining', 'place_url' => 'https://www.emporio.tv/',
+   'offshots' => [['2026-10-08', '2108168113690943784'], ['2026-10-15', '2110668292419662186']]],
   ['title' => '#3 岡村美波×米村姫良々', 'url' => 'https://www.youtube.com/watch?v=mZF7dc_mEf8',
-   'credit' => '撮影協力', 'place' => 'EMPORIO cafe&dining', 'place_url' => 'https://www.emporio.tv/'],
+   'credit' => '撮影協力', 'place' => 'EMPORIO cafe&dining', 'place_url' => 'https://www.emporio.tv/',
+   'offshots' => [['2026-10-21', '2113245030173540416'], ['2026-10-29', '2115734909012848853']]],
   ['title' => '#4 後藤花×米村姫良々', 'url' => 'https://www.youtube.com/watch?v=lkZEs-Wom5s',
-   'credit' => '撮影協力', 'place' => 'ころ丸', 'place_url' => 'http://kaisendon-koroku.com/'],
+   'credit' => '撮影協力', 'place' => 'ころ九', 'place_url' => 'http://kaisendon-koroku.com/',
+   'offshots' => [['2026-11-04', '2117907873749713122'], ['2026-11-05', '2118313038931698143'], ['2026-11-12', '2120806484397502731']]],
 ];
 
 // J-WAVEのPodcast「offの日、どっちっち？」(2回で終了)
@@ -556,11 +561,29 @@ function dc_x_embed(string $label, array $tw): string {
     <ul class="dc-sns">
       <li><a href="<?= dc_h(DC_YT_CHANNEL_URL) ?>" target="_blank"><?= icon('youtube-brand', 'ic ic-20') ?>どっちっちchannel（YouTube）</a></li>
     </ul>
-    <ul class="dc-video-list">
-      <?php foreach ($dc_dotchicchi as $v): ?>
-      <li><a href="<?= dc_h($v['url']) ?>" target="_blank"><?= icon('youtube-brand', 'ic ic-20') ?><?= dc_h($v['title']) ?></a><?php if (!empty($v['place'])): ?>（<?= dc_h($v['credit']) ?>：<a href="<?= dc_h($v['place_url']) ?>" target="_blank"><?= dc_h($v['place']) ?></a>）<?php endif; ?></li>
-      <?php endforeach; ?>
-    </ul>
+    <?php // 再生はYouTube側。1回分を1枚のカードにして横に回す(全部HTMLに書き出す) ?>
+    <div class="dc-carousel">
+      <button type="button" class="dc-carousel-prev" aria-label="新しい回へ">‹</button>
+      <ul class="dc-carousel-track">
+        <?php foreach (array_reverse($dc_dotchicchi) as $v): ?>
+        <li class="dc-card">
+          <h3><?= dc_h($v['title']) ?></h3>
+          <p><a href="<?= dc_h($v['url']) ?>" target="_blank"><?= icon('youtube-brand', 'ic ic-20') ?>YouTubeで見る</a></p>
+          <?php if (!empty($v['offshots'])): ?>
+          <ul class="dc-card-shots">
+            <?php foreach ($v['offshots'] as $o): ?>
+            <li><a href="<?= dc_h('https://x.com/' . DC_X_ACCOUNT . '/status/' . $o[1]) ?>" target="_blank"><?= icon('x', 'ic ic-20') ?>オフショット（<?= dc_h(dc_jdate($o[0])) ?>）</a></li>
+            <?php endforeach; ?>
+          </ul>
+          <?php endif; ?>
+          <?php if (!empty($v['place'])): ?>
+          <p class="dc-card-credit"><?= dc_h($v['credit']) ?>：<a href="<?= dc_h($v['place_url']) ?>" target="_blank"><?= dc_h($v['place']) ?></a></p>
+          <?php endif; ?>
+        </li>
+        <?php endforeach; ?>
+      </ul>
+      <button type="button" class="dc-carousel-next" aria-label="前の回へ">›</button>
+    </div>
 
     <h3>Podcast「offの日、どっちっち？」（J-WAVE）</h3>
     <ul class="dc-video-list">
@@ -592,18 +615,18 @@ function dc_x_embed(string $label, array $tw): string {
   <section class="dc-section" id="friends">
     <h2>デカビートフレンズ</h2>
     <p>みんなが集めたデカボのパワーで生まれた、DECA!BEATの小さなお友達です。</p>
-    <div class="dc-friends">
-      <button type="button" class="dc-friends-prev" aria-label="前のフレンズ">‹</button>
-      <ul class="dc-friends-track">
+    <div class="dc-carousel">
+      <button type="button" class="dc-carousel-prev" aria-label="前のフレンズ">‹</button>
+      <ul class="dc-carousel-track">
         <?php foreach ($dc_members as $m): ?>
-        <li class="dc-friend-card">
+        <li class="dc-card dc-friend-card">
           <h3><?= dc_h($m['friend']) ?><span><?= dc_h($m['friend_en']) ?></span></h3>
           <p class="dc-friend-of"><a href="#<?= dc_h($m['slug']) ?>"><?= dc_h($m['name']) ?></a>のデカビートフレンズ</p>
           <p><?= dc_h($m['friend_desc'][0]) ?><br><?= dc_h($m['friend_desc'][1]) ?></p>
         </li>
         <?php endforeach; ?>
       </ul>
-      <button type="button" class="dc-friends-next" aria-label="次のフレンズ">›</button>
+      <button type="button" class="dc-carousel-next" aria-label="次のフレンズ">›</button>
     </div>
   </section>
 
@@ -775,12 +798,11 @@ function dc_x_embed(string $label, array $tw): string {
 
   /* ---- デカビートフレンズ ---- */
 
-  // ‹ › で1枚ずつ送る。端まで行ったら反対の端に戻る
-  (function () {
-    var track = document.querySelector('.dc-friends-track');
-    if (!track) return;
+  // ‹ › で1枚ずつ送る。端まで行ったら反対の端に戻る(フレンズ・どっちっちの両方)
+  document.querySelectorAll('.dc-carousel').forEach(function (box) {
+    var track = box.querySelector('.dc-carousel-track');
     function step(dir) {
-      var card = track.querySelector('.dc-friend-card');
+      var card = track.querySelector('.dc-card');
       var w = card.getBoundingClientRect().width + parseFloat(getComputedStyle(track).columnGap || 0);
       var max = track.scrollWidth - track.clientWidth;
       var to = track.scrollLeft + dir * w;
@@ -788,9 +810,9 @@ function dc_x_embed(string $label, array $tw): string {
       else if (to < -2) to = max;
       track.scrollTo({ left: to, behavior: 'smooth' });
     }
-    document.querySelector('.dc-friends-prev').addEventListener('click', function () { step(-1); });
-    document.querySelector('.dc-friends-next').addEventListener('click', function () { step(1); });
-  })();
+    box.querySelector('.dc-carousel-prev').addEventListener('click', function () { step(-1); });
+    box.querySelector('.dc-carousel-next').addEventListener('click', function () { step(1); });
+  });
 
   /* ---- YouTube ---- */
 
