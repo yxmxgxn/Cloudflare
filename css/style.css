@@ -3137,6 +3137,81 @@ a.iv-stats-row:hover {
   color: #666;
 }
 
+/* デカビートフレンズ: 横に並べたカードをスクロールで回す */
+.dc-friends {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.dc-friends-track {
+  display: flex;
+  gap: 14px;
+  flex: 1;
+  min-width: 0;
+  margin: 0;
+  padding: 6px 4px 12px;
+  list-style: none;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: thin;
+}
+
+.dc-friend-card {
+  flex: 0 0 min(260px, 80%);
+  scroll-snap-align: start;
+  padding: 14px 16px;
+  border: 2px solid #000;
+  border-radius: 10px;
+  background: #fff;
+  box-shadow: 4px 4px 0 #000;
+}
+
+.dc-friend-card h3 {
+  margin: 0;
+  font-size: 18px;
+}
+
+.dc-friend-card h3 span {
+  display: block;
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  color: #0000FF;
+}
+
+.dc-friend-card p {
+  margin: 8px 0 0;
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+.dc-friend-card .dc-friend-of {
+  display: inline-block;
+  padding: 1px 8px;
+  background: #9CF48E;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.dc-friends-prev,
+.dc-friends-next {
+  flex: none;
+  width: 36px;
+  height: 36px;
+  border: 2px solid #000;
+  border-radius: 50%;
+  background: #fff;
+  font-size: 20px;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.dc-friends-prev:hover,
+.dc-friends-next:hover {
+  background: #9CF48E;
+}
+
 /* 公式リンク */
 .dc-sns {
   display: flex;

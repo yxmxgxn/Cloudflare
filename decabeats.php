@@ -22,9 +22,11 @@ $dc_members = [
     'catch' => ['デカビートの頼りになるリーダー！', '回収ガンでデカボエネルギーを集める。'],
     'name' => '米村姫良々',
     'yomi' => 'よねむらきらら',
-    'birthday' => '2004-04-30',
     'group' => 'OCHA NORMA',
     'friend' => 'キラニャ',
+    'friend_en' => 'KIRA-NYA',
+    // 公式のフレンズ紹介(1行目の「〇〇のデカビートフレンズ。」は名前と並べるので省く)
+    'friend_desc' => ['デカビートフレンズのリーダー！', '軽やかな動きで、階段を素早く登るよ！'],
     'official' => 'https://helloproject.com/ochanorma/kirara_yonemura/',
     'instagram' => 'https://www.instagram.com/p/DVNJYG7Eydl/',
     'action' => 'なるべく階段を使う！',
@@ -43,9 +45,11 @@ $dc_members = [
     'catch' => ['みんなのデカボを算出・解析する', 'デカビートのキュートな頭脳担当。'],
     'name' => '岡村美波',
     'yomi' => 'おかむらみなみ',
-    'birthday' => '2004-10-20',
     'group' => 'BEYOOOOONDS',
     'friend' => 'ミイメェ',
+    'friend_en' => 'MII-MEE',
+    // 公式のフレンズ紹介(1行目の「〇〇のデカビートフレンズ。」は名前と並べるので省く)
+    'friend_desc' => ['デカビートフレンズのおねえさんひつじ。', 'しっかりものでゴミの分別が得意！'],
     'official' => 'https://helloproject.com/beyooooonds/minami_okamura/',
     'instagram' => 'https://www.instagram.com/p/DVQXHd7E2fy/',
     'action' => 'アンティーク・蚤の市に行く！',
@@ -64,9 +68,11 @@ $dc_members = [
     'catch' => ['日常に隠れたデカボを', 'スカウターであざとく見つける！'],
     'name' => '江端妃咲',
     'yomi' => 'えばたきさき',
-    'birthday' => '2007-01-30',
     'group' => 'Juice=Juice',
     'friend' => 'エバネコ',
+    'friend_en' => 'EBA-NEKO',
+    // 公式のフレンズ紹介(1行目の「〇〇のデカビートフレンズ。」は名前と並べるので省く)
+    'friend_desc' => ['デカビートフレンズのあざとキャット。', 'お買い物は絶対マイバッグだよ'],
     'official' => 'https://helloproject.com/juicejuice/kisaki_ebata/',
     'instagram' => 'https://www.instagram.com/p/DVSVLJxkwXR/',
     'action' => 'マイバッグを持ち歩く！',
@@ -85,9 +91,11 @@ $dc_members = [
     'catch' => ['メガホンを使い、デッカいボイスで', '見つけたデカボをメンバーに伝えるの！'],
     'name' => '豫風瑠乃',
     'yomi' => 'よふうるの',
-    'birthday' => '2007-12-20',
     'group' => 'つばきファクトリー',
     'friend' => 'ルノコーン',
+    'friend_en' => 'RUNO-CORN',
+    // 公式のフレンズ紹介(1行目の「〇〇のデカビートフレンズ。」は名前と並べるので省く)
+    'friend_desc' => ['デっカいボイスが自慢のユニコーン。', 'お魚が大好きでいっぱい食べルノー！'],
     'official' => 'https://helloproject.com/tsubakifactory/runo_yofu/',
     'instagram' => 'https://www.instagram.com/p/DVV3lpTkxYz/',
     'action' => '一駅分歩く！',
@@ -106,9 +114,11 @@ $dc_members = [
     'catch' => ['デカボを発見したらキックボードで', '人一倍元気に、現場に急行！'],
     'name' => '後藤花',
     'yomi' => 'ごとうはな',
-    'birthday' => '2008-06-05',
     'group' => 'アンジュルム',
     'friend' => 'ハナペン',
+    'friend_en' => 'HANA-PEN',
+    // 公式のフレンズ紹介(1行目の「〇〇のデカビートフレンズ。」は名前と並べるので省く)
+    'friend_desc' => ['デカビートフレンズのニコニコ元気担当！', '水色のマイボトルがお気に入り♡'],
     'official' => 'https://helloproject.com/angerme/hana_goto/',
     'instagram' => 'https://www.instagram.com/p/DVXbEpOkx1f/',
     'action' => 'マイボトルを使う！',
@@ -127,9 +137,11 @@ $dc_members = [
     'catch' => ['デッカいスタンプでデカボを認定！', 'みんなのデカボを応援する！'],
     'name' => '弓桁朱琴',
     'yomi' => 'ゆみげたあこ',
-    'birthday' => '2008-07-08',
     'group' => 'モーニング娘。\'26',
     'friend' => 'シシゲタ',
+    'friend_en' => 'SHISHI-GETA',
+    // 公式のフレンズ紹介(1行目の「〇〇のデカビートフレンズ。」は名前と並べるので省く)
+    'friend_desc' => ['デカビートフレンズのメラメラ応援団長。', '2Lのペットボトルを軽々持ち上げる！'],
     'official' => 'https://helloproject.com/morningmusume/ako_yumigeta/',
     'instagram' => 'https://www.instagram.com/p/DVatzf-E9AG/',
     'action' => 'ショートヘアーで、ドライヤー節電！',
@@ -148,9 +160,11 @@ $dc_members = [
     'catch' => ['スツールを使って高いところから', '隠れたデカボもくまなくチェック'],
     'name' => '上村麗菜',
     'yomi' => 'かみむられな',
-    'birthday' => '2009-06-15',
     'group' => 'ロージークロニクル',
     'friend' => 'ウサレナ',
+    'friend_en' => 'USA-RENA',
+    // 公式のフレンズ紹介(1行目の「〇〇のデカビートフレンズ。」は名前と並べるので省く)
+    'friend_desc' => ['デカビートフレンズのちっちゃい末っ子！', '卵かけごはんが大好き！'],
     'official' => 'https://helloproject.com/rosychronicle/rena_kamimura/',
     'instagram' => 'https://www.instagram.com/p/DVdPXTLE3MR/',
     'action' => '電気をこまめに消す！',
@@ -404,12 +418,6 @@ function dc_h(string $s): string {
     return htmlspecialchars($s, ENT_QUOTES, 'UTF-8');
 }
 
-/** 誕生日から今日(日本時間)の年齢。ページは毎日ビルドされるので誕生日当日に上がる */
-function dc_age(string $ymd): int {
-    $tz = new DateTimeZone('Asia/Tokyo');
-    return (new DateTimeImmutable($ymd, $tz))->diff(new DateTimeImmutable('today', $tz))->y;
-}
-
 /** 2026-03-02 → 2026年3月2日 */
 function dc_jdate(string $ymd): string {
     [$y, $m, $d] = array_map('intval', explode('-', $ymd));
@@ -488,7 +496,7 @@ function dc_x_embed(string $label, array $tw): string {
         <a class="dc-share" target="_blank"
            data-text="<?= dc_h($m['name'] . '（' . $m['friend'] . '）｜DECA!BEAT 非公式まとめ #Earthhacks #デカビート') ?>"><?= icon('x', 'ic ic-20') ?>シェア</a></h3>
       <p class="dc-catch"><?= dc_h($m['catch'][0]) ?><br><?= dc_h($m['catch'][1]) ?></p>
-      <p class="dc-meta"><span><?= dc_h($m['group']) ?></span><span>デカビートフレンズ：<?= dc_h($m['friend']) ?></span><span>誕生日：<?= dc_h(dc_jdate($m['birthday'])) ?>（<?= dc_age($m['birthday']) ?>歳）</span></p>
+      <p class="dc-meta"><span><?= dc_h($m['group']) ?></span><span>デカビートフレンズ：<?= dc_h($m['friend']) ?>（<?= dc_h($m['friend_en']) ?>）</span></p>
       <p class="dc-action">MY「デカボ」アクション：<?= dc_h($m['action']) ?></p>
       <p class="dc-mission"><a href="<?= dc_h(DC_MISSION_URL . '?culture=ja&spot=' . $m['spot']) ?>" target="_blank"><?= dc_h($m['mission']) ?>（デカボスコア<?= dc_h($m['score']) ?>％）</a></p>
       <?php // 埋め込み4枚は一度に並べず、1枚ずつめくって見せる(表示した1枚だけ読み込む) ?>
@@ -576,6 +584,26 @@ function dc_x_embed(string $label, array $tw): string {
         <p class="dc-post-date"><?= dc_h($p['date']) ?></p>
       </div>
       <?php endforeach; ?>
+    </div>
+  </section>
+
+  <!-- デカビートフレンズ -->
+  <?php // 7人分を全部HTMLに書き出し、横スクロールで回す(隠さないので検索エンジンにもそのまま読まれる) ?>
+  <section class="dc-section" id="friends">
+    <h2>デカビートフレンズ</h2>
+    <p>みんなが集めたデカボのパワーで生まれた、DECA!BEATの小さなお友達です。</p>
+    <div class="dc-friends">
+      <button type="button" class="dc-friends-prev" aria-label="前のフレンズ">‹</button>
+      <ul class="dc-friends-track">
+        <?php foreach ($dc_members as $m): ?>
+        <li class="dc-friend-card">
+          <h3><?= dc_h($m['friend']) ?><span><?= dc_h($m['friend_en']) ?></span></h3>
+          <p class="dc-friend-of"><a href="#<?= dc_h($m['slug']) ?>"><?= dc_h($m['name']) ?></a>のデカビートフレンズ</p>
+          <p><?= dc_h($m['friend_desc'][0]) ?><br><?= dc_h($m['friend_desc'][1]) ?></p>
+        </li>
+        <?php endforeach; ?>
+      </ul>
+      <button type="button" class="dc-friends-next" aria-label="次のフレンズ">›</button>
     </div>
   </section>
 
@@ -744,6 +772,25 @@ function dc_x_embed(string $label, array $tw): string {
       behavior: smooth ? 'smooth' : 'auto'
     });
   }
+
+  /* ---- デカビートフレンズ ---- */
+
+  // ‹ › で1枚ずつ送る。端まで行ったら反対の端に戻る
+  (function () {
+    var track = document.querySelector('.dc-friends-track');
+    if (!track) return;
+    function step(dir) {
+      var card = track.querySelector('.dc-friend-card');
+      var w = card.getBoundingClientRect().width + parseFloat(getComputedStyle(track).columnGap || 0);
+      var max = track.scrollWidth - track.clientWidth;
+      var to = track.scrollLeft + dir * w;
+      if (to > max + 2) to = 0;
+      else if (to < -2) to = max;
+      track.scrollTo({ left: to, behavior: 'smooth' });
+    }
+    document.querySelector('.dc-friends-prev').addEventListener('click', function () { step(-1); });
+    document.querySelector('.dc-friends-next').addEventListener('click', function () { step(1); });
+  })();
 
   /* ---- YouTube ---- */
 
