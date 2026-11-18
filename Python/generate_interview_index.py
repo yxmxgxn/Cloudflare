@@ -229,7 +229,8 @@ def _small_num(s: str) -> bool:
 
 def _is_page2_of(cur: str, nxt: str) -> bool:
     """nxt が「ページ番号の無いURL cur の2ページ目」か。
-    パスの後ろに /2・/page/2 を足した形(i-voce.jp/feed/1299587/ → /2/、natalie.mu/music/pp/xxx/ → /page/2)と、
+    パスの後ろに /2・/page/2・/p2 を足した形(i-voce.jp/feed/1299587/ → /2/、natalie.mu/music/pp/xxx/ → /page/2、
+    thetv.jp/news/detail/1023365/ → /p2/)と、
     同じパスに ?page=2・?p=2・?P=2 を足した形(shueisha.online は ?disp=paging&page=2 と1つ余計に付く)。
     1ページ目の末尾は記事IDなので、末尾の数字の +1 では見つからない。
     -2・_2 は WordPress の同名スラッグ(別記事)と区別できないので含めない。"""
@@ -238,12 +239,17 @@ def _is_page2_of(cur: str, nxt: str) -> bool:
         return False
     if a.query == b.query:
         base = a.path.rstrip("/")
-        return b.path.rstrip("/") in (base + "/2", base + "/page/2")
+        return b.path.rstrip("/") in (base + "/2", base + "/page/2", base + "/p2")
     qa, qb = urllib.parse.parse_qs(a.query), urllib.parse.parse_qs(b.query)
     added = {k: v for k, v in qb.items() if qa.get(k) != v}
     return (a.path.rstrip("/") == b.path.rstrip("/") and len(added) <= 2
             and any(added.get(k) == ["2"] for k in _PAGE_KEYS)
             and all(qb.get(k) == v for k, v in qa.items()))
+
+
+# rel=next があるのに「同じ記事の続き」と判定できず使わなかったもの (今のページ, rel=next の先)。
+# 知らない形のページ番号(thetv.jp の /p2/ など)を見つけるための記録。main() が記事IDを付けて一覧にする
+SKIPPED_NEXT: list[tuple[str, str]] = []
 
 
 def next_page_url(html: str, cur: str) -> str | None:
@@ -253,8 +259,11 @@ def next_page_url(html: str, cur: str) -> str | None:
     if not m:
         m = re.search(r'<(?:link|a)[^>]+href=["\']([^"\']+)["\'][^>]+rel=["\']next["\']', html or "", re.I)
     # rel=next が「次の記事」を指すサイト(tvfan.kyodo.co.jp・tvguide.or.jp など)は、それを使わずに下の規則で探す
-    if m and same_article(cur, urllib.parse.urljoin(cur, m.group(1))):
-        return urllib.parse.urljoin(cur, m.group(1))
+    if m:
+        rel_next = urllib.parse.urljoin(cur, m.group(1))
+        if same_article(cur, rel_next):
+            return rel_next
+        SKIPPED_NEXT.append((cur, rel_next))
     # 2) URL規則の連番: ?page=N を +1。
     #    末尾 /N or /N/ は「小さい数字＝ページ番号」の時だけ +1 する。
     #    /pickup/704725 のような“末尾が記事ID”を次記事と誤連結しないための安全弁。
@@ -283,10 +292,11 @@ def next_page_url(html: str, cur: str) -> str | None:
         if _is_page2_of(cur, u):
             return u
     # 6) 末尾 /N を +1
-    mnum = re.search(r"/(\d+)/?$", pr.path)
-    if mnum and int(mnum.group(1)) < PAGE_NUM_MAX:
-        n = int(mnum.group(1)) + 1
-        newpath = pr.path[:mnum.start()] + f"/{n}" + ("/" if pr.path.endswith("/") else "")
+    #    thetv.jp の /p2/ のように頭に p が付く形も同じ
+    mnum = re.search(r"/(p?)(\d+)/?$", pr.path)
+    if mnum and int(mnum.group(2)) < PAGE_NUM_MAX:
+        n = int(mnum.group(2)) + 1
+        newpath = pr.path[:mnum.start()] + f"/{mnum.group(1)}{n}" + ("/" if pr.path.endswith("/") else "")
         return pr._replace(path=newpath).geturl()
     return None
 
@@ -309,12 +319,12 @@ def looks_truncated(body: str, last_html: str) -> bool:
 
 def _stem(u: str):
     """URLから「ページ番号を除いた記事の幹」を取り出す(同一記事判定用)。
-    末尾 /N は「小さい数字＝ページ番号」の時だけ除去する。
+    末尾 /N・/pN は「小さい数字＝ページ番号」の時だけ除去する。
     /news/248033 のような“末尾が記事ID(大きい数字)”を除去すると、別記事どうしが
     同じ幹に潰れて誤連結するため、PAGE_NUM_MAX 未満のみ除去する。"""
     pr = urllib.parse.urlparse(u)
     path = pr.path
-    m = re.search(r"/(\d+)/?$", path)
+    m = re.search(r"/p?(\d+)/?$", path)
     if m and int(m.group(1)) < PAGE_NUM_MAX:
         path = path[:m.start()]
     path = path.rstrip("/")
@@ -480,6 +490,8 @@ def main():
     stmts: list[str] = []
     sheet_ids = set()
     n_new = n_skip = 0
+    skipped: list[tuple[str, str, str]] = []   # (記事ID, 今のページ, 使わなかった rel=next)
+    pages_of: dict[str, int] = {}
 
     for a in articles:
         aid = (a.get("ID") or "").strip()
@@ -526,6 +538,9 @@ def main():
                 if len(normalize(ab)) > len(normalize(body)):
                     used, truncated, body = [arc], False, ab
                     print(f"  ↳ {aid}: liveが空/短い → 魚拓から取得", flush=True)
+        skipped.extend((aid, c, n) for c, n in SKIPPED_NEXT)
+        SKIPPED_NEXT.clear()
+        pages_of[aid] = len(used)
         tokens = bigram_list(normalize(body)[:MAX_INDEX_CHARS])
         chunks = chunk_bigrams(tokens)
         print(f"{aid}: {len(used)}ページ連結 ({', '.join(used)})", flush=True)
@@ -560,6 +575,30 @@ def main():
 
     print(f"\n生成: {out}  本文 更新{n_new} / スキップ{n_skip} / 削除{len(removed)}"
           f"  メタデータ {len(meta) - 1}行")
+    report_skipped_next(skipped, pages_of, out.with_name("使わなかった次ページ.csv"))
+
+
+def report_skipped_next(skipped: list[tuple[str, str, str]], pages_of: dict[str, int], out: Path) -> None:
+    """rel=next を使わなかった記事をドメインごとにまとめる。
+    1ページで終わった記事だけ画面に出す(2ページ以上取れた記事は別の規則で辿れているので、CSVだけに残す)。
+    今回取りに行った記事の分だけなので、全記事を見るには --refetch でドメインごと取り直す。"""
+    if not skipped:
+        return
+    with out.open("w", encoding="utf-8-sig", newline="") as f:
+        w = csv.writer(f)
+        w.writerow(["ID", "索引ページ数", "今のページ", "使わなかった rel=next"])
+        for aid, cur, nxt in skipped:
+            w.writerow([aid, pages_of.get(aid, ""), cur, nxt])
+    by_dom: dict[str, list[tuple[str, str, str]]] = {}
+    for aid, cur, nxt in skipped:
+        if pages_of.get(aid) == 1:
+            by_dom.setdefault(_host(urllib.parse.urlparse(cur).netloc), []).append((aid, cur, nxt))
+    if by_dom:
+        print("\nrel=next があるのに辿らず1ページで終わった記事(知らない形のページ番号かも。別の記事を指すサイトもある):")
+        for dom, rows in sorted(by_dom.items(), key=lambda kv: -len(kv[1])):
+            aid, cur, nxt = rows[0]
+            print(f"  {dom}: {len(rows)}件  例 {aid} {cur} → {nxt}")
+    print(f"一覧: {out}")
 
 
 if __name__ == "__main__":
