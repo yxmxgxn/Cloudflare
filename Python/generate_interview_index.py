@@ -106,16 +106,39 @@ def ascii_url(url: str) -> str:
     return urllib.parse.urlunsplit((pr.scheme, netloc, path, query, pr.fragment))
 
 
+HOST_INTERVAL = 1.0   # 同じサイトへの取得の最小間隔(秒)
+_last_fetch: dict[str, float] = {}
+
+
+def _wait_host(url: str) -> None:
+    """同じサイトへ続けて取りに行かない。thetv.jp は1記事に5〜7ページあり、間を空けずに
+    取ると数十記事で 503 を返すようになった(実測)。"""
+    host = _host(urllib.parse.urlparse(url).netloc)
+    wait = _last_fetch.get(host, 0) + HOST_INTERVAL - time.monotonic()
+    if wait > 0:
+        time.sleep(wait)
+    _last_fetch[host] = time.monotonic()
+
+
 def fetch_html(url: str) -> str | None:
-    try:
-        req = urllib.request.Request(ascii_url(url), headers={"User-Agent": UA, "Accept-Language": "ja"})
-        with urllib.request.urlopen(req, timeout=20) as r:
-            raw = r.read()
-            if (r.headers.get("Content-Encoding") or "").lower() == "gzip":
-                # web.archive.orgの id_ 修飾子は元レスポンスのgzip圧縮をそのまま返してくるため
-                raw = gzip.decompress(raw)
-    except Exception:
-        return None
+    raw = b""
+    for attempt in range(2):
+        _wait_host(url)
+        try:
+            req = urllib.request.Request(ascii_url(url), headers={"User-Agent": UA, "Accept-Language": "ja"})
+            with urllib.request.urlopen(req, timeout=20) as r:
+                raw = r.read()
+                if (r.headers.get("Content-Encoding") or "").lower() == "gzip":
+                    # web.archive.orgの id_ 修飾子は元レスポンスのgzip圧縮をそのまま返してくるため
+                    raw = gzip.decompress(raw)
+            break
+        except urllib.error.HTTPError as e:
+            if e.code in (429, 503) and attempt == 0:
+                time.sleep(10)   # 混んでいる・取りすぎ: 少し待って1回だけやり直す
+                continue
+            return None
+        except Exception:
+            return None
     enc = "utf-8"
     m = re.search(rb'charset=["\']?([\w\-]+)', raw[:4000], re.I)
     if m:
