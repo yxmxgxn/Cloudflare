@@ -179,14 +179,18 @@ def check(work: Path) -> None:
     with ThreadPoolExecutor(max_workers=8) as ex:
         results = dict(zip(targets, ex.map(check_domain, targets.values())))
 
-    rank = {"2ページ目へのリンクあり": 0, "本文が文の途中で終わる": 1, "取得失敗": 2, "問題なし": 3}
-    flagged = []
+    # 「本文が文の途中で終わる」は写真クレジット等で終わるサイトが多く誤検知だらけなので、画面には出さずCSVにだけ残す
+    rank = {"2ページ目へのリンクあり": 0, "取得失敗": 1, "本文が文の途中で終わる": 2, "問題なし": 3}
+    flagged, weak = [], 0
     for d, res in results.items():
         worst = min((rank[x["result"]] for x in res), default=3)
-        if worst < 3:
+        if worst < 2:
             flagged.append((worst, -len(pool[d]), d, res))
+        elif worst == 2:
+            weak += 1
     flagged.sort()
-    print(f"\n要確認 {len(flagged)} ドメイン(上ほど取りこぼしの疑いが強い。件数=1ページしか取れていない記事の数):")
+    print(f"\n要確認 {len(flagged)} ドメイン(上ほど取りこぼしの疑いが強い。件数=1ページしか取れていない記事の数)。"
+          f"ほかに本文が文の途中で終わるだけのドメインが {weak}(CSVのみ):")
     for _, n, d, res in flagged:
         print(f"\n  {d}  (1ページの記事 {-n} 件)")
         for x in res:
