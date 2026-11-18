@@ -92,9 +92,23 @@ def chunk_bigrams(tokens: list[str]) -> list[str]:
 
 
 # ---- 取得 ----
+def ascii_url(url: str) -> str:
+    """日本語ドメイン(移住.net)や日本語のパスを、urllib が送れる形(punycode・%エンコード)にする。"""
+    pr = urllib.parse.urlsplit(url)
+    host = pr.hostname or ""
+    try:
+        host = host.encode("idna").decode("ascii")
+    except UnicodeError:
+        pass
+    netloc = host + (f":{pr.port}" if pr.port else "")
+    path = urllib.parse.quote(pr.path, safe="/%:@!$&'()*+,;=-._~")
+    query = urllib.parse.quote(pr.query, safe="/%:@!$&'()*+,;=-._~?")
+    return urllib.parse.urlunsplit((pr.scheme, netloc, path, query, pr.fragment))
+
+
 def fetch_html(url: str) -> str | None:
     try:
-        req = urllib.request.Request(url, headers={"User-Agent": UA, "Accept-Language": "ja"})
+        req = urllib.request.Request(ascii_url(url), headers={"User-Agent": UA, "Accept-Language": "ja"})
         with urllib.request.urlopen(req, timeout=20) as r:
             raw = r.read()
             if (r.headers.get("Content-Encoding") or "").lower() == "gzip":
@@ -159,11 +173,16 @@ def _path_segs(path: str) -> list[str]:
     return path.rstrip("/").split("/")
 
 
+def _host(netloc: str) -> str:
+    """www. の有無は同じサイト(oricon.co.jp で登録した記事の「次へ」が www.oricon.co.jp を指す)。"""
+    return netloc.lower().removeprefix("www.")
+
+
 def _page_segment_diff(a: urllib.parse.ParseResult, b: urllib.parse.ParseResult) -> int | None:
     """2つのURLが「PAGE_NUM_MAX未満の数字の区間1つだけ」違うなら、その区間の位置を返す。
     ホスト・クエリ・区間数・他の区間がすべて同じであることが条件。
     大きい数字(記事ID)の違いは対象外なので、/37296/1/1/1 のような隣の記事は該当しない。"""
-    if a.netloc != b.netloc or a.query != b.query:
+    if _host(a.netloc) != _host(b.netloc) or a.query != b.query:
         return None
     sa, sb = _path_segs(a.path), _path_segs(b.path)
     if len(sa) != len(sb):
@@ -201,12 +220,30 @@ def _sibling_page_link(html: str, cur: str) -> str | None:
     return cands.get(min(varying))  # ページ番号の区間に次が無ければ最終ページ
 
 
+_PAGE_KEYS = ("page", "p", "P")   # ページ番号のクエリ名(shueisha.online ?page= / news.ntv.co.jp ?p= / woman.nikkei.com ?P=)
+
+
+def _small_num(s: str) -> bool:
+    return s.isdigit() and int(s) < PAGE_NUM_MAX
+
+
 def _is_page2_of(cur: str, nxt: str) -> bool:
-    """nxt が「ページ番号の無いURL cur の /page/2」か(natalie.mu/music/pp/xxx/ → /pp/xxx/page/2)。
-    1ページ目だけ番号を持たないサイトでは、末尾の数字・区間比較のどちらでも2ページ目が見つからない。"""
+    """nxt が「ページ番号の無いURL cur の2ページ目」か。
+    パスの後ろに /2・/page/2 を足した形(i-voce.jp/feed/1299587/ → /2/、natalie.mu/music/pp/xxx/ → /page/2)と、
+    同じパスに ?page=2・?p=2・?P=2 を足した形(shueisha.online は ?disp=paging&page=2 と1つ余計に付く)。
+    1ページ目の末尾は記事IDなので、末尾の数字の +1 では見つからない。
+    -2・_2 は WordPress の同名スラッグ(別記事)と区別できないので含めない。"""
     a, b = urllib.parse.urlparse(cur), urllib.parse.urlparse(nxt)
-    return (a.netloc == b.netloc and a.query == b.query
-            and b.path.rstrip("/") == a.path.rstrip("/") + "/page/2")
+    if _host(a.netloc) != _host(b.netloc):
+        return False
+    if a.query == b.query:
+        base = a.path.rstrip("/")
+        return b.path.rstrip("/") in (base + "/2", base + "/page/2")
+    qa, qb = urllib.parse.parse_qs(a.query), urllib.parse.parse_qs(b.query)
+    added = {k: v for k, v in qb.items() if qa.get(k) != v}
+    return (a.path.rstrip("/") == b.path.rstrip("/") and len(added) <= 2
+            and any(added.get(k) == ["2"] for k in _PAGE_KEYS)
+            and all(qb.get(k) == v for k, v in qa.items()))
 
 
 def next_page_url(html: str, cur: str) -> str | None:
@@ -215,19 +252,19 @@ def next_page_url(html: str, cur: str) -> str | None:
     m = re.search(r'<(?:link|a)[^>]+rel=["\']next["\'][^>]+href=["\']([^"\']+)["\']', html or "", re.I)
     if not m:
         m = re.search(r'<(?:link|a)[^>]+href=["\']([^"\']+)["\'][^>]+rel=["\']next["\']', html or "", re.I)
-    if m:
+    # rel=next が「次の記事」を指すサイト(tvfan.kyodo.co.jp・tvguide.or.jp など)は、それを使わずに下の規則で探す
+    if m and same_article(cur, urllib.parse.urljoin(cur, m.group(1))):
         return urllib.parse.urljoin(cur, m.group(1))
     # 2) URL規則の連番: ?page=N を +1。
     #    末尾 /N or /N/ は「小さい数字＝ページ番号」の時だけ +1 する。
     #    /pickup/704725 のような“末尾が記事ID”を次記事と誤連結しないための安全弁。
     pr = urllib.parse.urlparse(cur)
     qs = urllib.parse.parse_qs(pr.query)
-    if "page" in qs:
-        try:
-            qs["page"] = [str(int(qs["page"][0]) + 1)]
+    #    クエリも小さい数字の時だけ(WordPress の ?p=1234 は記事IDなので +1 すると別記事になる)
+    for key in _PAGE_KEYS:
+        if key in qs and _small_num(qs[key][0]):
+            qs[key] = [str(int(qs[key][0]) + 1)]
             return pr._replace(query=urllib.parse.urlencode(qs, doseq=True)).geturl()
-        except ValueError:
-            return None
     # 3) 1ページ目のURLに page パラメータが無い(=暗黙の1ページ目)サイト向け:
     #    rel=next を付けずに本文中へ直接 "?page=2" へのリンクだけ置くページャがある(例: hominis.media)。
     #    「2」固定で拾う(1ページ目からの遷移にしか使わないため、他の数字への誤爆リスクはない)。
@@ -239,8 +276,8 @@ def next_page_url(html: str, cur: str) -> str | None:
     sib = _sibling_page_link(html, cur)
     if sib:
         return sib
-    # 5) 1ページ目だけページ番号を持たないサイト(natalie.mu の特集 /pp/xxx/)。
-    #    ページ内に実在する /page/2 へのリンクだけを拾う(3ページ目以降は 6) の +1 で進む)
+    # 5) 1ページ目だけページ番号を持たないサイト(natalie.mu /pp/xxx/・i-voce.jp /feed/123/ など)。
+    #    ページ内に実在する2ページ目へのリンクだけを拾う(3ページ目以降は 2) か 6) の +1 で進む)
     for href in _HREF.findall(html or ""):
         u = urllib.parse.urljoin(cur, href)
         if _is_page2_of(cur, u):
@@ -282,8 +319,10 @@ def _stem(u: str):
         path = path[:m.start()]
     path = path.rstrip("/")
     qs = urllib.parse.parse_qs(pr.query)
-    qs.pop("page", None)
-    return (pr.netloc, path, urllib.parse.urlencode(qs, doseq=True))
+    for key in _PAGE_KEYS:
+        if key in qs and _small_num(qs[key][0]):
+            qs.pop(key)
+    return (_host(pr.netloc), path, urllib.parse.urlencode(qs, doseq=True))
 
 
 def same_article(cur: str, nxt: str) -> bool:
@@ -332,15 +371,15 @@ def near_duplicate(body: str, bodies: list[str]) -> bool:
 
 
 def collect_pages(main_url: str, extra: list[str], no_follow: bool = False):
-    """(本文リスト, 辿ったURLリスト, 切れてるかも) を返す。"""
+    """(本文リスト, 辿ったURLリスト, 切れてるかも) を返す。
+    重複ページの判定は本文全体の類似度だけで行う。natalie.mu・ginza.jp などは各ページの冒頭に
+    同じリード文が付くので、先頭の一致で判定すると2ページ目以降を捨ててしまう。"""
     bodies, urls = [], []
-    seen = set()
 
     def take(u: str) -> str | None:
         html = fetch_html(u)
         body = extract_body(html or "")
-        if body and body[:200] not in seen:
-            seen.add(body[:200])
+        if body and not near_duplicate(body, bodies):
             bodies.append(body)
             urls.append(u)
         return html
@@ -362,13 +401,12 @@ def collect_pages(main_url: str, extra: list[str], no_follow: bool = False):
     for _ in range(MAX_PAGES):
         html = fetch_html(cur)
         body = extract_body(html or "")
-        if not body or body[:200] in seen or near_duplicate(body, bodies):
+        if not body or near_duplicate(body, bodies):
             break
         cur_title = _page_title(html or "")
         # 2ページ目以降: タイトルが前ページと似ていなければ別記事とみなし追加せず終了
         if prev_title is not None and not title_ok(prev_title, cur_title):
             break
-        seen.add(body[:200])
         bodies.append(body)
         urls.append(cur)
         prev_title = cur_title

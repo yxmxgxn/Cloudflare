@@ -7,8 +7,9 @@ GitHub Actions のサーバーからは natalie.mu・scawaiiweb.com などに弾
   python Python/run_interview_index.py            索引を更新して、ページ数の一覧を出す
   python Python/run_interview_index.py --dry-run  SQLを作るだけで D1 には入れない
   python Python/run_interview_index.py --report   いま D1 に入っているページ数の一覧だけ出す
-  python Python/run_interview_index.py --refetch ID0093,ID0149
-                                                  URLが同じでも指定した記事だけ取り直す(0ページの記事は毎回自動で取り直す)
+  python Python/run_interview_index.py --refetch ID0093,ID0149,natalie.mu
+                                                  URLが同じでも指定した記事(ドメイン名ならその全記事)だけ取り直す
+                                                  (0ページの記事は毎回自動で取り直す)
   python Python/run_interview_index.py --check    ドメインごとに1ページしか取れていない記事を数件開き、
                                                   2ページ目を取りこぼしていそうなドメインを挙げる(10〜20分)
 """
@@ -121,7 +122,7 @@ _PAGE2 = re.compile(r"^(?:/page/|/p/|/|-|_)2/?$")   # 区切りが必須: /news/
 def page2_links(html_text: str, url: str) -> list[str]:
     """記事URLの「2ページ目」らしいリンク(/xxx/2・/xxx/page/2・/xxx-2・?page=2 など)。
     1ページしか取れていないのにこれがあれば、追尾が2ページ目を見つけられていない。"""
-    from generate_interview_index import _HREF
+    from generate_interview_index import _HREF, _host
     base = urllib.parse.urlparse(url)
     stem = base.path.rstrip("/")
     stem = re.sub(r"/1$", "", stem)   # /page/1 や /1 で登録した記事も同じ幹で比べる
@@ -129,7 +130,7 @@ def page2_links(html_text: str, url: str) -> list[str]:
     found = []
     for href in _HREF.findall(html_text or ""):
         u = urllib.parse.urlparse(urllib.parse.urljoin(url, href))
-        if u.netloc != base.netloc:
+        if _host(u.netloc) != _host(base.netloc):
             continue
         qs = urllib.parse.parse_qs(u.query)
         if any(qs.get(k) == ["2"] for k in ("page", "p", "P")) and u.path.rstrip("/") == base.path.rstrip("/"):
@@ -140,7 +141,8 @@ def page2_links(html_text: str, url: str) -> list[str]:
 
 
 def check_domain(items: list[tuple[str, str]]) -> list[dict]:
-    from generate_interview_index import extract_body, fetch_html, looks_truncated
+    # 「次へ」などの語はサイトのメニューにもあって誤検知が多いので、弱い手がかりは本文が文の途中で終わっているかだけ
+    from generate_interview_index import _END_OK, extract_body, fetch_html
     out = []
     for aid, url in items:
         page = fetch_html(url)
@@ -151,7 +153,7 @@ def check_domain(items: list[tuple[str, str]]) -> list[dict]:
             body = extract_body(page)
             out.append({"id": aid, "url": url,
                         "result": "2ページ目へのリンクあり" if links else
-                                  "続きがありそう" if looks_truncated(body, page) else "問題なし",
+                                  "本文が文の途中で終わる" if body and not _END_OK.search(body.rstrip()) else "問題なし",
                         "next": links[0] if links else ""})
         time.sleep(0.5)
     return out
@@ -177,7 +179,7 @@ def check(work: Path) -> None:
     with ThreadPoolExecutor(max_workers=8) as ex:
         results = dict(zip(targets, ex.map(check_domain, targets.values())))
 
-    rank = {"2ページ目へのリンクあり": 0, "続きがありそう": 1, "取得失敗": 2, "問題なし": 3}
+    rank = {"2ページ目へのリンクあり": 0, "本文が文の途中で終わる": 1, "取得失敗": 2, "問題なし": 3}
     flagged = []
     for d, res in results.items():
         worst = min((rank[x["result"]] for x in res), default=3)
@@ -209,6 +211,9 @@ def main() -> None:
     ap.add_argument("--check", action="store_true", help="取りこぼしていそうなドメインを挙げる")
     args = ap.parse_args()
     refetch = {x.strip() for x in args.refetch.split(",") if x.strip()}
+    domains = {x.lower().removeprefix("www.") for x in refetch if not re.fullmatch(r"ID\d+", x)}
+    if domains:   # ドメイン名を書いたら、そのドメインの記事を全部取り直す(追尾の規則をサイト単位で直したとき用)
+        refetch |= {i for i, (_, _, u) in card_info().items() if domain_of(u) in domains}
 
     work = wrangler_dir()
     if args.report:
