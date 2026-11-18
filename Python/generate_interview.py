@@ -537,6 +537,7 @@ def check_articles(articles: list[dict], member_rows: list[dict]) -> list[tuple[
     found: list[tuple[str, str, str]] = []
     seen_id: dict[str, int] = {}
     seen_url: dict[str, str] = {}
+    seen_arc: dict[str, str] = {}
 
     for i, a in enumerate(articles, start=2):  # スプシの行番号(1行目は見出し)
         aid = (a.get("ID") or "").strip()
@@ -568,6 +569,13 @@ def check_articles(articles: list[dict], member_rows: list[dict]) -> list[tuple[
             found.append(("WebArcive欄がURLではない", aid, _cell(arc)))
         elif url == "-" and not arc:
             found.append(("元記事が `-` なのに魚拓が無い(本文が取れない)", aid, _cell(vals.get("Title"))))
+        elif arc:
+            # URL が `-` の行どうしは上の「同じURLが2回」に引っかからないので、魚拓でも重複を見る
+            if arc in seen_arc:
+                found.append(("同じ魚拓が2回(行の重複?)", aid, f"{seen_arc[arc]}と重複 {_cell(arc)}"))
+            seen_arc[arc] = aid
+        if re.search(r"//(web\.)?archive\.(org|today|ph|is|md|li|vn|fo)/", url):
+            found.append(("URL欄に魚拓のURL(URLを `-` にして WebArcive 欄へ)", aid, _cell(url)))
 
         extra = vals.get("ExtraURL", "")
         if extra and extra != "-" and not extra.startswith("http"):

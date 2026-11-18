@@ -504,8 +504,14 @@ def main():
 
         if archive_only:
             # ライブ取得は試みず、魚拓(web.archive.org/archive.today どちらでも可)から直接本文取得
-            body = fetch_archive(arc) if arc else ""
-            used = [arc] if body else []
+            # ExtraURL に2ページ目以降の魚拓が書いてあればそれも足す(ID1372 の oricon index2.html など)
+            used, parts = [], []
+            for u in [arc] + [x for x in re.split(r"[,\s]+", extra_raw) if x.startswith("http")]:
+                b = fetch_archive(u) if u else ""
+                if b and not near_duplicate(b, parts):
+                    used.append(u)
+                    parts.append(b)
+            body = "\n".join(parts)
             truncated = looks_truncated(body, "")
             if body:
                 print(f"  ↳ {aid}: URL=- のため魚拓のみから取得", flush=True)
