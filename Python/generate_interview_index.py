@@ -54,7 +54,7 @@ OUT_SQL = REPO_ROOT / "build" / "interview_index.sql"
 
 MAX_PAGES = 10       # 自動追尾の上限
 PAGE_NUM_MAX = 100   # 末尾数字をページ番号とみなす上限(これ以上は記事IDとみなし追尾しない)
-INDEX_VERSION = "10"  # 索引ロジックを変えたらここを上げる → src_hashが変わり全記事を再索引
+INDEX_VERSION = "11"  # 索引ロジックを変えたらここを上げる → src_hashが変わり全記事を再索引
 MAX_INDEX_CHARS = 300000  # 索引対象本文の上限(正規化後の文字数)
 BIGRAM_CHUNK = 6000       # 1 INSERT あたりのbigram数(≈31KB。D1のstatement上限に余裕を持たせる)
 BIGRAM_OVERLAP = 64       # チャンク境界を跨ぐ検索を落とさないための重なり
@@ -201,6 +201,14 @@ def _sibling_page_link(html: str, cur: str) -> str | None:
     return cands.get(min(varying))  # ページ番号の区間に次が無ければ最終ページ
 
 
+def _is_page2_of(cur: str, nxt: str) -> bool:
+    """nxt が「ページ番号の無いURL cur の /page/2」か(natalie.mu/music/pp/xxx/ → /pp/xxx/page/2)。
+    1ページ目だけ番号を持たないサイトでは、末尾の数字・区間比較のどちらでも2ページ目が見つからない。"""
+    a, b = urllib.parse.urlparse(cur), urllib.parse.urlparse(nxt)
+    return (a.netloc == b.netloc and a.query == b.query
+            and b.path.rstrip("/") == a.path.rstrip("/") + "/page/2")
+
+
 def next_page_url(html: str, cur: str) -> str | None:
     """rel=next もしくは同一パスの連番から次ページURLを推測。"""
     # 1) <link rel="next"> / <a rel="next">
@@ -227,11 +235,17 @@ def next_page_url(html: str, cur: str) -> str | None:
     if m:
         return urllib.parse.urljoin(cur, m.group(1))
     # 4) ページ番号がパスの途中にあるサイト向け(例: rollingstonejapan.com /detail/37295/1/1/1 → /37295/2/1/1)。
-    #    下の 5) は末尾の数字しか見ないため /1/1/2 を作ってしまう。こちらを先に試す。
+    #    下の 6) は末尾の数字しか見ないため /1/1/2 を作ってしまう。こちらを先に試す。
     sib = _sibling_page_link(html, cur)
     if sib:
         return sib
-    # 5) 末尾 /N を +1
+    # 5) 1ページ目だけページ番号を持たないサイト(natalie.mu の特集 /pp/xxx/)。
+    #    ページ内に実在する /page/2 へのリンクだけを拾う(3ページ目以降は 6) の +1 で進む)
+    for href in _HREF.findall(html or ""):
+        u = urllib.parse.urljoin(cur, href)
+        if _is_page2_of(cur, u):
+            return u
+    # 6) 末尾 /N を +1
     mnum = re.search(r"/(\d+)/?$", pr.path)
     if mnum and int(mnum.group(1)) < PAGE_NUM_MAX:
         n = int(mnum.group(1)) + 1
@@ -277,7 +291,7 @@ def same_article(cur: str, nxt: str) -> bool:
     suumo等の rel=next が“次の記事”を指すケースの暴走連結を防ぐ。
     途中の区間がページ番号のURL(/37295/1/1/1 と /37295/2/1/1)は末尾基準の _stem では別物になるので、
     「小さい数字の区間が1つだけ違う」も同一記事とみなす。"""
-    if _stem(cur) == _stem(nxt):
+    if _stem(cur) == _stem(nxt) or _is_page2_of(cur, nxt):
         return True
     return _page_segment_diff(urllib.parse.urlparse(cur), urllib.parse.urlparse(nxt)) is not None
 
