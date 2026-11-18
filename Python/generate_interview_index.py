@@ -54,7 +54,7 @@ OUT_SQL = REPO_ROOT / "build" / "interview_index.sql"
 
 MAX_PAGES = 10       # 自動追尾の上限
 PAGE_NUM_MAX = 100   # 末尾数字をページ番号とみなす上限(これ以上は記事IDとみなし追尾しない)
-INDEX_VERSION = "11"  # 索引ロジックを変えたらここを上げる → src_hashが変わり全記事を再索引
+INDEX_VERSION = "10"  # 索引ロジックを変えたらここを上げる → src_hashが変わり全記事を再索引
 MAX_INDEX_CHARS = 300000  # 索引対象本文の上限(正規化後の文字数)
 BIGRAM_CHUNK = 6000       # 1 INSERT あたりのbigram数(≈31KB。D1のstatement上限に余裕を持たせる)
 BIGRAM_OVERLAP = 64       # チャンク境界を跨ぐ検索を落とさないための重なり

@@ -7,6 +7,8 @@ GitHub Actions のサーバーからは natalie.mu・scawaiiweb.com などに弾
   python Python/run_interview_index.py            索引を更新して、ページ数の一覧を出す
   python Python/run_interview_index.py --dry-run  SQLを作るだけで D1 には入れない
   python Python/run_interview_index.py --report   いま D1 に入っているページ数の一覧だけ出す
+  python Python/run_interview_index.py --refetch ID0093,ID0149
+                                                  URLが同じでも指定した記事だけ取り直す(0ページの記事は毎回自動で取り直す)
 """
 
 import argparse
@@ -86,7 +88,9 @@ def main() -> None:
     ap = argparse.ArgumentParser()
     ap.add_argument("--dry-run", action="store_true", help="SQLを作るだけで D1 には入れない")
     ap.add_argument("--report", action="store_true", help="ページ数の一覧だけ出す")
+    ap.add_argument("--refetch", default="", help="取り直す記事ID(カンマ区切り)")
     args = ap.parse_args()
+    refetch = {x.strip() for x in args.refetch.split(",") if x.strip()}
 
     work = wrangler_dir()
     if args.report:
@@ -94,7 +98,8 @@ def main() -> None:
         return
 
     d1(work, "--file", str(REPO / "worker" / "schema.sql"))
-    current = {r["id"]: f'{r["src_hash"]}|{r["pages"]}'
+    # 取り直す記事は「前回の取得に失敗した(0ページ)」扱いで渡す。シートから消えた判定には残す
+    current = {r["id"]: f'{r["src_hash"]}|{0 if r["id"] in refetch else r["pages"]}'
                for r in query(work, "SELECT id, src_hash, pages FROM article_src")}
     (work / "current.json").write_text(json.dumps(current), encoding="utf-8")
     print(f"既存: {len(current)} 件")
