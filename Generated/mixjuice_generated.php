@@ -1,1 +1,1 @@
-<p class="last-update">データ取得日：2026/11/16</p>
+<p class="last-update">データ取得日：2026/11/20</p>

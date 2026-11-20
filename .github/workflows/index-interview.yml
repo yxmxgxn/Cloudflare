@@ -2,6 +2,8 @@ name: Interview search index
 run-name: "インタビュー索引更新"
 
 # 手動起動のみ。D1(karin-interview)作成後に使う。
+# Actions のサーバーからは natalie.mu・scawaiiweb.com などに弾かれて本文が取れない(0ページになる)。
+# ふだんは手元の PC から python Python/run_interview_index.py で同じことをする。
 on:
   workflow_dispatch:
 

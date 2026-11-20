@@ -92,16 +92,53 @@ def chunk_bigrams(tokens: list[str]) -> list[str]:
 
 
 # ---- 取得 ----
-def fetch_html(url: str) -> str | None:
+def ascii_url(url: str) -> str:
+    """日本語ドメイン(移住.net)や日本語のパスを、urllib が送れる形(punycode・%エンコード)にする。"""
+    pr = urllib.parse.urlsplit(url)
+    host = pr.hostname or ""
     try:
-        req = urllib.request.Request(url, headers={"User-Agent": UA, "Accept-Language": "ja"})
-        with urllib.request.urlopen(req, timeout=20) as r:
-            raw = r.read()
-            if (r.headers.get("Content-Encoding") or "").lower() == "gzip":
-                # web.archive.orgの id_ 修飾子は元レスポンスのgzip圧縮をそのまま返してくるため
-                raw = gzip.decompress(raw)
-    except Exception:
-        return None
+        host = host.encode("idna").decode("ascii")
+    except UnicodeError:
+        pass
+    netloc = host + (f":{pr.port}" if pr.port else "")
+    path = urllib.parse.quote(pr.path, safe="/%:@!$&'()*+,;=-._~")
+    query = urllib.parse.quote(pr.query, safe="/%:@!$&'()*+,;=-._~?")
+    return urllib.parse.urlunsplit((pr.scheme, netloc, path, query, pr.fragment))
+
+
+HOST_INTERVAL = 1.0   # 同じサイトへの取得の最小間隔(秒)
+_last_fetch: dict[str, float] = {}
+
+
+def _wait_host(url: str) -> None:
+    """同じサイトへ続けて取りに行かない。thetv.jp は1記事に5〜7ページあり、間を空けずに
+    取ると数十記事で 503 を返すようになった(実測)。"""
+    host = _host(urllib.parse.urlparse(url).netloc)
+    wait = _last_fetch.get(host, 0) + HOST_INTERVAL - time.monotonic()
+    if wait > 0:
+        time.sleep(wait)
+    _last_fetch[host] = time.monotonic()
+
+
+def fetch_html(url: str) -> str | None:
+    raw = b""
+    for attempt in range(2):
+        _wait_host(url)
+        try:
+            req = urllib.request.Request(ascii_url(url), headers={"User-Agent": UA, "Accept-Language": "ja"})
+            with urllib.request.urlopen(req, timeout=20) as r:
+                raw = r.read()
+                if (r.headers.get("Content-Encoding") or "").lower() == "gzip":
+                    # web.archive.orgの id_ 修飾子は元レスポンスのgzip圧縮をそのまま返してくるため
+                    raw = gzip.decompress(raw)
+            break
+        except urllib.error.HTTPError as e:
+            if e.code in (429, 503) and attempt == 0:
+                time.sleep(10)   # 混んでいる・取りすぎ: 少し待って1回だけやり直す
+                continue
+            return None
+        except Exception:
+            return None
     enc = "utf-8"
     m = re.search(rb'charset=["\']?([\w\-]+)', raw[:4000], re.I)
     if m:
@@ -159,11 +196,16 @@ def _path_segs(path: str) -> list[str]:
     return path.rstrip("/").split("/")
 
 
+def _host(netloc: str) -> str:
+    """www. の有無は同じサイト(oricon.co.jp で登録した記事の「次へ」が www.oricon.co.jp を指す)。"""
+    return netloc.lower().removeprefix("www.")
+
+
 def _page_segment_diff(a: urllib.parse.ParseResult, b: urllib.parse.ParseResult) -> int | None:
     """2つのURLが「PAGE_NUM_MAX未満の数字の区間1つだけ」違うなら、その区間の位置を返す。
     ホスト・クエリ・区間数・他の区間がすべて同じであることが条件。
     大きい数字(記事ID)の違いは対象外なので、/37296/1/1/1 のような隣の記事は該当しない。"""
-    if a.netloc != b.netloc or a.query != b.query:
+    if _host(a.netloc) != _host(b.netloc) or a.query != b.query:
         return None
     sa, sb = _path_segs(a.path), _path_segs(b.path)
     if len(sa) != len(sb):
@@ -201,25 +243,60 @@ def _sibling_page_link(html: str, cur: str) -> str | None:
     return cands.get(min(varying))  # ページ番号の区間に次が無ければ最終ページ
 
 
+_PAGE_KEYS = ("page", "p", "P")   # ページ番号のクエリ名(shueisha.online ?page= / news.ntv.co.jp ?p= / woman.nikkei.com ?P=)
+
+
+def _small_num(s: str) -> bool:
+    return s.isdigit() and int(s) < PAGE_NUM_MAX
+
+
+def _is_page2_of(cur: str, nxt: str) -> bool:
+    """nxt が「ページ番号の無いURL cur の2ページ目」か。
+    パスの後ろに /2・/page/2・/p2 を足した形(i-voce.jp/feed/1299587/ → /2/、natalie.mu/music/pp/xxx/ → /page/2、
+    thetv.jp/news/detail/1023365/ → /p2/)と、
+    同じパスに ?page=2・?p=2・?P=2 を足した形(shueisha.online は ?disp=paging&page=2 と1つ余計に付く)。
+    1ページ目の末尾は記事IDなので、末尾の数字の +1 では見つからない。
+    -2・_2 は WordPress の同名スラッグ(別記事)と区別できないので含めない。"""
+    a, b = urllib.parse.urlparse(cur), urllib.parse.urlparse(nxt)
+    if _host(a.netloc) != _host(b.netloc):
+        return False
+    if a.query == b.query:
+        base = a.path.rstrip("/")
+        return b.path.rstrip("/") in (base + "/2", base + "/page/2", base + "/p2")
+    qa, qb = urllib.parse.parse_qs(a.query), urllib.parse.parse_qs(b.query)
+    added = {k: v for k, v in qb.items() if qa.get(k) != v}
+    return (a.path.rstrip("/") == b.path.rstrip("/") and len(added) <= 2
+            and any(added.get(k) == ["2"] for k in _PAGE_KEYS)
+            and all(qb.get(k) == v for k, v in qa.items()))
+
+
+# rel=next があるのに「同じ記事の続き」と判定できず使わなかったもの (今のページ, rel=next の先)。
+# 知らない形のページ番号(thetv.jp の /p2/ など)を見つけるための記録。main() が記事IDを付けて一覧にする
+SKIPPED_NEXT: list[tuple[str, str]] = []
+
+
 def next_page_url(html: str, cur: str) -> str | None:
     """rel=next もしくは同一パスの連番から次ページURLを推測。"""
     # 1) <link rel="next"> / <a rel="next">
     m = re.search(r'<(?:link|a)[^>]+rel=["\']next["\'][^>]+href=["\']([^"\']+)["\']', html or "", re.I)
     if not m:
         m = re.search(r'<(?:link|a)[^>]+href=["\']([^"\']+)["\'][^>]+rel=["\']next["\']', html or "", re.I)
+    # rel=next が「次の記事」を指すサイト(tvfan.kyodo.co.jp・tvguide.or.jp など)は、それを使わずに下の規則で探す
     if m:
-        return urllib.parse.urljoin(cur, m.group(1))
+        rel_next = urllib.parse.urljoin(cur, m.group(1))
+        if same_article(cur, rel_next):
+            return rel_next
+        SKIPPED_NEXT.append((cur, rel_next))
     # 2) URL規則の連番: ?page=N を +1。
     #    末尾 /N or /N/ は「小さい数字＝ページ番号」の時だけ +1 する。
     #    /pickup/704725 のような“末尾が記事ID”を次記事と誤連結しないための安全弁。
     pr = urllib.parse.urlparse(cur)
     qs = urllib.parse.parse_qs(pr.query)
-    if "page" in qs:
-        try:
-            qs["page"] = [str(int(qs["page"][0]) + 1)]
+    #    クエリも小さい数字の時だけ(WordPress の ?p=1234 は記事IDなので +1 すると別記事になる)
+    for key in _PAGE_KEYS:
+        if key in qs and _small_num(qs[key][0]):
+            qs[key] = [str(int(qs[key][0]) + 1)]
             return pr._replace(query=urllib.parse.urlencode(qs, doseq=True)).geturl()
-        except ValueError:
-            return None
     # 3) 1ページ目のURLに page パラメータが無い(=暗黙の1ページ目)サイト向け:
     #    rel=next を付けずに本文中へ直接 "?page=2" へのリンクだけ置くページャがある(例: hominis.media)。
     #    「2」固定で拾う(1ページ目からの遷移にしか使わないため、他の数字への誤爆リスクはない)。
@@ -227,15 +304,22 @@ def next_page_url(html: str, cur: str) -> str | None:
     if m:
         return urllib.parse.urljoin(cur, m.group(1))
     # 4) ページ番号がパスの途中にあるサイト向け(例: rollingstonejapan.com /detail/37295/1/1/1 → /37295/2/1/1)。
-    #    下の 5) は末尾の数字しか見ないため /1/1/2 を作ってしまう。こちらを先に試す。
+    #    下の 6) は末尾の数字しか見ないため /1/1/2 を作ってしまう。こちらを先に試す。
     sib = _sibling_page_link(html, cur)
     if sib:
         return sib
-    # 5) 末尾 /N を +1
-    mnum = re.search(r"/(\d+)/?$", pr.path)
-    if mnum and int(mnum.group(1)) < PAGE_NUM_MAX:
-        n = int(mnum.group(1)) + 1
-        newpath = pr.path[:mnum.start()] + f"/{n}" + ("/" if pr.path.endswith("/") else "")
+    # 5) 1ページ目だけページ番号を持たないサイト(natalie.mu /pp/xxx/・i-voce.jp /feed/123/ など)。
+    #    ページ内に実在する2ページ目へのリンクだけを拾う(3ページ目以降は 2) か 6) の +1 で進む)
+    for href in _HREF.findall(html or ""):
+        u = urllib.parse.urljoin(cur, href)
+        if _is_page2_of(cur, u):
+            return u
+    # 6) 末尾 /N を +1
+    #    thetv.jp の /p2/ のように頭に p が付く形も同じ
+    mnum = re.search(r"/(p?)(\d+)/?$", pr.path)
+    if mnum and int(mnum.group(2)) < PAGE_NUM_MAX:
+        n = int(mnum.group(2)) + 1
+        newpath = pr.path[:mnum.start()] + f"/{mnum.group(1)}{n}" + ("/" if pr.path.endswith("/") else "")
         return pr._replace(path=newpath).geturl()
     return None
 
@@ -258,18 +342,20 @@ def looks_truncated(body: str, last_html: str) -> bool:
 
 def _stem(u: str):
     """URLから「ページ番号を除いた記事の幹」を取り出す(同一記事判定用)。
-    末尾 /N は「小さい数字＝ページ番号」の時だけ除去する。
+    末尾 /N・/pN は「小さい数字＝ページ番号」の時だけ除去する。
     /news/248033 のような“末尾が記事ID(大きい数字)”を除去すると、別記事どうしが
     同じ幹に潰れて誤連結するため、PAGE_NUM_MAX 未満のみ除去する。"""
     pr = urllib.parse.urlparse(u)
     path = pr.path
-    m = re.search(r"/(\d+)/?$", path)
+    m = re.search(r"/p?(\d+)/?$", path)
     if m and int(m.group(1)) < PAGE_NUM_MAX:
         path = path[:m.start()]
     path = path.rstrip("/")
     qs = urllib.parse.parse_qs(pr.query)
-    qs.pop("page", None)
-    return (pr.netloc, path, urllib.parse.urlencode(qs, doseq=True))
+    for key in _PAGE_KEYS:
+        if key in qs and _small_num(qs[key][0]):
+            qs.pop(key)
+    return (_host(pr.netloc), path, urllib.parse.urlencode(qs, doseq=True))
 
 
 def same_article(cur: str, nxt: str) -> bool:
@@ -277,7 +363,7 @@ def same_article(cur: str, nxt: str) -> bool:
     suumo等の rel=next が“次の記事”を指すケースの暴走連結を防ぐ。
     途中の区間がページ番号のURL(/37295/1/1/1 と /37295/2/1/1)は末尾基準の _stem では別物になるので、
     「小さい数字の区間が1つだけ違う」も同一記事とみなす。"""
-    if _stem(cur) == _stem(nxt):
+    if _stem(cur) == _stem(nxt) or _is_page2_of(cur, nxt):
         return True
     return _page_segment_diff(urllib.parse.urlparse(cur), urllib.parse.urlparse(nxt)) is not None
 
@@ -318,15 +404,15 @@ def near_duplicate(body: str, bodies: list[str]) -> bool:
 
 
 def collect_pages(main_url: str, extra: list[str], no_follow: bool = False):
-    """(本文リスト, 辿ったURLリスト, 切れてるかも) を返す。"""
+    """(本文リスト, 辿ったURLリスト, 切れてるかも) を返す。
+    重複ページの判定は本文全体の類似度だけで行う。natalie.mu・ginza.jp などは各ページの冒頭に
+    同じリード文が付くので、先頭の一致で判定すると2ページ目以降を捨ててしまう。"""
     bodies, urls = [], []
-    seen = set()
 
     def take(u: str) -> str | None:
         html = fetch_html(u)
         body = extract_body(html or "")
-        if body and body[:200] not in seen:
-            seen.add(body[:200])
+        if body and not near_duplicate(body, bodies):
             bodies.append(body)
             urls.append(u)
         return html
@@ -348,13 +434,12 @@ def collect_pages(main_url: str, extra: list[str], no_follow: bool = False):
     for _ in range(MAX_PAGES):
         html = fetch_html(cur)
         body = extract_body(html or "")
-        if not body or body[:200] in seen or near_duplicate(body, bodies):
+        if not body or near_duplicate(body, bodies):
             break
         cur_title = _page_title(html or "")
         # 2ページ目以降: タイトルが前ページと似ていなければ別記事とみなし追加せず終了
         if prev_title is not None and not title_ok(prev_title, cur_title):
             break
-        seen.add(body[:200])
         bodies.append(body)
         urls.append(cur)
         prev_title = cur_title
@@ -428,6 +513,8 @@ def main():
     stmts: list[str] = []
     sheet_ids = set()
     n_new = n_skip = 0
+    skipped: list[tuple[str, str, str]] = []   # (記事ID, 今のページ, 使わなかった rel=next)
+    pages_of: dict[str, int] = {}
 
     for a in articles:
         aid = (a.get("ID") or "").strip()
@@ -452,8 +539,14 @@ def main():
 
         if archive_only:
             # ライブ取得は試みず、魚拓(web.archive.org/archive.today どちらでも可)から直接本文取得
-            body = fetch_archive(arc) if arc else ""
-            used = [arc] if body else []
+            # ExtraURL に2ページ目以降の魚拓が書いてあればそれも足す(ID1372 の oricon index2.html など)
+            used, parts = [], []
+            for u in [arc] + [x for x in re.split(r"[,\s]+", extra_raw) if x.startswith("http")]:
+                b = fetch_archive(u) if u else ""
+                if b and not near_duplicate(b, parts):
+                    used.append(u)
+                    parts.append(b)
+            body = "\n".join(parts)
             truncated = looks_truncated(body, "")
             if body:
                 print(f"  ↳ {aid}: URL=- のため魚拓のみから取得", flush=True)
@@ -468,6 +561,9 @@ def main():
                 if len(normalize(ab)) > len(normalize(body)):
                     used, truncated, body = [arc], False, ab
                     print(f"  ↳ {aid}: liveが空/短い → 魚拓から取得", flush=True)
+        skipped.extend((aid, c, n) for c, n in SKIPPED_NEXT)
+        SKIPPED_NEXT.clear()
+        pages_of[aid] = len(used)
         tokens = bigram_list(normalize(body)[:MAX_INDEX_CHARS])
         chunks = chunk_bigrams(tokens)
         print(f"{aid}: {len(used)}ページ連結 ({', '.join(used)})", flush=True)
@@ -502,6 +598,30 @@ def main():
 
     print(f"\n生成: {out}  本文 更新{n_new} / スキップ{n_skip} / 削除{len(removed)}"
           f"  メタデータ {len(meta) - 1}行")
+    report_skipped_next(skipped, pages_of, out.with_name("使わなかった次ページ.csv"))
+
+
+def report_skipped_next(skipped: list[tuple[str, str, str]], pages_of: dict[str, int], out: Path) -> None:
+    """rel=next を使わなかった記事をドメインごとにまとめる。
+    1ページで終わった記事だけ画面に出す(2ページ以上取れた記事は別の規則で辿れているので、CSVだけに残す)。
+    今回取りに行った記事の分だけなので、全記事を見るには --refetch でドメインごと取り直す。"""
+    if not skipped:
+        return
+    with out.open("w", encoding="utf-8-sig", newline="") as f:
+        w = csv.writer(f)
+        w.writerow(["ID", "索引ページ数", "今のページ", "使わなかった rel=next"])
+        for aid, cur, nxt in skipped:
+            w.writerow([aid, pages_of.get(aid, ""), cur, nxt])
+    by_dom: dict[str, list[tuple[str, str, str]]] = {}
+    for aid, cur, nxt in skipped:
+        if pages_of.get(aid) == 1:
+            by_dom.setdefault(_host(urllib.parse.urlparse(cur).netloc), []).append((aid, cur, nxt))
+    if by_dom:
+        print("\nrel=next があるのに辿らず1ページで終わった記事(知らない形のページ番号かも。別の記事を指すサイトもある):")
+        for dom, rows in sorted(by_dom.items(), key=lambda kv: -len(kv[1])):
+            aid, cur, nxt = rows[0]
+            print(f"  {dom}: {len(rows)}件  例 {aid} {cur} → {nxt}")
+    print(f"一覧: {out}")
 
 
 if __name__ == "__main__":
