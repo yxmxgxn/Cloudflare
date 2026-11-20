@@ -17,7 +17,9 @@
 <title><?= htmlspecialchars($title) ?></title>
 <meta name="description" content="<?= htmlspecialchars($description) ?>">
 <link rel="canonical" href="<?php echo $canonical_url; ?>">
-<link rel="icon" href="/img/favicon.ico" type="image/x-icon" sizes="any">
+<link rel="icon" href="/img/favicon.ico" sizes="48x48">
+<link rel="icon" href="/img/favicon-32.png" type="image/png" sizes="32x32">
+<link rel="apple-touch-icon" href="/img/apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap">

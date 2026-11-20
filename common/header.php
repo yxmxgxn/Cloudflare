@@ -51,7 +51,9 @@
 
 <!-- Favicon -->
 
-<link rel="icon" href="/img/favicon.ico" type="image/x-icon" sizes="any">
+<link rel="icon" href="/img/favicon.ico" sizes="48x48">
+<link rel="icon" href="/img/favicon-32.png" type="image/png" sizes="32x32">
+<link rel="apple-touch-icon" href="/img/apple-touch-icon.png">
 <link rel="canonical" href="<?php echo $canonical_url; ?>">
 
 <?php
