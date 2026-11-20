@@ -242,6 +242,8 @@ $dc_dotchicchi = [
   ['title' => '#4 後藤花×米村姫良々', 'url' => 'https://www.youtube.com/watch?v=lkZEs-Wom5s',
    'credit' => '撮影協力', 'place' => 'ころ九', 'place_url' => 'http://kaisendon-koroku.com/',
    'offshots' => [['2026-11-04', '2117907873749713122'], ['2026-11-05', '2118313038931698143'], ['2026-11-12', '2120806484397502731']]],
+  ['title' => '#5 弓桁朱琴×米村姫良々', 'url' => 'https://www.youtube.com/watch?v=E2Bu5qeFCGo',
+   'credit' => '撮影協力', 'place' => '梅と星', 'place_url' => 'https://ume-hoshi.jp/'],
 ];
 
 // J-WAVEのPodcast「offの日、どっちっち？」(2回で終了)
