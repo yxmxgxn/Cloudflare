@@ -1,8 +1,6 @@
 <?php
   $title = "宮本佳林 最強のセトリ プレイリストまとめ";
   $description = "宮本佳林さんのツアーのセトリサイトで公開された「最強のセトリ」を、YouTubeのプレイリストにしてまとめました。";
-  // 元のセトリはログインした人だけが見られるものなので、検索には出さない
-  $noindex = true;
   include $_SERVER['DOCUMENT_ROOT'] . '/common/header.php';
 ?>
 
