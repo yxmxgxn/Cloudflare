@@ -42,7 +42,7 @@ import generate_interview_index as gi  # noqa: E402
 from generate_interview import GID_MEMBERS, fetch_csv  # noqa: E402
 
 MODEL = "claude-haiku-5-5"
-PROMPT_VERSION = "1"        # プロンプトや出力の形を変えたら上げる → 保存済みの答えを使い回さない
+PROMPT_VERSION = "2"        # プロンプトや出力の形を変えたら上げる → 保存済みの答えを使い回さない
 MAX_CHARS = 150_000         # これを超える本文は切る(切ったら画面に出す)
 MIN_BODY_CHARS = 200        # これより短い本文は読めていないとみなし、APIに聞かない
 MAX_TOKENS = 4000
@@ -62,6 +62,8 @@ mentioned: 本文で名前が挙がるだけで、その記事に出演して話
 - 名前は名簿の表記のまま書く。名簿に無い人が main に当たるときは others_main に、本文の表記のまま書く
 - タイトルだけで決めず、本文を読んで決める。本文が読み取れないときは confidence を low にする
 - 同じ人を main と mentioned の両方に入れない
+- 取材する側(聞き手・記者・編集者・ライター・カメラマン・撮影やヘアメイクの担当)は、記事を作る人なので
+  main にも mentioned にも others_main にも入れない。ただし出演者が司会や聞き役を務める企画なら、その出演者は main に入れる
 - reason は日本語で60字以内。誰が主役かの根拠を簡潔に書く
 - 名簿にいない人を main に入れない
 
