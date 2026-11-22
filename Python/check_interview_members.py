@@ -14,6 +14,7 @@ API のクレジットを使う(環境変数 ANTHROPIC_API_KEY)。本文もAPI�
   python Python/check_interview_members.py --limit 20           まず20件だけ(使い回し済みは数えない)
   python Python/check_interview_members.py                      全件を点検する(--max-usd で費用の上限を決められる)
   python Python/check_interview_members.py --report             取り直し・API呼び出しなしで、いまのスプシと保存済みの答えを突き合わせ直す
+  python Python/check_interview_members.py --export            確信度 high の判定をスプシに反映した「メンバー一覧」(ID,Name の縦持ち)を作る
   python Python/check_interview_members.py --fresh              本文も答えも捨てて取り直す(普段は要らない)
 
 スプシを直したあとは --report だけで、直った行が一覧から消えたかを無料で確かめられる。
@@ -39,7 +40,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parent))
 sys.stdout.reconfigure(errors="replace")
 
 import generate_interview_index as gi  # noqa: E402
-from generate_interview import GID_MEMBERS, fetch_csv  # noqa: E402
+from generate_interview import GID_MEMBERS, fetch_csv, fetch_master  # noqa: E402
 
 MODEL = "claude-haiku-5-5"
 PROMPT_VERSION = "2"        # プロンプトや出力の形を変えたら上げる → 保存済みの答えを使い回さない
@@ -243,12 +244,89 @@ def report(work: Path, articles: dict[str, dict], sheet: dict[str, list[str]], s
     print(f"一覧: {out}")
 
 
+def proposed_members(cur: list[str], ans: dict | None, canon: dict[str, str]) -> tuple[list[str], str]:
+    """(反映後のメンバー, 区分)。区分は applied(変えた) / unchanged / 要確認:理由(今のまま残した)。
+    ・確信度 high の判定だけを反映する。それ以外・本文が取れなかった記事は今の一覧のまま残して要確認にする
+    ・ハロプロのメンバー(メンバーマスターにいる人)だけを入れる。記者・俳優・ミュージシャンなどは入れない
+    ・今の一覧にいる人の並びは崩さず、足りない人を後ろに足す"""
+    if not ans or ans.get("error"):
+        return cur, "要確認:本文が取れず判定できない"
+    if ans.get("confidence") != "high":
+        return cur, f"要確認:確信度 {ans.get('confidence')}"
+    hp: list[str] = []
+    for n in ans.get("main", []) + ans.get("others_main", []):   # 名簿に無い人の表記ゆれ(西崎→西﨑)もマスターで拾う
+        c = canon.get(norm(n))
+        if c and c not in hp:
+            hp.append(c)
+    if not hp:
+        return cur, "要確認:ハロプロのメンバーが主役に見つからない"
+    new = [n for n in cur if n in hp] + [n for n in hp if n not in cur]
+    return new, ("unchanged" if set(new) == set(cur) else "applied")
+
+
+def _ymd(s: str) -> tuple[int, int, int] | None:
+    m = re.match(r"(\d{4})\D+(\d{1,2})\D+(\d{1,2})", s or "")
+    return (int(m[1]), int(m[2]), int(m[3])) if m else None
+
+
+def joined_after(name: str, article_date: str, master: dict) -> bool:
+    """その人が、記事の掲載日より後に加入している(=その時点で居ないはずの人)か。"""
+    ad = _ymd(article_date)
+    joins = [j for j in (_ymd(st.get("join", "")) for st in master.get(name, {}).get("stints", [])) if j]
+    return bool(ad and joins and min(joins) > ad)
+
+
+def export(work: Path, articles: dict[str, dict], sheet: dict[str, list[str]], store: Store) -> None:
+    """判定をスプシに反映した ID,Name の縦持ち CSV(丸ごと入れ替え用)と、変更点の一覧を書き出す。"""
+    master = fetch_master()
+    canon = {norm(k): k for k in master}
+    out_rows, changes = [], []
+    n = collections.Counter()
+    for aid, a in articles.items():
+        cur = sheet.get(aid, [])
+        new, kind = proposed_members(cur, store.answers.get(aid), canon)
+        # 掲載日より後に加入した人を足そうとしていたら、足さない(記事に載っている別の話題を拾った誤りのはず)
+        skipped = [x for x in new if x not in cur and joined_after(x, a.get("Date", ""), master)]
+        if skipped:
+            new = [x for x in new if x not in skipped]
+            if kind == "applied" and set(new) == set(cur):
+                kind = "unchanged"
+        n["applied" if kind == "applied" else "unchanged" if kind == "unchanged" else "review"] += 1
+        uniq = list(dict.fromkeys(new))   # 今のシートに同じ人が2行あっても1行にする
+        n["duplicate_rows"] += len(new) - len(uniq)
+        new = uniq
+        out_rows += [(aid, name) for name in new]
+        if kind != "unchanged":
+            ans = store.answers.get(aid) or {}
+            changes.append([aid, a.get("Title", ""), "反映" if kind == "applied" else kind,
+                            "・".join(cur), "・".join(new), "・".join(x for x in new if x not in cur),
+                            "・".join(x for x in cur if x not in new), "・".join(ans.get("main", [])),
+                            ans.get("confidence", ""), ans.get("error") or ans.get("reason", ""),
+                            ("掲載日より後に加入のため足さなかった: " + "・".join(skipped)) if skipped else ""])
+    changes.sort(key=lambda r: (r[2] != "反映", r[0]))
+    f1 = work / "メンバー一覧_修正版.csv"
+    with f1.open("w", encoding="utf-8-sig", newline="") as f:
+        w = csv.writer(f)
+        w.writerow(["ID", "Name"])
+        w.writerows(out_rows)
+    f2 = work / "メンバー変更点.csv"
+    with f2.open("w", encoding="utf-8-sig", newline="") as f:
+        w = csv.writer(f)
+        w.writerow(["ID", "タイトル", "区分", "変更前", "変更後", "追加", "削除", "AIが主役とみた人", "確信度", "理由/エラー", "メモ"])
+        w.writerows(changes)
+    print(f"反映して変えた記事 {n['applied']} 件 / 変わらず {n['unchanged']} 件 / 今のまま残して要確認 {n['review']} 件")
+    print(f"行数: 今 {sum(len(v) for v in sheet.values())} → {len(out_rows)}(同じ記事に同じ人が2行あったものを {n['duplicate_rows']} 行まとめた)")
+    print(f"取り込み用: {f1}")
+    print(f"変更点   : {f2}")
+
+
 def main() -> None:
     ap = argparse.ArgumentParser(description="メンバー一覧を本文と突き合わせて点検する")
     ap.add_argument("--ids", default="", help="点検する記事ID(カンマ区切り)。省略すると全件")
     ap.add_argument("--limit", type=int, default=0, help="新しく点検する件数の上限(使い回し済みは数えない)")
     ap.add_argument("--dry-run", action="store_true", help="本文を取るだけでAPIは呼ばない。文字数と費用の目安を出す")
     ap.add_argument("--report", action="store_true", help="取り直し・API呼び出しなしで、保存済みの答えとスプシを突き合わせ直す")
+    ap.add_argument("--export", action="store_true", help="確信度 high の判定を反映したメンバー一覧(縦持ちCSV)を作る")
     ap.add_argument("--fresh", action="store_true", help="保存済みの本文と答えを捨てて取り直す")
     ap.add_argument("--max-usd", type=float, default=5.0, help="この概算費用($)に達したら止める(既定 5)")
     ap.add_argument("--work", default=str(WORK_DEFAULT), help="本文と答えの保存先(リポジトリの外にすること)")
@@ -275,6 +353,9 @@ def main() -> None:
 
     if args.report:
         report(work, articles, sheet, store)
+        return
+    if args.export:
+        export(work, articles, sheet, store)
         return
 
     client = None
