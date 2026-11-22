@@ -45,6 +45,7 @@ from generate_interview import GID_MEMBERS, fetch_csv, fetch_master  # noqa: E40
 MODEL = "claude-haiku-5-5"
 PROMPT_VERSION = "3"        # プロンプトや出力の形を変えたら上げる → 保存済みの答えを使い回さない
 MAX_CHARS = 150_000         # これを超える本文は切る(切ったら画面に出す)
+KEEP_IF_MENTIONED = 5       # 発言の形が見つからなくても、本文にこの回数以上出てくる人は一覧から消さない
 MIN_BODY_CHARS = 200        # これより短い本文は読めていないとみなし、APIに聞かない
 MAX_TOKENS = 4000
 WORKERS = 8                 # ドメインごとに1人ずつ。同じサイトには間を空ける(gi._wait_host)
@@ -219,7 +220,7 @@ def report(work: Path, articles: dict[str, dict], sheet: dict[str, list[str]], s
         d = diff_row(sheet.get(aid, []), ans)
         if any(d.values()):
             rows.append({"id": aid, "a": a, "kind": "diff", "d": d, "ans": ans})
-    out = work / "メンバー照合.csv"
+    out = writable(work / "メンバー照合.csv")
     with out.open("w", encoding="utf-8-sig", newline="") as f:
         w = csv.writer(f)
         w.writerow(["ID", "タイトル", "URL", "スプシのメンバー", "AIが発言者とみた人", "足りない(発言しているのに一覧に無い)",
@@ -248,24 +249,85 @@ def report(work: Path, articles: dict[str, dict], sheet: dict[str, list[str]], s
     print(f"一覧: {out}")
 
 
-def proposed_members(cur: list[str], ans: dict | None, canon: dict[str, str]) -> tuple[list[str], str]:
-    """(反映後のメンバー, 区分)。区分は applied(変えた) / unchanged / 要確認:理由(今のまま残した)。
-    ・確信度 high と medium の判定を反映する。low・本文が取れなかった記事は今の一覧のまま残して要確認にする
+_NOT_AFTER_KANJI = r"(?<![一-龥ぁ-んァ-ヶー々])"   # 名前の途中(別の語の一部)で当たらないように
+
+
+def _aliases(name: str) -> set[str]:
+    """本文の発言ラベルに使われうる呼び方(姓だけ・名だけ)。4字以上の名前だけ、前後2〜3字を使う。"""
+    a = {name}
+    if len(name) >= 4:
+        a |= {name[:2], name[-2:], name[:3]}   # 譜久村聖 → 譜久村 のように姓が3字のこともある
+    if len(name) >= 5:
+        a |= {name[-3:]}
+    return a
+
+
+def _label_count(body: str, alias: str) -> int:
+    """名前に続けて発言が始まる箇所の数。次の2つの形:
+    ・「名前「発言」」「名前：発言」「名前(ロンT)：発言」
+    ・行頭の「名前 発言」(Q&Aで、名前のあとに空白だけを置く形。ナタリー・音楽ナタリーなどに多い)"""
+    a = re.escape(alias)
+    paren = r"(?:[（(][^）)\n]{0,25}[）)])?"
+    inline = _NOT_AFTER_KANJI + a + paren + r"[\s　]*[「『：:]"
+    line_start = r"(?m)^[　 ]*" + a + paren + r"[ 　]+\S"
+    return len(re.findall(inline, body)) + len(re.findall(line_start, body))
+
+
+def speakers_from_body(title: str, body: str, cands: list[str], haiku: list[str]) -> tuple[list[str], str]:
+    """(発言した人, 根拠)を本文から決める。決められなければ ([], '')。
+    1. 本文に「名前「…」」「名前：…」「(行頭)名前 …」の形の発言がある人(姓・名だけの呼び方も、候補の中で他と重ならなければ使う)
+    2. 1が1人も無い(インタビュイー1人が地の文で語る記事など)なら、タイトルに名前がある人
+    3. それも無く、Haiku が挙げた人が1〜2人だけなら、その人たち"""
+    alias_owner: collections.Counter = collections.Counter()
+    for n in cands:
+        for a in _aliases(n):
+            alias_owner[a] += 1
+    labelled = []
+    for n in cands:
+        c = _label_count(body, n)
+        for a in _aliases(n) - {n}:
+            if alias_owner[a] == 1:
+                c += _label_count(body, a)
+        if c:
+            labelled.append(n)
+    if labelled:
+        return labelled, "本文に「名前「発言」」の形がある"
+    t = norm(title)
+    in_title = [n for n in cands if norm(n) in t]
+    if in_title:
+        return in_title, "タイトルに名前がある(本文に発言の形は無い)"
+    if 1 <= len(haiku) <= 2:
+        return list(haiku), "Haikuが挙げた人が1〜2人だけ"
+    return [], ""
+
+
+def proposed_members(cur: list[str], ans: dict | None, canon: dict[str, str], title: str,
+                     body: str | None) -> tuple[list[str], str, str]:
+    """(反映後のメンバー, 区分, 根拠)。区分は applied(変えた) / unchanged / 要確認:理由(今のまま残した)。
+    ・Haiku の確信度が high と medium の記事だけ。low・本文が取れなかった記事は今のまま残して要確認にする
+    ・「発言した人」は本文から決める(speakers_from_body)。Haiku の答えは候補を出す役
     ・ハロプロのメンバー(メンバーマスターにいる人)だけを入れる。記者・俳優・ミュージシャンなどは入れない
     ・今の一覧にいる人の並びは崩さず、足りない人を後ろに足す"""
-    if not ans or ans.get("error"):
-        return cur, "要確認:本文が取れず判定できない"
+    if not ans or ans.get("error") or not body:
+        return cur, "要確認:本文が取れず判定できない", ""
     if ans.get("confidence") not in ("high", "medium"):
-        return cur, f"要確認:確信度 {ans.get('confidence')}"
-    hp: list[str] = []
-    for n in ans.get("speakers", []) + ans.get("others_speakers", []):   # 名簿に無い人の表記ゆれ(西崎→西﨑)もマスターで拾う
-        c = canon.get(norm(n))
-        if c and c not in hp:
-            hp.append(c)
-    if not hp:
-        return cur, "要確認:ハロプロのメンバーの発言が見つからない"
-    new = [n for n in cur if n in hp] + [n for n in hp if n not in cur]
-    return new, ("unchanged" if set(new) == set(cur) else "applied")
+        return cur, f"要確認:確信度 {ans.get('confidence')}", ""
+    # Haiku の答え(基準を変える前の古い答えは main / others_main)から、マスターにいる人を候補にする
+    haiku: list[str] = []
+    for n in (ans.get("speakers") or ans.get("main") or []) + (ans.get("others_speakers") or ans.get("others_main") or []):
+        c = canon.get(norm(n))   # 名簿に無い人の表記ゆれ(西崎→西﨑)もマスターで拾う
+        if c and c not in haiku:
+            haiku.append(c)
+    cands = list(dict.fromkeys(haiku + cur))
+    spk, why = speakers_from_body(title, body, cands, haiku)
+    if not spk:
+        return cur, "要確認:発言した人を本文から決められない", ""
+    # 発言の形が見つからなくても、本文に何度も出てくる人は消さずに残す(呼び方が特殊で見落とした可能性)
+    keep = [n for n in cur if n not in spk and body.count(n) >= KEEP_IF_MENTIONED]
+    new = [n for n in cur if n in spk or n in keep] + [n for n in spk if n not in cur]
+    if keep:
+        why += f"; 発言の形は無いが本文に{KEEP_IF_MENTIONED}回以上出るので残した: " + "・".join(keep)
+    return new, ("unchanged" if set(new) == set(cur) else "applied"), why
 
 
 def _ymd(s: str) -> tuple[int, int, int] | None:
@@ -280,6 +342,15 @@ def joined_after(name: str, article_date: str, master: dict) -> bool:
     return bool(ad and joins and min(joins) > ad)
 
 
+def writable(path: Path) -> Path:
+    """path に書けなければ(Excel などで開いたままだと書けない)、時刻を付けた別名を返す。"""
+    try:
+        path.open("a").close()
+        return path
+    except PermissionError:
+        return path.with_name(f"{path.stem}_{time.strftime('%H%M%S')}{path.suffix}")
+
+
 def export(work: Path, articles: dict[str, dict], sheet: dict[str, list[str]], store: Store) -> None:
     """判定をスプシに反映した ID,Name の縦持ち CSV(丸ごと入れ替え用)と、変更点の一覧を書き出す。"""
     master = fetch_master()
@@ -288,7 +359,8 @@ def export(work: Path, articles: dict[str, dict], sheet: dict[str, list[str]], s
     n = collections.Counter()
     for aid, a in articles.items():
         cur = sheet.get(aid, [])
-        new, kind = proposed_members(cur, store.answers.get(aid), canon)
+        got = store.body(aid)
+        new, kind, why = proposed_members(cur, store.answers.get(aid), canon, a.get("Title", ""), got[0] if got else None)
         # 掲載日より後に加入した人を足そうとしていたら、足さない(記事に載っている別の話題を拾った誤りのはず)
         skipped = [x for x in new if x not in cur and joined_after(x, a.get("Date", ""), master)]
         if skipped:
@@ -304,19 +376,19 @@ def export(work: Path, articles: dict[str, dict], sheet: dict[str, list[str]], s
             ans = store.answers.get(aid) or {}
             changes.append([aid, a.get("Title", ""), "反映" if kind == "applied" else kind,
                             "・".join(cur), "・".join(new), "・".join(x for x in new if x not in cur),
-                            "・".join(x for x in cur if x not in new), "・".join(ans.get("speakers", [])),
+                            "・".join(x for x in cur if x not in new), "・".join(ans.get("speakers") or ans.get("main") or []),
                             ans.get("confidence", ""), ans.get("error") or ans.get("reason", ""),
-                            ("掲載日より後に加入のため足さなかった: " + "・".join(skipped)) if skipped else ""])
+                            "; ".join(x for x in (why, ("掲載日より後に加入のため足さなかった: " + "・".join(skipped)) if skipped else "") if x)])
     changes.sort(key=lambda r: (r[2] != "反映", r[0]))
-    f1 = work / "メンバー一覧_修正版.csv"
+    f1 = writable(work / "メンバー一覧_修正版.csv")
     with f1.open("w", encoding="utf-8-sig", newline="") as f:
         w = csv.writer(f)
         w.writerow(["ID", "Name"])
         w.writerows(out_rows)
-    f2 = work / "メンバー変更点.csv"
+    f2 = writable(work / "メンバー変更点.csv")
     with f2.open("w", encoding="utf-8-sig", newline="") as f:
         w = csv.writer(f)
-        w.writerow(["ID", "タイトル", "区分", "変更前", "変更後", "追加", "削除", "AIが発言者とみた人", "確信度", "理由/エラー", "メモ"])
+        w.writerow(["ID", "タイトル", "区分", "変更前", "変更後", "追加", "削除", "Haikuが挙げた人", "確信度", "Haikuの理由/エラー", "決めた根拠"])
         w.writerows(changes)
     print(f"反映して変えた記事 {n['applied']} 件 / 変わらず {n['unchanged']} 件 / 今のまま残して要確認 {n['review']} 件")
     print(f"行数: 今 {sum(len(v) for v in sheet.values())} → {len(out_rows)}(同じ記事に同じ人が2行あったものを {n['duplicate_rows']} 行まとめた)")
