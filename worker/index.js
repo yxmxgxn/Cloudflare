@@ -313,6 +313,47 @@ async function kenshuseiMember(request, env, url) {
   }
 }
 
+/* ===================== インタビュー一覧のメンバー別ページ ===================== */
+// /hello-articles?m=<slug> を「その人のインタビュー・Web記事一覧」として検索エンジンに見せる(研修生ブログと同じ方式)。
+// ページは1枚のまま、タイトル・説明・canonical・見出し・導入文だけをその人のものに書き換える(一覧は今までどおり JS で出す)。
+//   ・名簿は data/interview-members.json(記事10件以上のメンバーだけ。Python/generate_interview.py が作る)
+//   ・?m=<名前> で来たら、slug の URL へ 301 で寄せる(見えるURLを slug にそろえる)
+//   ・名簿にない値や m なしは、そのまま返す(canonical はパラメーターなしの本体)
+const IV_BASE = "https://karin-archive.com/hello-articles";
+const IV_SITE = " | 宮本佳林・M-line・ハロプロ Archive";
+
+async function interviewMember(request, env, url) {
+  const page = await env.ASSETS.fetch(request);
+  const key = url.searchParams.get("m") || "";
+  if (!key || !page.ok) return page;
+  try {
+    const data = await env.ASSETS.fetch(new URL("/data/interview-members.json", url).toString()).then((r) => r.json());
+    const members = data.members || [];
+    const m = members.find((x) => x.slug === key);
+    if (!m) {
+      const byName = members.find((x) => x.name === key);
+      if (byName) return Response.redirect(`${url.origin}/hello-articles?m=${encodeURIComponent(byName.slug)}`, 301);
+      return page;
+    }
+    const ym = (d) => `${d.slice(0, 4)}年${Number(d.slice(5, 7))}月`;
+    const span = m.from && m.to && m.from.slice(0, 7) !== m.to.slice(0, 7) ? `${ym(m.from)}〜${ym(m.to)}` : ym(m.to || m.from);
+    const v = { who: m.kana ? `${m.name}（${m.kana}）` : m.name, name: m.name, n: m.n, span };
+    const fill = (t) => t.replace(/\{(\w+)\}/g, (_, k) => String(v[k]));
+    const t = data.templates;
+    const canonical = `${IV_BASE}?m=${encodeURIComponent(m.slug)}`;
+    const set = (attr, val) => ({ element(e) { e.setAttribute(attr, val); } });
+    return new HTMLRewriter()
+      .on("title", { element(e) { e.setInnerContent(fill(t.title) + IV_SITE); } })
+      .on('meta[name="description"]', set("content", fill(t.description)))
+      .on('link[rel="canonical"]', set("href", canonical))
+      .on("main h1", { element(e) { e.setInnerContent(fill(t.title)); } })
+      .on("#iv-member-lead", { element(e) { e.removeAttribute("hidden"); e.setInnerContent(fill(t.lead)); } })
+      .transform(page);
+  } catch (e) {
+    return page;
+  }
+}
+
 /* =========================================================================== */
 
 export default {
@@ -356,6 +397,10 @@ export default {
 
     if (url.pathname === "/hello-kenshusei-blog" && request.method === "GET") {
       return kenshuseiMember(request, env, url);
+    }
+
+    if (url.pathname === "/hello-articles" && request.method === "GET") {
+      return interviewMember(request, env, url);
     }
 
     // その他は静的アセットへ(既存ページはここを通る=挙動不変)

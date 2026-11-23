@@ -47,6 +47,9 @@ OUTPUT_GENERATED = REPO_ROOT / "Generated" / "interview_generated.php"
 # 全カードのHTML(絞り込み・検索をした時だけ読む)。build.sh が public/ にコピーする
 OUTPUT_CARDS_JSON = REPO_ROOT / "data" / "interview-cards.json"
 OUTPUT_TOTAL = REPO_ROOT / "Generated" / "interview_total.txt"
+OUTPUT_MEMBER_PAGES = REPO_ROOT / "data" / "interview-members.json"   # メンバー別ページの名簿と文言(Worker・一覧ページ・sitemap が読む)
+MEMBER_SLUGS = REPO_ROOT / "data" / "interview-member-slugs.json"     # 名前→slug。手で直すファイル
+MEMBER_PAGE_MIN = 10   # 記事がこの件数以上のメンバーだけ専用ページ(?m=slug)を作る(薄いページを増やさない)
 FIRST_CARDS = 20   # ページのHTMLに直接入れる新着カードの数
 
 
@@ -391,6 +394,58 @@ def build_name_options(names: list[str], master: dict) -> str:
     return "\n".join(lines)
 
 
+def build_member_pages(articles: list[dict], members_by_id: dict[str, list[dict]], master: dict) -> dict:
+    """メンバー別ページ(/hello-articles?m=<slug>)の名簿と文言。
+    記事が MEMBER_PAGE_MIN 件以上のメンバーだけ。slug は data/interview-member-slugs.json から読む
+    (書いていないメンバーは専用ページを作らず、警告を出す)。文言の雛形は worker/index.js と一覧ページの JS が共通で使う。
+    {who}=名前（よみ） {name} {n}=件数 {span}=2014年7月〜2026年7月"""
+    slugs = json.loads(MEMBER_SLUGS.read_text(encoding="utf-8")) if MEMBER_SLUGS.exists() else {}
+    dates = {(a.get("ID") or "").strip(): _pad_date(a.get("Date"), False) for a in articles}
+    by_name: dict[str, set[str]] = {}
+    for aid, rows in members_by_id.items():
+        for r in rows:
+            n = (r.get("Name") or "").strip()
+            if n and aid in dates:
+                by_name.setdefault(n, set()).add(aid)
+    members, no_slug = [], []
+    for name, ids in sorted(by_name.items(), key=lambda kv: (-len(kv[1]), kv[0])):
+        if len(ids) < MEMBER_PAGE_MIN:
+            continue
+        slug = slugs.get(name, "")
+        if not slug:
+            no_slug.append(f"{name}({len(ids)}件)")
+            continue
+        ds = sorted(d for d in (dates[i] for i in ids) if d >= "1990")   # 日付欄に別の値が入った行(年が1990未満になる)は期間に入れない
+        members.append({"slug": slug, "name": name, "kana": master.get(name, {}).get("yomigana", ""),
+                        "n": len(ids), "from": ds[0] if ds else "", "to": ds[-1] if ds else ""})
+    if no_slug:
+        warn("記事が%d件以上なのに data/interview-member-slugs.json に slug が無いメンバー(専用ページを作っていません): %s"
+             % (MEMBER_PAGE_MIN, "、".join(no_slug)), title="メンバー別ページの slug 未登録")
+    seen: dict[str, str] = {}
+    for m in members:   # slug が重なると別の人のページになるので止める
+        if m["slug"] in seen:
+            raise SystemExit(f"interview-member-slugs.json の slug が重複: {m['slug']} ({seen[m['slug']]} と {m['name']})")
+        seen[m["slug"]] = m["name"]
+    return {
+        "min_articles": MEMBER_PAGE_MIN,
+        "templates": {
+            "title": "{name}が語るインタビュー・Web記事まとめ（{n}件）",
+            "description": "{who}が語るインタビュー・Web記事{n}件（{span}掲載）の一覧。掲載日・媒体・連載名と、各記事へのリンク・Web Archiveをまとめています。",
+            "lead": "{who}が語るインタビュー・Web記事 {n}件（{span}掲載）です。",
+        },
+        "members": members,
+    }
+
+
+def write_member_pages(articles, members_by_id, master) -> int:
+    data = build_member_pages(articles, members_by_id, master)
+    OUTPUT_MEMBER_PAGES.parent.mkdir(parents=True, exist_ok=True)
+    with open(OUTPUT_MEMBER_PAGES, "w", encoding="utf-8") as f:
+        json.dump(data, f, ensure_ascii=False, indent=0, separators=(",", ":"))
+        f.write("\n")
+    return len(data["members"])
+
+
 def main():
     jst = timezone(timedelta(hours=9))
     generated = datetime.now(jst).strftime("%Y/%m/%d")
@@ -442,6 +497,8 @@ def main():
     with open(OUTPUT_TOTAL, "w", encoding="utf-8") as f:
         f.write(f"{len(cards)}")
 
+    n_member_pages = write_member_pages(articles, members_by_id, master)
+
     warn_missing_members(
         sorted(n for n in name_set if n not in master),
         note="(記事側Groupで代替)",
@@ -452,6 +509,7 @@ def main():
     write_domain_report(unmatched)
     write_member_report(member_rows, master)
     write_data_report(articles, member_rows)
+    print(f"メンバー別ページ: {n_member_pages} 人({MEMBER_PAGE_MIN}件以上)")
     print(f"生成完了: {OUTPUT_CARDS} ({len(articles)} 記事 / メンバー {len(name_set)} 名 / "
           f"Domain未登録 {len(unmatched)} 件)")
 

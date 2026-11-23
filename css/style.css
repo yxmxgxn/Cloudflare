@@ -3754,3 +3754,19 @@ a.iv-stats-row:hover {
     font-size: 10px;
   }
 }
+
+/* インタビュー一覧: メンバー別ページ(?m=)への入口 */
+.iv-members-nav { margin-top: 32px; }
+.iv-member-chips { display: flex; flex-wrap: wrap; gap: 6px; padding: 0; margin: 8px 0 0; list-style: none; }
+.iv-member-chip {
+  display: inline-block;
+  padding: 4px 12px;
+  border: 1px solid #d9d2e6;
+  border-radius: 999px;
+  background: #fff;
+  color: inherit;
+  font-size: .85rem;
+  text-decoration: none;
+}
+.iv-member-chip:hover { border-color: var(--accent); }
+.iv-member-n { margin-left: 4px; font-size: .75em; opacity: .7; font-variant-numeric: tabular-nums; }

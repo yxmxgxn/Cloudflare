@@ -80,6 +80,14 @@ cp robot.txt "$OUT/robots.txt"   # 正しいファイル名に直して配置
     foreach ($m as $x) if ($x["slug"] !== "") echo $x["slug"], "\n";' | while IFS= read -r s; do
     printf '  <url>\n    <loc>%s/hello-kenshusei-blog?m=%s</loc>\n    <lastmod>%s</lastmod>\n  </url>\n' "$BASE_URL" "$s" "$today"
   done
+  # インタビュー一覧のメンバー別(?m=slug。worker/index.js がタイトルと canonical をその人のものにする)
+  # 名簿は Python/generate_interview.py が作る data/interview-members.json。無ければ何も足さない
+  if [ -f data/interview-members.json ]; then
+    php -r '$d = json_decode(file_get_contents("data/interview-members.json"), true);
+      foreach (($d["members"] ?? []) as $x) echo $x["slug"], "\n";' | while IFS= read -r s; do
+      printf '  <url>\n    <loc>%s/hello-articles?m=%s</loc>\n    <lastmod>%s</lastmod>\n  </url>\n' "$BASE_URL" "$s" "$today"
+    done
+  fi
   echo '</urlset>'
 } > "$OUT/sitemap.xml"
 

@@ -7,6 +7,7 @@
 
 <main>
   <h1>ハロプロメンバーが語るインタビュー・Web記事まとめ</h1>
+  <p id="iv-member-lead" hidden></p><?php // メンバー別ページ(?m=)のとき worker/index.js が中身を入れて表示する ?>
   <p>ハロー！プロジェクトのメンバー本人の言葉が読めるWeb記事（インタビュー・対談・連載・コラムなど）をまとめています。<br>
   各カードは、掲載日とタイトル（記事リンク）、媒体・連載名、メンバーで構成されています。</p>
   <p>グループ・メンバー名での絞り込み、掲載日・タイトルでの並び替え、記事本文・タイトル・連載名・メンバー名を対象にしたキーワード検索ができます。カードの連載名・媒体名・メンバー名を押すと、それで絞り込めます。検索すると、本文とタイトル等のどちらで一致したかがカードに出ます。年別・媒体別の件数は<a href="/hello-articles-stats">件数のページ</a>にまとめています。</p>
@@ -49,6 +50,22 @@
   <button type="button" id="iv-more" onclick="ivMore()"></button>
   <button type="button" id="iv-more-all" onclick="ivMoreAll()"></button>
 </div>
+<?php
+  // メンバー別ページ(?m=slug)への入口。記事が10件以上のメンバーだけ。名簿は Python/generate_interview.py が作る
+  $iv_pages = @json_decode((string)@file_get_contents($_SERVER['DOCUMENT_ROOT'] . '/data/interview-members.json'), true);
+  $iv_members = is_array($iv_pages) ? ($iv_pages['members'] ?? []) : [];
+?>
+<?php if ($iv_members): ?>
+<nav class="iv-members-nav" aria-label="メンバーごとの記事一覧">
+  <h2>メンバーごとの記事一覧</h2>
+  <p>記事が<?= (int)($iv_pages['min_articles'] ?? 10) ?>件以上あるメンバーです。押すと、そのメンバーの記事だけを一覧で開きます。</p>
+  <ul class="iv-member-chips">
+<?php foreach ($iv_members as $m): ?>
+    <li><a class="iv-member-chip" href="/hello-articles?m=<?= rawurlencode($m['slug']) ?>"><?= htmlspecialchars($m['name']) ?><span class="iv-member-n"><?= (int)$m['n'] ?></span></a></li>
+<?php endforeach; ?>
+  </ul>
+</nav>
+<?php endif; ?>
 <?php include $_SERVER['DOCUMENT_ROOT'] . '/Generated/interview_generated.php'; ?>
 
 </main>
@@ -509,6 +526,18 @@
     renderChips();
   }
   if (/^\d{4}$/.test(qYear) || qMedia) ivFilter();
+
+  // メンバー別ページ(?m=<slug>)で来たら、そのメンバーで絞り込む(名簿は data/interview-members.json)
+  var qM = params.get('m') || '';
+  if (qM) {
+    fetch('/data/interview-members.json').then(function (r) { return r.json(); }).then(function (d) {
+      var m = (d.members || []).filter(function (x) { return x.slug === qM; })[0];
+      var sel = document.getElementById('iv-name');
+      if (!m || !sel) return;
+      sel.value = m.name;
+      if (sel.value === m.name) ivFilter();
+    }).catch(function () {});
+  }
 
   window.ivFilter = ivFilter;
   window.ivGroupChange = ivGroupChange;
