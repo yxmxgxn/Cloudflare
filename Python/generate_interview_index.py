@@ -161,9 +161,22 @@ def archive_id_url(arc_url: str) -> str:
     return _WAYBACK_TS.sub(r"\1id_\2", arc_url, count=1)
 
 
+# archive.today 系(archive.today / .ph / .is / .md / .li / .vn / .fo)。
+# スプシの WebArcive 欄に書いてよい(カードには「archive.today」のリンクが出る)が、機械からのアクセスには
+# CAPTCHA(人間確認)を返すので、本文は自動では取れない。CAPTCHAを突破する処理は入れず、取りに行かない。
+_ARCHIVE_TODAY = re.compile(r"//(?:www\.)?archive\.(?:today|ph|is|md|li|vn|fo)/", re.I)
+
+
+def is_archive_today(url: str) -> bool:
+    return bool(_ARCHIVE_TODAY.search(url or ""))
+
+
 def fetch_archive(arc_url: str, tries: int = 4) -> str:
     """ライブ取得が失敗する媒体向け: WebArchive(魚拓)から本文を取る。
-    archive.orgはActionのIPをブロックしないため、ボット弾きサイトを救える。503はリトライ。"""
+    archive.orgはActionのIPをブロックしないため、ボット弾きサイトを救える。503はリトライ。
+    archive.today 系は CAPTCHA が出て取れないので、取りに行かず空を返す(CAPTCHAの文面を本文として索引しないため)。"""
+    if is_archive_today(arc_url):
+        return ""
     arc_url = archive_id_url(arc_url)
     for _ in range(tries):
         html = fetch_html(arc_url)  # 503等は fetch_html が None を返す
@@ -542,6 +555,9 @@ def main():
             # ExtraURL に2ページ目以降の魚拓が書いてあればそれも足す(ID1372 の oricon index2.html など)
             used, parts = [], []
             for u in [arc] + [x for x in re.split(r"[,\s]+", extra_raw) if x.startswith("http")]:
+                if is_archive_today(u):
+                    print(f"  ↳ {aid}: archive.today は CAPTCHA が出て本文を自動では取れません(カードにはリンクを出します。"
+                          f"タイトル・メンバー名では検索に出ます): {u}", flush=True)
                 b = fetch_archive(u) if u else ""
                 if b and not near_duplicate(b, parts):
                     used.append(u)
