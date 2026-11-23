@@ -3770,3 +3770,4 @@ a.iv-stats-row:hover {
 }
 .iv-member-chip:hover { border-color: var(--accent); }
 .iv-member-n { margin-left: 4px; font-size: .75em; opacity: .7; font-variant-numeric: tabular-nums; }
+.ks-comment { font-size: 14px; color: #444; }

@@ -110,6 +110,19 @@
       ],
     ],
     [
+      'conference' => 'ロリポップ！デプロイナウ byGMOペパボ',
+      'title' => 'デプロイナウコンテスト 特別審査員',
+      'date' => '2026/09/10',
+      'time' => null,
+      'place' => null,
+      'host' => null,
+      'desc' => null,
+      'comment' => 'みなさんのアイデアや技術を見ることがとっても楽しみです！審査員という立場ではありますが、学びの姿勢で作品を見ていきたいなと思います！',
+      'links' => [
+        ['イベントページ', 'https://lolipop.jp/deploy-now/contest/'],
+      ],
+    ],
+    [
       'conference' => 'Qiita Conference 2026 Autumn',
       'title' => 'AI時代だからこそ大事にするべき、開発という名の愛情',
       'date' => '2026/10/27',
@@ -262,17 +275,22 @@
 <?php endforeach; ?>
 </ul>
 
-<h2>登壇</h2>
+<h2>登壇・審査員</h2>
 <div class="card-grid ks-grid">
 <?php foreach ($talks as $talk): ?>
   <article class="card ks-card">
-    <p class="ks-meta"><span class="ks-date"><?= htmlspecialchars($talk['date'] . ' ' . $talk['time']) ?></span></p>
+    <p class="ks-meta"><span class="ks-date"><?= htmlspecialchars(trim($talk['date'] . ' ' . ($talk['time'] ?? ''))) ?></span></p>
     <h3 class="ks-title"><?= htmlspecialchars($talk['conference']) ?></h3>
     <p class="ks-by"><?= htmlspecialchars($talk['title']) ?></p>
 <?php if (!empty($talk['place'])): ?>
     <p class="ks-note">会場：<?= htmlspecialchars($talk['place']) ?></p>
 <?php endif; ?>
+<?php if (!empty($talk['host'])): ?>
     <p class="ks-note">主催：<?= htmlspecialchars($talk['host']) ?></p>
+<?php endif; ?>
+<?php if (!empty($talk['comment'])): ?>
+    <p class="ks-comment">「<?= htmlspecialchars($talk['comment']) ?>」</p>
+<?php endif; ?>
 <?php if (!empty($talk['desc'])): ?>
     <details>
       <summary>概要</summary>
