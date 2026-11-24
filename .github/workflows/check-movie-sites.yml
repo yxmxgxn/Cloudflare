@@ -10,6 +10,10 @@ on:
         description: 'Discordに送らずログに出す(通知済みの記録も書かない)'
         type: boolean
         default: false
+      debug_tmdb:
+        description: 'TMDbだけの作品を、絞り込み用の項目つきでログに出す(通知しない)'
+        type: boolean
+        default: false
 
 jobs:
   check:
@@ -27,9 +31,11 @@ jobs:
         run: |
           args=""
           if [ "$DRY_RUN" = "true" ]; then args="--dry-run"; fi
+          if [ "$DEBUG_TMDB" = "true" ]; then args="$args --dry-run --debug-tmdb"; fi
           python Python/check_movie_sites.py $args
         env:
           DRY_RUN: ${{ inputs.dry_run }}
+          DEBUG_TMDB: ${{ inputs.debug_tmdb }}
           DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}
           TMDB_API_KEY: ${{ secrets.TMDB_API_KEY }}
 

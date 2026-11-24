@@ -211,6 +211,14 @@ def tmdb_works(pid: str, token: str) -> list[dict]:
             "id": str(c["id"]),
             "title": (c.get("title") or c.get("original_title") or "").strip(),
             "year": year_of(c.get("release_date") or ""),
+            # 絞り込みの調整用(映画以外の映像作品を見分ける材料)
+            "tmdb": {
+                "video": bool(c.get("video")),
+                "votes": c.get("vote_count") or 0,
+                "pop": round(c.get("popularity") or 0, 1),
+                "genres": c.get("genre_ids") or [],
+                "char": (c.get("character") or "").strip(),
+            },
         }
     return list(works.values())
 
@@ -223,9 +231,12 @@ class Candidate:
         self.year = year
         self.keys: dict[str, str] = {}      # サイト → 作品ID
         self.members: list[str] = []
+        self.tmdb_info: dict | None = None
 
     def add(self, site: str, work: dict, member: str) -> None:
         self.keys.setdefault(site, work["id"])
+        if site == "tmdb":
+            self.tmdb_info = work.get("tmdb")
         if member not in self.members:
             self.members.append(member)
         if not self.year and work["year"]:
@@ -314,6 +325,8 @@ def main() -> int:
     ap.add_argument("--dry-run", action="store_true", help="Discordに送らず、状態も書かない")
     ap.add_argument("--sites", default="filmarks,eiga,tmdb", help="調べるサイト(カンマ区切り)")
     ap.add_argument("--limit", type=int, default=0, help="先頭からN人だけ調べる(動作確認用)")
+    ap.add_argument("--debug-tmdb", action="store_true",
+                    help="TMDbだけの作品を、絞り込み用の項目つきで標準出力に出す(通知はしない)")
     args = ap.parse_args()
     sites = [s for s in args.sites.split(",") if s in SITE_LABEL]
     webhook = os.environ.get("DISCORD_WEBHOOK", "").strip()
@@ -372,6 +385,15 @@ def main() -> int:
     solid = sorted((c for c in new if set(c.keys) != {"tmdb"}), key=lambda c: (-len(c.keys), c.title))
     tmdb_only = sorted((c for c in new if set(c.keys) == {"tmdb"}), key=lambda c: c.title)
     print(f"シートに無い作品: {len(cands)}件 / 通知済みを除いて {len(new)}件(TMDbのみ {len(tmdb_only)}件)")
+
+    if args.debug_tmdb:
+        # 評価数の多い順。BOTH=他のサイトにも載っている(=確かに映画)、ONLY=TMDbだけ
+        for kind, group in (("BOTH", [c for c in solid if "tmdb" in c.keys]), ("ONLY", tmdb_only)):
+            for c in sorted(group, key=lambda c: -(c.tmdb_info or {}).get("votes", 0)):
+                i = c.tmdb_info or {}
+                print(f"DEBUG-{kind}\tvotes={i.get('votes')}\tpop={i.get('pop')}\tvideo={i.get('video')}"
+                      f"\tgenres={i.get('genres')}\t{c.year}\t{c.title}\t役={i.get('char')}\t{'、'.join(c.members[:3])}")
+        return 0
 
     notes = []
     for site, why in blocked.items():
