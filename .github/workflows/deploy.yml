@@ -85,7 +85,25 @@ jobs:
             | sed -E 's/\.php$//' \
             | sed "s|^|$BASE_URL/|" \
             | tr '\n' ' ') || true
-          CLEAN_URLS=$(echo "$BASE_URL/ $DIFF_URLS" | tr -s ' ' | sed 's/^ //;s/ $//')
+          # インタビュー一覧のメンバー別ページ(?m=slug)は .php の変更ではないので、上の差分には出ない。
+          # data/interview-members.json の、前のコミットから増えた・変わった(記事が増えた等)メンバーだけ送る。
+          # 手動実行(workflow_dispatch)のときは全員分を送る(初めて知らせるときなど)
+          MEMBER_URLS=$(EVENT="${{ github.event_name }}" python3 - <<'PY'
+          import json, os, subprocess
+          base = os.environ["BASE_URL"].rstrip("/")
+          def load(rev):
+              try:
+                  out = subprocess.run(["git", "show", f"{rev}:data/interview-members.json"],
+                                       capture_output=True, text=True, encoding="utf-8", check=True).stdout
+                  return {m["slug"]: m for m in json.loads(out)["members"]}
+              except Exception:
+                  return {}
+          new = load("HEAD")
+          old = {} if os.environ.get("EVENT") == "workflow_dispatch" else load("HEAD^")
+          print(" ".join(f"{base}/hello-articles?m={s}" for s, m in new.items() if old.get(s) != m))
+          PY
+          ) || true
+          CLEAN_URLS=$(echo "$BASE_URL/ $DIFF_URLS $MEMBER_URLS" | tr -s ' ' | sed 's/^ //;s/ $//')
           echo "Sending URLs: $CLEAN_URLS"
           JSON_URLS=$(echo "$CLEAN_URLS" | tr ' ' '\n' | grep -v '^$' | sed 's/.*/"&"/' | paste -sd ',')
           # 本文には 422 の理由が書いてあるので捨てない
