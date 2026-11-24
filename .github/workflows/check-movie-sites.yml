@@ -1,0 +1,53 @@
+name: Movie sites check
+run-name: "映画サイトチェック #${{ github.run_number }}"
+
+on:
+  schedule:
+    - cron: '0 20 * * 0'   # 毎週月曜 JST 5:00
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: 'Discordに送らずログに出す(通知済みの記録も書かない)'
+        type: boolean
+        default: false
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v5
+
+      - uses: actions/setup-python@v6
+        with:
+          python-version: '3.12'
+
+      - name: Check movie sites against the spreadsheet
+        run: |
+          args=""
+          if [ "$DRY_RUN" = "true" ]; then args="--dry-run"; fi
+          python Python/check_movie_sites.py $args
+        env:
+          DRY_RUN: ${{ inputs.dry_run }}
+          DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}
+          TMDB_API_KEY: ${{ secrets.TMDB_API_KEY }}
+
+      # 通知した作品を記録して、翌週以降に同じ通知を出さないようにする
+      - name: Commit notified list if changed
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add Python/state
+          if git diff --cached --quiet; then
+            echo "変更なし"
+          else
+            git commit -m "映画サイトチェック: 通知済みの作品を記録 ($(date -u +%Y-%m-%d))"
+            pushed=0
+            for i in 1 2 3 4 5; do
+              git pull --rebase origin main || { echo "rebase失敗"; break; }
+              if git push; then pushed=1; break; fi
+              echo "push競合、リトライ ($i)…"; sleep 3
+            done
+            if [ "$pushed" != "1" ]; then echo "::error::リトライしてもpushできませんでした"; exit 1; fi
+          fi
