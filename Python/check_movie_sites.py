@@ -9,6 +9,8 @@
 - 同じ作品が複数サイトで見つかったら1件にまとめ、載っていたサイトを併記する
 - 通知済みの作品は Python/state/movie-check-notified.json に残し、次回以降は通知しない
   (シートに足したくない作品も、ここに入っていれば通知されない)
+- 通知には、スプレッドシートに貼れる行(作品一覧用 movies.tsv・キャスト一覧用 cast.tsv)を添付する。
+  サイトごとのID・公開日・監督・役名(映画.com)・TMDbのIDを、わかる範囲で埋めてある
 - DISCORD_WEBHOOK が未設定、または --dry-run のときは、通知せず標準出力に出す(状態も書かない)
 - TMDB_API_KEY(APIリードアクセストークンでもAPIキーでも可)が未設定なら TMDb は飛ばす
 
@@ -38,6 +40,7 @@ PUB_BASE = (
     "2PACX-1vTMBPXFDKzaVe7pj4NAWBQ4Rs5ABjyosKv5ix21nEwh4AP4EPGOo0c2tYstS803bs4r-8WgOYtv1d2_/pub"
 )
 GID_MOVIES = "777837729"
+GID_CAST = "389226267"  # キャスト一覧(作品ごとの出演者)
 GID_CAST_MASTER = "0"
 
 REPO_ROOT = Path(__file__).resolve().parent.parent
@@ -146,11 +149,15 @@ def filmarks_works(pid: str) -> list[dict]:
             flat = re.sub(r"\|+", "|", re.sub(r"<[^>]+>", "|", chunk[:6000]))
             flat = html.unescape(flat)
             t = re.search(r"\{\{ viewingClipCount \}\}\|([^|]+)\|", flat)
-            y = re.search(r"上映日：\|(\d{4})年", flat)
+            y = re.search(r"上映日：\|(\d{4})年(\d{2})月(\d{2})日", flat)
+            y1 = y or re.search(r"上映日：\|(\d{4})年", flat)
+            d = re.search(r"監督\|([^|]+)\|", flat)
             works[m.group(1)] = {
                 "id": m.group(1),
                 "title": (t.group(1) if t else "").strip(),
-                "year": y.group(1) if y else "",
+                "year": y1.group(1) if y1 else "",
+                "date": f"{y.group(1)}/{y.group(2)}/{y.group(3)}" if y else "",
+                "director": d.group(1).strip() if d else "",
             }
             new += 1
         if new == 0:
@@ -179,15 +186,46 @@ def eiga_works(pid: str) -> list[dict]:
             if not m or not t or m.group(1) in works:
                 continue
             y = re.search(r"(\d{4})年公開", li)
+            r = re.search(r'<p class="role-name">(.*?)</p>', li, re.S)
             works[m.group(1)] = {
                 "id": m.group(1),
                 "title": html.unescape(re.sub(r"<[^>]+>", "", t.group(1))).strip(),
                 "year": y.group(1) if y else "",
+                "role": html.unescape(re.sub(r"<[^>]+>", "", r.group(1))).strip() if r else "",
             }
             new += 1
         if new == 0:
             break
     return list(works.values())
+
+
+def tmdb_date(s: str | None) -> str:
+    """2021-03-12 → 2021/03/12(シートの日付の形)。日付が揃っていなければ空"""
+    return s.replace("-", "/") if s and re.fullmatch(r"\d{4}-\d{2}-\d{2}", s) else ""
+
+
+def tmdb_headers(token: str) -> tuple[dict, str]:
+    """(ヘッダー, URLに足す認証パラメータ)。JWTのトークンならヘッダー、APIキーならURLに付ける"""
+    if token.startswith("eyJ"):
+        return {"Accept": "application/json", "Authorization": f"Bearer {token}"}, ""
+    return {"Accept": "application/json"}, f"&api_key={urllib.parse.quote(token)}"
+
+
+def tmdb_search(title: str, year: str, token: str) -> dict | None:
+    """作品名と年から、TMDbの作品を1件探す。名前が(ほぼ)同じで、公開年が1年以内のものだけ"""
+    headers, auth = tmdb_headers(token)
+    url = ("https://api.themoviedb.org/3/search/movie?language=ja-JP&include_adult=false"
+           f"&query={urllib.parse.quote(title)}{auth}")
+    data = json.loads(http_get(url, headers))
+    time.sleep(WAIT_API)
+    n = norm(title)
+    for r in data.get("results", [])[:5]:
+        names = {norm(r.get("title") or ""), norm(r.get("original_title") or "")}
+        ry = year_of(r.get("release_date") or "")
+        same = any(x and (x == n or (min(len(x), len(n)) >= 5 and (x in n or n in x))) for x in names)
+        if same and (not year or not ry or abs(int(ry) - int(year)) <= 1):
+            return r
+    return None
 
 
 SELF_RE = re.compile(r"\b(self|herself|himself|themselves)\b|本人", re.I)
@@ -196,12 +234,8 @@ SELF_RE = re.compile(r"\b(self|herself|himself|themselves)\b|本人", re.I)
 def tmdb_works(pid: str, token: str) -> list[dict]:
     """TMDbの出演映画(ドラマは tv_credits なので入らない)。本人役での出演は除く"""
     url = f"https://api.themoviedb.org/3/person/{pid}/movie_credits?language=ja-JP"
-    headers = {"Accept": "application/json"}
-    if token.startswith("eyJ"):  # APIリードアクセストークン(JWT)
-        headers["Authorization"] = f"Bearer {token}"
-    else:  # APIキー
-        url += f"&api_key={urllib.parse.quote(token)}"
-    data = json.loads(http_get(url, headers))
+    headers, auth = tmdb_headers(token)
+    data = json.loads(http_get(url + auth, headers))
     time.sleep(WAIT_API)
     works = {}
     for c in data.get("cast", []):
@@ -211,6 +245,7 @@ def tmdb_works(pid: str, token: str) -> list[dict]:
             "id": str(c["id"]),
             "title": (c.get("title") or c.get("original_title") or "").strip(),
             "year": year_of(c.get("release_date") or ""),
+            "date": tmdb_date(c.get("release_date")),
             # 絞り込みの調整用(映画以外の映像作品を見分ける材料)
             "tmdb": {
                 "video": bool(c.get("video")),
@@ -245,6 +280,9 @@ class Candidate:
         self.keys: dict[str, str] = {}      # サイト → 作品ID
         self.members: list[str] = []
         self.tmdb_info: dict | None = None
+        self.date = ""                       # 2021/03/12 の形。年しか分からなければ空
+        self.director = ""
+        self.roles: dict[str, str] = {}      # メンバー → 役名(映画.comから)
 
     def add(self, site: str, work: dict, member: str) -> None:
         self.keys.setdefault(site, work["id"])
@@ -252,6 +290,12 @@ class Candidate:
             self.tmdb_info = work.get("tmdb")
         if member not in self.members:
             self.members.append(member)
+        if work.get("date") and len(work["date"]) > len(self.date):
+            self.date = work["date"]
+        if work.get("director") and not self.director:
+            self.director = work["director"]
+        if work.get("role"):
+            self.roles[member] = work["role"]
         if not self.year and work["year"]:
             self.year = work["year"]
         # 日本語の作品名はFilmarks・映画.comのほうが確実なので、そちらを優先して残す
@@ -312,6 +356,63 @@ def post_discord(webhook: str, content: str) -> None:
     raise RuntimeError("Discord通知に失敗しました")
 
 
+def post_discord_files(webhook: str, content: str, files: dict[str, str]) -> None:
+    """ファイルを添付して送る(multipart)。files: ファイル名 → 中身(UTF-8のテキスト)"""
+    boundary = "----karinarchive" + str(int(time.time() * 1000))
+    payload = {"content": content, "attachments": [{"id": i, "filename": n} for i, n in enumerate(files)]}
+    body = (
+        f'--{boundary}\r\nContent-Disposition: form-data; name="payload_json"\r\n'
+        f"Content-Type: application/json\r\n\r\n{json.dumps(payload, ensure_ascii=False)}\r\n"
+    ).encode()
+    for i, (name, text) in enumerate(files.items()):
+        body += (
+            f'--{boundary}\r\nContent-Disposition: form-data; name="files[{i}]"; filename="{name}"\r\n'
+            "Content-Type: text/tab-separated-values; charset=utf-8\r\n\r\n"
+        ).encode() + text.encode("utf-8") + b"\r\n"
+    body += f"--{boundary}--\r\n".encode()
+    req = urllib.request.Request(webhook, data=body, headers={
+        "Content-Type": f"multipart/form-data; boundary={boundary}", "User-Agent": UA})
+    for _ in range(4):
+        try:
+            urllib.request.urlopen(req, timeout=60).read()
+            return
+        except urllib.error.HTTPError as e:
+            if e.code != 429:
+                raise
+            time.sleep(int(e.headers.get("Retry-After") or 2) + 1)
+    raise RuntimeError("Discordへのファイル送信に失敗しました")
+
+
+def next_movie_number(movie_rows: list[dict]) -> int:
+    nums = [int(m.group(1)) for r in movie_rows if (m := re.fullmatch(r"M(\d+)", (r.get("Movie_id") or "").strip()))]
+    return max(nums, default=0) + 1
+
+
+def tsv_line(header: list[str], values: dict) -> str:
+    """ヘッダーの列順に並べた1行。タブ・改行はセルを壊すので空白にする"""
+    return "\t".join(re.sub(r"[\t\r\n]+", " ", str(values.get(h, ""))) for h in header)
+
+
+def build_paste(cands: list[Candidate], movie_header: list[str], cast_header: list[str],
+                first_no: int, cast_ids: dict[str, str]) -> tuple[str, str]:
+    """シートの作品一覧・キャスト一覧に、ヘッダー無しで貼れる行を作る"""
+    movie_lines, cast_lines = [], []
+    for n, c in enumerate(cands, start=first_no):
+        mid = f"M{n:03d}"
+        date = c.date or c.year
+        movie = {"Movie_id": mid, "Title": c.title, "Date": date, "Director": c.director}
+        for site, col in SHEET_COL.items():
+            movie[col] = c.keys.get(site, "")
+        movie_lines.append(tsv_line(movie_header, movie))
+        for i, member in enumerate(c.members, start=1):
+            cast_lines.append(tsv_line(cast_header, {
+                "Movie_id": mid, "CastSort_id": f"S{i:02d}", "Date": date,
+                "Cast_id": cast_ids.get(member, ""), "Member": member, "Title": c.title,
+                "Role_name": c.roles.get(member, ""),
+            }))
+    return "\n".join(movie_lines) + "\n", "\n".join(cast_lines) + "\n"
+
+
 def chunk_messages(blocks: list[str], head: str, limit: int = 1900) -> list[str]:
     msgs, cur = [], head
     for b in blocks:
@@ -351,7 +452,8 @@ def main() -> int:
     cast = fetch_rows(GID_CAST_MASTER)
     if args.limit:
         cast = cast[:args.limit]
-    sheet_ids, sheet_titles = load_sheet(fetch_rows(GID_MOVIES))
+    movie_rows = fetch_rows(GID_MOVIES)
+    sheet_ids, sheet_titles = load_sheet(movie_rows)
     print(f"メンバー {len(cast)}人 / シート上の作品 {len(sheet_titles)}件 / 調べるサイト {sites}")
 
     cands: list[Candidate] = []
@@ -421,6 +523,21 @@ def main() -> int:
     if not new and not notes:
         return 0
 
+    reported = solid + tmdb_only
+    if tmdb_token and not args.limit:
+        # TMDbのIDが分からない作品は、作品名と年で探して埋める(シートの tmdb 列用)
+        for c in reported:
+            if "tmdb" in c.keys:
+                continue
+            try:
+                r = tmdb_search(c.title, c.year, tmdb_token)
+            except Exception as e:
+                print(f"TMDb検索に失敗: {c.title} {e}", file=sys.stderr)
+                continue
+            if r:
+                c.keys["tmdb"] = str(r["id"])
+                c.date = c.date or tmdb_date(r.get("release_date"))
+
     blocks = []
     if solid:
         blocks.append("**▼ シートに無い作品**")
@@ -431,14 +548,33 @@ def main() -> int:
     blocks += notes
     messages = chunk_messages(blocks, "🎬 映画サイトに載っていて、スプレッドシートに無い作品があります")
 
+    paste = None
+    paste_note = ""
+    if reported:
+        movie_header = [h for h in movie_rows[0].keys() if h is not None]
+        cast_header = [h for h in fetch_rows(GID_CAST)[0].keys() if h is not None]
+        cast_ids = {(r.get("Name") or "").strip(): (r.get("Cast_id") or "").strip() for r in cast}
+        first_no = next_movie_number(movie_rows)
+        paste = build_paste(reported, movie_header, cast_header, first_no, cast_ids)
+        paste_note = (
+            f"📋 スプレッドシートに貼る行です(ヘッダー無し)。作品IDは M{first_no:03d} から振っています。\n"
+            "movies.tsv → 作品一覧の末尾、cast.tsv → キャスト一覧の末尾に貼ってください。"
+            "ジャンル・監督・役名などは、貼ったあとに埋めてください。"
+            "先にシートへ作品を足した場合は、作品IDが重なるので振り直してください。"
+        )
+
     if args.dry_run or not webhook:
         for m in messages:
             print("----\n" + m)
+        if paste:
+            print("---- movies.tsv\n" + paste[0] + "---- cast.tsv\n" + paste[1])
         return 0
 
     for m in messages:
         post_discord(webhook, m)
         time.sleep(1)
+    if paste:
+        post_discord_files(webhook, paste_note, {"movies.tsv": paste[0], "cast.tsv": paste[1]})
     today = datetime.now(timezone(timedelta(hours=9))).strftime("%Y-%m-%d")
     for c in solid + tmdb_only:  # 通知したものだけ記録する(絞り込みで外したものは、条件を変えたとき拾えるように残す)
         for k in state_key(c):
