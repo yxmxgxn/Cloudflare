@@ -219,12 +219,21 @@ def tmdb_search(title: str, year: str, token: str) -> dict | None:
     data = json.loads(http_get(url, headers))
     time.sleep(WAIT_API)
     n = norm(title)
-    for r in data.get("results", [])[:5]:
-        names = {norm(r.get("title") or ""), norm(r.get("original_title") or "")}
+
+    def year_ok(r: dict) -> bool:
         ry = year_of(r.get("release_date") or "")
-        same = any(x and (x == n or (min(len(x), len(n)) >= 5 and (x in n or n in x))) for x in names)
-        if same and (not year or not ry or abs(int(ry) - int(year)) <= 1):
+        return not year or not ry or abs(int(ry) - int(year)) <= 1
+
+    results = data.get("results", [])[:5]
+    # まず名前が完全に同じもの。次に、付け足しだけの違い(「劇場版」など3文字以上)を許す。
+    # 「…」と「…2」のように1〜2文字の差は続編の可能性が高いので、同じ作品とみなさない
+    for r in results:
+        if year_ok(r) and n in {norm(r.get("title") or ""), norm(r.get("original_title") or "")}:
             return r
+    for r in results:
+        for x in {norm(r.get("title") or ""), norm(r.get("original_title") or "")}:
+            if year_ok(r) and x and min(len(x), len(n)) >= 5 and (x in n or n in x) and abs(len(x) - len(n)) >= 3:
+                return r
     return None
 
 
