@@ -163,7 +163,14 @@ def eiga_works(pid: str) -> list[dict]:
     works: dict[str, dict] = {}
     for page in range(1, MAX_PAGES + 1):
         url = f"https://eiga.com/person/{pid}/movie/" + (f"?page={page}" if page > 1 else "")
-        h = http_get(url)
+        try:
+            h = http_get(url)
+        except urllib.error.HTTPError as e:
+            # 映画の出演作が1件も無い人は、人物ページがあっても /movie/ が404になる
+            if e.code == 404 and page == 1:
+                time.sleep(WAIT_HTML)
+                return []
+            raise
         time.sleep(WAIT_HTML)
         new = 0
         for li in re.findall(r"<li class=\"col-s-4\">(.*?)</li>", h, re.S):
