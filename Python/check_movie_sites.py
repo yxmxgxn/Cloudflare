@@ -233,8 +233,16 @@ def find_candidate(cands: list[Candidate], site: str, work: dict) -> Candidate |
         if c.keys.get(site) == work["id"]:
             return c
     n = norm(work["title"])
+    if not n:
+        return None
     for c in cands:
-        if norm(c.title) == n and n and (not c.year or not work["year"] or abs(int(c.year) - int(work["year"])) <= 1):
+        if site in c.keys:  # 同じサイトの別IDは別作品
+            continue
+        t = norm(c.title)
+        # 「打姫オバカミーコ」と「劇場版・打姫オバカミーコ」のような付け足しは同じ作品とみなす
+        same = t == n or (min(len(t), len(n)) >= 5 and (t in n or n in t))
+        near = not c.year or not work["year"] or abs(int(c.year) - int(work["year"])) <= 1
+        if same and near:
             return c
     return None
 
