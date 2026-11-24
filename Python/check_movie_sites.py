@@ -1,0 +1,398 @@
+#!/usr/bin/env python3
+"""
+映画サイト(Filmarks / 映画.com / TMDb)の出演作一覧と、スプレッドシートの作品一覧を突き合わせ、
+シートに無い作品をDiscordに通知する。
+
+- メンバーごとのIDはキャストマスターの filmarks_id / eiga_com_id / tmdb_id 列、
+  シート側の作品IDは作品一覧の filmarks / eiga_com / tmdb / all_cinemas 列を使う
+- 作品IDがどれか1つでもシートにあれば登録済み。IDが無い作品用に、作品名の一致も見る
+- 同じ作品が複数サイトで見つかったら1件にまとめ、載っていたサイトを併記する
+- 通知済みの作品は Python/state/movie-check-notified.json に残し、次回以降は通知しない
+  (シートに足したくない作品も、ここに入っていれば通知されない)
+- DISCORD_WEBHOOK が未設定、または --dry-run のときは、通知せず標準出力に出す(状態も書かない)
+- TMDB_API_KEY(APIリードアクセストークンでもAPIキーでも可)が未設定なら TMDb は飛ばす
+
+使い方: python Python/check_movie_sites.py [--dry-run] [--sites filmarks,eiga,tmdb] [--limit N]
+"""
+
+import argparse
+import csv
+import html
+import io
+import json
+import os
+import re
+import sys
+import time
+import unicodedata
+import urllib.error
+import urllib.parse
+import urllib.request
+from datetime import datetime, timedelta, timezone
+from pathlib import Path
+
+from sheets import fetch_text
+
+PUB_BASE = (
+    "https://docs.google.com/spreadsheets/d/e/"
+    "2PACX-1vTMBPXFDKzaVe7pj4NAWBQ4Rs5ABjyosKv5ix21nEwh4AP4EPGOo0c2tYstS803bs4r-8WgOYtv1d2_/pub"
+)
+GID_MOVIES = "777837729"
+GID_CAST_MASTER = "0"
+
+REPO_ROOT = Path(__file__).resolve().parent.parent
+STATE_PATH = REPO_ROOT / "Python" / "state" / "movie-check-notified.json"
+
+UA = "Mozilla/5.0 (compatible; karin-archive-movie-check/1.0; +https://karin-archive.com/)"
+WAIT_HTML = 2.0   # Filmarks・映画.com は1リクエストごとに空ける秒数
+WAIT_API = 0.3    # TMDb API
+MAX_PAGES = 8     # 1人あたりの一覧ページ数の上限(念のため)
+
+SITE_LABEL = {"filmarks": "Filmarks", "eiga": "映画.com", "tmdb": "TMDb"}
+# 作品ページのURL(通知にそのまま載せる)
+SITE_URL = {
+    "filmarks": "https://filmarks.com/movies/{id}",
+    "eiga": "https://eiga.com/movie/{id}/",
+    "tmdb": "https://www.themoviedb.org/movie/{id}?language=ja-JP",
+}
+# シートの作品一覧の列名
+SHEET_COL = {"filmarks": "filmarks", "eiga": "eiga_com", "tmdb": "tmdb"}
+# キャストマスターの列名
+CAST_COL = {"filmarks": "filmarks_id", "eiga": "eiga_com_id", "tmdb": "tmdb_id"}
+
+
+class Blocked(Exception):
+    """サイトに拒否された(403/429が続いた)。そのサイトの取得はそこで止める"""
+
+
+# ---------- スプレッドシート ----------
+
+def fetch_rows(gid: str) -> list[dict]:
+    text = fetch_text(f"{PUB_BASE}?gid={gid}&single=true&output=csv")
+    return list(csv.DictReader(io.StringIO(text)))
+
+
+def norm(s: str) -> str:
+    s = unicodedata.normalize("NFKC", s).lower()
+    return re.sub(r"[\s・:：!！?？~〜～\-ー―—'’\"“”「」『』()（）\[\]【】,，.、。/／&＆]", "", s)
+
+
+def load_sheet(movies: list[dict]):
+    """シートの作品IDの集合(サイト別)と、正規化した作品名の集合を返す"""
+    ids = {site: set() for site in SITE_LABEL}
+    titles = set()
+    for m in movies:
+        for site, col in SHEET_COL.items():
+            v = (m.get(col) or "").strip()
+            if v:
+                ids[site].add(v)
+        t = norm(m.get("Title") or "")
+        if t:
+            titles.add(t)
+    return ids, titles
+
+
+def title_known(title: str, sheet_titles: set[str]) -> bool:
+    """作品名がシートのどれかと(ほぼ)同じか。短い名前の部分一致は誤爆するので3文字以上だけ"""
+    n = norm(title)
+    if not n:
+        return True
+    return any(n == t or (len(n) >= 3 and n in t) or (len(t) >= 3 and t in n) for t in sheet_titles)
+
+
+# ---------- 取得 ----------
+
+def http_get(url: str, headers: dict | None = None) -> str:
+    hdr = {"User-Agent": UA, "Accept-Language": "ja"}
+    hdr.update(headers or {})
+    waits = [10, 30, 60]
+    for attempt in range(len(waits) + 1):
+        try:
+            req = urllib.request.Request(url, headers=hdr)
+            with urllib.request.urlopen(req, timeout=60) as res:
+                return res.read().decode("utf-8", "replace")
+        except urllib.error.HTTPError as e:
+            if e.code in (403, 429):
+                if attempt == len(waits):
+                    raise Blocked(f"{e.code} {url}")
+            elif e.code in (500, 502, 503, 504):
+                if attempt == len(waits):
+                    raise
+            else:
+                raise
+        except (urllib.error.URLError, TimeoutError):
+            if attempt == len(waits):
+                raise
+        time.sleep(waits[attempt])
+    raise RuntimeError("unreachable")
+
+
+def year_of(s: str) -> str:
+    m = re.search(r"(\d{4})", s or "")
+    return m.group(1) if m else ""
+
+
+def filmarks_works(pid: str) -> list[dict]:
+    """Filmarksの人物ページ(映画)。ドラマは /dramas なので入らない"""
+    works: dict[str, dict] = {}
+    for page in range(1, MAX_PAGES + 1):
+        h = http_get(f"https://filmarks.com/people/{pid}/movies?page={page}")
+        time.sleep(WAIT_HTML)
+        new = 0
+        for chunk in h.split('class="js-cassette"')[1:]:
+            m = re.search(r"movie_id&quot;:(\d+)", chunk)
+            if not m or m.group(1) in works:
+                continue
+            flat = re.sub(r"\|+", "|", re.sub(r"<[^>]+>", "|", chunk[:6000]))
+            flat = html.unescape(flat)
+            t = re.search(r"\{\{ viewingClipCount \}\}\|([^|]+)\|", flat)
+            y = re.search(r"上映日：\|(\d{4})年", flat)
+            works[m.group(1)] = {
+                "id": m.group(1),
+                "title": (t.group(1) if t else "").strip(),
+                "year": y.group(1) if y else "",
+            }
+            new += 1
+        if new == 0:
+            break
+    return list(works.values())
+
+
+def eiga_works(pid: str) -> list[dict]:
+    """映画.comの人物の関連作品(映画)"""
+    works: dict[str, dict] = {}
+    for page in range(1, MAX_PAGES + 1):
+        url = f"https://eiga.com/person/{pid}/movie/" + (f"?page={page}" if page > 1 else "")
+        h = http_get(url)
+        time.sleep(WAIT_HTML)
+        new = 0
+        for li in re.findall(r"<li class=\"col-s-4\">(.*?)</li>", h, re.S):
+            m = re.search(r'href="/movie/(\d+)/?"', li)
+            t = re.search(r'<p class="title">(.*?)</p>', li, re.S)
+            if not m or not t or m.group(1) in works:
+                continue
+            y = re.search(r"(\d{4})年公開", li)
+            works[m.group(1)] = {
+                "id": m.group(1),
+                "title": html.unescape(re.sub(r"<[^>]+>", "", t.group(1))).strip(),
+                "year": y.group(1) if y else "",
+            }
+            new += 1
+        if new == 0:
+            break
+    return list(works.values())
+
+
+SELF_RE = re.compile(r"\b(self|herself|himself|themselves)\b|本人", re.I)
+
+
+def tmdb_works(pid: str, token: str) -> list[dict]:
+    """TMDbの出演映画(ドラマは tv_credits なので入らない)。本人役での出演は除く"""
+    url = f"https://api.themoviedb.org/3/person/{pid}/movie_credits?language=ja-JP"
+    headers = {"Accept": "application/json"}
+    if token.startswith("eyJ"):  # APIリードアクセストークン(JWT)
+        headers["Authorization"] = f"Bearer {token}"
+    else:  # APIキー
+        url += f"&api_key={urllib.parse.quote(token)}"
+    data = json.loads(http_get(url, headers))
+    time.sleep(WAIT_API)
+    works = {}
+    for c in data.get("cast", []):
+        if SELF_RE.search(c.get("character") or ""):
+            continue
+        works[str(c["id"])] = {
+            "id": str(c["id"]),
+            "title": (c.get("title") or c.get("original_title") or "").strip(),
+            "year": year_of(c.get("release_date") or ""),
+        }
+    return list(works.values())
+
+
+# ---------- 突き合わせ ----------
+
+class Candidate:
+    def __init__(self, title: str, year: str):
+        self.title = title
+        self.year = year
+        self.keys: dict[str, str] = {}      # サイト → 作品ID
+        self.members: list[str] = []
+
+    def add(self, site: str, work: dict, member: str) -> None:
+        self.keys.setdefault(site, work["id"])
+        if member not in self.members:
+            self.members.append(member)
+        if not self.year and work["year"]:
+            self.year = work["year"]
+        # 日本語の作品名はFilmarks・映画.comのほうが確実なので、そちらを優先して残す
+        if site in ("filmarks", "eiga") and work["title"]:
+            self.title = work["title"]
+
+
+def find_candidate(cands: list[Candidate], site: str, work: dict) -> Candidate | None:
+    for c in cands:
+        if c.keys.get(site) == work["id"]:
+            return c
+    n = norm(work["title"])
+    for c in cands:
+        if norm(c.title) == n and n and (not c.year or not work["year"] or abs(int(c.year) - int(work["year"])) <= 1):
+            return c
+    return None
+
+
+def state_key(c: Candidate) -> list[str]:
+    return [f"{s}:{i}" for s, i in c.keys.items()]
+
+
+def load_state() -> dict:
+    try:
+        return json.loads(STATE_PATH.read_text(encoding="utf-8"))
+    except FileNotFoundError:
+        return {}
+
+
+def save_state(state: dict) -> None:
+    STATE_PATH.parent.mkdir(parents=True, exist_ok=True)
+    STATE_PATH.write_text(json.dumps(state, ensure_ascii=False, indent=1, sort_keys=True) + "\n", encoding="utf-8")
+
+
+# ---------- Discord ----------
+
+def post_discord(webhook: str, content: str) -> None:
+    body = json.dumps({"content": content}).encode()
+    req = urllib.request.Request(
+        webhook, data=body, headers={"Content-Type": "application/json", "User-Agent": UA}
+    )
+    for _ in range(4):
+        try:
+            urllib.request.urlopen(req, timeout=30).read()
+            return
+        except urllib.error.HTTPError as e:
+            if e.code != 429:
+                raise
+            time.sleep(int(e.headers.get("Retry-After") or 2) + 1)
+    raise RuntimeError("Discord通知に失敗しました")
+
+
+def chunk_messages(blocks: list[str], head: str, limit: int = 1900) -> list[str]:
+    msgs, cur = [], head
+    for b in blocks:
+        if len(cur) + len(b) + 1 > limit:
+            msgs.append(cur)
+            cur = ""
+        cur += ("\n" if cur else "") + b
+    if cur:
+        msgs.append(cur)
+    return msgs
+
+
+def format_candidate(c: Candidate) -> str:
+    sites = "・".join(SITE_LABEL[s] for s in c.keys)
+    year = f" ({c.year}年)" if c.year else ""
+    links = " ".join(f"<{SITE_URL[s].format(id=i)}>" for s, i in c.keys.items())
+    return f"**{c.title}**{year} — {'、'.join(c.members)}\n　{sites} {links}"
+
+
+# ---------- main ----------
+
+def main() -> int:
+    ap = argparse.ArgumentParser()
+    ap.add_argument("--dry-run", action="store_true", help="Discordに送らず、状態も書かない")
+    ap.add_argument("--sites", default="filmarks,eiga,tmdb", help="調べるサイト(カンマ区切り)")
+    ap.add_argument("--limit", type=int, default=0, help="先頭からN人だけ調べる(動作確認用)")
+    args = ap.parse_args()
+    sites = [s for s in args.sites.split(",") if s in SITE_LABEL]
+    webhook = os.environ.get("DISCORD_WEBHOOK", "").strip()
+    tmdb_token = os.environ.get("TMDB_API_KEY", "").strip()
+    if "tmdb" in sites and not tmdb_token:
+        print("TMDB_API_KEY が未設定なので TMDb は飛ばします")
+        sites.remove("tmdb")
+
+    cast = fetch_rows(GID_CAST_MASTER)
+    if args.limit:
+        cast = cast[:args.limit]
+    sheet_ids, sheet_titles = load_sheet(fetch_rows(GID_MOVIES))
+    print(f"メンバー {len(cast)}人 / シート上の作品 {len(sheet_titles)}件 / 調べるサイト {sites}")
+
+    cands: list[Candidate] = []
+    blocked: dict[str, str] = {}
+    failed: dict[str, list[str]] = {s: [] for s in sites}
+    fetched = {s: 0 for s in sites}
+
+    for site in sites:
+        col = CAST_COL[site]
+        for row in cast:
+            pid = (row.get(col) or "").strip()
+            name = (row.get("Name") or "").strip()
+            if not pid or not name:
+                continue
+            try:
+                if site == "filmarks":
+                    works = filmarks_works(pid)
+                elif site == "eiga":
+                    works = eiga_works(pid)
+                else:
+                    works = tmdb_works(pid, tmdb_token)
+            except Blocked as e:
+                blocked[site] = str(e)
+                print(f"{SITE_LABEL[site]}に拒否されたので、ここで止めます: {e}", file=sys.stderr)
+                break
+            except Exception as e:  # 1人の失敗で全体を止めない
+                failed[site].append(name)
+                print(f"{SITE_LABEL[site]} {name}: 取得失敗 {e}", file=sys.stderr)
+                continue
+            fetched[site] += 1
+            for w in works:
+                if not w["title"] or w["id"] in sheet_ids[site] or title_known(w["title"], sheet_titles):
+                    continue
+                c = find_candidate(cands, site, w)
+                if c is None:
+                    c = Candidate(w["title"], w["year"])
+                    cands.append(c)
+                c.add(site, w, name)
+        print(f"{SITE_LABEL[site]}: {fetched[site]}人分を取得")
+
+    state = load_state()
+    new = [c for c in cands if not any(k in state for k in state_key(c))]
+    # 複数サイトに載っている作品を先に。TMDbだけの作品は別枠にする(ドラマ・本人出演などの混入が多いため)
+    solid = sorted((c for c in new if set(c.keys) != {"tmdb"}), key=lambda c: (-len(c.keys), c.title))
+    tmdb_only = sorted((c for c in new if set(c.keys) == {"tmdb"}), key=lambda c: c.title)
+    print(f"シートに無い作品: {len(cands)}件 / 通知済みを除いて {len(new)}件(TMDbのみ {len(tmdb_only)}件)")
+
+    notes = []
+    for site, why in blocked.items():
+        notes.append(f"⚠️ {SITE_LABEL[site]}に拒否されたため、一部を取得できていません")
+    for site, names in failed.items():
+        if names:
+            notes.append(f"⚠️ {SITE_LABEL[site]}で取得に失敗: {'、'.join(names[:10])}" + (" ほか" if len(names) > 10 else ""))
+
+    if not new and not notes:
+        return 0
+
+    blocks = []
+    if solid:
+        blocks.append("**▼ シートに無い作品**")
+        blocks += [format_candidate(c) for c in solid]
+    if tmdb_only:
+        blocks.append("**▼ TMDbだけにある作品**(ドラマの劇場版・本人出演などが混ざることがあります)")
+        blocks += [format_candidate(c) for c in tmdb_only]
+    blocks += notes
+    messages = chunk_messages(blocks, "🎬 映画サイトに載っていて、スプレッドシートに無い作品があります")
+
+    if args.dry_run or not webhook:
+        for m in messages:
+            print("----\n" + m)
+        return 0
+
+    for m in messages:
+        post_discord(webhook, m)
+        time.sleep(1)
+    today = datetime.now(timezone(timedelta(hours=9))).strftime("%Y-%m-%d")
+    for c in new:
+        for k in state_key(c):
+            state[k] = f"{today} {c.title}"
+    save_state(state)
+    return 0
+
+
+if __name__ == "__main__":
+    sys.exit(main())
