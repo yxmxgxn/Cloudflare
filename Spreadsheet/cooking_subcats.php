@@ -1,4 +1,4 @@
-<!-- generated: 2026-11-14T04:32:18.144451+00:00 -->
+<!-- generated: 2026-11-26T14:32:06.624475+00:00 -->
 <option value="焼き菓子">焼き菓子</option>
 <option value="高温調理">高温調理</option>
 <option value="蒸し菓子">蒸し菓子</option>
