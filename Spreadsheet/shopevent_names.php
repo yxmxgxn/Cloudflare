@@ -1,4 +1,4 @@
-<!-- generated: 2026-11-14T04:32:37.332310+00:00 -->
+<!-- generated: 2026-11-26T14:32:14.216963+00:00 -->
 <option value="相川茉穂" data-group="アンジュルム">相川茉穂（1）</option>
 <option value="秋山眞緒" data-group="つばきファクトリー">秋山眞緒（4）</option>
 <option value="浅倉樹々" data-group="つばきファクトリー">浅倉樹々（3）</option>
@@ -47,11 +47,12 @@
 <option value="工藤由愛" data-group="Juice=Juice">工藤由愛（3）</option>
 <option value="窪田七海" data-group="OCHA NORMA">窪田七海（3）</option>
 <option value="熊井友理奈" data-group="Berryz工房">熊井友理奈（1）</option>
+<option value="小島はな" data-group="BEYOOOOONDS">小島はな（1）</option>
 <option value="小林萌花" data-group="BEYOOOOONDS">小林萌花（2）</option>
 <option value="斉藤円香" data-group="OCHA NORMA">斉藤円香（4）</option>
 <option value="櫻井梨央" data-group="モーニング娘。">櫻井梨央（2）</option>
 <option value="佐々木莉佳子" data-group="アンジュルム">佐々木莉佳子（4）</option>
-<option value="佐藤優樹" data-group="モーニング娘。">佐藤優樹（3）</option>
+<option value="佐藤優樹" data-group="モーニング娘。">佐藤優樹（4）</option>
 <option value="里吉うたの" data-group="BEYOOOOONDS">里吉うたの（2）</option>
 <option value="鞘師里保" data-group="モーニング娘。">鞘師里保（1）</option>
 <option value="島川波菜" data-group="ロージークロニクル">島川波菜（3）</option>
@@ -75,7 +76,7 @@
 <option value="嗣永桃子" data-group="カントリー・ガールズ|Berryz工房">嗣永桃子（1）</option>
 <option value="筒井澪心" data-group="OCHA NORMA">筒井澪心（2）</option>
 <option value="徳永千奈美" data-group="Berryz工房">徳永千奈美（1）</option>
-<option value="土居楓奏" data-group="つばきファクトリー">土居楓奏（1）</option>
+<option value="土居楓奏" data-group="つばきファクトリー">土居楓奏（2）</option>
 <option value="中島早貴" data-group="℃-ute">中島早貴（1）</option>
 <option value="中西香菜" data-group="アンジュルム">中西香菜（2）</option>
 <option value="中山夏月姫" data-group="OCHA NORMA">中山夏月姫（4）</option>
@@ -83,8 +84,8 @@
 <option value="夏焼雅" data-group="Berryz工房">夏焼雅（1）</option>
 <option value="新沼希空" data-group="つばきファクトリー">新沼希空（4）</option>
 <option value="西﨑美空" data-group="OCHA NORMA">西﨑美空（2）</option>
-<option value="西田汐里" data-group="BEYOOOOONDS">西田汐里（2）</option>
-<option value="西村乙輝" data-group="つばきファクトリー">西村乙輝（1）</option>
+<option value="西田汐里" data-group="BEYOOOOONDS">西田汐里（3）</option>
+<option value="西村乙輝" data-group="つばきファクトリー">西村乙輝（2）</option>
 <option value="野中美希" data-group="モーニング娘。">野中美希（4）</option>
 <option value="野村みな美" data-group="こぶしファクトリー">野村みな美（1）</option>
 <option value="羽賀朱音" data-group="モーニング娘。">羽賀朱音（3）</option>
