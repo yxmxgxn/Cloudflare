@@ -4,11 +4,12 @@ AddDefaultCharset UTF-8
   RewriteEngine On
   RewriteBase /
 
-  # 旧URL → 新URL（ついでにクリーン化＆https固定で一発に）
+  # 旧URL → 新URL（ついでにクリーン化＆https固定で一発に
+  RewriteRule ^Juice=Juice/(juicejuice-song|juice-documentary|juice_live-karin)/?$ https://karin-archive.com/JuiceJuice/$1 [R=301,L]
   RewriteRule ^karinhello\.php$       https://karin-archive.com/X/karin-hello     [R=301,L]
   RewriteRule ^karinrec\.php$         https://karin-archive.com/YouTube/karin-rec       [R=301,L]
   RewriteRule ^karinvocalo\.php$      https://karin-archive.com/X/karin-vocalo    [R=301,L]
-  RewriteRule ^mlinemc\.php$          https://karin-archive.com/YouTube/karin-hello        [R=301,L]
+  RewriteRule ^mlinemc\.php$          https://karin-archive.com/YouTube/karin-mc        [R=301,L]
   RewriteRule ^girlsnightoutch\.php$  https://karin-archive.com/YouTube/karin-mc        [R=301,L]
   RewriteRule ^karininsta\.php$       https://karin-archive.com/instagram/karin-insta     [R=301,L]
   RewriteRule ^eyecatch\.php$         https://karin-archive.com/YouTube/karin-eyecatch  [R=301,L]
